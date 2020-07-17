@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="../../../../../common/css/stylesheet.css">
+	<link rel="stylesheet" href="../../../../../common/css/stylesheet-fonts.css" type="text/css">
+	<link rel="icon" href="../../../../../common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../../../../../common/css/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var currentUrl = window.location.href;
+			$.each($('.soap-api-menu a'), function(index, element) {
+				if (currentUrl.indexOf($(element).attr('href')) > -1) {
+					$(element).addClass('active');
+					$(element).parents('ul').show();
+					$(element).parents('li.parent').addClass('open');
+					$(element).nextAll('ul').show();
+				}
+			});
+			$.each($('.soap-api-menu li.parent .arr'), function(index, element) {
+				$(element).on('click', function(e){
+					$(this).parent('li.parent').toggleClass('open');
+					$(this).next('ul').slideToggle();
+				})
+			});
+		});
+	</script>
+	<title>Resources</title>
+</head>
+<body>
+	<a name="top"></a>
+	<img src="../../../images/m1xheader.png" width="1024" alt="header" />
+	<div class="message-banner">
+  <h4>Magento 1.x Software Support Notice</h4>
+  <p>
+    For Magento Commerce 1, Magento is providing software support through June 2020. Depending on your Magento Commerce 1 version, software support may include both quality fixes and security patches. Please review our <a href="https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf">Magento Software Lifecycle Policy</a> to see how your version of Magento Commerce 1 is supported.
+  </p>
+  <p>
+  	For Magento Open Source 1.5 to 1.9, Magento is providing software security patches through June 2020 to ensure those sites remain secure and compliant. Visit our <a href="https://info2.magento.com/M1OpenSource.html">information page</a> for more details about our software maintenance policy and other considerations for your business.
+  </p>
+</div>
+
+	<h1>Resources</h1>
+	<div id="content">
+		<p><a href="https://github.com/magento/devdocs-m1/tree/master/api/rest/Resources/resources.html" target="_blank">Edit this page on GitHub <img src="../../../../../common/images/github_icon.png" height="15px"></a></p>
+		<div class="soap-api-menu">
+			<ul>
+				<li>
+					<a href="../introduction.html">Introduction</a>
+				</li>
+				<li class="parent">
+					<a href="../authentication/oauth_authentication.html">Authentication</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="../authentication/oauth_configuration.html">OAuth Configuration</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="../common_http_status_codes.html">Common HTTP Status Codes</a>
+				</li>
+				<li>
+					<a href="../http_methods.html">HTTP Methods</a>
+				</li>
+				<li>
+					<a href="../get_filters.html">GET Filters</a>
+				</li>
+				<li class="parent">
+					<a href="../permission_settings/permission_settings.html">Permission Settings</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="../permission_settings/roles_configuration.html">Roles Configuration</a>
+						</li>
+						<li>
+							<a href="../permission_settings/attributes_configuration.html">Attributes Configuration</a>
+						</li>
+						<li>
+							<a href="../permission_settings/attributes_description.html">Attributes Description</a>
+						</li>
+					</ul>
+				</li>
+				<li class="parent">
+					<a href="resources.html">Resources</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="inventory.html">Inventory</a>
+						</li>
+						<li class="parent"><a href="Orders/sales_orders.html">Orders</a>
+							<span class="arr"></span>
+							<ul>
+								<li>
+									<a href="Orders/order_addresses.html">Order Addresses</a></li>
+								<li>
+									<a href="Orders/order_comments.html">Order Comments</a>
+								</li>
+								<li>
+									<a href="Orders/order_items.html">Order Items</a>
+								</li>
+							</ul>
+						</li>
+						<li class="parent">
+							<a href="Products/products.html">Products</a>
+							<span class="arr"></span>
+							<ul>
+								<li>
+									<a href="Products/product_categories.html">Product Categories</a></li>
+								<li>
+									<a href="Products/product_images.html">Product Images</a>
+								</li>
+								<li>
+									<a href="Products/product_websites.html">Product Websites</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="resource_customer_addresses.html">Customer Addresses</a>
+						</li>
+						<li>
+							<a href="resource_customers.html">Customers</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="../response_formats.html">Response Formats</a>
+				</li>
+				<li>
+					<a href="../testing_rest_resources.html">Testing REST Resources</a>
+				</li>
+			</ul>
+		</div>
+		<div class="soap-api-content">
+		<ul class="introduction-menu">
+	<li><a href="Products/products.html" title="REST API - Resource - Products">Products</a>
+	<ul>
+		<li><a href="Products/product_categories.html" title="REST API - Resource - Product Categories">Product Categories</a></li>
+		<li><a href="Products/product_images.html" title="REST API - Resource - Product Images">Product Images</a></li>
+		<li><a href="Products/product_websites.html" title="REST API - Resource - Product Websites">Product Websites</a></li>
+	</ul>
+	</li>
+	<li><a href="resource_customers.html" title="REST API - Resource - Customers">Customers</a></li>
+	<li><a href="resource_customer_addresses.html" title="REST API - Resource - Customer Addresses">Customer Addresses</a></li>
+	<li><a href="inventory.html" title="REST API - Resource - Stock Items">Inventory</a></li>
+	<li><a href="Orders/sales_orders.html" title="REST API - Resource - Sales Orders">Sales Orders</a>
+	<ul>
+		<li><a href="Orders/order_addresses.html" title="REST API - Resource - Order Addresses">Order Addresses</a></li>
+		<li><a href="Orders/order_comments.html" title="REST API - Resource - Order Comments">Order Comments</a></li>
+		<li><a href="Orders/order_items.html" title="REST API - Resource - Order Items">Order Items</a></li>
+	</ul>
+	</li>
+</ul>
+
+<p>The Magento REST API allows you to manage customers, customer addresses, sales orders, inventory, and products. REST API is organized into the following categories:</p>
+
+
+
+<h5><a name="Resources-Products"></a>Products</h5>
+
+<p>Retrieve the list of products, create, update, delete a product.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/products</p>
+
+<h6><a name="Resources-ProductCategories"></a>Product Categories</h6>
+
+<p>Retrieve the list of categories assigned to a product, assign and unassign the category from a product.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/products/:id/categories</p>
+
+<h6><a name="Resources-ProductImages"></a>Product Images</h6>
+
+<p>Retrieve the list of images assigned to a product, add, update, remove an image to/from a product.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/products/:id/images</p>
+
+<h6><a name="Resources-ProductWebsites"></a>Product Websites</h6>
+
+<p>Retrieve the list of websites assigned to a product, assign, unassign a  website to/from a product.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/products/:id/websites</p>
+
+<h5><a name="Resources-Customers"></a>Customers</h5>
+
+<p>Retrieve the list of customers, create, delete a customer, and update the customer information.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/customers</p>
+
+<h5><a name="Resources-CustomerAddresses"></a>Customer Addresses</h5>
+
+<p>Retrieve the list of customer addresses, create, update, and delete the customer address.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/customers/:id/addresses</p>
+
+<h5><a name="Resources-Inventory"></a>Inventory</h5>
+
+<p>Retrieve the list of stock items, update required stock items.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/stockitems</p>
+
+<h5><a name="Resources-SalesOrders"></a>Sales Orders</h5>
+
+<p>Retrieve the list of sales orders with detailed information on order addresses, items, and comments.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/orders</p>
+
+<h6><a name="Resources-OrderAddresses"></a>Order Addresses</h6>
+
+<p>Retrieve information on order billing and shipping addresses.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/orders/:id/addresses</p>
+
+<h6><a name="Resources-OrderComments"></a>Order Comments</h6>
+
+<p>Retrieve information on the specified order comments.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/orders/:id/comments</p>
+
+<h6><a name="Resources-OrderItems"></a>Order Items</h6>
+
+<p>Retrieve information on specified order items.</p>
+
+<p><b>Resource Structure</b>: http://magentohost/api/rest/orders/:id/items</p>
+
+
+
+		    
+
+		</div>
+	</div>
+</body>
+</html>

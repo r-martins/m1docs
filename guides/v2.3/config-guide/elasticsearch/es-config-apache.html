@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configure Apache and Elasticsearch | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="../../../v2.4/config-guide/elasticsearch/es-config-apache.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../../index.html">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+	<button class="dropdown-toggle spectrum-FieldButton spectrum-Dropdown-trigger" disabled>
+		<span class="spectrum-Dropdown-label">Magento 2.3</span>
+	</button>
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Configuration Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Security settings</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../security/google-recaptcha.html" class="spectrum-SideNav-itemLink ">Google reCAPTCHA</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/hashing.html" class="spectrum-SideNav-itemLink ">Password hashing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-headers.html" class="spectrum-SideNav-itemLink ">Prevent cache poisoning</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-cron.html" class="spectrum-SideNav-itemLink ">Secure cron.php to run in a browser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../security/two-factor-authentication.html" class="spectrum-SideNav-itemLink ">Two-Factor Authentication</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-xframe.html" class="spectrum-SideNav-itemLink ">X-Frame-Options header</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-bootstrap.html" class="spectrum-SideNav-itemLink ">Magento application initialization and bootstrap</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-modes.html" class="spectrum-SideNav-itemLink ">About Magento modes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/mage-dirs.html" class="spectrum-SideNav-itemLink ">Customize base directory paths (MAGE_DIRS)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/mage-profiler.html" class="spectrum-SideNav-itemLink ">Enable profiling (MAGE_PROFILER)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-how-to-set.html" class="spectrum-SideNav-itemLink ">Set the value of bootstrap parameters</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/index.html" class="spectrum-SideNav-itemLink ">Pipeline Deployment</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/index.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/technical-details.html" class="spectrum-SideNav-itemLink ">Technical Details</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/development-system.html" class="spectrum-SideNav-itemLink ">Development System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/build-system.html" class="spectrum-SideNav-itemLink ">Build System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/production-system.html" class="spectrum-SideNav-itemLink ">Production System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/prod_file-sys-perms.html" class="spectrum-SideNav-itemLink ">File systems access permissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Examples</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/shared-configuration.html" class="spectrum-SideNav-itemLink ">Shared configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/cli.html" class="spectrum-SideNav-itemLink ">Using CLI commands</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/environment-variables.html" class="spectrum-SideNav-itemLink ">Using environment variables</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/single-machine.html" class="spectrum-SideNav-itemLink ">Single machine deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli.html" class="spectrum-SideNav-itemLink ">Command line configuration</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands.html" class="spectrum-SideNav-itemLink ">Get started with command-line configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/logging.html" class="spectrum-SideNav-itemLink ">Logging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-cache.html" class="spectrum-SideNav-itemLink ">Manage the cache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-index.html" class="spectrum-SideNav-itemLink ">Manage the indexers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-cron.html" class="spectrum-SideNav-itemLink ">Configure and run cron</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-compiler.html" class="spectrum-SideNav-itemLink ">Code compiler</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-mode.html" class="spectrum-SideNav-itemLink ">Set the Magento mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-queue.html" class="spectrum-SideNav-itemLink ">Start message queue consumers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-urn.html" class="spectrum-SideNav-itemLink ">URN highlighter</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-depen.html" class="spectrum-SideNav-itemLink ">Dependency reports</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration management</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-export.html" class="spectrum-SideNav-itemLink ">Export the configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-set.html" class="spectrum-SideNav-itemLink ">Set configuration values</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-import.html" class="spectrum-SideNav-itemLink ">Import data from configuration files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-i18n.html" class="spectrum-SideNav-itemLink ">Translation dictionaries and language packages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Static view files deployment</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-static-deploy-strategies.html" class="spectrum-SideNav-itemLink ">Static files deployment strategies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-static-view.html" class="spectrum-SideNav-itemLink ">Deploy static view files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-less-sass.html" class="spectrum-SideNav-itemLink ">Create symlinks to LESS files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-test.html" class="spectrum-SideNav-itemLink ">Run unit tests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-layout-xml.html" class="spectrum-SideNav-itemLink ">Convert layout XML files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-perf-data.html" class="spectrum-SideNav-itemLink ">Generate data for performance testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-spt-util.html" class="spectrum-SideNav-itemLink ">Run the support utilities (Magento Commerce only)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-magento.html" class="spectrum-SideNav-itemLink ">Magento configuration files</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-php.html" class="spectrum-SideNav-itemLink ">Magento's deployment configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-files.html" class="spectrum-SideNav-itemLink ">Module configuration files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-create.html" class="spectrum-SideNav-itemLink ">Create or extend configuration types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/disable-module-output.html" class="spectrum-SideNav-itemLink ">Disable module output</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration reference</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-sens.html" class="spectrum-SideNav-itemLink ">Sensitive and system-specific</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-payment.html" class="spectrum-SideNav-itemLink ">Payment configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-most.html" class="spectrum-SideNav-itemLink ">Other configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-b2b.html" class="spectrum-SideNav-itemLink ">Magento Commerce for B2B Extension configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-gitignore.html" class="spectrum-SideNav-itemLink ">.gitignore reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-var-name.html" class="spectrum-SideNav-itemLink ">Use environment variables to override configuration settings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-configphp.html" class="spectrum-SideNav-itemLink ">config.php reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-envphp.html" class="spectrum-SideNav-itemLink ">env.php reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prod/config-reference-systemxml.html" class="spectrum-SideNav-itemLink ">system.xml reference</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache.html" class="spectrum-SideNav-itemLink ">Configure caching</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/cache-types.html" class="spectrum-SideNav-itemLink ">Associate cache frontends with cache types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/cache-options.html" class="spectrum-SideNav-itemLink ">Low-level cache options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/static-content-signing.html" class="spectrum-SideNav-itemLink ">Static content signing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/two-level-cache.html" class="spectrum-SideNav-itemLink ">L2 cache</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/config-redis.html" class="spectrum-SideNav-itemLink ">Configure Redis</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/redis-pg-cache.html" class="spectrum-SideNav-itemLink ">Use Redis for the Magento page and default cache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/redis-session.html" class="spectrum-SideNav-itemLink ">Use Redis for session storage</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish.html" class="spectrum-SideNav-itemLink ">Configure and use Varnish</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-install.html" class="spectrum-SideNav-itemLink ">Install Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-configure.html" class="spectrum-SideNav-itemLink ">Configure Varnish and your web server</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-advanced.html" class="spectrum-SideNav-itemLink ">Advanced Varnish configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-multiple-varnish-cache.html" class="spectrum-SideNav-itemLink ">How Magento cache clearing works with multiple Varnish instances</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-final.html" class="spectrum-SideNav-itemLink ">Final verification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-varnish-cache.html" class="spectrum-SideNav-itemLink ">How Magento cache clearing works with Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-varnish-cache-how.html" class="spectrum-SideNav-itemLink ">How Varnish caching works</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache.html" class="spectrum-SideNav-itemLink ">Use memcached for session storage</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_ubuntu.html" class="spectrum-SideNav-itemLink ">Install, configure, verify memcached on Ubuntu</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_centos.html" class="spectrum-SideNav-itemLink ">Install, configure, verify memcached on CentOS</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use memcached</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_over.html" class="spectrum-SideNav-itemLink ">Multiple websites or stores</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/change-increment-id.html" class="spectrum-SideNav-itemLink ">Change increment ID for a database entity on particular store</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_websites.html" class="spectrum-SideNav-itemLink ">Set up multiple websites, stores, and store views in the Admin</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_nginx.html" class="spectrum-SideNav-itemLink ">Tutorial—Set up multiple websites or stores with nginx</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_apache.html" class="spectrum-SideNav-itemLink ">Tutorial—Set up multiple websites with Apache</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron.html" class="spectrum-SideNav-itemLink ">Set up a custom cron job and cron group</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron-ref.html" class="spectrum-SideNav-itemLink ">Custom cron job and cron group reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron-tut.html" class="spectrum-SideNav-itemLink ">Configure a custom cron job and cron group (tutorial)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../db-profiler/db-profiler.html" class="spectrum-SideNav-itemLink ">Configure the database profiler</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="es-overview.html" class="spectrum-SideNav-itemLink ">Install and configure Elasticsearch</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="es-config-nginx.html" class="spectrum-SideNav-itemLink ">Configure nginx and Elasticsearch</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="es-config-apache.html" class="spectrum-SideNav-itemLink ">Configure Apache and Elasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="es-config-stopwords.html" class="spectrum-SideNav-itemLink ">Configure Elasticsearch stopwords</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="configure-magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use Elasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="es-downgrade.html" class="spectrum-SideNav-itemLink ">Change the Elasticsearch client</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mq/rabbitmq-overview.html" class="spectrum-SideNav-itemLink ">Message Queues</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mq/manage-message-queues.html" class="spectrum-SideNav-itemLink ">Manage message queues</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master.html" class="spectrum-SideNav-itemLink ">Split database performance solution (Magento Commerce only)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_masterdb.html" class="spectrum-SideNav-itemLink ">Automatically configure master databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_manual.html" class="spectrum-SideNav-itemLink ">Manually configure master databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_verify.html" class="spectrum-SideNav-itemLink ">Verify split databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_slavedb.html" class="spectrum-SideNav-itemLink ">Set up optional database replication</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-intro.html" class="spectrum-SideNav-itemLink ">Custom Logging</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-magento.html" class="spectrum-SideNav-itemLink ">Magento logging in more detail</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-db.html" class="spectrum-SideNav-itemLink ">Example - logging database activity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/custom-logger-handler.html" class="spectrum-SideNav-itemLink ">Example - logging to a custom log file</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../sessions.html" class="spectrum-SideNav-itemLink ">How to locate your session files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../../compliance/privacy/gdpr.html" class="spectrum-SideNav-itemLink ">GDPR compliance</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Configure Apache and Elasticsearch</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.3/config-guide/elasticsearch/es-config-apache.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/config-guide/elasticsearch/es-config-apache.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<h2 id="es-ws-secure-over">Overview of secure web server communication</h2>
+
+<p>This topic discusses an example of securing communication between your web server and Elasticsearch using a combination of Transport Layer Security (TLS) encryption and <a href="http://tools.ietf.org/html/rfc2617">HTTP basic authentication</a>. You can optionally configure other types of authentication as well; we provide references for that information.</p>
+
+<p>(An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to <em>TLS</em>.)</p>
+
+<p class="bs-callout-warning">Unless otherwise noted, all commands in this topic must be entered as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges.</p>
+
+<h3 id="recommendations">Recommendations</h3>
+
+<p>We recommend the following:</p>
+
+<ul>
+  <li>
+    <p>Your web server uses TLS.</p>
+
+    <p>TLS is beyond the scope of this topic; however, we strongly recommend you use a real certificate in production and not a self-signed certificate.</p>
+  </li>
+  <li>
+    <p>Elasticsearch runs on the same host as a web server. Running Elasticsearch and the web server on different hosts is beyond the scope of this topic.</p>
+
+    <p>The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server does not have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.
+If Elasticsearch is exposed to the public web, you should configure authentication. If your Elasticsearch instance is protected within your network, this may not be necessary. Work with your hosting provider to determine which security measures you should implement to protect your instance.</p>
+  </li>
+</ul>
+
+<h3 id="more-information-about-tls">More information about TLS</h3>
+
+<p>See one of the following resources:</p>
+
+<ul>
+  <li>
+    <p>Apache</p>
+
+    <ul>
+      <li><a href="https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html">Apache 2.4 strong encryption how-to</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04">How To Create a SSL Certificate on Apache for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
+      <li><a href="https://wiki.centos.org/HowTos/Https">Setting up an SSL secured Webserver with CentOS (CentOS wiki)</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Nginx</p>
+
+    <ul>
+      <li><a href="https://www.nginx.com/resources/admin-guide/nginx-ssl-termination/">Nginx SSL termination</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-create-an-ssl-certificate-on-nginx-for-ubuntu-14-04">How To Create an SSL Certificate on Nginx for Ubuntu 14.04 (Digitalocean tutorial)</a></li>
+      <li><a href="https://www.digicert.com/ssl-certificate-installation-nginx.htm">Nginx SSL Certificate Installation (digicert)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="es-apache-proxy">Set up a proxy</h2>
+
+<p>This section discusses how to configure Apache as an <em>unsecure</em> proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in <a href="es-config-apache.html#es-ws-secure-apache">Secure communication with Apache</a>.</p>
+
+<p class="bs-callout-info">The reason the proxy is not secured in this example is it’s easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
+
+<h3 id="es-apache-proxy-24">Set up a proxy for Apache 2.4</h3>
+
+<p>This section discusses how to configure an Elasticsearch proxy using a virtual host.</p>
+
+<ol>
+  <li>
+    <p>Enable <code class="language-plaintext highlighter-rouge">mod_proxy</code> as follows:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>a2enmod proxy_http
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Use a text editor to open <code class="language-plaintext highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code></li>
+  <li>
+    <p>Add the following directive at the top of the file:</p>
+
+    <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="n">Listen</span> <span class="m">8080</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the following at the bottom of the file:</p>
+
+    <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>&lt;<span class="n">VirtualHost</span> *:<span class="m">8080</span>&gt;
+    <span class="n">ProxyPass</span> <span class="s2">"/"</span> <span class="s2">"http://localhost:9200/"</span>
+    <span class="n">ProxyPassReverse</span> <span class="s2">"/"</span> <span class="s2">"http://localhost:9200/"</span>
+&lt;/<span class="n">VirtualHost</span>&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Restart Apache:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>service apache2 restart
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify the proxy works by entering the following command:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-i</span> http://localhost:&lt;proxy port&gt;/_cluster/health
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>For example, if your proxy uses port 8080:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-i</span> http://localhost:8080/_cluster/health
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>Messages similar to the following display to indicate success:</p>
+
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="go">HTTP/1.1 200 OK
+Date: Tue, 23 Feb 2016 20:38:03 GMT
+</span><span class="gp">Content-Type: application/json;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+<span class="go">Content-Length: 389
+Connection: keep-alive
+
+{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+</span></pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>Continue with <a href="es-config-apache.html#elastic-m2-configure">Configure Magento to use Elasticsearch</a>.</li>
+</ol>
+
+<h2 id="elastic-m2-configure">Configure Magento to use Elasticsearch</h2>
+
+<p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2.
+For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html">Magento Commerce User Guide</a>.</p>
+
+<p class="bs-callout-warning">Magento 2.3.5 adds support for Elasticsearch 7.x.x and 6.8.x.
+Versions 2.x and 5.x are <a href="https://www.elastic.co/support/eol">End of Life</a> and are not supported.
+Follow the instructions in <a href="es-downgrade.html">Change the Elasticsearch Client</a>.</p>
+
+<h2 id="configure-elasticsearch-within-magento">Configure Elasticsearch within Magento</h2>
+
+<p>To configure Magento to use Elasticsearch:</p>
+
+<ol>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
+  <li>From the <strong>Search Engine</strong> list, select your Elasticsearch version.</li>
+</ol>
+
+<p>The following table lists the required configuration options to configure and test the connection with Magento.
+Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Elasticsearch</strong> Server Hostname</td>
+      <td>Enter the fully qualified hostname or IP address of the machine running Elasticsearch. Magento Commerce Cloud: Get this value from your integration system.</td>
+    </tr>
+    <tr>
+      <td><strong>Elasticsearch Server Port</strong></td>
+      <td>Enter the Elasticsearch web server proxy port. In our example, the port is 8080 but if you are using a secure proxy, it is typically 443. Magento Commerce Cloud: Get this value from your integration system.</td>
+    </tr>
+    <tr>
+      <td><strong>Elasticsearch Index Prefix</strong></td>
+      <td>Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.</td>
+    </tr>
+    <tr>
+      <td><strong>Enable Elasticsearch HTTP Auth</strong></td>
+      <td>Click <strong>Yes</strong> only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ol start="4">
+  <li>Click <strong>Test Connection</strong>.</li>
+</ol>
+
+<p>You will see either:</p>
+
+<p><img src="../../../../common/images/elastic_test-success.png" alt="" /></p>
+
+<p>Continue with:</p>
+
+<ul>
+  <li><a href="es-config-apache.html">Configure Apache and Elasticsearch</a></li>
+  <li><a href="es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
+</ul>
+
+<p>or you will see:</p>
+
+<p><img src="../../../../common/images/elastic_test-fail.png" alt="" /></p>
+
+<p>If so, try the following:</p>
+
+<ul>
+  <li>Make sure the Elasticsearch server is running.</li>
+  <li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
+  <li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue. In particular, make sure you started Elasticsearch as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges.</li>
+  <li>Make sure that <a href="es-overview.html#firewall-selinux">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
+  <li>Verify the value of the <strong>Elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server’s IP address instead.</li>
+  <li>Use the command <code class="language-plaintext highlighter-rouge">netstat -an | grep **listen-port**</code> command to verify that the port specified in the <strong>Elasticsearch Server Port</strong> field is not being used by another process.</li>
+</ul>
+
+<p>For example, to see if Elasticsearch is running on its default port, use the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>  netstat <span class="nt">-an</span> | <span class="nb">grep </span>9200
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If Elasticsearch is running on port 9200, it displays similar to the following:
+  <code class="language-plaintext highlighter-rouge">tcp        0      0 :::9200            :::*          LISTEN</code></p>
+
+<h2 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h2>
+
+<p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.</p>
+
+<p>To refresh the cache using the Admin:</p>
+
+<ol>
+  <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
+  <li>Select the checkbox next to <strong>Page Cache</strong>.</li>
+  <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.
+The following figure shows an example.
+<img src="../../../../common/images/solr_refresh-cache.png" alt="" width="600px" /></li>
+</ol>
+
+<p>To clean the cache using the command line, use the <a href="../cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="language-plaintext highlighter-rouge">magento cache:clean</code></a> command.</p>
+
+<p>To reindex using the command line:</p>
+
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="https://devdocs.magento.com/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+  <li>Enter any of the following commands:</li>
+</ol>
+
+<p>Enter the following command to reindex the catalog search index only:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/magento indexer:reindex catalogsearch_fulltext
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Enter the following command to reindex all indexers:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/magento indexer:reindex
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ol>
+  <li>Wait until reindexing completes.</li>
+</ol>
+
+<p class="bs-callout-info">Unlike the cache, indexers are updated by a cron job. Make sure <a href="../cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
+
+<h2 id="es-ws-secure-apache">Secure communication with Apache</h2>
+
+<p>This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
+
+<ul>
+  <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank">Apache 2.4 authentication and authorization tutorial</a></li>
+</ul>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="es-config-apache.html#es-ws-secure-apache-pwd">Step 1: Create a password file</a></li>
+  <li><a href="es-config-apache.html#es-ws-secure-finish">Step 2: Configure your secure virtual host</a></li>
+  <li><a href="es-config-apache.html#es-ws-secure-verify">Verify communication is secure</a></li>
+</ul>
+
+<h3 id="es-ws-secure-apache-pwd">Step 1: Create a password</h3>
+<p>For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.</p>
+
+<h4 id="install-htpasswd-if-necessary">Install htpasswd if necessary</h4>
+
+<p>First, see if you have the Apache <code class="language-plaintext highlighter-rouge">htpasswd</code> utility is installed as follows:</p>
+
+<ol>
+  <li>
+    <p>Enter the following command to determine if <code class="language-plaintext highlighter-rouge">htpasswd</code> is already installed:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>which htpasswd
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>If a path displays, it is installed; if the command returns no output, <code class="language-plaintext highlighter-rouge">htpasswd</code> is not installed.</p>
+  </li>
+  <li>
+    <p>If necessary, install <code class="language-plaintext highlighter-rouge">htpasswd</code>:</p>
+
+    <ul>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">apt-get -y install apache2-utils</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">yum -y install httpd-tools</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="create-a-password-file">Create a password file</h4>
+
+<p>Enter the following commands as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> <span class="nt">-p</span> /usr/local/apache/password
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>htpasswd <span class="nt">-c</span> /usr/local/apache/password/.&lt;password file name&gt; &lt;username&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>where</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&lt;username&gt;</code> can be:</p>
+
+    <ul>
+      <li>
+        <p>Setting up cron: the web server user or another user.</p>
+
+        <p>In this example, we use the web server user but the choice of user is up to you.</p>
+      </li>
+      <li>
+        <p>Setting up Elasticsearch: the user is named <code class="language-plaintext highlighter-rouge">magento_elasticsearch</code> in this example</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&lt;password file name&gt;</code> must be a hidden file (starts with <code class="language-plaintext highlighter-rouge">.</code>) and should reflect the name of the user. See the examples later in this section for details.</p>
+  </li>
+</ul>
+
+<p>Follow the prompts on your screen to create a password for the user.</p>
+
+<h4 id="examples">Examples</h4>
+
+<p><strong>Example 1: cron</strong>
+You must set up authentication for only one user for cron; in this example, we use the web server user. To create a password file for the web server user, enter the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> <span class="nt">-p</span> /usr/local/apache/password
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>htpasswd <span class="nt">-c</span> /usr/local/apache/password/.htpasswd apache
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Example 2: Elasticsearch</strong>
+You must set up authentication for two users: one with access to nginx and one with access to Elasticsearch. To create password files for these users, enter the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> <span class="nt">-p</span> /usr/local/apache/password
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>htpasswd <span class="nt">-c</span> /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="add-additional-users">Add additional users</h4>
+
+<p>To add another user to your password file, enter the following command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>htpasswd /usr/local/apache/password/.htpasswd &lt;username&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="es-ws-secure-finish">Step 2: Secure communication with Apache</h3>
+
+<p>This section discusses how to set up <a href="https://httpd.apache.org/docs/2.2/howto/auth.html">HTTP Basic authentication</a>. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
+
+<p>This section discusses how to specify who can access the Apache server.</p>
+
+<ol>
+  <li>
+    <p>Use a text editor to add the following contents to your secure virtual host.</p>
+
+    <ul>
+      <li>Apache 2.4: Edit <code class="language-plaintext highlighter-rouge">/etc/apache2/sites-available/default-ssl.conf</code></li>
+    </ul>
+
+    <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre>&lt;<span class="n">Proxy</span> *&gt;
+    <span class="n">Order</span> <span class="n">deny</span>,<span class="n">allow</span>
+    <span class="n">Allow</span> <span class="n">from</span> <span class="n">all</span>
+
+    <span class="n">AuthType</span> <span class="n">Basic</span>
+    <span class="n">AuthName</span> <span class="s2">"Elastic Server"</span>
+    <span class="n">AuthBasicProvider</span> <span class="n">file</span>
+    <span class="n">AuthUserFile</span> /<span class="n">usr</span>/<span class="n">local</span>/<span class="n">apache</span>/<span class="n">password</span>/.<span class="n">htpasswd_elasticsearch</span>
+    <span class="n">Require</span> <span class="n">valid</span>-<span class="n">user</span>
+
+  <span class="c"># This allows OPTIONS-requests without authorization
+</span>  &lt;<span class="n">LimitExcept</span> <span class="n">OPTIONS</span>&gt;
+        <span class="n">Require</span> <span class="n">valid</span>-<span class="n">user</span>
+  &lt;/<span class="n">LimitExcept</span>&gt;
+&lt;/<span class="n">Proxy</span>&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>If you added the preceding to your secure virtual host, remove <code class="language-plaintext highlighter-rouge">Listen 8080</code> and the <code class="language-plaintext highlighter-rouge">&lt;VirtualHost *:8080&gt;</code> directives you added earlier to your unsecure virtual host.</li>
+  <li>
+    <p>Save your changes, exit the text editor, and restart Apache:</p>
+
+    <ul>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">service httpd restart</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">service apache2 restart</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="es-ws-secure-verify">Verify communication is secure</h2>
+
+<p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
+
+<ul>
+  <li>Using a <code class="language-plaintext highlighter-rouge">curl</code> command to verify you must enter a username and password to get cluster status</li>
+  <li>Configuring HTTP Basic authentication in the Magento Admin</li>
+</ul>
+
+<h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="language-plaintext highlighter-rouge">curl</code> command to verify cluster status</h3>
+
+<p>Enter the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-i</span> http://&lt;<span class="nb">hostname</span>, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-i</span> http://localhost:8080/_cluster/health
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The following message displays to indicate authentication failed:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="go">HTTP/1.1 401 Unauthorized
+Date: Tue, 23 Feb 2016 20:35:29 GMT
+Content-Type: text/html
+Content-Length: 194
+Connection: keep-alive
+WWW-Authenticate: Basic realm="Restricted"
+
+</span><span class="gp">&lt;html&gt;</span><span class="w">
+</span><span class="gp">&lt;head&gt;</span>&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
+<span class="gp">&lt;body bgcolor="white"&gt;</span><span class="w">
+</span><span class="gp">  &lt;center&gt;</span>&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
+<span class="go">
+</span><span class="gp">&lt;/body&gt;</span><span class="w">
+</span><span class="gp">&lt;/html&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Now try the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-i</span> <span class="nt">-u</span> &lt;username&gt;:&lt;password&gt; http://&lt;<span class="nb">hostname</span>, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-i</span> <span class="nt">-u</span> magento_elasticsearch:mypassword http://localhost:8080/_cluster/health
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This time the command succeeds with a message similar to the following:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="go">HTTP/1.1 200 OK
+Date: Tue, 23 Feb 2016 20:38:03 GMT
+</span><span class="gp">Content-Type: application/json;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
+<span class="go">Content-Length: 389
+Connection: keep-alive
+
+{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="configure-http-basic-authentication-in-the-magento-admin">Configure HTTP Basic authentication in the Magento Admin</h3>
+
+<p>Perform the same tasks as discussed in <a href="es-config-apache.html#elastic-m2-configure">Configure Magento to use Elasticsearch</a> <em>except</em> click <strong>Yes</strong> from the <strong>Enable Elasticsearch HTTP Auth</strong> list and enter your username and password in the provided fields.</p>
+
+<p>Click <strong>Test Connection</strong> to make sure it works and then click <strong>Save Config</strong>.</p>
+
+<p>You must flush the Magento cache and reindex before you continue.</p>
+
+<p class="ref-header">Next</p>
+
+<p><a href="es-config-stopwords.html">Configure Elasticsearch stopwords</a></p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-03-10">
+    Mar 10th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>CardinalCommerce 3-D Secure | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="../../../v2.4/payments-integrations/cardinal/cardinal.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../../index.html">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.3</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="cardinal.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.4/payments-integrations/cardinal/cardinal.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Payment Provider Gateway</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/payment-gateway-intro.html" class="spectrum-SideNav-itemLink ">Magento payment provider gateway</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/payment-gateway-structure.html" class="spectrum-SideNav-itemLink ">Payment provider gateway structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/gateway-command.html" class="spectrum-SideNav-itemLink ">Gateway Command</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/command-pool.html" class="spectrum-SideNav-itemLink ">Gateway Command Pool</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/request-builder.html" class="spectrum-SideNav-itemLink ">Request Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/gateway-client.html" class="spectrum-SideNav-itemLink ">Gateway Client</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/response-validator.html" class="spectrum-SideNav-itemLink ">Response Validator</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/response-handler.html" class="spectrum-SideNav-itemLink ">Response Handler</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-gateway/error-code-mapper.html" class="spectrum-SideNav-itemLink ">Error Code Mapping</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/integration-intro.html" class="spectrum-SideNav-itemLink ">Adding a new payment integration (payment method)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/module-configuration.html" class="spectrum-SideNav-itemLink ">Payment method module configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/payment-option-config.html" class="spectrum-SideNav-itemLink ">Payment method configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/facade-configuration.html" class="spectrum-SideNav-itemLink ">Payment method facade</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/formblocktype.html" class="spectrum-SideNav-itemLink ">Payment info rendering in Admin checkout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/payment-action.html" class="spectrum-SideNav-itemLink ">Add a payment action</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/get-payment-info.html" class="spectrum-SideNav-itemLink ">Get payment information from frontend to backend</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../base-integration/admin-integration.html" class="spectrum-SideNav-itemLink ">Configure payment method by area</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/vault-intro.html" class="spectrum-SideNav-itemLink ">Adding vault integration</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/module-configuration.html" class="spectrum-SideNav-itemLink ">Add vault to module dependencies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/vault-payment-configuration.html" class="spectrum-SideNav-itemLink ">Vault payment configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/vault-di.html" class="spectrum-SideNav-itemLink ">Vault DI configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/enabler.html" class="spectrum-SideNav-itemLink ">Enable vault</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/payment-token.html" class="spectrum-SideNav-itemLink ">Payment Token</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/token-ui-component-provider.html" class="spectrum-SideNav-itemLink ">Token UI component provider</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/customer-stored-payments.html" class="spectrum-SideNav-itemLink ">Display the stored information</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../vault/admin-integration.html" class="spectrum-SideNav-itemLink ">Vault implementation for Admin</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../signifyd/signifyd.html" class="spectrum-SideNav-itemLink ">Signifyd fraud protection</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="cardinal.html" class="spectrum-SideNav-itemLink ">CardinalCommerce 3-D Secure</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">CardinalCommerce 3-D Secure</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.3/payments-integrations/cardinal/cardinal.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/payments-integrations/cardinal/cardinal.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>This document provides additional technical details for integrating Magento payment modules with the <a href="https://www.cardinalcommerce.com/">CardinalCommerce</a>. CardinalCommerce (a wholly owned subsidiary of Visa) offers a rules-based 3-D Secure (3DS) solution called <a href="https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication">Cardinal Consumer Authentication</a>. Protect your web store from fraud, reduce false declines, reduce manual review of orders, and improve your authorizations.</p>
+
+<p>The integration is based on the <em>Magento_CardinalCommerce</em> module that implements the <a href="https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/7929857/Cardinal+Cruise+Standard">Cardinal Cruise Standard</a> integration approach.</p>
+
+<p>The Cardinal Cruise Standard integration is purely a JavaScript approach that is all encompassing. When enabling this approach for <a href="https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication">Cardinal Consumer Authentication</a>, this integration will handle the device data collection, initiating the transaction for [CCA][], presenting the authentication session if required, and returning the results of authentication once completed. This is recommended integration approach for CCA.</p>
+
+<p>The following diagram shows a simplified 3-D Secure verification flow using Cardinal Cruise Standard integration approach provided by CardinalCommerce:</p>
+
+<p><img src="../../../../common/images/payments-integrations/cardinal_commerce.svg" alt="CardinalCommerce Interaction" /></p>
+
+<h2 id="magento_cardinalcommerce-module-overview">Magento_CardinalCommerce module overview</h2>
+
+<p>The <em>Magento_CardinalCommerce</em> <a href="https://glossary.magento.com/module">module</a> allows you to:</p>
+
+<ul>
+  <li>Start <code class="language-plaintext highlighter-rouge">Cardinal Consumer Authentication</code> for enabling card network programs including Verified by Visa®, MasterCard SecureCode® and Identity Check®, American Express SafeKey®, Discover ProtectBuy® and Diners International® and JCB J-Secure®.</li>
+  <li>Handle specific return values for <code class="language-plaintext highlighter-rouge">Cardinal Consumer Authentication</code> on backend and storefront</li>
+</ul>
+
+<h2 id="payment-method-module-integration-with-magento_cardinalcommerce">Payment method module integration with Magento_CardinalCommerce</h2>
+
+<p>CardinalCommerce maintains a <a href="https://www.cardinalcommerce.com/partners/gateways">list of compatible payment gateways</a>.</p>
+
+<h3 id="cardinalcommerce-configuration-for-payment-method">CardinalCommerce configuration for payment method</h3>
+
+<p>You need to add configuration parameter that will enable <code class="language-plaintext highlighter-rouge">Cardinal Consumer Authentication</code> in the <code class="language-plaintext highlighter-rouge">config.xml</code> and <code class="language-plaintext highlighter-rouge">system.xml</code> files  of your <a href="https://glossary.magento.com/payment-method">payment method</a> module:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">enabled_{payment_method_code}</code> - enables CCA for custom payment method.</li>
+</ul>
+
+<p>The following example is the <code class="language-plaintext highlighter-rouge">config.xml</code> file of the AuthorizenetAcceptjs payment method:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Store:etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;default&gt;</span>
+        <span class="nt">&lt;three_d_secure&gt;</span>
+            <span class="nt">&lt;cardinal&gt;</span>
+                <span class="nt">&lt;enabled_authorizenet&gt;</span>0<span class="nt">&lt;/enabled_authorizenet&gt;</span>
+            <span class="nt">&lt;/cardinal&gt;</span>
+        <span class="nt">&lt;/three_d_secure&gt;</span>
+    <span class="nt">&lt;/default&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>And the <code class="language-plaintext highlighter-rouge">system.xml</code> file of the AuthorizenetAcceptjs payment method:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Config:etc/system_file.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;system&gt;</span>
+        <span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"three_d_secure"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"cardinal"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"config"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"enabled_authorize"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">type=</span><span class="s">"select"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"1"</span> <span class="na">showInStore=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;label&gt;</span>Enable for Authorize.Net<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;source_model&gt;</span>Magento\Config\Model\Config\Source\Yesno<span class="nt">&lt;/source_model&gt;</span>
+                        <span class="nt">&lt;config_path&gt;</span>three_d_secure/cardinal/enabled_authorizenet<span class="nt">&lt;/config_path&gt;</span>
+                    <span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;/group&gt;</span>
+            <span class="nt">&lt;/group&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/system&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>You can pass this parameter on storefront via checkout config using <code class="language-plaintext highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code></p>
+
+<p>See <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/AuthorizenetCardinal/Model/Checkout/ConfigProvider.php">app\code\AuthorizenetCardinal\Model\Checkout\ConfigProvider.php</a> as an example.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Magento\AuthorizenetCardinal\Model\Checkout</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Magento\AuthorizenetCardinal\Model\Config</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Checkout\Model\ConfigProviderInterface</span><span class="p">;</span>
+
+<span class="cd">/**
+ * Configuration provider.
+ */</span>
+<span class="kd">class</span> <span class="nc">ConfigProvider</span> <span class="k">implements</span> <span class="nx">ConfigProviderInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var Config
+     */</span>
+    <span class="k">private</span> <span class="nv">$config</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @param Config $config
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Config</span> <span class="nv">$config</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * @inheritdoc
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getConfig</span><span class="p">()</span><span class="o">:</span> <span class="k">array</span>
+    <span class="p">{</span>
+        <span class="nv">$config</span><span class="p">[</span><span class="s1">'cardinal'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'isActiveFor'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">'authorizenet'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">isActive</span><span class="p">()</span>
+            <span class="p">]</span>
+        <span class="p">];</span>
+
+        <span class="k">return</span> <span class="nv">$config</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>and di.xml configuration</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Checkout\Model\CompositeConfigProvider"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"configProviders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"authorizenet_cardinal_config_provider"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>
+                    Magento\AuthorizenetCardinal\Model\Checkout\ConfigProvider
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="start-cardinal-consumer-authentication">Start Cardinal Consumer Authentication</h3>
+
+<p>CCA is initiated by the merchant, typically when the customer clicks <code class="language-plaintext highlighter-rouge">Place Order</code> button. Instead of getting a card authorization, you should use the <code class="language-plaintext highlighter-rouge">Magento_CardinalCommerce/view/frontend/web/js/cardinal-client</code> JS component and initiate the CCA process before authorization.</p>
+
+<p>In the following example mixin, <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/AuthorizenetCardinal/view/frontend/web/js/authorizenet-accept-mixin.js">app/code/Magento/AuthorizenetCardinal/view/frontend/web/js/authorizenet-accept-mixin.js</a> is used to intercept the <code class="language-plaintext highlighter-rouge">placeOrder</code> method of the AuthorizenetAcceptjs payment method JS component and start consumer authentication:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+</pre></td><td class="rouge-code"><pre><span class="nx">define</span><span class="p">([</span>
+     <span class="p">...</span>
+    <span class="dl">'</span><span class="s1">Magento_CardinalCommerce/js/cardinal-client</span><span class="dl">'</span><span class="p">,</span>
+     <span class="p">...</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">cardinalClient</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">originalComponent</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">originalComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+            <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">cardinalJWT</span><span class="p">:</span> <span class="kc">null</span>
+            <span class="p">},</span>
+
+            <span class="cm">/**
+             * Performs 3d-secure authentication.
+             */</span>
+            <span class="na">beforePlaceOrder</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">original</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+                    <span class="nx">client</span> <span class="o">=</span> <span class="nx">cardinalClient</span><span class="p">,</span>
+                    <span class="nx">isActive</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">checkoutConfig</span><span class="p">.</span><span class="nx">cardinal</span><span class="p">.</span><span class="nx">isActiveFor</span><span class="p">.</span><span class="nx">authorizenet</span><span class="p">,</span>
+                    <span class="nx">cardData</span><span class="p">;</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isActive</span> <span class="o">||</span> <span class="o">!</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">formElement</span><span class="p">).</span><span class="nx">valid</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="nx">original</span><span class="p">();</span>
+                <span class="p">}</span>
+
+                <span class="nx">cardData</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="na">accountNumber</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">creditCardNumber</span><span class="p">(),</span>
+                    <span class="na">expMonth</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">creditCardExpMonth</span><span class="p">(),</span>
+                    <span class="na">expYear</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">creditCardExpYear</span><span class="p">()</span>
+                <span class="p">};</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">hasVerification</span><span class="p">())</span> <span class="p">{</span>
+                    <span class="nx">cardData</span><span class="p">.</span><span class="nx">cardCode</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">creditCardVerificationNumber</span><span class="p">();</span>
+                <span class="p">}</span>
+
+                <span class="nx">client</span><span class="p">.</span><span class="nx">startAuthentication</span><span class="p">(</span><span class="nx">cardData</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">jwt</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">cardinalJWT</span> <span class="o">=</span> <span class="nx">jwt</span><span class="p">;</span>
+                        <span class="nx">original</span><span class="p">();</span>
+                    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+                    <span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">errorMessage</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">globalMessageList</span><span class="p">.</span><span class="nx">addErrorMessage</span><span class="p">({</span>
+                            <span class="na">message</span><span class="p">:</span> <span class="nx">errorMessage</span>
+                        <span class="p">});</span>
+                    <span class="p">});</span>
+                <span class="p">...</span>
+            <span class="p">},</span>
+
+            <span class="cm">/**
+             * Adds cardinal response JWT to payment additional data.
+             *
+             * @returns {Object}
+             */</span>
+            <span class="na">getData</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">originalData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+
+                <span class="nx">originalData</span><span class="p">[</span><span class="dl">'</span><span class="s1">additional_data</span><span class="dl">'</span><span class="p">].</span><span class="nx">cardinalJWT</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">cardinalJWT</span><span class="p">;</span>
+
+                <span class="k">return</span> <span class="nx">originalData</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Once the response <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT</a> is received after consumer authentication, you will need to send it to your backend to verify and extract the results. In the example above response JWT is added to payment additional data and passed to backend along with them.</p>
+
+<h3 id="cca-results-extracting-and-validation-on-backend">CCA Results Extracting And Validation On Backend</h3>
+
+<p>Cardinal Consumer Authentication results can be extracted from CardinalCommerce response JWT with <code class="language-plaintext highlighter-rouge">\Magento\CardinalCommerce\Model\Response\JwtParserInterface</code>. Basic implementation of this interface includes response JWT signature validation, and validation of parameters such as <code class="language-plaintext highlighter-rouge">ActionCode</code>, <code class="language-plaintext highlighter-rouge">ErrorNumber</code>, <code class="language-plaintext highlighter-rouge">ECIFlag</code>. You can find detailed information about these parameters in <a href="https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/98315/Response+Objects">API Reference</a>.</p>
+
+<p>You can customize CCA results validation by creating your own implementation of <code class="language-plaintext highlighter-rouge">\Magento\CardinalCommerce\Model\Response\JwtPayloadValidatorInterface</code>.</p>
+
+<p>Below is an example of the extracting array content of a CardinalCommerce response JWT in <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/AuthorizenetCardinal/Gateway/Request/Authorize3DSecureBuilder.php">\Magento\AuthorizenetCardinal\Gateway\Request\Authorize3DSecureBuilder</a>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="rouge-code"><pre><span class="kn">use</span> <span class="nn">Magento\AuthorizenetAcceptjs\Gateway\SubjectReader</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\AuthorizenetCardinal\Model\Config</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\CardinalCommerce\Model\Response\JwtParserInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Payment\Gateway\Request\BuilderInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Sales\Model\Order\Payment</span><span class="p">;</span>
+
+<span class="cd">/**
+ * Adds the cardholder authentication information to the request
+ */</span>
+<span class="kd">class</span> <span class="nc">Authorize3DSecureBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var SubjectReader
+     */</span>
+    <span class="k">private</span> <span class="nv">$subjectReader</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var Config
+     */</span>
+    <span class="k">private</span> <span class="nv">$config</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var JwtParserInterface
+     */</span>
+    <span class="k">private</span> <span class="nv">$jwtParser</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @param SubjectReader $subjectReader
+     * @param Config $config
+     * @param JwtParserInterface $jwtParser
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">SubjectReader</span> <span class="nv">$subjectReader</span><span class="p">,</span>
+        <span class="nx">Config</span> <span class="nv">$config</span><span class="p">,</span>
+        <span class="nx">JwtParserInterface</span> <span class="nv">$jwtParser</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span> <span class="o">=</span> <span class="nv">$subjectReader</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span> <span class="o">=</span> <span class="nv">$config</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jwtParser</span> <span class="o">=</span> <span class="nv">$jwtParser</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * @inheritdoc
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">(</span><span class="k">array</span> <span class="nv">$buildSubject</span><span class="p">)</span><span class="o">:</span> <span class="k">array</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">isActive</span><span class="p">()</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">[];</span>
+        <span class="p">}</span>
+
+        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readPayment</span><span class="p">(</span><span class="nv">$buildSubject</span><span class="p">);</span>
+        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getPayment</span><span class="p">();</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="p">[];</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$payment</span> <span class="k">instanceof</span> <span class="nx">Payment</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$cardinalJwt</span> <span class="o">=</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">getAdditionalInformation</span><span class="p">(</span><span class="s1">'cardinalJWT'</span><span class="p">);</span>
+            <span class="nv">$jwtPayload</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jwtParser</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="nv">$cardinalJwt</span><span class="p">);</span>
+            <span class="nv">$eciFlag</span> <span class="o">=</span> <span class="nv">$jwtPayload</span><span class="p">[</span><span class="s1">'Payload'</span><span class="p">][</span><span class="s1">'Payment'</span><span class="p">][</span><span class="s1">'ExtendedData'</span><span class="p">][</span><span class="s1">'ECIFlag'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+            <span class="nv">$cavv</span> <span class="o">=</span> <span class="nv">$jwtPayload</span><span class="p">[</span><span class="s1">'Payload'</span><span class="p">][</span><span class="s1">'Payment'</span><span class="p">][</span><span class="s1">'ExtendedData'</span><span class="p">][</span><span class="s1">'CAVV'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span><span class="p">;</span>
+            <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">'transactionRequest'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">'cardholderAuthentication'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">'authenticationIndicator'</span> <span class="o">=&gt;</span> <span class="nv">$eciFlag</span><span class="p">,</span>
+                        <span class="s1">'cardholderAuthenticationValue'</span> <span class="o">=&gt;</span> <span class="nv">$cavv</span>
+                    <span class="p">],</span>
+                <span class="p">]</span>
+            <span class="p">];</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Depending on the requirements of your payment gateway, you should include some of the response fields in the transaction request, or you should perform a separate request based on these values.</p>
+
+<p>In our example, the <code class="language-plaintext highlighter-rouge">ECIFlag</code> and <code class="language-plaintext highlighter-rouge">CAVV</code> values were included in the transaction request to Authorize.Net.</p>
+
+<p>Then you can expect to see an additional field with a cardholder authentication verification response code in the response from your payment gateway. This code lets you know whether the information got back to the issuer. If the issuer recognizes this data as matching whatever they recorded earlier in the transaction when the cardholder was authenticating, they will respond with a successful code in this field.</p>
+
+<!-- Link Definitions -->
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-16">
+    Jun 16th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

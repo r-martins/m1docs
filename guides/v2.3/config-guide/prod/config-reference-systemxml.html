@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>system.xml reference | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="../../../v2.4/config-guide/prod/config-reference-systemxml.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../../index.html">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.3</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="config-reference-systemxml.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.4/config-guide/prod/config-reference-systemxml.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Configuration Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Security settings</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../security/google-recaptcha.html" class="spectrum-SideNav-itemLink ">Google reCAPTCHA</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/hashing.html" class="spectrum-SideNav-itemLink ">Password hashing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-headers.html" class="spectrum-SideNav-itemLink ">Prevent cache poisoning</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-cron.html" class="spectrum-SideNav-itemLink ">Secure cron.php to run in a browser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../security/two-factor-authentication.html" class="spectrum-SideNav-itemLink ">Two-Factor Authentication</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-xframe.html" class="spectrum-SideNav-itemLink ">X-Frame-Options header</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-bootstrap.html" class="spectrum-SideNav-itemLink ">Magento application initialization and bootstrap</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-modes.html" class="spectrum-SideNav-itemLink ">About Magento modes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/mage-dirs.html" class="spectrum-SideNav-itemLink ">Customize base directory paths (MAGE_DIRS)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/mage-profiler.html" class="spectrum-SideNav-itemLink ">Enable profiling (MAGE_PROFILER)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-how-to-set.html" class="spectrum-SideNav-itemLink ">Set the value of bootstrap parameters</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/index.html" class="spectrum-SideNav-itemLink ">Pipeline Deployment</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/index.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/technical-details.html" class="spectrum-SideNav-itemLink ">Technical Details</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/development-system.html" class="spectrum-SideNav-itemLink ">Development System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/build-system.html" class="spectrum-SideNav-itemLink ">Build System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/production-system.html" class="spectrum-SideNav-itemLink ">Production System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prod_file-sys-perms.html" class="spectrum-SideNav-itemLink ">File systems access permissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Examples</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/shared-configuration.html" class="spectrum-SideNav-itemLink ">Shared configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/cli.html" class="spectrum-SideNav-itemLink ">Using CLI commands</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/environment-variables.html" class="spectrum-SideNav-itemLink ">Using environment variables</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/single-machine.html" class="spectrum-SideNav-itemLink ">Single machine deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli.html" class="spectrum-SideNav-itemLink ">Command line configuration</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands.html" class="spectrum-SideNav-itemLink ">Get started with command-line configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/logging.html" class="spectrum-SideNav-itemLink ">Logging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-cache.html" class="spectrum-SideNav-itemLink ">Manage the cache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-index.html" class="spectrum-SideNav-itemLink ">Manage the indexers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-cron.html" class="spectrum-SideNav-itemLink ">Configure and run cron</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-compiler.html" class="spectrum-SideNav-itemLink ">Code compiler</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-mode.html" class="spectrum-SideNav-itemLink ">Set the Magento mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-queue.html" class="spectrum-SideNav-itemLink ">Start message queue consumers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-urn.html" class="spectrum-SideNav-itemLink ">URN highlighter</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-depen.html" class="spectrum-SideNav-itemLink ">Dependency reports</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration management</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-export.html" class="spectrum-SideNav-itemLink ">Export the configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-set.html" class="spectrum-SideNav-itemLink ">Set configuration values</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-import.html" class="spectrum-SideNav-itemLink ">Import data from configuration files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-i18n.html" class="spectrum-SideNav-itemLink ">Translation dictionaries and language packages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Static view files deployment</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-static-deploy-strategies.html" class="spectrum-SideNav-itemLink ">Static files deployment strategies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-static-view.html" class="spectrum-SideNav-itemLink ">Deploy static view files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-less-sass.html" class="spectrum-SideNav-itemLink ">Create symlinks to LESS files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-test.html" class="spectrum-SideNav-itemLink ">Run unit tests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-layout-xml.html" class="spectrum-SideNav-itemLink ">Convert layout XML files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-perf-data.html" class="spectrum-SideNav-itemLink ">Generate data for performance testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-spt-util.html" class="spectrum-SideNav-itemLink ">Run the support utilities (Magento Commerce only)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-magento.html" class="spectrum-SideNav-itemLink ">Magento configuration files</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-php.html" class="spectrum-SideNav-itemLink ">Magento's deployment configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-files.html" class="spectrum-SideNav-itemLink ">Module configuration files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-create.html" class="spectrum-SideNav-itemLink ">Create or extend configuration types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/disable-module-output.html" class="spectrum-SideNav-itemLink ">Disable module output</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration reference</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-sens.html" class="spectrum-SideNav-itemLink ">Sensitive and system-specific</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-payment.html" class="spectrum-SideNav-itemLink ">Payment configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-most.html" class="spectrum-SideNav-itemLink ">Other configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-b2b.html" class="spectrum-SideNav-itemLink ">Magento Commerce for B2B Extension configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-gitignore.html" class="spectrum-SideNav-itemLink ">.gitignore reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-var-name.html" class="spectrum-SideNav-itemLink ">Use environment variables to override configuration settings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-configphp.html" class="spectrum-SideNav-itemLink ">config.php reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-envphp.html" class="spectrum-SideNav-itemLink ">env.php reference</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="config-reference-systemxml.html" class="spectrum-SideNav-itemLink ">system.xml reference</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache.html" class="spectrum-SideNav-itemLink ">Configure caching</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/cache-types.html" class="spectrum-SideNav-itemLink ">Associate cache frontends with cache types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/cache-options.html" class="spectrum-SideNav-itemLink ">Low-level cache options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/static-content-signing.html" class="spectrum-SideNav-itemLink ">Static content signing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/two-level-cache.html" class="spectrum-SideNav-itemLink ">L2 cache</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/config-redis.html" class="spectrum-SideNav-itemLink ">Configure Redis</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/redis-pg-cache.html" class="spectrum-SideNav-itemLink ">Use Redis for the Magento page and default cache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/redis-session.html" class="spectrum-SideNav-itemLink ">Use Redis for session storage</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish.html" class="spectrum-SideNav-itemLink ">Configure and use Varnish</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-install.html" class="spectrum-SideNav-itemLink ">Install Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-configure.html" class="spectrum-SideNav-itemLink ">Configure Varnish and your web server</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-advanced.html" class="spectrum-SideNav-itemLink ">Advanced Varnish configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-multiple-varnish-cache.html" class="spectrum-SideNav-itemLink ">How Magento cache clearing works with multiple Varnish instances</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-final.html" class="spectrum-SideNav-itemLink ">Final verification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-varnish-cache.html" class="spectrum-SideNav-itemLink ">How Magento cache clearing works with Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-varnish-cache-how.html" class="spectrum-SideNav-itemLink ">How Varnish caching works</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache.html" class="spectrum-SideNav-itemLink ">Use memcached for session storage</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_ubuntu.html" class="spectrum-SideNav-itemLink ">Install, configure, verify memcached on Ubuntu</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_centos.html" class="spectrum-SideNav-itemLink ">Install, configure, verify memcached on CentOS</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use memcached</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_over.html" class="spectrum-SideNav-itemLink ">Multiple websites or stores</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/change-increment-id.html" class="spectrum-SideNav-itemLink ">Change increment ID for a database entity on particular store</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_websites.html" class="spectrum-SideNav-itemLink ">Set up multiple websites, stores, and store views in the Admin</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_nginx.html" class="spectrum-SideNav-itemLink ">Tutorial—Set up multiple websites or stores with nginx</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_apache.html" class="spectrum-SideNav-itemLink ">Tutorial—Set up multiple websites with Apache</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron.html" class="spectrum-SideNav-itemLink ">Set up a custom cron job and cron group</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron-ref.html" class="spectrum-SideNav-itemLink ">Custom cron job and cron group reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron-tut.html" class="spectrum-SideNav-itemLink ">Configure a custom cron job and cron group (tutorial)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../db-profiler/db-profiler.html" class="spectrum-SideNav-itemLink ">Configure the database profiler</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/es-overview.html" class="spectrum-SideNav-itemLink ">Install and configure Elasticsearch</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/es-config-nginx.html" class="spectrum-SideNav-itemLink ">Configure nginx and Elasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/es-config-apache.html" class="spectrum-SideNav-itemLink ">Configure Apache and Elasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/es-config-stopwords.html" class="spectrum-SideNav-itemLink ">Configure Elasticsearch stopwords</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/configure-magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use Elasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/es-downgrade.html" class="spectrum-SideNav-itemLink ">Change the Elasticsearch client</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mq/rabbitmq-overview.html" class="spectrum-SideNav-itemLink ">Message Queues</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mq/manage-message-queues.html" class="spectrum-SideNav-itemLink ">Manage message queues</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master.html" class="spectrum-SideNav-itemLink ">Split database performance solution (Magento Commerce only)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_masterdb.html" class="spectrum-SideNav-itemLink ">Automatically configure master databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_manual.html" class="spectrum-SideNav-itemLink ">Manually configure master databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_verify.html" class="spectrum-SideNav-itemLink ">Verify split databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_slavedb.html" class="spectrum-SideNav-itemLink ">Set up optional database replication</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-intro.html" class="spectrum-SideNav-itemLink ">Custom Logging</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-magento.html" class="spectrum-SideNav-itemLink ">Magento logging in more detail</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-db.html" class="spectrum-SideNav-itemLink ">Example - logging database activity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/custom-logger-handler.html" class="spectrum-SideNav-itemLink ">Example - logging to a custom log file</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../sessions.html" class="spectrum-SideNav-itemLink ">How to locate your session files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../../compliance/privacy/gdpr.html" class="spectrum-SideNav-itemLink ">GDPR compliance</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">system.xml reference</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.3/config-guide/prod/config-reference-systemxml.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/config-guide/prod/config-reference-systemxml.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The <code class="language-plaintext highlighter-rouge">system.xml</code> file allows you to manage the Magento system configuration. Use this topic as a general reference for the <code class="language-plaintext highlighter-rouge">system.xml</code> file. The <code class="language-plaintext highlighter-rouge">system.xml</code> file is located under <code class="language-plaintext highlighter-rouge">etc/adminhtml/system.xml</code> in a given Magento 2 extension.</p>
+
+<p>The following code snippet shows the bare skeleton of the file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Config:etc/system_file.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;system&gt;</span>
+        <span class="c">&lt;!-- PLACE YOUR MODULE SPECIFIC CONFIGURATION HERE --&gt;</span>
+    <span class="nt">&lt;/system&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="bs-callout-tip">If you want instant *XSD validation in your IDE, you can run <code class="language-plaintext highlighter-rouge">bin/magento dev:urn-catalog:generate [--ide IDE] [--] &lt;path&gt;</code>.</p>
+
+<h2 id="tabs--sections--groups--fields">Tabs // Sections // Groups // Fields</h2>
+
+<p>In the <code class="language-plaintext highlighter-rouge">system.xml</code> file, it is possible to define four different types of entities, which are related to each other. The following section describes the relationship between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
+The red squares mark the different types that are defined in the <code class="language-plaintext highlighter-rouge">system.xml</code> file:</p>
+
+<p><img src="img/magento2-system-configuration.png" alt="Screenshot displaying a configured section in the Magento Admin." /></p>
+
+<p>Tabs are used to split different configuration areas semantically. Each tab can contain one or more sections, which can also be referenced as submenus. A section contains one or more groups.
+Each group lists one or more fields. You can also use a group to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
+in the system configuration context.</p>
+
+<h2 id="tabs">Tabs</h2>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;tab&gt;</code>-Tag references to either an existing or a new tab in the system configuration.</p>
+
+<h3 id="tab-attribute-reference">Tab attribute reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;tab&gt;</code>-Tag can have the following attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td>Defines the identifier that is used referencing the section.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeId</code></td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">translate</code></td>
+      <td>Defines the field that should be translatable. Provide <code class="language-plaintext highlighter-rouge">label</code> to make the label translatable.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td>Defines the input type of the rendered HTML element—defaults to <code class="language-plaintext highlighter-rouge">text</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td>Defines the sort order of the section. High numbers push the section to the bottom of the page; low numbers push the section to the top.</td>
+      <td><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td>optional</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">class</code></td>
+      <td>Adds a defined CSS class to the rendered tab HTML element.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td>optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tab-node-reference">Tab node reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;tab&gt;</code>-Tag can have the following child:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td>Defines the label that is displayed in the frontend.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-create-a-new-tab">Example: Create a new tab</h3>
+
+<p>The following code snippet demonstrates the creation of a new tab with example data.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Config:etc/system_file.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;system&gt;</span>
+        <span class="nt">&lt;tab</span> <span class="na">id=</span><span class="s">"A_UNIQUE_ID"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">class=</span><span class="s">"a-custom-css-class-to-style-this-tab"</span> <span class="na">sortOrder=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>A meaningful label<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/tab&gt;</span>
+    <span class="nt">&lt;/system&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The snippet above creates a new tab with the identifier <code class="language-plaintext highlighter-rouge">A_UNIQUE_ID</code>. As the <code class="language-plaintext highlighter-rouge">translate</code>-attribute is defined and references the label, the <code class="language-plaintext highlighter-rouge">label</code>-node is translatable. During the rendering process, the CSS class <code class="language-plaintext highlighter-rouge">a-custom-css-class-to-style-this-tab</code> will be applied on the HTML element that was created for this tab.
+The <code class="language-plaintext highlighter-rouge">sortOrder</code>-attribute with the value of <code class="language-plaintext highlighter-rouge">10</code> defines the position of the tab in the list of all tabs when rendered.</p>
+
+<h2 id="sections">Sections</h2>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>-Tag references to either an existing or a new section in the system configuration.</p>
+
+<h3 id="section-attribute-reference">Section attribute reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>-Tag can have the following attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left">Defines the identifier that is used referencing the section.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">typeId</code></td>
+      <td style="text-align: left">required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">translate</code></td>
+      <td style="text-align: left">Defines the field that should be translatable. Provide <code class="language-plaintext highlighter-rouge">label</code> to make the label translatable.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td style="text-align: left">Defines the input type of the rendered HTML element. Defaults to <code class="language-plaintext highlighter-rouge">text</code>.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td style="text-align: left">Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInDefault</code></td>
+      <td style="text-align: left">Defines whether the section is shown in the default configuration scope. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the section and <code class="language-plaintext highlighter-rouge">0</code> to hide the section.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInStore</code></td>
+      <td style="text-align: left">Defines whether the section is shown on store level. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the section and <code class="language-plaintext highlighter-rouge">0</code> to hide the section.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInWebsite</code></td>
+      <td style="text-align: left">Defines whether the section is shown on website level. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the section and <code class="language-plaintext highlighter-rouge">0</code> to hide the section.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">canRestore</code></td>
+      <td style="text-align: left">Defines if the  section can be restored to default.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">advanced</code></td>
+      <td style="text-align: left">Deprecated since 100.0.2.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">bool</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">extends</code></td>
+      <td style="text-align: left">By providing an identifier of another section, the content of this node will extend the section that you referenced.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="section-node-reference">Section node reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>-Tag can have the following children:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td>Defines the label that is displayed in the frontend.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">class</code></td>
+      <td>Adds a defined CSS class to the rendered section HTML element.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tab</code></td>
+      <td>References the associated tab. Expects the ID of the tab.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeTabId</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">header_css</code></td>
+      <td>Neither used nor evaluated at the time of this writing.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">resource</code></td>
+      <td>References an ACL resource to provide permission settings for this section.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeAclResourceId</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">group</code></td>
+      <td>Define one or more subgroups.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeGroup</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">frontend_model</code></td>
+      <td>Specifies a different frontend model to change the rendering and modify the output.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeModel</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">include</code></td>
+      <td>Used to include additional <code class="language-plaintext highlighter-rouge">system_include.xsd</code> compatible files. Usually used to structure large <code class="language-plaintext highlighter-rouge">system.xml</code> files.</td>
+      <td><code class="language-plaintext highlighter-rouge">includeType</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-create-a-new-section-and-assign-it-to-a-tab">Example: Create a new section and assign it to a tab</h3>
+
+<p>The following code snippet demonstrates the basic usage of creating a new section.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" ?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Config:etc/system_file.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;system&gt;</span>
+        <span class="nt">&lt;tab</span> <span class="na">id=</span><span class="s">"A_UNIQUE_ID"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">class=</span><span class="s">"a-custom-css-class-to-style-this-tab"</span> <span class="na">sortOrder=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>A meaningful label<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/tab&gt;</span>
+
+        <span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"A_UNIQUE_SECTION_ID"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">translate=</span><span class="s">"label"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>A meaningful section label<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;tab&gt;</span>A_UNIQUE_ID<span class="nt">&lt;/tab&gt;</span>
+            <span class="nt">&lt;resource&gt;</span>VENDOR_MODULE::path_to_the_acl_resource<span class="nt">&lt;/resource&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/system&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The section described above defines the ID <code class="language-plaintext highlighter-rouge">A_UNIQUE_SECTION_ID</code>, is visible in the default config view and in a store context. The <code class="language-plaintext highlighter-rouge">label</code>-node is translatable. The section is associated to the tab with the ID <code class="language-plaintext highlighter-rouge">A_UNIQUE_ID</code>. The section can only be accessed by users that have the permissions defined in the ACL <code class="language-plaintext highlighter-rouge">VENDOR_MODULE::path_to_the_acl_resource</code>.</p>
+
+<h2 id="groups">Groups</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;group&gt;</code>-Tag is used to group fields together.</p>
+
+<h3 id="group-attribute-reference">Group attribute reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;group&gt;</code>-Tag can have the following attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left">Defines the identifier that is used referencing the group.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">typeId</code></td>
+      <td style="text-align: left">required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">translate</code></td>
+      <td style="text-align: left">Defines the fields that should be translatable. Provide <code class="language-plaintext highlighter-rouge">label</code> to make the label translatable. Multiple fields should be separated by a space.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td style="text-align: left">Defines the input type of the rendered HTML element. Defaults to <code class="language-plaintext highlighter-rouge">text</code>.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td style="text-align: left">Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInDefault</code></td>
+      <td style="text-align: left">Defines whether the group is shown in the default configuration scope. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the group and <code class="language-plaintext highlighter-rouge">0</code> to hide the group.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInStore</code></td>
+      <td style="text-align: left">Defines whether the group is shown on store level. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the group and <code class="language-plaintext highlighter-rouge">0</code> to hide the group.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInWebsite</code></td>
+      <td style="text-align: left">Defines whether the group is shown on website level. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the group and <code class="language-plaintext highlighter-rouge">0</code> to hide the group.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">canRestore</code></td>
+      <td style="text-align: left">Defines if the group can be restored to default.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">advanced</code></td>
+      <td style="text-align: left">Deprecated since 100.0.2.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">bool</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">extends</code></td>
+      <td style="text-align: left">By providing an identifier of another group, the content of this node will extend the section that you referenced.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="group-node-reference">Group node reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;group&gt;</code>-Tag can have the following children:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td>Defines the label that is displayed in the frontend.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fieldset_css</code></td>
+      <td>Adds one or more CSS classes to a group fieldset.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">frontend_model</code></td>
+      <td>Specifies a different frontend model to change the rendering and modify the output.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeModel</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">clone_model</code></td>
+      <td>Specifies a given model to clone fields.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeModel</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">clone_fields</code></td>
+      <td>Enabled or disabled cloning of fields.</td>
+      <td><code class="language-plaintext highlighter-rouge">int</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">help_url</code></td>
+      <td>Not extensible. See below.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUrl</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">more_url</code></td>
+      <td>Not extensible. See below.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUrl</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">demo_link</code></td>
+      <td>Not extensible. See below.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUrl</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comment</code></td>
+      <td>Adds a comment below the group label. By using <code class="language-plaintext highlighter-rouge">&lt;![CDATA[//]]&gt;</code> HTML can be applied.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hide_in_single_store_mode</code></td>
+      <td>Whether the group should be visible in single store mode. <code class="language-plaintext highlighter-rouge">1</code> hides the group; <code class="language-plaintext highlighter-rouge">0</code> shows the group.</td>
+      <td><code class="language-plaintext highlighter-rouge">int</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">field</code></td>
+      <td>Define one or more fields that should be available under this group.</td>
+      <td><code class="language-plaintext highlighter-rouge">field</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">group</code></td>
+      <td>Define one or more subgroups.</td>
+      <td><code class="language-plaintext highlighter-rouge">unbounded</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">depends</code></td>
+      <td>Can be used to declare dependencies on other fields. Is used to show specific fields/groups only when a given field has a value of <code class="language-plaintext highlighter-rouge">1</code>. This node expects a <code class="language-plaintext highlighter-rouge">section/group/field</code>-string.</td>
+      <td><code class="language-plaintext highlighter-rouge">depends</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">attribute</code></td>
+      <td>Custom attributes can be used by frontend models. Ususaly used to make a given frontend model more dynamic.</td>
+      <td><code class="language-plaintext highlighter-rouge">attribute</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">include</code></td>
+      <td>Used to include additional <code class="language-plaintext highlighter-rouge">system_include.xsd</code> compatible files. Usually used to structure large <code class="language-plaintext highlighter-rouge">system.xml</code> files.</td>
+      <td><code class="language-plaintext highlighter-rouge">includeType</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="bs-callout-warning">The nodes <code class="language-plaintext highlighter-rouge">more_url</code>, <code class="language-plaintext highlighter-rouge">demo_url</code> and <code class="language-plaintext highlighter-rouge">help_url</code> are defined by a PayPal frontend model that is only used once. These nodes are not reusable.</p>
+
+<h3 id="example-create-a-new-group-for-a-given-section">Example: Create a new group for a given section</h3>
+
+<p>The following code snippet demonstrates the basic usage of creating a new group.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Config:etc/system_file.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;system&gt;</span>
+        <span class="nt">&lt;tab</span> <span class="na">id=</span><span class="s">"A_UNIQUE_ID"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">class=</span><span class="s">"a-custom-css-class-to-style-this-tab"</span> <span class="na">sortOrder=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>A meaningful label<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/tab&gt;</span>
+
+        <span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"A_UNIQUE_SECTION_ID"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">translate=</span><span class="s">"label"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>A meaningful section label<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;tab&gt;</span>A_UNIQUE_ID<span class="nt">&lt;/tab&gt;</span>
+            <span class="nt">&lt;resource&gt;</span>VENDOR_MODULE::path_to_the_acl_resource<span class="nt">&lt;/resource&gt;</span>
+
+            <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"A_UNIQUE_GROUP_ID"</span> <span class="na">translate=</span><span class="s">"label comment"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label&gt;</span>A meaningful group label<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;comment&gt;</span>An additional comment helping users to understand the effect when configuring the fields defined in this group.<span class="nt">&lt;/comment&gt;</span>
+                <span class="c">&lt;!-- Add your fields here. --&gt;</span>
+            <span class="nt">&lt;/group&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/system&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The group described above defines the ID <code class="language-plaintext highlighter-rouge">A_UNIQUE_GROUP_ID</code>, is visible in the default config view and in a store context. Both, the <code class="language-plaintext highlighter-rouge">label</code> and the <code class="language-plaintext highlighter-rouge">comment</code> are marked as translatable.</p>
+
+<h2 id="fields">Fields</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>-Tag is used inside of <code class="language-plaintext highlighter-rouge">&lt;group&gt;</code>-Tags to define specific configuration values.</p>
+
+<h3 id="field-attribute-reference">Field attribute reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>-Tag can have the following attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">id</code></td>
+      <td style="text-align: left">Defines the identifier that is used referencing the field.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">typeId</code></td>
+      <td style="text-align: left">required</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">translate</code></td>
+      <td style="text-align: left">Defines the fields that should be translatable. Provide <code class="language-plaintext highlighter-rouge">label</code> to make the label translatable. Multiple fields should be separated by a space.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td style="text-align: left">Defines the input type of the rendered HTML element. Defaults to <code class="language-plaintext highlighter-rouge">text</code>.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td style="text-align: left">Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">float</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInDefault</code></td>
+      <td style="text-align: left">Defines whether the field is shown in the default configuration scope. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the field and <code class="language-plaintext highlighter-rouge">0</code> to hide the field.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInStore</code></td>
+      <td style="text-align: left">Defines whether the field is shown on store level. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the field and <code class="language-plaintext highlighter-rouge">0</code> to hide the field.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">showInWebsite</code></td>
+      <td style="text-align: left">Defines whether the field is shown on website level. Specify <code class="language-plaintext highlighter-rouge">1</code> to show the field and <code class="language-plaintext highlighter-rouge">0</code> to hide the field.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">canRestore</code></td>
+      <td style="text-align: left">Defines if the field can be restored to default.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">int</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">advanced</code></td>
+      <td style="text-align: left">Deprecated since 100.0.2.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">bool</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">extends</code></td>
+      <td style="text-align: left">By providing an identifier of another field, the content of this node will extend the section that you referenced.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td style="text-align: left">optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="field-node-reference">Field node reference</h3>
+
+<p>A <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>-Tag can have the following children:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td>Defines the label that is displayed in the frontend.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comment</code></td>
+      <td>Adds a comment below the group label. By using <code class="language-plaintext highlighter-rouge">&lt;![CDATA[//]]&gt;</code> HTML can be applied.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tooltip</code></td>
+      <td>Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hint</code></td>
+      <td>Displays additional information. Only available with specific <code class="language-plaintext highlighter-rouge">frontend_model</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">frontend_class</code></td>
+      <td>Adds a defined CSS class to the rendered section HTML element.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">frontend_model</code></td>
+      <td>Specifies a different frontend model to change the rendering and modify the output.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeModel</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">backend_model</code></td>
+      <td>Specifies a different backend model to modify the configured values.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeModel</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">source_model</code></td>
+      <td>Specifies a different source model that provides a specific set of values.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeModel</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">config_path</code></td>
+      <td>Can be used to overwrite the generic config path of a field.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeConfigPath</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate</code></td>
+      <td>Define different validation rules (comma separated). Full reference list of available validation rules is listed below.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">can_be_empty</code></td>
+      <td>Used when <code class="language-plaintext highlighter-rouge">type</code> is <code class="language-plaintext highlighter-rouge">multiselect</code> to specify that a field can be empty.</td>
+      <td><code class="language-plaintext highlighter-rouge">int</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">if_module_enabled</code></td>
+      <td>Used to display a field only when a given module is enabled.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeModule</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">base_url</code></td>
+      <td>Used in combination with <code class="language-plaintext highlighter-rouge">upload_dir</code> for file uploads.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUrl</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">upload_dir</code></td>
+      <td>Specify a target directory for uploads. This node has additional attributes and nodes. Look them up before using this.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUploadDir</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">button_url</code></td>
+      <td>Displays a button if <code class="language-plaintext highlighter-rouge">button_url</code> and <code class="language-plaintext highlighter-rouge">button_label</code> are specified. Usually used in combination with a custom frontend model.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUrl</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">button_label</code></td>
+      <td>Displays a button if <code class="language-plaintext highlighter-rouge">button_label</code> and <code class="language-plaintext highlighter-rouge">button_url</code> are specified. Usually used in combination with a custom frontend model.</td>
+      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">more_url</code></td>
+      <td>Not extensible. See below.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUrl</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">demo_url</code></td>
+      <td>Not extensible. See below.</td>
+      <td><code class="language-plaintext highlighter-rouge">typeUrl</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hide_in_single_store_mode</code></td>
+      <td>Whether the group should be visible in single store mode. <code class="language-plaintext highlighter-rouge">1</code> hides the group; <code class="language-plaintext highlighter-rouge">0</code> shows the group.</td>
+      <td><code class="language-plaintext highlighter-rouge">int</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">source_service</code></td>
+      <td>Service used to populate select options.</td>
+      <td><code class="language-plaintext highlighter-rouge">complexType</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">options</code></td>
+      <td>Not used. Potentially deprecated.</td>
+      <td><code class="language-plaintext highlighter-rouge">complexType</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">depends</code></td>
+      <td>Can be used to declare dependencies to other fields. Is used to only show specific fields/groups when a given field has a value of <code class="language-plaintext highlighter-rouge">1</code>. This node expects a <code class="language-plaintext highlighter-rouge">section/group/field</code>-string.</td>
+      <td><code class="language-plaintext highlighter-rouge">complexType</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">attribute</code></td>
+      <td>Custom attributes can be used by frontend models. Usually used to make a given frontend model more dynamic.</td>
+      <td><code class="language-plaintext highlighter-rouge">complexType</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">requires</code></td>
+      <td>Not extensible. See below.</td>
+      <td><code class="language-plaintext highlighter-rouge">complexType</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="bs-callout-warning">The nodes <code class="language-plaintext highlighter-rouge">more_url</code>, <code class="language-plaintext highlighter-rouge">demo_url</code>, <code class="language-plaintext highlighter-rouge">requires</code> and <code class="language-plaintext highlighter-rouge">options</code> are defined by a different core payment model and are only used once. These nodes are not reusable.</p>
+
+<h3 id="example-create-two-fields-in-a-given-group">Example: Create two fields in a given group</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Config:etc/system_file.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;system&gt;</span>
+        <span class="nt">&lt;tab</span> <span class="na">id=</span><span class="s">"A_UNIQUE_ID"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">class=</span><span class="s">"a-custom-css-class-to-style-this-tab"</span> <span class="na">sortOrder=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>A meaningful label<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;/tab&gt;</span>
+
+        <span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">"A_UNIQUE_SECTION_ID"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">translate=</span><span class="s">"label"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label&gt;</span>A meaningful section label<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;tab&gt;</span>A_UNIQUE_ID<span class="nt">&lt;/tab&gt;</span>
+            <span class="nt">&lt;resource&gt;</span>VENDOR_MODULE::path_to_the_acl_resource<span class="nt">&lt;/resource&gt;</span>
+
+            <span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"A_UNIQUE_GROUP_ID"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;label&gt;</span>A meaningful group label<span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;comment&gt;</span>An additional comment helping users to understand the effect when configuring the fields defined in this group.<span class="nt">&lt;/comment&gt;</span>
+
+                <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"A_UNIQUE_FIELD_ID"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">showInDefault=</span><span class="s">"0"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span> <span class="na">type=</span><span class="s">"select"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>Feature Flag Example<span class="nt">&lt;/label&gt;</span>
+                    <span class="nt">&lt;comment&gt;</span>This field is an example for a basic yes or no select.<span class="nt">&lt;/comment&gt;</span>
+                    <span class="nt">&lt;tooltip&gt;</span>Usually these kinds of fields are used to enable or disable a given feature. Other fields might be dependent to this and will only appear if this field is set to yes.<span class="nt">&lt;/tooltip&gt;</span>
+                    <span class="nt">&lt;source_model&gt;</span>Magento\Config\Model\Config\Source\Yesno<span class="nt">&lt;/source_model&gt;</span>
+                <span class="nt">&lt;/field&gt;</span>
+
+                <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"ANOTHER_UNIQUE_FIELD_ID"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">showInDefault=</span><span class="s">"0"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;label&gt;</span>A meaningful field label<span class="nt">&lt;/label&gt;</span>
+                    <span class="nt">&lt;comment&gt;</span>A descriptive text explaining this configuration field.<span class="nt">&lt;/comment&gt;</span>
+                    <span class="nt">&lt;tooltip&gt;</span>Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.<span class="nt">&lt;/tooltip&gt;</span>
+                    <span class="nt">&lt;validate&gt;</span>required-entry no-whitespace<span class="nt">&lt;/validate&gt;</span> <span class="c">&lt;!-- Field is required and must not contain any whitespace. --&gt;</span>
+                    <span class="nt">&lt;if_module_enabled&gt;</span>VENDOR_MODULE<span class="nt">&lt;/if_module_enabled&gt;</span>
+                    <span class="nt">&lt;depends&gt;</span> <span class="c">&lt;!-- This field will only be visible if the field with the id A_UNIQUE_FIELD_ID is set to value 1 --&gt;</span>
+                        <span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"A_UNIQUE_FIELD_ID"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/field&gt;</span>
+                    <span class="nt">&lt;/depends&gt;</span>
+                <span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;/group&gt;</span>
+        <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/system&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The example above creates two fields, both visible/configurable in default and in store view. Both fields have a comment and a tooltip to describe their purpose to the user. The <code class="language-plaintext highlighter-rouge">label</code>-node is translatable.
+The field with the identifier <code class="language-plaintext highlighter-rouge">ANOTHER_UNIQUE_FIELD_ID</code> is visible when the given module in the <code class="language-plaintext highlighter-rouge">if_module_enabled</code> is enabled globally. The field also validates its value against the rules <code class="language-plaintext highlighter-rouge">required-entry</code> and <code class="language-plaintext highlighter-rouge">no-whitespace</code>.
+The field with the identifier <code class="language-plaintext highlighter-rouge">A_UNIQUE_FIELD_ID</code> defines a different source model which provides tha values <code class="language-plaintext highlighter-rouge">Yes</code> and <code class="language-plaintext highlighter-rouge">No</code>.</p>
+
+<h3 id="common-source-models">Common source models</h3>
+
+<p>The following source models are provided by the Magento 2 Core. In general, there are many more source models; the following list describes the most common ones. Be aware, that these source models need the field attribute <code class="language-plaintext highlighter-rouge">type</code> to be set to <code class="language-plaintext highlighter-rouge">select</code> in order to work properly.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source Model</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Magento\Config\Model\Config\Source\Yesnocustom</code></td>
+      <td>Provides the values <code class="language-plaintext highlighter-rouge">Yes</code>, <code class="language-plaintext highlighter-rouge">No</code> and <code class="language-plaintext highlighter-rouge">Specified</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Magento\Config\Model\Config\Source\Enabledisable</code></td>
+      <td>Provides the values <code class="language-plaintext highlighter-rouge">Enable</code>, <code class="language-plaintext highlighter-rouge">Disable</code>. Saves the values as <code class="language-plaintext highlighter-rouge">0</code> and <code class="language-plaintext highlighter-rouge">1</code> in the database.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Magento\AdminNotification\Model\Config\Source\Frequency</code></td>
+      <td>Provides the values <code class="language-plaintext highlighter-rouge">1 Hour</code>,<code class="language-plaintext highlighter-rouge">2 Hours</code>,<code class="language-plaintext highlighter-rouge">6 Hours</code>,<code class="language-plaintext highlighter-rouge">12 Hours</code> and <code class="language-plaintext highlighter-rouge">24 Hours</code>. Values are saved as integers.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Magento\Catalog\Model\Config\Source\TimeFormat</code></td>
+      <td>Provides the values for the time format (12 h/24 h).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Magento\Cron\Model\Config\Source\Frequency</code></td>
+      <td>Provides the values <code class="language-plaintext highlighter-rouge">Daily</code>, <code class="language-plaintext highlighter-rouge">Weekly</code> and <code class="language-plaintext highlighter-rouge">Monthly</code>. Values are saved in the database as <code class="language-plaintext highlighter-rouge">D</code>, <code class="language-plaintext highlighter-rouge">W</code> and <code class="language-plaintext highlighter-rouge">M</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Magento\GoogleAdwords\Model\Config\Source\Language</code></td>
+      <td>Provides the values for a 2-letter code of a given language in the ISO 639-1 format (e.g. en).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Magento\Config\Model\Config\Source\Locale</code></td>
+      <td>Provides the values similar to the above one, but pertains a locale code (e.g. en_US).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="field-validation">Field Validation</h3>
+
+<p>A field can have one or more validator-classes assigned to make sure that the input of the user meets the requirements of the extension. Validation rules can be applied with the <code class="language-plaintext highlighter-rouge">&lt;validate&gt;</code>-Tag.
+The following example validates a field and adds several different validation rules.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;field</span> <span class="na">id=</span><span class="s">"A_CUSTOM_IDENTIFIER"</span> <span class="na">showInDefault=</span><span class="s">"1"</span> <span class="na">showInWebsite=</span><span class="s">"0"</span> <span class="na">showInStore=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;validate&gt;</span>required-entry validate-clean-url no-whitespace<span class="nt">&lt;/validate&gt;</span>
+<span class="nt">&lt;/field&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The following validation rules are available:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rule</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-no-html-tags</code></td>
+      <td>HTML tags are not allowed.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-select</code></td>
+      <td>Select an option.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-no-empty</code></td>
+      <td>Empty Value</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-alphanum-with-spaces</code></td>
+      <td>Use letters (a-z or A-Z), numbers (0-9), or spaces only in this field.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-data</code></td>
+      <td>Use letters (a-z or A-Z), numbers (0-9), or underscores (_) only in this field. The first character should be a letter.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-street</code></td>
+      <td>Use letters (a-z or A-Z), numbers (0-9), spaces, and “#” only in this field.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-phoneStrict</code></td>
+      <td>Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-phoneLax</code></td>
+      <td>Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-fax</code></td>
+      <td>Enter a valid fax number. For example, 123-456-7890.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-email</code></td>
+      <td>Enter a valid email address. For example, johndoe@domain.com.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-emailSender</code></td>
+      <td>Enter a valid email address. For example, johndoe@domain.com.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-password</code></td>
+      <td>Enter 6 or more characters. Leading and trailing spaces will be ignored.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-admin-password</code></td>
+      <td>Enter 7 or more characters, using both numeric and alphabetic.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-url</code></td>
+      <td>Enter a valid URL. Protocol is required (http://, https:// or ftp://).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-clean-url</code></td>
+      <td>Enter a valid URL. For example, http://www.example.com or www.example.com.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-xml-identifier</code></td>
+      <td>Enter a valid XML-identifier. For example, something_1, block5, id-4.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-ssn</code></td>
+      <td>Enter a valid social security number. For example, 123-45-6789.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-zip-us</code></td>
+      <td>Enter a valid ZIP code. For example, 90602 or 90602-1234.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-date-au</code></td>
+      <td>Use this date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">validate-currency-dollar</code></td>
+      <td>Enter a valid $ amount. For example, $100.00.</td>
+    </tr>
+  </tbody>
+</table>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-04-15">
+    Apr 15th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  <div class="page-contributor">
+  <a href="https://github.com/DavidLambauer" target="_blank">
+    Thanks to David Lambauer for contributing this topic
+  </a>
+</div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

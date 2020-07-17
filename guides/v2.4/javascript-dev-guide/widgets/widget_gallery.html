@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Gallery widget | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="widget_gallery.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_gallery.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="widget_gallery.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">JavaScript Developer Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bk-javascript-dev-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../conventions_js.html" class="spectrum-SideNav-itemLink ">Conventional notations used in this Guide</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/js_overview.html" class="spectrum-SideNav-itemLink ">JavaScript</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/js-resources.html" class="spectrum-SideNav-itemLink ">JavaScript resources in Magento</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/requirejs.html" class="spectrum-SideNav-itemLink ">RequireJS in Magento</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/js_init.html" class="spectrum-SideNav-itemLink ">Calling and initializing JavaScript</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/product-frontend-storage.html" class="spectrum-SideNav-itemLink ">Frontend product repository</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/custom_js.html" class="spectrum-SideNav-itemLink ">Use custom JavaScript</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/js_debug.html" class="spectrum-SideNav-itemLink ">Locate JavaScript components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/js_practice.html" class="spectrum-SideNav-itemLink ">Customizing JavaScript illustration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../javascript/js_mixins.html" class="spectrum-SideNav-itemLink ">Using JavaScript mixins</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="jquery-widgets-about.html" class="spectrum-SideNav-itemLink ">Magento jQuery widgets</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_accordion.html" class="spectrum-SideNav-itemLink ">Accordion widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_alert.html" class="spectrum-SideNav-itemLink ">Alert widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-breadcrumbs.html" class="spectrum-SideNav-itemLink ">Breadcrumbs widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_calendar.html" class="spectrum-SideNav-itemLink ">Calendar widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_collapsible.html" class="spectrum-SideNav-itemLink ">Collapsible widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_confirm.html" class="spectrum-SideNav-itemLink ">Confirmation widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_dropdown.html" class="spectrum-SideNav-itemLink ">Dropdown widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_dialog.html" class="spectrum-SideNav-itemLink ">DropdownDialog widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-folder-tree.html" class="spectrum-SideNav-itemLink ">FolderTree widget</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="widget_gallery.html" class="spectrum-SideNav-itemLink ">Gallery widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_list.html" class="spectrum-SideNav-itemLink ">List widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_loader.html" class="spectrum-SideNav-itemLink ">Loader widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_gallery_mg.html" class="spectrum-SideNav-itemLink ">Magnifier widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-media-uploader.html" class="spectrum-SideNav-itemLink ">MediaUploader widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_menu.html" class="spectrum-SideNav-itemLink ">Menu widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_modal.html" class="spectrum-SideNav-itemLink ">Modal widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-multiselect.html" class="spectrum-SideNav-itemLink ">Multiselect widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_navigation.html" class="spectrum-SideNav-itemLink ">Navigation widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_password_strength_indicator.html" class="spectrum-SideNav-itemLink ">PasswordStrengthIndicator widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-popup-window.html" class="spectrum-SideNav-itemLink ">PopupWindow widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_prompt.html" class="spectrum-SideNav-itemLink ">Prompt widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_quickSearch.html" class="spectrum-SideNav-itemLink ">QuickSearch widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_redirectUrl.html" class="spectrum-SideNav-itemLink ">RedirectUrl widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-remaining-characters.html" class="spectrum-SideNav-itemLink ">RemainingCharacters widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-row-builder.html" class="spectrum-SideNav-itemLink ">RowBuilder widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-sortable.html" class="spectrum-SideNav-itemLink ">Sortable widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/javascript-dev-guide/widgets/widget_sticky.html" class="spectrum-SideNav-itemLink ">Sticky widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_tabs.html" class="spectrum-SideNav-itemLink ">Tabs widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget_toggle.html" class="spectrum-SideNav-itemLink ">ToggleAdvanced widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="widget-trim-input.html" class="spectrum-SideNav-itemLink ">TrimInput widget</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Gallery widget</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/javascript-dev-guide/widgets/widget_gallery.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/javascript-dev-guide/widgets/widget_gallery.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks.</p>
+
+<p>The following picture is an illustration of image displaying on the product page using the gallery widget:</p>
+
+<p><img src="https://devdocs.magento.com/common/images/gallery_scr21.png" alt="A product page with preview and thumbnails" width="650px" /></p>
+
+<p>In addition, the <a href="widget_gallery_mg.html">magnifier widget</a> can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.</p>
+
+<p>Gallery is displayed consistently across all supported browsers and is responsive — it sizes correctly on mobile devices and desktops.</p>
+
+<p>The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.</p>
+
+<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code class="language-plaintext highlighter-rouge">view.xml</code> configuration file of a theme.</p>
+
+<p>The gallery widget source code is <a href="https://github.com/magento/magento2/blob/2.4/lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>.</p>
+
+<p>The gallery magnifier source is <a href="https://github.com/magento/magento2/blob/2.4/lib/web/magnifier/magnify.js">lib/web/magnifier/magnify.js</a>.</p>
+
+<h3 id="contents">Contents</h3>
+
+<h2 id="gallery_init">Initialize the gallery widget</h2>
+
+<p>The gallery widget is initialized as described in <a href="../javascript/js_init.html#init_phtml">JavaScript initialization</a>.</p>
+
+<p>Example of declarative initialization:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;Magento_Catalog_module_dir&gt;</span>/view/frontend/templates/product/view/gallery.phtml
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+</pre></td><td class="rouge-code"><pre><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/x-magento-init</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">&lt;element_selector&gt;</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">mage/gallery/gallery</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">[{</span>
+                    <span class="dl">"</span><span class="s2">thumb</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;small_image_url&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;small_image_url&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">full</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;small_image_url&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">caption</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;message&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">position</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;number&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">isMain</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;true/false&gt;</span><span class="dl">"</span>
+                <span class="p">}],</span>
+                <span class="dl">"</span><span class="s2">options</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">"</span><span class="s2">nav</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;false/thumbs/dots&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">loop</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">keyboard</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">arrows</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">allowfullscreen</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">showCaption</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">width</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">thumbwidth</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">thumbheight</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">height</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">transitionduration</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">transition</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;slide/crossfade/dissolve&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">navarrows</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">navtype</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;slides/thumbs&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">navdir</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;horizontal/vertical&gt;</span><span class="dl">"</span>
+                <span class="p">},</span>
+                <span class="dl">"</span><span class="s2">fullscreen</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">"</span><span class="s2">nav</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;false/thumbs/dots&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">loop</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">navdir</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;horizontal/vertical&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">navarrows</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">navtype</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;slides/thumbs&gt;</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">arrows</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">showCaption</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">true</span><span class="o">/</span><span class="kc">false</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">transitionduration</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                    <span class="dl">"</span><span class="s2">transition</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;slide/crossfade/dissolve&gt;</span><span class="dl">"</span>
+                <span class="p">},</span>
+                <span class="dl">"</span><span class="s2">breakpoints</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">"</span><span class="s2">&lt;breakpoint_name&gt;</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="dl">"</span><span class="s2">conditions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="dl">"</span><span class="s2">max-width</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">767px</span><span class="dl">"</span>
+                        <span class="p">}</span>
+                        <span class="dl">"</span><span class="s2">options</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="gallery_options">Options</h2>
+
+<p>The following option groups are available for the gallery widget:</p>
+
+<ul>
+  <li><a href="widget_gallery.html#data"><code class="language-plaintext highlighter-rouge">data</code></a></li>
+  <li><a href="widget_gallery.html#options"><code class="language-plaintext highlighter-rouge">options</code></a></li>
+  <li><a href="widget_gallery.html#fullscreen"><code class="language-plaintext highlighter-rouge">fullscreen</code></a></li>
+  <li><a href="widget_gallery.html#breakpoints"><code class="language-plaintext highlighter-rouge">breakpoints</code></a></li>
+</ul>
+
+<p>All options for each group are described further.</p>
+
+<h3 id="data"><code class="language-plaintext highlighter-rouge">data</code></h3>
+
+<p>Array of images to display.</p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">image</code> is an object with keys:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">thumb</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;small_image_url&gt;</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">img</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;small_image_url&gt;</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">full</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;small_image_url&gt;</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">caption</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;message&gt;</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">isMain</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;true/false&gt;</span><span class="dl">"</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">thumb</code>, <code class="language-plaintext highlighter-rouge">img</code>, and <code class="language-plaintext highlighter-rouge">full</code> are full paths to proper image files.</p>
+
+<h4 id="data_caption"><code class="language-plaintext highlighter-rouge">data/caption</code></h4>
+
+<p>Set the caption for a specific image in the <code class="language-plaintext highlighter-rouge">data</code> field.
+Example of the runtime initialization with the <code class="language-plaintext highlighter-rouge">caption</code> option specified:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nx">galleryInstance</span><span class="p">({</span>
+    <span class="na">data</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="na">img</span><span class="p">:</span> <span class="dl">'</span><span class="s1">preview_number_one.jpg</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">thumb</span><span class="p">:</span> <span class="dl">'</span><span class="s1">preview_number_one.jpg</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">caption</span><span class="p">:</span> <span class="dl">'</span><span class="s1">T-Shirt Women side</span><span class="dl">'</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="options"><code class="language-plaintext highlighter-rouge">options</code></h3>
+<p>Set of options available for the Preview region.</p>
+
+<h4 id="gallery_allowfullscreen"><code class="language-plaintext highlighter-rouge">options/allowfullscreen</code></h4>
+<p>Show the button that toggles full screen view of the gallery.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_arrows"><code class="language-plaintext highlighter-rouge">options/arrows</code></h4>
+
+<p>Display navigation arrows on the thumbnails sides.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_height"><code class="language-plaintext highlighter-rouge">options/height</code></h4>
+
+<p>Height of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: null</p>
+
+<h4 id="gallery_keyboard"><code class="language-plaintext highlighter-rouge">options/keyboard</code></h4>
+
+<p>Switch on/off the keyboard navigation.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">false</code></p>
+
+<h4 id="gallery_loop"><code class="language-plaintext highlighter-rouge">options/loop</code></h4>
+
+<p>Define whether images are displayed in a loop.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">false</code></p>
+
+<h4 id="gallery_maxheight"><code class="language-plaintext highlighter-rouge">options/maxheight</code></h4>
+
+<p>Maximum height of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">null</code></p>
+
+<h4 id="gallery_maxwidth"><code class="language-plaintext highlighter-rouge">options/maxwidth</code></h4>
+
+<p>Maximum width of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: 100%</p>
+
+<h4 id="gallery_minheight"><code class="language-plaintext highlighter-rouge">options/minheight</code></h4>
+
+<p>Minimal height of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">null</code></p>
+
+<h4 id="gallery_minwidth"><code class="language-plaintext highlighter-rouge">options/minwidth</code></h4>
+
+<p>Minimal width of the preview block in pixels or percent.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">null</code></p>
+
+<h4 id="gallery_nav"><code class="language-plaintext highlighter-rouge">options/nav</code></h4>
+
+<p>Variation of thumbnails in navigation.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dots</code>: iPhone-style dots</li>
+  <li><code class="language-plaintext highlighter-rouge">thumbs</code>: thumbnails</li>
+  <li><code class="language-plaintext highlighter-rouge">false</code>: nothing</li>
+</ul>
+
+<p><strong>Default</strong>: <code class="language-plaintext highlighter-rouge">dots</code></p>
+
+<h4 id="gallery_navdir"><code class="language-plaintext highlighter-rouge">options/navdir</code></h4>
+
+<p>Sliding direction of thumbnails.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">vertical</code></li>
+  <li><code class="language-plaintext highlighter-rouge">horizontal</code></li>
+</ul>
+
+<h4 id="gallery_navarrows"><code class="language-plaintext highlighter-rouge">options/navarrows</code></h4>
+
+<p>Display navigation arrows for thumbnails.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_navtype"><code class="language-plaintext highlighter-rouge">options/navtype</code></h4>
+
+<p>Sliding type of thumbnails.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">slides</code>: on the arrow button click the thumbs ribbon shifts over several thumbs</li>
+  <li><code class="language-plaintext highlighter-rouge">thumb</code>: on the arrow button click the thumbs ribbon shifts over one thumb</li>
+</ul>
+
+<h4 id="gallery_ratio"><code class="language-plaintext highlighter-rouge">options/ratio</code></h4>
+
+<p>Width divided by height. Recommended if you set width in percents.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: calculated from <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">height</code>.</p>
+
+<h4 id="gallery_showcaption"><code class="language-plaintext highlighter-rouge">options/showCaption</code></h4>
+
+<p>Enable view of caption in preview. Can be for initialized for specific image. Can work globally.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_startindex"><code class="language-plaintext highlighter-rouge">options/startindex</code></h4>
+
+<p>The index number of the image that is displayed once the gallery is initialized.</p>
+
+<p><strong>Type</strong>: Number</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">0</code></p>
+
+<h4 id="gallery_swipe"><code class="language-plaintext highlighter-rouge">options/swipe</code></h4>
+
+<p>Moving between preview images by swiping in left and right.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">true</code></p>
+
+<h4 id="gallery_thumbwidth"><code class="language-plaintext highlighter-rouge">options/thumbwidth</code></h4>
+
+<p>Width of thumbnails.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="gallery_thumbheight"><code class="language-plaintext highlighter-rouge">options/thumbheight</code></h4>
+
+<p>Height of thumbnails.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="gallery_transitioneffect"><code class="language-plaintext highlighter-rouge">options/transition</code></h4>
+
+<p>Sets the transition effect for slides changing.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">slide</code></li>
+  <li><code class="language-plaintext highlighter-rouge">crossfade</code></li>
+  <li><code class="language-plaintext highlighter-rouge">dissolve</code></li>
+</ul>
+
+<h4 id="gallery_transitionduration"><code class="language-plaintext highlighter-rouge">options/transitionduration</code></h4>
+<p>Sets transition duration in milliseconds.</p>
+
+<p><strong>Type</strong>: Number</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="gallery_width"><code class="language-plaintext highlighter-rouge">options/width</code></h4>
+
+<p>Width of the preview in gallery in pixels or percents.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">null</code></p>
+
+<h3 id="fullscreen"><code class="language-plaintext highlighter-rouge">fullscreen</code></h3>
+
+<p>Set of options available for the fullscreen view.</p>
+
+<h4 id="full_arrows"><code class="language-plaintext highlighter-rouge">fullscreen/arrows</code></h4>
+
+<p>Display navigation arrows on the sides of previews in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_caption"><code class="language-plaintext highlighter-rouge">fullscreen/caption</code></h4>
+<p>Display <a href="https://glossary.magento.com/alt-text">alt text</a> as image title in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="fullscreen_keyboard"><code class="language-plaintext highlighter-rouge">fullscreen/keyboard</code></h4>
+
+<p>Switch on/off the keyboard navigation in the fullscreen mode.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_loop"><code class="language-plaintext highlighter-rouge">fullscreen/loop</code></h4>
+
+<p>Define whether images are displayed in a loop.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">false</code></p>
+
+<h4 id="full_nav"><code class="language-plaintext highlighter-rouge">fullscreen/nav</code></h4>
+
+<p>Variation of thumbnails in navigation in the fullscreen view.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dots</code>: iPhone-style dots</li>
+  <li><code class="language-plaintext highlighter-rouge">thumbs</code>: thumbnails</li>
+  <li><code class="language-plaintext highlighter-rouge">false</code>: nothing</li>
+</ul>
+
+<h4 id="full_navdir"><code class="language-plaintext highlighter-rouge">fullscreen/navdir</code></h4>
+
+<p>Sliding direction of thumbnails in the fullscreen view.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">vertical</code></li>
+  <li><code class="language-plaintext highlighter-rouge">horizontal</code></li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"navdir"</span><span class="nt">&gt;</span>horizontal<span class="nt">&lt;/var&gt;</span> <span class="c">&lt;!-- Sliding direction of thumbnails (horizontal/vertical) --&gt;</span>
+<span class="nt">&lt;/var&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="full_navarrows"><code class="language-plaintext highlighter-rouge">fullscreen/navarrows</code></h4>
+
+<p>Show/hide arrows in thumb navigation.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">true</code></p>
+
+<h4 id="full_navtype"><code class="language-plaintext highlighter-rouge">fullscreen/navtype</code></h4>
+
+<p>Type of navigation.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">thumbs</code></li>
+  <li><code class="language-plaintext highlighter-rouge">slides</code></li>
+</ul>
+
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">thumbs</code></p>
+
+<h4 id="full_carousel"><code class="language-plaintext highlighter-rouge">fullscreen/navigation_carousel</code></h4>
+
+<p>Display navigation thumbnails as carousel in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_showcaption"><code class="language-plaintext highlighter-rouge">fullscreen/showCaption</code></h4>
+
+<p>Enable view of caption in the fullscreen mode. Can be for initialized for specific image. Can work globally.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<h4 id="full_thumbwidth"><code class="language-plaintext highlighter-rouge">fullscreen/thumbwidth</code></h4>
+
+<p>Width of thumbnails in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="full_thumbheight"><code class="language-plaintext highlighter-rouge">fullscreen/thumbheight</code></h4>
+
+<p>Height of thumbnails in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Number, String</p>
+
+<h4 id="fullscreen_transitioneffect"><code class="language-plaintext highlighter-rouge">fullscreen/transition</code></h4>
+
+<p>Sets the transition effect for slides changing in the fullscreen view.</p>
+
+<p><strong>Possible values</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">slide</code></li>
+  <li><code class="language-plaintext highlighter-rouge">crossfade</code></li>
+  <li><code class="language-plaintext highlighter-rouge">dissolve</code></li>
+</ul>
+
+<h4 id="fullscreen_transitionduration"><code class="language-plaintext highlighter-rouge">fullscreen/transitionduration</code></h4>
+<p>Sets transition duration in milliseconds in the fullscreen view.</p>
+
+<p><strong>Type</strong>: Number</p>
+
+<h3 id="breakpoints"><code class="language-plaintext highlighter-rouge">breakpoints</code></h3>
+<p>Set of options that could be dynamically set while page is resizing.</p>
+
+<p>Set as follows:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="dl">"</span><span class="s2">breakpoints</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">%breakpoint_name%</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">conditions</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="p">...</span>
+        <span class="p">}</span>
+        <span class="dl">"</span><span class="s2">options</span><span class="dl">"</span><span class="p">:</span> <span class="p">{...}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Where the options are as follows:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">conditions</code>: compiled in <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media query</a> through and operand. For example: <code class="language-plaintext highlighter-rouge">"max-width": "767px"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">options</code> - object of options that are applied</li>
+</ul>
+
+<h2 id="configure-gallery-options-in-viewxml">Configure gallery options in <code class="language-plaintext highlighter-rouge">view.xml</code></h2>
+
+<p>Gallery and magnifier options can be set in the <code class="language-plaintext highlighter-rouge">view.xml</code> configuration file of a theme. The file is conventionally located in <code class="language-plaintext highlighter-rouge">&lt;theme_dir&gt;/etc</code>.</p>
+
+<p>The general gallery options are set as follows:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
+...
+<span class="nt">&lt;/var&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The fullscreen and breakpoints options are set in a similar way:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"fullscreen"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
+...
+<span class="nt">&lt;/var&gt;</span>
+<span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"breakpoints"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
+...
+<span class="nt">&lt;/var&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For illustration of setting gallery option in <code class="language-plaintext highlighter-rouge">view.xml</code>, you can reference to the <a href="https://github.com/magento/magento2/blob/2.4/app/design/frontend/Magento/blank/etc/view.xml#L184">view.xml of the Blank theme</a>.</p>
+
+<h2 id="gallery_api">Gallery API</h2>
+
+<p>Gallery methods are placed in data storage of the <code class="language-plaintext highlighter-rouge">gallery</code> object. To initialize the API, on the gallery object, call the <code class="language-plaintext highlighter-rouge">data</code> method with <code class="language-plaintext highlighter-rouge">gallery</code> as argument. The illustration follows:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">gallery</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="c1">//or</span>
+
+<span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">[data-gallery-role="gallery"]</span><span class="dl">'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">gallery</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This method returns JS object that contains <a href="https://glossary.magento.com/api">API</a> functions.</p>
+
+<p>To ensure that the gallery is fully formed, wrap your code with <a href="https://glossary.magento.com/event">event</a> handler function and add it to the <code class="language-plaintext highlighter-rouge">gallery:loaded</code> event:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">gallery:loaded</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">gallery</span><span class="dl">'</span><span class="p">);</span>
+    <span class="cm">/* api methods calls */</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Then to call a method, use the following notation:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">api</span><span class="o">.%</span><span class="nx">method_name</span><span class="o">%</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>All available methods are listed in the following paragraph.</p>
+
+<h2 id="gallery_methods">Methods</h2>
+
+<ul>
+  <li><a href="widget_gallery.html#gallery_first">first()</a></li>
+  <li><a href="widget_gallery.html#gallery_last">last()</a></li>
+  <li><a href="widget_gallery.html#gallery_next">next()</a></li>
+  <li><a href="widget_gallery.html#gallery_prev">prev()</a></li>
+  <li><a href="widget_gallery.html#gallery_seek">seek()</a></li>
+  <li><a href="widget_gallery.html#gallery_updateData">updateData()</a></li>
+  <li><a href="widget_gallery.html#gallery_updateData">updateOptions()</a></li>
+</ul>
+
+<h3 id="gallery_first"><code class="language-plaintext highlighter-rouge">first()</code></h3>
+
+<p>Displays the first preview image.</p>
+
+<h3 id="gallery_last"><code class="language-plaintext highlighter-rouge">last()</code></h3>
+
+<p>Displays the last preview image.</p>
+
+<h3 id="gallery_next"><code class="language-plaintext highlighter-rouge">next()</code></h3>
+
+<p>Image ID is passed as an argument. Displays the next preview image.</p>
+
+<p>If the last image ID is passed, the behavior depends on whether <a href="widget_gallery.html#gallery_loop">loop</a> is enabled:</p>
+
+<ul>
+  <li>if loop is enabled, the first image is displayed.</li>
+  <li>if loop is disabled, does not change the displayed image.</li>
+</ul>
+
+<h3 id="gallery_prev"><code class="language-plaintext highlighter-rouge">prev()</code></h3>
+
+<p>Displays the previous preview image.</p>
+
+<p>If the first image ID is passed, the behavior depends on whether <a href="widget_gallery.html#gallery_loop">loop</a> is enabled:</p>
+
+<ul>
+  <li>if loop is enabled, the last image is displayed.</li>
+  <li>if loop is disabled, does not change the displayed image.</li>
+</ul>
+
+<h3 id="gallery_seek"><code class="language-plaintext highlighter-rouge">seek()</code></h3>
+
+<p>Displays the image with the specified <code class="language-plaintext highlighter-rouge">index</code>.</p>
+
+<p>Doesn’t update preview if the argument is not valid.</p>
+
+<p>Behavior:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">seek(0)</code> does not display any preview</li>
+  <li><code class="language-plaintext highlighter-rouge">seek(1)</code> displays the first image.</li>
+  <li><code class="language-plaintext highlighter-rouge">seek(-1)</code> displays the last image.</li>
+  <li>If the argument is a number bigger than the number of items, or less than “-(number of items)” the gallery shows the modulus of the following division: total images number divided by the argument number.</li>
+</ul>
+
+<h3 id="gallery_updateData"><code class="language-plaintext highlighter-rouge">updateData()</code></h3>
+
+<p>Add new items to the gallery.</p>
+
+<p>Example:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">api</span><span class="o">.</span><span class="nx">updateData</span><span class="p">([{</span>
+    <span class="nx">img</span><span class="o">:</span> <span class="s1">'image1.jpg'</span><span class="p">,</span>
+    <span class="nx">thumb</span><span class="o">:</span> <span class="s1">'thumb1.jpg'</span><span class="p">,</span>
+    <span class="nx">caption</span><span class="o">:</span> <span class="s1">'caption'</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="gallery_updateOptions"><code class="language-plaintext highlighter-rouge">updateOptions()</code></h3>
+<p>Updates options of active breakpoint or default gallery options, if there is no active breakpoint.</p>
+
+<p>Example:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">api</span><span class="o">.</span><span class="nx">updateOptions</span><span class="p">([{</span>
+    <span class="nx">nav</span><span class="o">:</span> <span class="s1">'dots'</span>
+<span class="p">}]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-04-07">
+    Apr 7th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

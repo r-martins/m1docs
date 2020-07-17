@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>revokeCustomerToken mutation | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="../../../v2.4/graphql/mutations/revoke-customer-token.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../../index.html">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.3</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="revoke-customer-token.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.4/graphql/mutations/revoke-customer-token.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">GraphQL Developer Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/index.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Implementation</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../send-request.html" class="spectrum-SideNav-itemLink ">GraphQL requests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../authorization-tokens.html" class="spectrum-SideNav-itemLink ">Authorization tokens</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../caching.html" class="spectrum-SideNav-itemLink ">GraphQL caching</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../custom-filters.html" class="spectrum-SideNav-itemLink ">Filtering with custom attributes</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Development</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/create-graphqls-file.html" class="spectrum-SideNav-itemLink ">Define the GraphQL schema for a module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/resolvers.html" class="spectrum-SideNav-itemLink ">Resolvers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/extend-existing-schema.html" class="spectrum-SideNav-itemLink ">Extend an existing GraphQL schema</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/identity-class.html" class="spectrum-SideNav-itemLink ">Identity class</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/create-custom-url-resolver.html" class="spectrum-SideNav-itemLink ">Create a custom urlResolver service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/debugging.html" class="spectrum-SideNav-itemLink ">Debugging GraphQL queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/exceptions.html" class="spectrum-SideNav-itemLink ">Exception handling</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../functional-testing.html" class="spectrum-SideNav-itemLink ">Functional testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Queries</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/index.html" class="spectrum-SideNav-itemLink ">Using queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/cart.html" class="spectrum-SideNav-itemLink ">cart query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/category.html" class="spectrum-SideNav-itemLink ">category query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/category-list.html" class="spectrum-SideNav-itemLink ">categoryList query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/checkout-agreements.html" class="spectrum-SideNav-itemLink ">checkoutAgreements query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/cms-blocks.html" class="spectrum-SideNav-itemLink ">cmsBlocks query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/cms-page.html" class="spectrum-SideNav-itemLink ">cmsPage query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/directory-countries.html" class="spectrum-SideNav-itemLink ">countries query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/directory-country.html" class="spectrum-SideNav-itemLink ">country query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/directory-currency.html" class="spectrum-SideNav-itemLink ">currency query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/custom-attribute-metadata.html" class="spectrum-SideNav-itemLink ">customAttributeMetadata query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/customer.html" class="spectrum-SideNav-itemLink ">customer query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/customer-cart.html" class="spectrum-SideNav-itemLink ">customerCart query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/customer-downloadable-products.html" class="spectrum-SideNav-itemLink ">customerDownloadableProducts query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/customer-orders.html" class="spectrum-SideNav-itemLink ">customerOrders query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/customer-payment-tokens.html" class="spectrum-SideNav-itemLink ">customerPaymentTokens query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/get-hosted-pro-url.html" class="spectrum-SideNav-itemLink ">getHostedProUrl query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/get-payflow-link-token.html" class="spectrum-SideNav-itemLink ">getPayflowLinkToken query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/giftcard-account.html" class="spectrum-SideNav-itemLink ">giftCardAccount query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/is-email-available.html" class="spectrum-SideNav-itemLink ">isEmailAvailable query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/products.html" class="spectrum-SideNav-itemLink ">products query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/store-config.html" class="spectrum-SideNav-itemLink ">storeConfig query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/url-resolver.html" class="spectrum-SideNav-itemLink ">urlResolver query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../queries/wishlist.html" class="spectrum-SideNav-itemLink ">wishlist query</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Mutations</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="index.html" class="spectrum-SideNav-itemLink ">Using mutations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="add-bundle-products.html" class="spectrum-SideNav-itemLink ">addBundleProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="add-configurable-products.html" class="spectrum-SideNav-itemLink ">addConfigurableProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="add-downloadable-products.html" class="spectrum-SideNav-itemLink ">addDownloadableProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="add-simple-products.html" class="spectrum-SideNav-itemLink ">addSimpleProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="add-virtual-products.html" class="spectrum-SideNav-itemLink ">addVirtualProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="apply-giftcard.html" class="spectrum-SideNav-itemLink ">applyGiftCardToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="apply-coupon.html" class="spectrum-SideNav-itemLink ">applyCouponToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="apply-store-credit.html" class="spectrum-SideNav-itemLink ">applyStoreCreditToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="change-customer-password.html" class="spectrum-SideNav-itemLink ">changeCustomerPassword mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="create-braintree-client-token.html" class="spectrum-SideNav-itemLink ">createBraintreeClientToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="create-customer.html" class="spectrum-SideNav-itemLink ">createCustomer mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="create-customer-address.html" class="spectrum-SideNav-itemLink ">createCustomerAddress mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="create-empty-cart.html" class="spectrum-SideNav-itemLink ">createEmptyCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="create-payflow-pro-token.html" class="spectrum-SideNav-itemLink ">createPayflowProToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="create-paypal-express-token.html" class="spectrum-SideNav-itemLink ">createPayPalExpressToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="delete-customer-address.html" class="spectrum-SideNav-itemLink ">deleteCustomerAddress mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="delete-payment-token.html" class="spectrum-SideNav-itemLink ">deletePaymentToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="generate-customer-token.html" class="spectrum-SideNav-itemLink ">generateCustomerToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="handle-payflow-pro-response.html" class="spectrum-SideNav-itemLink ">handlePayflowProResponse mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge-carts.html" class="spectrum-SideNav-itemLink ">mergeCarts mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="place-order.html" class="spectrum-SideNav-itemLink ">placeOrder mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="redeem-giftcard-balance.html" class="spectrum-SideNav-itemLink ">redeemGiftCardBalanceAsStoreCredit mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="remove-coupon.html" class="spectrum-SideNav-itemLink ">removeCouponFromCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="remove-giftcard.html" class="spectrum-SideNav-itemLink ">removeGiftCardFromCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="remove-item.html" class="spectrum-SideNav-itemLink ">removeItemFromCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="remove-store-credit.html" class="spectrum-SideNav-itemLink ">removeStoreCreditFromCart mutation</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="revoke-customer-token.html" class="spectrum-SideNav-itemLink ">revokeCustomerToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="send-email-to-friend.html" class="spectrum-SideNav-itemLink ">sendEmailToFriend mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="set-billing-address.html" class="spectrum-SideNav-itemLink ">setBillingAddressesOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="set-guest-email.html" class="spectrum-SideNav-itemLink ">setGuestEmailOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="set-payment-place-order.html" class="spectrum-SideNav-itemLink ">setPaymentMethodAndPlaceOrder mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="set-payment-method.html" class="spectrum-SideNav-itemLink ">setPaymentMethodOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="set-shipping-address.html" class="spectrum-SideNav-itemLink ">setShippingAddressesOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="set-shipping-method.html" class="spectrum-SideNav-itemLink ">setShippingMethodsOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="update-cart-items.html" class="spectrum-SideNav-itemLink ">updateCartItems mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="update-customer.html" class="spectrum-SideNav-itemLink ">updateCustomer mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="update-customer-address.html" class="spectrum-SideNav-itemLink ">updateCustomerAddress mutation</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Catalog data types and interfaces</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/product-interface-implementations.html" class="spectrum-SideNav-itemLink ">Product interface implementations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/product-interface.html" class="spectrum-SideNav-itemLink ">ProductInterface attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/category-interface.html" class="spectrum-SideNav-itemLink ">CategoryInterface attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/customizable-option-interface.html" class="spectrum-SideNav-itemLink ">CustomizableOptionInterface</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/bundle-product.html" class="spectrum-SideNav-itemLink ">Bundle product data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/configurable-product.html" class="spectrum-SideNav-itemLink ">Configurable product data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/downloadable-product.html" class="spectrum-SideNav-itemLink ">Downloadable product data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/gift-card-product.html" class="spectrum-SideNav-itemLink ">GiftCardProduct data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/grouped-product.html" class="spectrum-SideNav-itemLink ">GroupedProduct data types</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Payment methods</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/authorize-net.html" class="spectrum-SideNav-itemLink ">Authorize.Net</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/braintree.html" class="spectrum-SideNav-itemLink ">Braintree</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/braintree-vault.html" class="spectrum-SideNav-itemLink ">Braintree Vault</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/paypal-express-checkout.html" class="spectrum-SideNav-itemLink ">PayPal Express Checkout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payflow-express.html" class="spectrum-SideNav-itemLink ">Express Checkout for other PayPal solutions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payflow-link.html" class="spectrum-SideNav-itemLink ">PayPal Payflow Link</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payflow-pro.html" class="spectrum-SideNav-itemLink ">PayPal Payflow Pro</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payments-advanced.html" class="spectrum-SideNav-itemLink ">PayPal Payments Advanced</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/hosted-pro.html" class="spectrum-SideNav-itemLink ">PayPal Website Payments Pro Hosted Solution</a></li></ul></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Tutorial</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/index.html" class="spectrum-SideNav-itemLink ">GraphQL checkout tutorial</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-customer.html" class="spectrum-SideNav-itemLink ">Step 1. Create a customer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-shopping-cart.html" class="spectrum-SideNav-itemLink ">Step 2. Create an empty cart</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-add-product-to-cart.html" class="spectrum-SideNav-itemLink ">Step 3. Add products to the cart</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-shipping-address.html" class="spectrum-SideNav-itemLink ">Step 4. Set the shipping address</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-billing-address.html" class="spectrum-SideNav-itemLink ">Step 5. Set the billing address</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-shipping-method.html" class="spectrum-SideNav-itemLink ">Step 6. Set the shipping method</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-coupon.html" class="spectrum-SideNav-itemLink ">Step 7. Apply a coupon</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-quote-email.html" class="spectrum-SideNav-itemLink ">Step 8. Set email on the cart</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-payment-method.html" class="spectrum-SideNav-itemLink ">Step 9. Set the payment method</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-place-order.html" class="spectrum-SideNav-itemLink ">Step 10. Place the order</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes.html" class="spectrum-SideNav-itemLink ">Release Notes</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">revokeCustomerToken mutation</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.3/graphql/mutations/revoke-customer-token.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/graphql/mutations/revoke-customer-token.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Use the <code class="language-plaintext highlighter-rouge">revokeCustomerToken</code> mutation to revokes the customer’s token.</p>
+
+<p>To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use <a href="../../get-started/authentication/gs-authentication-session.html">session authentication</a>.</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<p><code class="language-plaintext highlighter-rouge">mutation: {revokeCustomerToken: RevokeCustomerTokenOutput}</code></p>
+
+<h2 id="example-usage">Example usage</h2>
+
+<p>The following call revokes the customer’s token.</p>
+
+<p><strong>Request:</strong></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">mutation</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">revokeCustomerToken</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">result</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Response:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"revokeCustomerToken"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="output-attributes">Output attributes</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">result</code></td>
+      <td>Boolean!</td>
+      <td>Returns <code class="language-plaintext highlighter-rouge">true</code> if the token was successfully revoked</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="errors">Errors</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Error</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">The current customer isn't authorized.</code></td>
+      <td>The current customer is not currently logged in, or the customer’s token does not exist in the <code class="language-plaintext highlighter-rouge">oauth_token</code> table.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="related-topics">Related topics</h2>
+
+<ul>
+  <li><a href="../queries/customer.html">customer query</a></li>
+  <li><a href="generate-customer-token.html">generateCustomerToken mutation</a></li>
+</ul>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-11-27">
+    Nov 27th, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

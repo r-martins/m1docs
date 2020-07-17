@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Construct a request | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="gs-web-api-request.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../v2.3/get-started/gs-web-api-request.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="gs-web-api-request.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Getting Started with Web APIs</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="bk-get-started-api.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="rest_front.html" class="spectrum-SideNav-itemLink ">Use REST APIs</a><ul class="spectrum-SideNav"><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="gs-web-api-request.html" class="spectrum-SideNav-itemLink ">Construct a request</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="gs-curl.html" class="spectrum-SideNav-itemLink ">Use cURL to run the request</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="gs-web-api-response.html" class="spectrum-SideNav-itemLink ">Status codes and responses</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="soap/soap-web-api-calls.html" class="spectrum-SideNav-itemLink ">Use SOAP Services</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="authentication/gs-authentication.html" class="spectrum-SideNav-itemLink ">Authentication</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="authentication/gs-authentication-token.html" class="spectrum-SideNav-itemLink ">Token-based authentication</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="authentication/gs-authentication-oauth.html" class="spectrum-SideNav-itemLink ">OAuth-based authentication</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="authentication/oauth-errors.html" class="spectrum-SideNav-itemLink ">OAuth error codes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="authentication/gs-authentication-session.html" class="spectrum-SideNav-itemLink ">Session-based authentication</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="create-integration.html" class="spectrum-SideNav-itemLink ">Create an integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="web-api-functional-testing.html" class="spectrum-SideNav-itemLink ">Web API functional testing</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Construct a request</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/gs-web-api-request.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/get-started/gs-web-api-request.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>To configure a web API, developers define some of the elements of each API call in the <code class="language-plaintext highlighter-rouge">&lt;module root dir&gt;/vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/etc/webapi.xml</code> file, where <code class="language-plaintext highlighter-rouge">&lt;vendor-name&gt;</code> is your vendor name (for example, <code class="language-plaintext highlighter-rouge">magento</code>) and <code class="language-plaintext highlighter-rouge">&lt;module-name&gt;</code> is your module name (which exactly matches its definition in <code class="language-plaintext highlighter-rouge">composer.json</code>). For example, the web API for the Customer service is defined in the <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/vendor/magento/module-customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the <a href="https://glossary.magento.com/api">API</a> calls.</p>
+
+<h2 id="request-overview">Overview</h2>
+
+<p>The following table and the sections that follow the table describe <a href="https://glossary.magento.com/web-api">web API</a> call elements:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Specifies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="gs-web-api-request.html#verbs">HTTP verb</a></td>
+      <td>The action to perform against the endpoint.</td>
+    </tr>
+    <tr>
+      <td><a href="gs-web-api-request.html#endpoints">Endpoint</a></td>
+      <td>A combination of the <em>server</em> that fulfills a request, the web service, and the <em>resource</em> against which the request is being made.</td>
+    </tr>
+    <tr>
+      <td><a href="gs-web-api-request.html#http-headers">HTTP headers</a></td>
+      <td>The authentication token, the call request and response formats, and other information.</td>
+    </tr>
+    <tr>
+      <td><a href="gs-web-api-request.html#payload">Call payload</a></td>
+      <td>A set of input parameters and attributes that you supply with the request. API operations have both <strong>required</strong> and <strong>optional</strong> inputs. You specify input parameters in the URI and input attributes in a request body. You can specify a JSON- or XML-formatted request body.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="verbs">HTTP verb</h3>
+
+<p>Specify one of these HTTP verbs in the request:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">GET</code>. Requests transfer of a current representation of the target resource. If you omit the verb, <code class="language-plaintext highlighter-rouge">GET</code> is the default.</li>
+  <li><code class="language-plaintext highlighter-rouge">PUT</code>. Requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.</li>
+  <li><code class="language-plaintext highlighter-rouge">POST</code>. Requests that the origin server accept the representation enclosed in the request as data to be processed by the target resource.</li>
+  <li><code class="language-plaintext highlighter-rouge">DELETE</code>. Requests that the origin server delete the target resource.</li>
+</ul>
+
+<h3 id="endpoints">Endpoint</h3>
+
+<p>An endpoint is a combination of the <em>server</em> that fulfills a request, the web service, the store code, the resource against which the request is being made, and any template parameters.</p>
+
+<p>For example, in the <code class="language-plaintext highlighter-rouge">http://magento.ll/index.php/rest/default/V1/customerGroups/:id</code> endpoint, the server is <code class="language-plaintext highlighter-rouge">magento.ll/index.php/</code>, the web service is <code class="language-plaintext highlighter-rouge">rest</code>, the resource is <code class="language-plaintext highlighter-rouge">/V1/customerGroups</code>, and the template parameter is <code class="language-plaintext highlighter-rouge">id</code>.</p>
+
+<p>A store code can have one of the following values.</p>
+
+<ul>
+  <li>The store’s assigned store code.</li>
+  <li><code class="language-plaintext highlighter-rouge">default</code>. This is the default value when no store code is provided.</li>
+  <li><code class="language-plaintext highlighter-rouge">all</code>. This value only applies to endpoints defined in the <a href="https://glossary.magento.com/cms">CMS</a> and Product modules. If this value is specified, the <a href="https://glossary.magento.com/api">API</a> call affects all of the merchant’s stores.</li>
+</ul>
+
+<h3 id="http-headers">HTTP headers</h3>
+
+<p class="bs-callout-info">To specify an HTTP header in a cURL command, use the <code class="language-plaintext highlighter-rouge">-H</code> option.</p>
+
+<p>Specify one or more of the following HTTP headers in your web API calls:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP header</th>
+      <th>Description</th>
+      <th>Syntax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Authorization</code></td>
+      <td>Required. Specifies the authentication token that proves you as the owner of a Magento account. You specify the token in the <code class="language-plaintext highlighter-rouge">Authorization</code> request header with the <code class="language-plaintext highlighter-rouge">Bearer</code> HTTP authorization scheme.</td>
+      <td><code class="language-plaintext highlighter-rouge">Authorization: Bearer &lt;TOKEN&gt;</code> <br /><br /><code class="language-plaintext highlighter-rouge">&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service. See <a href="authentication/gs-authentication.html">Authentication</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Accept</code></td>
+      <td>Optional. Specifies the format of the response body. Default is <code class="language-plaintext highlighter-rouge">JSON</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">Accept: application/&lt;FORMAT&gt;</code> <br /><br /><code class="language-plaintext highlighter-rouge">&lt;FORMAT&gt;</code> is either <code class="language-plaintext highlighter-rouge">JSON</code> or <code class="language-plaintext highlighter-rouge">XML</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Content-Type</code></td>
+      <td>Required for operations with a request body. Specifies the format of the request body.</td>
+      <td><code class="language-plaintext highlighter-rouge">Content-Type:application/&lt;FORMAT&gt;</code> <br /><br /><code class="language-plaintext highlighter-rouge">&lt;FORMAT&gt;</code> is either <code class="language-plaintext highlighter-rouge">JSON</code> or <code class="language-plaintext highlighter-rouge">XML</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="payload">Call payload</h3>
+
+<p>The call payload is a set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both <em>required</em> and <em>optional</em> inputs.</p>
+
+<p>You specify input parameters in the URI. For example, in the <code class="language-plaintext highlighter-rouge">GET/V1/customers/:customerId</code> URI, you must specify the <code class="language-plaintext highlighter-rouge">customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
+
+<p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code class="language-plaintext highlighter-rouge">POST /V1/customers</code> call, you must specify a request body like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"defaultShipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"defaultBilling"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"regionCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"regionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90001"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Zoe Ave"</span><span class="p">],</span><span class="w">
+            </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Los Angeles"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"555-000-00-00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"countryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This JSON-formatted request body includes a <code class="language-plaintext highlighter-rouge">customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
+
+<h2 id="construct-request">Construct a request</h2>
+
+<p>This example shows you how to construct a REST web API call to create an account.</p>
+
+<ol>
+  <li>
+    <p>Open the <a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Customer/etc/webapi.xml">Magento/Customer/etc/webapi.xml</a></p>
+  </li>
+  <li>
+    <p>Find the route element that defines the <code class="language-plaintext highlighter-rouge">createAccount</code> call:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customers"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\AccountManagementInterface"</span> <span class="na">method=</span><span class="s">"createAccount"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;resources&gt;</span>
+      <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"anonymous"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/resources&gt;</span>
+<span class="nt">&lt;/route&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Use the <code>method</code> and <code class="language-plaintext highlighter-rouge">url</code> values on the <code class="language-plaintext highlighter-rouge">route</code> element to construct the URI. In this example, the URI is POST <code class="language-plaintext highlighter-rouge">/V1/customers</code>.</p>
+  </li>
+  <li>
+    <p>Use the <code class="language-plaintext highlighter-rouge">class</code> attribute on the <code class="language-plaintext highlighter-rouge">service</code> element to identify the service interface. In this example, the service interface is the <code class="language-plaintext highlighter-rouge">AccountManagementInterface</code> <a href="https://glossary.magento.com/php">PHP</a> file.</p>
+
+    <p>Open the <a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Customer/Api/AccountManagementInterface.php">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">createAccount</span><span class="p">(</span>
+     <span class="nx">\Magento\Customer\Api\Data\CustomerInterface</span> <span class="nv">$customer</span><span class="p">,</span>
+     <span class="nv">$password</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+     <span class="nv">$redirectUrl</span> <span class="o">=</span> <span class="s1">''</span>
+ <span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>The <code class="language-plaintext highlighter-rouge">createAccount</code> call requires a <code class="language-plaintext highlighter-rouge">customer</code> data object. The <code class="language-plaintext highlighter-rouge">password</code> and <code class="language-plaintext highlighter-rouge">redirectUrl</code> values are optional. The default <code class="language-plaintext highlighter-rouge">password</code> value is <code class="language-plaintext highlighter-rouge">null</code> and the default <code class="language-plaintext highlighter-rouge">redirectUrl</code> value is blank.</p>
+  </li>
+  <li>
+    <p>To pass the <code>customer</code> data object in the POST call payload, specify <a href="http://www.json.com/">JSON</a> or <a href="https://glossary.magento.com/xml">XML</a> request body on the call.</p>
+  </li>
+</ol>
+
+<h3 id="customers-search-api-request-example">Customers Search API request example</h3>
+
+<p>The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.</p>
+
+<ol>
+  <li>
+    <p>Prepare <code class="language-plaintext highlighter-rouge">Authorization</code>, <code class="language-plaintext highlighter-rouge">Accept</code> and <code class="language-plaintext highlighter-rouge">Content-Type</code> headers to be passed to a request object. Use the <a href="https://glossary.magento.com/authorization">Authorization</a> token returned by the Magento token service.</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nv">$token</span> <span class="o">=</span> <span class="s1">'token'</span><span class="p">;</span>
+<span class="nv">$httpHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Http\Headers</span><span class="p">();</span>
+<span class="nv">$httpHeaders</span><span class="o">-&gt;</span><span class="na">addHeaders</span><span class="p">([</span>
+   <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer '</span> <span class="o">.</span> <span class="nv">$token</span><span class="p">,</span>
+   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span><span class="p">,</span>
+   <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
+<span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Open the <a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Customer/etc/webapi.xml">Magento/Customer/etc/webapi.xml</a>  configuration file and find the <a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php">CustomerRepositoryInterface</a> interface with the <code class="language-plaintext highlighter-rouge">getList</code> method.</p>
+  </li>
+  <li>
+    <p>Set the headers, URI and method to a request object. Use URI <code class="language-plaintext highlighter-rouge">/V1/customers/search</code> and method <code class="language-plaintext highlighter-rouge">GET</code> values. Use the <code class="language-plaintext highlighter-rouge">searchCriteria</code> parameter to complete the Customer Search query. See <a href="../rest/performing-searches.html">searchCriteria usage</a>. Also check <a href="../rest/list.html">List of REST endpoints by module</a>.</p>
+
+    <p>The following example finds customers whose first name contains “ver” or whose last name contains “Costello”.</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre> <span class="nv">$request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Http\Request</span><span class="p">();</span>
+ <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setHeaders</span><span class="p">(</span><span class="nv">$httpHeaders</span><span class="p">);</span>
+ <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setUri</span><span class="p">(</span><span class="s1">'http://magento.ll/rest/V1/customers/search'</span><span class="p">);</span>
+ <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setMethod</span><span class="p">(</span><span class="nx">\Zend\Http\Request</span><span class="o">::</span><span class="na">METHOD_GET</span><span class="p">);</span>
+
+ <span class="nv">$params</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Stdlib\Parameters</span><span class="p">([</span>
+     <span class="s1">'searchCriteria'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+         <span class="s1">'filterGroups'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+             <span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                 <span class="s1">'filters'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                         <span class="s1">'field'</span> <span class="o">=&gt;</span> <span class="s1">'firstname'</span><span class="p">,</span>
+                         <span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'%ver%'</span><span class="p">,</span>
+                         <span class="s1">'condition_type'</span> <span class="o">=&gt;</span> <span class="s1">'like'</span>
+                     <span class="p">],</span>
+                     <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                         <span class="s1">'field'</span> <span class="o">=&gt;</span> <span class="s1">'lastname'</span><span class="p">,</span>
+                         <span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'%Costello%'</span><span class="p">,</span>
+                         <span class="s1">'condition_type'</span> <span class="o">=&gt;</span> <span class="s1">'like'</span>
+                     <span class="p">]</span>
+                 <span class="p">]</span>
+             <span class="p">]</span>
+         <span class="p">]</span>
+         <span class="s1">'current_page'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s1">'page_size'</span> <span class="o">=&gt;</span> <span class="mi">10</span>
+     <span class="p">],</span>
+ <span class="p">]);</span>
+
+ <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setQuery</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Prepare a HTTP Curl client object and pass the request object to <code class="language-plaintext highlighter-rouge">Client::send()</code> method.</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Zend\Http\Client</span><span class="p">();</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="s1">'adapter'</span>   <span class="o">=&gt;</span> <span class="s1">'Zend\Http\Client\Adapter\Curl'</span><span class="p">,</span>
+   <span class="s1">'curloptions'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">CURLOPT_FOLLOWLOCATION</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">],</span>
+   <span class="s1">'maxredirects'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="s1">'timeout'</span> <span class="o">=&gt;</span> <span class="mi">30</span>
+ <span class="p">];</span>
+ <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">setOptions</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
+
+ <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>This request returns a list of all customers in JSON format, as shown below. You can also specify XML format by changing <code>Accept</code> header of the request.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"default_billing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"default_shipping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-05 09:50:11"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-22 06:32:50"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Default Store View"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1973-12-15"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"roni_cost@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MI"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Michigan"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"6146 Honey Bluff Parkway"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 229-3326"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49628-7978"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calder"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"default_shipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"default_billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London "</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London "</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"1 Studio 103 The Business Centre 61"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CF24 3DG"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tottenham "</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"disable_auto_group_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"search_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"filter_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"firstname"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"%ver%"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"condition_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"like"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="ref-header">Related topics</p>
+
+<p>Run the web API call through a <a href="gs-curl.html">cURL command</a> or a REST client.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-03-11">
+    Mar 11th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

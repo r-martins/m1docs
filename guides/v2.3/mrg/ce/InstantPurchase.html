@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento_InstantPurchase | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="https://devdocs.magento.com/guides/v2.4/mrg/ce/InstantPurchase.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../../index.html">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+	<button class="dropdown-toggle spectrum-FieldButton spectrum-Dropdown-trigger" disabled>
+		<span class="spectrum-Dropdown-label">Magento 2.3</span>
+	</button>
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Module Reference Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Open Source (v2.3.5)</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="AdminAnalytics.html" class="spectrum-SideNav-itemLink ">AdminAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AdminNotification.html" class="spectrum-SideNav-itemLink ">AdminNotification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AdvancedPricingImportExport.html" class="spectrum-SideNav-itemLink ">AdvancedPricingImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AdvancedSearch.html" class="spectrum-SideNav-itemLink ">AdvancedSearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Amqp.html" class="spectrum-SideNav-itemLink ">Amqp</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AmqpStore.html" class="spectrum-SideNav-itemLink ">AmqpStore</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Analytics.html" class="spectrum-SideNav-itemLink ">Analytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AsynchronousOperations.html" class="spectrum-SideNav-itemLink ">AsynchronousOperations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Authorization.html" class="spectrum-SideNav-itemLink ">Authorization</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Authorizenet.html" class="spectrum-SideNav-itemLink ">Authorizenet</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AuthorizenetAcceptjs.html" class="spectrum-SideNav-itemLink ">AuthorizenetAcceptjs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AuthorizenetCardinal.html" class="spectrum-SideNav-itemLink ">AuthorizenetCardinal</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="AuthorizenetGraphQl.html" class="spectrum-SideNav-itemLink ">AuthorizenetGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Backend.html" class="spectrum-SideNav-itemLink ">Backend</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Backup.html" class="spectrum-SideNav-itemLink ">Backup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Braintree.html" class="spectrum-SideNav-itemLink ">Braintree</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="BraintreeGraphQl.html" class="spectrum-SideNav-itemLink ">BraintreeGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Bundle.html" class="spectrum-SideNav-itemLink ">Bundle</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="BundleGraphQl.html" class="spectrum-SideNav-itemLink ">BundleGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="BundleImportExport.html" class="spectrum-SideNav-itemLink ">BundleImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CacheInvalidate.html" class="spectrum-SideNav-itemLink ">CacheInvalidate</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Captcha.html" class="spectrum-SideNav-itemLink ">Captcha</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CardinalCommerce.html" class="spectrum-SideNav-itemLink ">CardinalCommerce</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Catalog.html" class="spectrum-SideNav-itemLink ">Catalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogAnalytics.html" class="spectrum-SideNav-itemLink ">CatalogAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogCmsGraphQl.html" class="spectrum-SideNav-itemLink ">CatalogCmsGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogCustomerGraphQl.html" class="spectrum-SideNav-itemLink ">CatalogCustomerGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogGraphQl.html" class="spectrum-SideNav-itemLink ">CatalogGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogInventory.html" class="spectrum-SideNav-itemLink ">CatalogInventory</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogInventoryGraphQl.html" class="spectrum-SideNav-itemLink ">CatalogInventoryGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogRule.html" class="spectrum-SideNav-itemLink ">CatalogRule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogRuleConfigurable.html" class="spectrum-SideNav-itemLink ">CatalogRuleConfigurable</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogSearch.html" class="spectrum-SideNav-itemLink ">CatalogSearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogUrlRewriteGraphQl.html" class="spectrum-SideNav-itemLink ">CatalogUrlRewriteGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CatalogWidget.html" class="spectrum-SideNav-itemLink ">CatalogWidget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Checkout.html" class="spectrum-SideNav-itemLink ">Checkout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CheckoutAgreements.html" class="spectrum-SideNav-itemLink ">CheckoutAgreements</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CheckoutAgreementsGraphQl.html" class="spectrum-SideNav-itemLink ">CheckoutAgreementsGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Cms.html" class="spectrum-SideNav-itemLink ">Cms</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CmsGraphQl.html" class="spectrum-SideNav-itemLink ">CmsGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CmsUrlRewrite.html" class="spectrum-SideNav-itemLink ">CmsUrlRewrite</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CmsUrlRewriteGraphQl.html" class="spectrum-SideNav-itemLink ">CmsUrlRewriteGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Config.html" class="spectrum-SideNav-itemLink ">Config</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ConfigurableProduct.html" class="spectrum-SideNav-itemLink ">ConfigurableProduct</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ConfigurableProductGraphQl.html" class="spectrum-SideNav-itemLink ">ConfigurableProductGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ConfigurableProductSales.html" class="spectrum-SideNav-itemLink ">ConfigurableProductSales</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Contact.html" class="spectrum-SideNav-itemLink ">Contact</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Cookie.html" class="spectrum-SideNav-itemLink ">Cookie</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Cron.html" class="spectrum-SideNav-itemLink ">Cron</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Csp.html" class="spectrum-SideNav-itemLink ">Csp</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CurrencySymbol.html" class="spectrum-SideNav-itemLink ">CurrencySymbol</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Customer.html" class="spectrum-SideNav-itemLink ">Customer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CustomerAnalytics.html" class="spectrum-SideNav-itemLink ">CustomerAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CustomerDownloadableGraphQl.html" class="spectrum-SideNav-itemLink ">CustomerDownloadableGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CustomerGraphQl.html" class="spectrum-SideNav-itemLink ">CustomerGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="CustomerImportExport.html" class="spectrum-SideNav-itemLink ">CustomerImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Deploy.html" class="spectrum-SideNav-itemLink ">Deploy</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Developer.html" class="spectrum-SideNav-itemLink ">Developer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Dhl.html" class="spectrum-SideNav-itemLink ">Dhl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Directory.html" class="spectrum-SideNav-itemLink ">Directory</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="DirectoryGraphQl.html" class="spectrum-SideNav-itemLink ">DirectoryGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Downloadable.html" class="spectrum-SideNav-itemLink ">Downloadable</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="DownloadableGraphQl.html" class="spectrum-SideNav-itemLink ">DownloadableGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="DownloadableImportExport.html" class="spectrum-SideNav-itemLink ">DownloadableImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Eav.html" class="spectrum-SideNav-itemLink ">Eav</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="EavGraphQl.html" class="spectrum-SideNav-itemLink ">EavGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Elasticsearch.html" class="spectrum-SideNav-itemLink ">Elasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Elasticsearch6.html" class="spectrum-SideNav-itemLink ">Elasticsearch6</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Elasticsearch7.html" class="spectrum-SideNav-itemLink ">Elasticsearch7</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Email.html" class="spectrum-SideNav-itemLink ">Email</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="EncryptionKey.html" class="spectrum-SideNav-itemLink ">EncryptionKey</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Fedex.html" class="spectrum-SideNav-itemLink ">Fedex</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GiftMessage.html" class="spectrum-SideNav-itemLink ">GiftMessage</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GoogleAdwords.html" class="spectrum-SideNav-itemLink ">GoogleAdwords</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GoogleAnalytics.html" class="spectrum-SideNav-itemLink ">GoogleAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GoogleOptimizer.html" class="spectrum-SideNav-itemLink ">GoogleOptimizer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GraphQl.html" class="spectrum-SideNav-itemLink ">GraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GraphQlCache.html" class="spectrum-SideNav-itemLink ">GraphQlCache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GroupedCatalogInventory.html" class="spectrum-SideNav-itemLink ">GroupedCatalogInventory</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GroupedProduct.html" class="spectrum-SideNav-itemLink ">GroupedProduct</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="GroupedProductGraphQl.html" class="spectrum-SideNav-itemLink ">GroupedProductGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ImportExport.html" class="spectrum-SideNav-itemLink ">ImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Indexer.html" class="spectrum-SideNav-itemLink ">Indexer</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="InstantPurchase.html" class="spectrum-SideNav-itemLink ">InstantPurchase</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Integration.html" class="spectrum-SideNav-itemLink ">Integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="LayeredNavigation.html" class="spectrum-SideNav-itemLink ">LayeredNavigation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Marketplace.html" class="spectrum-SideNav-itemLink ">Marketplace</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="MediaGallery.html" class="spectrum-SideNav-itemLink ">MediaGallery</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="MediaGalleryApi.html" class="spectrum-SideNav-itemLink ">MediaGalleryApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="MediaStorage.html" class="spectrum-SideNav-itemLink ">MediaStorage</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="MessageQueue.html" class="spectrum-SideNav-itemLink ">MessageQueue</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="MsrpConfigurableProduct.html" class="spectrum-SideNav-itemLink ">MsrpConfigurableProduct</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="MsrpGroupedProduct.html" class="spectrum-SideNav-itemLink ">MsrpGroupedProduct</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Multishipping.html" class="spectrum-SideNav-itemLink ">Multishipping</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="MysqlMq.html" class="spectrum-SideNav-itemLink ">MysqlMq</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="NewRelicReporting.html" class="spectrum-SideNav-itemLink ">NewRelicReporting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Newsletter.html" class="spectrum-SideNav-itemLink ">Newsletter</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="OfflinePayments.html" class="spectrum-SideNav-itemLink ">OfflinePayments</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="OfflineShipping.html" class="spectrum-SideNav-itemLink ">OfflineShipping</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="PageCache.html" class="spectrum-SideNav-itemLink ">PageCache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Payment.html" class="spectrum-SideNav-itemLink ">Payment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Paypal.html" class="spectrum-SideNav-itemLink ">Paypal</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="PaypalCaptcha.html" class="spectrum-SideNav-itemLink ">PaypalCaptcha</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="PaypalGraphQl.html" class="spectrum-SideNav-itemLink ">PaypalGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Persistent.html" class="spectrum-SideNav-itemLink ">Persistent</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ProductAlert.html" class="spectrum-SideNav-itemLink ">ProductAlert</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ProductVideo.html" class="spectrum-SideNav-itemLink ">ProductVideo</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Quote.html" class="spectrum-SideNav-itemLink ">Quote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="QuoteAnalytics.html" class="spectrum-SideNav-itemLink ">QuoteAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="QuoteGraphQl.html" class="spectrum-SideNav-itemLink ">QuoteGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="RelatedProductGraphQl.html" class="spectrum-SideNav-itemLink ">RelatedProductGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ReleaseNotification.html" class="spectrum-SideNav-itemLink ">ReleaseNotification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Reports.html" class="spectrum-SideNav-itemLink ">Reports</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="RequireJs.html" class="spectrum-SideNav-itemLink ">RequireJs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Review.html" class="spectrum-SideNav-itemLink ">Review</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ReviewAnalytics.html" class="spectrum-SideNav-itemLink ">ReviewAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Robots.html" class="spectrum-SideNav-itemLink ">Robots</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Rss.html" class="spectrum-SideNav-itemLink ">Rss</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Rule.html" class="spectrum-SideNav-itemLink ">Rule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Sales.html" class="spectrum-SideNav-itemLink ">Sales</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SalesAnalytics.html" class="spectrum-SideNav-itemLink ">SalesAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SalesGraphQl.html" class="spectrum-SideNav-itemLink ">SalesGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SalesInventory.html" class="spectrum-SideNav-itemLink ">SalesInventory</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SalesRule.html" class="spectrum-SideNav-itemLink ">SalesRule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SalesSequence.html" class="spectrum-SideNav-itemLink ">SalesSequence</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SampleData.html" class="spectrum-SideNav-itemLink ">SampleData</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Search.html" class="spectrum-SideNav-itemLink ">Search</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Security.html" class="spectrum-SideNav-itemLink ">Security</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SendFriend.html" class="spectrum-SideNav-itemLink ">SendFriend</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SendFriendGraphQl.html" class="spectrum-SideNav-itemLink ">SendFriendGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Shipping.html" class="spectrum-SideNav-itemLink ">Shipping</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Signifyd.html" class="spectrum-SideNav-itemLink ">Signifyd</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Sitemap.html" class="spectrum-SideNav-itemLink ">Sitemap</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Store.html" class="spectrum-SideNav-itemLink ">Store</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="StoreGraphQl.html" class="spectrum-SideNav-itemLink ">StoreGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Swagger.html" class="spectrum-SideNav-itemLink ">Swagger</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SwaggerWebapi.html" class="spectrum-SideNav-itemLink ">SwaggerWebapi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SwaggerWebapiAsync.html" class="spectrum-SideNav-itemLink ">SwaggerWebapiAsync</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Swatches.html" class="spectrum-SideNav-itemLink ">Swatches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SwatchesGraphQl.html" class="spectrum-SideNav-itemLink ">SwatchesGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="SwatchesLayeredNavigation.html" class="spectrum-SideNav-itemLink ">SwatchesLayeredNavigation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Tax.html" class="spectrum-SideNav-itemLink ">Tax</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="TaxGraphQl.html" class="spectrum-SideNav-itemLink ">TaxGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Theme.html" class="spectrum-SideNav-itemLink ">Theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ThemeGraphQl.html" class="spectrum-SideNav-itemLink ">ThemeGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Tinymce3.html" class="spectrum-SideNav-itemLink ">Tinymce3</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Translation.html" class="spectrum-SideNav-itemLink ">Translation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Ui.html" class="spectrum-SideNav-itemLink ">Ui</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Ups.html" class="spectrum-SideNav-itemLink ">Ups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="UrlRewrite.html" class="spectrum-SideNav-itemLink ">UrlRewrite</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="UrlRewriteGraphQl.html" class="spectrum-SideNav-itemLink ">UrlRewriteGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="User.html" class="spectrum-SideNav-itemLink ">User</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Usps.html" class="spectrum-SideNav-itemLink ">Usps</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Variable.html" class="spectrum-SideNav-itemLink ">Variable</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Vault.html" class="spectrum-SideNav-itemLink ">Vault</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="VaultGraphQl.html" class="spectrum-SideNav-itemLink ">VaultGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Version.html" class="spectrum-SideNav-itemLink ">Version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Webapi.html" class="spectrum-SideNav-itemLink ">Webapi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="WebapiAsync.html" class="spectrum-SideNav-itemLink ">WebapiAsync</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="WebapiSecurity.html" class="spectrum-SideNav-itemLink ">WebapiSecurity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Weee.html" class="spectrum-SideNav-itemLink ">Weee</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="WeeeGraphQl.html" class="spectrum-SideNav-itemLink ">WeeeGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Widget.html" class="spectrum-SideNav-itemLink ">Widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="Wishlist.html" class="spectrum-SideNav-itemLink ">Wishlist</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="WishlistAnalytics.html" class="spectrum-SideNav-itemLink ">WishlistAnalytics</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="WishlistGraphQl.html" class="spectrum-SideNav-itemLink ">WishlistGraphQl</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Commerce (v2.3.5)</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/AdminGws.html" class="spectrum-SideNav-itemLink ">AdminGws</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/AdvancedCatalog.html" class="spectrum-SideNav-itemLink ">AdvancedCatalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/AdvancedCheckout.html" class="spectrum-SideNav-itemLink ">AdvancedCheckout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/AdvancedRule.html" class="spectrum-SideNav-itemLink ">AdvancedRule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/AdvancedSalesRule.html" class="spectrum-SideNav-itemLink ">AdvancedSalesRule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Banner.html" class="spectrum-SideNav-itemLink ">Banner</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/BannerCustomerSegment.html" class="spectrum-SideNav-itemLink ">BannerCustomerSegment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/BundleImportExportStaging.html" class="spectrum-SideNav-itemLink ">BundleImportExportStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/BundleStaging.html" class="spectrum-SideNav-itemLink ">BundleStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogEvent.html" class="spectrum-SideNav-itemLink ">CatalogEvent</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogImportExportStaging.html" class="spectrum-SideNav-itemLink ">CatalogImportExportStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogInventoryStaging.html" class="spectrum-SideNav-itemLink ">CatalogInventoryStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogPermissions.html" class="spectrum-SideNav-itemLink ">CatalogPermissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogRuleStaging.html" class="spectrum-SideNav-itemLink ">CatalogRuleStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogStaging.html" class="spectrum-SideNav-itemLink ">CatalogStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogStagingGraphQl.html" class="spectrum-SideNav-itemLink ">CatalogStagingGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CatalogUrlRewriteStaging.html" class="spectrum-SideNav-itemLink ">CatalogUrlRewriteStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CheckoutAddressSearch.html" class="spectrum-SideNav-itemLink ">CheckoutAddressSearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CheckoutAddressSearchGiftRegistry.html" class="spectrum-SideNav-itemLink ">CheckoutAddressSearchGiftRegistry</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CheckoutStaging.html" class="spectrum-SideNav-itemLink ">CheckoutStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CmsStaging.html" class="spectrum-SideNav-itemLink ">CmsStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ConfigurableProductStaging.html" class="spectrum-SideNav-itemLink ">ConfigurableProductStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CustomAttributeManagement.html" class="spectrum-SideNav-itemLink ">CustomAttributeManagement</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CustomerBalance.html" class="spectrum-SideNav-itemLink ">CustomerBalance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CustomerBalanceGraphQl.html" class="spectrum-SideNav-itemLink ">CustomerBalanceGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CustomerCustomAttributes.html" class="spectrum-SideNav-itemLink ">CustomerCustomAttributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CustomerFinance.html" class="spectrum-SideNav-itemLink ">CustomerFinance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/CustomerSegment.html" class="spectrum-SideNav-itemLink ">CustomerSegment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Cybersource.html" class="spectrum-SideNav-itemLink ">Cybersource</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/DownloadableStaging.html" class="spectrum-SideNav-itemLink ">DownloadableStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ElasticsearchCatalogPermissions.html" class="spectrum-SideNav-itemLink ">ElasticsearchCatalogPermissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Enterprise.html" class="spectrum-SideNav-itemLink ">Enterprise</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Eway.html" class="spectrum-SideNav-itemLink ">Eway</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftCard.html" class="spectrum-SideNav-itemLink ">GiftCard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftCardAccount.html" class="spectrum-SideNav-itemLink ">GiftCardAccount</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftCardAccountGraphQl.html" class="spectrum-SideNav-itemLink ">GiftCardAccountGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftCardGraphQl.html" class="spectrum-SideNav-itemLink ">GiftCardGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftCardImportExport.html" class="spectrum-SideNav-itemLink ">GiftCardImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftCardStaging.html" class="spectrum-SideNav-itemLink ">GiftCardStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftMessageStaging.html" class="spectrum-SideNav-itemLink ">GiftMessageStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftRegistry.html" class="spectrum-SideNav-itemLink ">GiftRegistry</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftWrapping.html" class="spectrum-SideNav-itemLink ">GiftWrapping</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GiftWrappingStaging.html" class="spectrum-SideNav-itemLink ">GiftWrappingStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GoogleOptimizerStaging.html" class="spectrum-SideNav-itemLink ">GoogleOptimizerStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GoogleTagManager.html" class="spectrum-SideNav-itemLink ">GoogleTagManager</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/GroupedProductStaging.html" class="spectrum-SideNav-itemLink ">GroupedProductStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Invitation.html" class="spectrum-SideNav-itemLink ">Invitation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/LayeredNavigationStaging.html" class="spectrum-SideNav-itemLink ">LayeredNavigationStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Logging.html" class="spectrum-SideNav-itemLink ">Logging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/MsrpStaging.html" class="spectrum-SideNav-itemLink ">MsrpStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/MultipleWishlist.html" class="spectrum-SideNav-itemLink ">MultipleWishlist</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/PaymentStaging.html" class="spectrum-SideNav-itemLink ">PaymentStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/PersistentHistory.html" class="spectrum-SideNav-itemLink ">PersistentHistory</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/PricePermissions.html" class="spectrum-SideNav-itemLink ">PricePermissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ProductVideoStaging.html" class="spectrum-SideNav-itemLink ">ProductVideoStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/PromotionPermissions.html" class="spectrum-SideNav-itemLink ">PromotionPermissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Reminder.html" class="spectrum-SideNav-itemLink ">Reminder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ResourceConnections.html" class="spectrum-SideNav-itemLink ">ResourceConnections</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ReviewStaging.html" class="spectrum-SideNav-itemLink ">ReviewStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Reward.html" class="spectrum-SideNav-itemLink ">Reward</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/RewardGraphQl.html" class="spectrum-SideNav-itemLink ">RewardGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/RewardStaging.html" class="spectrum-SideNav-itemLink ">RewardStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Rma.html" class="spectrum-SideNav-itemLink ">Rma</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/RmaGraphQl.html" class="spectrum-SideNav-itemLink ">RmaGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/RmaStaging.html" class="spectrum-SideNav-itemLink ">RmaStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/SalesArchive.html" class="spectrum-SideNav-itemLink ">SalesArchive</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/SalesRuleStaging.html" class="spectrum-SideNav-itemLink ">SalesRuleStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ScalableCheckout.html" class="spectrum-SideNav-itemLink ">ScalableCheckout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ScalableInventory.html" class="spectrum-SideNav-itemLink ">ScalableInventory</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ScalableOms.html" class="spectrum-SideNav-itemLink ">ScalableOms</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/ScheduledImportExport.html" class="spectrum-SideNav-itemLink ">ScheduledImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/SearchStaging.html" class="spectrum-SideNav-itemLink ">SearchStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Staging.html" class="spectrum-SideNav-itemLink ">Staging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/StagingGraphQl.html" class="spectrum-SideNav-itemLink ">StagingGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Support.html" class="spectrum-SideNav-itemLink ">Support</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/TargetRule.html" class="spectrum-SideNav-itemLink ">TargetRule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Tinymce3Banner.html" class="spectrum-SideNav-itemLink ">Tinymce3Banner</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/VersionsCms.html" class="spectrum-SideNav-itemLink ">VersionsCms</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/VersionsCmsUrlRewrite.html" class="spectrum-SideNav-itemLink ">VersionsCmsUrlRewrite</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/VisualMerchandiser.html" class="spectrum-SideNav-itemLink ">VisualMerchandiser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/WebsiteRestriction.html" class="spectrum-SideNav-itemLink ">WebsiteRestriction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/WeeeStaging.html" class="spectrum-SideNav-itemLink ">WeeeStaging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../ee/Worldpay.html" class="spectrum-SideNav-itemLink ">Worldpay</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">B2B (v1.1.5)</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/B2b.html" class="spectrum-SideNav-itemLink ">B2b</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/BundleNegotiableQuote.html" class="spectrum-SideNav-itemLink ">BundleNegotiableQuote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/BundleRequisitionList.html" class="spectrum-SideNav-itemLink ">BundleRequisitionList</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/BundleSharedCatalog.html" class="spectrum-SideNav-itemLink ">BundleSharedCatalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/CheckoutAddressSearchNegotiableQuote.html" class="spectrum-SideNav-itemLink ">CheckoutAddressSearchNegotiableQuote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/CheckoutAgreementsNegotiableQuote.html" class="spectrum-SideNav-itemLink ">CheckoutAgreementsNegotiableQuote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/Company.html" class="spectrum-SideNav-itemLink ">Company</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/CompanyCredit.html" class="spectrum-SideNav-itemLink ">CompanyCredit</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/CompanyPayment.html" class="spectrum-SideNav-itemLink ">CompanyPayment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/ConfigurableNegotiableQuote.html" class="spectrum-SideNav-itemLink ">ConfigurableNegotiableQuote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/ConfigurableRequisitionList.html" class="spectrum-SideNav-itemLink ">ConfigurableRequisitionList</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/ConfigurableSharedCatalog.html" class="spectrum-SideNav-itemLink ">ConfigurableSharedCatalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/GiftCardNegotiableQuote.html" class="spectrum-SideNav-itemLink ">GiftCardNegotiableQuote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/GiftCardRequisitionList.html" class="spectrum-SideNav-itemLink ">GiftCardRequisitionList</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/GiftCardSharedCatalog.html" class="spectrum-SideNav-itemLink ">GiftCardSharedCatalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/GroupedRequisitionList.html" class="spectrum-SideNav-itemLink ">GroupedRequisitionList</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/GroupedSharedCatalog.html" class="spectrum-SideNav-itemLink ">GroupedSharedCatalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/NegotiableQuote.html" class="spectrum-SideNav-itemLink ">NegotiableQuote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/NegotiableQuoteSharedCatalog.html" class="spectrum-SideNav-itemLink ">NegotiableQuoteSharedCatalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/QuickOrder.html" class="spectrum-SideNav-itemLink ">QuickOrder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/RequisitionList.html" class="spectrum-SideNav-itemLink ">RequisitionList</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../b2b/SharedCatalog.html" class="spectrum-SideNav-itemLink ">SharedCatalog</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Inventory Management (v1.1.5)</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/Inventory.html" class="spectrum-SideNav-itemLink ">Inventory</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryAdvancedCheckout.html" class="spectrum-SideNav-itemLink ">InventoryAdvancedCheckout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryApi.html" class="spectrum-SideNav-itemLink ">InventoryApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryBundleProduct.html" class="spectrum-SideNav-itemLink ">InventoryBundleProduct</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryBundleProductAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryBundleProductAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryCache.html" class="spectrum-SideNav-itemLink ">InventoryCache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryCatalog.html" class="spectrum-SideNav-itemLink ">InventoryCatalog</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryCatalogAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryCatalogAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryCatalogApi.html" class="spectrum-SideNav-itemLink ">InventoryCatalogApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryCatalogSearch.html" class="spectrum-SideNav-itemLink ">InventoryCatalogSearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryConfigurableProduct.html" class="spectrum-SideNav-itemLink ">InventoryConfigurableProduct</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryConfigurableProductAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryConfigurableProductAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryConfigurableProductIndexer.html" class="spectrum-SideNav-itemLink ">InventoryConfigurableProductIndexer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryConfiguration.html" class="spectrum-SideNav-itemLink ">InventoryConfiguration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryConfigurationApi.html" class="spectrum-SideNav-itemLink ">InventoryConfigurationApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryDistanceBasedSourceSelection.html" class="spectrum-SideNav-itemLink ">InventoryDistanceBasedSourceSelection</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryDistanceBasedSourceSelectionAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryDistanceBasedSourceSelectionAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryDistanceBasedSourceSelectionApi.html" class="spectrum-SideNav-itemLink ">InventoryDistanceBasedSourceSelectionApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryElasticsearch.html" class="spectrum-SideNav-itemLink ">InventoryElasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryExportStock.html" class="spectrum-SideNav-itemLink ">InventoryExportStock</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryExportStockApi.html" class="spectrum-SideNav-itemLink ">InventoryExportStockApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryGraphQl.html" class="spectrum-SideNav-itemLink ">InventoryGraphQl</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryGroupedProduct.html" class="spectrum-SideNav-itemLink ">InventoryGroupedProduct</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryGroupedProductAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryGroupedProductAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryGroupedProductIndexer.html" class="spectrum-SideNav-itemLink ">InventoryGroupedProductIndexer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryImportExport.html" class="spectrum-SideNav-itemLink ">InventoryImportExport</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryIndexer.html" class="spectrum-SideNav-itemLink ">InventoryIndexer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryLowQuantityNotification.html" class="spectrum-SideNav-itemLink ">InventoryLowQuantityNotification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryLowQuantityNotificationAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryLowQuantityNotificationAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryLowQuantityNotificationApi.html" class="spectrum-SideNav-itemLink ">InventoryLowQuantityNotificationApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryMultiDimensionalIndexerApi.html" class="spectrum-SideNav-itemLink ">InventoryMultiDimensionalIndexerApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryProductAlert.html" class="spectrum-SideNav-itemLink ">InventoryProductAlert</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryRequisitionList.html" class="spectrum-SideNav-itemLink ">InventoryRequisitionList</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryReservationCli.html" class="spectrum-SideNav-itemLink ">InventoryReservationCli</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryReservations.html" class="spectrum-SideNav-itemLink ">InventoryReservations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryReservationsApi.html" class="spectrum-SideNav-itemLink ">InventoryReservationsApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySales.html" class="spectrum-SideNav-itemLink ">InventorySales</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySalesAdminUi.html" class="spectrum-SideNav-itemLink ">InventorySalesAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySalesApi.html" class="spectrum-SideNav-itemLink ">InventorySalesApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySalesFrontendUi.html" class="spectrum-SideNav-itemLink ">InventorySalesFrontendUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySetupFixtureGenerator.html" class="spectrum-SideNav-itemLink ">InventorySetupFixtureGenerator</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryShipping.html" class="spectrum-SideNav-itemLink ">InventoryShipping</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventoryShippingAdminUi.html" class="spectrum-SideNav-itemLink ">InventoryShippingAdminUi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySourceDeductionApi.html" class="spectrum-SideNav-itemLink ">InventorySourceDeductionApi</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySourceSelection.html" class="spectrum-SideNav-itemLink ">InventorySourceSelection</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../msi/InventorySourceSelectionApi.html" class="spectrum-SideNav-itemLink ">InventorySourceSelectionApi</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Magento_InstantPurchase</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<h2 id="overview">Overview</h2>
+
+<p>Instant Purchase feature allows the Customer to place the order in seconds without going through full checkout. Once clicked, system places the order using default shipping and billing addresses and stored payment method. Order is placed and customer gets confirmation message in notification area.</p>
+
+<p>Prerequisites to display the Instant Purchase button:</p>
+<ol>
+  <li>Instant purchase enabled for a store at <code class="language-plaintext highlighter-rouge">Store / Configurations / Sales / Sales / Instant Purchase</code></li>
+  <li>Customer is logged in</li>
+  <li>Customer has default shipping and billing address defined</li>
+  <li>Customer has valid stored payment method with instant purchase support</li>
+</ol>
+
+<h2 id="structure">Structure</h2>
+
+<p>In addition to <a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html">a typical file structure for a Magento 2 module</a> <code class="language-plaintext highlighter-rouge">PaymentMethodsIntegration</code> directory contains interfaces and basic implementation of integration vault payment method to the instant purchase.</p>
+
+<h2 id="extensibility">Extensibility</h2>
+
+<h3 id="instant-purchase-customization">Instant purchase customization</h3>
+
+<p>Almost all aspects of instant purchase may be customized. See comments to classes and interfaces marked with <code class="language-plaintext highlighter-rouge">@api</code> tag.</p>
+
+<p>All payments created for instant purchase also have <code class="language-plaintext highlighter-rouge">'instant-purchase' =&gt; true</code> in addition information. Use this only if all other customization points not suitable,</p>
+
+<h3 id="payment-method-integration">Payment method integration</h3>
+
+<p>Instant purchase support may be implemented for any payment method with <a href="../../payments-integrations/vault/vault-intro.html">vault support</a>.
+Basic implementation provided in <code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration</code> should be enough in most cases. It is not enabled by default to avoid issues on production sites and authors of vault payment method should verify correct work for instant purchase manually.
+To enable basic implementation just add single option to configuration of payemnt method in <code class="language-plaintext highlighter-rouge">config.xml</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>&lt;instant_purchase&gt;
+    &lt;supported&gt;1&lt;/supported&gt;
+&lt;/instant_purchase&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Basic implementation is a good start point but it’s recommended to provide own implementation to improve user experience. If instant purchase integration has customization then <code class="language-plaintext highlighter-rouge">supported</code> option is not required.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>&lt;instant_purchase&gt;
+    &lt;available&gt;Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\AvailabilityCheckerInterface&lt;/available&gt;
+    &lt;tokenFormat&gt;Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentTokenFormatterInterface&lt;/tokenFormat&gt;
+    &lt;additionalInformation&gt;Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentAdditionalInformationProviderInterface&lt;/additionalInformation&gt;
+&lt;/instant_purchase&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\AvailabilityCheckerInterface</code> - allows programmatically defines if instant purchase supported (e.g. support may not be available if some payment method option switched on/off). Basic implementation always returns <code class="language-plaintext highlighter-rouge">true</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\PaymentTokenFormatterInterface</code> - creates string that describes stored payment method. Basic implementation returns payment method name. It is highly recommended to implement own formatter.</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\PaymentAdditionalInformationProviderInterface</code> - allows to add some extra values to payment additional information array. Default implementation returns empty array.</li>
+</ul>
+
+<h2 id="additional-information">Additional information</h2>
+
+<h3 id="backward-incompatible-changes">Backward incompatible changes</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">Magento_InstantPurchase</code> module does not introduce backward incompatible changes.</p>
+
+<p>You can track <a href="../../release-notes/backward-incompatible-changes/reference.html">backward incompatible changes in patch releases</a>.</p>
+
+<hr />
+
+<p>This module was initially developed by the <a href="https://creatuity.com/">Creatuity Corp.</a> and <a href="mailto:engcom@magento.com">Magento Community Engineering Team</a>.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-08-06">
+    Aug 6th, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

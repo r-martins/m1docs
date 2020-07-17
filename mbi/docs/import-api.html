@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento BI Import API | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="import-api.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Business Intelligence</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-SideNav-itemLink ">Getting started</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="export-api.html" class="spectrum-SideNav-itemLink ">Export API</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="import-api.html" class="spectrum-SideNav-itemLink ">Import API</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="libraries.html" class="spectrum-SideNav-itemLink ">Libraries</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Magento BI Import API</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs-mbi/blob/master/docs/import-api.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs-mbi/issues/new?title=Feedback on page: /mbi/docs/import-api.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The Magento Data Import API allows you to push arbitrary data into your Magento data warehouse using REST.</p>
+
+<p>Before using the import API, make sure you <a href="https://devdocs.magento.com/mbi/docs/getting-started.html#authentication">authenticate</a> your connection.</p>
+
+<h2 id="return-codes">Return Codes</h2>
+
+<p>The Data Import API uses standard HTTP return codes to indicate the status of a request. Your application should handle each of the following return statuses.</p>
+
+<p>Codes in the 2xx range indicate a successful transaction, codes in the 4xx range indicate a bad request, and codes in the 5xx range indicate an error with Magento BI. If errors in the 5xx range persist, please contact <a href="https://support.magento.com/hc/en-us/articles/360019088251">support</a>.</p>
+
+<ul>
+  <li>200 OK - request was successful.</li>
+  <li>201 Created - new data was added as a result of the request.</li>
+  <li>400 Bad request - Your request was missing a required parameter.</li>
+  <li>401 Unauthorized - Authorization failed. Double check your API key.</li>
+  <li>404 Not Found - The resource you are looking for does not exist.</li>
+  <li>500 Server Error - There is an error in Magento BI.</li>
+</ul>
+
+<h2 id="versioning">Versioning</h2>
+
+<p>The current version of the Import API is v2.</p>
+
+<p>v1 is still available, but will be deprecated in the future.</p>
+
+<h2 id="test-environment">Test Environment</h2>
+
+<p>The Data Import API has a full test (sandbox) environment.</p>
+
+<p>The sandbox environment uses the same keys and return codes as the production API, but does not persist incoming data. You can use this environment to test your integration.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-v</span> https://sandbox-connect.rjmetrics.com/v2/client/:cid/:endpoint?apikey<span class="o">=</span>:apikey
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="status">Status</h3>
+
+<p>You can always check the status of the Data Import API. This is called when you instantiate the client. This will return a <code class="language-plaintext highlighter-rouge">200-Success</code> response if the API is operational.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-v</span> https://connect.rjmetrics.com
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="upsert">Upsert</h3>
+
+<p>The upsert method allows you to push data into your RJMetrics data warehouse. You can push entire arrays of data or single data points. This endpoint will only accept data that have the following properties:</p>
+
+<ul>
+  <li>The data must be valid JSON.</li>
+  <li>Each data point must contain a <code class="language-plaintext highlighter-rouge">keys</code> field. The <code class="language-plaintext highlighter-rouge">keys</code> field should specify which fields in the records represent the primary key(s).</li>
+  <li>An array of data must contain no more than 100 individual data points.</li>
+</ul>
+
+<p class="bs-callout-warning">Each data point in your data warehouse will be uniquely indexed by the fields specified in <code class="language-plaintext highlighter-rouge">keys</code>. If a new data point has keys that conflict with a pre-existing data point, the old data point will be replaced.</p>
+
+<p>Tables in the Data Import API are schemaless. There is no command to create or destroy a table - you can push data to any table name and it will be dynamically generated.</p>
+
+<p>Here are some guidelines for managing tables:</p>
+
+<ul>
+  <li>Create one table for each type of data point you are pushing.</li>
+  <li>Generally speaking, each data point pushed into a table should have the same schema.</li>
+  <li>Typically, one type of ‘thing’ will correspond to one table. For example, a typical eCommerce company might have a ‘customer’, ‘order’, ‘order_item’, and ‘product’ table.</li>
+  <li>Table names must be alphanumeric (plus underscores). Bad table names will result in a <code class="language-plaintext highlighter-rouge">400 Bad Request</code> return code.</li>
+</ul>
+
+<p>Here’s an example of an Upsert call:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>curl <span class="nt">-X</span> POST <span class="nt">-d</span> @filename https://connect.rjmetrics.com/v2/client/:cid/table/:table/data?apikey<span class="o">=</span>:apikey <span class="nt">--header</span> <span class="s2">"Content-type: application/json"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The above call contains the following variables:</p>
+
+<p><code class="language-plaintext highlighter-rouge">@filename</code> - name of the file you are uploading
+<code class="language-plaintext highlighter-rouge">:cid</code> - your client Id
+<code class="language-plaintext highlighter-rouge">:table</code> - table name
+<code class="language-plaintext highlighter-rouge">:apikey</code> - your API key</p>
+
+<p><strong>Response:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-05 04:51:02"</span><span class="w">
+</span><span class="err">client.push_data(</span><span class="w">
+    </span><span class="s2">"table_name"</span><span class="err">,</span><span class="w">
+    </span><span class="err">test_data</span><span class="w">
+</span><span class="err">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="upsert-single-data-point-example">Upsert single data point example</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joe@schmo.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-01 14:22:32"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="upsert-array-of-data-points-example">Upsert array of data points example</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="p">[{</span><span class="w">
+  </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joe@schmo.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-01 14:22:32"</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anne@schmo.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-03 23:12:30"</span><span class="w">
+</span><span class="p">},{</span><span class="w">
+  </span><span class="nl">"keys"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"joe@schmo.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-05 04:51:02"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="additional-examples">Additional Examples</h2>
+
+<p>The following section describes how you can call the import API through various libraries to perform the following tasks:</p>
+
+<ul>
+  <li>Create a Users Table</li>
+  <li>Create an Orders Table</li>
+</ul>
+
+<h3 id="create-users-table">Create a Users Table</h3>
+
+<p>Your most important table in Magento BI is your <code class="language-plaintext highlighter-rouge">Users</code> table. In your application, you probably have a <code class="language-plaintext highlighter-rouge">user</code> object with some data like <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">email</code>, and <code class="language-plaintext highlighter-rouge">acquisition_source</code>.</p>
+
+<p>This examples describes how to push this data to the Import API.</p>
+
+<p>First, define a template to push the data. Ensure the client is <code class="language-plaintext highlighter-rouge">authenticated &lt;api-authentication&gt;</code> and prepare to push the data to the Import API.</p>
+
+<p><strong>Javascript:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>
+    <span class="kd">var</span> <span class="nx">rjmetrics</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">rjmetrics</span><span class="dl">"</span><span class="p">);</span>
+    <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">rjmetrics</span><span class="p">.</span><span class="nx">Client</span><span class="p">(</span><span class="nx">your</span><span class="o">-</span><span class="nx">client</span><span class="o">-</span><span class="nx">id</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-api-key</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="c1">// make sure the client is authenticated before we do anything</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// this is where we'll push the data</span>
+    <span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed to authenticate!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>PHP:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+    <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RJMetrics\Client</span><span class="p">(</span><span class="nv">$your</span><span class="o">-</span><span class="nx">client</span><span class="o">-</span><span class="nx">id</span><span class="p">,</span> <span class="s2">"your-api-key"</span><span class="p">);</span>
+
+    <span class="c1">// make sure the client is authenticated before we do anything</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">authenticate</span><span class="p">())</span> <span class="p">{</span>
+      <span class="c1">// this is where we'll push the data</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Clojure:</strong></p>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="w">
+    </span><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">examples.acquisition-source</span><span class="w">
+      </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">rjmetrics.core</span><span class="w"> </span><span class="no">:as</span><span class="w"> </span><span class="n">rjmetrics</span><span class="p">]))</span><span class="w">
+
+    </span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">run</span><span class="w">
+      </span><span class="p">[]</span><span class="w">
+      </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">[</span><span class="n">config</span><span class="w"> </span><span class="p">{</span><span class="no">:client-id</span><span class="w"> </span><span class="n">your-client-id</span><span class="w"> </span><span class="no">:api-key</span><span class="w"> </span><span class="s">"your-api-key"</span><span class="p">}]</span><span class="w">
+        </span><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nf">rjmetrics/authenticated?</span><span class="w"> </span><span class="n">config</span><span class="p">)</span><span class="w">
+          </span><span class="c1">;; this is where we'll push data</span><span class="w">
+          </span><span class="p">)))</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Ruby:</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>
+    <span class="nb">require</span> <span class="s2">"rjmetrics_client"</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="no">RJMetricsClient</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">your</span><span class="o">-</span><span class="n">client</span><span class="o">-</span><span class="nb">id</span><span class="p">,</span> <span class="s2">"your-api-key"</span><span class="p">)</span>
+
+    <span class="c1"># make sure the client is authenticated before we do anything</span>
+    <span class="k">if</span> <span class="n">client</span><span class="p">.</span><span class="nf">authenticated?</span>
+      <span class="c1"># this is where we'll push data</span>
+    <span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Python:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>
+    <span class="kn">import</span> <span class="nn">rjmetrics.client</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">rjmetrics</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span><span class="n">your_client_id</span><span class="p">,</span> <span class="s">"your_api_key"</span><span class="p">)</span>
+
+    <span class="c1"># make sure the client is authenticated before we do anything
+</span>    <span class="k">if</span> <span class="n">client</span><span class="p">.</span><span class="n">authenticate</span><span class="p">()</span>
+      <span class="c1"># this is where we'll push data
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Next, create a new function to sync the new data.</p>
+
+<p><strong>Javascript:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>
+    <span class="kd">function</span> <span class="nx">syncUser</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">pushData</span><span class="p">(</span>
+        <span class="c1">// table named "users"</span>
+        <span class="dl">"</span><span class="s2">users</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="c1">// user_id is the unique key here, since each user should only</span>
+          <span class="c1">// have one record in this table</span>
+          <span class="dl">"</span><span class="s2">keys</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">],</span>
+          <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">acquisition_source</span><span class="dl">"</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">acquisition_source</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>PHP:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">function</span> <span class="nf">syncUser</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$dataToPush</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">stdClass</span><span class="p">();</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">email</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">acquisition_source</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">acquisitionSource</span><span class="p">;</span>
+      <span class="c1">// user_id is the unique key here, since each user should only</span>
+      <span class="c1">// have one record in this table</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">keys</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
+
+      <span class="c1">// table named "users"</span>
+      <span class="k">return</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">pushData</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="nv">$dataToPush</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Clojure:</strong></p>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="w">
+    </span><span class="p">(</span><span class="k">defn-</span><span class="w"> </span><span class="n">sync-user</span><span class="w">
+      </span><span class="p">[</span><span class="n">config</span><span class="w"> </span><span class="n">user</span><span class="p">]</span><span class="w">
+      </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">[</span><span class="n">result</span><span class="w"> </span><span class="p">(</span><span class="nf">rjmetrics/push-data</span><span class="w"> </span><span class="n">config</span><span class="w">
+                                        </span><span class="c1">;; table named "users"</span><span class="w">
+                                        </span><span class="s">"users"</span><span class="w">
+                                        </span><span class="c1">;; user_id is the unique key here, since each user</span><span class="w">
+                                        </span><span class="c1">;; should only have one record in the table</span><span class="w">
+                                        </span><span class="p">(</span><span class="nb">assoc</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="no">:keys</span><span class="w"> </span><span class="p">[</span><span class="s">"id"</span><span class="p">]))]</span><span class="w">
+        </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="p">(</span><span class="nb">-&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="no">:status</span><span class="p">)</span><span class="w"> </span><span class="mi">201</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Synced user with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Failed to sync user with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">))))</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Ruby:</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">def</span> <span class="nf">sync_user</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+      <span class="c1"># `id` is the unique key here, since each user should only</span>
+      <span class="c1"># have one record in this table</span>
+      <span class="n">user</span><span class="p">[</span><span class="ss">:keys</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:id</span><span class="p">]</span>
+      <span class="c1"># table named "users"</span>
+      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="nf">pushData</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+    <span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Python:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">def</span> <span class="nf">sync_user</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+      <span class="c1"># `id` is the unique key here, since each user should only
+</span>      <span class="c1"># have one record in this table
+</span>      <span class="n">user</span><span class="p">[</span><span class="s">"keys"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+      <span class="c1"># table named "users"
+</span>      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="n">push_data</span><span class="p">(</span><span class="s">"users"</span><span class="p">,</span> <span class="p">[</span><span class="n">user</span><span class="p">])</span> <span class="c1"># NOTE: the python library only pushes lists
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Finally, incorporate the <code class="language-plaintext highlighter-rouge">syncUser</code> function into the original script.</p>
+
+<p><strong>Javascript:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="rouge-code"><pre>
+    <span class="kd">var</span> <span class="nx">rjmetrics</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">rjmetrics</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">rjmetrics</span><span class="p">.</span><span class="nx">Client</span><span class="p">(</span><span class="nx">your</span><span class="o">-</span><span class="nx">client</span><span class="o">-</span><span class="nx">id</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-api-key</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">syncUser</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">pushData</span><span class="p">(</span>
+        <span class="c1">// table named "users"</span>
+        <span class="dl">"</span><span class="s2">users</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="c1">// user_id is the unique key here, since each user should only</span>
+          <span class="c1">// have one record in this table</span>
+          <span class="dl">"</span><span class="s2">keys</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">],</span>
+          <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">acquisition_source</span><span class="dl">"</span><span class="p">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">acquisition_source</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="c1">// let's define some fake users</span>
+    <span class="kd">var</span> <span class="nx">users</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">joe@schmo.com</span><span class="dl">"</span><span class="p">,</span> <span class="na">acquisition_source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PPC</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mike@smith.com</span><span class="dl">"</span><span class="p">,</span> <span class="na">acquisition_source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">PPC</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">lorem@ipsum.com</span><span class="dl">"</span><span class="p">,</span> <span class="na">acquisition_source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Referral</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">george@vandelay.com</span><span class="dl">"</span><span class="p">,</span> <span class="na">acquisition_source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Organic</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="na">id</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">larry@google.com</span><span class="dl">"</span><span class="p">,</span> <span class="na">acquisition_source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Organic</span><span class="dl">"</span><span class="p">},</span>
+    <span class="p">];</span>
+
+    <span class="c1">// make sure the client is authenticated before we do anything</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="c1">// iterate through users and push data</span>
+      <span class="nx">users</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">syncUser</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">user</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Synced user with id </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed to sync user with id </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="p">})</span>
+      <span class="p">});</span>
+
+    <span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed to authenticate!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>PHP:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+    <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RJMetrics\Client</span><span class="p">(</span><span class="nv">$your</span><span class="o">-</span><span class="nx">client</span><span class="o">-</span><span class="nx">id</span><span class="p">,</span> <span class="s2">"your-api-key"</span><span class="p">);</span>
+
+    <span class="k">function</span> <span class="nf">syncUser</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$dataToPush</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">stdClass</span><span class="p">();</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">email</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">acquisition_source</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">acquisitionSource</span><span class="p">;</span>
+      <span class="c1">// user_id is the unique key here, since each user should only</span>
+      <span class="c1">// have one record in this table</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">keys</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
+
+      <span class="c1">// table named "users"</span>
+      <span class="k">return</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">pushData</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="nv">$dataToPush</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// let's define some fake users</span>
+    <span class="k">function</span> <span class="nf">fakeUserGenerator</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="nv">$email</span><span class="p">,</span> <span class="nv">$acquisitionSource</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$toReturn</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">stdClass</span><span class="p">();</span>
+
+      <span class="nv">$toReturn</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+      <span class="nv">$toReturn</span><span class="o">-&gt;</span><span class="na">email</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
+      <span class="nv">$toReturn</span><span class="o">-&gt;</span><span class="na">acquisitionSource</span> <span class="o">=</span> <span class="nv">$acquisitionSource</span><span class="p">;</span>
+
+      <span class="k">return</span> <span class="nv">$toReturn</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$users</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+      <span class="nx">fakeUserGenerator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"joe@schmo.com"</span><span class="p">,</span> <span class="s2">"PPC"</span><span class="p">),</span>
+      <span class="nx">fakeUserGenerator</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"mike@smith.com"</span><span class="p">,</span> <span class="s2">"PPC"</span><span class="p">),</span>
+      <span class="nx">fakeUserGenerator</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"lorem@ipsum.com"</span><span class="p">,</span> <span class="s2">"Referral"</span><span class="p">),</span>
+      <span class="nx">fakeUserGenerator</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"george@vandelay.com"</span><span class="p">,</span> <span class="s2">"Organic"</span><span class="p">),</span>
+      <span class="nx">fakeUserGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">"larry@google.com"</span><span class="p">,</span> <span class="s2">"Organic"</span><span class="p">),</span>
+    <span class="p">);</span>
+
+    <span class="c1">// make sure the client is authenticated before we do anything</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">authenticate</span><span class="p">())</span> <span class="p">{</span>
+      <span class="c1">// iterate through users and push data</span>
+      <span class="k">foreach</span><span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$responses</span> <span class="o">=</span> <span class="nx">syncUser</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="nv">$user</span><span class="p">);</span>
+
+        <span class="c1">// api calls always return an array of responses</span>
+        <span class="k">foreach</span><span class="p">(</span><span class="nv">$responses</span> <span class="k">as</span> <span class="nv">$response</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">code</span> <span class="o">==</span> <span class="mi">201</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">"Synced user with id </span><span class="si">{</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+          <span class="k">else</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">"Failed to sync user with id </span><span class="si">{</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Clojure:</strong></p>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="w">
+    </span><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">examples.acquisition-source</span><span class="w">
+      </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">rjmetrics.core</span><span class="w"> </span><span class="no">:as</span><span class="w"> </span><span class="n">rjmetrics</span><span class="p">]))</span><span class="w">
+
+    </span><span class="p">(</span><span class="k">defn-</span><span class="w"> </span><span class="n">sync-user</span><span class="w">
+      </span><span class="p">[</span><span class="n">config</span><span class="w"> </span><span class="n">user</span><span class="p">]</span><span class="w">
+      </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">[</span><span class="n">result</span><span class="w"> </span><span class="p">(</span><span class="nf">rjmetrics/push-data</span><span class="w"> </span><span class="n">config</span><span class="w">
+                                        </span><span class="c1">;; table named "users"</span><span class="w">
+                                        </span><span class="s">"users"</span><span class="w">
+                                        </span><span class="c1">;; user_id is the unique key here, since each user</span><span class="w">
+                                        </span><span class="c1">;; should only have one record in the table</span><span class="w">
+                                        </span><span class="p">(</span><span class="nb">assoc</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="no">:keys</span><span class="w"> </span><span class="p">[</span><span class="s">"id"</span><span class="p">]))]</span><span class="w">
+        </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="p">(</span><span class="nb">-&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="no">:status</span><span class="p">)</span><span class="w"> </span><span class="mi">201</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Synced user with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Failed to sync user with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">user</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">))))</span><span class="w">
+
+    </span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">run</span><span class="w">
+      </span><span class="p">[]</span><span class="w">
+      </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">[</span><span class="n">config</span><span class="w"> </span><span class="p">{</span><span class="no">:client-id</span><span class="w"> </span><span class="n">your-client-id</span><span class="w"> </span><span class="no">:api-key</span><span class="w"> </span><span class="s">"your-api-key"</span><span class="p">}</span><span class="w">
+            </span><span class="c1">;; let's define some fake users</span><span class="w">
+            </span><span class="n">users</span><span class="w"> </span><span class="p">[{</span><span class="no">:id</span><span class="w"> </span><span class="mi">1</span><span class="n">,</span><span class="w"> </span><span class="no">:email</span><span class="w"> </span><span class="s">"joe@schmo.com"</span><span class="n">,</span><span class="w"> </span><span class="no">:acquisition_source</span><span class="w"> </span><span class="s">"PPC"</span><span class="p">}</span><span class="w">
+                   </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">2</span><span class="n">,</span><span class="w"> </span><span class="no">:email</span><span class="w"> </span><span class="s">"mike@smith.com"</span><span class="n">,</span><span class="w"> </span><span class="no">:acquisition_source</span><span class="w"> </span><span class="s">"PPC"</span><span class="p">}</span><span class="w">
+                   </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">3</span><span class="n">,</span><span class="w"> </span><span class="no">:email</span><span class="w"> </span><span class="s">"lorem@ipsum.com"</span><span class="n">,</span><span class="w"> </span><span class="no">:acquisition_source</span><span class="w"> </span><span class="s">"Referral"</span><span class="p">}</span><span class="w">
+                   </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">4</span><span class="n">,</span><span class="w"> </span><span class="no">:email</span><span class="w"> </span><span class="s">"george@vandelay.com"</span><span class="n">,</span><span class="w"> </span><span class="no">:acquisition_source</span><span class="w"> </span><span class="s">"Organic"</span><span class="p">}</span><span class="w">
+                   </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">5</span><span class="n">,</span><span class="w"> </span><span class="no">:email</span><span class="w"> </span><span class="s">"larry@google.com"</span><span class="n">,</span><span class="w"> </span><span class="no">:acquisition_source</span><span class="w"> </span><span class="s">"Organic"</span><span class="p">}]]</span><span class="w">
+        </span><span class="c1">;; make sure the client is authenticated before we do anything</span><span class="w">
+        </span><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nf">rjmetrics/authenticated?</span><span class="w"> </span><span class="n">config</span><span class="p">)</span><span class="w">
+          </span><span class="c1">;; iterate through users and push data</span><span class="w">
+          </span><span class="p">(</span><span class="nb">dorun</span><span class="w"> </span><span class="p">(</span><span class="nb">map</span><span class="w"> </span><span class="p">(</span><span class="nb">partial</span><span class="w"> </span><span class="n">sync-user</span><span class="w"> </span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="n">users</span><span class="p">)))))</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Ruby:</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="rouge-code"><pre>
+    <span class="nb">require</span> <span class="s2">"rjmetrics_client"</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="no">RJMetricsClient</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">your</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="n">key</span><span class="p">,</span> <span class="s2">"your-client-id"</span><span class="p">)</span>
+
+    <span class="c1"># let's define some fake users</span>
+    <span class="n">fake_users</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"joe@schmo.com"</span><span class="p">,</span> <span class="ss">:acquisition_source</span> <span class="o">=&gt;</span> <span class="s2">"PPC"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"mike@smith.com"</span><span class="p">,</span> <span class="ss">:acquisition_source</span> <span class="o">=&gt;</span> <span class="s2">"PPC"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"lorem@ipsum.com"</span><span class="p">,</span> <span class="ss">:acquisition_source</span> <span class="o">=&gt;</span> <span class="s2">"Referral"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"george@vandelay.com"</span><span class="p">,</span> <span class="ss">:acquisition_source</span> <span class="o">=&gt;</span> <span class="s2">"Organic"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"larry@google.com"</span><span class="p">,</span> <span class="ss">:acquisition_source</span> <span class="o">=&gt;</span> <span class="s2">"Organic"</span><span class="p">}</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">sync_user</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+      <span class="c1"># `id` is the unique key here, since each user should only</span>
+      <span class="c1"># have one record in this table</span>
+      <span class="n">user</span><span class="p">[</span><span class="ss">:keys</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:id</span><span class="p">]</span>
+      <span class="c1"># table named "users"</span>
+      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="nf">pushData</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="c1"># make sure the client is authenticated before we do anything</span>
+    <span class="k">if</span> <span class="n">client</span><span class="p">.</span><span class="nf">authenticated?</span>
+      <span class="n">fake_users</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
+        <span class="c1"># iterate through users and push data</span>
+        <span class="n">sync_user</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">user</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">response</span><span class="o">|</span>
+          <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="s2">"code"</span><span class="p">]</span>
+            <span class="nb">puts</span> <span class="s2">"Synced user with id </span><span class="si">#{</span><span class="n">user</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+          <span class="k">else</span>
+            <span class="nb">puts</span> <span class="s2">"Failed to sync user with id </span><span class="si">#{</span><span class="n">user</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Python:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre>
+    <span class="kn">import</span> <span class="nn">rjmetrics.client</span>
+
+    <span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="mi">0000</span>
+    <span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'your_api_key'</span>
+
+    <span class="n">client</span> <span class="o">=</span> <span class="n">rjmetrics</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">)</span>
+
+    <span class="c1"># let's define some fake users
+</span>    <span class="n">fake_users</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"email"</span><span class="p">:</span> <span class="s">"joe@schmo.com"</span><span class="p">,</span> <span class="s">"acquisition_source"</span><span class="p">:</span> <span class="s">"PPC"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"email"</span><span class="p">:</span> <span class="s">"mike@smith.com"</span><span class="p">,</span> <span class="s">"acquisition_source"</span><span class="p">:</span> <span class="s">"PPC"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"email"</span><span class="p">:</span> <span class="s">"lorem@ipsum.com"</span><span class="p">,</span> <span class="s">"acquisition_source"</span><span class="p">:</span> <span class="s">"Referral"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">"email"</span><span class="p">:</span> <span class="s">"george@vandelay.com"</span><span class="p">,</span> <span class="s">"acquisition_source"</span><span class="p">:</span> <span class="s">"Organic"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"email"</span><span class="p">:</span> <span class="s">"larry@google.com"</span><span class="p">,</span> <span class="s">"acquisition_source"</span><span class="p">:</span> <span class="s">"Organic"</span><span class="p">}</span>
+    <span class="p">]</span>
+
+
+    <span class="k">def</span> <span class="nf">sync_user</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+      <span class="c1"># `id` is the unique key here, since each user should only
+</span>      <span class="c1"># have one record in this table
+</span>      <span class="n">user</span><span class="p">[</span><span class="s">"keys"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+      <span class="c1"># table named "users"
+</span>      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="n">push_data</span><span class="p">(</span><span class="s">"users"</span><span class="p">,</span> <span class="p">[</span><span class="n">user</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+
+
+    <span class="c1"># make sure the client is authenticated before we do anything
+</span>    <span class="k">if</span> <span class="n">client</span><span class="p">.</span><span class="n">authenticate</span><span class="p">():</span>
+      <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">fake_users</span><span class="p">:</span>
+        <span class="c1"># iterate through users and push data
+</span>        <span class="n">response</span> <span class="o">=</span> <span class="n">sync_user</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">"Synced user with id "</span><span class="p">,</span> <span class="n">user</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">"Failed to sync user with id "</span><span class="p">,</span> <span class="n">user</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This example is included with the <a href="libraries.html">client libraries</a> or can be <a href="http://www.github.com/rjmetrics">downloaded from github</a>.</p>
+
+<p><strong>Javascript:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>
+    npm install
+    node users-table.js
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>PHP:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>
+    composer install
+    php users-table.php
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Clojure:</strong></p>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="w">
+    </span><span class="n">lein</span><span class="w"> </span><span class="n">repl</span><span class="w">
+
+    </span><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">examples.users-table</span><span class="p">)</span><span class="w">
+    </span><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="no">:reload</span><span class="w"> </span><span class="ss">'examples.users-table</span><span class="p">)</span><span class="w">
+    </span><span class="nb">&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">run</span><span class="p">)</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Ruby:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>
+    bundle install
+    ruby users-table.rb
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Python:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>
+    pip install
+    python examples/users_table.py
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="create-an-orders-table">Create an Orders Table</h3>
+
+<p>Now, create an orders table with the following fields: <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">user_id</code>, <code class="language-plaintext highlighter-rouge">value</code> and <code class="language-plaintext highlighter-rouge">sku</code>.</p>
+
+<p>Create a new function to push the order object:</p>
+
+<p><strong>Javascript:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre>
+    <span class="kd">function</span> <span class="nx">syncOrder</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">pushData</span><span class="p">(</span>
+        <span class="dl">"</span><span class="s2">orders</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="dl">"</span><span class="s2">keys</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">],</span>
+          <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">sku</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">sku</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>PHP:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">function</span> <span class="nf">syncOrder</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="nv">$order</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$dataToPush</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">stdClass</span><span class="p">();</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">user_id</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">user_id</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">value</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">sku</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">sku</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">keys</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
+
+      <span class="k">return</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">pushData</span><span class="p">(</span><span class="s2">"orders"</span><span class="p">,</span> <span class="nv">$dataToPush</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Clojure:</strong></p>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="w">
+    </span><span class="p">(</span><span class="k">defn-</span><span class="w"> </span><span class="n">sync-order</span><span class="w">
+      </span><span class="p">[</span><span class="n">config</span><span class="w"> </span><span class="n">order</span><span class="p">]</span><span class="w">
+      </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">[</span><span class="n">result</span><span class="w"> </span><span class="p">(</span><span class="nf">rjmetrics/push-data</span><span class="w"> </span><span class="n">config</span><span class="w">
+                                        </span><span class="s">"orders"</span><span class="w">
+                                        </span><span class="p">(</span><span class="nb">assoc</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="no">:keys</span><span class="w"> </span><span class="p">[</span><span class="s">"id"</span><span class="p">]))]</span><span class="w">
+        </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="p">(</span><span class="nb">-&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="no">:status</span><span class="p">)</span><span class="w"> </span><span class="mi">201</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Synced order with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">order</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Failed to sync order with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">order</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">))))</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Ruby:</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">def</span> <span class="nf">sync_order</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+      <span class="n">order</span><span class="p">[</span><span class="ss">:keys</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:id</span><span class="p">]</span>
+      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="nf">pushData</span><span class="p">(</span><span class="s2">"orders"</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+    <span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Python:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">def</span> <span class="nf">sync_order</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+      <span class="n">order</span><span class="p">[</span><span class="s">"keys"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="n">push_data</span><span class="p">(</span><span class="s">"orders"</span><span class="p">,</span> <span class="p">[</span><span class="n">order</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Now, plug this into the same template from the <code class="language-plaintext highlighter-rouge">users</code> table:</p>
+
+<p><strong>Javascript:</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="rouge-code"><pre>
+    <span class="kd">var</span> <span class="nx">rjmetrics</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">rjmetrics</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">rjmetrics</span><span class="p">.</span><span class="nx">Client</span><span class="p">(</span><span class="nx">your</span><span class="o">-</span><span class="nx">client</span><span class="o">-</span><span class="nx">id</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-api-key</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">syncOrder</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">pushData</span><span class="p">(</span>
+        <span class="dl">"</span><span class="s2">orders</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">{</span>
+          <span class="dl">"</span><span class="s2">keys</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">],</span>
+          <span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">user_id</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">sku</span><span class="dl">"</span><span class="p">:</span> <span class="nx">order</span><span class="p">.</span><span class="nx">sku</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">orders</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="mf">58.40</span><span class="p">,</span>  <span class="dl">"</span><span class="s2">sku</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">milky-white-suede-shoes</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="mf">23.99</span><span class="p">,</span>  <span class="dl">"</span><span class="s2">sku</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">red-button-down-fleece</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">,</span>   <span class="dl">"</span><span class="s2">sku</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bottle-o-bubbles</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="mf">120.01</span><span class="p">,</span> <span class="dl">"</span><span class="s2">sku</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">zebra-striped-game-boy</span><span class="dl">"</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">"</span><span class="s2">id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">user_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="mf">9.90</span>  <span class="p">,</span> <span class="dl">"</span><span class="s2">sku</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kitten-mittons</span><span class="dl">"</span><span class="p">}</span>
+    <span class="p">];</span>
+
+    <span class="nx">client</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="nx">orders</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">order</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">syncOrder</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">order</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Synced order with id </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">order</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed to sync order with id </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">order</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+        <span class="p">})</span>
+      <span class="p">});</span>
+
+    <span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed to authenticate!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>PHP:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+</pre></td><td class="rouge-code"><pre>
+    <span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+    <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RJMetrics\Client</span><span class="p">(</span><span class="nv">$your</span><span class="o">-</span><span class="nx">client</span><span class="o">-</span><span class="nx">id</span><span class="p">,</span> <span class="s2">"your-api-key"</span><span class="p">);</span>
+
+    <span class="k">function</span> <span class="nf">syncOrder</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="nv">$order</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$dataToPush</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">stdClass</span><span class="p">();</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">user_id</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">user_id</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">value</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">sku</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">sku</span><span class="p">;</span>
+      <span class="nv">$dataToPush</span><span class="o">-&gt;</span><span class="na">keys</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
+
+      <span class="k">return</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">pushData</span><span class="p">(</span><span class="s2">"orders"</span><span class="p">,</span> <span class="nv">$dataToPush</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">function</span> <span class="nf">fakeOrderGenerator</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="nv">$userId</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$sku</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$toReturn</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">stdClass</span><span class="p">();</span>
+
+      <span class="nv">$toReturn</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+      <span class="nv">$toReturn</span><span class="o">-&gt;</span><span class="na">user_id</span> <span class="o">=</span> <span class="nv">$userId</span><span class="p">;</span>
+      <span class="nv">$toReturn</span><span class="o">-&gt;</span><span class="na">value</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+      <span class="nv">$toReturn</span><span class="o">-&gt;</span><span class="na">sku</span> <span class="o">=</span> <span class="nv">$sku</span><span class="p">;</span>
+
+      <span class="k">return</span> <span class="nv">$toReturn</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nv">$orders</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+      <span class="nx">fakeOrderGenerator</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">58.40</span><span class="p">,</span> <span class="s2">"milky-white-suede-shoes"</span><span class="p">),</span>
+      <span class="nx">fakeOrderGenerator</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">23.99</span><span class="p">,</span> <span class="s2">"red-buttons-down-fleece"</span><span class="p">),</span>
+      <span class="nx">fakeOrderGenerator</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">5.00</span><span class="p">,</span> <span class="s2">"bottle-o-bubbles"</span><span class="p">),</span>
+      <span class="nx">fakeOrderGenerator</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">120.01</span><span class="p">,</span> <span class="s2">"zebra-striped-game-boy"</span><span class="p">),</span>
+      <span class="nx">fakeOrderGenerator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">9.90</span><span class="p">,</span> <span class="s2">"kitten-mittons"</span><span class="p">)</span>
+    <span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">authenticate</span><span class="p">())</span> <span class="p">{</span>
+      <span class="k">foreach</span><span class="p">(</span><span class="nv">$orders</span> <span class="k">as</span> <span class="nv">$order</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$responses</span> <span class="o">=</span> <span class="nx">syncOrder</span><span class="p">(</span><span class="nv">$client</span><span class="p">,</span> <span class="nv">$order</span><span class="p">);</span>
+
+        <span class="k">foreach</span><span class="p">(</span><span class="nv">$responses</span> <span class="k">as</span> <span class="nv">$response</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">code</span> <span class="o">==</span> <span class="mi">201</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">"Synced order with id </span><span class="si">{</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">id</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+          <span class="k">else</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">"Failed to sync order with id </span><span class="si">{</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">id</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Clojure:</strong></p>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="w">
+    </span><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">examples.orders-table</span><span class="w">
+      </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">rjmetrics.core</span><span class="w"> </span><span class="no">:as</span><span class="w"> </span><span class="n">rjmetrics</span><span class="p">]))</span><span class="w">
+
+    </span><span class="p">(</span><span class="k">defn-</span><span class="w"> </span><span class="n">sync-order</span><span class="w">
+      </span><span class="p">[</span><span class="n">config</span><span class="w"> </span><span class="n">order</span><span class="p">]</span><span class="w">
+      </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">[</span><span class="n">result</span><span class="w"> </span><span class="p">(</span><span class="nf">rjmetrics/push-data</span><span class="w"> </span><span class="n">config</span><span class="w">
+                                        </span><span class="s">"orders"</span><span class="w">
+                                        </span><span class="p">(</span><span class="nb">assoc</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="no">:keys</span><span class="w"> </span><span class="p">[</span><span class="s">"id"</span><span class="p">]))]</span><span class="w">
+        </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="p">(</span><span class="nb">-&gt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="nb">first</span><span class="w"> </span><span class="no">:status</span><span class="p">)</span><span class="w"> </span><span class="mi">201</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Synced order with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">order</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">)</span><span class="w">
+            </span><span class="p">(</span><span class="nb">print</span><span class="w"> </span><span class="s">"Failed to sync orfer with id"</span><span class="w"> </span><span class="p">(</span><span class="no">:id</span><span class="w"> </span><span class="n">order</span><span class="p">)</span><span class="w"> </span><span class="s">"\n"</span><span class="p">))))</span><span class="w">
+
+    </span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">run</span><span class="w">
+      </span><span class="p">[]</span><span class="w">
+      </span><span class="p">(</span><span class="k">let</span><span class="w"> </span><span class="p">[</span><span class="n">config</span><span class="w"> </span><span class="p">{</span><span class="no">:client-id</span><span class="w"> </span><span class="n">your-client-id</span><span class="w"> </span><span class="no">:api-key</span><span class="w"> </span><span class="s">"your-api-key"</span><span class="p">}</span><span class="w">
+            </span><span class="n">orders</span><span class="w"> </span><span class="p">[{</span><span class="no">:id</span><span class="w"> </span><span class="mi">1</span><span class="n">,</span><span class="w"> </span><span class="no">:user_id</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="no">:value</span><span class="w"> </span><span class="mf">58.40</span><span class="w">  </span><span class="no">:sku</span><span class="w"> </span><span class="s">"milky-white-suede-shoes"</span><span class="p">}</span><span class="w">
+                    </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">2</span><span class="n">,</span><span class="w"> </span><span class="no">:user_id</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="no">:value</span><span class="w"> </span><span class="mf">23.99</span><span class="w">  </span><span class="no">:sku</span><span class="w"> </span><span class="s">"red-button-down-fleece"</span><span class="p">}</span><span class="w">
+                    </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">3</span><span class="n">,</span><span class="w"> </span><span class="no">:user_id</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="no">:value</span><span class="w"> </span><span class="mf">5.00</span><span class="w">   </span><span class="no">:sku</span><span class="w"> </span><span class="s">"bottle-o-bubbles"</span><span class="p">}</span><span class="w">
+                    </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">4</span><span class="n">,</span><span class="w"> </span><span class="no">:user_id</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="no">:value</span><span class="w"> </span><span class="mf">120.01</span><span class="w"> </span><span class="no">:sku</span><span class="w"> </span><span class="s">"zebra-striped-game-boy"</span><span class="p">}</span><span class="w">
+                    </span><span class="p">{</span><span class="no">:id</span><span class="w"> </span><span class="mi">5</span><span class="n">,</span><span class="w"> </span><span class="no">:user_id</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="no">:value</span><span class="w"> </span><span class="mf">9.90</span><span class="w">   </span><span class="no">:sku</span><span class="w"> </span><span class="s">"kitten-mittons"</span><span class="p">}]]</span><span class="w">
+        </span><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="p">(</span><span class="nf">rjmetrics/authenticated?</span><span class="w"> </span><span class="n">config</span><span class="p">)</span><span class="w">
+          </span><span class="p">(</span><span class="nb">dorun</span><span class="w"> </span><span class="p">(</span><span class="nb">map</span><span class="w"> </span><span class="p">(</span><span class="nb">partial</span><span class="w"> </span><span class="n">sync-order</span><span class="w"> </span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="n">users</span><span class="p">)))))</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Ruby:</strong></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="rouge-code"><pre>
+    <span class="nb">require</span> <span class="s2">"rjmetrics_client"</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="no">RJMetricsClient</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">your</span><span class="o">-</span><span class="n">client</span><span class="o">-</span><span class="nb">id</span><span class="p">,</span> <span class="s2">"your-api-key"</span><span class="p">)</span>
+
+    <span class="n">fake_orders</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:user_id</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="mf">58.40</span><span class="p">,</span>  <span class="ss">:sku</span> <span class="o">=&gt;</span> <span class="s2">"milky-white-suede-shoes"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="ss">:user_id</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="mf">23.99</span><span class="p">,</span>  <span class="ss">:sku</span> <span class="o">=&gt;</span> <span class="s2">"red-button-down-fleece"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">:user_id</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="mf">5.00</span><span class="p">,</span>   <span class="ss">:sku</span> <span class="o">=&gt;</span> <span class="s2">"bottle-o-bubbles"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="ss">:user_id</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="mf">120.01</span><span class="p">,</span> <span class="ss">:sku</span> <span class="o">=&gt;</span> <span class="s2">"zebra-striped-game-boy"</span><span class="p">},</span>
+      <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="ss">:user_id</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="mf">9.90</span><span class="p">,</span>   <span class="ss">:sku</span> <span class="o">=&gt;</span> <span class="s2">"kitten-mittons"</span><span class="p">}</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">sync_order</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+      <span class="n">order</span><span class="p">[</span><span class="ss">:keys</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:id</span><span class="p">]</span>
+      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="nf">pushData</span><span class="p">(</span><span class="s2">"orders"</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">if</span> <span class="n">client</span><span class="p">.</span><span class="nf">authenticated?</span>
+      <span class="n">fake_orders</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
+        <span class="n">sync_order</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">order</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">response</span><span class="o">|</span>
+          <span class="k">if</span> <span class="n">response</span><span class="p">[</span><span class="s2">"code"</span><span class="p">]</span>
+            <span class="nb">puts</span> <span class="s2">"Synced order with id </span><span class="si">#{</span><span class="n">order</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+          <span class="k">else</span>
+            <span class="nb">puts</span> <span class="s2">"Failed to sync order with id </span><span class="si">#{</span><span class="n">order</span><span class="p">[</span><span class="ss">:id</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Python:</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre>
+    <span class="kn">import</span> <span class="nn">rjmetrics.client</span>
+
+    <span class="n">CLIENT_ID</span> <span class="o">=</span> <span class="mi">0000</span>
+    <span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'your_api_key'</span>
+
+    <span class="n">client</span> <span class="o">=</span> <span class="n">rjmetrics</span><span class="p">.</span><span class="n">client</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span><span class="n">CLIENT_ID</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">)</span>
+
+    <span class="n">fake_orders</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="mf">58.40</span><span class="p">,</span>  <span class="s">"sku"</span><span class="p">:</span> <span class="s">"milky-white-suede-shoes"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="mf">23.99</span><span class="p">,</span>  <span class="s">"sku"</span><span class="p">:</span> <span class="s">"red-button-down-fleece"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="mf">5.00</span><span class="p">,</span>   <span class="s">"sku"</span><span class="p">:</span> <span class="s">"bottle-o-bubbles"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="mf">120.01</span><span class="p">,</span> <span class="s">"sku"</span><span class="p">:</span> <span class="s">"zebra-striped-game-boy"</span><span class="p">},</span>
+      <span class="p">{</span><span class="s">"id"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"value"</span><span class="p">:</span> <span class="mf">9.90</span><span class="p">,</span>   <span class="s">"sku"</span><span class="p">:</span> <span class="s">"kitten-mittons"</span><span class="p">}</span>
+    <span class="p">]</span>
+
+
+    <span class="k">def</span> <span class="nf">sync_order</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+      <span class="n">order</span><span class="p">[</span><span class="s">"keys"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+      <span class="k">return</span> <span class="n">client</span><span class="p">.</span><span class="n">push_data</span><span class="p">(</span><span class="s">"orders"</span><span class="p">,</span> <span class="p">[</span><span class="n">order</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+
+
+    <span class="c1"># make sure the client is authenticated before we do anything
+</span>    <span class="k">if</span> <span class="n">client</span><span class="p">.</span><span class="n">authenticate</span><span class="p">():</span>
+      <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">fake_orders</span><span class="p">:</span>
+        <span class="c1"># iterate through users and push data
+</span>        <span class="n">response</span> <span class="o">=</span> <span class="n">sync_order</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">"Synced order with id "</span><span class="p">,</span> <span class="n">order</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">"Failed to sync order with id "</span><span class="p">,</span> <span class="n">order</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-01-06">
+    Jan 6th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

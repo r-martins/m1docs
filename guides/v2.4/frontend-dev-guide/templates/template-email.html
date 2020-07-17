@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Email templates | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="template-email.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.3/frontend-dev-guide/templates/template-email.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="template-email.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Frontend Developer Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bk-frontend-dev-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../conventions.html" class="spectrum-SideNav-itemLink ">Conventional notations used in this Guide</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache_for_frontdevs.html" class="spectrum-SideNav-itemLink ">Magento cache overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../theme-best-practice.html" class="spectrum-SideNav-itemLink ">Theme development best practices</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-overview.html" class="spectrum-SideNav-itemLink ">Themes</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-install.html" class="spectrum-SideNav-itemLink ">Install a third-party storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-uninstall.html" class="spectrum-SideNav-itemLink ">Uninstall a storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/admin_theme_create.html" class="spectrum-SideNav-itemLink ">Create an Admin theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/admin_theme_apply.html" class="spectrum-SideNav-itemLink ">Apply an Admin theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-create.html" class="spectrum-SideNav-itemLink ">Create a new storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-apply.html" class="spectrum-SideNav-itemLink ">Apply and configure a storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/debug-theme.html" class="spectrum-SideNav-itemLink ">Locate templates, layouts, and styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-structure.html" class="spectrum-SideNav-itemLink ">Magento theme structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-inherit.html" class="spectrum-SideNav-itemLink ">Theme inheritance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/favicon.html" class="spectrum-SideNav-itemLink ">Adding custom favicons</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-images.html" class="spectrum-SideNav-itemLink ">Configure theme properties</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/product-video.html" class="spectrum-SideNav-itemLink ">Configure product video</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/js-bundling.html" class="spectrum-SideNav-itemLink ">JavaScript Bundling</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/layout-overview.html" class="spectrum-SideNav-itemLink ">Layout</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/xml-instructions.html" class="spectrum-SideNav-itemLink ">Layout instructions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/layout-types.html" class="spectrum-SideNav-itemLink ">Layout file types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/product-layouts.html" class="spectrum-SideNav-itemLink ">Product layouts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/layout-create.html" class="spectrum-SideNav-itemLink ">Create a new layout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/layout-extend.html" class="spectrum-SideNav-itemLink ">Extend a layout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/layout-override.html" class="spectrum-SideNav-itemLink ">Override a layout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/xml-manage.html" class="spectrum-SideNav-itemLink ">Common layout customization tasks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../layouts/layout-practice.html" class="spectrum-SideNav-itemLink ">Customizing layout illustration</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="template-overview.html" class="spectrum-SideNav-itemLink ">Templates</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="template-override.html" class="spectrum-SideNav-itemLink ">Templates basic concepts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="template-walkthrough.html" class="spectrum-SideNav-itemLink ">Templates customization walkthrough</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="template-sample.html" class="spectrum-SideNav-itemLink ">Templates customization sample</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="template-email.html" class="spectrum-SideNav-itemLink ">Email templates</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-overview.html" class="spectrum-SideNav-itemLink ">Cascading style sheets (CSS)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-themes.html" class="spectrum-SideNav-itemLink ">Include CSS</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-preprocess.html" class="spectrum-SideNav-itemLink ">CSS and LESS preprocessing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css_debug.html" class="spectrum-SideNav-itemLink ">Compile LESS using Grunt</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/theme-ui-lib.html" class="spectrum-SideNav-itemLink ">Magento UI library</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-jquery.html" class="spectrum-SideNav-itemLink ">Using jQuery UI styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-practice.html" class="spectrum-SideNav-itemLink ">Customizing styles illustration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/using-fonts.html" class="spectrum-SideNav-itemLink ">Using custom fonts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-critical-path.html" class="spectrum-SideNav-itemLink ">CSS critical path</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Using custom CSS preprocessor</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/custom_preprocess.html" class="spectrum-SideNav-itemLink ">Add custom CSS preprocessor</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/gulp-sass.html" class="spectrum-SideNav-itemLink ">Use Sass preprocessor and Gulp task runner</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-guide/css_quick_guide_overview.html" class="spectrum-SideNav-itemLink ">Quick start guide to styles</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-guide/css_quick_guide_approach.html" class="spectrum-SideNav-itemLink ">Simple ways to customize a theme's styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-guide/css_quick_guide_mode.html" class="spectrum-SideNav-itemLink ">Simple style changes with client-side LESS compilation vs. server-side</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_overview.html" class="spectrum-SideNav-itemLink ">How to Make Your Theme Responsive and Mobile</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_css.html" class="spectrum-SideNav-itemLink ">CSS in responsive design</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_js.html" class="spectrum-SideNav-itemLink ">JavaScript in Magento responsive design</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_mobile.html" class="spectrum-SideNav-itemLink ">Create a responsive mobile theme based on a default theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_practice.html" class="spectrum-SideNav-itemLink ">Customizing RWD illustration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd-breakpoints.html" class="spectrum-SideNav-itemLink ">Add a custom breakpoint</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/xlate.html" class="spectrum-SideNav-itemLink ">Translations</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/theme_dictionary.html" class="spectrum-SideNav-itemLink ">Use translation dictionary to customize strings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/translate_theory.html" class="spectrum-SideNav-itemLink ">Translate theme strings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/translate_practice.html" class="spectrum-SideNav-itemLink ">Example theme translation dictionary</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../validations/form-validation.html" class="spectrum-SideNav-itemLink ">Form validation</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../validations/custom-validation.html" class="spectrum-SideNav-itemLink ">Custom validation rule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../validations/custom-form-validation.html" class="spectrum-SideNav-itemLink ">Custom Form validation</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tools/tools_overview.html" class="spectrum-SideNav-itemLink ">Tools</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tools/using_grunt.html" class="spectrum-SideNav-itemLink ">Using Grunt for Magento tasks</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Email templates</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/frontend-dev-guide/templates/template-email.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/frontend-dev-guide/templates/template-email.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p class="bs-callout-warning">Magento 2.3.4 restricts the way that custom variables can be used within email templates.
+See <a href="template-email-migration.html">Migrating custom email templates</a> for more information.</p>
+
+<h2 id="customize-email-templates">Customize email templates</h2>
+
+<p>Email templates are stored in the <code class="language-plaintext highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Sales/view/frontend/email/order_new.html"><code class="language-plaintext highlighter-rouge">&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html</code></a>.</p>
+
+<p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates.</p>
+
+<p>You can add custom templates as physical files in your custom <a href="https://glossary.magento.com/theme">theme</a> or create them using the <a href="https://glossary.magento.com/magento-admin">Magento Admin</a>. Both approaches are described in the following sections.</p>
+
+<h3 id="customize-email-theme">Customize email templates using a theme</h3>
+
+<p>Override email templates by creating templates in a new directory in your custom theme, using this pattern: <code class="language-plaintext highlighter-rouge">&lt;theme_dir&gt;/&lt;ModuleVendorName&gt;_&lt;ModuleName&gt;/email</code>. For example, to override the New Order email template, create a template named <code class="language-plaintext highlighter-rouge">order_new.html</code> in the <code class="language-plaintext highlighter-rouge">&lt;theme_dir&gt;/Magento_Sales/email</code> directory.</p>
+
+<p><a href="../themes/theme-inherit.html#theme-inherit-templates">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.</p>
+
+<h3 id="customize-email-admin">Customize email templates using the Magento Admin</h3>
+
+<p>Any templates configured in the Magento <a href="https://glossary.magento.com/admin">Admin</a> take precedence over default or theme-based templates.</p>
+
+<ol>
+  <li>In the Magento Admin, navigate to <strong>MARKETING</strong> &gt; Communications &gt; <strong>Email Templates</strong></li>
+  <li>Click <strong>Add New Template</strong>.</li>
+  <li>
+    <p>If you want to use a default template as a starting point, in the <strong>Load default template</strong> section, choose the template and click <strong>Load Template</strong>. The path to the configuration settings for each default template displays in the <strong>Currently Used For</strong> field in the Template Information section.</p>
+
+    <p>Make note of this path because you will need it later when you configure this new template to be used instead of the default template.</p>
+
+    <p><img src="../../../../common/images/email_create_template21.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
+  </li>
+  <li>In <strong>Template Name</strong>, enter a name to identify the template in the Magento Admin.</li>
+  <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.</li>
+  <li>Customize template content. For details, see <a href="template-email.html#customize-content">the section on customizing content</a>.</li>
+  <li>In <strong>Template Styles</strong>, optionally add CSS styles for the template. These styles are added inside of a <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> of the email. Typically, you’ll use the <a href="template-email.html#email-styles">Less files</a> to make style changes to emails because some email clients don’t support styles in <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tags.</li>
+  <li>Click <strong>Save Template</strong>.</li>
+  <li>
+    <p>Now that you have created a template, you must configure that template to be used:</p>
+
+    <ol>
+      <li>If you haven’t done so already, log in to the Magento Admin as an administrator.</li>
+      <li>Click <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; SALES &gt; <strong>Sales Emails</strong>.</li>
+      <li>
+        <p>In the left pane, locate the section that contains the template you want to override. This is the section referenced by <strong>Currently Used For</strong> in your new template. (See step 3 earlier in this section.)</p>
+
+        <p>For example, if you created a “New Order” template, the configuration section is <strong>Order</strong> as the following figure shows.</p>
+
+        <p><img src="../../../../common/images/email_choose-template21.png" alt="Choosing a custom template" width="70%" height="70%" /></p>
+      </li>
+      <li>Select your newly created template from the list.</li>
+      <li>Click <strong>Save Config</strong>.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="customize-header-footer">Customize header and footer templates</h3>
+
+<p>Every frontend email template includes a header and footer template using these two directives: <code class="language-plaintext highlighter-rouge">{{template config_path="design/email/header_template"}}</code> and <code class="language-plaintext highlighter-rouge">{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Email/view/frontend/email/header.html"><code class="language-plaintext highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Email/view/frontend/email/footer.html"><code class="language-plaintext highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/footer.html</code></a></li>
+</ul>
+
+<p>You can customize header and footer templates using either the <a href="template-email.html#customize-email-theme">theme</a> or <a href="template-email.html#customize-email-admin">admin</a> customization methods discussed previously.</p>
+
+<h3 id="customize-content">Customize email content</h3>
+
+<p class="bs-callout-warning">Custom variables used within email templates in Magento 2.3.4+ must be written in ‘strict mode’.
+See <a href="template-email-migration.html">Migrating custom email templates</a> for more information.</p>
+
+<p>To add the store and sales related information to a template, use system variables.</p>
+
+<p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the Store Hours (<code class="language-plaintext highlighter-rouge">{{config path="general/store_information/hours"}}</code>) variable is replaced by the value set in the <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Information</strong> section.</p>
+
+<p class="bs-callout-info">You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> &gt; <strong>Custom Variables</strong>.</p>
+
+<p>To add a variable to your template content:</p>
+
+<ol>
+  <li>In the Magento Admin, navigate to <strong>MARKETING</strong> &gt; Communications &gt; <strong>Email Templates</strong></li>
+  <li>Create a new template or edit an existing template.</li>
+  <li>Click to place the cursor in the text in which to insert the variable.</li>
+  <li>
+    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you are editing and the extensions you may have installed. The following figure shows an example:</p>
+
+    <p><img src="../../../../common/images/email_insert_variable21.png" alt="The list of available variables" width="70%" height="70%" /></p>
+  </li>
+  <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
+</ol>
+
+<p class="bs-callout-info">The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code class="language-plaintext highlighter-rouge">&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.4/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p>
+
+<h2 id="email-styles">Styles for email templates</h2>
+
+<p>Some email clients (for example, Gmail) support only CSS styles that have been applied as “inline” styles on the <code class="language-plaintext highlighter-rouge">style</code> attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier">Emogrifier</a>Emogrifier library, which takes the HTML and CSS and adds all of the CSS styles to <code class="language-plaintext highlighter-rouge">style</code> attributes of the HTML tags.</p>
+
+<h3 id="inline-styles">Inline styles</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file contains an <code class="language-plaintext highlighter-rouge">inlinecss</code> directive:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>{{inlinecss file="css/email-inline.css"}}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">inlinecss</code> directive tells Magento which files to apply as inline styles on the email template.</p>
+
+<p>For example, say an email is being sent from a store configured with the Magento Luma theme. The <code class="language-plaintext highlighter-rouge">inlinecss</code> directive first looks for a <code class="language-plaintext highlighter-rouge">email-inline.less</code> file in <code class="language-plaintext highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/web/css/email-inline.less</code>. However because that file does not exist, it will fall back to the <code class="language-plaintext highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code> file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.</p>
+
+<p>Refer to the <a href="https://github.com/jjriv/emogrifier#supported-css-selectors">Emogrifier README</a> to see what CSS selectors are supported.</p>
+
+<h3 id="non-inline-styles">Non-inline styles</h3>
+
+<p>Non-inline styles for emails come from global and template-specific styles, as described in the following sections.</p>
+
+<h4 id="global-non-inline-styles">Global non-inline styles</h4>
+
+<p>While the majority of styles should be applied inline, there are certain CSS styles that cannot be applied inline, such as media queries or <code class="language-plaintext highlighter-rouge">:hover</code> pseudo styles. These styles must be in a <code class="language-plaintext highlighter-rouge">&lt;style type="text/css"&gt;&lt;/style&gt;</code> tag for them to work.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file contains a <code class="language-plaintext highlighter-rouge">css</code> directive inside of a <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+    <span class="p">{</span><span class="err">{var</span> <span class="err">template_styles|raw</span><span class="p">}</span><span class="err">}</span>
+
+    <span class="p">{</span><span class="err">{css</span> <span class="err">file="css/email.css"</span><span class="p">}</span><span class="err">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">css</code> directive compiles the contents of the provided file and outputs it.</p>
+
+<p>For example, say an email is being sent from a store configured with the Magento Luma theme. The <code class="language-plaintext highlighter-rouge">css</code> directive first looks for an <code class="language-plaintext highlighter-rouge">email.less</code> file in <code class="language-plaintext highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/web/css</code>. However, because the file does not exist there, it falls back to <code class="language-plaintext highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code>. The contents of that file are compiled and its contents output in the <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag.</p>
+
+<h4 id="template-specific-non-inline-styles">Template-specific non-inline styles</h4>
+
+<p>As mentioned in the preceding section, the <code class="language-plaintext highlighter-rouge">header.html</code> file outputs the <code class="language-plaintext highlighter-rouge">{{var template_styles|raw}}</code> variable.</p>
+
+<p>The value of that variable comes from any of the following:</p>
+
+<ul>
+  <li>Any styles you add to any <code class="language-plaintext highlighter-rouge">html</code> email template inside a comment block, like in the following example, are included in the <code class="language-plaintext highlighter-rouge">template_styles</code> variable:</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre> <span class="c">&lt;!--@styles
+   .example-style { color: green; }
+ @--&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>If you customize transactional emails using the Magento Admin, you can add CSS styles to the <strong>Template Styles</strong> field to include those styles in the <code class="language-plaintext highlighter-rouge">template_styles</code> variable.</li>
+</ul>
+
+<h3 id="organization-email-styles">How email styles are organized</h3>
+
+<p>The styles for emails are split into several different files.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>
+        File
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code></p>
+      </td>
+      <td>
+          <p>Imports necessary files and then outputs styles to be included in <code>&lt;style&gt;</code> tag</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code></p>
+      </td>
+      <td>
+        <p>
+          Contains <code>@font-face</code> declarations for custom
+          fonts. This file is imported by the
+          <code>_email-extend.less</code> file using an
+          <code>@import</code> rule.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code></p>
+      </td>
+      <td>
+        <p>
+          Imports necessary files and then outputs styles to be
+          inlined
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-base.less</code></p>
+      </td>
+      <td>
+        <p>
+          Contains majority of styles for emails, including resets,
+          layout, typography, and so on. Review the comments at the
+          top of this file to understand how the styles in this
+          file are split between the <code>email.less</code> and
+          <code>email-inline.less</code> files.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></p>
+      </td>
+      <td>
+          <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-extend.less</code> file for example usage.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
+      </td>
+      <td>
+          <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code>&lt;Magento_Luma_theme_dir&gt;/web/css/source/_email-variables.less</code> file for example usage.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <p><code>&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
+      </td>
+      <td>
+        <p>
+          Styles that are specific to modules are stored in these
+          files. This mechanism also allows third-party extensions
+          to include styles that will get included in the
+          inline/non-inline output.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>lib/web/css/source/_email-variables.less</code>
+        </p>
+      </td>
+      <td>
+          <p>Same as <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>lib/web/css/source/lib/variables/_email.less</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          Contains new email-specific variables that can be
+          overridden in a theme-specific
+          <code>_email-variables.less</code> file.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code class="language-plaintext highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code> and <code class="language-plaintext highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
+
+<h3 id="custom-fonts">Custom fonts</h3>
+
+<p>Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code class="language-plaintext highlighter-rouge">@font-face</code> rules are used to include web fonts.</p>
+
+<p>Here is an overview of how the font structure for emails works:</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.4/app/design/frontend/Magento/blank/web/css/source/_email-extend.less"><code class="language-plaintext highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code class="language-plaintext highlighter-rouge">@import</code> directive that requests the <code class="language-plaintext highlighter-rouge">email-fonts.css</code> file.</p>
+
+    <p>The reason the contents of <code class="language-plaintext highlighter-rouge">email-fonts.css</code> are loaded using <code class="language-plaintext highlighter-rouge">@import</code> rather than being output directly into a <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> tag in the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code> file imports <code class="language-plaintext highlighter-rouge">source/_variables.less</code> and <code class="language-plaintext highlighter-rouge">source/_typography.less</code> files:</p>
+
+    <ul>
+      <li><a href="https://github.com/magento/magento2/blob/2.4/app/design/frontend/Magento/blank/web/css/source/_variables.less">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code class="language-plaintext highlighter-rouge">@font-family-name__base</code> variable.</li>
+      <li><a href="https://github.com/magento/magento2/blob/2.4/app/design/frontend/Magento/blank/web/css/source/_typography.less">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code class="language-plaintext highlighter-rouge">@font-face</code> rules which import the custom fonts.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>If you want to change the font used for emails, do the following:</p>
+
+<ol>
+  <li>Refer to the documentation on <a href="../css-topics/using-fonts.html">using fonts</a> for details on how to add a new font.</li>
+  <li>After you’ve added a new font and have updated the <code class="language-plaintext highlighter-rouge">source/_variables.less</code> and <code class="language-plaintext highlighter-rouge">source/_typography.less</code> files for your custom theme to refer to the new font, the emails should automatically use the specified font.</li>
+</ol>
+
+<h2 id="email-logo">Email logo</h2>
+
+<p>You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin.</p>
+
+<p>Because email clients do not support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a logo in a standard web format: JPG, GIF, or PNG. There is a maximum file size of 2 MB, but this can be changed by an admin. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3× the size that you actually want it to display. For example, let’s say your email has a 200px × 100px area for the logo. The logo image should be 600px × 300px.</p>
+
+<p>If you do not have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px × 100px, specify <code class="language-plaintext highlighter-rouge">200</code> for the width and <code class="language-plaintext highlighter-rouge">100</code> for the height.</p>
+
+<h3 id="customize-logo-theme">Customize the email logo using a theme</h3>
+
+<p>To customize your logo using a theme:</p>
+
+<ol>
+  <li>
+    <p>Add a file named <code class="language-plaintext highlighter-rouge">logo_email.png</code> to a <code class="language-plaintext highlighter-rouge">Magento_Email/web</code> directory in your custom theme.</p>
+
+    <p>For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the <code class="language-plaintext highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Email/web</code> directory.</p>
+  </li>
+  <li>
+    <p>Copy the <code class="language-plaintext highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code> file into a <code class="language-plaintext highlighter-rouge">Magento_Email/email</code> directory in your theme.</p>
+
+    <p>For example, the OrangeCo vendor would copy the file to this location: <code class="language-plaintext highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html</code></p>
+
+    <p>Edit the <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">height</code> attributes of the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag to reflect the area in which you want your logo to display (for example, 200 × 100).</p>
+
+    <p>Example:</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre>   
+{{if logo_width}}
+    width="{{var logo_width}}"
+{{else}}
+    width="200"
+{{/if}}
+
+{{if logo_height}}
+    height="{{var logo_height}}"
+{{else}}
+    height="100"
+{{/if}}
+   
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.</p>
+  </li>
+</ol>
+
+<h3 id="customize-logo-admin">Customize the email logo using the Admin</h3>
+
+<ol>
+  <li>In the Magento Admin, navigate to <strong>CONTENT</strong> &gt; Design &gt; <strong>Configuration</strong>. A Design Configuration page opens. It contains a grid with the available configuration scopes.</li>
+  <li>In the configuration record corresponding to your store view, click <strong>Edit</strong>.</li>
+  <li>
+    <p>Under <strong>Transactional Emails</strong> in the <strong>Logo Image</strong> field upload your logo and specify the alternative text for it.</p>
+
+    <p><img src="../../../../common/images/email_templ_logo21.png" alt="System configuration" /></p>
+  </li>
+  <li>
+    <p>Enter values for <strong>Logo Width</strong> and <strong>Logo Height</strong>. Based on the preceding example, you would enter <code class="language-plaintext highlighter-rouge">200</code> and <code class="language-plaintext highlighter-rouge">100</code>, respectively.</p>
+  </li>
+  <li>Click the <strong>Save Configuration</strong> button.</li>
+</ol>
+
+<h2 id="contact-information-emails">Use contact information in emails</h2>
+
+<p>Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin.</p>
+
+<p>To set those values:</p>
+
+<ol>
+  <li>To set the store name, phone number, and hours of operation:
+    <ol>
+      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Information</strong></li>
+      <li>Input values into the <strong>Store Name</strong>, <strong>Store Phone Number</strong>, and <strong>Store Hours of Operation</strong> fields.</li>
+      <li>Note: The <strong>Store Phone Number</strong> and <strong>Store Hours of Operation</strong> fields are optional.</li>
+      <li>Click the <strong>Save Config</strong> button.</li>
+    </ol>
+  </li>
+  <li>To set the store email:
+    <ol>
+      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Email Addresses</strong> &gt; <strong>General Contact</strong></li>
+      <li>Input values into the <strong>Sender Name</strong> and <strong>Sender Email</strong> fields.</li>
+      <li>Click the <strong>Save Config</strong> button.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>The sales emails are configured to display all of the above values, if they’re configured in the admin. If you want to add those values to other email templates, you can use the following variables:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>{{var store.getFrontendName()}}
+{{var store_email}}
+{{var store_phone}}
+{{var store_hours}}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="localization">Localization</h2>
+
+<p>In order to support the translation of content, all strings in emails are output using the <code class="language-plaintext highlighter-rouge">trans</code> directive. Example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+{{trans "Once your package ships we will send you a tracking number."}}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">trans</code> directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the <code class="language-plaintext highlighter-rouge">fr_FR</code> locale, the emails are translated to French.</p>
+
+<p>The directive supports multiple named parameters, separated by spaces. For example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Please note, that variable assignment must not contain spaces.</p>
+
+<p>Correct:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Incorrect:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="bs-callout bs-callout-info">Exception: argument value can contain spaces if it is enclosed in brackets.</p>
+
+<h2 id="supported-clients">Supported email clients and devices</h2>
+
+<p>We test responsive emails using a combination of real devices and <a href="http://litmus.com/">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly.
+We strive to support all current, modern e-mail clients. Let us know about any client-specific issues you might have.</p>
+
+<h2 id="newsletter-templates">Newsletter templates</h2>
+
+<p>The focus of this article is on transactional emails but the same techniques can be used with newsletter templates as well, including:</p>
+
+<ul>
+  <li>Import the header and footer using <code class="language-plaintext highlighter-rouge">{{template config_path="design/email/header_template"}}</code> and <code class="language-plaintext highlighter-rouge">{{template config_path="design/email/footer_template"}}</code></li>
+  <li>Apply inline styles using <code class="language-plaintext highlighter-rouge">{{inlinecss file="css/email-inline.css"}}</code></li>
+  <li>Include non-inline styles using <code class="language-plaintext highlighter-rouge">{{css file="css/email.css"}}</code></li>
+</ul>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-02-13">
+    Feb 13th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

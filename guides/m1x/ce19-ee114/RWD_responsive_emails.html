@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="RWD_responsive_emails.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title"></h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title"></h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/ce19-ee114/RWD_responsive_emails.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/m1x/ce19-ee114/RWD_responsive_emails.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<!-- Title: Responsive Email Developer's Guide for Magento EE 1.14.1 and Magento CE 1.9.1 -->
+<!-- URL: ee1141-ce191-responsive-email -->
+
+
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+
+    <link rel="stylesheet" type="text/css" href="../../../common/css/stylesheet.css" />
+    <link rel="stylesheet" href="../../../common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="../../../common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../common/css/favicon.ico" type="image/x-icon">
+    <title>Responsive Email Developer's Guide for Magento EE 1.14.1 and Magento CE 1.9.1</title>
+
+</head>
+
+<body>
+    
+
+    <img src="../images/m1xheader.png" width="1024" alt="header" />
+    <div class="message-banner">
+  <h4>Magento 1.x Software Support Notice</h4>
+  <p>
+    For Magento Commerce 1, Magento is providing software support through June 2020. Depending on your Magento Commerce 1 version, software support may include both quality fixes and security patches. Please review our <a href="https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf">Magento Software Lifecycle Policy</a> to see how your version of Magento Commerce 1 is supported.
+  </p>
+  <p>
+  	For Magento Open Source 1.5 to 1.9, Magento is providing software security patches through June 2020 to ensure those sites remain secure and compliant. Visit our <a href="https://info2.magento.com/M1OpenSource.html">information page</a> for more details about our software maintenance policy and other considerations for your business.
+  </p>
+</div>
+
+
+    <div id="content">
+
+        <h1>Responsive Email Developer's Guide for Magento EE 1.14.1 and Magento CE 1.9.1</h1>
+        <p><em>by Erik Hansen</em></p>
+        <p><a href="https://github.com/magento/devdocs-m1/tree/master/ce19-ee114/RWD_responsive_emails.html" target="_blank">Edit this page on
+                GitHub <img src="../../../common/images/github_icon.png" height="15px"></a></p>
+
+        <div class="toc">
+            <h4 class="toc">Table of Contents</h4>
+            <ul>
+                <li><a href="RWD_responsive_emails.html#intro">Introduction</a></li>
+                <li><a href="RWD_responsive_emails.html#cron">Using cron to Send Emails</a></li>
+                <li><a href="RWD_responsive_emails.html#supported">Supported Email Clients and Devices</a></li>
+                <li><a href="RWD_responsive_emails.html#upgrade">Important Information about Upgrading</a></li>
+                <li><a href="RWD_responsive_emails.html#custom-head-foot">Customizing the Header or Footer in Transactional Emails</a></li>
+                <li><a href="RWD_responsive_emails.html#email-css">Customizing CSS Styles for Emails</a></li>
+                <li><a href="RWD_responsive_emails.html#hi-rez-logo">Using a High-Resolution Logo</a></li>
+                <li><a href="RWD_responsive_emails.html#contact-info">Using Contact Information in Transaction Emails</a></li>
+                <li><a href="RWD_responsive_emails.html#localizing">Localizing Transactional Emails</a></li>
+                <li><a href="RWD_responsive_emails.html#newsletter-template">Using Updated Newsletter Templates</a></li>
+                <li><a href="RWD_responsive_emails.html#help">Getting Help</a></li>
+            </ul>
+        </div>
+
+        <h2 id="intro">Introduction</h2>
+        <p>We improved transactional emails and newsletter templates in Magento Enterprise 1.14.1 and Magento Community
+            1.9.1 in a number of ways, including:</p>
+        <ul>
+            <li>Emails are now optimized for any screen size, including mobile and tablet devices</li>
+            <li>Header and footer content for transactional emails are now contained in their own files</li>
+            <li>CSS is now contained in separate CSS files</li>
+            <li>We provide you with a responsive sample newsletter template</li>
+        </ul>
+        <div class="msg-box important"><img src="../images/icon-note.png" alt="note"
+                align="left" width="40"><span><strong>Note</strong>: This article focuses on responsive emails but the
+                same techniques can be used for newsletter templates as well. For more information about newsletter
+                templates, see <a href="RWD_responsive_emails.html#newsletter-template">Using Updated Newsletter Templates</a>.</div>
+
+
+        <h2 id="cron">Using cron to Send Emails</h2>
+        <p>Starting in Magento EE 1.14.1 and CE 1.9.1, your Magento cron job sends <em>all</em> emails, including
+            transactional emails. You must configure cron for emails to work.</p>
+        <p>For more information, see <a href="../install/installing_install.html#install-cron"
+                target="_blank">Setting Up Cron Jobs</a>.</p>
+
+        <h2 id="supported">Supported Email Clients and Devices</h2>
+        <p>We tested responsive emails using a combination of real devices and <a href="http://litmus.com/"
+                target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern
+            web technologies, not all email clients rendered the emails perfectly. However, all of the following clients
+            should render the emails in a manner that allows them to be easily read without obvious issues. Refer to the
+            following sections for more information.</p>
+
+        <h3 id="supported-desktop">Supported Desktop Clients</h3>
+
+        <table class="confluenceTable" width="40%">
+            <tbody>
+                <col width="50%">
+                <col width="50%">
+                <tr>
+                    <th>Operating system</th>
+                    <th>Clients supported</th>
+                </tr>
+                <tr>
+                    <td>OS X 10.8</td>
+                    <td>Apple Mail 6</td>
+                </tr>
+                <tr>
+                    <td>OS X 10.7</td>
+                    <td>Outlook 2011</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Windows 8</li>
+                            <li>Windows 7</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Outlook 2013</li>
+                            <li>Outlook 2010</li>
+                            <li>Outlook 2007</li>
+                            <li>Outlook 2003</li>
+                        </ul>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="supported-mobile">Supported Mobile Clients</h3>
+        <table class="confluenceTable" width="200px">
+            <tbody>
+                <col width="50%">
+                <col width="50%">
+                <tr>
+                    <th>Operating system</th>
+                    <th>Clients supported</th>
+                </tr>
+                <tr>
+                    <td>Android 4.2 ("Jelly Bean")</td>
+                    <td>Native email app</td>
+                </tr>
+                <tr>
+                    <td>Android 2.3 ("Gingerbread")</td>
+                    <td>Native email app</td>
+                </tr>
+                <tr>
+                    <td>Gmail App (Android 4.2)</td>
+                    <td>Native email app</td>
+                </tr>
+                <tr>
+                    <td>Blackberry 5 OS</td>
+                    <td>Native email app</td>
+                </tr>
+                <tr>
+                    <td>iOS 8</td>
+                    <td>
+                        <ul>
+                            <li>iPhone 6</li>
+                            <li>iPhone 6 Plus</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>iOS 7</td>
+                    <td>
+                        <ul>
+                            <li>iPad (Retina)</li>
+                            <li>iPad Mini</li>
+                            <li>iPhone 5s</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>iOS 6</td>
+                    <td>
+                        <strong>Mail on these devices:</strong>
+                        <ul>
+                            <li>iPhone 5</li>
+                            <li>iPhone 4s</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="supported-web">Supported Web Clients</h3>
+
+        <table class="confluenceTable" width="200px">
+            <tbody>
+                <col width="50%">
+                <col width="50%">
+                <tr>
+                    <th>Email application</th>
+                    <th>Browsers supported<sup>*</sup></th>
+                </tr>
+                <tr>
+                    <td>AOL Mail</td>
+                    <td>
+                        <ul>
+                            <li>Chrome</li>
+                            <li>Internet Explorer</li>
+                            <li>Firefox</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gmail</td>
+                    <td>
+                        <ul>
+                            <li>Chrome</li>
+                            <li>Internet Explorer</li>
+                            <li>Firefox</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Yahoo! Mail</td>
+                    <td>
+                        <ul>
+                            <li>Chrome</li>
+                            <li>Internet Explorer</li>
+                            <li>Firefox</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Outlook.com</td>
+                    <td>
+                        <ul>
+                            <li>Chrome</li>
+                            <li>Internet Explorer</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><em><sup>*</sup>The latest version of each browser was used for testing.</em></p>
+
+        <h2 id="upgrade">Important Information about Upgrading</h2>
+        <p>This section applies to anyone who used transactional emails in a version earlier than EE 1.14.1 or CE 1.9.1.
+        </p>
+        <p>After upgrading from an earlier Magento version, you should preview your transactional emails, looking for
+            changes in the logo, fonts, and styles. Because of changes introduced in this release, you might notice some
+            differences.</p>
+        <p>Also, in CE 1.9.1 and EE 1.14.1 for the first time, you must specify a height and width for your logo image;
+            the dimensions must be set to the area in which the logo displays. For more information, see <a
+                href="RWD_responsive_emails.html#hi-rez-logo">Using a High-Resolution Logo</a>.</p>
+
+        <h2 id="custom-head-foot">Customizing the Header or Footer in Transactional Emails</h2>
+        <p>In earlier Magento CE and EE versions, each transactional email template contained a copy of the HTML for the
+            header and footer. To make it easier to customize transactional emails, the header and footer HTML is now
+            centralized in the following template files:</p>
+        <ul>
+            <li><code>[your Magento install dir]/app/locale/en_US/template/email/html/header.html</code></li>
+            <li><code>[your Magento install dir]/app/locale/en_US/template/email/html/footer.html</code></li>
+        </ul>
+        <p>
+            The header and footer template files get included in the transactional emails using a new
+            <code>template</code> directive. For an example of how this works, open
+            <code>app/locale/en_US/template/email/account_new.html</code>. It contains two directives that include
+            <code>header.html</code> and <code>footer.html</code>:</p>
+
+            <pre>&#123;&#123;template config_path="design/email/header"}}</pre>
+            <pre>&#123;&#123;template config_path="design/email/footer"}}</pre>
+            <p>You can customize the header and footer as discussed in the following sections:</p>
+        <ul>
+            <li><a href="RWD_responsive_emails.html#custom-head-foot-files">Customizing Header and Footer Templates Using Files</a></li>
+            <li><a href="RWD_responsive_emails.html#custom-head-foot-admin">Customizing Header and Footer Templates Using the Magento Admin
+                    Panel</a></li>
+        </ul>
+
+        <h3 id="custom-head-foot-files">Customizing Header and Footer Templates Using Files</h3>
+        <p>If you can access the Magento server file system, you can customize the header and footer by editing the
+            following files:</p>
+        <ul>
+            <li><code>[your Magento install dir]/app/locale/en_US/template/email/html/header.html</code></li>
+            <li><code>[your Magento install dir]/app/locale/en_US/template/email/html/footer.html</code></li>
+        </ul>
+        <div class="msg-box important"><img src="../images/icon-note.png" alt="note"
+                align="left" width="40"><span><strong>Note</strong>: To make changes to the templates at the website or
+                store view configuration scopes, see the next section.</div>
+
+
+        <h3 id="custom-head-foot-admin">Customizing Header and Footer Templates Using the Magento Admin Panel</h3>
+        <p>You must use the Magento Admin Panel to customize header and footer templates if any of the following are
+            true:</p>
+        <ul>
+            <li>You cannot access the Magento server file system</li>
+            <li>To customize the templates for a unique website, store, or store view</li>
+        </ul>
+        <p>The example discussed in the following sections shows how to customize the header template. You can use the
+            same procedure to customize the footer as well.</p>
+        <p>Using custom templates is a two-step process: first, define the template, and second, specify the website or
+            store view on which it's used. See one of the following sections for more information:</p>
+        <ul>
+            <li><a href="RWD_responsive_emails.html#custom-head-foot-admin-custom">Customizing the Template in the Admin Panel</a></li>
+            <li><a href="RWD_responsive_emails.html#custom-head-foot-admin-assign">Using the Template in a Website or Store View</a></li>
+        </ul>
+
+        <h4 id="custom-head-foot-admin-custom">Customizing the Template in the Admin Panel</h4>
+        <ol>
+            <li>Log in to the Magento Admin Panel as an administrator.</li>
+            <li>Click <strong>System</strong> &gt; <strong>Transactional Emails</strong>.</li>
+            <li>On the Transactional Emails page, click <strong>Add New Template</strong>.</li>
+            <li>From the <strong>Template</strong> list, click <strong>Email - Header</strong>.</li>
+            <li>From the <strong>Locale</strong> list, click the template's locale.</li>
+            <li>Click <strong>Load Template</strong>.</li>
+            <li>Enter the following information:
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Template Name</strong> field</td>
+                            <td>Enter a name for the new template, such as <code>My Header</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Template Subject</strong> field</td>
+                            <td>Ignore; this field isn't used.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Insert Variable</strong> Button</td>
+                            <td>Click to see a list of variables to insert. For more information about variables, see
+                                the <a href="http://www.magentocommerce.com/resources/magento-user-guide"
+                                    target="_blank">Magento User Guide</a>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Template Content</strong> field</td>
+                            <td>Enter the contents of your email template.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Template Styles</strong> field</td>
+                            <td>Ignore; this field is not supported when customizing the header and footer templates.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                The following figure shows an example:<br>
+                <img src="../images/resp_email_header-template.png" width="600px"
+                    height="502px"></li>
+            <li>Click <strong>Preview Template</strong> to look at the HTML code in a separate browser tab page or
+                window, or click <strong>Save Template</strong> to save it.</li>
+        </ol>
+
+        <h4 id="custom-head-foot-admin-assign">Using the Template in a Website or Store View</h4>
+        <p>This section discusses how to use the email template you just created in the global configuration, a website,
+            or a store view.</p>
+        <p>To use this template:</p>
+        <ol>
+            <li>In the Admin Panel, click <strong>System</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt;
+                <strong>Design</strong>.</li>
+            <li>From the <strong>Current Configuration Scope</strong> in the upper left corner, click the scope.<br>
+                Initially, the template is associated with <strong>Default Config</strong>, which means it applies to
+                all websites and store views. You can optionally associate it with a specific website or store view by
+                selecting it from the list.<br>
+                The following example shows how to associate a template with the Madison Island English store view.<br>
+                <img src="../images/resp_email_template_scope.png"></li>
+            <li>In the right pane, click <strong>Transactional Emails</strong> to expand it.</li>
+            <li>From the <strong>Email Header Template</strong> list, click the header template you created earlier.<br>
+                The following figure shows an example:<br>
+                <img src="../images/resp_email_using-header.png" width="600px"
+                    height="542px"></li>
+            <li>Click <strong>Save Config</strong> in the upper right corner of the page.</li>
+        </ol>
+        <p>Now transactional emails use the header or footer template you created.</p>
+
+        <h2 id="email-css">Customizing CSS Styles for Emails</h2>
+        <p>CSS styles for transactional emails are "inlined" on each HTML tag because many email clients require it.</p>
+        <p>CE 1.9.1 and EE 1.14.1 simplifies the way you customize email templates by locating all CSS styles in
+            separate CSS files. When transactional emails are sent, the CSS styles are loaded from the separate CSS
+            files and are "inlined" in the HTML before being sent.</p>
+        <p>Inlining is done using the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a>
+            library, which takes the HTML and CSS and adds all of the CSS styles to <code>&lt;style&gt;</code>
+            attributes on the HTML tags. </p>
+        <p>The CSS for the emails is contained in the following Sass files:</p>
+        <ul>
+            <li><code>[your Magento install dir]/skin/frontend/rwd/default/scss/email-inline.scss</code></li>
+            <li><code>[your Magento install dir]/skin/frontend/rwd/default/scss/email-non-inline.scss</code></li>
+        </ul>
+        <p>As you might expect, these two files compile to <code>skin/frontend/rwd/default/css/email-inline.css</code>
+            and <code>skin/frontend/rwd/default/css/email-non-inline.css</code>, respectively. If you're not familiar
+            with how to work with Sass files, refer to the <a href="RWD_dev-guide.html"
+                target="_blank">RWD theme documentation</a>.</p>
+
+        <h3 id="email-css-inline">Using Inline Styles to Customize Email CSS</h3>
+        <p>
+            The <code>email-inline.css</code> file contains all of the styles that the Emogrifier class applies to the
+            HTML before an email is sent. Magento applies only these styles to an email template if it contains this new
+            directive:</p>
+            <pre>&#123;&#123;inlinecss file="email-inline.css"}}</pre>
+        <p>Notice that the templates in <code>app/locale/en_US/template/email/</code> include this directive in each
+            email template. The directive enables you to specify CSS that loads from the current storefront's theme and
+            is inlined on that template.</p>
+        <p>The directive supports the standard Magento fallback hierarchy, which means that if the
+            <code>email-inline.css</code> can't be found in the store's theme, Magento looks in each of the parent
+            themes until a match is found. (A sample theme directory is
+            <code>skin/frontend/custompackage/customtheme/css/email-inline.css</code>)</p>
+        <p>Refer to the <a href="https://github.com/jjriv/emogrifier#emogrifier" target="_blank">Emogrifier README</a>
+            to see what CSS selectors are supported.</p>
+        <div class="msg-box important"><img src="../images/icon-note.png" alt="note"
+                align="left" width="40"><span><strong>Note</strong>: The <code>&#123;&#123;inlinecss file=""}}</code>
+                directive can be used a single time and cannot be used in templates that get included by other templates
+                (for example, <code>app/locale/en_US/template/email/html/header.html</code> and
+                <code>app/locale/en_US/template/email/html/footer.html</code>).</div>
+
+
+        <h3 id="email-css-noninline">Using Non-Inline Styles to Customize Email CSS</h3>
+        <p>There are certain CSS styles that can't be applied inline, such as media queries styles. These styles must be
+            in a <code>&lt;style type=&quot;text/css&quot;&gt;&lt;/style&gt;</code> tag.</p>
+        <p>To understand how non-inline styles are included, see line 7 in
+            <code>app/locale/en_US/template/email/html/header.html</code>:
+            <p>The variable <code>&#123;&#123;var non_inline_styles}}</code> loads CSS from several sources:</p>
+            <ul>
+                <li>The contents of <code>email-non-inline.css</code>.<br>
+                    The file loads from the current storefront's theme and supports the same fallback structure as the
+                    <code>email-inline.css</code> file. For Magento to load additional files, go to
+                    <strong>System</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt;
+                    <strong>Design</strong>, click the <strong>Transactional Emails</strong> section and change the
+                    value of the <strong>Non-inline CSS File(s)</strong> field.</li>
+                <li>Each of the transactional emails has a comment at the top of the template in this format:<br>
+                    <pre>&lt;!--@styles
+@--&gt;</pre>
+                    If you modify a template and add CSS styles inside that comment, they are included in the
+                    <code>non_inline_styles</code> variable.
+                </li>
+                <li>If you customize transactional emails using the Magento Admin Panel, you can add CSS styles to the
+                    <strong>Template Styles</strong> field to include those styles in the <code>non_inline_styles</code>
+                    variable. For more information, see <a href="RWD_responsive_emails.html#custom-head-foot-admin">Customizing Header and Footer
+                        Templates Using the Magento Admin Panel</a>.</li>
+            </ul>
+            <p>After the CSS is loaded, it's wrapped in a <code>&lt;style
+                    type=&quot;text/css&quot;&gt;&lt;/style&gt;</code> tag and is assigned to the
+                <code>non_inline_styles</code> variable.</p>
+            <div class="msg-box important"><img src="../images/icon-note.png" alt="note"
+                    align="left" width="40"><span><strong>Note</strong>: When you are writing "non-inline" CSS, you must
+                    add the <code>!important</code> declaration after each property so the style has a high enough
+                    specificity to get applied. This is the best way to get your custom styles to override styles
+                    defined in the <code>email-inline.css</code> file.</div>
+
+
+            <h2 id="hi-rez-logo">Using a High-Resolution Logo</h2>
+            <p>For the logo in your email to look optimal on high-resolution devices such as retina displays, you must
+                use a logo that is at least two times larger than the area in which you want it to display. For example,
+                let's say your email has a 200px &times; 100px area for the logo. The logo image must be at least 400px
+                &times; 200px.</p>
+            <p>If you don't have access to a high-resolution version of your logo, you can upload a normal-resolution
+                image. For example, if your logo image is 200px &times; 100px, specify <code>200</code> for the width
+                and <code>100</code> for the height.</p>
+
+            <h3 id="hi-rez-upgrade">Upgrade Considerations</h3>
+            <p>This section applies to you if you upgraded to CE 1.9.1 or EE 1.14.1 from an earlier version.</p>
+            <p>In CE 1.19.1 and EE 1.14.1 for the first time, transactional email templates specify the width and height
+                of the area in which the logo displays. Therefore, if you use transactional emails, you must configure
+                your templates with a logo height and width as discussed in the next section.</p>
+            <p>For example, suppose the area in which the logo displays is 200px &times; 100px. Specify <code>200</code>
+                for height and <code>100</code> for width even if the physical dimensions of the logo are larger.</p>
+
+            <h3 id="hi-rez-proc">Adding a High-Resolution Logo</h3>
+            <p>You can add your logo to transactional emails in either of the following ways:</p>
+            <ul>
+                <li><a href="RWD_responsive_emails.html#hi-rez-logo-file">Updating a High-Resolution Logo Using the File System</a></li>
+                <li><a href="RWD_responsive_emails.html#hi-rez-logo-admin">Updating a High-Resolution Logo Using the Admin Panel</a></li>
+            </ul>
+
+            <h4 id="hi-rez-logo-file">Updating a High-Resolution Logo Using the File System</h4>
+            <p>If you can access the Magento server file system, follow these steps:</p>
+            <ol>
+                <li>Locate the skin directory for your store (for example,
+                    <code>skin/frontend/custompackage/customtheme/</code>).</li>
+                <li>Save the logo image as <code>logo_email.gif</code> in the skin directory (for example,
+                    <code>skin/frontend/custompackage/customtheme/images/logo_email.gif</code>).</li>
+                <li>Open <code>app/locale/en_US/template/email/html/header.html</code> in a text editor.</li>
+                <li>Update the <strong>width</strong> and <strong>height</strong> attributes to reflect the area in
+                    which you want your logo to display (for example, 200px &times; 100px).<br>
+                    A snippet follows:<br>
+                    <pre>&lt;img
+    &#123;&#123;if logo_width}}
+    width="&#123;&#123;var logo_width}}"
+    &#123;&#123;else}}
+    width="200"
+    &#123;&#123;/if}}
+
+    &#123;&#123;if logo_height}}
+    height="&#123;&#123;var logo_height}}"
+    &#123;&#123;else}}
+    height="100"
+    &#123;&#123;/if}}
+
+    src="&#123;&#123;var logo_url}}"
+    alt="&#123;&#123;var logo_alt}}"
+    border="0"/></pre>
+                </li>
+            </ol>
+            <div class="msg-box important"><img src="../images/icon-note.png" alt="note"
+                    align="left" width="40"><span><strong>Note</strong>: To use a file type other than GIF or if you
+                    need to upload unique logos for different websites, stores, or store views, see the next section.
+            </div>
+
+
+            <h4 id="hi-rez-logo-admin">Updating a High-Resolution Logo Using the Admin Panel</h4>
+            <p>You can update your high-resolution logo using the Admin Panel if any of the following are true:</p>
+            <ul>
+                <li>The file format is not GIF</li>
+                <li>You don't have access to the Magento server file system</li>
+                <li>The logo is specific to a website, store, or store view</li>
+            </ul>
+            <p>To upload a high-resolution logo using the Admin Panel:</p>
+            <ol>
+                <li>Log in to the Magento Admin Panel as an administrator.</li>
+                <li>Click <strong>System</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt;
+                    <strong>Design</strong>.</li>
+                <li>From the <strong>Current Configuration Scope</strong> in the upper left corner, click the scope to
+                    display the logo.<br>
+                    Initially, the logo is associated with <strong>Default Config</strong>, which means it applies to
+                    all websites and store views. You can optionally associate it with a specific website or store view
+                    by selecting it from the list.<br>
+                    The following example shows how to associate a logo with the Madison Island English store view.<br>
+                    <img src="../images/resp_email_template_scope.png"></li>
+                <li>In the right pane, click <strong>Transactional Emails</strong> to expand it.</li>
+                <li>Enter the following information:
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Logo Image</strong></td>
+                                <td>Click <strong>Browse</strong> and browse to locate the logo image.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Delete Image</strong> checkbox</td>
+                                <td>Select the checkbox to delete the current logo image. Ignore the other fields.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logo Image Alt</strong> field</td>
+                                <td>Enter alternate text to display if the image is not available. For a logo, it's
+                                    typically the name of your company.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logo Width</strong> field</td>
+                                <td>Enter the numeric width, in pixels, of the area in which to display the image
+                                    (<em>not</em> the dimensions of the logo image).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logo Height</strong> field</td>
+                                <td>Enter the numeric height, in pixels, of the area in which to display the image
+                                    (<em>not</em> the dimensions of the logo image).</td>
+                            </tr>
+                        </tbody>
+                    </table><br>
+                    The following figure shows an example.<br>
+                    <img src="../images/resp_email_logo.png" width="600px" height="509px">
+                </li>
+                <li>Click <strong>Save Config</strong> in the upper right corner of the page.</li>
+            </ol>
+
+            <h2 id="contact-info">Using Contact Information in Transaction Emails</h2>
+            <p>Transactional emails can output your store email address, store phone number, and store hours of
+                operation if those values are configured in the Admin Panel. To set those values:</p>
+            <ol>
+                <li>Log in to the Magento Admin Panel as an administrator.</li>
+                <li>To set the phone number and hours of operation:
+                    <ol>
+                        <li>Click <strong>System</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt;
+                            <strong>General</strong>.</li>
+                        <li>In the right pane, click <strong>Store Information</strong> to expand it.</li>
+                        <li>If you want to include a phone number, input the phone number in the <strong>Store Contact
+                                Telephone</strong> field.</li>
+                        <li>If you want to include your hours of operation, input them in the <strong>Store Hours of
+                                Operation</strong> field.</li>
+                    </ol>
+                </li>
+                <li>To set the store email address:
+                    <ol>
+                        <li>Click <strong>System</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt;
+                            <strong>Store Email Addresses</strong>.</li>
+                        <li>In the right pane, click <strong>General Contact</strong> or <strong>Sales
+                                Representative</strong> to expand it.</li>
+                        <li>In the <strong>Sender Name</strong> field, input the name that you want the email to be sent
+                            from, such as your company name.</li>
+                        <li>In the <strong>Sender Email</strong> field, input the email address.</li>
+                    </ol>
+                </li>
+                <li>When you're finished, click <strong>Save Config</strong> in the upper right corner of the page.</li>
+
+            </ol>
+
+            <h2 id="localizing">Localizing Transactional Emails</h2>
+            <p>Only the en_US templates were updated to the new responsive email structure. To use the responsive emails
+                for other locales, copy the <code>en_US/template/email/</code> directory into the respective
+                <code>app/locale/[LOCALE CODE]</code> directory and update the text strings to that locale.</p>
+
+            <h2 id="newsletter-template">Using Updated Newsletter Templates</h2>
+            <p>The focus of this article is on transactional emails but the same techniques can be used with newsletter
+                templates as well, including:</p>
+            <ul>
+                <li>Import the header and footer using the <a href="RWD_responsive_emails.html#custom-head-foot"><code>&#123;&#123;template
+                            config_path=""}}</code></a> directives</li>
+                <li>Apply inline styles using the <a href="RWD_responsive_emails.html#email-css"><code>&#123;&#123;inlinecss file=""}}</code></a>
+                    directive</li>
+                <li>Include non-inline styles using <a href="RWD_responsive_emails.html#email-css-noninline"><code>&#123;&#123;var
+                            non_inline_styles}}</code></a></li>
+            </ul>
+            <p>In the Magento Admin Panel, go to <strong>Newsletter</strong> &gt; <strong>Newsletter Templates</strong>
+                and look at the template named <strong>Example Newsletter Template</strong>. We added this template as a
+                reference for how to build a responsive newsletter.</p>
+
+
+            <h2 id="help">Getting Help</h2>
+            <p>If you encounter issues customizing email templates, contact Magento Support. Another option is to post
+                your question on the community <a href="http://magento.stackexchange.com/questions/ask"
+                    target="_blank">magento.stackexchange.com</a> site and tag it with <code>rwd-email</code> and
+                <code>rwd-theme</code>.</p>
+
+    </div>
+</body>
+
+</html>
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-01">
+    Jun 1st, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Admin Grids | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="admin-grid.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../v2.3/extension-dev-guide/admin-grid.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="admin-grid.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">PHP Developer Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="bk-extension-dev-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="intro/developers_roadmap.html" class="spectrum-SideNav-itemLink ">Developer roadmap</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="intro/intro-composer.html" class="spectrum-SideNav-itemLink ">Introduction to Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="intro/intro-composer-gloss.html" class="spectrum-SideNav-itemLink ">Glossary of common terms</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/prepare.html" class="spectrum-SideNav-itemLink ">Prepare (development quick start)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/dev-modtypes.html" class="spectrum-SideNav-itemLink ">Component types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/prepare_file-str.html" class="spectrum-SideNav-itemLink ">About component file structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/ext-repo-structure.html" class="spectrum-SideNav-itemLink ">Extension repository structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/dev-summary.html" class="spectrum-SideNav-itemLink ">Roadmap for developing and packaging components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/lifecycle.html" class="spectrum-SideNav-itemLink ">Extension lifecycle</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/build.html" class="spectrum-SideNav-itemLink ">Build</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/di-xml-file.html" class="spectrum-SideNav-itemLink ">The di.xml file</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/optimal-dev-environment.html" class="spectrum-SideNav-itemLink ">Optimal development environment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/composer-integration.html" class="spectrum-SideNav-itemLink ">The composer.json file</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/required-configuration-files.html" class="spectrum-SideNav-itemLink ">Define your configuration files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/module-file-structure.html" class="spectrum-SideNav-itemLink ">Create your component file structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/component-registration.html" class="spectrum-SideNav-itemLink ">Register your component</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/XSD-XML-validation.html" class="spectrum-SideNav-itemLink ">URN schema validation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/create_component.html" class="spectrum-SideNav-itemLink ">Name your component</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/module-load-order.html" class="spectrum-SideNav-itemLink ">Component load order</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/enable-module.html" class="spectrum-SideNav-itemLink ">Enable or disable your component</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="package/package.html" class="spectrum-SideNav-itemLink ">Package</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="package/package_module.html" class="spectrum-SideNav-itemLink ">Package a component</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="package/package_mktpl.html" class="spectrum-SideNav-itemLink ">Upload your component to the Magento Marketplace</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="validate/validate.html" class="spectrum-SideNav-itemLink ">Validate</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="validate/test-module.html" class="spectrum-SideNav-itemLink ">Test your component</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/partial-caching.html" class="spectrum-SideNav-itemLink ">Partial caching</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/partial-caching/database-caching.html" class="spectrum-SideNav-itemLink ">Create custom cache engines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/partial-caching/create-cache-type.html" class="spectrum-SideNav-itemLink ">Create a cache type</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/page-caching.html" class="spectrum-SideNav-itemLink ">Full page caching</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/page-caching/public-content.html" class="spectrum-SideNav-itemLink ">Public content</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/page-caching/private-content.html" class="spectrum-SideNav-itemLink ">Private content</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cli-cmds/cli-add.html" class="spectrum-SideNav-itemLink ">Add CLI commands</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="cli-cmds/cli-naming-guidelines.html" class="spectrum-SideNav-itemLink ">Command naming guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cli-cmds/cli-howto.html" class="spectrum-SideNav-itemLink ">How to add CLI commands</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="staging.html" class="spectrum-SideNav-itemLink ">Staging (Magento Commerce only)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="module-development.html" class="spectrum-SideNav-itemLink ">Component development</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="async-operations.html" class="spectrum-SideNav-itemLink ">Asynchronous/deferred operations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="service-contracts/service-contracts.html" class="spectrum-SideNav-itemLink ">Service contracts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="api-concepts.html" class="spectrum-SideNav-itemLink ">Public interfaces &amp; APIs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="service-contracts/design-patterns.html" class="spectrum-SideNav-itemLink ">Service contract design patterns</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="depend-inj.html" class="spectrum-SideNav-itemLink ">Dependency injection</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="object-manager.html" class="spectrum-SideNav-itemLink ">ObjectManager</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="events-and-observers.html" class="spectrum-SideNav-itemLink ">Events and observers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="factories.html" class="spectrum-SideNav-itemLink ">Factories</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="proxies.html" class="spectrum-SideNav-itemLink ">Proxies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-generation.html" class="spectrum-SideNav-itemLink ">Code generation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="attributes.html" class="spectrum-SideNav-itemLink ">EAV and extension attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="plugins.html" class="spectrum-SideNav-itemLink ">Plugins (Interceptors)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="routing.html" class="spectrum-SideNav-itemLink ">Routing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Indexing</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="indexing.html" class="spectrum-SideNav-itemLink ">Indexing overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="indexer-batch.html" class="spectrum-SideNav-itemLink ">Indexer optimization</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="indexing-custom.html" class="spectrum-SideNav-itemLink ">Adding a custom indexer</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Declarative schema</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/index.html" class="spectrum-SideNav-itemLink ">Declarative schema overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/migration-commands.html" class="spectrum-SideNav-itemLink ">Migrate install/upgrade scripts to declarative schema</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/db-schema.html" class="spectrum-SideNav-itemLink ">Configure declarative schema</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/data-patches.html" class="spectrum-SideNav-itemLink ">Develop data and schema patches</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Web APIs</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="service-contracts/service-to-web-service.html" class="spectrum-SideNav-itemLink ">Configure services as web APIs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="webapi/custom-routes.html" class="spectrum-SideNav-itemLink ">Set custom routes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="webapi/request-processor-pool.html" class="spectrum-SideNav-itemLink ">WebApi request processors pool</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Message Queues</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/message-queues.html" class="spectrum-SideNav-itemLink ">Message queues overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/message-queues-stores.html" class="spectrum-SideNav-itemLink ">Message queues and stores</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/config-mq.html" class="spectrum-SideNav-itemLink ">Configure message Queues</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/refresh-config.html" class="spectrum-SideNav-itemLink ">Handling outdated in-memory object states</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/queue-migration.html" class="spectrum-SideNav-itemLink ">Migrate message queue configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/bulk-operations.html" class="spectrum-SideNav-itemLink ">Bulk operations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/implement-bulk.html" class="spectrum-SideNav-itemLink ">Example bulk operations implementation</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="extension_attributes/adding-attributes.html" class="spectrum-SideNav-itemLink ">Adding extension attributes to entity</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="admin-grid.html" class="spectrum-SideNav-itemLink ">Adding an admin grid</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="searching-with-repositories.html" class="spectrum-SideNav-itemLink ">Searching with repositories</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howdoi/php/php_clear-dirs.html" class="spectrum-SideNav-itemLink ">Clear directories during development</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="adapters.html" class="spectrum-SideNav-itemLink ">Adapters</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="view-models.html" class="spectrum-SideNav-itemLink ">View models</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="variable-pool/index.html" class="spectrum-SideNav-itemLink ">Variable Pool</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="configuration/sensitive-and-environment-settings.html" class="spectrum-SideNav-itemLink ">Sensitive Environment Settings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="configuration/importers.html" class="spectrum-SideNav-itemLink ">Configuration Importers</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Framework</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="framework/serializer.html" class="spectrum-SideNav-itemLink ">Serialize Library</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="framework/array-manager.html" class="spectrum-SideNav-itemLink ">Array Manager</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Security</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="xss-protection.html" class="spectrum-SideNav-itemLink ">XSS Prevention</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="security/non-secure-functions.html" class="spectrum-SideNav-itemLink ">Non-secure functions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="security/content-security-policies.html" class="spectrum-SideNav-itemLink ">Content Security Policies</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/index.html" class="spectrum-SideNav-itemLink ">Versioning</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/check-version.html" class="spectrum-SideNav-itemLink ">Check the Magento version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/dependencies.html" class="spectrum-SideNav-itemLink ">Module version dependencies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/codebase-changes.html" class="spectrum-SideNav-itemLink ">Codebase changes</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Admin Grids</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/extension-dev-guide/admin-grid.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/extension-dev-guide/admin-grid.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<h2 id="overview">Overview</h2>
+
+<p>Admin grids are used to represent, filter and sort various data in the Magento backend. They are also used to perform mass actions such as updates and deletes.
+This tutorial will show you how to create a simple admin grid.</p>
+
+<h3 id="1-create-a-backbone-module">1. Create a backbone module</h3>
+
+<p>Everything starts with a module. <code class="language-plaintext highlighter-rouge">Dev_Grid</code> will be used as the namespace:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> <span class="nt">-p</span> app/code/Dev/Grid/etc
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Here are the required files to get started:</p>
+
+<p><code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/etc/module.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Dev_Grid"</span> <span class="na">setup_version=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;sequence&gt;</span>
+   <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Backend"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Magento_Ui"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/sequence&gt;</span>
+ <span class="nt">&lt;/module&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/registration.php</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+    <span class="s1">'Dev_Grid'</span><span class="p">,</span>
+    <span class="k">__DIR__</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">app/code/Goivvy/Grid/etc/adminhtml/routes.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/routes.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">"admin"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">"dev_grid"</span> <span class="na">frontName=</span><span class="s">"dev_grid"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Dev_Grid"</span> <span class="na">before=</span><span class="s">"Magento_Backend"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/route&gt;</span>
+    <span class="nt">&lt;/router&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/etc/adminhtml/menu.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Backend:etc/menu.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;menu&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"Dev_Grid::home"</span> <span class="na">title=</span><span class="s">"Category Listing"</span> <span class="na">module=</span><span class="s">"Dev_Grid"</span> <span class="na">sortOrder=</span><span class="s">"1000"</span> <span class="na">parent=</span><span class="s">"Magento_Catalog::catalog_categories"</span> <span class="na">resource=</span><span class="s">"Magento_Catalog::categories"</span> <span class="na">action=</span><span class="s">"dev_grid/index/index"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/menu&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="2-define-the-admin-grid">2. Define the Admin Grid</h3>
+
+<p>The grid displays a list of available categories that start with a letter <code class="language-plaintext highlighter-rouge">b</code> or <code class="language-plaintext highlighter-rouge">B</code>.
+This grid has three columns: <code class="language-plaintext highlighter-rouge">ID</code>, <code class="language-plaintext highlighter-rouge">category path</code> and <code class="language-plaintext highlighter-rouge">category name</code>. <code class="language-plaintext highlighter-rouge">ID</code> and <code class="language-plaintext highlighter-rouge">category path</code> are from the <code class="language-plaintext highlighter-rouge">catalog_category_entity</code> table. For the <code class="language-plaintext highlighter-rouge">name</code> values, joins are used.
+The page layout file is <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/view/adminhtml/layout/dev_grid_index_index.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">"dev_grid_category_listing"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/referenceContainer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The UI component <code class="language-plaintext highlighter-rouge">dev_grid_category_listing</code> must be defined separately in a file with the same name, ending with <code class="language-plaintext highlighter-rouge">.xml</code> - <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/view/adminhtml/ui_component/dev_grid_category_listing.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>dev_grid_category_listing.dev_grid_category_listing_data_source<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"deps"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>dev_grid_category_listing.dev_grid_category_listing_data_source<span class="nt">&lt;/item&gt;</span>
+     <span class="nt">&lt;/item&gt;</span>
+     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"spinner"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>dev_grid_category_columns<span class="nt">&lt;/item&gt;</span>
+     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"buttons"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"add"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>add<span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>View Category Tree<span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>primary<span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>catalog/category/index<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+     <span class="nt">&lt;/item&gt;</span>
+  <span class="nt">&lt;/argument&gt;</span>
+  <span class="nt">&lt;dataSource</span> <span class="na">name=</span><span class="s">"dev_grid_category_listing_data_source"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Dev\Grid\Ui\DataProvider\Category\ListingDataProvider<span class="nt">&lt;/argument&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>dev_grid_category_listing_data_source<span class="nt">&lt;/argument&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"primaryFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"requestFieldName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/argument&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"update_url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"mui/index/render"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;/item&gt;</span>
+       <span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/provider<span class="nt">&lt;/item&gt;</span>
+     <span class="nt">&lt;/item&gt;</span>
+   <span class="nt">&lt;/argument&gt;</span>
+  <span class="nt">&lt;/dataSource&gt;</span>
+  <span class="nt">&lt;listingToolbar</span> <span class="na">name=</span><span class="s">"listing_top"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;bookmarks</span> <span class="na">name=</span><span class="s">"bookmarks"</span> <span class="na">class=</span><span class="s">"Dev\Grid\Ui\Component\Category\Listing\Bookmark"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;columnsControls</span> <span class="na">name=</span><span class="s">"columns_controls"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">"listing_massaction"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"selectProvider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>dev_grid_category_listing.dev_grid_category_listing.dev_grid_category_columns.ids<span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"displayArea"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>bottom<span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"indexField"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;/argument&gt;</span>
+      <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">"delete"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>delete<span class="nt">&lt;/item&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"dev_grid/category/massDelete"</span><span class="nt">/&gt;</span>
+               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"confirm"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Delete items<span class="nt">&lt;/item&gt;</span>
+                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"message"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Are you sure you want to delete selected items?<span class="nt">&lt;/item&gt;</span>
+               <span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;/item&gt;</span>
+         <span class="nt">&lt;/argument&gt;</span>
+      <span class="nt">&lt;/action&gt;</span>
+    <span class="nt">&lt;/massaction&gt;</span>
+    <span class="nt">&lt;filters</span> <span class="na">name=</span><span class="s">"listing_filters"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"templates"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"filters"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"select"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/ui-select<span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/filters/elements/ui-select<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/filters&gt;</span>
+    <span class="nt">&lt;paging</span> <span class="na">name=</span><span class="s">"listing_paging"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/listingToolbar&gt;</span>
+  <span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">"dev_grid_category_columns"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;selectionsColumn</span> <span class="na">name=</span><span class="s">"ids"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"indexField"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+           <span class="nt">&lt;/item&gt;</span>
+       <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/selectionsColumn&gt;</span>
+    <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"entity_id"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;settings&gt;</span>
+         <span class="nt">&lt;filter&gt;</span>textRange<span class="nt">&lt;/filter&gt;</span>
+         <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/label&gt;</span>
+         <span class="nt">&lt;resizeDefaultWidth&gt;</span>25<span class="nt">&lt;/resizeDefaultWidth&gt;</span>
+      <span class="nt">&lt;/settings&gt;</span>
+    <span class="nt">&lt;/column&gt;</span>
+    <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"path"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;settings&gt;</span>
+         <span class="nt">&lt;filter&gt;</span>text<span class="nt">&lt;/filter&gt;</span>
+         <span class="nt">&lt;bodyTmpl&gt;</span>ui/grid/cells/text<span class="nt">&lt;/bodyTmpl&gt;</span>
+         <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Path<span class="nt">&lt;/label&gt;</span>
+      <span class="err">&lt;</span>/settings
+    <span class="nt">&lt;/column&gt;</span>
+    <span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;settings&gt;</span>
+         <span class="nt">&lt;filter&gt;</span>text<span class="nt">&lt;/filter&gt;</span>
+         <span class="nt">&lt;bodyTmpl&gt;</span>ui/grid/cells/text<span class="nt">&lt;/bodyTmpl&gt;</span>
+         <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/settings&gt;</span>
+    <span class="nt">&lt;/column&gt;</span>
+    <span class="nt">&lt;actionsColumn</span> <span class="na">name=</span><span class="s">"actions"</span> <span class="na">class=</span><span class="s">"Dev\Grid\Ui\Component\Category\Listing\Column\Actions"</span> <span class="na">sortOrder=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"resizeEnabled"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+              <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"resizeDefaultWidth"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>107<span class="nt">&lt;/item&gt;</span>
+              <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"indexField"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+          <span class="nt">&lt;/item&gt;</span>
+       <span class="nt">&lt;/argument&gt;</span>
+       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"viewUrl"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>catalog/category/view<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/actionsColumn&gt;</span>
+  <span class="nt">&lt;/columns&gt;</span>
+<span class="nt">&lt;/listing&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This file consists of several sections:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dataSource</code> - references the class that is responsible for getting the requested data.</li>
+  <li><code class="language-plaintext highlighter-rouge">listingToolbar</code> - where mass actions and filters are defined.</li>
+  <li><code class="language-plaintext highlighter-rouge">columns</code> - lists the columns to be displayed.</li>
+</ul>
+
+<h3 id="3-define-the-datasource-class">3. Define the DataSource Class</h3>
+
+<p>The UI references <code class="language-plaintext highlighter-rouge">Dev\Grid\Ui\DataProvider\Category\ListingDataProvider</code> as the data source class.</p>
+
+<p>The corresponding file is <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/Ui/DataProvider/Category/ListingDataProvider.php</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Dev\Grid\Ui\DataProvider\Category</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">ListingDataProvider</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</span>
+<span class="p">{</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>It has to extend <code class="language-plaintext highlighter-rouge">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</code>.
+The plugin then gets a <code class="language-plaintext highlighter-rouge">name</code> attribute:</p>
+
+<p><code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/etc/di.xml</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Dev\Grid\Ui\DataProvider\Category\ListingDataProvider"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"dev_grid_attributes"</span> <span class="na">type=</span><span class="s">"Dev\Grid\Plugin\AddAttributesToUiDataProvider"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;/type&gt;</span>
+ <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;arguments&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"collections"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"dev_grid_category_listing_data_source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>DevGridCategoryCollection<span class="nt">&lt;/item&gt;</span>
+   <span class="nt">&lt;/argument&gt;</span>
+  <span class="nt">&lt;/arguments&gt;</span>
+ <span class="nt">&lt;/type&gt;</span>
+ <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"DevGridCategoryCollection"</span> <span class="na">type=</span><span class="s">"Dev\Grid\Ui\DataProvider\Category\Listing\Collection"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;arguments&gt;</span>
+     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"mainTable"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>catalog_category_entity<span class="nt">&lt;/argument&gt;</span>
+     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"resourceModel"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Dev\Grid\Model\ResourceModel\Category<span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;/arguments&gt;</span>
+ <span class="nt">&lt;/virtualType&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/Plugin/AddAttributesToUiDataProvider.php</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Dev\Grid\Plugin</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Dev\Grid\Ui\DataProvider\Category\ListingDataProvider</span> <span class="k">as</span> <span class="n">CategoryDataProvider</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Eav\Api\AttributeRepositoryInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\App\ProductMetadataInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">AddAttributesToUiDataProvider</span>
+<span class="p">{</span>
+    <span class="cd">/** @var AttributeRepositoryInterface */</span>
+    <span class="k">private</span> <span class="nv">$attributeRepository</span><span class="p">;</span>
+
+    <span class="cd">/** @var ProductMetadataInterface */</span>
+    <span class="k">private</span> <span class="nv">$productMetadata</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * Constructor
+     *
+     * @param \Magento\Eav\Api\AttributeRepositoryInterface $attributeRepository
+     * @param \Magento\Framework\App\ProductMetadataInterface $productMetadata
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">AttributeRepositoryInterface</span> <span class="nv">$attributeRepository</span><span class="p">,</span>
+        <span class="nx">ProductMetadataInterface</span> <span class="nv">$productMetadata</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">attributeRepository</span> <span class="o">=</span> <span class="nv">$attributeRepository</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">productMetadata</span> <span class="o">=</span> <span class="nv">$productMetadata</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Get Search Result after plugin
+     *
+     * @param \Dev\Grid\Ui\DataProvider\Category\ListingDataProvider $subject
+     * @param \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult $result
+     * @return \Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetSearchResult</span><span class="p">(</span><span class="nx">CategoryDataProvider</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">SearchResult</span> <span class="nv">$result</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="o">-&gt;</span><span class="na">isLoaded</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$edition</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">productMetadata</span><span class="o">-&gt;</span><span class="na">getEdition</span><span class="p">();</span>
+
+        <span class="nv">$column</span> <span class="o">=</span> <span class="s1">'entity_id'</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$edition</span> <span class="o">==</span> <span class="s1">'Enterprise'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$column</span> <span class="o">=</span> <span class="s1">'row_id'</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$attribute</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">attributeRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'catalog_category'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">);</span>
+
+        <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">getSelect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">joinLeft</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">'devgridname'</span> <span class="o">=&gt;</span> <span class="nv">$attribute</span><span class="o">-&gt;</span><span class="na">getBackendTable</span><span class="p">()],</span>
+            <span class="s1">'devgridname.'</span> <span class="o">.</span> <span class="nv">$column</span> <span class="o">.</span> <span class="s1">' = main_table.'</span> <span class="o">.</span> <span class="nv">$column</span> <span class="o">.</span> <span class="s1">' AND devgridname.attribute_id = '</span>
+            <span class="o">.</span> <span class="nv">$attribute</span><span class="o">-&gt;</span><span class="na">getAttributeId</span><span class="p">(),</span>
+            <span class="p">[</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'devgridname.value'</span><span class="p">]</span>
+        <span class="p">);</span>
+
+        <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">getSelect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">'devgridname.value LIKE "B%"'</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This works with both enterprise and community versions by linking on different fields.
+In this case, <code class="language-plaintext highlighter-rouge">LIKE</code> is case insensitive.</p>
+
+<h3 id="4-data-source-collection">4. Data Source Collection</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">dataSource</code> name <code class="language-plaintext highlighter-rouge">dev_grid_category_listing_data_source</code> links to <code class="language-plaintext highlighter-rouge">Dev\Grid\Ui\DataProvider\Category\Listing\Collection</code> collection in <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/etc/di.xml</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">di.xml</code> also sets the main table and resource model:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre> <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"DevGridCategoryCollection"</span> <span class="na">type=</span><span class="s">"Dev\Grid\Ui\DataProvider\Category\Listing\Collection"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;arguments&gt;</span>
+     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"mainTable"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>catalog_category_entity<span class="nt">&lt;/argument&gt;</span>
+     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"resourceModel"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Dev\Grid\Model\ResourceModel\Category<span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;/arguments&gt;</span>
+ <span class="nt">&lt;/virtualType&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The collection class translates into <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/Ui/DataProvider/Category/Listing/Collection.php</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Dev\Grid\Ui\DataProvider\Category\Listing</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Collection</span> <span class="k">extends</span> <span class="nx">SearchResult</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Override _initSelect to add custom columns
+     *
+     * @return void
+     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">_initSelect</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addFilterToMap</span><span class="p">(</span><span class="s1">'entity_id'</span><span class="p">,</span> <span class="s1">'main_table.entity_id'</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addFilterToMap</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'devgridname.value'</span><span class="p">);</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">_initSelect</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>It uses a custom collection file to add custom filters to map, and makes the grid filters work with the ID and name fields. Without <code class="language-plaintext highlighter-rouge">addFilterToMap</code>, you will not be able to search within the <code class="language-plaintext highlighter-rouge">name</code> column.</p>
+
+<h3 id="5-column-actions-class">5. Column Actions Class</h3>
+
+<p>The UI grid file defines a column actions class <code class="language-plaintext highlighter-rouge">Dev\Grid\Ui\Component\Category\Listing\Column\Actions</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/Ui/Component/Category/Listing/Column/Actions.php</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Dev\Grid\Ui\Component\Category\Listing\Column</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Magento\Framework\View\Element\UiComponentFactory</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\View\Element\UiComponent\ContextInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\Url</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Ui\Component\Listing\Columns\Column</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Actions</span> <span class="k">extends</span> <span class="nx">Column</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var UrlInterface
+     */</span>
+    <span class="k">protected</span> <span class="nv">$_urlBuilder</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var string
+     */</span>
+    <span class="k">protected</span> <span class="nv">$_viewUrl</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * Constructor
+     *
+     * @param \Magento\Framework\View\Element\UiComponent\ContextInterface $context
+     * @param \Magento\Framework\View\Element\UiComponentFactory $uiComponentFactory
+     * @param \Magento\Framework\Url $urlBuilder
+     * @param string $viewUrl
+     * @param array $components
+     * @param array $data
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">ContextInterface</span> <span class="nv">$context</span><span class="p">,</span>
+        <span class="nx">UiComponentFactory</span> <span class="nv">$uiComponentFactory</span><span class="p">,</span>
+        <span class="nx">Url</span> <span class="nv">$urlBuilder</span><span class="p">,</span>
+        <span class="nv">$viewUrl</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="k">array</span> <span class="nv">$components</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="k">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_urlBuilder</span> <span class="o">=</span> <span class="nv">$urlBuilder</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_viewUrl</span>    <span class="o">=</span> <span class="nv">$viewUrl</span><span class="p">;</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">,</span> <span class="nv">$uiComponentFactory</span><span class="p">,</span> <span class="nv">$components</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Prepare Data Source
+     *
+     * @param array $dataSource
+     * @return array
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">prepareDataSource</span><span class="p">(</span><span class="k">array</span> <span class="nv">$dataSource</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$dataSource</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'items'</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$dataSource</span><span class="p">[</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'items'</span><span class="p">]</span> <span class="k">as</span> <span class="o">&amp;</span><span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$name</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'name'</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$item</span><span class="p">[</span><span class="s1">'entity_id'</span><span class="p">]))</span> <span class="p">{</span>
+                    <span class="nv">$item</span><span class="p">[</span><span class="nv">$name</span><span class="p">][</span><span class="s1">'view'</span><span class="p">]</span>   <span class="o">=</span> <span class="p">[</span>
+                        <span class="s1">'href'</span>  <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_urlBuilder</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_viewUrl</span><span class="p">,</span> <span class="p">[</span><span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">'entity_id'</span><span class="p">]]),</span>
+                        <span class="s1">'target'</span> <span class="o">=&gt;</span> <span class="s1">'_blank'</span><span class="p">,</span>
+                        <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'View on Frontend'</span><span class="p">)</span>
+                    <span class="p">];</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$dataSource</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>It gets a frontend URL for every category it lists.</p>
+
+<h3 id="6-backend-controllers">6. Backend Controllers</h3>
+
+<p>The main route defined in <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/etc/adminhtml/menu.xml</code> as <code class="language-plaintext highlighter-rouge">dev_grid/index/index</code> translates into <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/Controller/Adminhtml/Index/Index.php</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Dev\Grid\Controller\Adminhtml\Index</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Magento\Backend\App\Action</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Backend\App\Action\Context</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\View\Result\Page</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\View\Result\PageFactory</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Index</span> <span class="k">extends</span> <span class="nx">Action</span> <span class="k">implements</span> <span class="nx">HttpGetActionInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var PageFactory
+     */</span>
+    <span class="k">private</span> <span class="nv">$pageFactory</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * Constructor
+     *
+     * @param \Magento\Backend\App\Action\Context $context
+     * @param \Magento\Framework\View\Result\PageFactory $rawFactory
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Context</span> <span class="nv">$context</span><span class="p">,</span>
+        <span class="nx">PageFactory</span> <span class="nv">$rawFactory</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageFactory</span> <span class="o">=</span> <span class="nv">$rawFactory</span><span class="p">;</span>
+
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Add the main Admin Grid page
+     *
+     * @return Page
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span><span class="o">:</span> <span class="nx">Page</span>
+    <span class="p">{</span>
+        <span class="nv">$resultPage</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pageFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+        <span class="nv">$resultPage</span><span class="o">-&gt;</span><span class="na">setActiveMenu</span><span class="p">(</span><span class="s1">'Magento_Catalog::catalog_products'</span><span class="p">);</span>
+        <span class="nv">$resultPage</span><span class="o">-&gt;</span><span class="na">getConfig</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">prepend</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s1">'Admin Grid Tutorial Example'</span><span class="p">));</span>
+
+        <span class="k">return</span> <span class="nv">$resultPage</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The Ui grid file defines the custom route <code class="language-plaintext highlighter-rouge">dev_grid/category/massDelete</code> (mass delete) and translates into <code class="language-plaintext highlighter-rouge">app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Dev\Grid\Controller\Adminhtml\Category</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Magento\Backend\App\Action</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Backend\App\Action\Context</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Backend\Model\View\Result\Redirect</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Catalog\Model\ResourceModel\Category\CollectionFactory</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Catalog\Api\CategoryRepositoryInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\App\Action\HttpPostActionInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\Controller\ResultFactory</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\Exception\NotFoundException</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Ui\Component\MassAction\Filter</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">MassDelete</span> <span class="k">extends</span> <span class="nx">Action</span> <span class="k">implements</span> <span class="nx">HttpPostActionInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Authorization level
+     */</span>
+    <span class="k">const</span> <span class="no">ADMIN_RESOURCE</span> <span class="o">=</span> <span class="s1">'Magento_Catalog::categories'</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory
+     */</span>
+    <span class="k">protected</span> <span class="nv">$collectionFactory</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var \Magento\Catalog\Api\CategoryRepositoryInterface
+     */</span>
+    <span class="k">private</span> <span class="nv">$categoryRepository</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var \Magento\Ui\Component\MassAction\Filter
+     */</span>
+    <span class="k">protected</span> <span class="nv">$filter</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * Constructor
+     *
+     * @param \Magento\Backend\App\Action\Context $context
+     * @param \Magento\Ui\Component\MassAction\Filter $filter
+     * @param \Magento\Catalog\Model\ResourceModel\Category\CollectionFactory $collectionFactory
+     * @param \Magento\Catalog\Api\CategoryRepositoryInterface $categoryRepository
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Context</span> <span class="nv">$context</span><span class="p">,</span>
+        <span class="nx">Filter</span> <span class="nv">$filter</span><span class="p">,</span>
+        <span class="nx">CollectionFactory</span> <span class="nv">$collectionFactory</span><span class="p">,</span>
+        <span class="nx">CategoryRepositoryInterface</span> <span class="nv">$categoryRepository</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">filter</span> <span class="o">=</span> <span class="nv">$filter</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collectionFactory</span> <span class="o">=</span> <span class="nv">$collectionFactory</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">categoryRepository</span> <span class="o">=</span> <span class="nv">$categoryRepository</span><span class="p">;</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Category delete action
+     *
+     * @return Redirect
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span><span class="o">:</span> <span class="nx">Redirect</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getRequest</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">isPost</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">NotFoundException</span><span class="p">(</span><span class="nx">__</span><span class="p">(</span><span class="s1">'Page not found'</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">filter</span><span class="o">-&gt;</span><span class="na">getCollection</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collectionFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">());</span>
+        <span class="nv">$categoryDeleted</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">getItems</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$category</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">categoryRepository</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
+            <span class="nv">$categoryDeleted</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$categoryDeleted</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">messageManager</span><span class="o">-&gt;</span><span class="na">addSuccessMessage</span><span class="p">(</span>
+                <span class="nx">__</span><span class="p">(</span><span class="s1">'A total of %1 record(s) have been deleted.'</span><span class="p">,</span> <span class="nv">$categoryDeleted</span><span class="p">)</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resultFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">ResultFactory</span><span class="o">::</span><span class="na">TYPE_REDIRECT</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">setPath</span><span class="p">(</span><span class="s1">'dev_grid/index/index'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="completed-extension">Completed extension</h2>
+
+<p>The complete extension can be found on GitHub at <a href="https://github.com/goivvy/admin-grid-tutorial">Magento 2 Admin Grid Example Extension</a>.
+Installation instructions:</p>
+
+<ol>
+  <li>
+    <p>Clone the repository</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git clone https://github.com/goivvy/admin-grid-tutorial.git
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy <code class="language-plaintext highlighter-rouge">app</code> folder</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">cp</span> <span class="nt">-r</span> ~/admin-grid/tutorial/app /path/to/magento2/root/folder
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install and recompile</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>bin/magento setup:upgrade
+bin/magento deploy:mode:set production
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>The grid can now be accessed at <strong>Catalog</strong> &gt; <strong>Inventory</strong> &gt; <strong>Category Listing</strong>.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-18">
+    Jun 18th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  <div class="page-contributor">
+  <a href="https://www.goivvy.com" target="_blank">
+    Thanks to Goivvy LLC for contributing this topic
+  </a>
+</div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

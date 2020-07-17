@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Set up Fastly | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="configure-fastly.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Commerce Cloud</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-SideNav-itemLink ">Overview</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../onboarding/onboarding-tasks.html" class="spectrum-SideNav-itemLink ">Onboarding tasks</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/starter-architecture.html" class="spectrum-SideNav-itemLink ">Starter architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/starter-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Starter develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/pro-architecture.html" class="spectrum-SideNav-itemLink ">Pro architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/pro-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Pro develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/scaled-architecture.html" class="spectrum-SideNav-itemLink ">Scaled architecture</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../requirements/cloud-requirements.html" class="spectrum-SideNav-itemLink ">Technologies and requirements</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/cloud-composer.html" class="spectrum-SideNav-itemLink ">Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/cli-ref-topic.html" class="spectrum-SideNav-itemLink ">Magento Cloud CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/ece-tools-reference.html" class="spectrum-SideNav-itemLink ">ece-tools package</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/git-integration.html" class="spectrum-SideNav-itemLink ">Git</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environments-ssh.html" class="spectrum-SideNav-itemLink ">SSH and sFTP</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/privatelink-service.html" class="spectrum-SideNav-itemLink ">PrivateLink</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/new-relic.html" class="spectrum-SideNav-itemLink ">New Relic</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/sendgrid.html" class="spectrum-SideNav-itemLink ">SendGrid</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup.html" class="spectrum-SideNav-itemLink ">Local development setup</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace.html" class="spectrum-SideNav-itemLink ">Prepare for manual setup</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-magento-prereqs.html" class="spectrum-SideNav-itemLink ">Install Magento prerequisites</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-ssh.html" class="spectrum-SideNav-itemLink ">Enable SSH keys</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-file-sys-owner.html" class="spectrum-SideNav-itemLink ">Set up the Magento file system owner</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-setup-env-2_clone.html" class="spectrum-SideNav-itemLink ">Clone and branch the project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-setup-env-install.html" class="spectrum-SideNav-itemLink ">Install Magento</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-deploy.html" class="spectrum-SideNav-itemLink ">First time deployment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/debug.html" class="spectrum-SideNav-itemLink ">Optional - Configure Xdebug</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/sample-data.html" class="spectrum-SideNav-itemLink ">Optional - Install sample data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-SideNav-itemLink ">Docker development</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers.html" class="spectrum-SideNav-itemLink ">Docker container architecture</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers-service.html" class="spectrum-SideNav-itemLink ">Service containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers-cli.html" class="spectrum-SideNav-itemLink ">CLI containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-syncing-data.html" class="spectrum-SideNav-itemLink ">Synchronizing data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-SideNav-itemLink ">Configure Docker</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-development-debug.html" class="spectrum-SideNav-itemLink ">Xdebug for Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-manage-database.html" class="spectrum-SideNav-itemLink ">Manage the database</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-split-db.html" class="spectrum-SideNav-itemLink ">Enable split database solution</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-manage-cron-jobs.html" class="spectrum-SideNav-itemLink ">Manage cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-extend.html" class="spectrum-SideNav-itemLink ">Extend Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-config-blackfire-io.html" class="spectrum-SideNav-itemLink ">Add Blackfire.io service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Launch Docker</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-mode-developer.html" class="spectrum-SideNav-itemLink ">Developer mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-mode-production.html" class="spectrum-SideNav-itemLink ">Production mode</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Functional Testing</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-test-app-mftf.html" class="spectrum-SideNav-itemLink ">Magento application testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-SideNav-itemLink ">Magento Cloud code testing</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-SideNav-itemLink ">Docker quick reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/cloud-integrations.html" class="spectrum-SideNav-itemLink ">Integrations</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/bitbucket-integration.html" class="spectrum-SideNav-itemLink ">Bitbucket integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/github-integration.html" class="spectrum-SideNav-itemLink ">GitHub integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/gitlab-integration.html" class="spectrum-SideNav-itemLink ">GitLab integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/health-notifications.html" class="spectrum-SideNav-itemLink ">Health notifications</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-first-steps.html" class="spectrum-SideNav-itemLink ">Import existing code into a project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-prepare.html" class="spectrum-SideNav-itemLink ">Prepare your existing Magento Commerce system</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-import.html" class="spectrum-SideNav-itemLink ">Import Magento Commerce code</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/configuration-overview.html" class="spectrum-SideNav-itemLink ">Configure your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/configure-best-practices.html" class="spectrum-SideNav-itemLink ">Best practices for store configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/paypal-onboarding.html" class="spectrum-SideNav-itemLink ">Set up PayPal</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/setup-b2b.html" class="spectrum-SideNav-itemLink ">Set up Magento B2B</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/setup-cron-jobs.html" class="spectrum-SideNav-itemLink ">Set up cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-multi-sites.html" class="spectrum-SideNav-itemLink ">Set up multiple Cloud websites or stores</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/install-components.html" class="spectrum-SideNav-itemLink ">Install, manage, and upgrade modules</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/custom-theme.html" class="spectrum-SideNav-itemLink ">Install a theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/import-url-rewrites.html" class="spectrum-SideNav-itemLink ">Import URL Rewrites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cloud-fastly.html" class="spectrum-SideNav-itemLink ">Configure Fastly services</a><ul class="spectrum-SideNav"><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="configure-fastly.html" class="spectrum-SideNav-itemLink ">Set up Fastly</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="cloud-fastly-custom-response.html" class="spectrum-SideNav-itemLink ">Customize error and maintenance pages</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="fastly-waf-service.html" class="spectrum-SideNav-itemLink ">Web Application Firewall</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="fastly-image-optimization.html" class="spectrum-SideNav-itemLink ">Image Optimization</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cloud-vcl-custom-snippets.html" class="spectrum-SideNav-itemLink ">Custom VCL snippets</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="fastly-vcl-wordpress.html" class="spectrum-SideNav-itemLink ">Reroute requests to a CMS backend</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="fastly-vcl-badreferer.html" class="spectrum-SideNav-itemLink ">Block referral spam</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="fastly-vcl-whitelist.html" class="spectrum-SideNav-itemLink ">IP allow list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="fastly-vcl-blocking.html" class="spectrum-SideNav-itemLink ">IP block list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="fastly-vcl-bypass-to-origin.html" class="spectrum-SideNav-itemLink ">Bypass Fastly</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="trouble-fastly.html" class="spectrum-SideNav-itemLink ">Fastly troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-SideNav-itemLink ">Configure environments</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-SideNav-itemLink ">Application</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/set-cache.html" class="spectrum-SideNav-itemLink ">Set cache for static files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/magento-env-yaml.html" class="spectrum-SideNav-itemLink ">Build and deploy</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/setup-notifications.html" class="spectrum-SideNav-itemLink ">Set up notifications</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/log-handlers.html" class="spectrum-SideNav-itemLink ">Logging handlers</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-intro.html" class="spectrum-SideNav-itemLink ">Environment variables</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environment-vars_magento.html" class="spectrum-SideNav-itemLink ">ADMIN variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-global.html" class="spectrum-SideNav-itemLink ">Global variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-build.html" class="spectrum-SideNav-itemLink ">Build variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-cloud.html" class="spectrum-SideNav-itemLink ">Cloud variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-deploy.html" class="spectrum-SideNav-itemLink ">Deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-post-deploy.html" class="spectrum-SideNav-itemLink ">Post-deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/working-with-variables.html" class="spectrum-SideNav-itemLink ">Working with variables</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_routes.html" class="spectrum-SideNav-itemLink ">Routes</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-routes-more-cache.html" class="spectrum-SideNav-itemLink ">Caching</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-routes-more-redir.html" class="spectrum-SideNav-itemLink ">Redirects</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-routes-more-ssi.html" class="spectrum-SideNav-itemLink ">Server side includes</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services.html" class="spectrum-SideNav-itemLink ">Services</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-mysql.html" class="spectrum-SideNav-itemLink ">Set up MySQL service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-redis.html" class="spectrum-SideNav-itemLink ">Set up Redis service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-elastic.html" class="spectrum-SideNav-itemLink ">Set up Elasticsearch service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-rabbit.html" class="spectrum-SideNav-itemLink ">Set up RabbitMQ service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/restore-environment.html" class="spectrum-SideNav-itemLink ">Restore an environment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/sens-data-over.html" class="spectrum-SideNav-itemLink ">Configuration management for store settings</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/sens-data-initial.html" class="spectrum-SideNav-itemLink ">Example of managing system-specific settings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/projects.html" class="spectrum-SideNav-itemLink ">Manage your project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-webint-basic.html" class="spectrum-SideNav-itemLink ">Configure your project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-SideNav-itemLink ">Project structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/log-locations.html" class="spectrum-SideNav-itemLink ">Log locations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/user-admin.html" class="spectrum-SideNav-itemLink ">Create and manage users</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-webint-branch.html" class="spectrum-SideNav-itemLink ">Manage branches with the Interface</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environments-start.html" class="spectrum-SideNav-itemLink ">Manage branches with the CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/profile-database-queries.html" class="spectrum-SideNav-itemLink ">Profile database queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/manage-disk-space.html" class="spectrum-SideNav-itemLink ">Manage disk space</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/monitor-performance.html" class="spectrum-SideNav-itemLink ">Monitor performance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-webint-snap.html" class="spectrum-SideNav-itemLink ">Snapshots and backup management</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/optimize-cloud-deployment.html" class="spectrum-SideNav-itemLink ">Optimize deployment</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/cloud-deployment-process.html" class="spectrum-SideNav-itemLink ">Cloud deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/scenario-based-deployment.html" class="spectrum-SideNav-itemLink ">Scenario-based deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/reduce-downtime.html" class="spectrum-SideNav-itemLink ">Zero downtime deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/static-content-deployment.html" class="spectrum-SideNav-itemLink ">Static content deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/smart-wizards.html" class="spectrum-SideNav-itemLink ">Smart wizards</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-live.html" class="spectrum-SideNav-itemLink ">Deploy your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/discover-deploy.html" class="spectrum-SideNav-itemLink ">Deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/continuous-deployment.html" class="spectrum-SideNav-itemLink ">Continuous deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live-prot.html" class="spectrum-SideNav-itemLink ">Protective block</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live-sanity-check.html" class="spectrum-SideNav-itemLink ">Build and deploy on local</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-migrate-prereq.html" class="spectrum-SideNav-itemLink ">Prepare to deploy to Staging and Production</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-migrate.html" class="spectrum-SideNav-itemLink ">Deploy code and migrate static files and data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-test.html" class="spectrum-SideNav-itemLink ">Test deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/error-codes.html" class="spectrum-SideNav-itemLink ">Error log message reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live.html" class="spectrum-SideNav-itemLink ">Site launch</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/go-live-checklist.html" class="spectrum-SideNav-itemLink ">Launch checklist</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/launch-steps.html" class="spectrum-SideNav-itemLink ">Launch steps</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/troubleshoot-deployment.html" class="spectrum-SideNav-itemLink ">Troubleshoot deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_ce-creds.html" class="spectrum-SideNav-itemLink ">Incorrect credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_proj-startover.html" class="spectrum-SideNav-itemLink ">Resolve issues with a new project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_comp-deploy-fail.html" class="spectrum-SideNav-itemLink ">Component deployment failure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-crypt-key-variable.html" class="spectrum-SideNav-itemLink ">Resolve issues with encryption key</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-error-html-minification.html" class="spectrum-SideNav-itemLink ">Resolve issues with HTML minification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-google-analytics-deploy.html" class="spectrum-SideNav-itemLink ">Resolve issues with Google Analytics during deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/site-availability.html" class="spectrum-SideNav-itemLink ">Site availability</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/robots-sitemap.html" class="spectrum-SideNav-itemLink ">Add site map and search engine robots</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/theme-troubleshooting.html" class="spectrum-SideNav-itemLink ">Theme troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-SideNav-itemLink ">Upgrades and patches</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/ece-tools-update.html" class="spectrum-SideNav-itemLink ">Update ece-tools version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-patch.html" class="spectrum-SideNav-itemLink ">Apply patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-upgrade.html" class="spectrum-SideNav-itemLink ">Upgrade Magento version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/ece-tools-upgrade-project.html" class="spectrum-SideNav-itemLink ">Upgrade to use ece-tools</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-SideNav-itemLink ">Release notes</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/ece-release-notes.html" class="spectrum-SideNav-itemLink ">ece-tools</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/mcp-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/mcd-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/mcc-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/backward-incompatible-changes.html" class="spectrum-SideNav-itemLink ">Backward incompatible changes</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Set up Fastly</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/cloud/cdn/configure-fastly.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /cloud/cdn/configure-fastly.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p><a href="cloud-fastly.html">Fastly</a> is required for Magento Commerce Cloud, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a <a href="https://glossary.magento.com/content-delivery-network">Content Delivery Network</a> (CDN) for static assets. Fastly is not available in Integration environments.</p>
+
+<p>This information gets you started with enabling and configuring Fastly caching services in your Staging and Production environments. We provide additional information for configuring backends and Origin shields, customizing error pages, and adding custom VCL snippets.</p>
+
+<p>For VCL snippets, experience developing that code is required for advanced configurations.</p>
+
+<p>The process for configuring Fastly includes:</p>
+
+<ul>
+  <li>Get Fastly credentials for Staging and Production environments</li>
+  <li>Enable Fastly CDN caching in your environment</li>
+  <li>Upload Fastly VCL snippets</li>
+  <li>Advanced configurations including VCL snippets, as needed for your Magento Commerce sites</li>
+</ul>
+
+<h2 id="cloud-fastly-creds">Get Fastly credentials</h2>
+
+<p>During project provisioning, Magento adds your project to the <a href="cloud-fastly.html#fastly-service-account-and-credentials">Fastly service account</a> for Magento Commerce Cloud and adds the Fastly account credentials to the Staging and Production environment configuration.</p>
+
+<p>You need the Fastly credentials to configure Fastly CDN services from the Magento Admin UI and to submit Fastly API requests.</p>
+
+<p>Use the following methods to find and save the Fastly service ID and API token for your environment:</p>
+
+<p class="procedure">To view your Fastly credentials:</p>
+
+<ul>
+  <li>
+    <p>IaaS-mounted shared directory—On Pro projects, use SSH to connect to your server and get the Fastly credentials from the <code class="language-plaintext highlighter-rouge">/mnt/shared/fastly_tokens.txt</code> file.</p>
+  </li>
+  <li>
+    <p>Local workspace—From the command line, use the Magento Cloud CLI to <a href="../before/before-setup-env-2_clone.html">list and review</a> Fastly environment variables.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>magento-cloud variable:get <span class="nt">-e</span> &lt;environment ID&gt;
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Project Web UI—Check the following environment variables in the <em><a href="../project/projects.html#environment-configuration-variables">Environment configuration variables</a></em> section.</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_KEY</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID</code></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p class="bs-callout-info">If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Customer Technical Advisor (CTA).</p>
+
+<h2 id="cloud-fastly-config">Enable Fastly caching for your Cloud environments</h2>
+
+<p><strong>Prerequisites:</strong></p>
+
+<ul>
+  <li>
+    <p>Latest version of the <a href="cloud-fastly.html#fastly-cdn-module-for-magento-2">Fastly CDN for Magento 2 module</a> installed in the Staging and Production environments. See <a href="configure-fastly.html#upgrade">Upgrade Fastly</a>.</p>
+  </li>
+  <li>
+    <p><a href="configure-fastly.html#cloud-fastly-creds">Fastly credentials</a> for Magento Commerce Cloud Staging and Production environments</p>
+  </li>
+</ul>
+
+<p class="procedure">To enable Fastly CDN caching in Staging and Production:</p>
+
+<ol>
+  <li>
+    <p><a href="../onboarding/onboarding-tasks.html#admin">Log in</a> to the Magento Admin UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> and expand <strong>Full Page Cache</strong>.</p>
+
+    <p><img src="../../common/images/cloud/cloud_fastly_menu.png" alt="Expand to select Fastly" width="650px" /></p>
+  </li>
+  <li>
+    <p>In the <em>Caching Application</em> section, remove the selection from <strong>Use system value</strong>, and then select <strong>Fastly CDN</strong> from the drop-down list.</p>
+
+    <p><img src="../../common/images/cloud/cloud-fastly_enable-admin.png" alt="Choose Fastly" width="550px" /></p>
+  </li>
+  <li>
+    <p>Expand <strong>Fastly Configuration</strong> and <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module">choose caching options</a>.</p>
+  </li>
+  <li>
+    <p>After configuring the caching options, click <strong>Save Config</strong> at the top of the page.</p>
+  </li>
+  <li>
+    <p>Clear the cache according to the notification.</p>
+  </li>
+  <li>
+    <p>Navigate back to <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Fastly Configuration</strong> to continue configuring Fastly.</p>
+  </li>
+</ol>
+
+<h3 id="test-the-fastly-credentials">Test the Fastly credentials</h3>
+
+<ol>
+  <li>
+    <p>On the Magento Admin UI, navigate to <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Fastly Configuration</strong>.</p>
+  </li>
+  <li>
+    <p>If needed, add the <strong>Fastly service ID</strong> and <strong>API token</strong> values for your project environment.</p>
+
+    <p><img src="../../common/images/cloud/cloud-fastly-credentials-admin-ui.png" alt="Fastly credentials Admin UI" width="650px" /></p>
+
+    <p class="bs-callout-info">Ignore the link to create a Fastly API token. Use the <a href="configure-fastly.html#cloud-fastly-creds">Fastly credentials (Service ID and API token) that Magento</a> provided.</p>
+  </li>
+  <li>
+    <p>Click <strong>Test credentials</strong>.</p>
+  </li>
+  <li>
+    <p>If the test succeeds, click <strong>Save Config</strong>, and then clear the cache.</p>
+
+    <p>If the test fails, verify that the correct service ID and API token values match the credentials for the current environment.</p>
+
+    <p>If the test fails again, submit a support ticket or contact your Customer Technical Advisor (CTA). For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your <code class="language-plaintext highlighter-rouge">Master</code> and Staging site.</p>
+  </li>
+</ol>
+
+<p class="bs-callout-info">If you need to change the Fastly API token credential for a Staging or Production environment, see <a href="cloud-fastly.html#change-your-fastly-api-token">Change Fastly credentials</a>.</p>
+
+<h3 id="upload-vcl-snippets">Upload VCL to Fastly</h3>
+
+<p>After you enable the Fastly module, upload the default <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets">VCL code</a> to the Fastly servers.  This code provides a series of VCL snippets that specify the configuration settings to enable caching and other Fastly CDN services for your Magento Commerce Cloud.</p>
+
+<p class="bs-callout-info">Fastly caching services do not work until you complete the initial upload of the Fastly VCL code for the  Staging and Production sites.</p>
+
+<p class="procedure">To upload the Fastly VCL:</p>
+
+<ol>
+  <li>
+    <p>In the <em>Fastly Configuration</em> section, click <strong>Upload VCL to Fastly</strong> as the following figure shows.</p>
+
+    <p><img src="../../common/images/cloud/cloud_fastly-upload-vcl-admin-ui.png" alt="Upload a Magento VCL to Fastly" /></p>
+  </li>
+  <li>
+    <p>After the upload completes, refresh the cache according to the notification at the top of the page.</p>
+  </li>
+</ol>
+
+<h2 id="custom-configuration">Custom configuration</h2>
+
+<p class="bs-callout-info">Before adding <a href="configure-fastly.html#custom-configuration">custom</a> or advanced configuration settings like <a href="configure-fastly.html#purge">updating purge settings</a> and configuring <a href="fastly-image-optimization.html">Fastly image optimization</a>(Fastly IO), <a href="trouble-fastly.html">verify</a> that the Fastly caching service works with the default configuration.</p>
+
+<p>Configure the following features as needed:</p>
+
+<ul>
+  <li><a href="configure-fastly.html#backend">Configure backends and Origin shielding</a></li>
+  <li><a href="cloud-fastly-custom-response.html">Customize response pages</a></li>
+  <li><a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options">Enable additional Fastly configuration options</a></li>
+</ul>
+
+<h3 id="backend">Configure backends and Origin shielding</h3>
+
+<p>Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A <em>backend</em> is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.</p>
+
+<p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduce traffic directly to the origin.</p>
+
+<p>The default Fastly VCL code specifies default values for Origin shielding and timeouts for your Magento Commerce Cloud sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the <em>first byte timeout</em> value.</p>
+
+<p class="bs-callout-info">If you need to integrate additional backends into your site such as a backend to serve blog content from a <a href="fastly-vcl-wordpress.html">Wordpress</a> site, you must customize your Fastly service configuration to add the backend and handle the redirects from your Magento Commerce store to the Wordpress backend. For details, see <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md">Fastly Edge Modules - Other CMS/Backend integration</a> in the Fastly module documentation.</p>
+
+<p class="procedure">To review the backend settings configuration:</p>
+
+<ol>
+  <li>
+    <p>Access and expand <strong>Fastly Configuration</strong>.</p>
+  </li>
+  <li>
+    <p>Expand <strong>Backend settings</strong> and click the gear to check the default backend. A modal opens that shows current settings with options to change them.</p>
+
+    <p><img src="../../common/images/cloud/cloud_fastly-backend.png" alt="Modify the backend" width="600px" /></p>
+  </li>
+  <li>
+    <p>Select the <strong>Shield</strong> location (or datacenter) closest to your Cloud service region.
+For example, if your project is hosted on AWS, Staging is on the west coast of the United States (us-west-1), select the <code class="language-plaintext highlighter-rouge">sjc-ca-us</code> Fastly shield location. This is the POP that provides caching services.</p>
+
+    <p>The following list shows which Fastly shield locations to use based on AWS regions:</p>
+
+    <ul>
+      <li>ap-east-1 =&gt; hongkong-hk</li>
+      <li>ap-northeast-1 =&gt; tyo-tokyo-jp, hnd-tokyo-jp</li>
+      <li>ap-northeast-2 =&gt; tyo-tokyo-jp, hnd-tokyo-jp</li>
+      <li>ap-southeast-1 =&gt; singapore-sg</li>
+      <li>ap-southeast-2 =&gt; sydney-au</li>
+      <li>ap-south-1 =&gt; singapore-sg</li>
+      <li>ca-central-1 =&gt; yul-montreal-ca, iad-va-us, dca-dc-us, bwi-va-us</li>
+      <li>eu-central-1 =&gt; frankfurt-de, hhn-frankfurt-de</li>
+      <li>eu-north-1 =&gt; stockholm-bma</li>
+      <li>eu-west-1 =&gt; london-uk, london_city-uk</li>
+      <li>eu-west-2 =&gt; london-uk, london_city-uk</li>
+      <li>eu-west-3 =&gt; cdg-par-fr</li>
+      <li>sa-east-1 =&gt; gru-br-sa</li>
+      <li>us-east-1 =&gt; iad-va-us, dca-dc-us, bwi-va-us</li>
+      <li>us-east-2 =&gt; iad-va-us, dca-dc-us, bwi-va-us</li>
+      <li>us-west-1 =&gt; sjc-ca-us, pao-ca-us</li>
+      <li>us-west-2 =&gt; sea-wa-us</li>
+    </ul>
+  </li>
+  <li>
+    <p>Modify the timeout values (in microseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.</p>
+  </li>
+  <li>
+    <p>Optionally, select to <strong>Activate the backend and Shield after editing or saving</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Upload</strong> to save your changes and upload them to the Fastly servers.</p>
+  </li>
+  <li>
+    <p>In the Magento Admin, click <strong>Save Config</strong>.</p>
+  </li>
+</ol>
+
+<p>For more information, see the Magento 2 <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md">Backend settings guide</a> in the Fastly module documentation.</p>
+
+<h3 id="purge">Configure purge options</h3>
+
+<p>Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly caches after finishing updates through the Cache Management page.</p>
+
+<p>The options include:</p>
+
+<ul>
+  <li><strong>Purge category</strong>: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.</li>
+  <li><strong>Purge product</strong>: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.</li>
+  <li><strong>Purge CMS page</strong>: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.</li>
+  <li><strong>Soft purge</strong>: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.</li>
+</ul>
+
+<p><img src="../../common/images/cloud/cloud_fastly-purgeoptions.png" alt="Configure purge options" width="650px" /></p>
+
+<p class="procedure">To configure Fastly purge options:</p>
+
+<ol>
+  <li>
+    <p>In the <em>Fastly Configuration</em> section, expand <strong>Advanced</strong>.</p>
+  </li>
+  <li>
+    <p>All purge options display. Select “Yes” per purge option to enable automatic purging. Select “No” to disable automatic purging, allowing you to manually purge caches through the Cache Management page.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save Config</strong> at the top of the page.</p>
+  </li>
+  <li>
+    <p>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</p>
+  </li>
+</ol>
+
+<p>For more information, see <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options">the Fastly configuration options</a>.</p>
+
+<h3 id="custom-vcl">Create custom VCL snippets</h3>
+
+<p>For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see <a href="cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+
+<h3 id="bulkaction">Extend Fastly timeout for the Magento Admin</h3>
+
+<p>Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you may encounter timeouts if you need to complete bulk actions that take longer than 3 minutes. In these cases, update the Fastly service configuration to change the <em>Admin path timeout</em>.</p>
+
+<ol>
+  <li>
+    <p>In the <em>Fastly Configuration</em> section, expand <strong>Advanced</strong>.</p>
+  </li>
+  <li>
+    <p>Set the <strong>Admin path timeout</strong> value in seconds. This value cannot be more than 10 minutes (600 seconds).</p>
+  </li>
+  <li>
+    <p>Click <strong>Save Config</strong> at the top of the page.</p>
+  </li>
+  <li>
+    <p>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</p>
+  </li>
+</ol>
+
+<p>Fastly gets the Magento Admin path for generating the VCL file from the <code class="language-plaintext highlighter-rouge">app/etc/env.php</code> configuration file.</p>
+
+<h3 id="geoip">Configure GeoIP handling</h3>
+
+<p>The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.</p>
+
+<ol>
+  <li>
+    <p>In the <em>Fastly Configuration</em> section, expand <strong>Advanced</strong>.</p>
+  </li>
+  <li>
+    <p>Scroll down and select <strong>Yes</strong> to <strong>Enable GeoIP</strong>. Additional configuration options display.</p>
+  </li>
+  <li>
+    <p>For GeoIP Action, select if the visitor is automatically redirected with <strong>Redirect</strong> or provided a list of stores to select from with <strong>Dialog</strong>.</p>
+  </li>
+  <li>
+    <p>For <strong>Country Mapping</strong>, click <strong>Add</strong> to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">this site</a>.</p>
+
+    <p><img src="../../common/images/cloud/cloud_fastly-geo-code.png" alt="Add GeoIP country maps" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Save Config</strong> at the top of the page.</p>
+  </li>
+  <li>
+    <p>After page reload, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</p>
+  </li>
+</ol>
+
+<p>Fastly also provides a series of <a href="https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features">geolocation-related VCL features</a> for customized geolocation coding.</p>
+
+<h2 id="dns">DNS configuration</h2>
+
+<p>To enable Fastly caching on your Staging and Production sites, you need make the following changes to the DNS configuration for your site:</p>
+
+<ul>
+  <li>Set all necessary redirects, especially if you are migrating from an existing site</li>
+  <li>Set the zone’s root resource record to address the hostname</li>
+  <li>Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store</li>
+</ul>
+
+<p>We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.</p>
+
+<p>After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: <code class="language-plaintext highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple hostnames for your site, you must add a CNAME record for each one.</p>
+
+<p>CNAME records cannot be set for apex domains, also referred to as a naked or base domains. You must use <code class="language-plaintext highlighter-rouge">A</code> records for this.
+<code class="language-plaintext highlighter-rouge">A</code> records map a domain name to the following Fastly IP addresses:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">151.101.1.124</code></li>
+  <li><code class="language-plaintext highlighter-rouge">151.101.65.124</code></li>
+  <li><code class="language-plaintext highlighter-rouge">151.101.129.124</code></li>
+  <li><code class="language-plaintext highlighter-rouge">151.101.193.124</code></li>
+</ul>
+
+<p>Refer to <a href="../live/site-launch-checklist.html">Go live checklist</a> for more information.</p>
+
+<h3 id="fastly-tls">TLS and Fastly</h3>
+
+<p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GlobalSign. When entering your <a href="../trouble/trouble.html">Support ticket</a> for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
+
+<p>For details on this TXT record, see the Fastly <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification">DNS TXT record validation</a>.</p>
+
+<h2 id="upgrade">Upgrade the Fastly module</h2>
+
+<p>Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and provide new features.
+We recommend that you update the Fastly module in your Staging and Production environments to the <a href="https://github.com/fastly/fastly-magento2/releases">latest version</a>.</p>
+
+<p>After you update the module, you must upload the VCL code to apply the changes to the Fastly service configuration.</p>
+
+<p class="procedure">To check the version of Fastly CDN module for Magento 2:</p>
+
+<ol>
+  <li>
+    <p>Change to the root directory of your Cloud environment.</p>
+  </li>
+  <li>
+    <p>Use Composer to check the installed version.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>composer show <span class="k">*</span>fastly<span class="k">*</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If the <a href="https://github.com/fastly/fastly-magento2/releases">latest release</a>is not installed, complete the steps to upgrade the Fastly module.</p>
+  </li>
+</ol>
+
+<p class="procedure">To upgrade the Fastly module:</p>
+
+<ol>
+  <li>
+    <p>In your local Integration environment, use the following module information to <a href="../howtos/install-components.html">upgrade the Fastly module</a>.</p>
+
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>module name: fastly/magento2
+repository: https://github.com/fastly/fastly-magento2.git
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Push your updates to the Staging environment.</p>
+  </li>
+  <li>
+    <p>Log in to the Magento Admin UI for your Staging environment to <a href="configure-fastly.html#upload-vcl-snippets">upload the VCL code</a>.</p>
+  </li>
+  <li>
+    <p><a href="trouble-fastly.html#verify-or-debug-fastly-services">Verify Fastly services</a> on the Magento Commerce Staging site.</p>
+  </li>
+</ol>
+
+<p>After you verify Fastly services on the Staging site, repeat the upgrade process in the Production environment.</p>
+
+<p class="bs-callout-warning">If you have added a custom VCL snippet that has the same name as a default snippet, you may need to verify and update those snippets after you upgrade the Fastly module. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see <a href="cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-02">
+    Jun 2nd, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

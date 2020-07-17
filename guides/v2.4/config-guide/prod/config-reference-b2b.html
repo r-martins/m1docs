@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento Enterprise B2B Extension configuration paths reference | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="config-reference-b2b.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.3/config-guide/prod/config-reference-b2b.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="config-reference-b2b.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Configuration Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bk-config-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Security settings</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../security/google-recaptcha.html" class="spectrum-SideNav-itemLink ">Google reCAPTCHA</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/hashing.html" class="spectrum-SideNav-itemLink ">Password hashing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-headers.html" class="spectrum-SideNav-itemLink ">Prevent cache poisoning</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-cron.html" class="spectrum-SideNav-itemLink ">Secure cron.php to run in a browser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../security/two-factor-authentication.html" class="spectrum-SideNav-itemLink ">Two-Factor Authentication</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../secy/secy-xframe.html" class="spectrum-SideNav-itemLink ">X-Frame-Options header</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-bootstrap.html" class="spectrum-SideNav-itemLink ">Magento application initialization and bootstrap</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-modes.html" class="spectrum-SideNav-itemLink ">About Magento modes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/mage-dirs.html" class="spectrum-SideNav-itemLink ">Customize base directory paths (MAGE_DIRS)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/mage-profiler.html" class="spectrum-SideNav-itemLink ">Enable profiling (MAGE_PROFILER)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bootstrap/magento-how-to-set.html" class="spectrum-SideNav-itemLink ">Set the value of bootstrap parameters</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/index.html" class="spectrum-SideNav-itemLink ">Pipeline Deployment</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/index.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/technical-details.html" class="spectrum-SideNav-itemLink ">Technical Details</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/development-system.html" class="spectrum-SideNav-itemLink ">Development System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/build-system.html" class="spectrum-SideNav-itemLink ">Build System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/production-system.html" class="spectrum-SideNav-itemLink ">Production System Setup</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prod_file-sys-perms.html" class="spectrum-SideNav-itemLink ">File systems access permissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Examples</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/shared-configuration.html" class="spectrum-SideNav-itemLink ">Shared configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/cli.html" class="spectrum-SideNav-itemLink ">Using CLI commands</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/pipeline/example/environment-variables.html" class="spectrum-SideNav-itemLink ">Using environment variables</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deployment/single-machine.html" class="spectrum-SideNav-itemLink ">Single machine deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli.html" class="spectrum-SideNav-itemLink ">Command line configuration</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands.html" class="spectrum-SideNav-itemLink ">Get started with command-line configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/logging.html" class="spectrum-SideNav-itemLink ">Logging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-cache.html" class="spectrum-SideNav-itemLink ">Manage the cache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-index.html" class="spectrum-SideNav-itemLink ">Manage the indexers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-cron.html" class="spectrum-SideNav-itemLink ">Configure and run cron</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-compiler.html" class="spectrum-SideNav-itemLink ">Code compiler</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-mode.html" class="spectrum-SideNav-itemLink ">Set the Magento mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-queue.html" class="spectrum-SideNav-itemLink ">Start message queue consumers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-urn.html" class="spectrum-SideNav-itemLink ">URN highlighter</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-depen.html" class="spectrum-SideNav-itemLink ">Dependency reports</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration management</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-export.html" class="spectrum-SideNav-itemLink ">Export the configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-set.html" class="spectrum-SideNav-itemLink ">Set configuration values</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-config-mgmt-import.html" class="spectrum-SideNav-itemLink ">Import data from configuration files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-i18n.html" class="spectrum-SideNav-itemLink ">Translation dictionaries and language packages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Static view files deployment</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-static-deploy-strategies.html" class="spectrum-SideNav-itemLink ">Static files deployment strategies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-static-view.html" class="spectrum-SideNav-itemLink ">Deploy static view files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-less-sass.html" class="spectrum-SideNav-itemLink ">Create symlinks to LESS files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-test.html" class="spectrum-SideNav-itemLink ">Run unit tests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-layout-xml.html" class="spectrum-SideNav-itemLink ">Convert layout XML files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-perf-data.html" class="spectrum-SideNav-itemLink ">Generate data for performance testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cli/config-cli-subcommands-spt-util.html" class="spectrum-SideNav-itemLink ">Run the support utilities (Magento Commerce only)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-magento.html" class="spectrum-SideNav-itemLink ">Magento configuration files</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-php.html" class="spectrum-SideNav-itemLink ">Magento's deployment configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-files.html" class="spectrum-SideNav-itemLink ">Module configuration files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/config-create.html" class="spectrum-SideNav-itemLink ">Create or extend configuration types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../config/disable-module-output.html" class="spectrum-SideNav-itemLink ">Disable module output</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration reference</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-sens.html" class="spectrum-SideNav-itemLink ">Sensitive and system-specific</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-payment.html" class="spectrum-SideNav-itemLink ">Payment configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-most.html" class="spectrum-SideNav-itemLink ">Other configuration paths reference</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="config-reference-b2b.html" class="spectrum-SideNav-itemLink ">Magento Commerce for B2B Extension configuration paths reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-gitignore.html" class="spectrum-SideNav-itemLink ">.gitignore reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-var-name.html" class="spectrum-SideNav-itemLink ">Use environment variables to override configuration settings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-configphp.html" class="spectrum-SideNav-itemLink ">config.php reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-envphp.html" class="spectrum-SideNav-itemLink ">env.php reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="config-reference-systemxml.html" class="spectrum-SideNav-itemLink ">system.xml reference</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache.html" class="spectrum-SideNav-itemLink ">Configure caching</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/cache-types.html" class="spectrum-SideNav-itemLink ">Associate cache frontends with cache types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/cache-options.html" class="spectrum-SideNav-itemLink ">Low-level cache options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/static-content-signing.html" class="spectrum-SideNav-itemLink ">Static content signing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache/two-level-cache.html" class="spectrum-SideNav-itemLink ">L2 cache</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/config-redis.html" class="spectrum-SideNav-itemLink ">Configure Redis</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/redis-pg-cache.html" class="spectrum-SideNav-itemLink ">Use Redis for the Magento page and default cache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../redis/redis-session.html" class="spectrum-SideNav-itemLink ">Use Redis for session storage</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish.html" class="spectrum-SideNav-itemLink ">Configure and use Varnish</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-install.html" class="spectrum-SideNav-itemLink ">Install Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-configure.html" class="spectrum-SideNav-itemLink ">Configure Varnish and your web server</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-advanced.html" class="spectrum-SideNav-itemLink ">Advanced Varnish configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-multiple-varnish-cache.html" class="spectrum-SideNav-itemLink ">How Magento cache clearing works with multiple Varnish instances</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/config-varnish-final.html" class="spectrum-SideNav-itemLink ">Final verification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-varnish-cache.html" class="spectrum-SideNav-itemLink ">How Magento cache clearing works with Varnish</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../varnish/use-varnish-cache-how.html" class="spectrum-SideNav-itemLink ">How Varnish caching works</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache.html" class="spectrum-SideNav-itemLink ">Use memcached for session storage</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_ubuntu.html" class="spectrum-SideNav-itemLink ">Install, configure, verify memcached on Ubuntu</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_centos.html" class="spectrum-SideNav-itemLink ">Install, configure, verify memcached on CentOS</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../memcache/memcache_magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use memcached</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_over.html" class="spectrum-SideNav-itemLink ">Multiple websites or stores</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/change-increment-id.html" class="spectrum-SideNav-itemLink ">Change increment ID for a database entity on particular store</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_websites.html" class="spectrum-SideNav-itemLink ">Set up multiple websites, stores, and store views in the Admin</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_nginx.html" class="spectrum-SideNav-itemLink ">Tutorial—Set up multiple websites or stores with nginx</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-site/ms_apache.html" class="spectrum-SideNav-itemLink ">Tutorial—Set up multiple websites with Apache</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron.html" class="spectrum-SideNav-itemLink ">Set up a custom cron job and cron group</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron-ref.html" class="spectrum-SideNav-itemLink ">Custom cron job and cron group reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cron/custom-cron-tut.html" class="spectrum-SideNav-itemLink ">Configure a custom cron job and cron group (tutorial)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../db-profiler/db-profiler.html" class="spectrum-SideNav-itemLink ">Configure the database profiler</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/es-overview.html" class="spectrum-SideNav-itemLink ">Configure and maintain Elasticsearch</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/es-config-stopwords.html" class="spectrum-SideNav-itemLink ">Configure Elasticsearch stopwords</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../elasticsearch/configure-magento.html" class="spectrum-SideNav-itemLink ">Configure Magento to use Elasticsearch</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mq/rabbitmq-overview.html" class="spectrum-SideNav-itemLink ">Message Queues</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mq/manage-message-queues.html" class="spectrum-SideNav-itemLink ">Manage message queues</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master.html" class="spectrum-SideNav-itemLink ">Split database performance solution (Magento Commerce only)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_masterdb.html" class="spectrum-SideNav-itemLink ">Automatically configure master databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_manual.html" class="spectrum-SideNav-itemLink ">Manually configure master databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_verify.html" class="spectrum-SideNav-itemLink ">Verify split databases</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../multi-master/multi-master_slavedb.html" class="spectrum-SideNav-itemLink ">Set up optional database replication</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-intro.html" class="spectrum-SideNav-itemLink ">Custom Logging</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-magento.html" class="spectrum-SideNav-itemLink ">Magento logging in more detail</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/log-db.html" class="spectrum-SideNav-itemLink ">Example - logging database activity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../log/custom-logger-handler.html" class="spectrum-SideNav-itemLink ">Example - logging to a custom log file</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../sessions.html" class="spectrum-SideNav-itemLink ">How to locate your session files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../../compliance/privacy/gdpr.html" class="spectrum-SideNav-itemLink ">GDPR compliance</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Magento Enterprise B2B Extension configuration paths reference</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/config-guide/prod/config-reference-b2b.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/config-guide/prod/config-reference-b2b.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>This topic lists configuration paths for Magento Enterprise B2B Extension. The <a href="../cli/config-cli-subcommands-config-mgmt-export.html"><code class="language-plaintext highlighter-rouge">magento app:config:dump</code> command</a> writes these values to the shared configuration file, <code class="language-plaintext highlighter-rouge">app/etc/config.php</code>, which should be in source control.</p>
+
+<p class="bs-callout-info">This reference lists <em>only</em> configuration paths unique to Magento Enterprise B2B Extension. Magento Enterprise B2B Extension includes all configuration paths for Magento Open Source and Magento Commerce as well.</p>
+
+<p>For those configuration paths, see:</p>
+
+<ul>
+  <li><a href="config-reference-payment.html">Payment configuration paths</a></li>
+  <li><a href="config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
+</ul>
+
+<p>To optionally override any configuration settings or to set sensitive settings, see <a href="config-reference-var-name.html">Use environment variables to override configuration settings</a>.</p>
+
+<p>This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for Magento Open Source (formerly Community Edition (CE) and Magento Commerce (formerly Enterprise Edition (EE) as well.</p>
+
+<h2 id="general-category">General category</h2>
+
+<p>This section lists variable names and configuration paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong>.</p>
+
+<h3 id="b2b-features-paths">B2B Features paths</h3>
+
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>B2B Features</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enable Company</td>
+      <td><code class="language-plaintext highlighter-rouge">btob/website_configuration/company_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable Shared Catalog</td>
+      <td><code class="language-plaintext highlighter-rouge">btob/website_configuration/sharedcatalog_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable B2B Quote</td>
+      <td><code class="language-plaintext highlighter-rouge">btob/website_configuration/negotiablequote_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable Quick Order</td>
+      <td><code class="language-plaintext highlighter-rouge">btob/website_configuration/quickorder_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enable Requisition List</td>
+      <td><code class="language-plaintext highlighter-rouge">btob/website_configuration/requisition_list_active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Applicable Payment Methods</td>
+      <td><code class="language-plaintext highlighter-rouge">btob/default_b2b_payment_methods/applicable_payment_methods</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment Methods</td>
+      <td><code class="language-plaintext highlighter-rouge">btob/default_b2b_payment_methods/available_payment_methods</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="customers-category">Customers category</h2>
+
+<p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong>.</p>
+
+<h3 id="company-configuration-paths">Company configuration paths</h3>
+
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong> &gt; <strong>Company Configuration</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Allow Company Registration from the Storefront</td>
+      <td><code class="language-plaintext highlighter-rouge">company/general/allow_company_registration</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Registration Email Recipient</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_registration</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="../../../../common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Company Registration Email Copy To</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_registration_copy</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="../../../../common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Email Copy Method</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Registration Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_notify_admin_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Customer-Related Emails</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/heading_customer</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Sales Rep Assigned Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/customer_sales_representative_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Assign Company to Customer Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/customer_company_customer_assign_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Assign Company Admin Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/customer_assign_super_user_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Admin Inactive Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/customer_inactivate_super_user_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Admin Changed To Member Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/customer_remove_super_user_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Customer Status Active Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/customer_account_activated_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Customer Status Inactive Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/customer_account_locked_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Status Change</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/heading_company_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Status Change Email Recipient</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_change</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Send Company Status Change Email Copy To</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_change_copy</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="../../../../common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Email Copy Method</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Active 1 Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_pending_approval_to_active_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Active 2 Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_rejected_blocked_to_active_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Rejected Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_rejected_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Blocked Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_blocked_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Company Status Change To Pending Approval Email</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_status_pending_approval_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Credit</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/heading_company_credit</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Company Credit Change Email Sender</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_credit_change</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="../../../../common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Company Credit Change Email Copy To</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_credit_change_copy</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Send Email Copy Method</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/company_credit_copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Allocated Email Template</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/credit_allocated_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Updated Email Template</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/credit_updated_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reimbursed Email Template</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/credit_reimbursed_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Refunded Email Template</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/credit_refunded_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reverted Email Template</td>
+      <td><code class="language-plaintext highlighter-rouge">company/email/credit_reverted_email_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="requisition-lists-paths">Requisition lists paths</h3>
+
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Customers</strong> &gt; <strong>Requisition Lists</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Number of Requisition Lists</td>
+      <td><code class="language-plaintext highlighter-rouge">requisitionlist/general/number_requisition_lists</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="sales-category">Sales category</h2>
+
+<p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong>.</p>
+
+<h3 id="sales-emails-paths">Sales Emails paths</h3>
+
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Sales Emails</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/enabled</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Updated Quote Template (to Buyer)</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/updated_buyer_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Declined Quote Template (to Buyer)</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/declined_buyer_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Quote Template (to Seller)</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/new_seller_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Updated Quote Template (to Seller)</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/updated_seller_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Quote Expiration (in 48 hrs)</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/expire_two_days_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Quote Expiration (in 24 hrs)</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/expire_one_day_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Expiration Date Reset</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/expire_reset_template</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Send Quote Email Copy To</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/copy_to</code></td>
+      <td> </td>
+      <td> </td>
+      <td><img src="../../../../common/images/cloud_sens.png" alt="Sensitive" /></td>
+    </tr>
+    <tr>
+      <td>Send Quote Email Copy Method</td>
+      <td><code class="language-plaintext highlighter-rouge">sales_email/quote/copy_method</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="quotes-paths">Quotes paths</h3>
+
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Quotes</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Minimum Amount</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/general/minimum_amount</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Amount Message</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/general/minimum_amount_message</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Expiration Period</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/general/default_expiration_period</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>File formats for upload</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/attached_files/file_formats</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum file size</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/attached_files/maximum_file_size</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Amount</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/general/minimum_amount</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Amount Message</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/general/minimum_amount_message</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Default Expiration Period</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/general/default_expiration_period</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>File formats for upload</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/attached_files/file_formats</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum file size</td>
+      <td><code class="language-plaintext highlighter-rouge">quote/attached_files/maximum_file_size</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="payment-method-paths">Payment method paths</h2>
+
+<p>These configuration values are available in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Payment Methods</strong>.</p>
+
+<p class="bs-callout-info">The available paths are determined by your choice of Merchant country.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Config path</th>
+      <th>Encrypted?</th>
+      <th>System-specific?</th>
+      <th>Sensitive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/au/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/es/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/nz/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/us/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/gb/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/de/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/other/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/ca/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/hk/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/jp/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/fr/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enabled</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/active</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Title</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/title</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>New Order Status</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/order_status</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Applicable Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/allowspecific</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Payment from Specific Countries</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/specificcountry</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Minimum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/min_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Maximum Order Total</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/max_order_total</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sort Order</td>
+      <td><code class="language-plaintext highlighter-rouge">payment/it/companycredit/sort_order</code></td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-12-19">
+    Dec 19th, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

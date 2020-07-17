@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Search using REST endpoints | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="performing-searches.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../v2.3/rest/performing-searches.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="performing-searches.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">REST API Reference</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="bk-rest.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Quick reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../redoc/2.3/index.html" class="spectrum-SideNav-itemLink ">REST Endpoints (ReDoc)</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://magento.redoc.ly/" class="spectrum-SideNav-itemLink ">Admin REST endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://magento.redoc.ly/" class="spectrum-SideNav-itemLink ">Customer REST endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://magento.redoc.ly/" class="spectrum-SideNav-itemLink ">Guest REST endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../redoc/2.3/async-admin-rest-api.html" class="spectrum-SideNav-itemLink ">Asynchronous Admin REST endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../redoc/2.3/async-customer-rest-api.html" class="spectrum-SideNav-itemLink ">Asynchronous Customer REST endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../redoc/2.3/async-guest-rest-api.html" class="spectrum-SideNav-itemLink ">Asynchronous Guest REST endpoints</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="list.html" class="spectrum-SideNav-itemLink ">List of REST endpoints by module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="rest_endpoints.html" class="spectrum-SideNav-itemLink ">List of service names per module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="generate-local.html" class="spectrum-SideNav-itemLink ">Generate a local API reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Use REST endpoints</span><ul class="spectrum-SideNav"><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="performing-searches.html" class="spectrum-SideNav-itemLink ">Search using REST</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="search-endpoint.html" class="spectrum-SideNav-itemLink ">Search with the /search endpoint</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="retrieve-filtered-responses.html" class="spectrum-SideNav-itemLink ">Retrieve filtered search responses</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="anonymous-api-security.html" class="spectrum-SideNav-itemLink ">Restricting access to anonymous web APIs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="asynchronous-web-endpoints.html" class="spectrum-SideNav-itemLink ">Asynchronous web endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="bulk-endpoints.html" class="spectrum-SideNav-itemLink ">Bulk endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="operation-status-endpoints.html" class="spectrum-SideNav-itemLink ">Bulk operation status endpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="operation-status-search.html" class="spectrum-SideNav-itemLink ">Search for the status of a bulk operation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="notes.html" class="spectrum-SideNav-itemLink ">API usage notes</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/index.html" class="spectrum-SideNav-itemLink ">Tutorials</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Prerequisite tasks</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/prerequisite-tasks/create-admin-token.html" class="spectrum-SideNav-itemLink ">Generate an admin token</a></li></ul></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Order processing</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-intro.html" class="spectrum-SideNav-itemLink ">Order processing tutorial</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-config-store.html" class="spectrum-SideNav-itemLink ">Step 1. Configure the store</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-admin-token.html" class="spectrum-SideNav-itemLink ">Step 2. Get the admin token</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-create-customer.html" class="spectrum-SideNav-itemLink ">Step 3. Create a customer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-create-quote.html" class="spectrum-SideNav-itemLink ">Step 4. Create a quote</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-add-items.html" class="spectrum-SideNav-itemLink ">Step 5. Add items to the cart</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-prepare-checkout.html" class="spectrum-SideNav-itemLink ">Step 6. Prepare for checkout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-create-order.html" class="spectrum-SideNav-itemLink ">Step 7. Create an order</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-create-invoice.html" class="spectrum-SideNav-itemLink ">Step 8. Create an invoice</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-create-shipment.html" class="spectrum-SideNav-itemLink ">Step 9. Create a shipment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/orders/order-issue-refund.html" class="spectrum-SideNav-itemLink ">Step 10. Issue a partial refund</a></li></ul></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Order processing with Inventory Management</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/index.html" class="spectrum-SideNav-itemLink ">Order processing with Inventory Management tutorial</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/configure-environment.html" class="spectrum-SideNav-itemLink ">Step 1. Configure your environment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/create-sources.html" class="spectrum-SideNav-itemLink ">Step 2. Create sources</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/create-stock.html" class="spectrum-SideNav-itemLink ">Step 3. Create stocks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/assign-source-to-stock.html" class="spectrum-SideNav-itemLink ">Step 4. Link stocks and sources</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/reassign-products-to-another-source.html" class="spectrum-SideNav-itemLink ">Step 5. Reassign products to custom sources</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/create-customer.html" class="spectrum-SideNav-itemLink ">Step 6. Create a customer and generate a customer token</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/create-cart-add-products.html" class="spectrum-SideNav-itemLink ">Step 7. Create a cart and add products to it</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/prepare-for-checkout.html" class="spectrum-SideNav-itemLink ">Step 8. Prepare for checkout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/create-order.html" class="spectrum-SideNav-itemLink ">Step 9. Create an order</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/create-invoice.html" class="spectrum-SideNav-itemLink ">Step 10. Create an invoice</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/run-ssa.html" class="spectrum-SideNav-itemLink ">Step 11. Run the Source Selection Algorithms</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/create-shipment.html" class="spectrum-SideNav-itemLink ">Step 12. Create a shipment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/inventory/bulk-transfer-products.html" class="spectrum-SideNav-itemLink ">Step 13. Bulk transfer products</a></li></ul></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Create configurable products</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/configurable-product/config-product-intro.html" class="spectrum-SideNav-itemLink ">Create configurable products tutorial</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/configurable-product/plan-product.html" class="spectrum-SideNav-itemLink ">Step 1. Plan the product</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/configurable-product/create-configurable-product.html" class="spectrum-SideNav-itemLink ">Step 2. Create the configurable product</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/configurable-product/create-simple-products.html" class="spectrum-SideNav-itemLink ">Step 3. Create the simple products</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/configurable-product/define-config-product-options.html" class="spectrum-SideNav-itemLink ">Step 4. Define configurable product options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/configurable-product/create-personalization-option.html" class="spectrum-SideNav-itemLink ">Step 5. Create the personalization option</a></li></ul></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Create a configurable product using bulk APIs</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/bulk-configurable-product/config-product-intro.html" class="spectrum-SideNav-itemLink ">Create a configurable product using bulk APIs tutorial</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/bulk-configurable-product/plan-product.html" class="spectrum-SideNav-itemLink ">Step 1. Plan the product</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/bulk-configurable-product/create-configurable-simple-products.html" class="spectrum-SideNav-itemLink ">Step 2. Create the configurable and simple products</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/bulk-configurable-product/define-config-product-options.html" class="spectrum-SideNav-itemLink ">Step 3. Define configurable product options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tutorials/bulk-configurable-product/create-personalization-option.html" class="spectrum-SideNav-itemLink ">Step 4. Create the personalization option</a></li></ul></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><a href="tutorials/grouped-product/create-and-manage-grouped-products.html" class="spectrum-SideNav-itemLink ">Create and manage grouped products</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Modules</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Catalog</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/catalog.html" class="spectrum-SideNav-itemLink ">General notes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/catalog-pricing.html" class="spectrum-SideNav-itemLink ">Manage prices for multiple products</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Sales</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/sales/refunds.html" class="spectrum-SideNav-itemLink ">Refunds</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Inventory</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/manage-sources.html" class="spectrum-SideNav-itemLink ">Manage sources</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/manage-stocks.html" class="spectrum-SideNav-itemLink ">Manage stocks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/link-stocks-sources.html" class="spectrum-SideNav-itemLink ">Link and unlink stocks and sources</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/manage-source-items.html" class="spectrum-SideNav-itemLink ">Manage source items</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/bulk-inventory.html" class="spectrum-SideNav-itemLink ">Perform bulk actions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/manage-low-quantity.html" class="spectrum-SideNav-itemLink ">Manage low-quantity notifications</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/check-salable-quantity.html" class="spectrum-SideNav-itemLink ">Check salable quantities</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/manage-source-selection.html" class="spectrum-SideNav-itemLink ">Manage source selection algorithms</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="modules/inventory/in-store-pickup.html" class="spectrum-SideNav-itemLink ">In-Store Pickup</a></li></ul></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Search using REST endpoints</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/rest/performing-searches.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/rest/performing-searches.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>POST, PUT, and DELETE requests to the REST Web <a href="https://glossary.magento.com/api">API</a> require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or <a href="https://glossary.magento.com/xml">XML</a> structure) in the body of the message.</p>
+
+<p>For search APIs that invoke a <code class="language-plaintext highlighter-rouge">*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the <a href="https://glossary.magento.com/url">URL</a> of the GET request. The basic pattern for specifying the criteria is</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="err">searchCriteria[filter_groups][&lt;index&gt;][filters][&lt;index&gt;][field]=&lt;field_name&gt;
+searchCriteria[filter_groups][&lt;index&gt;][filters][&lt;index&gt;][value]=&lt;search_value&gt;
+searchCriteria[filter_groups][&lt;index&gt;][filters][&lt;index&gt;][condition_type]=&lt;operator&gt;
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>where:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">field</code> is an attribute name.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code> specifies the value to search for.</li>
+  <li><code class="language-plaintext highlighter-rouge">condition_type</code> is one of the following values:</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">eq</code></td>
+      <td>Equals.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">finset</code></td>
+      <td>A value within a set of values</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">from</code></td>
+      <td>The beginning of a range. Must be used with <code class="language-plaintext highlighter-rouge">to</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gt</code></td>
+      <td>Greater than</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gteq</code></td>
+      <td>Greater than or equal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">in</code></td>
+      <td>In. The <code class="language-plaintext highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">like</code></td>
+      <td>Like. The <code class="language-plaintext highlighter-rouge">value</code> can contain the SQL wildcard characters when <code class="language-plaintext highlighter-rouge">like</code> is specified.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lt</code></td>
+      <td>Less than</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lteq</code></td>
+      <td>Less than or equal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">moreq</code></td>
+      <td>More or equal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">neq</code></td>
+      <td>Not equal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">nfinset</code></td>
+      <td>A value that is not within a set of values</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">nin</code></td>
+      <td>Not in. The <code class="language-plaintext highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">notnull</code></td>
+      <td>Not null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">null</code></td>
+      <td>Null</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">to</code></td>
+      <td>The end of a range. Must be used with <code class="language-plaintext highlighter-rouge">from</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="bs-callout-info"><code class="language-plaintext highlighter-rouge">condition_type</code> is optional if the operator is <code class="language-plaintext highlighter-rouge">eq</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">filter_groups</code> array defines one or more <code class="language-plaintext highlighter-rouge">filters</code>. Each filter defines a search term, and the <code class="language-plaintext highlighter-rouge">field</code>, <code class="language-plaintext highlighter-rouge">value</code>, and <code class="language-plaintext highlighter-rouge">condition_type</code> of a search term must be assigned the same index number, starting with 0. Increment additional terms as needed.</p>
+
+<p>When constructing a search, keep the following in mind:</p>
+
+<ul>
+  <li>To perform a logical OR, specify multiple <code class="language-plaintext highlighter-rouge">filters</code> within a <code class="language-plaintext highlighter-rouge">filter_groups</code>.</li>
+  <li>To perform a logical AND, specify multiple <code class="language-plaintext highlighter-rouge">filter_groups</code>.</li>
+  <li>You cannot perform a logical OR across different <code class="language-plaintext highlighter-rouge">filter_groups</code>, such as <code class="language-plaintext highlighter-rouge">(A AND B) OR (X AND Y)</code>. ORs can be performed only within the context of a single <code class="language-plaintext highlighter-rouge">filter_groups</code>.</li>
+  <li>You can only search top-level attributes.</li>
+</ul>
+
+<p>The following sections provide examples of each type of search. These examples use the Magento Open Source sample data.</p>
+
+<h2 id="simple-search">Simple search</h2>
+
+<p>The Magento Open Source sample data uses the <code class="language-plaintext highlighter-rouge">category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="err">GET &lt;host&gt;/rest/&lt;store_code&gt;/V1/products/?
+searchCriteria[filter_groups][0][filters][0][field]=category_gear&amp;
+searchCriteria[filter_groups][0][filters][0][value]=86&amp;
+searchCriteria[filter_groups][0][filters][0][condition_type]=finset
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The system creates an array, as shown in the following pseudo-code.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="err">searchCriteria =&gt; [
+  'filterGroups' =&gt; [
+    0 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'category_gear',
+           'value' =&gt; '86',
+           'condition_type' =&gt; 'finset'
+         ]
+      ]
+    ]
+  ]
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The query returns 9 items.</p>
+
+<h2 id="simple-search-using-a-timestamp">Simple search using a timestamp</h2>
+
+<p>The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="err">GET &lt;host&gt;/rest/&lt;store_code&gt;/V1/invoices?
+searchCriteria[filter_groups][0][filters][0][field]=created_at&amp;
+searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&amp;
+searchCriteria[filter_groups][0][filters][0][condition_type]=gt
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="logical-or-search">Logical OR search</h3>
+
+<p>The following example searches for all products whose names contain the string <code class="language-plaintext highlighter-rouge">Leggings</code> or <code class="language-plaintext highlighter-rouge">Parachute</code>. The instances of <code class="language-plaintext highlighter-rouge">%25</code> in the example are converted into the SQL wildcard character <code class="language-plaintext highlighter-rouge">%</code>.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="err">GET &lt;host&gt;/rest/&lt;store_code&gt;/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=name&amp;
+searchCriteria[filter_groups][0][filters][0][value]=%25Leggings%25&amp;
+searchCriteria[filter_groups][0][filters][0][condition_type]=like&amp;
+searchCriteria[filter_groups][0][filters][1][field]=name&amp;
+searchCriteria[filter_groups][0][filters][1][value]=%25Parachute%25&amp;
+searchCriteria[filter_groups][0][filters][1][condition_type]=like
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The system creates an array, as shown in the following pseudo-code.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="err">searchCriteria =&gt; [
+  'filterGroups' =&gt; [
+    0 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'name',
+           'value' =&gt; '%25Leggings%25',
+           'condition_type' =&gt; 'like'
+         ]
+         1 =&gt; [
+           'field' =&gt; 'name',
+           'value' =&gt; '%25Parachute%25',
+           'condition_type' =&gt; 'like'
+         ]
+      ]
+    ]
+  ]
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The search returns 14 products that contain the string <code class="language-plaintext highlighter-rouge">Leggings</code> in the <code class="language-plaintext highlighter-rouge">name</code> field and 14 products that contain the string <code class="language-plaintext highlighter-rouge">Parachute</code>.</p>
+
+<h3 id="logical-and-search">Logical AND search</h3>
+
+<p>This sample searches for women’s shorts that are size 31 and costs less than $30. In the CE sample data, women’s shorts have a <code class="language-plaintext highlighter-rouge">sku</code> value that begins with <code class="language-plaintext highlighter-rouge">WSH</code>. The <code class="language-plaintext highlighter-rouge">sku</code> also contains the size and color, such as <code class="language-plaintext highlighter-rouge">WSH02-31-Yellow</code>.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="err">GET &lt;host&gt;/rest/&lt;store_code&gt;/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=sku&amp;
+searchCriteria[filter_groups][0][filters][0][value]=WSH%2531%25&amp;
+searchCriteria[filter_groups][0][filters][0][condition_type]=like&amp;
+searchCriteria[filter_groups][1][filters][0][field]=price&amp;
+searchCriteria[filter_groups][1][filters][0][value]=30&amp;
+searchCriteria[filter_groups][1][filters][0][condition_type]=lt
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The system creates an array, as shown in the following pseudo-code.</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="err">searchCriteria =&gt; [
+  'filterGroups' =&gt; [
+    0 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'sku',
+           'value' =&gt; 'WSH%31%',
+           'condition_type' =&gt; 'like'
+         ]
+    1 =&gt; [
+      'filters' =&gt; [
+         0 =&gt; [
+           'field' =&gt; 'price',
+           'value' =&gt; '30',
+           'condition_type' =&gt; 'lt'
+         ]
+      ]
+    ]
+  ]
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The query returns 9 items.</p>
+
+<h3 id="logical-and-and-or-search">Logical AND and OR search</h3>
+
+<p>This sample is similar the Logical AND sample. It searches the <code class="language-plaintext highlighter-rouge">sku</code>s for women’s shorts (WSH%) or pants (WP%)in size 29. The system performs two logical ANDs to restrict the results to those that cost from $40 to $49.99</p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="err">GET &lt;host&gt;/rest/&lt;store_code&gt;/V1/products?
+searchCriteria[filter_groups][0][filters][0][field]=sku&amp;
+searchCriteria[filter_groups][0][filters][0][value]=WSH%2529%25&amp;
+searchCriteria[filter_groups][0][filters][0][condition_type]=like&amp;
+searchCriteria[filter_groups][0][filters][1][field]=sku&amp;
+searchCriteria[filter_groups][0][filters][1][value]=WP%2529%25&amp;
+searchCriteria[filter_groups][0][filters][1][condition_type]=like&amp;
+searchCriteria[filter_groups][1][filters][0][field]=price&amp;
+searchCriteria[filter_groups][1][filters][0][value]=40&amp;
+searchCriteria[filter_groups][1][filters][0][condition_type]=from&amp;
+searchCriteria[filter_groups][2][filters][0][field]=price&amp;
+searchCriteria[filter_groups][2][filters][0][value]=49.99&amp;
+searchCriteria[filter_groups][2][filters][0][condition_type]=to
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The query returns 37 items.</p>
+
+<h2 id="other-search-criteria">Other search criteria</h2>
+
+<p>The following searchCriteria can be used to determine the sort order and the number of items to return.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][field]=&lt;field-name&gt;</code> - Specifies the field to sort on. By default, search results are returned in descending order. You can sort on multiple fields. For example, to sort on <code class="language-plaintext highlighter-rouge">price</code> first and then by <code class="language-plaintext highlighter-rouge">name</code>, call <code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][direction]=ASC | DESC</code> - Specifies whether to return results in ascending (ASC) or descending (DESC) order. To expand the previous example and sort the <code class="language-plaintext highlighter-rouge">price</code> fields in descending order and the <code class="language-plaintext highlighter-rouge">name</code> fields in ascending order, call <code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name&amp;searchCriteria[sortOrders][1][direction]=ASC</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[pageSize]</code> - Specifies the maximum number of items to return. The value must be an integer. If the <code class="language-plaintext highlighter-rouge">pageSize</code> is not specified, the system returns all matches.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[currentPage]</code> - Returns the current page.</p>
+  </li>
+</ul>
+
+<h3 id="example-for-search-criteria-to-determine-the-sort-order-and-attributes-to-return">Example for search criteria to determine the sort order and attributes to return</h3>
+
+<p>This example shows how to use search criteria to determine the sort order and attributes to return. It returns orders with status <code class="language-plaintext highlighter-rouge">pending</code>.</p>
+
+<p><strong>Endpoint:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">GET &lt;host&gt;/rest/&lt;store_code&gt;/V1/orders/</code></p>
+
+<p><strong>Headers:</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code> <code class="language-plaintext highlighter-rouge">application/json</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Authorization</code> <code class="language-plaintext highlighter-rouge">Bearer &lt;administrator token&gt;</code></p>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>searchCriteria[filter_groups][0][filters][0][field]</td>
+      <td>status</td>
+      <td>Attribute name to filter</td>
+    </tr>
+    <tr>
+      <td>searchCriteria[filter_groups][0][filters][0][value]</td>
+      <td>pending</td>
+      <td>Attribute value to filter</td>
+    </tr>
+    <tr>
+      <td>fields</td>
+      <td>items[increment_id,entity_id]</td>
+      <td>Attributes to return in the response. If you do not specify this parameter, all attributes will be returned.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Payload:</strong></p>
+
+<p>Not applicable</p>
+
+<p><strong>Request:</strong></p>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="err">GET &lt;host&gt;/rest/V1/orders?
+searchCriteria[filter_groups][0][filters][0][field]=status&amp;
+searchCriteria[filter_groups][0][filters][0][value]=pending&amp;
+searchCriteria[sortOrders][0][field]=increment_id&amp;
+fields=items[increment_id,entity_id]
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Response:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3003</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA0003003"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3140</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA0003140"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9435</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA0009435"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-04-25">
+    Apr 25th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

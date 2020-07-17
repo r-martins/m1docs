@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Personal Information Reference (Magento 1.x) | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="pi-data-reference-m1.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Security and Compliance</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-SideNav-itemLink ">Security</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../security/content-security-policy-overview.html" class="spectrum-SideNav-itemLink ">Content Security Policy Overview</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../industry-compliance.html" class="spectrum-SideNav-itemLink ">Industry Compliance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Privacy Regulations</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="ccpa.html" class="spectrum-SideNav-itemLink ">CCPA</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="gdpr.html" class="spectrum-SideNav-itemLink ">GDPR</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="pi-data-reference-m2.html" class="spectrum-SideNav-itemLink ">PI Reference (M2.x)</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="pi-data-reference-m1.html" class="spectrum-SideNav-itemLink ">PI Reference (M1.x)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Compliance tools</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="magento-privacy-js-library.html" class="spectrum-SideNav-itemLink ">Magento Privacy JavaScript Library</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Personal Information Reference (Magento 1.x)</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/compliance/privacy/pi-data-reference-m1.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /compliance/privacy/pi-data-reference-m1.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p class="bs-callout-info">This is one in a series of topics to help Magento merchants and developers prepare for compliance with privacy regulations. Consult with your legal counsel to determine whether and how your business should comply with any legal obligations.</p>
+
+<p>Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:</p>
+
+<ul>
+  <li><a href="gdpr.html">GDPR</a></li>
+  <li><a href="ccpa.html">CCPA</a></li>
+</ul>
+
+<h2 id="dataflow-diagrams">Dataflow diagrams</h2>
+
+<p>The data flow diagrams show the types of data that customers and administrators can enter and retrieve on the storefront and Admin.</p>
+
+<h3 id="frontend-data-entry-points">Frontend data entry points</h3>
+
+<p>A user can enter customer, address, and payment information when registering for an account, during checkout, and similar events.</p>
+
+<p><img src="frontend-data-entry-points.svg" alt="Frontend data entry points" /></p>
+
+<h3 id="frontend-data-access-points">Frontend data access points</h3>
+
+<p>Magento loads customer information when the customer logs in and views several different pages or checks out.</p>
+
+<p><img src="frontend-data-access-points.svg" alt="Frontend data access points" /></p>
+
+<h3 id="backend-data-entry-points">Backend data entry points</h3>
+
+<p>A merchant can enter customer, address, and payment information from the Admin to create a customer or order.</p>
+
+<p><img src="backend-data-entry-points.svg" alt="Backend data entry points" /></p>
+
+<h3 id="backend-data-access-points">Backend data access points</h3>
+
+<p>Magento loads customer information when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.</p>
+
+<p><img src="backend-data-access-points.svg" alt="Backend data access points" /></p>
+
+<h2 id="database-entities">Database entities</h2>
+
+<p>Magento 1 stores customer information in customer, sales, and other database tables.</p>
+
+<h3 id="customer-data">Customer data</h3>
+
+<p>Magento 1 stores customer information in the <code class="language-plaintext highlighter-rouge">customer_entity</code> and <code class="language-plaintext highlighter-rouge">customer_address_entity</code> tables. Both of these tables have several reference tables that can contain custom customer attributes.</p>
+
+<h4 id="customer_entity-and-reference-tables"><code class="language-plaintext highlighter-rouge">customer_entity</code> and reference tables</h4>
+
+<p>The following columns in the <code class="language-plaintext highlighter-rouge">customer_entity</code>table contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">email</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These tables reference <code class="language-plaintext highlighter-rouge">customer_entity</code> and can contain custom customer attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_entity_datetime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>datetime</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_entity_decimal</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>decimal(12,4)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_entity_int</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>int(11)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_entity_text</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_entity_varchar</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="customer_address_entity-and-reference-tables"><code class="language-plaintext highlighter-rouge">customer_address_entity</code> and reference tables</h4>
+
+<p>The following tables reference <code class="language-plaintext highlighter-rouge">customer_address_entity</code> and can contain custom customer attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_address_entity_datetime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>datetime</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_address_entity_decimal</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>decimal(12,4)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_address_entity_int</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>int(11)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_address_entity_text</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_address_entity_varchar</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="order-data">Order data</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">sales_flat_order</code> and related tables contain the customer’s name, billing and shipping addresses, and related information.</p>
+
+<h4 id="sales_flat_order-table"><code class="language-plaintext highlighter-rouge">sales_flat_order</code> table</h4>
+
+<p>The following columns in the <code class="language-plaintext highlighter-rouge">sales_order</code> table contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_email</code></td>
+      <td>varchar(128)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_firstname</code></td>
+      <td>varchar(128)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_gender</code></td>
+      <td>int(11)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_lastname</code></td>
+      <td>varchar(128)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_middlename</code></td>
+      <td>varchar(128)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_prefix</code></td>
+      <td>varchar(32)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_suffix</code></td>
+      <td>varchar(32)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_taxvat</code></td>
+      <td>varchar(32)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">remote_ip</code></td>
+      <td>varchar(32)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sales_flat_order_address-table"><code class="language-plaintext highlighter-rouge">sales_flat_order_address</code> table</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">sales_flat_order_address</code> table contains the customer’s address.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fax</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">region</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">postcode</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lastname</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">street</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">city</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">email</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">telephone</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">firstname</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">prefix</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">suffix</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">middlename</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">company</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">vat_id</code></td>
+      <td>text</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sales_flat_order_grid-table"><code class="language-plaintext highlighter-rouge">sales_flat_order_grid</code> table</h4>
+
+<p>The following columns in the <code class="language-plaintext highlighter-rouge">sales_flat_order_grid</code> table contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">shipping_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">billing_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sales_flat_order_payment-table"><code class="language-plaintext highlighter-rouge">sales_flat_order_payment</code> table</h4>
+
+<p>The following columns in the <code class="language-plaintext highlighter-rouge">sales_flat_order_payment</code> table contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_exp_month</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_ss_start_year</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echeck_bank_name</code></td>
+      <td>varchar(128)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echeck_type</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_ss_start_month</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_owner</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_exp_year</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echeck_routing_number</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echeck_account_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="quote-data">Quote data</h3>
+
+<p>Quotes contain a customer’s name, email, address, and related information.</p>
+
+<h4 id="sales_flat_quote-table"><code class="language-plaintext highlighter-rouge">sales_flat_quote</code> table</h4>
+
+<p>The following columns in the <code class="language-plaintext highlighter-rouge">sales_flat_quote</code> table contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_tax_class_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_group_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_email</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_prefix</code></td>
+      <td>varchar(40)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_firstname</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_middlename</code></td>
+      <td>varchar(40)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_lastname</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_suffix</code></td>
+      <td>varchar(40)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_dob</code></td>
+      <td>datetime</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_note</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">remote_ip</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_gender</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sales_flat_quote_address-table"><code class="language-plaintext highlighter-rouge">sales_flat_quote_address</code> table</h4>
+
+<p>The following columns in the <code class="language-plaintext highlighter-rouge">sales_flat_quote_address</code> table contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">email</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">prefix</code></td>
+      <td>varchar(40)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">firstname</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">middlename</code></td>
+      <td>varchar(40)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lastname</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">suffix</code></td>
+      <td>varchar(40)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">company</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">street</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">city</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">region</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">postcode</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fax</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sales_flat_quote_payment-table"><code class="language-plaintext highlighter-rouge">sales_flat_quote_payment</code> table</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">sales_flat_quote_payment</code> table includes credit card information and other transactional information.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_last_4</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_owner</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_exp_month</code></td>
+      <td>smallint(5)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_exp_year</code></td>
+      <td>smallint(5)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_ss_owner</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_ss_start_month</code></td>
+      <td>smallint(5)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cc_ss_start_year</code></td>
+      <td>smallint(5)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="archive-data">Archive data</h3>
+
+<p>The following tables and columns contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_sales_creditmemo_grid_archive</code></td>
+      <td><code class="language-plaintext highlighter-rouge">billing_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_sales_invoice_grid_archive</code></td>
+      <td><code class="language-plaintext highlighter-rouge">billing_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_sales_order_grid_archive</code></td>
+      <td><code class="language-plaintext highlighter-rouge">billing_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_sales_order_grid_archive</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_sales_order_grid_archive</code></td>
+      <td><code class="language-plaintext highlighter-rouge">shipping_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_sales_shipment_grid_archive</code></td>
+      <td><code class="language-plaintext highlighter-rouge">shipping_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sales-data">Sales data</h3>
+
+<p>The following tables and columns contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sales_flat_creditmemo_grid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">billing_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sales_flat_invoice_grid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">billing_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rma-data">RMA data</h3>
+
+<p>The following RMA tables and columns contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_rma</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_custom_email</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_rma_grid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_rma_grid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="miscellaneous-data">Miscellaneous data</h3>
+
+<p>The following tables and columns contain customer information:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Column</th>
+      <th>Data type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">core_email_queue_recipients</code></td>
+      <td><code class="language-plaintext highlighter-rouge">recipient_email</code></td>
+      <td>varchar(128)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">core_email_queue_recipients</code></td>
+      <td><code class="language-plaintext highlighter-rouge">recipient_name</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_flowpassword</code></td>
+      <td><code class="language-plaintext highlighter-rouge">email</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">customer_flowpassword</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ip</code></td>
+      <td>varchar(50)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_giftregistry_person</code></td>
+      <td><code class="language-plaintext highlighter-rouge">email</code></td>
+      <td>varchar(150)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_giftregistry_person</code></td>
+      <td><code class="language-plaintext highlighter-rouge">firstname</code></td>
+      <td>varchar(100)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_giftregistry_person</code></td>
+      <td><code class="language-plaintext highlighter-rouge">lastname</code></td>
+      <td>varchar(100)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_giftregistry_person</code></td>
+      <td><code class="language-plaintext highlighter-rouge">middlename</code></td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_invitation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_invitation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">email</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_invitation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">referral_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_reminder_rule_coupon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_reminder_rule_coupon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">emails_failed</code></td>
+      <td>smallint(5)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_scheduled_operations</code></td>
+      <td><code class="language-plaintext highlighter-rouge">email_receiver</code></td>
+      <td>varchar(150)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">enterprise_scheduled_operations</code></td>
+      <td><code class="language-plaintext highlighter-rouge">email_sender</code></td>
+      <td>varchar(150)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gift_message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gift_message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">recipient</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gift_message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sender</code></td>
+      <td>varchar(255)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">newsletter_subscriber</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">newsletter_subscriber</code></td>
+      <td><code class="language-plaintext highlighter-rouge">subscriber_email</code></td>
+      <td>varchar(150)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">persistent_session</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">persistent_session</code></td>
+      <td><code class="language-plaintext highlighter-rouge">info</code></td>
+      <td>text</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">poll_vote</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">poll_vote</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ip_address</code></td>
+      <td>varbinary(16)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rating_option_vote</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_id</code></td>
+      <td>int(10)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rating_option_vote</code></td>
+      <td><code class="language-plaintext highlighter-rouge">remote_ip</code></td>
+      <td>varchar(50)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rating_option_vote</code></td>
+      <td><code class="language-plaintext highlighter-rouge">remote_ip_long</code></td>
+      <td>varbinary(516)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">send_friend_log</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ip</code></td>
+      <td>varbinary(16)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Other tables that reference Customer:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">catalog_compare_item</code></li>
+  <li><code class="language-plaintext highlighter-rouge">downloadable_link_purchased</code></li>
+  <li><code class="language-plaintext highlighter-rouge">enterprise_customerbalance</code></li>
+  <li><code class="language-plaintext highlighter-rouge">enterprise_customersegment_customer</code></li>
+  <li><code class="language-plaintext highlighter-rouge">enterprise_giftregistry_entity</code></li>
+  <li><code class="language-plaintext highlighter-rouge">enterprise_reminder_rule_log</code></li>
+  <li><code class="language-plaintext highlighter-rouge">enterprise_reward</code></li>
+  <li><code class="language-plaintext highlighter-rouge">log_customer</code></li>
+  <li><code class="language-plaintext highlighter-rouge">log_visitor_online</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_token</code></li>
+  <li><code class="language-plaintext highlighter-rouge">product_alert_price</code></li>
+  <li><code class="language-plaintext highlighter-rouge">product_alert_stock</code></li>
+  <li><code class="language-plaintext highlighter-rouge">report_compared_product_index</code></li>
+  <li><code class="language-plaintext highlighter-rouge">report_viewed_product_index</code></li>
+  <li><code class="language-plaintext highlighter-rouge">review_detail</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sales_billing_agreement</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sales_flat_shipment</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sales_recurring_profile</code></li>
+  <li><code class="language-plaintext highlighter-rouge">salesrule_coupon_usage</code></li>
+  <li><code class="language-plaintext highlighter-rouge">salesrule_customer</code></li>
+  <li><code class="language-plaintext highlighter-rouge">tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">tag_relation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">wishlist</code></li>
+</ul>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-03-04">
+    Mar 4th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

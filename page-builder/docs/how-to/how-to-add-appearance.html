@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>How to add an appearance | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="how-to-add-appearance.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Page Builder</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/" class="spectrum-SideNav-itemLink ">What is Page Builder?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Getting started</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/install-pagebuilder.html" class="spectrum-SideNav-itemLink ">Install Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/view-pagebuilder.html" class="spectrum-SideNav-itemLink ">View Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/install-pagebuilder-examples.html" class="spectrum-SideNav-itemLink ">Install Page Builder Examples</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Extend a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-1-create-extension-module.html" class="spectrum-SideNav-itemLink ">Step 1. Create extension module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-2-extend-appearances.html" class="spectrum-SideNav-itemLink ">Step 2. Extend appearances</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-3-extend-forms.html" class="spectrum-SideNav-itemLink ">Step 3. Extend forms</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Create a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-1-add-configuration.html" class="spectrum-SideNav-itemLink ">Step 1. Add configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-2-add-templates.html" class="spectrum-SideNav-itemLink ">Step 2. Add templates</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-3-add-components.html" class="spectrum-SideNav-itemLink ">Step 3. Add components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-4-add-form.html" class="spectrum-SideNav-itemLink ">Step 4. Add form</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-5-add-styles.html" class="spectrum-SideNav-itemLink ">Step 5. Add styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-6-add-icon.html" class="spectrum-SideNav-itemLink ">Step 6. Add an icon</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/summary.html" class="spectrum-SideNav-itemLink ">Summary</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">How-Tos</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-configure-styling-options.html" class="spectrum-SideNav-itemLink ">Configure styling options</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-appearance.html" class="spectrum-SideNav-itemLink ">Add an appearance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-use-upgrade-library.html" class="spectrum-SideNav-itemLink ">Upgrade content types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-customize-panel.html" class="spectrum-SideNav-itemLink ">Customize the panel</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-image-uploader.html" class="spectrum-SideNav-itemLink ">Add an image uploader</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-storefront-widget.html" class="spectrum-SideNav-itemLink ">Add a storefront widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-text-editor.html" class="spectrum-SideNav-itemLink ">Add a text editor</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-custom-toolbar.html" class="spectrum-SideNav-itemLink ">Add a custom toolbar</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-icons-images.html" class="spectrum-SideNav-itemLink ">Add icons and images</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-change-breakpoints.html" class="spectrum-SideNav-itemLink ">Change breakpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-additional-configurations.html" class="spectrum-SideNav-itemLink ">Add additional configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-add-block-chooser.html" class="spectrum-SideNav-itemLink ">Add a block chooser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-use-full-width-layouts.html" class="spectrum-SideNav-itemLink ">Use full-width layouts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-customize-selectors.html" class="spectrum-SideNav-itemLink ">Customize selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-apply-product-conditions.html" class="spectrum-SideNav-itemLink ">Apply product conditions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-use-server-side-previews.html" class="spectrum-SideNav-itemLink ">Use server-side previews</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-use-pagebuilder-for-product-attributes.html" class="spectrum-SideNav-itemLink ">Use Page Builder for product attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="how-to-deactivate-pagebuilder.html" class="spectrum-SideNav-itemLink ">Deactivate Page Builder</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">BlueFoot content migration</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/index.html" class="spectrum-SideNav-itemLink ">Overview of content migration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/install-migration-module.html" class="spectrum-SideNav-itemLink ">Install the migration module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/run-migration-module.html" class="spectrum-SideNav-itemLink ">Run the migration module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/how-content-migration-works.html" class="spectrum-SideNav-itemLink ">How content migration works</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/migrate-content-custom-blocks.html" class="spectrum-SideNav-itemLink ">Migrate content from custom blocks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/migrate-other-bluefoot-content.html" class="spectrum-SideNav-itemLink ">Migrate other BlueFoot content</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/configurations.html" class="spectrum-SideNav-itemLink ">Configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/data-store.html" class="spectrum-SideNav-itemLink ">Datastore</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/events.html" class="spectrum-SideNav-itemLink ">Events</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/knockout-bindings.html" class="spectrum-SideNav-itemLink ">Knockout bindings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes.html" class="spectrum-SideNav-itemLink ">Release notes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../comp-status2.html" class="spectrum-SideNav-itemLink ">Component status</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">How to add an appearance</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"></div>
+
+
+  
+<div class="bs-callout spectrum-Alert edition-callout ee-only">
+  <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
+  <h4 class="spectrum-Alert-header">Magento Commerce only</h4>
+  <div class="spectrum-Alert-content">
+    The content on this page is for Magento Commerce only. 
+    <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
+  </div>
+</div>
+
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Appearances provide different layout and styling options for a content type. For example, the Banner content type has four appearances. Each appearance shows a different layout for the Banner’s included text and button.</p>
+
+<p>This topic shows how to add appearances to Page Builder’s native content types. An overview of the steps and the files you need to add are illustrated here:</p>
+
+<p><img src="../images/how-to-add-appearance.svg" alt="How to add an appearance" /></p>
+
+<p><em>Steps for adding appearances</em></p>
+
+<p>These steps also apply to adding appearances to your custom content types and third-party content types.</p>
+
+<h2 id="step-1-add-virtual-type-for-visualselect-class">Step 1: Add virtual type for VisualSelect class</h2>
+
+<p>First, we need a way select an appearance within the Admin UI. In Page Builder, we use the <code class="language-plaintext highlighter-rouge">VisualSelect</code> class. This class provides the UI for selecting different appearances. For example, the <code class="language-plaintext highlighter-rouge">VisualSelect</code> class for the Banner provides four appearances to choose from:</p>
+
+<p><img src="../images/banner-visual-selector.png" alt="Banner visual selector" /></p>
+
+<p><em>Visual selector for Banner</em></p>
+
+<p>To add a new appearance option for one of Page Builder’s native content types (such as the Banner), create a new <code class="language-plaintext highlighter-rouge">di.xml</code> file in your module, as shown here:</p>
+
+<p><img src="../images/add-visualselect-class.png" alt="Add VisualSelect class" /></p>
+
+<p><em>File and location for the VisualSelect class</em></p>
+
+<p>Within the <code class="language-plaintext highlighter-rouge">di.xml</code> file, add a virtual type using the<code class="language-plaintext highlighter-rouge">VisualSelect</code> class with the Banner’s virtual type name (<code class="language-plaintext highlighter-rouge">&lt;virtualType name="AppearanceSourceBanner"</code>), as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"AppearanceSourceBanner"</span> <span class="na">type=</span><span class="s">"Magento\PageBuilder\Model\Source\VisualSelect"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"optionsData"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"simple-poster"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>simple-poster<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Simple Poster<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"icon"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Example_PageBuilderBannerAppearance/css/images/content-type/banner/appearance/simple-poster.svg<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/virtualType&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><em>VisualSelect class for new Banner appearance</em></p>
+
+<p>Using the same class name as the Banner ensures that Magento’s XML merging will add your new visual appearance option to the existing Banner appearance options.</p>
+
+<p>The following table describes the configuration arguments for each appearance option.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Arguments</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">optionsData</code></td>
+      <td>Grouping array for all the appearance options of a content type.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">item array</code></td>
+      <td>Grouping array of properties that define an appearance option. We recommend you match the <code class="language-plaintext highlighter-rouge">name</code> of the item array to the option’s <code class="language-plaintext highlighter-rouge">value</code> string. In our example, the <code class="language-plaintext highlighter-rouge">item</code> array’s name is <code class="language-plaintext highlighter-rouge">simple-poster</code>, which matches the option’s value string <code class="language-plaintext highlighter-rouge">simple-poster</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td>String that matches the appearance name defined in the content type’s configuration file. Page Builder uses this string value to link the option to the appearance.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">title</code></td>
+      <td>Display name for the appearance option. Banner example: Poster.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">icon</code></td>
+      <td>Path to the <code class="language-plaintext highlighter-rouge">.svg</code> icon for the appearance: <code class="language-plaintext highlighter-rouge">view/adminthtml/web/css/images/content-type/[content-type-name]/appearance/*.svg</code>. See <a href="how-to-add-appearance.html#create-an-appearance-icon">Creating an icon for your appearance</a></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">noticeMessage</code></td>
+      <td>(Not shown in example.) The <code class="language-plaintext highlighter-rouge">noticeMessage</code> displays a message below the appearance options when the appearance is selected. For example, two of the Row appearances (<code class="language-plaintext highlighter-rouge">full-width</code> and <code class="language-plaintext highlighter-rouge">full-bleed</code>) define <code class="language-plaintext highlighter-rouge">noticeMessage</code> strings that display when selected.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To add more appearance options, simply create more <code class="language-plaintext highlighter-rouge">item</code> arrays with names that match the <code class="language-plaintext highlighter-rouge">value</code>, as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"tall"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>tall<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Tall<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"icon"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Example_PageBuilderExtensionBanner/css/images/content-type/banner/appearance/tall.svg<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"short"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>short<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Short<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"icon"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Example_PageBuilderBannerExtensionBanner/css/images/content-type/banner/appearance/short.svg<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/item&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><em>Example of additional appearance options</em></p>
+
+<h3 id="create-an-appearance-icon">Create an appearance icon</h3>
+
+<p>Appearance icons are <code class="language-plaintext highlighter-rouge">.svg</code> files that graphically depict the layout of an appearance. Add your additional appearance icons to your module’s css appearance directory (<code class="language-plaintext highlighter-rouge">css/images/content-type/[content-type-name]/appearance/</code>). Additional appearance icons for the Banner would be added as shown here:</p>
+
+<p><img src="../images/appearance-icon-location.png" alt="Add appearance icons" /></p>
+
+<p><em>Additional appearance icons for Banner</em></p>
+
+<p>You can use any design tool to create your SVG. But if you want to match your appearance icons to Page Builder’s icons <em>perfectly</em>, use the SVG structure and dimensions shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">width=</span><span class="s">"218"</span> <span class="na">height=</span><span class="s">"110"</span> <span class="na">viewBox=</span><span class="s">"0 0 218 110"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;g</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">"149"</span> <span class="na">height=</span><span class="s">"69"</span> <span class="na">x=</span><span class="s">"35"</span> <span class="na">y=</span><span class="s">"21"</span> <span class="na">fill=</span><span class="s">"#524D49"</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--- Optional shapes displayed on top of base rect --&gt;</span>
+    <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">"45"</span> <span class="na">height=</span><span class="s">"16"</span> <span class="na">x=</span><span class="s">"87"</span> <span class="na">y=</span><span class="s">"60"</span> <span class="na">fill=</span><span class="s">"#FFF"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">"72"</span> <span class="na">height=</span><span class="s">"4"</span> <span class="na">x=</span><span class="s">"73"</span> <span class="na">y=</span><span class="s">"34"</span> <span class="na">fill=</span><span class="s">"#FFF"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">"60"</span> <span class="na">height=</span><span class="s">"4"</span> <span class="na">x=</span><span class="s">"79"</span> <span class="na">y=</span><span class="s">"43"</span> <span class="na">fill=</span><span class="s">"#FFF"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/g&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><em>SVG appearance template</em></p>
+
+<p>These specific dimensions ensure that your icon fits seamlessly with Page Builder’s existing appearance icons:</p>
+
+<table style="table-layout:fixed">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">svg width</code></td>
+      <td>218</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">svg height</code></td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">svg viewbox</code></td>
+      <td>0 0 218 110</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">g fill</code></td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>base <code class="language-plaintext highlighter-rouge">rect width</code></td>
+      <td>149</td>
+    </tr>
+    <tr>
+      <td>base <code class="language-plaintext highlighter-rouge">rect height</code></td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>base <code class="language-plaintext highlighter-rouge">rect x</code></td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <td>base <code class="language-plaintext highlighter-rouge">rect y</code></td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>base <code class="language-plaintext highlighter-rouge">rect fill</code></td>
+      <td>#524D49</td>
+    </tr>
+    <tr>
+      <td>other  shape <code class="language-plaintext highlighter-rouge">fill</code> properties</td>
+      <td>#FFF</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="step-2-add-appearance-configurations">Step 2: Add appearance configurations</h2>
+
+<p>Appearance configurations connect the data entered in a content type’s form to its HTML templates. For example, the Heading content type has an <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> config element (<code class="language-plaintext highlighter-rouge">&lt;html name="heading_text" /&gt;</code>) that maps the text entered into the content type’s <code class="language-plaintext highlighter-rouge">heading_text</code> field (<code class="language-plaintext highlighter-rouge">&lt;field name="heading_text" formElement="input"&gt;</code>) to the Heading’s Knockout template binding (<code class="language-plaintext highlighter-rouge">html="data.main.html"</code>), as illustrated here:</p>
+
+<p><img src="../images/appearance-configurations.png" alt="Appearance configurations" /></p>
+
+<p><em>Appearance configurations explained</em></p>
+
+<p>The same concept applies to <code class="language-plaintext highlighter-rouge">styles</code>, <code class="language-plaintext highlighter-rouge">attributes</code>, and <code class="language-plaintext highlighter-rouge">css</code> elements. These elements ensure that the form settings (both content and styles) get applied to the templates as expected.</p>
+
+<p>To add a new Banner appearance configuration, create a content type config file named <code class="language-plaintext highlighter-rouge">banner.xml</code>, as shown here:</p>
+
+<p><img src="../images/appearance-config-file.png" alt="Appearance configuration config file" /></p>
+
+<p><em>Add additional appearances to Banner content type</em></p>
+
+<p class="bs-callout bs-callout-info">This procedure applies to any native content type you want to extend. In other words, you can use the file name (such as <code class="language-plaintext highlighter-rouge">heading.xml</code>) and type name (such as <code class="language-plaintext highlighter-rouge">&lt;type name="heading"&gt;</code>) of any content type to extend it based on Magento’s XML merging behavior.</p>
+
+<p>An example <code class="language-plaintext highlighter-rouge">banner.xml</code> config file for a new <code class="language-plaintext highlighter-rouge">simple-poster</code> appearance is shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_PageBuilder:etc/content_type.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"banner"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;children</span> <span class="na">default_policy=</span><span class="s">"deny"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;appearances&gt;</span>
+            <span class="nt">&lt;appearance</span> <span class="na">name=</span><span class="s">"simple-poster"</span>
+                        <span class="na">preview_template=</span><span class="s">"Example_PageBuilderBannerAppearance/content-type/banner/simple-poster/preview"</span>
+                        <span class="na">master_template=</span><span class="s">"Example_PageBuilderBannerAppearance/content-type/banner/simple-poster/master"</span>
+                        <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/master-format/read/configurable"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;elements&gt;</span>
+                    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"display"</span> <span class="na">source=</span><span class="s">"display"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/display"</span> <span class="na">preview_converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/preview/display"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"margins"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/margins"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/margins"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">source=</span><span class="s">"data-content-type"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"appearance"</span> <span class="na">source=</span><span class="s">"data-appearance"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"show_button"</span> <span class="na">source=</span><span class="s">"data-show-button"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"show_overlay"</span> <span class="na">source=</span><span class="s">"data-show-overlay"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"css_classes"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/element&gt;</span>
+                    . . .
+            <span class="nt">&lt;/appearance&gt;</span>
+        <span class="nt">&lt;/appearances&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><em>Additional simple-poster appearance for the Banner content type</em></p>
+
+<h2 id="step-3-add-appearance-forms">Step 3: Add appearance forms</h2>
+
+<p>Appearances for a content type can share the same form or use different forms. For example, the Products content type uses two different forms, one for each appearance. The Grid appearance uses the <code class="language-plaintext highlighter-rouge">pagebuilder_products_form.xml</code> to provide options for displaying products in a grid. While the Carousel appearance uses the <code class="language-plaintext highlighter-rouge">pagebuilder_products_carousel_form.xml</code> to provide extra options for displaying products in a carousel.</p>
+
+<p>When you select an appearance with a form, Page Builder replaces the content type’s form (defined in the <code class="language-plaintext highlighter-rouge">&lt;type&gt;</code> element) with the appearance’s form. But when you select an appearance that does <em>not</em> have a form defined, the appearance switches back to using the content type’s form.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"products"</span>
+          <span class="na">form=</span><span class="s">"pagebuilder_products_form"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><em>Content type form used by default for all appearances</em></p>
+
+<p>To add a form for an appearance, add a <code class="language-plaintext highlighter-rouge">&lt;form&gt;</code> element as a child of the <code class="language-plaintext highlighter-rouge">&lt;appearance&gt;</code> element in your content type’s config file. As mentioned, the Products content type uses a form for its Carousel appearance, as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;appearance</span> <span class="na">name=</span><span class="s">"carousel"</span>
+            <span class="na">preview_template=</span><span class="s">"Magento_PageBuilder/content-type/products/grid/preview"</span>
+            <span class="na">master_template=</span><span class="s">"Magento_PageBuilder/content-type/products/grid/master"</span>
+            <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/master-format/read/configurable"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form&gt;</span>pagebuilder_products_carousel_form<span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;elements&gt;</span>
+    . . .
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><em>Adding a form to an appearance</em></p>
+
+<h2 id="step-4-add-appearance-templates">Step 4: Add appearance templates</h2>
+
+<p>Appearances use different HTML templates to create different layouts. They also use templates to apply different styles to the same layouts. For example, the Banner uses four sets of <code class="language-plaintext highlighter-rouge">preview.html</code> and <code class="language-plaintext highlighter-rouge">master.html</code> templates, one set for each appearance:</p>
+
+<p><img src="../images/appearance-templates-banner.png" alt="Appearance configuration config file" /></p>
+
+<p><em>Banner appearance templates</em></p>
+
+<p class="bs-callout bs-callout-info">Notice how Page Builder organizes the Banner templates by appearance name. We recommend the same practice when adding templates for your appearances.</p>
+
+<p>To create templates for additional Banner appearances, such as the <code class="language-plaintext highlighter-rouge">simple-poster</code> described in steps 1 and 2, add a new appearance folder with your <code class="language-plaintext highlighter-rouge">master.html</code> and <code class="language-plaintext highlighter-rouge">preview.html</code> templates, as shown here:</p>
+
+<p><img src="../images/appearance-templates-additional.png" alt="Appearance templates" /></p>
+
+<p><em>Add additional templates to <code class="language-plaintext highlighter-rouge">template/content-type/[content-type-name]/[appearance-name]</code></em></p>
+
+<h2 id="step-5-add-appearance-styles">Step 5: Add appearance styles</h2>
+
+<p>Appearances use different CSS/LESS files to create different visual styles for a content type. For example, the Banner content type uses a different <code class="language-plaintext highlighter-rouge">.less</code> file for each appearance, as shown here:</p>
+
+<p><img src="../images/appearance-css-banner.png" alt="Appearance stylesheets" /></p>
+
+<p><em>Banner stylesheets</em></p>
+
+<p>To create a stylesheet for an additional Banner appearance, such as the <code class="language-plaintext highlighter-rouge">simple-poster</code>, add a folder named <code class="language-plaintext highlighter-rouge">banner</code> and a <code class="language-plaintext highlighter-rouge">.less</code> file with the name of the appearance, as shown here:</p>
+
+<p><img src="../images/appearance-css-additional.png" alt="Additional appearance stylesheets" /></p>
+
+<p><em>Add additional stylesheets to <code class="language-plaintext highlighter-rouge">css/source/content-type/[content-type-name]/</code></em></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">_module.less</code> file is an import file that ensures the additional stylesheet gets added to the existing Banner styles. The <code class="language-plaintext highlighter-rouge">_module.xml</code> file for our <code class="language-plaintext highlighter-rouge">simple-poster.less</code> file looks like this:</p>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">@import</span> <span class="s2">"_simple-poster"</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><em>Use _module.less for import statements</em></p>
+
+<h2 id="example-module">Example Module</h2>
+
+<p>An example module for this topic is available for download in the <a href="https://github.com/magento-devdocs/pagebuilder-examples/tree/master/Example/PageBuilderBannerAppearance">pagebuilder-examples repository</a>.</p>
+
+<h2 id="final-thoughts">Final thoughts</h2>
+
+<p>Using appearances to extend Page Builder’s native content types represents one of Page Builder’s best practices for creating a variety of new content building blocks based on existing content types.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-02">
+    Jun 3rd, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

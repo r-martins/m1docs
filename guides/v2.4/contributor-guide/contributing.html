@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Code Contributions | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="contributing.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="is-selected  spectrum-Menu-item" role="menuitem"><a href="contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="contributing.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Contribution Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="contributing.html" class="spectrum-SideNav-itemLink ">Code Contributions</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="contributing_dod.html" class="spectrum-SideNav-itemLink ">Magento Definition of Done</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="backward-compatible-development/index.html" class="spectrum-SideNav-itemLink ">Backward compatible development</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Docs Contributions</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class="spectrum-SideNav-itemLink ">Contribution Guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="contributing_docs_suggested.html" class="spectrum-SideNav-itemLink ">Suggested topics for contribution</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Templates</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="templates/basic_template.html" class="spectrum-SideNav-itemLink ">Basic template</a></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><a href="templates/tutorial-template-first.html" class="spectrum-SideNav-itemLink ">Sample template tutorial</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="contributors.html" class="spectrum-SideNav-itemLink ">Contributors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="maintainers.html" class="spectrum-SideNav-itemLink ">Maintainers</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Code Contributions</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/contributor-guide/contributing.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/contributor-guide/contributing.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The following topics are included in this guide:</p>
+
+<ul>
+  <li><a href="contributing.html#contribute">Contribute to Magento 2 code</a></li>
+  <li><a href="contributing.html#backlog">Community Backlog Priority</a></li>
+  <li><a href="contributing.html#two-factor">GitHub and Two-Factor authentication</a></li>
+  <li><a href="contributing.html#question">Questions or enhancement requests?</a></li>
+  <li><a href="contributing.html#rules">Accepted pull requests and ported code</a></li>
+  <li><a href="contributing.html#requirements">Contribution requirements</a></li>
+  <li><a href="contributing.html#forks-and-pull-requests">Forks and pull requests</a></li>
+  <li><a href="contributing.html#squash-commits">Squash commits</a></li>
+  <li><a href="contributing.html#contributor-assist">Magento Contributor Assistant</a></li>
+  <li><a href="contributing.html#report">Report an issue</a></li>
+  <li><a href="contributing.html#triage">Help triage issues</a></li>
+  <li><a href="contributing.html#labels">Labels applied by the Community Engineering team</a></li>
+  <li><a href="contributing.html#points">Contribution awards and points</a></li>
+</ul>
+
+<p class="bs-callout-tip">Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our <a href="https://tinyurl.com/engcom-slack">Slack workspace</a>, in the <a href="https://magentocommeng.slack.com/messages/C4YS78WE6">#general</a> channel, follow the <a href="https://magentocommeng.slack.com/messages/C7FA71S3V">#announcements</a>, and browse for more <a href="../../../community/resources/resources.html#community-engineering-slack">channels</a>!</p>
+
+<h2 id="contribute">Contribute to Magento 2 code</h2>
+
+<p>We use the <a href="contributing.html#forks-and-pull-requests">fork and pull</a> model to contribute to the Magento 2 codebase. This method allows contributors to maintain their own copy of the forked codebase, which can be easily synced with the main copy. The forked repository is then used to submit a pull request to the base repository to merge a set of changes from the fork into the main repository.</p>
+
+<p>Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.</p>
+
+<p>The Community Engineering Team reviews all issues and contributions submitted by the community developers. During the review we might require clarifications from the contributor. If there is no response from the contributor in two weeks (14 days) time, the issue might be closed.</p>
+
+<p>When the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like the status or who is working the issue. See <a href="contributing.html#labels">Labels</a> to learn more.</p>
+
+<p class="bs-callout-tip">Refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.</p>
+
+<h2 id="backlog">Community Backlog Priority</h2>
+
+<p>In order to provide timely resolution on the most critical issues and pull requests, the Magento team has implemented Severity/Priority concepts to our community driven projects. This approach makes open-source collaboration more transparent for all participants.
+Having clear contribution rules in place helps to build clear expectations for Community Contributors and establish clear priorities for Community Maintainers and the Magento team.</p>
+
+<p>If you would like to contribute improvements or bug fixes to Magento, and make sure it is valuable for the Community and Magento as well, we highly recommend that Community Contributors to take issues from the backlog based on <strong>Priority</strong>.
+Magento and Community Maintainers process contributions based on the issue/pull requests priority starting from P0, P1 to P4.</p>
+
+<p class="bs-callout-tip"><strong>Priority</strong> signifies how important or detrimental a defect is. The defect priority status is set by Product Managers. Priority also helps to determine the scheduling of the fix: Higher priority bugs will be fixed and merged first. It is a reflection on how bad the bug is for the system and also for business or marketing requirements.</p>
+
+<p class="bs-callout-tip"><strong>Severity</strong> is a measure of how ‘bad’ the bug is and how much disruption it causes, without regard to remaining work or the release schedule.</p>
+
+<h3 id="priority-and-severity-descriptions">Priority and severity descriptions</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Severity</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Severity: S0</td>
+      <td>-  Affects critical data or functionality and leaves users with no workaround.<br />-  Significant catastrophic impact.<br />-  A problem that is blocking the ability to work. An immediate fix is needed.<br /></td>
+    </tr>
+    <tr>
+      <td>Severity: S1</td>
+      <td>-  Affects critical data or functionality and forces users to employ a workaround.<br />-  Impact to the key product qualities.<br />-  An immediate fix is needed.<br /></td>
+    </tr>
+    <tr>
+      <td>Severity: S2</td>
+      <td>-  Affects non-critical data or functionality and forces users to employ a workaround.<br />-  Impact to the product qualities that makes the product more usable.<br />-  Major restrictions or short-term circumventions are required until a fix is available. A fix is important.<br /></td>
+    </tr>
+    <tr>
+      <td>Severity: S3</td>
+      <td>-  Affects non-critical data or functionality and does not force users to employ a workaround.<br />-  Problem has moderate impact requiring some restrictions. The fix is in an area that is not critical.<br /></td>
+    </tr>
+    <tr>
+      <td>Severity: S4</td>
+      <td>-  A minor problem, annoyance, or technical issue with minimal impact.<br />-  Impact that does not prevent or hinder functionality.<br />-  Affects aesthetics, professional look and feel, “quality” or “usability”.<br /></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Priority</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Priority: P0</td>
+      <td>-  The defect needs to be fixed right now, everything else can wait.<br /> - This generally occurs in cases when the entire functionality is blocked.</td>
+    </tr>
+    <tr>
+      <td>Priority: P1</td>
+      <td>-  Needs to be fixed before any other issues.<br />-  Once P0 defects have been fixed, a defect having this priority is the next candidate for fixing.</td>
+    </tr>
+    <tr>
+      <td>Priority: P2</td>
+      <td>-  Should be fixed as early as possible<br />-  A defect with this priority could have functionality issues which are not to expectations.</td>
+    </tr>
+    <tr>
+      <td>Priority: P3</td>
+      <td>-  May be fixed according to the position in the backlog.</td>
+    </tr>
+    <tr>
+      <td>Priority: P4</td>
+      <td>-  No current plan to fix. Fixing can be deferred as a logical part of more important work.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="who-and-how-can-define-severity-and-priority">Who and how can define severity and priority?</h3>
+
+<h4 id="priority">Priority</h4>
+<p>The Magento team defines priorities during regular triage review meetings, based on the community assessment for severity.</p>
+
+<h4 id="severity">Severity</h4>
+
+<ul>
+  <li>Community Maintainers are allowed to set Severity labels during the initial issue triage according to the <a href="https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow">Issue Processing Workflow</a>.</li>
+  <li>The Magento team can set or edit severity and priority based on our internal triage process and information provided in the initial community triage.</li>
+  <li>Issue reporters can provide their own evaluation for severity by selecting a checkbox in the Issue description.</li>
+</ul>
+
+<p>The following list consists of questions you can ask to help determine the proper severity:</p>
+
+<ul>
+  <li>Does the system stop working after defect occurs?</li>
+  <li>Can the system recover from the defect?</li>
+  <li>If the defect is recoverable, does the system require external effort to recover from the defect? (i.e. it will not recover on its own)</li>
+  <li>Does the defect affect other related sections (or the entire system)?</li>
+  <li>Can I repeat the defect in some other system having same configuration (O/S, Browsers) as that of the system where I found the defect?</li>
+  <li>Does the defect show up in other configurations?</li>
+  <li>Does the defect affect all users/roles? (i.e. Only a particular category of users will face the defect)</li>
+  <li>Does the defect occurs frequently?</li>
+  <li>Are the inputs to make the defect easy to reproduce? (i.e. special data is not required)</li>
+</ul>
+
+<p>The number of ‘Yes’ answers should help you to determine the severity.</p>
+
+<h2 id="two-factor">GitHub and Two-Factor authentication</h2>
+
+<p>Magento <strong>requires all Partners</strong> who contribute code to enable 2FA on their GitHub accounts. You can use a mobile device or 2FA application for added protection. See <a href="https://help.github.com/en/articles/configuring-two-factor-authentication">Configuring two-factor authentication</a> in the GitHub help.</p>
+
+<p>We also recommend creating a personal access token for your account to use when interacting with GitHub in scripts and on the command line. See <a href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line">Creating a personal access token for the command line</a> in the GitHub help.</p>
+
+<h2 id="question">Questions or enhancement requests?</h2>
+
+<p>We capture code-related issues in the the <a href="https://github.com/magento/magento2">Magento 2 repo</a> and documentation-related issues in the <a href="https://github.com/magento/devdocs">Magento DevDocs repo</a>. If you have questions about Magento functionality or processes, we recommend posting them to a question-and-answer site, such as <a href="https://magento.stackexchange.com/">Stack Exchange</a> and the <a href="https://community.magento.com/">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.</p>
+
+<p>Submit feature requests or enhancement suggestions to the <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests">Magento 2 Feature Requests and Improvements forum</a>. For details about how requests are managed, see <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96">Improvements to GitHub Management</a>.</p>
+
+<h2 id="rules">Accepted pull requests and ported code</h2>
+
+<p class="bs-callout bs-callout-info"><strong>v2.4 Contribution Notice:</strong>
+Magento is focusing development efforts on v2.4, so we are no longer accepting pull requests to the v2.3, v2.2, v2.1, and v2.0 release lines.</p>
+
+<p>Review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, ensure code consistency, manage current and backlog tasks, and so on.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: center">Fix for Existing Issue</th>
+      <th style="text-align: center">Test Coverage</th>
+      <th style="text-align: center">Refactoring</th>
+      <th style="text-align: center">New Feature</th>
+      <th style="text-align: center">Code Cleanup</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">2.1</td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2.2</td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2.3</td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/red-x.png" alt="No" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2.4</td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="https://devdocs.magento.com/common/images/green-check.png" alt="Yes" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="requirements">Contribution requirements</h2>
+
+<ol>
+  <li>Contributions must adhere to <a href="../coding-standards/bk-coding-standards.html">Magento coding standards</a>.</li>
+  <li>Refer to the Magento development team’s <a href="contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!</li>
+  <li>Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.</li>
+  <li>Commits must be accompanied by meaningful commit messages.</li>
+  <li>PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.</li>
+  <li>PRs that include new logic or new features must be submitted along with:
+    <ul>
+      <li>Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).</li>
+      <li>Follow the <a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">Magento DevDocs contribution work flow and guidelines</a> to submit proposed documentation updates to the <a href="https://github.com/magento/devdocs">Magento DevDocs Github repository</a>.</li>
+    </ul>
+  </li>
+  <li>For large features or changes, <a href="https://github.com/magento/magento2/issues">open an issue</a> to discuss your proposal first.  Notifying us in advance can prevent duplicate or unnecessary effort, and also offers an opportunity to get additional background information and help from other contributors.</li>
+  <li>To report a bug, <a href="https://github.com/magento/magento2/issues">open an issue</a> and follow the <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">Issue reporting guidelines</a>.</li>
+  <li>Verify that all automated tests on your pull request pass successfully.</li>
+</ol>
+
+<h2 id="forks-and-pull-requests">Forks and pull requests</h2>
+
+<p>For complete information about contributing to Magento projects, see the <a href="https://github.com/magento/magento2/wiki/Getting-Started">Beginner Guides</a> on the Magento 2 repository. These guides help you:</p>
+
+<ul>
+  <li>Fork a repository</li>
+  <li>Create a branch</li>
+  <li>Find and work issues</li>
+  <li>Create tests</li>
+  <li>Submit a pull request</li>
+</ul>
+
+<h2 id="squash-commits">Squash commits</h2>
+
+<p>Sometimes your pull request may have more than one commit (the main commit, then changes to it after review, etc). A good practice is to deliver commits that bring finalized, functional parts/bugfixes. In that case, all intermediate commits like “static test fix”, “typo fix”, “minor refactoring” should be squashed into a single commit. This helps keep a clean history and makes the repo easier to read. There is no requirement to have only one commit per PR. However, the intermediate commits in most cases bring no value into the commits history, which is why it is a good to keep the history clean and useful.</p>
+
+<h2 id="contributor-assist">Magento contributor assistant</h2>
+
+<p>The Magento Contributor Assistant is a bot that runs on all GitHub <code class="language-plaintext highlighter-rouge">magento</code> repositories. It helps automate issue and pull request workflows by using commands entered as comments.</p>
+
+<h3 id="assigning-an-issue">Assigning an issue</h3>
+
+<p>If you would like to have an issue assigned to you, add a comment and the contribution assistant will do the work.</p>
+
+<p><strong>Command:</strong> To assign as issue to your GitHub account, add the following command as a comment to the issue:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>@magento I am working on this
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This command has several variations:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>@magento I am working on this
+@magento I am working on it
+@magento I'm working on this
+@magento I'm working on it
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Actions:</strong> The following actions occur:</p>
+
+<ul>
+  <li>If the user is a member of the Magento GitHub organization, the user will be assigned to the ticket automatically.</li>
+  <li>If the user is not yet a member of the Magento GitHub organization, an invitation will be sent to the user. Check your email or accept the <a href="https://github.com/orgs/magento/invitation">Github invitation</a>. Once the user has joined the Magento GitHub organization, the user should repeat the command to get assigned to the ticket.</li>
+</ul>
+
+<p><strong>Permissions:</strong></p>
+
+<ul>
+  <li>All permissions granted for all users.</li>
+</ul>
+
+<p>Currently, the Magento Contributor Assistant automatically deploys a test instance based on a contributor’s pull request, or, it provides a vanilla Magento instance on the <code class="language-plaintext highlighter-rouge">magento/magento2</code> repository. This is used to test pull requests or reported issues.</p>
+
+<ul>
+  <li><a href="contributing.html#vanilla-pr">Deploy vanilla Magento instance</a></li>
+  <li><a href="contributing.html#deploy-pr">Deploy instance based on PR changes</a></li>
+  <li><a href="contributing.html#combine-pr">Combine multiple pull requests</a></li>
+</ul>
+
+<h3 id="vanilla-pr">Deploy vanilla Magento instance</h3>
+
+<p>When you want to verify an issue or pull request, use the <code class="language-plaintext highlighter-rouge">instance</code> command to generate a Magento instance. This is a clean installation of a specified version tag or branch of a specified release line.</p>
+
+<p><strong>Command:</strong> To deploy a Magento instance, add the following command as a comment to the GitHub pull request or issue:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>@magento give me {$version} instance
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For <code class="language-plaintext highlighter-rouge">version</code>, the currently supported values are latest <a href="https://github.com/magento/magento2/tags">version tags</a> and the 2.4-develop branch.</p>
+
+<p><strong>Actions:</strong> The following actions complete the command:</p>
+
+<ul>
+  <li>If the instance does not exist, it is deployed. Deployment takes approximately 2 minutes.</li>
+  <li>If the instance exists, a fresh instance is redeployed.</li>
+  <li>By default, instances have a lifetime of 3 hours. All deployments are then terminated.</li>
+</ul>
+
+<p><strong>Admin access:</strong></p>
+
+<p>Admins access is shared via comment on GitHub.</p>
+
+<p><strong>Permissions:</strong></p>
+
+<ul>
+  <li>All permissions granted for all users.</li>
+</ul>
+
+<h3 id="deploy-pr">Deploy instance based on PR changes</h3>
+
+<p>To verify and test changes within a pull request, enter a command to generate a Magento instance using code based on the PR.</p>
+
+<p><strong>Command:</strong> To deploy, <a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a>, a <a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a> member, or a contributor under the existing Pull Request enters the following command as a comment to the pull request:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>@magento give me test instance
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Actions:</strong></p>
+
+<ul>
+  <li>It deploys a new Magento instance based on Pull Request changes.</li>
+  <li>Deployment takes approximately 2 minutes.</li>
+  <li>By default, instances have a lifetime of 3 hours. All deployments are then terminated.</li>
+</ul>
+
+<p><strong>Admin access:</strong></p>
+
+<p>Admins access will be shared via comment on GitHub.</p>
+
+<p><strong>Permissions:</strong></p>
+
+<ul>
+  <li><a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a></li>
+  <li><a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a></li>
+  <li>Contributor</li>
+</ul>
+
+<h3 id="combine-pr">Combine multiple pull requests</h3>
+
+<p>To optimize the pull request queue, enter a command with a series of related pull request numbers to merge and test the code. If all tests pass, the entered PRs are merged into the current PR.</p>
+
+<p><strong>Command:</strong> To combine pull requests, a member of the <a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a> or <a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a> under the existing Pull Request will enter the following command:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>@magento combine {xxx} {yyy} {zzz}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The command merges the listed related pull requests (<code class="language-plaintext highlighter-rouge">xxx</code>, <code class="language-plaintext highlighter-rouge">yyy</code>, <code class="language-plaintext highlighter-rouge">zzz</code>) into the current pull request. For example: <code class="language-plaintext highlighter-rouge">@magento combine 1234 1238 1239</code>.</p>
+
+<p><strong>actions:</strong> When all conditions are passed, all related pull requests will be closed and merged to the current PR:</p>
+
+<ul>
+  <li>Current pull request allows changes from maintainers.</li>
+  <li>All mentioned pull requests are open.</li>
+  <li>All mentioned pull requests have been created by the same contributor (author).</li>
+  <li>All mentioned pull requests have same target (base) branch.</li>
+  <li>All mentioned pull requests can be merged with each other.</li>
+</ul>
+
+<p><strong>Permissions:</strong></p>
+
+<ul>
+  <li><a href="https://github.com/orgs/magento/teams/open-source-maintainers/members">Community Maintainers</a></li>
+  <li><a href="https://github.com/orgs/magento/teams/core-maintainers/members">Magento EngCom Team</a></li>
+</ul>
+
+<h2 id="report">Report an issue</h2>
+
+<p>If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.</p>
+
+<p>Before creating an issue:</p>
+
+<ol>
+  <li>Read the <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">Issue reporting guidelines</a> to learn how to create an issue that can be processed in a timely manner.</li>
+  <li>Check the <a href="https://devdocs.magento.com/">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.</li>
+  <li>Review the <a href="https://github.com/magento/magento2/issues">existing issues</a> to make sure you are not duplicating another contributor’s work.</li>
+</ol>
+
+<p>To add an issue:</p>
+
+<ol>
+  <li>
+    <p>In the Magento 2 public repository, click the <strong>Issues</strong> tab.</p>
+
+    <p><img src="https://devdocs.magento.com/common/images/issues.png" alt="Issues tab" /></p>
+  </li>
+  <li>
+    <p>Click <strong>New issue</strong>.</p>
+
+    <p><img src="https://devdocs.magento.com/common/images/new_issue.png" alt="Create new issue" /></p>
+  </li>
+  <li>Select a type of issue: Bug report, Developer experience issue, or Feature request.</li>
+  <li>Fill in the Title, description, and additional information for the template.</li>
+  <li>Click <strong>Submit new issue</strong>.</li>
+</ol>
+
+<p>When you submit the issue, a validation process begins. If the issue doesn’t have enough information, you as the Reporter may need to add more information. See <a href="https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow">GitHub Issues Processing Workflow</a> for complete details on issue verification.</p>
+
+<h2 id="triage">Help triage issues  <a href="https://www.codetriage.com/magento/magento2"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" alt="" /></a></h2>
+
+<p>In addition to contributing code, you can help triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs.  If you want to triage issues, you can begin by subscribing to <a href="https://www.codetriage.com/magento/magento2">Magento on CodeTriage</a>.</p>
+
+<h2 id="labels">Labels applied by the Community Engineering team</h2>
+
+<p>We apply labels to public pull requests and issues to help other participants retrieve additional information about current progress, component assignments, Magento release lines, and much more. The following information details global labels used in Magento 2 repositories and across Community Engineering contributions.</p>
+
+<h3 class="no_toc" id="release-lines">Release Lines</h3>
+
+<p>Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.4.0 you would apply the Release Line: 2.4. This effectively includes all releases in this line.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Release Line: 2.3</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Release Line: 2.4</code></li>
+</ul>
+
+<h3 class="no_toc" id="progress">Progress</h3>
+
+<p>Progress labels indicate the Pull Request status on each review stage:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Progress: needs update</code> - The Community Engineering Team needs additional information from the reporter to properly prioritize and process the pull request. <!-- needs update --></li>
+  <li><code class="language-plaintext highlighter-rouge">Progress: on hold</code> - The pull request is on hold due and will be further reviewed to accept or reject.</li>
+  <li><code class="language-plaintext highlighter-rouge">Progress: accept</code> - The pull request has been accepted and will be merged into mainline code. <!-- accept --></li>
+  <li><code class="language-plaintext highlighter-rouge">Progress: reject</code> - The pull request has been rejected and will not be merged into mainline code. Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution. <!-- reject --></li>
+</ul>
+
+<h3 class="no_toc" id="contribution-awards">Contribution awards</h3>
+
+<p>The level of investigation, research, and work required for a task may differ. Contribution Rewards labels  indicate what type of contribution awards will be applied when completing an issue and PR. Some awards will provide higher points and rewards than others.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Award: complex</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Award: advanced</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Award: special achievement</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Award: category of expertise</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Award: test coverage</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Award: devdocs update</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Award: MFTF test coverage</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Award: bug fix</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Cleanup</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Port</code></li>
+</ul>
+
+<h3 class="no_toc" id="partners">Partners</h3>
+
+<p>All partners Pull Requests should be marked with label <code class="language-plaintext highlighter-rouge">partners-contribution</code>. Additionally, add a partner label for PRs submitted by specific Partners. Use the format: <code class="language-plaintext highlighter-rouge">Partner: &lt;PartnerName&gt;</code>. The following are Partner examples:</p>
+
+<p>Example labels:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">partners-contribution</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Partner: Atwix</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Partner: Comwrap</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Partner: Interactiv4</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Partner: Wagento</code></li>
+</ul>
+
+<h3 class="no_toc" id="components">Components</h3>
+
+<p>Component labels indicate the components affected by the Pull Request. To learn more about available components and assigned architects, see <a href="https://github.com/magento/architecture/wiki/Component-Assignments">Magento Components Assignment</a>.</p>
+
+<p>Example labels:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Component: Catalog</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Component: Report</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Component: Checkout</code></li>
+</ul>
+
+<p>For edge cases, <code class="language-plaintext highlighter-rouge">Component: Other</code> and <code class="language-plaintext highlighter-rouge">Component: Multiple</code> may be used.</p>
+
+<h3 class="no_toc" id="events">Events</h3>
+
+<p>Event labels mark recommended issues and submitted PRs for a specific event. Events may include Contribution Days, Hackathons, Imagine, special events like Smashtoberfest, and others. Contributors and Maintainers can easily locate code when attending those events. Some events may also have a <a href="https://magentocommeng.slack.com">Community Engineering Slack</a> channel using the same label.</p>
+
+<p>Example labels:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Event: mm18in</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Event: mm17es</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Event: mlau18</code></li>
+</ul>
+
+<h3 class="no_toc" id="general">General</h3>
+
+<p>General labels include a variety of tasks and definitions for pull requests and issues.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">good first issue</code> - Indicates a good issue for first-time contributors.</li>
+  <li><code class="language-plaintext highlighter-rouge">help wanted</code> - Indicates the creator or author needs help with a decision, advice for resolving, and so on.</li>
+  <li><code class="language-plaintext highlighter-rouge">triage wanted</code> - Indicates the issues are under triage. See this information to learn more about the <a href="https://github.com/magento/magento2/wiki/Triage-Wanted">Triage Wanted program</a>.</li>
+</ul>
+
+<h3 class="no_toc" id="issue-resolution-status">Issue resolution status</h3>
+
+<p>Labels applied to issues through verification and completion. For details on the process, see <a href="https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow">GitHub Issues Processing Workflow</a>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Issue: Format is not valid</code> - Gate 1 failed. Automatic verification by the Automated Contributor Assistant failed and the issue needs updates. The <a href="https://github.com/magento/magento2/tree/2.4-develop/.github/ISSUE_TEMPLATE">format</a> of the issue description and minimum required information is not provided: Preconditions, Steps to Reproduce, Actual Result, Expected Result. Previous label <code class="language-plaintext highlighter-rouge">G1 Failed</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Issue: Format is valid</code> - Gate 1 passed. Automatic verification by the Automated Contributor Assistant passed for all issue content. Previous label <code class="language-plaintext highlighter-rouge">G1 Passed</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Issue: Clear Description</code> - Gate 2 passed. The Community Engineering Team has confirmed that this issue contains the minimum required information to reproduce. Previous label <code class="language-plaintext highlighter-rouge">G2 Passed</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Issue: Cannot Reproduce</code> - Gate 3 failed. The issue could not be reproduced or validated. Previous label <code class="language-plaintext highlighter-rouge">Cannot Reproduce</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Issue: Confirmed</code> - Gate 3 passed. Manual verification of the issue description and reproduction steps was confirmed. Previous label <code class="language-plaintext highlighter-rouge">G3 Passed</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Issue: Ready for Work</code> - Gate 4 passed. The issue is acknowledged and added to the backlog for open development. Previous label <code class="language-plaintext highlighter-rouge">acknowledged</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Reproduced on 2.3.x</code> - The Community Engineering Team reproduced the issue on latest 2.3.x release.</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Reproduced on 2.4.x</code> - The Community Engineering Team reproduced the issue on latest 2.4.x release.</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Fixed in 2.3.x</code> - The issue has been fixed in one of the 2.3.x releases.</li>
+  <li><code class="language-plaintext highlighter-rouge">Fixed in 2.4.x</code> - The issue has been fixed in one of the 2.4.x releases or in 2.4-develop branch and will be available with the upcoming patch release.</li>
+  <li><code class="language-plaintext highlighter-rouge">non-issue</code> - A described behavior in the issue description is valid and shouldn’t be changed in Magento code base.</li>
+</ul>
+
+<h3 class="no_toc" id="devdocs">DevDocs</h3>
+
+<p>All <a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md">contributions to DevDocs</a> receive the following labels:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">New topic</code>- New topic submissions for content that has never existed on DevDocs such as tutorials, references, instructions, and so on</li>
+  <li><code class="language-plaintext highlighter-rouge">Major update</code> - Significant original updates to existing content</li>
+  <li><code class="language-plaintext highlighter-rouge">Technical</code> - Updates to the code or processes that alter the technical content of the document, such as code snippets, reference documentation, parameter names and values, and other relevant content</li>
+  <li><code class="language-plaintext highlighter-rouge">Editorial</code> - Fixes for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies</li>
+</ul>
+
+<h2 id="points">Contribution awards and points</h2>
+
+<p>We are thankful for all contributions, and we always recognize our most active members. Our aim is to find and recognize our top contributors according to points awarded during a given time period (monthly/quarterly/yearly). Contributors can earn points in numerous ways with a focus on pull requests (PR) to the backlog and special projects.</p>
+
+<p>The Community Engineering team assesses each PR and determines the best awards for the submitted work. Contribution points are calculated according to the assessment results. We award points when the PR is merged.</p>
+
+<h3 class="no_toc" id="how-points-are-awarded">How points are awarded</h3>
+
+<p>Every merged PR receives one <a href="contributing.html#base-achievements">base achievement</a> and potentially one, or more, <a href="contributing.html#additional-achievements">additional achievements</a>. These achievements are applied to PRs during review and assessment. <a href="contributors.html">Contributors</a> and <a href="maintainers.html">maintainers</a> receive points after the PR is merged.</p>
+
+<p>Due to the level of work required for developing and reviewing a PR, contributors and maintainers receive the same amount of points.</p>
+
+<p>For instance, see this calculated reward points example:</p>
+
+<ol>
+  <li>When a contributor submits a PR with complex code contributions, they receive a total of 30 points:
+    <ul>
+      <li>Improvement (base achievement) = 10 points</li>
+      <li>Complex (additional achievement) = 20 points</li>
+    </ul>
+  </li>
+  <li>When a contributor submits a PR with complex code and tests, they receive a total of 40 points:
+    <ul>
+      <li>Improvement (base achievement) = 10 points</li>
+      <li>Complex (additional achievement) = 20 points</li>
+      <li>Test coverage (additional achievement) = 10 points</li>
+    </ul>
+  </li>
+  <li>When a contributor submits a PR port of an existing merged PR, they receive a total of 35 points:
+    <ul>
+      <li>Improvement (base achievement) = 10 points</li>
+      <li>Complex (additional achievement) = 20 points</li>
+      <li>Author of ported issue = 5 points</li>
+    </ul>
+  </li>
+  <li>When a maintainer reviews and approves a PR with complex code and tests, they receive a total of 40 points:
+    <ul>
+      <li>Improvement (base achievement) = 10 points</li>
+      <li>Complex (additional achievement) = 20 points</li>
+      <li>Test coverage (additional achievement) = 10 points</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Earned achievements display as labels in each PR in GitHub and for each contributor, partner, and maintainer on <a href="https://magento.com/magento-contributors">magento.com</a>.</p>
+
+<p class="bs-callout-info">Multiple minor editorial fixes should be combined into a single PR, for the sake of efficiency.</p>
+
+<h3 class="no_toc" id="base-achievements">Base achievements</h3>
+
+<p>Every merged PR receives one base achievement.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Improvement</td>
+      <td>10</td>
+      <td>Contribution contains code improvements, refactoring, or a bug fix.</td>
+    </tr>
+    <tr>
+      <td>Port</td>
+      <td>5</td>
+      <td>Contribution ports an existing solution between release lines. The author of the original PR receives an additional 5 points when another person contributes the ported PR.</td>
+    </tr>
+    <tr>
+      <td>Code Cleanup</td>
+      <td>1</td>
+      <td>Contribution contains code cleanup, such as typos, inline documentation, coding style, remove unused code, and minor style/design fixes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="no_toc" id="additional-achievements">Additional achievements</h3>
+
+<p>Every PR may receive several additional achievements during assessment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Advanced</td>
+      <td>30</td>
+      <td>Contribution provides new features, such as introducing a new CLI command or integration with the new payment or shipping methods.</td>
+    </tr>
+    <tr>
+      <td>Complex</td>
+      <td>20</td>
+      <td>Contribution contains complete refactoring of legacy code, improvements to application design, or updates to libraries.</td>
+    </tr>
+    <tr>
+      <td>Special achievement</td>
+      <td>20</td>
+      <td>Contribution earns recognition in a specific category, such as for extensive tests coverage, improved framework design, improved APIs or API coverage, and improved customizability.</td>
+    </tr>
+    <tr>
+      <td>Test coverage</td>
+      <td>10</td>
+      <td>Contribution contains a fix or improvement and new tests or test cases.</td>
+    </tr>
+    <tr>
+      <td>MFTF test coverage</td>
+      <td>10</td>
+      <td>Contribution contains MFTF tests.</td>
+    </tr>
+    <tr>
+      <td>Bug fix</td>
+      <td>10</td>
+      <td>Contribution fixes one or more known GitHub issues.</td>
+    </tr>
+    <tr>
+      <td>Author of Ported Issue</td>
+      <td>5</td>
+      <td>Additional points for a contribution that ports (up port or back port) a previous PR across release lines by another contributor</td>
+    </tr>
+    <tr>
+      <td>Issue Triage: Confirmed</td>
+      <td>5</td>
+      <td>A public issue report is verified and confirmed. The description contains all the required information needed to easily reproduce the issue with the provided steps.</td>
+    </tr>
+    <tr>
+      <td>Issue Triage: Rejected/Closed</td>
+      <td>4</td>
+      <td>A public issue report is verified and closed/rejected because it is not a bug or cannot be reproduce using the provided steps in the description on the supported Magento versions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="docs-awards-and-points">Docs awards and points</h2>
+
+<p>Contributors and maintainers can also earn rewards for pull requests (PRs) that are merged in the <a href="https://github.com/magento/devdocs">DevDocs</a> and <a href="https://github.com/magento/merchdocs">MerchDocs</a> repositories. These earned points add to contributor totals. Like code contributions, the Docs team assesses the PRs and applies labels (which may vary between repositories) to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.</p>
+
+<p class="bs-callout-info">Some documentation projects, such as MFTF and PWA, are published on the DevDocs site, but the source repositories exist outside of the DevDocs repository. The teams that maintain these projects have discretion over defining points for documentation contributions.</p>
+
+<p>These examples show how reward points are calculated:</p>
+
+<ul>
+  <li>A contributor who submits a PR that reformats HTML into markdown or fixes typos will receive an Editorial (base achievement) label = 1 point</li>
+  <li>A contributor who submits a PR with a code sample update and new parameter descriptions will receive an Improvement (base achievement) label =  10 points <em>and</em> either a Major update (additional achievement) label = 20 points <em>OR</em> a Technical label (additional achievement) = 10 points</li>
+</ul>
+
+<h3 class="no_toc" id="base-achievements-1">Base achievements</h3>
+
+<p>Every merged PR to the <a href="https://github.com/magento/devdocs">DevDocs repository</a> receives one base achievement. If you enter a PR with editorial fixes and new content, you receive the Improvement and additional achievements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Improvement</td>
+      <td>10</td>
+      <td>Contribution contains document improvements, adding missing features of inconsistency between code base and documentation, and similar.</td>
+    </tr>
+    <tr>
+      <td>Editorial</td>
+      <td>1</td>
+      <td>Contribution contains fixes for typos, grammatical inconsistencies, or minor rewrites to correct inaccuracies.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="no_toc" id="additional-achievements-1">Additional achievements</h3>
+
+<p>Each PR can earn one of the following additional achievements. If you entered an editorial PR, you may not receive an additional achievement.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Achievement</th>
+      <th>Points</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>New topic</td>
+      <td>30</td>
+      <td>New topic submissions for content that has never existed in DevDocs, such as tutorials, references, instructions, and other relevant content.</td>
+    </tr>
+    <tr>
+      <td>Major update</td>
+      <td>20</td>
+      <td>Significant updates to existing content.</td>
+    </tr>
+    <tr>
+      <td>Technical</td>
+      <td>10</td>
+      <td>Updates to code or processes that alter the technical content of the document, such as code snippets, reference documentation, parameter names and values, and other relevant content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If the PR earns recognition for significant updates and additions to the documentation, it may also receive a Special Achievement label, which garners an additional 20 points. This is determinable at the time of internal assessment. Certain issues may already be labeled as Special Achievement in an effort to prompt contribution—the PRs that fix these issues will receive the extra 20 points.</p>
+
+<h3 class="no_toc" id="contribution-programs">Contribution programs</h3>
+
+<p>Both DevDocs and MerchDocs have contribution programs for publicly recognizing and thanking contributors for their hard work and contributions to documentation.</p>
+
+<p>The top monthly contributors and new contributors are thanked on <a href="https://twitter.com/MagentoDevDocs">Twitter</a> and in Slack (<a href="https://magentocommeng.slack.com/archives/CAN932A3H">DevDocs</a> and <a href="https://magentocommeng.slack.com/archives/CJP33CEKY">MerchDocs</a>) each month. The top quarterly contributor will also be recognized through these channels each quarter.</p>
+
+<p>Stay tuned for updates and improvements to the contributor programs for both DevDocs and MerchDocs.</p>
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-05-04">
+    May 4th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

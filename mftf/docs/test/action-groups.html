@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Action groups | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="action-groups.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Functional Testing Framework Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started.html" class="spectrum-SideNav-itemLink ">Getting started</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configuration.html" class="spectrum-SideNav-itemLink ">Configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../credentials.html" class="spectrum-SideNav-itemLink ">Credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../data.html" class="spectrum-SideNav-itemLink ">Data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../debugging.html" class="spectrum-SideNav-itemLink ">Debugging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extending.html" class="spectrum-SideNav-itemLink ">Extending</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/git-vs-composer-install.html" class="spectrum-SideNav-itemLink ">Git vs. Composer installation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/introduction.html" class="spectrum-SideNav-itemLink ">Merge points for extensions</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-action-groups.html" class="spectrum-SideNav-itemLink ">Extend action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-data.html" class="spectrum-SideNav-itemLink ">Extend data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-tests.html" class="spectrum-SideNav-itemLink ">Extend tests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-action-groups.html" class="spectrum-SideNav-itemLink ">Merge action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-data.html" class="spectrum-SideNav-itemLink ">Merge data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-pages.html" class="spectrum-SideNav-itemLink ">Merge pages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-sections.html" class="spectrum-SideNav-itemLink ">Merge sections</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-tests.html" class="spectrum-SideNav-itemLink ">Merge tests</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merging.html" class="spectrum-SideNav-itemLink ">Merging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../metadata.html" class="spectrum-SideNav-itemLink ">Metadata</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../page.html" class="spectrum-SideNav-itemLink ">Page</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../guides/v2.3/reference/mftf/action-groups.html" class="spectrum-SideNav-itemLink ">Action group reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../commands/codeception.html" class="spectrum-SideNav-itemLink ">Codecept</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../commands/mftf.html" class="spectrum-SideNav-itemLink ">MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../guides/v2.3/reference/mftf/functional-tests.html" class="spectrum-SideNav-itemLink ">MFTF functional test reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reporting.html" class="spectrum-SideNav-itemLink ">Reporting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section.html" class="spectrum-SideNav-itemLink ">Section</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section/parameterized-selectors.html" class="spectrum-SideNav-itemLink ">Parameterized selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section/locator-functions.html" class="spectrum-SideNav-itemLink ">Locator functions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../suite.html" class="spectrum-SideNav-itemLink ">Suite</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test.html" class="spectrum-SideNav-itemLink ">Test basics</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="annotations.html" class="spectrum-SideNav-itemLink ">Annotations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="actions.html" class="spectrum-SideNav-itemLink ">Actions</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="action-groups.html" class="spectrum-SideNav-itemLink ">Action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="assertions.html" class="spectrum-SideNav-itemLink ">Assertions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Test writing</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../best-practices.html" class="spectrum-SideNav-itemLink ">Best practices</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test-prep.html" class="spectrum-SideNav-itemLink ">Preparing a test for MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/selectors.html" class="spectrum-SideNav-itemLink ">Selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/test-isolation.html" class="spectrum-SideNav-itemLink ">Test isolation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/test-modularity.html" class="spectrum-SideNav-itemLink ">Test modularity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tips-tricks.html" class="spectrum-SideNav-itemLink ">Tips and tricks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/using-suites.html" class="spectrum-SideNav-itemLink ">Using suites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../troubleshooting.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../update.html" class="spectrum-SideNav-itemLink ">Update MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../versioning.html" class="spectrum-SideNav-itemLink ">Versioning</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md" class="spectrum-SideNav-itemLink ">Contribution guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md" class="spectrum-SideNav-itemLink ">Changelog</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Action groups</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/blob/master/docs/test/action-groups.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/issues/new?title=Feedback on page: /mftf/docs/test/action-groups.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>In the MFTF, you can re-use a group of <a href="actions.html">actions</a>, such as logging in as an administrator or a customer, declared in an XML file when you need to perform the same sequence of actions multiple times.</p>
+
+<p>The following diagram shows the structure of an MFTF action group:</p>
+
+<p><img src="../img/action-groups-dia.svg" alt="Structure of MFTF action group" /></p>
+
+<h2 id="principles">Principles</h2>
+
+<p>The following conventions apply to MFTF action groups:</p>
+
+<ul>
+  <li>All action groups are declared in XML files and stored in the <code class="language-plaintext highlighter-rouge">&lt;module&gt;/Test/Mftf/ActionGroup/</code> directory.</li>
+  <li>Every file name ends with <code class="language-plaintext highlighter-rouge">ActionGroup</code> suffix. For exampe <code class="language-plaintext highlighter-rouge">LoginAsAdminActionGroup.xml</code>.</li>
+  <li>Action group name should be the same as file name without extension.</li>
+  <li>Single file should contain only one <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code> node</li>
+</ul>
+
+<p>The XML format for the <code class="language-plaintext highlighter-rouge">actionGroups</code> declaration is:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+<span class="nt">&lt;actionGroups</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Test/etc/actionGroupSchema.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">""</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">""</span> <span class="na">defaultValue=</span><span class="s">""</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">""</span> <span class="na">defaultValue=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/actionGroup&gt;</span>
+<span class="nt">&lt;/actionGroups&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="example">Example</h2>
+
+<p>These examples build a declaration for a group of actions that grant authorization to the Admin area, and use the declaration in a test.</p>
+
+<p>The <em>Magento/Backend/Test/Mftf/ActionGroup/LoginAsAdminActionGroup.xml</em> <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code> relates to the functionality of the <em>Magento_Backend</em> module.</p>
+
+<p>In <a href="../test.html">test</a>, the name and identifier of the <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code> is used as a reference in the <code class="language-plaintext highlighter-rouge">ref</code> parameter, such as <code class="language-plaintext highlighter-rouge">ref="LoginAsAdminActionGroup"</code>.</p>
+
+<h3 id="create-an-action-group-declaration">Create an action group declaration</h3>
+
+<p>To create the <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code> declaration:</p>
+
+<ol>
+  <li>
+    <p>Begin with a template for the <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code>:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre> <span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+ <span class="nt">&lt;actionGroups</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Test/etc/actionGroupSchema.xsd"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"{Action Group Name}"</span><span class="nt">&gt;</span>
+
+     <span class="nt">&lt;/actionGroup&gt;</span>
+ <span class="nt">&lt;/actionGroups&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add actions to the <code class="language-plaintext highlighter-rouge">actionGroup</code> arguments:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre> <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"LoginAsAdminActionGroup"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;fillField</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span> <span class="na">selector=</span><span class="s">"#username"</span> <span class="na">userInput=</span><span class="s">"{{adminUser.username}}"</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;fillField</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span> <span class="na">selector=</span><span class="s">"#password"</span> <span class="na">userInput=</span><span class="s">"{{adminUser.password}}"</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;click</span> <span class="na">stepKey=</span><span class="s">"click"</span> <span class="na">selector=</span><span class="s">"#login"</span> <span class="nt">/&gt;</span>
+ <span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">userInput</code> variable must contain a data value for test.
+Add a default data value for the variable to use in the most common cases.
+For this example, the default value is <code class="language-plaintext highlighter-rouge">_defaultAdmin</code>.</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre> <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"adminUser"</span> <span class="na">defaultValue=</span><span class="s">"_defaultAdmin"</span><span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>The following example shows the complete declaration:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre> <span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+
+ <span class="nt">&lt;actionGroups</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Test/etc/actionGroupSchema.xsd"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"LoginAsAdmin"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;annotations&gt;</span>
+                 <span class="nt">&lt;description&gt;</span>Login to Backend Admin using provided User Data. PLEASE NOTE: This Action Group does NOT validate that you are Logged In.<span class="nt">&lt;/description&gt;</span>
+             <span class="nt">&lt;/annotations&gt;</span>
+             <span class="nt">&lt;arguments&gt;</span>
+                 <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"adminUser"</span> <span class="na">type=</span><span class="s">"entity"</span> <span class="na">defaultValue=</span><span class="s">"DefaultAdminUser"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;/arguments&gt;</span>
+        
+             <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{AdminLoginPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminLoginFormSection.username}}"</span> <span class="na">userInput=</span><span class="s">"{{adminUser.username}}"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminLoginFormSection.password}}"</span> <span class="na">userInput=</span><span class="s">"{{adminUser.password}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminLoginFormSection.signIn}}"</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;closeAdminNotification</span> <span class="na">stepKey=</span><span class="s">"closeAdminNotification"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;/actionGroup&gt;</span>
+ <span class="nt">&lt;/actionGroups&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="use-the-declaration-in-a-test">Use the declaration in a test</h3>
+
+<p>In this test example, we want to add the following set of actions:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminLoginFormSection.username}}"</span> <span class="na">userInput=</span><span class="s">"{{adminUser.username}}"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminLoginFormSection.password}}"</span> <span class="na">userInput=</span><span class="s">"{{adminUser.password}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminLoginFormSection.signIn}}"</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Instead of adding this set of actions, use the <em>LoginAsAdminActionGroup</em> <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code> declaration in tests:</p>
+
+<ol>
+  <li>
+    <p>Reference the <code class="language-plaintext highlighter-rouge">LoginAsAdminActionGroup</code> action group:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre> <span class="nt">&lt;actionGroup</span> <span class="na">stepKey=</span><span class="s">"loginToAdminPanel"</span> <span class="na">ref=</span><span class="s">"LoginAsAdminActionGroup"</span><span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Update the argument name/value pair to <code class="language-plaintext highlighter-rouge">adminUser</code> and <code class="language-plaintext highlighter-rouge">CustomAdminUser</code>:</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre> <span class="nt">&lt;actionGroup</span> <span class="na">stepKey=</span><span class="s">"loginToAdminPanel"</span> <span class="na">ref=</span><span class="s">"LoginAsAdminActionGroup"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"adminUser"</span> <span class="na">value=</span><span class="s">"CustomAdminUser"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="data-type-usage">Data type usage</h2>
+
+<p>By default, an <a href="action-groups.html#argument-tag"><code class="language-plaintext highlighter-rouge">argument</code></a> expects an entire <code class="language-plaintext highlighter-rouge">entity</code> when the <code class="language-plaintext highlighter-rouge">type</code> value is not defined.
+There are cases when you use a string instead of a whole entity.</p>
+
+<p>For example, the following defines the replacement argument <code class="language-plaintext highlighter-rouge">relevantString</code> using a primitive data type:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"fillExample"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"relevantString"</span> <span class="na">defaultValue=</span><span class="s">"defaultString"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">stepKey=</span><span class="s">"fillField1"</span> <span class="na">selector=</span><span class="s">"#input"</span> <span class="na">userInput=</span><span class="s">"{{relevantString}}"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">stepKey=</span><span class="s">"clickSave"</span> <span class="na">selector=</span><span class="s">"#save"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;see</span> <span class="na">stepKey=</span><span class="s">"seeItWorked"</span> <span class="na">selector=</span><span class="s">"#outputArea"</span> <span class="na">userInput=</span><span class="s">"{{relevantString}}"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">stepKey=</span><span class="s">"clickParameterizedSelector"</span> <span class="na">selector=</span><span class="s">"{{SomeSection.parameterizedElement(relevantString)}}"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">string</code> argument type provides a method to pass a single piece of data to the <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code>during a test instead of passing an entire entity.</p>
+
+<h3 id="explicitly-define-the-argument-value">Explicitly define the argument value</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;actionGroup</span> <span class="na">stepKey=</span><span class="s">"fillWithStringLiteral"</span> <span class="na">ref=</span><span class="s">"fillExample"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"relevantString"</span> <span class="na">value=</span><span class="s">"overrideString"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="use-persisted-data-references-to-define-the-argument-value">Use persisted data references to define the argument value</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;actionGroup</span> <span class="na">stepKey=</span><span class="s">"fillWithStringLiteral"</span> <span class="na">ref=</span><span class="s">"fillExample"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"relevantString"</span> <span class="na">value=</span><span class="s">"$persistedData.field1$"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">relevantString</code> argument value points to the data <a href="../data.html#persist-data">created</a> in the <code class="language-plaintext highlighter-rouge">stepKey="persistedData"</code> test step.
+<code class="language-plaintext highlighter-rouge">field1</code> is a data key of the required data string.
+Even with the <code class="language-plaintext highlighter-rouge">persistedData</code> data entity, the MFTF interprets the <code class="language-plaintext highlighter-rouge">$persistedData.field1$</code> value as a string.</p>
+
+<h3 id="define-the-argument-value-based-on-data-entity-resolution">Define the argument value based on data entity resolution</h3>
+
+<p>The argument value points to a piece of data defined in a <code class="language-plaintext highlighter-rouge">data.xml</code> file.
+The <code class="language-plaintext highlighter-rouge">field1</code> data contains the required string.
+MFTF resolves <code class="language-plaintext highlighter-rouge">{{myCustomEntity.field1}}</code> the same as it would in a <code class="language-plaintext highlighter-rouge">selector</code> or <code class="language-plaintext highlighter-rouge">userInput</code> attribute.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;actionGroup</span> <span class="na">stepKey=</span><span class="s">"fillWithXmlData"</span> <span class="na">ref=</span><span class="s">"fillExample"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"relevantString"</span> <span class="na">value=</span><span class="s">"{{myCustomEntity.field1}}"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="optimizing-action-group-structures">Optimizing action group structures</h2>
+
+<p>Structuring properly an action group increases code reusability and readability.</p>
+
+<p>Starting with an action group such as:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"CreateCategory"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"categoryEntity"</span> <span class="na">defaultValue=</span><span class="s">"_defaultCategory"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">"{{AdminCategoryPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"seeOnCategoryPage"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySidebarActionSection.AddSubcategoryButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickOnAddSubCategory"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;see</span> <span class="na">selector=</span><span class="s">"{{AdminHeaderSection.pageTitle}}"</span> <span class="na">userInput=</span><span class="s">"New Category"</span> <span class="na">stepKey=</span><span class="s">"seeCategoryPageTitle"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryBasicFieldSection.CategoryNameInput}}"</span> <span class="na">userInput=</span><span class="s">"{{categoryEntity.name}}"</span> <span class="na">stepKey=</span><span class="s">"enterCategoryName"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySEOSection.SectionHeader}}"</span> <span class="na">stepKey=</span><span class="s">"openSEO"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySEOSection.UrlKeyInput}}"</span> <span class="na">userInput=</span><span class="s">"{{categoryEntity.name_lwr}}"</span> <span class="na">stepKey=</span><span class="s">"enterURLKey"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryMainActionsSection.SaveButton}}"</span> <span class="na">stepKey=</span><span class="s">"saveCategory"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;seeElement</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryMessagesSection.SuccessMessage}}"</span> <span class="na">stepKey=</span><span class="s">"assertSuccess"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;seeInTitle</span> <span class="na">userInput=</span><span class="s">"{{categoryEntity.name}}"</span> <span class="na">stepKey=</span><span class="s">"seeNewCategoryPageTitle"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;seeElement</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySidebarTreeSection.categoryInTree(categoryEntity.name)}}"</span> <span class="na">stepKey=</span><span class="s">"seeCategoryInTree"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>It can be reworked into more manageable pieces, as below. These smaller steps are easier to read, update, and reuse.</p>
+<ul>
+  <li>GoToCategoryGridAndAddNewCategory
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>  <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"GoToCategoryGridAndAddNewCategory"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">"{{AdminCategoryPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"seeOnCategoryPage"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySidebarActionSection.AddSubcategoryButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickOnAddSubCategory"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;see</span> <span class="na">selector=</span><span class="s">"{{AdminHeaderSection.pageTitle}}"</span> <span class="na">userInput=</span><span class="s">"New Category"</span> <span class="na">stepKey=</span><span class="s">"seeCategoryPageTitle"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>FillInBasicCategoryFields
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>  <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"FillInBasicCategoryFields"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;arguments&gt;</span>
+          <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"categoryEntity"</span> <span class="na">defaultValue=</span><span class="s">"_defaultCategory"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/arguments&gt;</span>
+      <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryBasicFieldSection.CategoryNameInput}}"</span> <span class="na">userInput=</span><span class="s">"{{categoryEntity.name}}"</span> <span class="na">stepKey=</span><span class="s">"enterCategoryName"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySEOSection.SectionHeader}}"</span> <span class="na">stepKey=</span><span class="s">"openSEO"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySEOSection.UrlKeyInput}}"</span> <span class="na">userInput=</span><span class="s">"{{categoryEntity.name_lwr}}"</span> <span class="na">stepKey=</span><span class="s">"enterURLKey"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>SaveAndVerifyCategoryCreation
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>  <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"SaveAndVerifyCategoryCreation"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryMainActionsSection.SaveButton}}"</span> <span class="na">stepKey=</span><span class="s">"saveCategory"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;seeElement</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryMessagesSection.SuccessMessage}}"</span> <span class="na">stepKey=</span><span class="s">"assertSuccess"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;seeInTitle</span> <span class="na">userInput=</span><span class="s">"{{categoryEntity.name}}"</span> <span class="na">stepKey=</span><span class="s">"seeNewCategoryPageTitle"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;seeElement</span> <span class="na">selector=</span><span class="s">"{{AdminCategorySidebarTreeSection.categoryInTree(categoryEntity.name)}}"</span> <span class="na">stepKey=</span><span class="s">"seeCategoryInTree"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/actionGroup&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<!--  -->
+
+<h2 id="elements-reference">Elements reference</h2>
+
+<h3 id="actiongroups-tag">actionGroups</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;actionGroups&gt;</code> element is a root element that contains XML configuration attributes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">xmlns:xsi</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"http://www.w3.org/2001/XMLSchema-instance"</code></td>
+      <td>Tells the XML parser to validate this document against a schema.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">xsi:noNamespaceSchemaLocation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"urn:magento:mftf:Test/etc/actionGroupSchema.xsd"</code></td>
+      <td>Relative path to the corresponding schema.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It may contain one or more <code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code>.</p>
+
+<h3 id="actiongroup-tag">actionGroup</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Identifier of the action group.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">extends</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Identifies the action group to extend.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">deprecated</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Used to warn about the future deprecation of the actionGroup. String will appear in Allure reports and console output at runtime.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>It may contain <code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code>.</p>
+
+<h3 id="arguments-tag">arguments</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code> element is a wrapper for an array of <code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code> elements.</p>
+
+<h3 id="argument-tag">argument</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Identifier of an argument in the scope of the corresponding action group.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">defaultValue</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Provides a default data value.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td>Possible values: <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">entity</code> (default).</td>
+      <td>optional</td>
+      <td>Defines the argument data type; Defaults to <code class="language-plaintext highlighter-rouge">entity</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Link Definitions -->
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-01-31">
+    Jan 31st, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

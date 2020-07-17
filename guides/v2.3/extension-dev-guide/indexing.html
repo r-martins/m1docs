@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Indexing overview | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="../../v2.4/extension-dev-guide/indexing.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../index.html">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.3</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="indexing.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../v2.4/extension-dev-guide/indexing.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">PHP Developer Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="intro/developers_roadmap.html" class="spectrum-SideNav-itemLink ">Developer roadmap</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="intro/intro-composer.html" class="spectrum-SideNav-itemLink ">Introduction to Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="intro/intro-composer-gloss.html" class="spectrum-SideNav-itemLink ">Glossary of common terms</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/prepare.html" class="spectrum-SideNav-itemLink ">Prepare (development quick start)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/dev-modtypes.html" class="spectrum-SideNav-itemLink ">Component types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/prepare_file-str.html" class="spectrum-SideNav-itemLink ">About component file structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/ext-repo-structure.html" class="spectrum-SideNav-itemLink ">Extension repository structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/dev-summary.html" class="spectrum-SideNav-itemLink ">Roadmap for developing and packaging components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="prepare/lifecycle.html" class="spectrum-SideNav-itemLink ">Extension lifecycle</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/build.html" class="spectrum-SideNav-itemLink ">Build</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/di-xml-file.html" class="spectrum-SideNav-itemLink ">The di.xml file</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/optimal-dev-environment.html" class="spectrum-SideNav-itemLink ">Optimal development environment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/composer-integration.html" class="spectrum-SideNav-itemLink ">The composer.json file</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/required-configuration-files.html" class="spectrum-SideNav-itemLink ">Define your configuration files</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html" class="spectrum-SideNav-itemLink ">Create your component file structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/component-registration.html" class="spectrum-SideNav-itemLink ">Register your component</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/XSD-XML-validation.html" class="spectrum-SideNav-itemLink ">URN schema validation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/create_component.html" class="spectrum-SideNav-itemLink ">Name your component</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/module-load-order.html" class="spectrum-SideNav-itemLink ">Component load order</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="build/enable-module.html" class="spectrum-SideNav-itemLink ">Enable or disable your component</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="package/package.html" class="spectrum-SideNav-itemLink ">Package</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="package/package_module.html" class="spectrum-SideNav-itemLink ">Package a component</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="package/package_mktpl.html" class="spectrum-SideNav-itemLink ">Upload your component to the Magento Marketplace</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="validate/validate.html" class="spectrum-SideNav-itemLink ">Validate</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="validate/test-module.html" class="spectrum-SideNav-itemLink ">Test your component</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/partial-caching.html" class="spectrum-SideNav-itemLink ">Partial caching</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/partial-caching/database-caching.html" class="spectrum-SideNav-itemLink ">Create custom cache engines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/partial-caching/create-cache-type.html" class="spectrum-SideNav-itemLink ">Create a cache type</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/page-caching.html" class="spectrum-SideNav-itemLink ">Full page caching</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/page-caching/public-content.html" class="spectrum-SideNav-itemLink ">Public content</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cache/page-caching/private-content.html" class="spectrum-SideNav-itemLink ">Private content</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cli-cmds/cli-add.html" class="spectrum-SideNav-itemLink ">Add CLI commands</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="cli-cmds/cli-naming-guidelines.html" class="spectrum-SideNav-itemLink ">Command naming guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cli-cmds/cli-howto.html" class="spectrum-SideNav-itemLink ">How to add CLI commands</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-SideNav-itemLink ">Staging (Magento Commerce only)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="module-development.html" class="spectrum-SideNav-itemLink ">Component development</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="async-operations.html" class="spectrum-SideNav-itemLink ">Asynchronous/deferred operations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="service-contracts/service-contracts.html" class="spectrum-SideNav-itemLink ">Service contracts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="api-concepts.html" class="spectrum-SideNav-itemLink ">Public interfaces &amp; APIs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="service-contracts/design-patterns.html" class="spectrum-SideNav-itemLink ">Service contract design patterns</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/depend-inj.html" class="spectrum-SideNav-itemLink ">Dependency injection</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="object-manager.html" class="spectrum-SideNav-itemLink ">ObjectManager</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/events-and-observers.html" class="spectrum-SideNav-itemLink ">Events and observers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="factories.html" class="spectrum-SideNav-itemLink ">Factories</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="proxies.html" class="spectrum-SideNav-itemLink ">Proxies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-generation.html" class="spectrum-SideNav-itemLink ">Code generation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="attributes.html" class="spectrum-SideNav-itemLink ">EAV and extension attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html" class="spectrum-SideNav-itemLink ">Plugins (Interceptors)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="routing.html" class="spectrum-SideNav-itemLink ">Routing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Indexing</span><ul class=""><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="indexing.html" class="spectrum-SideNav-itemLink ">Indexing overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="indexer-batch.html" class="spectrum-SideNav-itemLink ">Indexer optimization</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="indexing-custom.html" class="spectrum-SideNav-itemLink ">Adding a custom indexer</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Declarative schema</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/index.html" class="spectrum-SideNav-itemLink ">Declarative schema overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/migration-commands.html" class="spectrum-SideNav-itemLink ">Migrate install/upgrade scripts to declarative schema</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/db-schema.html" class="spectrum-SideNav-itemLink ">Configure declarative schema</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="declarative-schema/data-patches.html" class="spectrum-SideNav-itemLink ">Develop data and schema patches</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Web APIs</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="service-contracts/service-to-web-service.html" class="spectrum-SideNav-itemLink ">Configure services as web APIs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="webapi/custom-routes.html" class="spectrum-SideNav-itemLink ">Set custom routes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="webapi/request-processor-pool.html" class="spectrum-SideNav-itemLink ">WebApi request processors pool</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Message Queues</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/message-queues.html" class="spectrum-SideNav-itemLink ">Message queues overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/message-queues-stores.html" class="spectrum-SideNav-itemLink ">Message queues and stores</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/config-mq.html" class="spectrum-SideNav-itemLink ">Configure message Queues</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/refresh-config.html" class="spectrum-SideNav-itemLink ">Handling outdated in-memory object states</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/queue-migration.html" class="spectrum-SideNav-itemLink ">Migrate message queue configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/bulk-operations.html" class="spectrum-SideNav-itemLink ">Bulk operations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="message-queues/implement-bulk.html" class="spectrum-SideNav-itemLink ">Example bulk operations implementation</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/extension_attributes/adding-attributes.html" class="spectrum-SideNav-itemLink ">Adding extension attributes to entity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="admin-grid.html" class="spectrum-SideNav-itemLink ">Adding an admin grid</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="searching-with-repositories.html" class="spectrum-SideNav-itemLink ">Searching with repositories</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howdoi/php/php_clear-dirs.html" class="spectrum-SideNav-itemLink ">Clear directories during development</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="adapters.html" class="spectrum-SideNav-itemLink ">Adapters</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="view-models.html" class="spectrum-SideNav-itemLink ">View models</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="variable-pool/index.html" class="spectrum-SideNav-itemLink ">Variable Pool</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Configuration</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="configuration/sensitive-and-environment-settings.html" class="spectrum-SideNav-itemLink ">Sensitive Environment Settings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="configuration/importers.html" class="spectrum-SideNav-itemLink ">Configuration Importers</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Framework</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="framework/serializer.html" class="spectrum-SideNav-itemLink ">Serialize Library</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="framework/array-manager.html" class="spectrum-SideNav-itemLink ">Array Manager</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Security</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="xss-protection.html" class="spectrum-SideNav-itemLink ">XSS Prevention</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="security/non-secure-functions.html" class="spectrum-SideNav-itemLink ">Non-secure functions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="security/content-security-policies.html" class="spectrum-SideNav-itemLink ">Content Security Policies</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/index.html" class="spectrum-SideNav-itemLink ">Versioning</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/check-version.html" class="spectrum-SideNav-itemLink ">Check the Magento version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/dependencies.html" class="spectrum-SideNav-itemLink ">Module version dependencies</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning/codebase-changes.html" class="spectrum-SideNav-itemLink ">Codebase changes</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Indexing overview</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.3/extension-dev-guide/indexing.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/extension-dev-guide/indexing.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Indexing is how Magento transforms data such as products and categories, to improve the performance of your <a href="https://glossary.magento.com/storefront">storefront</a>. As data changes, the transformed data must be updated or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including <a href="https://glossary.magento.com/catalog">catalog</a> data, prices, users, and stores) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.</p>
+
+<p>For example, if you change the price of an item from $4.99 to $3.99. Magento must reindex the price change to display it on your storefront.</p>
+
+<p>Without indexing, Magento would have to calculate the price of every product on the fly, taking into account <a href="https://glossary.magento.com/shopping-cart">shopping cart</a> price rules, bundle pricing, discounts, tier pricing, etc. Loading the price for a product would take a long time, possibly resulting in cart abandonment.</p>
+
+<h2 id="indexing-terminology">Indexing terminology</h2>
+
+<dl>
+  <dt>Dictionary</dt>
+  <dd>Original data entered to the system. Dictionaries are organized in <a href="http://en.wikipedia.org/wiki/Database_normalization" target="_blank">normal form</a> to facilitate maintenance (updating the data).</dd>
+  <dt>Index</dt>
+  <dd>Representation of the original data for optimized reading and searching. Indexes can contain results of aggregations and various calculations. Index data can be always re-created from a dictionary using a certain algorithm.</dd>
+  <dt>Indexer</dt>
+  <dd>Object that creates an index.</dd>
+</dl>
+
+<h3 id="create-custom-indexers">Create custom indexers</h3>
+
+<p>Magento contains several indexers out of the box, but you might want to add your own if your customization requires data searches, which are not optimized by the Magento default indexers.</p>
+
+<p>This topic provides a high level description of how indexing is implemented from a developer’s point of view, and practical advice for how to add your own indexer.</p>
+
+<h2 id="how-magento-implements-indexing">How Magento implements indexing</h2>
+
+<p>The following components are involved in the indexing process:</p>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Component</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+            <td>Implements:
+                <ul>
+                    <li>indexer declaration</li>
+                    <li>indexer running</li>
+                    <li>indexer running mode configuration</li>
+                    <li>indexer status</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+            <td>
+                <ul>
+                    <li>Allows tracking database changes for a certain <a href="https://glossary.magento.com/entity" target="_blank">entity</a> (product, <a href="https://glossary.magento.com/category" target="_blank">category</a>, etc.) and running change handler.</li>
+                    <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing <a href="https://glossary.magento.com/php" target="_blank">PHP</a> code instead of SQL queries, which allows materializing multiple queries).</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p class="bs-callout-warning"><code class="language-plaintext highlighter-rouge">Magento_Indexer</code> replaces the Magento 1.x <code class="language-plaintext highlighter-rouge">Magento_Index</code> module. Use <code class="language-plaintext highlighter-rouge">Magento_Indexer</code> for all new development.</p>
+
+<h3 id="indexing-types">Indexing types</h3>
+
+<p>Each index can perform the following types of reindex operations:</p>
+
+<ul>
+  <li>
+    <p>Full reindex, which means rebuilding all the indexing-related database tables</p>
+
+    <p>Full reindexing can be caused by a variety of things, including creating a new web store or new customer group.</p>
+
+    <p>You can optionally fully reindex at any time using the <a href="../config-guide/cli/config-cli-subcommands-index.html">command line</a>.</p>
+  </li>
+  <li>
+    <p>Partial reindex, which means rebuilding the database tables only for the things that changed (like changing a single product attribute or price)</p>
+  </li>
+</ul>
+
+<p>The type of reindex performed in each particular case depends on the type of changes made in the dictionary or in the system. This dependency is specific for <a href="indexing.html#m2devgde-indexing-outofbox">each indexer</a>.</p>
+
+<p>The following figure shows the logic for partial reindexing.</p>
+
+<p><img src="../../../common/images/index_indexers_flow.png" alt="Partial indexing workflow" width="300px" /></p>
+
+<h3 id="m2devgde-indexing-status">Indexer status</h3>
+
+<p>Depending on whether an index data is up to date, an indexer status value is one of the following:</p>
+
+<ul>
+  <li>valid - data is synchronized, no reindex required</li>
+  <li>invalid - the original data was changed, the index should be updated</li>
+  <li>working - indexing is in progress</li>
+</ul>
+
+<p>The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the <a href="https://glossary.magento.com/admin">Admin</a> panel in <strong>System &gt;</strong> Tools <strong>&gt; Index Management</strong> or manually using the <a href="../config-guide/cli/config-cli-subcommands-index.html#view-indexer-status">command line</a>.</p>
+
+<h3 id="m2devgde-indexing-modes">Indexing modes</h3>
+
+<p>Reindexing can be performed in two modes:</p>
+
+<ul>
+  <li>Update on Save - index tables are updated immediately after the dictionary data is changed.</li>
+  <li>Update by Schedule - index tables are updated by cron job according to the configured schedule.</li>
+</ul>
+
+<p class="bs-callout-info"><strong>Update by Schedule</strong> does not support the <code class="language-plaintext highlighter-rouge">customer_grid</code> indexer. You must either use <strong>Update on Save</strong> or reindex the customer grid manually (<code class="language-plaintext highlighter-rouge">bin/magento indexer:reindex customer_grid</code>). See the <a href="https://support.magento.com/hc/en-us/articles/360025481892-New-customer-records-are-not-displayed-in-the-Customers-grid-after-importing-them-from-CSV">Help Center article</a>.</p>
+
+<p>To set these options:</p>
+
+<ol>
+  <li>Log in to the <a href="https://glossary.magento.com/magento-admin">Magento Admin</a>.</li>
+  <li>Click <strong>System &gt;</strong> Tools <strong>&gt; Index Management</strong>.</li>
+  <li>Select the checkbox next to each type of indexer to change.</li>
+  <li>From the <strong>Actions</strong> list, click the indexing mode.</li>
+  <li>Click <strong>Submit</strong>.</li>
+</ol>
+
+<p>You can also reindex from the <a href="../config-guide/cli/config-cli-subcommands-index.html#configure-indexers">command line</a></p>
+
+<p>The following figure shows an example of setting indexers to Update by Schedule:</p>
+
+<p><img src="../../../common/images/index_index-modes.png" alt="Changing indexer modes" width="600px" /></p>
+
+<h3 id="m2devgde-mview">Mview</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">mview.xml</code> file is used to track database changes for a certain entity.</p>
+
+<p>For example part of <code class="language-plaintext highlighter-rouge">Magento/Catalog/etc/mview.xml</code> is tracking category to product relation described in the following record:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- ... --&gt;</span>
+<span class="nt">&lt;view</span> <span class="na">id=</span><span class="s">"catalog_category_product"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Model\Indexer\Category\Product"</span> <span class="na">group=</span><span class="s">"indexer"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;subscriptions&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"catalog_category_entity"</span> <span class="na">entity_column=</span><span class="s">"entity_id"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">"catalog_category_entity_int"</span> <span class="na">entity_column=</span><span class="s">"entity_id"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/subscriptions&gt;</span>
+<span class="nt">&lt;/view&gt;</span>
+<span class="c">&lt;!-- ... --&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Explanation of nodes:</p>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">view</code> node defines an indexer. The <code class="language-plaintext highlighter-rouge">id</code> attribute is a name of the indexer table, the <code class="language-plaintext highlighter-rouge">class</code> attribute is indexer executor, the <code class="language-plaintext highlighter-rouge">group</code> attribute defines the indexer group.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">subscriptions</code> node is a list of tables for tracking changes.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">table</code> node defines the certain table to observe and track changes. The attribute <code class="language-plaintext highlighter-rouge">name</code> is a name of an observable table, the attribute <code class="language-plaintext highlighter-rouge">entity_column</code> is an identifier column of entity to be re-indexed. So, in case of <code class="language-plaintext highlighter-rouge">catalog_category_product</code>, whenever one or more categories is saved, updated or deleted in <code class="language-plaintext highlighter-rouge">catalog_category_entity</code> the <code class="language-plaintext highlighter-rouge">execute</code> method of <code class="language-plaintext highlighter-rouge">Magento\Catalog\Model\Indexer\Category\Product</code> will be called with argument <code class="language-plaintext highlighter-rouge">ids</code> containing ids of entities from column defined under <code class="language-plaintext highlighter-rouge">entity_column</code> attribute. If indexer type is set to “Update on Save” the method is called right away after the operation. If it set to “Update by Schedule” the mechanism creates a record in the change log table using MYSQL triggers.</li>
+</ul>
+
+<p>A change log table is created according to the naming rule - INDEXER_TABLE_NAME + ‘_cl’, in case of <code class="language-plaintext highlighter-rouge">catalog_category_product</code> it will be <code class="language-plaintext highlighter-rouge">catalog_category_product_cl</code>.
+The table contains the <code class="language-plaintext highlighter-rouge">version_id</code> auto-increment column and <code class="language-plaintext highlighter-rouge">entity_id</code> column that contains identifiers of entities to be re-indexed.
+For each <code class="language-plaintext highlighter-rouge">table</code> node the framework automatically creates MYSQL AFTER triggers for each possible event (INSERT, UPDATE, DELETE).</p>
+
+<p>For the table <code class="language-plaintext highlighter-rouge">catalog_category_entity</code> triggers will be created with the following statements.
+INSERT operation:</p>
+
+<pre><code class="language-mysql">BEGIN
+    INSERT IGNORE INTO `catalog_category_product_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+END
+</code></pre>
+
+<p>UPDATE operation:</p>
+
+<pre><code class="language-mysql">BEGIN
+    IF (NEW.`entity_id` &lt;=&gt; OLD.`entity_id`
+        OR NEW.`attribute_set_id` &lt;=&gt; OLD.`attribute_set_id`
+        OR NEW.`parent_id` &lt;=&gt; OLD.`parent_id`
+        OR NEW.`created_at` &lt;=&gt; OLD.`created_at`
+        OR NEW.`path` &lt;=&gt; OLD.`path`
+        OR NEW.`position` &lt;=&gt; OLD.`position`
+        OR NEW.`level` &lt;=&gt; OLD.`level`
+        OR NEW.`children_count` &lt;=&gt; OLD.`children_count`)
+            THEN INSERT IGNORE INTO `catalog_category_product_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+    END IF;
+END
+</code></pre>
+
+<p>DELETE operation:</p>
+
+<pre><code class="language-mysql">BEGIN
+    INSERT IGNORE INTO `catalog_category_product_cl` (`entity_id`) VALUES (OLD.`entity_id`);
+END
+</code></pre>
+
+<p>The method <code class="language-plaintext highlighter-rouge">Magento\Framework\Mview\ViewInterface::update</code> is responsible for handling records in the changelog. The method is being called by CRON and
+it defines IDs to be re-indexed from the change log by last applied <code class="language-plaintext highlighter-rouge">version_id</code> and calls the <code class="language-plaintext highlighter-rouge">execute</code> method for each particular indexer with IDs as an argument.</p>
+
+<h3 id="how-to-reindex">How to reindex</h3>
+
+<p>You can reindex by:</p>
+
+<ul>
+  <li>Using a <a href="../config-guide/cli/config-cli-subcommands-cron.html">cron job</a>, which is preferred because indexing runs every minute.</li>
+  <li>Using the <a href="../config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex"><code class="language-plaintext highlighter-rouge">magento indexer:reindex [indexer]</code></a> command, which reindexes selected indexers, or all indexers, one time only.</li>
+</ul>
+
+<h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
+
+<p>The Magento <code class="language-plaintext highlighter-rouge">Open Source</code> application implements the following indexers (use <a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html#indexerinfo">bin/magento indexer:info</a> to list the indexers):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indexer name</th>
+      <th>Indexer method name</th>
+      <th>Indexer class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Design Config Grid</td>
+      <td><code class="language-plaintext highlighter-rouge">design_config_grid</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Theme/Model/Indexer/Design/Config.php">Magento\Theme\Model\Indexer\Design\Config</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Customer Grid</td>
+      <td><code class="language-plaintext highlighter-rouge">customer_grid</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/Indexer/Action/Entity.php">Magento\Framework\Indexer\Action\Entity</a></td>
+      <td>Rebuilds the customer grid index. Not supported by the <code class="language-plaintext highlighter-rouge">Update by Schedule</code> indexing mode. See the <a href="https://support.magento.com/hc/en-us/articles/360025481892-New-customer-records-are-not-displayed-in-the-Customers-grid-after-importing-them-from-CSV">Help Center article</a>.</td>
+    </tr>
+    <tr>
+      <td>Category products</td>
+      <td><code class="language-plaintext highlighter-rouge">catalog_category_product</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Model/Indexer/Category/Product.php">Magento\Catalog\Model\Indexer\Category\Product</a></td>
+      <td>Creates category/products association</td>
+    </tr>
+    <tr>
+      <td>Product categories</td>
+      <td><code class="language-plaintext highlighter-rouge">catalog_product_category</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Model/Indexer/Product/Category.php">Magento\Catalog\Model\Indexer\Product\Category</a></td>
+      <td>Creates category/products association</td>
+    </tr>
+    <tr>
+      <td>Product price</td>
+      <td><code class="language-plaintext highlighter-rouge">catalog_product_price</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Model/Indexer/Product/Price.php">Magento\Catalog\Model\Indexer\Product\Price</a></td>
+      <td>Pre-calculates product prices</td>
+    </tr>
+    <tr>
+      <td>Product entity attribute value</td>
+      <td><code class="language-plaintext highlighter-rouge">catalog_product_attribute</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Model/Indexer/Product/Eav.php">Magento\Catalog\Model\Indexer\Product\Eav</a></td>
+      <td>Reorganizes the EAV product structure to flat structure</td>
+    </tr>
+    <tr>
+      <td>Stock</td>
+      <td><code class="language-plaintext highlighter-rouge">cataloginventory_stock</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Catalog rule product</td>
+      <td><code class="language-plaintext highlighter-rouge">catalogrule_rule</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Catalog product rule</td>
+      <td><code class="language-plaintext highlighter-rouge">catalogrule_product</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Catalog search</td>
+      <td><code class="language-plaintext highlighter-rouge">catalogsearch_fulltext</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Magento Commerce Edition contains all indexers of Magento Open Source Edition and the following ones:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indexer name</th>
+      <th>Indexer method name</th>
+      <th>Indexer class</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Inventory</td>
+      <td><code class="language-plaintext highlighter-rouge">inventory</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Magento\InventoryIndexer\Indexer\InventoryIndexer</code></td>
+      <td>Inventory index (MSI)</td>
+    </tr>
+    <tr>
+      <td>Product/Target Rule</td>
+      <td><code class="language-plaintext highlighter-rouge">targetrule_product_rule</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Magento\TargetRule\Model\Indexer\TargetRule\Product\Rule</code></td>
+      <td>Indexes product/rule association</td>
+    </tr>
+    <tr>
+      <td>Target Rule/Product</td>
+      <td><code class="language-plaintext highlighter-rouge">targetrule_rule_product</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Magento\TargetRule\Model\Indexer\TargetRule\Rule\Product</code></td>
+      <td>Indexes rule/product association</td>
+    </tr>
+    <tr>
+      <td>Sales Rule</td>
+      <td><code class="language-plaintext highlighter-rouge">salesrule_rule</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Magento\AdvancedSalesRule\Model\Indexer\SalesRule</code></td>
+      <td>Indexes sales rule</td>
+    </tr>
+  </tbody>
+</table>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-12-03">
+    Dec 3rd, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

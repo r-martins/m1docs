@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="mage-for-dev-6.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title"></h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title"></h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/magefordev/mage-for-dev-6.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/m1x/magefordev/mage-for-dev-6.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+
+    <link rel="stylesheet" type="text/css" href="../../../common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="../../../common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="../../../common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../common/css/favicon.ico" type="image/x-icon">
+    <title>Magento for Developers: Part 6&mdash;Magento Setup Resources</title>
+
+</head>
+
+<img src="../images/m1xheader.png" width="1024" alt="header" />
+<div class="message-banner">
+  <h4>Magento 1.x Software Support Notice</h4>
+  <p>
+    For Magento Commerce 1, Magento is providing software support through June 2020. Depending on your Magento Commerce 1 version, software support may include both quality fixes and security patches. Please review our <a href="https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf">Magento Software Lifecycle Policy</a> to see how your version of Magento Commerce 1 is supported.
+  </p>
+  <p>
+  	For Magento Open Source 1.5 to 1.9, Magento is providing software security patches through June 2020 to ensure those sites remain secure and compliant. Visit our <a href="https://info2.magento.com/M1OpenSource.html">information page</a> for more details about our software maintenance policy and other considerations for your business.
+  </p>
+</div>
+
+
+<div id="content">
+<h1>Magento for Developers: Part 6&mdash;Magento Setup Resources</h1>
+<p><em>by Alan Storm</em>, updated for Magento 1.12</p>
+<p><a href="https://github.com/magento/devdocs-m1/tree/master/magefordev/mage-for-dev-6.html" target="_blank">Edit this page on GitHub <img src="../../../common/images/github_icon.png" height="15px"></a></p>
+
+
+<!-- Magento for Developers: Part 6&mdash;Magento Setup Resources -->
+<!-- magento-for-dev-part-6-magento-setup-resources
+
+<style type="text/css">
+#kb-entry .series {float: right; width: 175px; margin-left: 10px; font-size: 12px; }
+#kb-entry .series ul {margin-left: 15px;}
+</style> 
+<div class="r-box-rss series">  -->
+
+<h5>Other articles in this series:</h5>
+<ul>
+<li><a href="mage-for-dev-1.html">Part 1&mdash;Introduction to Magento</a>
+<li><a href="mage-for-dev-2.html">Part 2&mdash;The Magento Config</a>
+<li><a href="mage-for-dev-3.html">Part 3&mdash;Magento Controller Dispatch</a>
+<li><a href="mage-for-dev-4.html">Part 4&mdash;Magento Layouts, Blocks and Templates</a>
+<li><a href="mage-for-dev-5.html">Part 5&mdash;Magento Models and ORM Basics</a>
+<li><a href="mage-for-dev-6.html">Part 6&mdash;Magento Setup Resources</a>
+<li><a href="mage-for-dev-7.html">Part 7&mdash;Advanced ORM: Entity Attribute Value</a>
+<li><a href="mage-for-dev-8.html">Part 8&mdash;Varien Data Collections</a>
+</ul>
+
+
+<p class="para1">On any fast paced software development project, the task of keeping the development and production databases in sync become a sticky wicket. Magento offers a system to create versioned resource migration scripts that can help your team deal with this often contentious part of the development process.</p>
+
+<p><a href="mage-for-dev-5.html">In the ORM article</a> we created a model for a weblog post.  At the time, we ran our <tt>CREATE TABLE</tt> statements directly against the database.  This time, we'll create a Setup Resource for our module that will create the table for us.  We'll also create an upgrade script for our module that will update an already installed module.  The steps we'll need to take are</p>
+
+<ol>
+<li>Add the Setup Resource to our config</li>
+<li>Create our resource class file</li>
+<li>Create our installer script</li>
+<li>Create our upgrade script</li>
+</ol>
+<br clear="all">
+
+<h2>Adding the Setup Resource</h2>
+<p>So, let's continue with the weblog module <a href="mage-for-dev-5.html">we created last time</a>.  In our &lt;global /&gt; section, add the following</p>
+
+<pre>
+&lt;global>
+    &lt;!-- ... -->
+    &lt;resources>
+        &lt;weblog_setup>
+            &lt;setup>
+                &lt;module&gt;Magentotutorial_Weblog&lt;/module&gt;
+                &lt;class>Magentotutorial_Weblog_Model_Resource_Setup&lt;/class>
+            &lt;/setup>
+        &lt;/weblog_setup>
+    &lt;/resources>
+    &lt;!-- ... -->
+&lt;/global>
+</pre>
+
+<p>The <tt>&lt;weblog_setup&gt;</tt> tag will be used to uniquely identify this Setup Resource.  It's encouraged, but not necessary, that you use the <tt>modelname_setup</tt> naming convention.  The <tt>&lt;module&gt;Magentotutorial_Weblog&lt;/module&gt;</tt> tag block should contain the <tt>Packagename_Modulename</tt> of your module.  Finally, <tt>&lt;class&gt;Magentotutorial_Weblog_Model_Resource_Setup&lt;/class&gt;</tt> should contain the name of the class we'll be creating for our Setup Resource.  For basic setup scripts it's not necessary to create a custom class, but by doing it now you'll give yourself more flexibility down the line.</p>
+
+<p>After adding the above section to your config, clear your Magento cache and try to load any page of your Magento site.  You'll see an exception something like</p>
+
+<pre>Fatal error: Class 'Magentotutorial_Weblog_Model_Resource_Setup' not found in</pre>
+
+<p>Magento just tried to instantiate the class you specified in your config, but couldn't find it.  You'll want to create the following file, with the following contents.</p>
+
+<p>File: app/code/local/Magentotutorial/Weblog/Model/Resource/Setup.php</p>
+<pre>
+class Magentotutorial_Weblog_Model_Resource_Setup extends Mage_Core_Model_Resource_Setup {
+}
+</pre>
+
+<p>Now, reload any page of your Magento site.  The exception should be gone, and your page should load as expected.</p>
+
+<h2>Creating our Installer Script</h2>
+
+<p>Next, we'll want to create our installer script.  This is the script that will contain any <tt>CREATE TABLE</tt> or other SQL code that needs to be run to initialize our module.</p>
+
+<p>First, take a look at your config.xml file</p>
+
+<pre>
+&lt;modules>
+    &lt;Magentotutorial_Weblog>
+        &lt;version>0.1.0&lt;/version>
+    &lt;/Magentotutorial_Weblog>
+&lt;/modules>
+</pre>
+
+<p>This section is required in all config.xml files, and identifies the module as well as the its version number.  Your installer script's name will be based on this version number.  The following assumes the current version of your module is 0.1.0.  </p>
+
+<p>Create the following file at the following location</p>
+
+<p>File: <tt>app/code/local/Magentotutorial/Weblog/sql/weblog_setup/mysql4-install-0.1.0.php</tt></p>
+<pre>
+echo 'Running This Upgrade: '.get_class($this)."\n &lt;br /&gt; \n";
+die("Exit for now");
+</pre>
+
+<p>The <tt>weblog_setup</tt> portion of the path should match the tag you created in your config.xml file (<tt>&lt;weblog_setup /&gt;</tt>). The <tt>0.1.0</tt> portion of the filename should match the starting version of your module.  Clear your Magento cache and reload any page in your Magento site and you should see something like</p>
+
+<pre>
+Running This Upgrade: Magentotutorial_Weblog_Model_Resource_Setup
+Exit for now
+ ...
+</pre>
+
+<p>Which means your update script ran.  Eventually we'll put our SQL update scripts here, but for now we're going to concentrate on the setup mechanism itself.  Remove the "die" statement from your script so it looks like the following</p>
+
+<pre>echo 'Running This Upgrade: '.get_class($this)."\n &lt;br /&gt; \n";</pre>
+
+<p>Reload your page.  You should see your upgrade message displayed at the top of the page.  Reload again, and your page should be displayed as normal.</p>
+
+<h2>Resource Versions</h2>
+
+<p>Magento's Setup Resources allow you to simply drop your install scripts (and upgrade scripts, which we'll get to in a bit) onto the server, and have the system  automatically run them.  This allows you to have all your database migrations scripts stored in the system in a consistent format.</p>
+
+<p>Using your favorite database client, take a look at the core_setup table</p>
+
+<pre>mysql> select * from core_resource;
+    +-------------------------+------------+--------------+
+    | code                    | version    | data_version |
+    +-------------------------+------------+--------------+
+    | adminnotification_setup | 1.6.0.0    | 1.6.0.0      |
+    | admin_setup             | 1.6.1.0    | 1.6.1.0      |
+    | api2_setup              | 1.0.0.0    | 1.0.0.0      |
+    | api_setup               | 1.6.0.0    | 1.6.0.0      |
+    | backup_setup            | 1.6.0.0    | 1.6.0.0      |
+    | bundle_setup            | 1.6.0.0.1  | 1.6.0.0.1    |
+    | captcha_setup           | 1.7.0.0.0  | 1.7.0.0.0    |
+    | catalogindex_setup      | 1.6.0.0    | 1.6.0.0      |
+    | cataloginventory_setup  | 1.6.0.0.2  | 1.6.0.0.2    |
+    | catalogrule_setup       | 1.6.0.3    | 1.6.0.3      |
+    | catalogsearch_setup     | 1.6.0.0    | 1.6.0.0      |
+    | catalog_setup           | 1.6.0.0.14 | 1.6.0.0.14   |
+    | checkout_setup          | 1.6.0.0    | 1.6.0.0      |
+    | cms_setup               | 1.6.0.0.1  | 1.6.0.0.1    |
+    | compiler_setup          | 1.6.0.0    | 1.6.0.0      |
+    | contacts_setup          | 1.6.0.0    | 1.6.0.0      |
+    | core_setup              | 1.6.0.2    | 1.6.0.2      |
+    | cron_setup              | 1.6.0.0    | 1.6.0.0      |
+    | customer_setup          | 1.6.2.0.1  | 1.6.2.0.1    |
+    | dataflow_setup          | 1.6.0.0    | 1.6.0.0      |
+    | directory_setup         | 1.6.0.1    | 1.6.0.1      |
+    | downloadable_setup      | 1.6.0.0.2  | 1.6.0.0.2    |
+    | eav_setup               | 1.6.0.0    | 1.6.0.0      |
+    | giftmessage_setup       | 1.6.0.0    | 1.6.0.0      |
+    | googleanalytics_setup   | 0.1.0      | 0.1.0        |
+    | googlecheckout_setup    | 1.6.0.1    | 1.6.0.1      |
+    | importexport_setup      | 1.6.0.2    | 1.6.0.2      |
+    | index_setup             | 1.6.0.0    | 1.6.0.0      |
+    | log_setup               | 1.6.0.0    | 1.6.0.0      |
+    | moneybookers_setup      | 1.6.0.0    | 1.6.0.0      |
+    | newsletter_setup        | 1.6.0.1    | 1.6.0.1      |
+    | oauth_setup             | 1.0.0.0    | 1.0.0.0      |
+    | paygate_setup           | 1.6.0.0    | 1.6.0.0      |
+    | payment_setup           | 1.6.0.0    | 1.6.0.0      |
+    | paypaluk_setup          | 1.6.0.0    | 1.6.0.0      |
+    | paypal_setup            | 1.6.0.2    | 1.6.0.2      |
+    | persistent_setup        | 1.0.0.0    | 1.0.0.0      |
+    | poll_setup              | 1.6.0.0    | 1.6.0.0      |
+    | productalert_setup      | 1.6.0.0    | 1.6.0.0      |
+    | rating_setup            | 1.6.0.0    | 1.6.0.0      |
+    | reports_setup           | 1.6.0.0.1  | 1.6.0.0.1    |
+    | review_setup            | 1.6.0.0    | 1.6.0.0      |
+    | salesrule_setup         | 1.6.0.3    | 1.6.0.3      |
+    | sales_setup             | 1.6.0.7    | 1.6.0.7      |
+    | sendfriend_setup        | 1.6.0.0    | 1.6.0.0      |
+    | shipping_setup          | 1.6.0.0    | 1.6.0.0      |
+    | sitemap_setup           | 1.6.0.0    | 1.6.0.0      |
+    | tag_setup               | 1.6.0.0    | 1.6.0.0      |
+    | tax_setup               | 1.6.0.3    | 1.6.0.3      |
+    | usa_setup               | 1.6.0.1    | 1.6.0.1      |
+    | weblog_setup            | 0.1.0      | 0.1.0        |
+    | weee_setup              | 1.6.0.0    | 1.6.0.0      |
+    | widget_setup            | 1.6.0.0    | 1.6.0.0      |
+    | wishlist_setup          | 1.6.0.0    | 1.6.0.0      |
+    | xmlconnect_setup        | 1.6.0.0    | 1.6.0.0      |
+    +-------------------------+------------+--------------+
+    55 rows in set (0.00 sec)
+</pre>
+
+<p>This table contains a list of all the installed modules, along with the installed version number.  You can see our module near the end</p>
+
+<pre>| weblog_setup            | 0.1.0      | 0.1.0        |</pre>
+
+<p>This is how Magento knows not to re-run your script on the second, and on all successive, page loads.  The <tt>weblog_setup</tt> is already installed, so it won't be updated. If you want to re-run your installer script (useful when you're developing), just delete the row for your module from this table.  Let's do that now, and actually add the SQL to create our table.  So first, run the following SQL.</p>
+
+<pre>DELETE from core_resource where code = 'weblog_setup';</pre>
+
+<p>We'll also want to drop the table we manually created in the <a href="mage-for-dev-5.html">ORM article</a>.  </p>
+
+<pre>DROP TABLE blog_posts;</pre>
+
+<p>Then, add the following code to your setup script.</p>
+
+<pre>$installer = $this;
+$installer->startSetup();
+$installer->run("
+    CREATE TABLE `{$installer->getTable('weblog/blogpost')}` (
+      `blogpost_id` int(11) NOT NULL auto_increment,
+      `title` text,
+      `post` text,
+      `date` datetime default NULL,
+      `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
+      PRIMARY KEY  (`blogpost_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+    INSERT INTO `{$installer->getTable('weblog/blogpost')}` VALUES (1,'My New Title','This is a blog post','2009-07-01 00:00:00','2009-07-02 23:12:30');
+");
+$installer->endSetup();
+</pre>
+
+<p>Clear your Magento cache and reload any page in the system. You should have a new blog_posts table with a single row.</p>
+
+<h2>Anatomy of a Setup Script</h2>
+
+<p>So, let's go over the script line-by-line.  First, there's this (or is that $this?)</p>
+
+<pre>$installer = $this;</pre>
+
+<p>Each installer script is run from the context of a Setup Resource class, the class you created above.  That means any reference to <tt>$this</tt> from within the script will be a reference to an object instantiated from this class.  While not necessary, most setup scripts in the core modules will alias <tt>$this</tt> to a variable called installer, which is what we've done here.  While not necessary, it is the convention and it's always best to follow the convention unless you have a good reason for breaking it.</p>
+
+<p>Next, you'll see our queries are bookended by the following two method calls.  </p>
+
+<pre>$installer-&gt;startSetup();
+//...
+$installer-&gt;endSetup();
+</pre>
+
+<p>If you take a look at the <tt>Mage_Core_Model_Resource_Setup</tt> class in <tt>app/code/core/Mage/Core/Model/Resource/Setup.php</tt> (which your setup class inherits from) you can see that these methods do some basic SQL setup</p>
+
+<pre>
+    public function startSetup()
+    {
+        $this->getConnection()->startSetup()
+        return $this;
+    }
+
+    public function endSetup()
+    {
+        $this->getConnection()->endSetup();
+        return $this;
+    }
+</pre>
+
+<p>You can look into <tt>Varien_Db_Adapter_Pdo_Mysql</tt> in <tt>lib/Varien/Db/Adapter/Pdo/Mysql.php</tt> to find the real SQL setup executed for MySQL connections in the <tt>startSetup()</tt> and <tt>endSetup()</tt> methods.</p>
+
+<p>Finally, there's the call to the <tt>run</tt> method </p>
+
+<pre>$installer-&gt;run(...);</pre>
+
+<p>which accepts a string containing the SQL needed to setup your database table(s).  You may specify any number of queries, separated by a semi-colon.  You also probably noticed the following</p>
+
+<pre>$installer-&gt;getTable('weblog/blogpost')</pre>
+
+<p>The <tt>getTable</tt> method allows you to pass in a Magento Model URI and get its table name.  While not necessary, using this method ensures that your script will continue to run, even if someone changes the name of their table in the config file.  The <tt>Mage_Core_Model_Resource_Setup</tt> class contains many useful helper methods like this.  The best way to become familiar with everything that's possible is to study the installer scripts used by the core Magento modules.</p>
+
+<h2>RDBMS Agnostic Scripts</h2>
+
+<p>Since version 1.6, Magento (in theory) supports more database backends then only MySQL. Since our setup script contains raw SQL statements, it may not run correctly on a different database system, say MSSQL. For that reason the setup script name is prefixt with the string <tt>mysql4-</tt></p>
+
+<p>In order to make setup scripts cross-database compatible, Magento offers a DDL (Data Definition Language) Table object. Here is an alternative version of our setup script that would run on any supported RDBMS.</p>
+
+<p>File: <code>app/code/local/Magentotutorial/Weblog/sql/weblog_setup/mysql4-install-0.1.0.php</code></p>
+<pre>
+$installer = $this;
+$installer->startSetup();
+$table = $installer->getConnection()->newTable($installer->getTable('weblog/blogpost'))
+    ->addColumn('blogpost_id', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
+        'unsigned' => true,
+        'nullable' => false,
+        'primary' => true,
+        'identity' => true,
+        ), 'Blogpost ID')
+    ->addColumn('title', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
+        'nullable' => false,
+        ), 'Blogpost Title')
+    ->addColumn('post', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(
+        'nullable' => true,
+        ), 'Blogpost Body')
+    ->addColumn('date', Varien_Db_Ddl_Table::TYPE_DATETIME, null, array(
+        ), 'Blogpost Date')
+    ->addColumn('timestamp', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
+        ), 'Timestamp')
+    ->setComment('Magentotutorial weblog/blogpost entity table');
+$installer->getConnection()->createTable($table);
+
+$installer->endSetup();
+</pre>
+
+<p>As you can see, there is no raw SQL in this version of the setup script. So which version should you use? If you want your Modules to run on any RDBMS backend, use the new DDL style upgrade scripts. If you are concerned about backward compatibility, use the raw SQL flavor, that is still supported by Magento 1.6 and 1.7 (and probably will be supported by any 1.x Magento release).</p>
+
+<h2>Module Upgrades</h2>
+
+<p>So, that's how you create a script that will setup your initial database tables, but what if you want to alter the structure of an existing module?  Magento's Setup Resources support a simple versioning scheme that will let you automatically run scripts to <strong>upgrade</strong> your modules.  </p>
+
+<p>Once Magento runs an <em>installer</em> script for a module, it will <strong>never run another installer for that module again</strong> (short of manually deleting the reference in the <tt>core_resource</tt> table).  Instead, you'll need to create an upgrade script.  Upgrade scripts are very similar to installer scripts, with a few key differences.</p>
+
+<p>To get started, we'll create a script at the following location, with the following contents</p>
+
+<p>File: app/code/local/Magentotutorial/Weblog/sql/weblog_setup/upgrade-0.1.0-0.2.0.php:</p>
+<pre>
+echo 'Testing our upgrade script (upgrade-0.1.0-0.2.0.php) and halting execution to avoid updating the system version number <br />';
+die();
+</pre>
+
+<p>Upgrade scripts are placed in the same folder as your installer script, but named slightly differently.  First, and most obviously, the file name contains the word upgrade.  Secondly, you'll notice there are <strong>two</strong> version numbers, separated by a "-".  The first (<tt>0.1.0</tt>) is the module version that we're upgrading <strong>from</strong>.  The second (<tt>0.2.0</tt>) is the module version we're upgrading <strong>to</strong>.</p>
+
+<p>If we cleared our Magento cache and reloaded a page, our script wouldn't run.  We need to update the version number in our module's config.xml file to trigger the upgrade</p>
+
+<pre>
+&lt;modules>
+    &lt;Magentotutorial_Weblog>
+        &lt;version>0.2.0&lt;/version>
+    &lt;/Magentotutorial_Weblog>
+&lt;/modules>
+</pre>
+
+<p>With the new version number in place, we'll need to clear our Magento cache and load any page in our Magento site.  You should now see output from your upgrade script.  </p>
+
+<p>By the way, we also could have names our upgrade script <tt><strong>mysql4-</strong>upgrade-0.1.0-0.2.0.php</tt>. This would indicate our upgrade would contain MySQL specific SQL.</p>
+
+<p>Before we continue and actually implement the upgrade script, there's one important piece of behavior you'll want to be aware of.  Create another upgrade file at the following location with the following contents.</p>
+
+<p>File: app/code/local/Magentotutorial/Weblog/sql/weblog_setup/upgrade-0.1.0-0.1.5.php:</p>
+<pre>
+echo 'Testing our upgrade script (upgrade-0.1.0-0.1.5.php) and NOT halting execution &lt;br /&gt;';
+</pre>
+
+<p>If you reload a page, you'll notice you see BOTH messages.  When Magento notices the version number of a module has changed, it will run through <strong>all</strong> the setup scripts needed to bring that version up to date.  Although we never really created a version 0.1.5 of the Weblog module, Magento sees the upgrade script, and will attempt to run it.  Scripts will be run in order from lowest to highest.  If you take a peek at the <tt>core_resource</tt> table, </p>
+
+<pre>mysql> select * from core_resource where code = 'weblog_setup';
++--------------+---------+--------------+
+| code         | version | data_version |
++--------------+---------+--------------+
+| weblog_setup | 0.1.5   | 0.1.5        |
++--------------+---------+--------------+
+1 row in set (0.00 sec)
+</pre>
+
+<p>you'll notice Magento considers the version number to be 1.5.  That's because we completed executing the 1.0 to 1.5 upgrade, but did not complete execution of the 1.0 to 2.0 upgrade.</p>
+
+<p>So, with all that out of the way, writing our actual upgrade script is identical to writing an installer script.  Let's change the <tt>0.1.0-0.2.0</tt> script to read</p>
+
+<pre>
+$installer = $this;
+$installer->startSetup();
+$installer->getConnection()
+    ->changeColumn($installer->getTable('weblog/blogpost'), 'post', 'post', array(
+        'type' => Varien_Db_Ddl_Table::TYPE_TEXT,
+        'nullable' => false,
+        'comment' => 'Blogpost Body'
+    )
+);
+$installer->endSetup();
+die("You'll see why this is here in a second");
+</pre>
+
+<p>Try refreshing a page in your Magento site and ... nothing.  The upgrade script didn't run.  The post field in our table still allows null values, and more importantly, the call to <tt>die()</tt> did not halt execution.  Here's what happened</p>
+
+<ol>
+<li>The weblog_setup resource was at version <tt>0.1.0</tt></li>
+<li>We upgraded our module to version <tt>0.2.0</tt></li>
+<li>Magento saw the upgraded module, and saw there were two upgrade scripts to run; <tt>0.1.0</tt> to <tt>0.1.5</tt> and <tt>0.1.0</tt> to <tt>0.2.0</tt></li>
+<li>Magento queued up both scripts to run</li>
+<li>Magento ran the <tt>0.1.0</tt> to <tt>0.1.5</tt> script</li>
+<li>The weblog_setup resource is now at version <tt>0.1.5</tt></li>
+<li>Magento ran the <tt>0.1.0</tt> to <tt>0.2.0</tt> script, execution was halted</li>
+<li>On the next page load, Magento saw weblog_setup at version <tt>0.1.5</tt> and did not see any upgrade scripts to run since both scripts indicated they should be run <strong>from</strong> <tt>0.1.0</tt></li>
+</ol>
+
+<p>The correct way to achieve what we wanted would have been to name our scripts as follows</p>
+
+<pre>upgrade-0.1.0-0.1.5.php #This goes from 0.1.0 to 0.1.5
+upgrade-0.1.5-0.2.0.php #This goes 0.1.5 to 0.2.0</pre>
+
+<p>Magento is smart enough to run both scripts on a single page load.  You can go back in time and give this a try by updating the <tt>core_resource</tt> table</p>
+
+<pre>UPDATE core_resource SET version = '0.1.0', data_version = '0.1.0' WHERE code = 'weblog_setup';
+...</pre>
+
+<p>It's one of the odd quirks of the Magento system that the updates will run as previously configured.  This means you'll want to be careful with multiple developers adding update scripts to the system.  You'll either want a build-meister/deployment-manager type in charge of the upgrade scripts or (heaven forbid) developers will need to talk to one another.</p>
+
+<h2>Wrap-up</h2>
+
+<p>You should now know the basics of how to use Magento Setup Resources to create versioned database migration scripts, as well as understand the scripts provided in the core modules.  Beyond having a standard way for developers to write migration scripts, Setup Resources become much more important when creating and modifying Entity Attribute Value models.</p>
+
+</div>
+</html>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-01">
+    Jun 1st, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Step 4: Add form | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="step-4-add-form.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Page Builder</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/" class="spectrum-SideNav-itemLink ">What is Page Builder?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Getting started</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/install-pagebuilder.html" class="spectrum-SideNav-itemLink ">Install Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/view-pagebuilder.html" class="spectrum-SideNav-itemLink ">View Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/install-pagebuilder-examples.html" class="spectrum-SideNav-itemLink ">Install Page Builder Examples</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Extend a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-1-create-extension-module.html" class="spectrum-SideNav-itemLink ">Step 1. Create extension module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-2-extend-appearances.html" class="spectrum-SideNav-itemLink ">Step 2. Extend appearances</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-3-extend-forms.html" class="spectrum-SideNav-itemLink ">Step 3. Extend forms</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Create a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="step-1-add-configuration.html" class="spectrum-SideNav-itemLink ">Step 1. Add configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="step-2-add-templates.html" class="spectrum-SideNav-itemLink ">Step 2. Add templates</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="step-3-add-components.html" class="spectrum-SideNav-itemLink ">Step 3. Add components</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="step-4-add-form.html" class="spectrum-SideNav-itemLink ">Step 4. Add form</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="step-5-add-styles.html" class="spectrum-SideNav-itemLink ">Step 5. Add styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="step-6-add-icon.html" class="spectrum-SideNav-itemLink ">Step 6. Add an icon</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="summary.html" class="spectrum-SideNav-itemLink ">Summary</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">How-Tos</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-configure-styling-options.html" class="spectrum-SideNav-itemLink ">Configure styling options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-appearance.html" class="spectrum-SideNav-itemLink ">Add an appearance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-upgrade-library.html" class="spectrum-SideNav-itemLink ">Upgrade content types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-customize-panel.html" class="spectrum-SideNav-itemLink ">Customize the panel</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-image-uploader.html" class="spectrum-SideNav-itemLink ">Add an image uploader</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-storefront-widget.html" class="spectrum-SideNav-itemLink ">Add a storefront widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-text-editor.html" class="spectrum-SideNav-itemLink ">Add a text editor</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-custom-toolbar.html" class="spectrum-SideNav-itemLink ">Add a custom toolbar</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-icons-images.html" class="spectrum-SideNav-itemLink ">Add icons and images</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-change-breakpoints.html" class="spectrum-SideNav-itemLink ">Change breakpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-additional-configurations.html" class="spectrum-SideNav-itemLink ">Add additional configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-block-chooser.html" class="spectrum-SideNav-itemLink ">Add a block chooser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-full-width-layouts.html" class="spectrum-SideNav-itemLink ">Use full-width layouts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-customize-selectors.html" class="spectrum-SideNav-itemLink ">Customize selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-apply-product-conditions.html" class="spectrum-SideNav-itemLink ">Apply product conditions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-server-side-previews.html" class="spectrum-SideNav-itemLink ">Use server-side previews</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-pagebuilder-for-product-attributes.html" class="spectrum-SideNav-itemLink ">Use Page Builder for product attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-deactivate-pagebuilder.html" class="spectrum-SideNav-itemLink ">Deactivate Page Builder</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">BlueFoot content migration</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/index.html" class="spectrum-SideNav-itemLink ">Overview of content migration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/install-migration-module.html" class="spectrum-SideNav-itemLink ">Install the migration module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/run-migration-module.html" class="spectrum-SideNav-itemLink ">Run the migration module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/how-content-migration-works.html" class="spectrum-SideNav-itemLink ">How content migration works</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/migrate-content-custom-blocks.html" class="spectrum-SideNav-itemLink ">Migrate content from custom blocks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/migrate-other-bluefoot-content.html" class="spectrum-SideNav-itemLink ">Migrate other BlueFoot content</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/configurations.html" class="spectrum-SideNav-itemLink ">Configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/data-store.html" class="spectrum-SideNav-itemLink ">Datastore</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/events.html" class="spectrum-SideNav-itemLink ">Events</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/knockout-bindings.html" class="spectrum-SideNav-itemLink ">Knockout bindings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes.html" class="spectrum-SideNav-itemLink ">Release notes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../comp-status2.html" class="spectrum-SideNav-itemLink ">Component status</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Step 4: Add form</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"></div>
+
+
+  
+<div class="bs-callout spectrum-Alert edition-callout ee-only">
+  <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
+  <h4 class="spectrum-Alert-header">Magento Commerce only</h4>
+  <div class="spectrum-Alert-content">
+    The content on this page is for Magento Commerce only. 
+    <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
+  </div>
+</div>
+
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>In this step, we will create a UI component form. This form will give users another way to enter text for the Quote and style the text’s appearance.</p>
+
+<h2 id="about-forms">About forms</h2>
+
+<p>Page Builder provides two base forms that give you a ton of functionality you can inherit from right out-of-the-box:</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">pagebuilder_base_form_with_background_attributes</code> (inherits from <code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code>)</p>
+  </li>
+</ul>
+
+<p>Inheriting from either base form gives you an editor for your content type that slides out from the right side of the Admin screen.</p>
+
+<h3 id="pagebuilder_base_form"><code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code> gives you the following form fields in a fieldset named Advance, along with the Close, Reset, and Save buttons as shown here:</p>
+
+<p><img src="../images/pagebuilder_base_form.png" alt="Create config file" /></p>
+
+<h3 id="pagebuilder_base_form_with_background_attributes"><code class="language-plaintext highlighter-rouge">pagebuilder_base_form_with_background_attributes</code></h3>
+
+<p>In addition to all the fields from <code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code>,  the <code class="language-plaintext highlighter-rouge">pagebuilder_base_form_with_background_attributes</code> gives you the following “Background” form fields as shown here:</p>
+
+<p><img src="../images/pagebuilder_base_form_with_background_attributes.png" alt="Create config file" /></p>
+
+<p>The base form you inherit from depends on the complexity of the content type you create and the level of customization you want to give to end-users.</p>
+
+<h2 id="form-and-layout-conventions">Form and layout conventions</h2>
+
+<p>The conventions for naming your form and its layout are as follows:</p>
+
+<ul>
+  <li>The name for your form should follow this pattern: <code class="language-plaintext highlighter-rouge">pagebuilder_</code> + <code class="language-plaintext highlighter-rouge">content_type_name_</code> + <code class="language-plaintext highlighter-rouge">form.xml</code>. For example <code class="language-plaintext highlighter-rouge">pagebuilder_example_quote_form.xml</code>.</li>
+  <li>The name for your layout must match the name of your form, in this case: <code class="language-plaintext highlighter-rouge">pagebuilder_example_quote_form.xml</code>.</li>
+</ul>
+
+<p>Add your form and layout files to your module in the following locations:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">view/adminhtml/layout/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">view/adminhtml/ui_component/</code></li>
+</ul>
+
+<p><img src="../images/step4-add-form.png" alt="Create config file" /></p>
+
+<h2 id="form-configuration">Form configuration</h2>
+
+<p>In your configuration file, add your form name (without the .xml file extension) to the <code class="language-plaintext highlighter-rouge">form</code> attribute within the <code class="language-plaintext highlighter-rouge">&lt;type&gt;</code> element, as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> 
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_PageBuilder:etc/content_type.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"example_quote"</span>
+        <span class="na">label=</span><span class="s">"Quote"</span>
+        <span class="na">form=</span><span class="s">"pagebuilder_example_quote_form"</span>
+        <span class="err">...</span><span class="nt">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">form</code></td>
+      <td>Name of the UI component form that provides the form editor for your content type.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="the-quote-form">The Quote form</h2>
+
+<p>In our Quote form, we will inherit from <code class="language-plaintext highlighter-rouge">pagebuilder_base_form_with_background_attributes</code>. This will give end-users all the native Page Builder form fields shown in the two previous screenshots. In addition to those fields, we want to add four specific content entry and styling fields, as shown here:</p>
+
+<p><img src="../images/custom-form-fields.png" alt="Create config file" /></p>
+
+<p>The purpose of each field is described as follows:</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Quote</td>
+      <td>A textarea for writing or pasting in the quote’s text.</td>
+    </tr>
+    <tr>
+      <td>Author</td>
+      <td>A text input field for the author’s name.</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>A text input field to describe the author’s title or origin of the quote.</td>
+    </tr>
+    <tr>
+      <td>CSS for Quote</td>
+      <td>A text input field for end-users to add CSS class names for styling the text in the Quote field. This option is detailed in <a href="step-5-add-styles.html">Step 5: Add styles</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The Quote form is shown in full here for you to copy into your <code class="language-plaintext highlighter-rouge">pagebuilder_example_form.xml</code> file, followed by descriptions of the key parts.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span> <span class="na">extends=</span><span class="s">"pagebuilder_base_form_with_background_attributes"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>pagebuilder_example_quote_form.pagebuilder_example_quote_form_data_source<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Quote<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;settings&gt;</span>
+        <span class="nt">&lt;namespace&gt;</span>pagebuilder_example_quote_form<span class="nt">&lt;/namespace&gt;</span>
+        <span class="nt">&lt;deps&gt;</span>
+            <span class="nt">&lt;dep&gt;</span>pagebuilder_example_quote_form.pagebuilder_example_quote_form_data_source<span class="nt">&lt;/dep&gt;</span>
+        <span class="nt">&lt;/deps&gt;</span>
+    <span class="nt">&lt;/settings&gt;</span>
+    <span class="nt">&lt;dataSource</span> <span class="na">name=</span><span class="s">"pagebuilder_example_quote_form_data_source"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_PageBuilder/js/form/provider<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;dataProvider</span> <span class="na">name=</span><span class="s">"pagebuilder_example_quote_form_data_source"</span> <span class="na">class=</span><span class="s">"Magento\PageBuilder\Model\ContentType\DataProvider"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;settings&gt;</span>
+                <span class="nt">&lt;requestFieldName/&gt;</span>
+                <span class="nt">&lt;primaryFieldName/&gt;</span>
+            <span class="nt">&lt;/settings&gt;</span>
+        <span class="nt">&lt;/dataProvider&gt;</span>
+    <span class="nt">&lt;/dataSource&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"appearance_fieldset"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">component=</span><span class="s">"Magento_PageBuilder/js/form/element/dependent-fieldset"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;settings&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Appearance<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;additionalClasses&gt;</span>
+                <span class="nt">&lt;class</span> <span class="na">name=</span><span class="s">"admin__fieldset-visual-select-large"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/class&gt;</span>
+            <span class="nt">&lt;/additionalClasses&gt;</span>
+            <span class="nt">&lt;collapsible&gt;</span>false<span class="nt">&lt;/collapsible&gt;</span>
+            <span class="nt">&lt;opened&gt;</span>true<span class="nt">&lt;/opened&gt;</span>
+            <span class="nt">&lt;imports&gt;</span>
+                <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"hideFieldset"</span><span class="nt">&gt;</span>${$.name}.appearance:options<span class="nt">&lt;/link&gt;</span>
+                <span class="nt">&lt;link</span> <span class="na">name=</span><span class="s">"hideLabel"</span><span class="nt">&gt;</span>${$.name}.appearance:options<span class="nt">&lt;/link&gt;</span>
+            <span class="nt">&lt;/imports&gt;</span>
+        <span class="nt">&lt;/settings&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"appearance"</span> <span class="na">formElement=</span><span class="s">"select"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">component=</span><span class="s">"Magento_PageBuilder/js/form/element/dependent-visual-select"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"default"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>default<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;settings&gt;</span>
+                <span class="nt">&lt;additionalClasses&gt;</span>
+                    <span class="nt">&lt;class</span> <span class="na">name=</span><span class="s">"admin__field-wide"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/class&gt;</span>
+                    <span class="nt">&lt;class</span> <span class="na">name=</span><span class="s">"admin__field-visual-select-container"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/class&gt;</span>
+                <span class="nt">&lt;/additionalClasses&gt;</span>
+                <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+                <span class="nt">&lt;validation&gt;</span>
+                    <span class="nt">&lt;rule</span> <span class="na">name=</span><span class="s">"required-entry"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/rule&gt;</span>
+                <span class="nt">&lt;/validation&gt;</span>
+                <span class="nt">&lt;elementTmpl&gt;</span>Magento_PageBuilder/form/element/visual-select<span class="nt">&lt;/elementTmpl&gt;</span>
+            <span class="nt">&lt;/settings&gt;</span>
+            <span class="nt">&lt;formElements&gt;</span>
+                <span class="nt">&lt;select&gt;</span>
+                    <span class="nt">&lt;settings&gt;</span>
+                        <span class="nt">&lt;options</span> <span class="na">class=</span><span class="s">"AppearanceSourceQuote"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/settings&gt;</span>
+                <span class="nt">&lt;/select&gt;</span>
+            <span class="nt">&lt;/formElements&gt;</span>
+        <span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">"general"</span> <span class="na">sortOrder=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;settings&gt;</span>
+            <span class="nt">&lt;label/&gt;</span>
+        <span class="nt">&lt;/settings&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"quote_text"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">formElement=</span><span class="s">"textarea"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>page<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;settings&gt;</span>
+                <span class="nt">&lt;dataScope&gt;</span>quote_text<span class="nt">&lt;/dataScope&gt;</span>
+                <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Quote<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/settings&gt;</span>
+        <span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"quote_author"</span> <span class="na">sortOrder=</span><span class="s">"20"</span> <span class="na">formElement=</span><span class="s">"input"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>page<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;settings&gt;</span>
+                <span class="nt">&lt;dataScope&gt;</span>quote_author<span class="nt">&lt;/dataScope&gt;</span>
+                <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"false"</span><span class="nt">&gt;</span>Author<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/settings&gt;</span>
+        <span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"quote_author_desc"</span> <span class="na">sortOrder=</span><span class="s">"30"</span> <span class="na">formElement=</span><span class="s">"input"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>page<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;settings&gt;</span>
+                <span class="nt">&lt;dataScope&gt;</span>quote_author_desc<span class="nt">&lt;/dataScope&gt;</span>
+                <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"false"</span><span class="nt">&gt;</span>Author Description<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/settings&gt;</span>
+        <span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"quote_css"</span> <span class="na">sortOrder=</span><span class="s">"40"</span> <span class="na">formElement=</span><span class="s">"input"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>page<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;settings&gt;</span>
+                <span class="nt">&lt;dataScope&gt;</span>quote_css<span class="nt">&lt;/dataScope&gt;</span>
+                <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+                <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>CSS for Quote<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;/settings&gt;</span>
+        <span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="appearance-fieldset-and-field">appearance fieldset and field</h3>
+
+<p>Page Builder requires you to add the <code class="language-plaintext highlighter-rouge">appearance_fieldset</code> along with its <code class="language-plaintext highlighter-rouge">appearance</code> field for all your content type forms. Even though our Quote content type doesn’t have any additional appearances, the field is still required/expected so that other modules can add appearances to your content type as needed.</p>
+
+<p>To ensure your appearance field renders, create a <code class="language-plaintext highlighter-rouge">di.xml</code> file located here:</p>
+
+<p><img src="../images/step4-field-appearance-class.png" alt="Create config file" /></p>
+
+<p>Then add the source implementation as referenced in the <code class="language-plaintext highlighter-rouge">appearance</code> field (<code class="language-plaintext highlighter-rouge">&lt;options class="AppearanceSourceQuote"/&gt;</code>) as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"AppearanceSourceQuote"</span> <span class="na">type=</span><span class="s">"Magento\PageBuilder\Model\Source\VisualSelect"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"optionsSize"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>large<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"optionsData"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"0"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>default<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/virtualType&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Again, even though our Quote control doesn’t currently define an appearance, we must implement all the parts so that other modules can expect each Page Builder content type to have an appearance defined, even if it is not used.</p>
+
+<h3 id="fieldset">fieldset</h3>
+
+<p>Page Builder requires fields to be grouped within named <code class="language-plaintext highlighter-rouge">&lt;fieldset&gt;</code> elements. Fieldsets provide your fields with a basic grouping mechanism and an optional label. You can define as many fieldsets as you want.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>You can name your fieldset whatever you want. Currently, it has no significance for data binding.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td>Determines where Page Builder puts the fieldset within the editor in relation to other fieldsets. Page Builder sets the <code class="language-plaintext highlighter-rouge">sortOrder</code> for the <code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code> fieldset to <code class="language-plaintext highlighter-rouge">90</code>. Setting your fieldset to a value less than that (such as <code class="language-plaintext highlighter-rouge">20</code>) will put your fieldset above both inherited fieldsets. A value greater than <code class="language-plaintext highlighter-rouge">90</code> will put your fieldset below the inherited fieldsets.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="field">field</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element creates the actual HTML form element as specified by the <code class="language-plaintext highlighter-rouge">formElement</code> attribute, such as input, select, textarea, and colorPicker.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name of the field used for data bindings.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td>Determines where Page Builder puts the field within the fieldset in relation to other fields.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">formElement</code></td>
+      <td>Determines the HTML form element to render for the field.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="data-source">data source</h3>
+
+<p>Defines the data source for the field. The source<code class="language-plaintext highlighter-rouge"> node's value corresponds to a key (</code>page<code class="language-plaintext highlighter-rouge">) in the data array returned by the </code>\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface::getData` method of your UI component.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"quote_text"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">formElement=</span><span class="s">"textarea"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>page<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For example, the <code class="language-plaintext highlighter-rouge">quote_text</code> field above specifies that the <code class="language-plaintext highlighter-rouge">source</code> of its data should come from the data stored under the key <code class="language-plaintext highlighter-rouge">page</code> returned by the page’s DataProvider.</p>
+
+<h3 id="settings">settings</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;settings&gt;</code> element defines the data scope, data type, and label to use for the field, as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;settings&gt;</span>
+    <span class="nt">&lt;dataScope&gt;</span>quote_text<span class="nt">&lt;/dataScope&gt;</span>
+    <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Quote<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dataScope</code></td>
+      <td>Specifies the name of your input field for data binding. The <code class="language-plaintext highlighter-rouge">dataScope</code> node allows you to change the value of the <code class="language-plaintext highlighter-rouge">name</code> attribute for your input field. We do not need to change the field name value, so we keep our dataScope value the same as our field name.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">dataType</code></td>
+      <td>Specifies the data type for the field’s data. Common values are <code class="language-plaintext highlighter-rouge">text</code> and <code class="language-plaintext highlighter-rouge">boolean</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td>Specifies the text label applied to the input field on the form.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="quote-form-layout">Quote form layout</h2>
+
+<p>The layout for our Quote form is shown in full here for you to copy into your <code class="language-plaintext highlighter-rouge">pagebuilder_example_form.xml</code> layout file. For more information about layouts, see <a href="../../../guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">layout=</span><span class="s">"admin-1column"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">"styles"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">"pagebuilder_example_quote_form"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/referenceContainer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="configuration-data-mapping">Configuration data mapping</h2>
+
+<p>As mentioned in <a href="step-1-add-configuration.html">Step 1: Add configuration</a>, the <code class="language-plaintext highlighter-rouge">elements</code> section of your configuration file, maps the data from your form to the content type’s master format so that the values entered in the form can be stored and rendered correctly on the Admin stage and storefront.</p>
+
+<p>The following elements are from our <code class="language-plaintext highlighter-rouge">example_quote.xml</code> configuration. These elements are shown here in full for you to copy into your configuration file. Descriptions of the key attributes follow.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;elements&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"text_align"</span> <span class="na">source=</span><span class="s">"text_align"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border"</span> <span class="na">source=</span><span class="s">"border_style"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-style"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_color"</span> <span class="na">source=</span><span class="s">"border_color"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"background_color"</span> <span class="na">source=</span><span class="s">"background_color"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"background_image"</span> <span class="na">source=</span><span class="s">"background_image"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/background-image"</span> <span class="na">preview_converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/preview/background-image"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_width"</span> <span class="na">source=</span><span class="s">"border_width"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-width"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_radius"</span> <span class="na">source=</span><span class="s">"border_radius"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/remove-px"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"margins"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/margins"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/margins"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"padding"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/paddings"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/paddings"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"display"</span> <span class="na">source=</span><span class="s">"display"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/display"</span> <span class="na">preview_converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/preview/display"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">source=</span><span class="s">"data-content-type"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"appearance"</span> <span class="na">source=</span><span class="s">"data-appearance"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"css_classes"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"quote"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"text_align"</span> <span class="na">source=</span><span class="s">"text_align"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;html</span> <span class="na">name=</span><span class="s">"quote_text"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/html/tag-escaper"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"quote_css"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"author"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"text_align"</span> <span class="na">source=</span><span class="s">"text_align"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;html</span> <span class="na">name=</span><span class="s">"quote_author"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/html/tag-escaper"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"author_title"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"text_align"</span> <span class="na">source=</span><span class="s">"text_align"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;html</span> <span class="na">name=</span><span class="s">"quote_author_desc"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/html/tag-escaper"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/elements&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="element">element</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;element&gt;</code> element provides a scope for the data bindings within it.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Specifies the name of the element scope for the data binding when applied to template elements. In our example, the element name of <code class="language-plaintext highlighter-rouge">main</code> is used as the scope for binding styles and other attributes to the top-level <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> element in our template: <code class="language-plaintext highlighter-rouge">&lt;div attr="data.main.attributes" ko-style="data.main.style"&gt;</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="style">style</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> element configures the bindings from the form style fields to the template elements.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>By convention, the name of the element should match the source.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">source</code></td>
+      <td>The name of the form field you want the style bound to.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">converter</code></td>
+      <td>Converts the value after reading or before saving to the DOM.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preview_converter</code></td>
+      <td>Converts the value for the preview. Used for cases where the conversion logic is different between the two views.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">storage_key</code></td>
+      <td>Optional variable name for value in the data storage. If no value is provided, the <code class="language-plaintext highlighter-rouge">name</code> attribute will be used.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reader</code></td>
+      <td>Reader used for parsing attributes and properties out of the DOM. Should not be used with read-only persistence_mode.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="attribute">attribute</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;attribute&gt;</code> element provides a mechanism to attach DOM attributes to template elements.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Unique name used for configuration merging, and the default value for storage_key if none is provided.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">source</code></td>
+      <td>The name of the property or attribute in the DOM. Must be in snake_case.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="css">css</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;css&gt;</code> element sets the binding for the CSS Classes form field (<code class="language-plaintext highlighter-rouge">css_classes</code>) from the <code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code>, or from any custom input field you add to your form. When we define the <code class="language-plaintext highlighter-rouge">&lt;css&gt;</code> element, Page Builder applies the class names from the form’s CSS Classes field to the template elements that use the <code class="language-plaintext highlighter-rouge">css</code> binding element.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Specifies the name of the form field to bind to.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example, in our Quote configuration, we define an <code class="language-plaintext highlighter-rouge">&lt;element&gt;</code> named <code class="language-plaintext highlighter-rouge">quote</code> with a <code class="language-plaintext highlighter-rouge">&lt;css&gt;</code> element bound to an input field in our form named <code class="language-plaintext highlighter-rouge">quote_css</code>, as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- from example_quote.xml --&gt;</span>
+<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"quote"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"quote_css"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/element&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The corresponding <code class="language-plaintext highlighter-rouge">quote_css</code> form field is shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- from pagebuilder_example_quote_form.xml --&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"quote_css"</span> <span class="na">sortOrder=</span><span class="s">"40"</span> <span class="na">formElement=</span><span class="s">"input"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>page<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;settings&gt;</span>
+        <span class="nt">&lt;dataScope&gt;</span>quote_css<span class="nt">&lt;/dataScope&gt;</span>
+        <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>CSS for Quote<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/settings&gt;</span>
+<span class="nt">&lt;/field&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>And the <code class="language-plaintext highlighter-rouge">css</code> binding is applied in the <code class="language-plaintext highlighter-rouge">preview.html</code> template, as shown here:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- from preview.html --&gt;</span>
+<span class="nt">&lt;blockquote</span> <span class="na">css=</span><span class="s">"data.quote.css"</span> <span class="err">...</span><span class="nt">&gt;&lt;/blockquote&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In <a href="step-5-add-styles.html">Step 5: Add styles</a>, we will revisit the <code class="language-plaintext highlighter-rouge">css</code> attribute in detail to show how users can style templates with additional CSS classes.</p>
+
+<h4 id="html">html</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> element binds the HTML content entered in a form field. When the <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> element names a field for binding, content entered into the field is applied to the template elements that use them.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Specifies the name of the form field to bind to.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example, as with the previous <code class="language-plaintext highlighter-rouge">css</code> binding, the Quote configuration defines the <code class="language-plaintext highlighter-rouge">&lt;element&gt;</code> named <code class="language-plaintext highlighter-rouge">quote</code> with an <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> element that is bound to an input field in our form named <code class="language-plaintext highlighter-rouge">quote_text</code>, as shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- from example_quote.xml --&gt;</span>
+<span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"quote"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;html</span> <span class="na">name=</span><span class="s">"quote_text"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/html/tag-escaper"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"quote_css"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/element&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The corresponding <code class="language-plaintext highlighter-rouge">quote_text</code> form field is shown here:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- from pagebuilder_example_quote_form.xml --&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"quote_text"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">formElement=</span><span class="s">"textarea"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>page<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;settings&gt;</span>
+        <span class="nt">&lt;dataScope&gt;</span>quote_text<span class="nt">&lt;/dataScope&gt;</span>
+        <span class="nt">&lt;dataType&gt;</span>text<span class="nt">&lt;/dataType&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Quote<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/settings&gt;</span>
+<span class="nt">&lt;/field&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>And the <code class="language-plaintext highlighter-rouge">html</code> binding is applied in the <code class="language-plaintext highlighter-rouge">master.html</code> template, as shown here:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- from master.html --&gt;</span>
+<span class="nt">&lt;blockquote</span> <span class="na">css=</span><span class="s">"data.quote.css"</span> <span class="na">html=</span><span class="s">"data.quote.html"</span><span class="nt">&gt;&lt;/blockquote&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="next">Next</h2>
+
+<p><a href="step-5-add-styles.html">Step 5: Add styles</a></p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-02">
+    Jun 3rd, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

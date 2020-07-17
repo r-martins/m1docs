@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Magento 2 Developer Documentation</title>
+    <description>Magento 2 Developer Documentation.</description>
+    <link>https://devdocs.magento.com</link>
+    <atom:link href="https://devdocs.magento.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 29 Jun 2020 21:34:30 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Jun 2020 21:34:30 +0000</lastBuildDate>
+    <generator>Jekyll v4.1.0</generator>
+    
+    
+        <item>
+          <title>Step 4. Set the shipping address</title>
+          <description>&lt;p&gt;Use the &lt;a href=&quot;/guides/v2.3/graphql/mutations/set-shipping-address.html&quot;&gt;setShippingAddressesOnCart&lt;/a&gt; mutation to set a shipping address. You can set the shipping address in the following ways:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Add a new shipping address&lt;/li&gt; &lt;li&gt;Assign the shipping address to be the same as the billing address&lt;/li&gt; &lt;li&gt;Use an address already defined in the logged-in customer’s address book&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;create-a-new-shipping-address&quot;&gt;Create a new shipping address&lt;/h2&gt; &lt;p&gt;The following mutation adds a shipping address to the quote.&lt;/p&gt; &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ CART_ID }&lt;/code&gt; is the unique shopping...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/graphql/tutorials/checkout/checkout-shipping-address.html</link>
+          <pubDate>Mon, 29 Jun 2020 06:54:09 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Step 4. Set the shipping address</title>
+          <description>&lt;p&gt;Use the &lt;a href=&quot;/guides/v2.4/graphql/mutations/set-shipping-address.html&quot;&gt;setShippingAddressesOnCart&lt;/a&gt; mutation to set a shipping address. You can set the shipping address in the following ways:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Add a new shipping address&lt;/li&gt; &lt;li&gt;Assign the shipping address to be the same as the billing address&lt;/li&gt; &lt;li&gt;Use an address already defined in the logged-in customer’s address book&lt;/li&gt; &lt;/ul&gt; &lt;h2 id=&quot;create-a-new-shipping-address&quot;&gt;Create a new shipping address&lt;/h2&gt; &lt;p&gt;The following mutation adds a shipping address to the quote.&lt;/p&gt; &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ CART_ID }&lt;/code&gt; is the unique shopping...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/graphql/tutorials/checkout/checkout-shipping-address.html</link>
+          <pubDate>Mon, 29 Jun 2020 06:54:09 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>PrivateLink service</title>
+          <description>Magento supports integration with the [AWS PrivateLink][] or [Azure Private Link][] service to allow Cloud customers to establish secure, private communication between {{site.data.var.ece}} environments and services and applications hosted on external systems. Both the Magento application and external systems must be accessible through private VPC endpoints configured within the same Cloud region (AWS or Azure). ## Features and support The PrivateLink service integration for {{site.data.var.ece}} projects includes the following features and support: - A secure...</description>
+          <link>https://devdocs.magento.com/cloud/project/privatelink-service.html</link>
+          <pubDate>Fri, 26 Jun 2020 21:29:42 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento Cloud Docker release notes</title>
+          <description>The [`{{site.data.var.mcd-package}}`](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html). The `{{site.data.var.mcd-package}}` package uses the following version sequence: `&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;`. The release notes include: - {:.new}New features - {:.fix}Fixes and improvements ## v1.1.0 *Release date: {{ site.data.var.ece-release-date }}*&lt;br/&gt; - {:.new}**Added support for the Magento split database performance solution**–Now...</description>
+          <link>https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html</link>
+          <pubDate>Fri, 26 Jun 2020 19:58:20 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>ECE-Tools release notes</title>
+          <description>&lt;p&gt;The &lt;a href=&quot;https://github.com/magento/ece-tools&quot;&gt;ece-tools&lt;/a&gt; package is a set of scripts and tools designed to manage and deploy Cloud projects. These release notes describe the latest improvements to this package, which is part of the &lt;a href=&quot;/cloud/release-notes/cloud-tools.html&quot;&gt;Magento Commerce Cloud Suite&lt;/a&gt;. The release notes include:&lt;/p&gt; &lt;ul&gt; &lt;li class=&quot;new&quot;&gt;New features&lt;/li&gt; &lt;li class=&quot;fix&quot;&gt;Fixes and improvements&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; package uses the following release versioning sequence: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;200&amp;lt;major&amp;gt;.&amp;lt;minor&amp;gt;.&amp;lt;patch&amp;gt;&lt;/code&gt;.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;See &lt;a href=&quot;/cloud/project/project-upgrade-parent.html&quot;&gt;Upgrades and patches&lt;/a&gt; for information about updating...</description>
+          <link>https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html</link>
+          <pubDate>Fri, 26 Jun 2020 19:58:20 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento Cloud code testing</title>
+          <description>&lt;p&gt;In a Magento Cloud Docker development environment, you can use the integrated test suite in each &lt;a href=&quot;/cloud/release-notes/cloud-tools.html&quot;&gt;Magento Commerce Cloud Suite&lt;/a&gt; package for Magento code testing. The test suites, which use the &lt;a href=&quot;https://github.com/codeception/codeception&quot;&gt;Codeception testing framework for PHP&lt;/a&gt;, provide acceptance tests to validate code intended for contribution to Magento Cloud package repositories.&lt;/p&gt; &lt;p&gt;Before you run tests, you must prepare your Docker environment and update the test configuration file. (See &lt;a href=&quot;#prepare-the-docker-environment-for-testing&quot;&gt;Prepare the test environment&lt;/a&gt;.)&lt;/p&gt; &lt;h2...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html</link>
+          <pubDate>Fri, 26 Jun 2020 19:58:20 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Web API functional testing</title>
+          <description>The Web [API](https://glossary.magento.com/api) testing framework allows you to test Magento [Web API](https://glossary.magento.com/web-api) from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP [adapter](https://glossary.magento.com/adapter) that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information. To run Web API tests for GraphQl, see [GraphQL functional testing]({{ page.baseurl }}/graphql/functional-testing.html). ## Implementation Details {#details} The Web API functional testing framework...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html</link>
+          <pubDate>Fri, 26 Jun 2020 19:41:08 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Web API functional testing</title>
+          <description>The Web [API](https://glossary.magento.com/api) testing framework allows you to test Magento [Web API](https://glossary.magento.com/web-api) from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP [adapter](https://glossary.magento.com/adapter) that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information. To run Web API tests for GraphQl, see [GraphQL functional testing]({{ page.baseurl }}/graphql/functional-testing.html). ## Implementation Details {#details} The Web API functional testing framework...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/get-started/web-api-functional-testing.html</link>
+          <pubDate>Fri, 26 Jun 2020 19:41:08 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento Cloud Components release notes</title>
+          <description>The [Magento Cloud Components](https://github.com/magento/magento-cloud-components) package provides extended Magento Commerce core functionality for sites deployed on the Cloud platform. This package is a dependency for the {{ site.data.var.ct }} package. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html). The `{{site.data.var.mcc-package}}` package uses the following version sequence: `&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;`. ## v1.0.5 *Release date: June 26, 2020*&lt;br/&gt; - {:.fix}Fixed an issue introduced in {{site.data.var.mcc-package}} version 1.0.4 that...</description>
+          <link>https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html</link>
+          <pubDate>Fri, 26 Jun 2020 18:18:14 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento Open Source 2.4.0 Release Notes</title>
+          <description>Magento Commerce 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default. **With this release, the Authorize.Net, Braintree, eWay, CyberSource, and Worldpay payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace**. This release includes all the improvements to core quality that were included in Magento 2.3.5-p1,...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/release-notes/release-notes-2-4-0-open-source.html</link>
+          <pubDate>Fri, 26 Jun 2020 19:07:08 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento Commerce 2.4.0 Release Notes</title>
+          <description>Magento Commerce 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default. B2B enhancements include the new Order Approval workflow. **With this release, the Authorize.Net, Braintree, eWay, CyberSource, and Worldpay payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace**. This release includes all the improvements to...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/release-notes/release-notes-2-4-0-commerce.html</link>
+          <pubDate>Fri, 26 Jun 2020 19:07:08 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Install and Configure Recommendations</title>
+          <description>Deploying Product Recommendations to your storefront requires that you install, configure, then [create the recommendations in the Admin UI](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html). ## Install Product Recommendations {#install} Install the `magento/product-recommendations` module with Composer: ```bash composer require magento/product-recommendations ``` The `magento/product-recommendations` module requires the following dependencies: - **data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on...</description>
+          <link>https://devdocs.magento.com/recommendations/install-configure.html</link>
+          <pubDate>Fri, 26 Jun 2020 15:55:23 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Step 3: Extend forms</title>
+          <description>In this step, you will customize the Banner form (`pagebuilder_banner_form.xml`) by adding a form field for entering a `max-height` value for the `collage-left` and `collage-right` appearances. ## Create the appearance form Page Builder forms are UI component forms. This means they follow the same conventions as any other UI component form in Magento. If you are not already familiar with UI component forms, you can learn more about them from the [UI Components Guide](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html). For...</description>
+          <link>https://devdocs.magento.com/page-builder/docs/extend-existing-content-type/step-3-extend-forms.html</link>
+          <pubDate>Fri, 26 Jun 2020 15:09:33 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Workflow tips</title>
+          <description>## Save page When you are working on a page and changing the master.html template, you need to Save the page in the Admin UI and make some kind of change to the preview template on the Admin UI. Otherwise, you will not see your changes in the browser. This is due to how Page Builder updates changes: it will not update the master template until changes have been made to the page. ## Setup...</description>
+          <link>https://devdocs.magento.com/page-builder/docs/create-custom-content-type/workflow-tips.html</link>
+          <pubDate>Fri, 26 Jun 2020 15:09:33 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Post-deploy variables</title>
+          <description>The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file: ```yaml stage: post-deploy: POST-DEPLOY_VARIABLE_NAME: value ``` {% include cloud/customize-build-deploy.md %} ### `TTFB_TESTED_PAGES` - **Default**— `[]` (an empty array) - **Version**—Magento 2.1.4 and later Configure _Time To First Byte_ (TTFB) testing for specified pages to test your {{ site.data.var.ece }} site performance. Specify...</description>
+          <link>https://devdocs.magento.com/cloud/env/variables-post-deploy.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Global variables</title>
+          <description>The following _global_ variables control actions across each phase: build, deploy, and post-deploy. Because global variables impact every phase, you must set them in the `global` stage of the `.magento.env.yaml` file: ```yaml stage: global: GLOBAL_VARIABLE_NAME: value ``` {% include cloud/customize-build-deploy.md %} ### `MIN_LOGGING_LEVEL` - **Default**—_Not set_ - **Version**—Magento 2.1.4 and later Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example,...</description>
+          <link>https://devdocs.magento.com/cloud/env/variables-global.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Deploy variables</title>
+          <description>The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file: ```yaml stage: deploy: DEPLOY_VARIABLE_NAME: value ``` {% include cloud/customize-build-deploy.md %} ### `CACHE_CONFIGURATION` - **Default**—_Not set_ - **Version**—Magento 2.1.4 and later Configure Redis page and default caching. When setting the `cm_cache_backend_redis` parameter, you must specify the `server`, `port`, and `database` options. ```yaml stage:...</description>
+          <link>https://devdocs.magento.com/cloud/env/variables-deploy.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Build variables</title>
+          <description>The following _build_ variables control actions in the build phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file: ```yaml stage: build: BUILD_VARIABLE_NAME: value ``` {% include cloud/customize-build-deploy.md %} The following variables were removed in v2.2: - `skip_di_clearing` - `skip_di_compilation` ### `SCD_USE_BALER` - **Default**—_Not set_ - **Version**—Magento 2.3.0 and later [Baler](https://github.com/magento/baler) scans your generated JavaScript code and creates an optimized JavaScript...</description>
+          <link>https://devdocs.magento.com/cloud/env/variables-build.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Troubleshooting</title>
+          <description>The troubleshooting topics help to resolve specific issues with your {{site.data.var.ece}} project. Before submitting a Support ticket, check the following: - Verify your [credentials]({{ site.baseurl }}/cloud/trouble/trouble_ce-creds.html) - Review the [log files]({{ site.baseurl }}/cloud/live/stage-prod-test.html) - For help with deployment errors, check the [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html) - Search for relevant content in the {{site.data.var.ece}} documentation - Search the [Magento Help Center](https://support.magento.com/hc/en-us) troubleshooting articles, FAQ, and Tech resources If you still require technical support, you can...</description>
+          <link>https://devdocs.magento.com/cloud/trouble/trouble.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Static content deployment strategies</title>
+          <description>Static content deployment (SCD) has a significant impact on the store deployment process that depends on how much content to generate—such as images, scripts, CSS, videos, themes, locales, and web pages—and when to generate the content. For example, the default strategy generates static content during the [deploy phase]({{ site.baseurl }}/cloud/deploy/cloud-deployment-process.html#-deploy-phase) when the site is in maintenance mode; however, this deployment strategy takes time to write the content directly to the mounted `pub/static` directory. You have...</description>
+          <link>https://devdocs.magento.com/cloud/deploy/static-content-deployment.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Test deployment</title>
+          <description>{:.ref-header} Previous step [Migrate data and static files][] When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter][] and [Pro][] access information. The following information provides information on verifying logs, testing Fastly configurations, user acceptance testing (UAT), and more. ## Log files {#logs} If you encounter errors on deployment or other issues when testing,...</description>
+          <link>https://devdocs.magento.com/cloud/live/stage-prod-test.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Restore an environment</title>
+          <description>If you encounter issues in your environment and do not have a [valid snapshot]({{ site.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in one of the following ways: - SSH - Git ## SSH If you have not created a snapshot, but you can access the environment using SSH, follow these steps to restore your environment: 1. Disable configuration management 1. Uninstall Magento 1. Reset the git branch Performing these steps: - Returns your Magento...</description>
+          <link>https://devdocs.magento.com/cloud/env/restore-environment.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Snapshots and backup management</title>
+          <description>You can back up and restore specific environments at any time using a snapshot. Snapshot options are available for all Starter environments and Pro Integration environments. You cannot snapshot Pro Staging or Production environments. A _snapshot_ is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a...</description>
+          <link>https://devdocs.magento.com/cloud/project/project-webint-snap.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Upgrade Magento version</title>
+          <description>You can upgrade the core {{site.data.var.ee}} code base to a newer version. Before upgrading your project, review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details. {% include cloud/note-upgrade.md %} {% include cloud/note-ece-tools-package.md %} ## Upgrade from older versions of the Magento application Review...</description>
+          <link>https://devdocs.magento.com/cloud/project/project-upgrade.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Apply patches</title>
+          <description>The [{{site.data.var.mcp-prod}}](https://github.com/magento/magento-cloud-patches) package delivers Magento patches and hot fixes, which improve the integration of all `{{site.data.var.ee}}` versions with Cloud environments and supports quick delivery of critical fixes. The package can also deliver custom patches that you add to your project root directory. The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and...</description>
+          <link>https://devdocs.magento.com/cloud/project/project-patch.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Services</title>
+          <description>The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project. The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file....</description>
+          <link>https://devdocs.magento.com/cloud/project/project-conf-files_services.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Application</title>
+          <description>The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository. The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Always review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions. ## Properties Use the following properties to build your application configuration file. The `name`,...</description>
+          <link>https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento Cloud Patches release notes</title>
+          <description>The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package provides a set of patches which improve the integration of all Magento versions with Cloud environments and supports quick delivery of critical fixes. The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed and updated when you install or update the {{ site.data.var.ct }} package. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package to apply patches to a {{...</description>
+          <link>https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Log locations</title>
+          <description>Logs are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook]. {:.bs-callout-info} Magento-specific logs are in the `&lt;magento-root-dir&gt;/var/` directory. See [Magento Logging][configlog] in the _Configuration guide_. {:.bs-callout-tip} When you configure your Cloud environment, you can [set up log-based Slack and email notifications][slacklog] for build and deploy actions. ## Viewing logs There are three ways to view logs: file system, project web UI, or the `magento-cloud` CLI. - **Log directories**—The `/var/log` system directory contains...</description>
+          <link>https://devdocs.magento.com/cloud/project/log-locations.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Import URL Rewrites</title>
+          <description>You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic. Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs. {:.bs-callout-info} This module supports PHP versions 7.0.13 and later patch releases and all 7.1.x and 7.2.x patch releases. The module is available for Magento version 2.2.x and 2.3.x only. {:.procedure} To install the URL rewrite module: 1. Add the module to the `composer.json` file. ```bash composer...</description>
+          <link>https://devdocs.magento.com/cloud/configure/import-url-rewrites.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Error message reference for ece-tools</title>
+          <description>&lt;p&gt;This ece-tools error message reference provides information to troubleshoot errors that can occur during the Magento Commerce Cloud deployment process.&lt;/p&gt; &lt;p&gt;All error and warning messages generated during deployment are written to both the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var/log/cloud.log&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/log/cloud.error.log&lt;/code&gt; files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.&lt;/p&gt; &lt;p&gt;Error messages are categorized by deployment stage–&lt;em&gt;build&lt;/em&gt;, &lt;em&gt;deploy&lt;/em&gt;, and &lt;em&gt;post-deploy&lt;/em&gt;....</description>
+          <link>https://devdocs.magento.com/cloud/reference/error-codes.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>ece-tools package</title>
+          <description>&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; package is a set of scripts and tools designed to manage and deploy Magento Commerce Cloud projects. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; package simplifies many Magento Commerce Cloud processes, such as deploying to a Docker environment, managing crons, verifying project configuration, and applying Magento patches and hot fixes. You can view and contribute to the open-source &lt;a href=&quot;https://github.com/magento/ece-tools&quot;&gt;ece-tools repository on Github&lt;/a&gt;.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;If you use a version of Magento Commerce Cloud that...</description>
+          <link>https://devdocs.magento.com/cloud/reference/ece-tools-reference.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento application testing</title>
+          <description>&lt;p&gt;In a Cloud Docker development environment, you can use the &lt;a href=&quot;/mftf/docs/introduction.html&quot;&gt;Magento Functional Testing Framework (MFTF)&lt;/a&gt; for Magento application testing. In this environment, you run MFTF commands using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mftf-command&lt;/code&gt; (&lt;a href=&quot;/cloud/docker/docker-containers-cli.html#cli-container-commands&quot;&gt;CLI container command&lt;/a&gt;). For example, the following command generates the MFTF tests:&lt;/p&gt; &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlighter&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;docker-compose run &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;mftf-command generate:tests &lt;span class=&quot;nt&quot;&gt;--debug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;none &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;Support for MFTF requires &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magento/magento-cloud-docker&lt;/code&gt; version 1.0...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Enable Magento split database solution</title>
+          <description>&lt;p&gt;The Split database performance solution improves scalability by providing three separate databases to manage different functional areas of the Magento application. The following instructions show how to configure this solution in the Magento Cloud Docker environment, exporting the Magento Sales and Magento Quote data from the main database and creating two separate databases in the Cloud Docker environment.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;See the &lt;a href=&quot;/guides/v2.3/config-guide/multi-master/multi-master.html&quot;&gt;Magento split database performance solution&lt;/a&gt; topic in the &lt;em&gt;Configuration Guide&lt;/em&gt; for detailed information...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-split-db.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Docker development quick reference</title>
+          <description>&lt;p class=&quot;bs-callout-info&quot;&gt;See &lt;a href=&quot;/cloud/docker/docker-config.html&quot;&gt;Configure Docker&lt;/a&gt; for additional information about Docker prerequisites and using the Magento Cloud Docker environment.&lt;/p&gt; &lt;h2 id=&quot;docker-compose&quot;&gt;Docker Compose&lt;/h2&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th style=&quot;text-align: left&quot;&gt;Action&lt;/th&gt; &lt;th style=&quot;text-align: left&quot;&gt;Command&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td style=&quot;text-align: left&quot;&gt;Build and start Docker environment&lt;/td&gt; &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: left&quot;&gt;Build environment&lt;/td&gt; &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose run --rm build cloud-build&lt;/code&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td style=&quot;text-align: left&quot;&gt;Deploy environment&lt;/td&gt; &lt;td style=&quot;text-align: left&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose run...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-quick-reference.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Production mode</title>
+          <description>&lt;p&gt;Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;See &lt;a href=&quot;/cloud/docker/docker-config.html&quot;&gt;Configure Docker&lt;/a&gt; for additional information about Docker prerequisites and using the Magento Cloud Docker environment.&lt;/p&gt; &lt;p class=&quot;procedure&quot;&gt;To launch the Docker environment in production mode:&lt;/p&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;Download a Magento application template from the &lt;a href=&quot;https://github.com/magento/magento-cloud&quot;&gt;Magento Cloud repository&lt;/a&gt;. Be careful to select the...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-mode-production.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Developer mode</title>
+          <description>&lt;p&gt;Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. On macOS and Windows systems, performance is slower in developer mode because of additional file synchronization operations. However, you can improve performance by using either &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mutagen&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-sync&lt;/code&gt; file synchronization tools when you generate the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; configuration file. See &lt;a href=&quot;/cloud/docker/docker-syncing-data.html&quot;&gt;Synchronizing data in...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-mode-developer.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Manage the database</title>
+          <description>&lt;p&gt;The Cloud Docker development environment provides MySQL services through a MariaDB (default) or MySQL database deployed to the &lt;a href=&quot;https://devdocs.magento.com/cloud/docker/docker-containers-service.html#database-container&quot;&gt;Docker database container&lt;/a&gt;. You connect to the database using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt; commands. You can also import data from an existing Magento project into the database container using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magento-cloud db:dump&lt;/code&gt; command.&lt;/p&gt; &lt;h2 id=&quot;connect-to-the-database&quot;&gt;Connect to the database&lt;/h2&gt; &lt;p&gt;You can connect to the database through the Docker container or through the database port. Before you...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-manage-database.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Manage cron jobs</title>
+          <description>&lt;p&gt;The &lt;a href=&quot;/cloud/docker/docker-containers-cli.html&quot;&gt;Cron container&lt;/a&gt; runs the scheduled cron jobs automatically based on the cron configuration defined in the &lt;a href=&quot;/cloud/project/project-conf-files_magento-app.html#crons&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;crons&lt;/code&gt; property of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.magento.app.yaml&lt;/code&gt; file&lt;/a&gt;, and any custom configuration specified in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose-override.yml&lt;/code&gt; file.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;Magento Commerce Cloud includes a default cron configuration, which can be further customized in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.magento.app.yaml&lt;/code&gt; file. See &lt;a href=&quot;/cloud/configure/setup-cron-jobs.html&quot;&gt;Set up cron jobs&lt;/a&gt;. You can also use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose-override.yml&lt;/code&gt; file...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-manage-cron-jobs.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Docker development</title>
+          <description>&lt;p&gt;Magento Cloud Docker provides an option to deploy Magento Commerce to a Docker environment for development, test, and automation tasks.&lt;/p&gt; &lt;p&gt;The Magento Commerce Cloud Docker environment requires three, essential components: a Magento Commerce v2 template, Docker Compose, and the Magento Commerce Cloud &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; package.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;See &lt;a href=&quot;/cloud/docker/docker-config.html&quot;&gt;Configure Docker&lt;/a&gt; for additional information about Docker prerequisites and using the Magento Cloud Docker environment.&lt;/p&gt; &lt;h2 id=&quot;host-operating-systems&quot;&gt;Host Operating Systems&lt;/h2&gt; &lt;p&gt;The Cloud Docker environment supports Linux, macOS,...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-development.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Configure Xdebug for Docker</title>
+          <description>&lt;p&gt;Xdebug is an extension for debugging your PHP code. Magento Cloud Docker provides a separate container to handle Xdebug requests in the Docker environment. Use this container to enable Xdebug and debug PHP code in your Docker environment without affecting your Magento Commerce Cloud project configuration.&lt;/p&gt; &lt;p&gt;The following instructions explain how to configure Xdebug and PhpStorm to debug in your local Docker environment.&lt;/p&gt; &lt;p&gt;If you use Microsoft Windows, take the following steps before continuing:&lt;/p&gt; &lt;ol&gt;...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-development-debug.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Docker container architecture</title>
+          <description>&lt;p&gt;The &lt;a href=&quot;https://github.com/magento/magento-cloud-docker&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magento/magento-cloud-docker&lt;/code&gt; repository&lt;/a&gt; contains build information to create a Docker environment with the required specifications for Magento Cloud. The build configuration creates a Docker instance with CLI and service containers required to run Magento Cloud in a local Docker environment. You can customize the Docker containers available in the repository and add more as needed.&lt;/p&gt; &lt;p&gt;Magento Cloud Docker generates the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; file to the required specifications. Then, you use docker-compose...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-containers.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Docker services containers</title>
+          <description>&lt;p&gt;The following containers provide the services required to build, deploy and run Magento Commerce sites.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;See &lt;a href=&quot;/cloud/docker/docker-containers.html#service-containers&quot;&gt;Service configuration options&lt;/a&gt; to customize container configuration when you build the Docker compose configuration file.&lt;/p&gt; &lt;h2 id=&quot;database-container&quot;&gt;Database container&lt;/h2&gt; &lt;p&gt;&lt;strong&gt;Container name&lt;/strong&gt;: db&lt;br /&gt; &lt;strong&gt;Docker base image&lt;/strong&gt;: &lt;a href=&quot;https://hub.docker.com/_/mariadb&quot;&gt;mariadb&lt;/a&gt;, MySQL&lt;br /&gt; &lt;strong&gt;Ports exposed&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3306&lt;/code&gt;&lt;br /&gt;&lt;/p&gt; &lt;p&gt;You can configure the database container to use either MariaDB or MySQL for the database. The default configuration uses the &lt;a href=&quot;https://hub.docker.com/_/mariadb&quot;&gt;mariadb&lt;/a&gt;...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-containers-service.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Docker CLI Containers</title>
+          <description>&lt;p&gt;The following CLI containers, most of which are based on a &lt;a href=&quot;https://hub.docker.com/r/magento/magento-cloud-docker-php&quot;&gt;PHP-CLI version 7 image&lt;/a&gt;, provide &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magento-cloud&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; commands to perform file system operations and interact with the application:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build&lt;/code&gt;—extends the CLI container to perform operations with writable filesystem, similar to the build phase&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deploy&lt;/code&gt;—extends the CLI container to use read-only file system, similar to the deploy phase&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cron&lt;/code&gt;—extends the CLI container...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-containers-cli.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Configure Docker environment</title>
+          <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Magento Cloud Docker&lt;/code&gt; deploys Magento to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable filesystem permissions.&lt;/p&gt; &lt;p&gt;You use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-docker build:compose&lt;/code&gt; command to generate the Docker Compose configuration to deploy Magento Commerce Cloud to a local Docker...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-config.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Add Blackfire.io to Docker</title>
+          <description>&lt;p&gt;You can add Blackfire.io to your Magento Cloud Docker environment to fully automate performance testing.&lt;/p&gt; &lt;p&gt;Blackfire.io for Magento Cloud is a PHP profiler and automated performance testing tool for use in development, integration, staging, and production environments. It enables you to locate and investigate performance issues in your environment at the code level and creates a performance profile by tracking every PHP call, method, and SQL query performed by your code.&lt;/p&gt; &lt;p class=&quot;bs-callout-warning&quot;&gt;You must have...</description>
+          <link>https://devdocs.magento.com/cloud/docker/docker-config-blackfire-io.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Deployment process</title>
+          <description>&lt;p&gt;Build and deploy scripts activate when you merge code to a remote environment. These scripts use the environment configuration files and application code to prepare data and configurations to provision Cloud infrastructure and services, and to install or update the application and third-party and custom extensions in the Cloud environment.&lt;/p&gt; &lt;p&gt;The build and deploy process is slightly different for each plan:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Starter plans&lt;/strong&gt;—For the Integration environment, every active branch builds and deploys to...</description>
+          <link>https://devdocs.magento.com/cloud/reference/discover-deploy.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Configure Xdebug</title>
+          <description>&lt;p&gt;Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local environment. You can use the IDE of your choice. See the vendor documentation for those applications for further configuration information.&lt;/p&gt; &lt;p class=&quot;bs-callout-info&quot;&gt;You can configure Xdebug to run in the Magento Cloud Docker environment for local debugging without changing your Magento Commerce Cloud project configuration. See [Configure Xdebug for Docker]/cloud/docker/docker-development-debug.html).&lt;/p&gt; &lt;p&gt;To set up Xdebug,...</description>
+          <link>https://devdocs.magento.com/cloud/howtos/debug.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Release notes for Cloud Suite</title>
+          <description>&lt;p&gt;This release information details the latest improvements to the Magento Commerce Cloud Suite packages which are designed to deploy and manage Magento Commerce installations and upgrades on the Cloud platform.&lt;/p&gt; &lt;table&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;Release notes&lt;/th&gt; &lt;th&gt;Version&lt;/th&gt; &lt;th&gt;Description&lt;/th&gt; &lt;th&gt;Package source&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;a href=&quot;/cloud/release-notes/ece-release-notes.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; release notes&lt;/a&gt;&lt;/td&gt; &lt;td&gt;2002.1.1&lt;br /&gt;2002.0.23&lt;/td&gt; &lt;td&gt;A set of scripts and tools designed to manage and deploy Cloud projects&lt;/td&gt; &lt;td&gt;&lt;a href=&quot;https://github.com/magento/ece-tools/tree/2002.1&quot;&gt;ece-tools&lt;/a&gt;&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;&lt;a href=&quot;/cloud/release-notes/mcp-release-notes.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Magento Cloud Patches&lt;/code&gt; release...</description>
+          <link>https://devdocs.magento.com/cloud/release-notes/cloud-tools.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Release notes archive for ece-tools</title>
+          <description>&lt;p class=&quot;bs-callout-info&quot;&gt;These release notes provide information and updates for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; v2002.0.22 and later. See &lt;a href=&quot;/cloud/release-notes/cloud-tools.html&quot;&gt;Release notes for Cloud Suite&lt;/a&gt; to get the latest updates for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; and other Magento Cloud packages.&lt;/p&gt; &lt;h2 id=&quot;v2002022&quot;&gt;v2002.0.22&lt;/h2&gt; &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; 2002.0.22 release changes the structure of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; package to decouple the release of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Magento Commerce Cloud&lt;/code&gt; patches from the ece-tools release. Starting with this release, patches and critical...</description>
+          <link>https://devdocs.magento.com/cloud/release-notes/cloud-release-archive.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Backward incompatible changes</title>
+          <description>&lt;p&gt;Use the following information to learn about backward incompatible changes that might require you to adjust Cloud configuration and processes for existing Cloud projects when you upgrade to the latest release of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; package or other Magento Commerce Cloud Suite packages.&lt;/p&gt; &lt;h2 id=&quot;ece-tools-changes&quot;&gt;ece-tools changes&lt;/h2&gt; &lt;p&gt;Some functionality previously included in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt; package is now provided in separate packages. These packages are composer dependencies for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ece-tools&lt;/code&gt;, which are installed...</description>
+          <link>https://devdocs.magento.com/cloud/release-notes/backward-incompatible-changes.html</link>
+          <pubDate>Thu, 25 Jun 2020 19:49:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Release notes for Page Builder</title>
+          <description>The following updates describe the latest improvements to Page Builder. The release notes include: - {:.new}New features - {:.fix}Fixes and improvements ## **1.4.0** for Magento Commerce 2.4.0 - {:.new}&lt;!-- PB-494 --&gt;Added support for PHP 7.4. - {:.fix}&lt;!-- MC-31247 --&gt;Fixed an issue where the Products content type did not show configurable products when the condition was set to price. - {:.fix}&lt;!-- PB-179 --&gt;Fixed the Products alignment configuration to position only the product container itself, not the...</description>
+          <link>https://devdocs.magento.com/page-builder/docs/release-notes.html</link>
+          <pubDate>Thu, 25 Jun 2020 16:48:10 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>What's new on DevDocs</title>
+          <description>{% assign whatsnew = site.data.whats-new %} &lt;a class=&quot;btn&quot; href=&quot;{{ whatsnew.thread }}&quot;&gt;&lt;img src=&quot;{{ site.baseurl }}/assets/i/icons/rss.svg&quot; /&gt; RSS feed&lt;/a&gt; &lt;!-- The link enables RSS readers to recognize the whatsnew-feed thread on the page --&gt; &lt;link rel=&quot;alternate&quot; type=&quot;application/atom+xml&quot; title=&quot;What's new on Magento DevDocs&quot; href= &quot;{{ whatsnew.thread }}&quot; /&gt; {{ whatsnew.description }} {% assign entries = whatsnew.entries %} {% assign grouped_by_year = entries | group_by_exp: &quot;entry&quot;, &quot;entry.date | date: '%Y'&quot; %} {% for group in grouped_by_year limit:2 %} ##...</description>
+          <link>https://devdocs.magento.com/whats-new.html</link>
+          <pubDate>Wed, 24 Jun 2020 22:03:19 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento 2.4 technology stack requirements</title>
+          <description>## Operating systems (Linux x86-64) Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar. Magento is not supported on: * Windows OS * Mac OS ## Memory requirement Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html</link>
+          <pubDate>Wed, 24 Jun 2020 18:07:46 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Software recommendations</title>
+          <description>We recommend using the following software for production instances of Magento: * [PHP]({{page.baseurl}}/install-gde/system-requirements-tech.html#php) * Nginx and [PHP-FPM](https://php-fpm.org/) * [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html) * [Varnish cache]({{page.baseurl}}/config-guide/varnish/config-varnish.html) * [Elasticsearch &amp; Elasticsearch Search Adapter]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html) For multi-server deployments, or for merchants planning on scaling their business, we recommend the following: * [Redis]({{page.baseurl}}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+) * A separate Redis instance as your [default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache) See [Magento 2.2.x technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) for information about...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/performance-best-practices/software.html</link>
+          <pubDate>Wed, 24 Jun 2020 17:43:56 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Magento Commerce Cloud guide</title>
+          <description>&lt;p&gt;Magento Commerce Cloud is a managed, automated hosting platform for the Magento Commerce software. Magento Commerce Cloud comes with a variety of additional features that sets it apart from the on-premises Magento Commerce and Magento Open Source platforms:&lt;/p&gt; &lt;p&gt;&lt;img width=&quot;930px&quot; src=&quot;/common/images/cloud/CloudBenefits.svg&quot; alt=&quot;Cloud Benefits&quot; /&gt;&lt;/p&gt; &lt;p&gt;Magento Commerce Cloud provides a pre-provisioned infrastructure that includes PHP, MySQL, Redis, RabbitMQ, and Elasticsearch technologies; a git-based workflow with automatic build and deploy for efficient &lt;strong&gt;Rapid development&lt;/strong&gt; and &lt;strong&gt;Continuous deployment&lt;/strong&gt;...</description>
+          <link>https://devdocs.magento.com/cloud/bk-cloud.html</link>
+          <pubDate>Tue, 23 Jun 2020 16:07:10 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title></title>
+          <description></description>
+          <link>https://devdocs.magento.com/redoc/2.3/guest-rest-api.html</link>
+          <pubDate>Tue, 23 Jun 2020 14:32:06 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title></title>
+          <description></description>
+          <link>https://devdocs.magento.com/redoc/2.3/customer-rest-api.html</link>
+          <pubDate>Tue, 23 Jun 2020 14:32:06 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title></title>
+          <description></description>
+          <link>https://devdocs.magento.com/redoc/2.3/admin-rest-api.html</link>
+          <pubDate>Tue, 23 Jun 2020 14:32:06 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>REST API reference</title>
+          <description>Magento exposes different REST endpoints depending on the type of user making the requests. You must request and include a security token to gain access to the Customer and Admin REST API endpoints. See [Token-based authentication][] for instructions on requesting and using security tokens. ## Synchronous endpoints The REST API reference for all synchronous endpoints are available at [https://magento.redoc.ly/](https://magento.redoc.ly/). Use the drop-down menu in the top-left corner to see a list of REST endpoints specific...</description>
+          <link>https://devdocs.magento.com/redoc/2.3/</link>
+          <pubDate>Mon, 22 Jun 2020 19:06:30 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Use Redis for the Magento page and default cache</title>
+          <description>Magento provides command line options to configure the Redis page and default caching. Although you can configure caching by editing the `&lt;Magento install dir&gt;app/etc/env.php` file, using the command line is the recommended method, especially for initial configurations. The command line provides validation, ensuring the configuration is syntactically correct. You must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing. ## Configure Redis default caching {#config-redis-config} Run the `setup:config:set` command and specify parameters that specific to Redis default caching....</description>
+          <link>https://devdocs.magento.com/guides/v2.4/config-guide/redis/redis-pg-cache.html</link>
+          <pubDate>Thu, 18 Jun 2020 14:07:31 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Plugins (Interceptors)</title>
+          <description>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any *class* or *interface*. Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class. This [interception](https://glossary.magento.com/interception) approach reduces conflicts among extensions that change...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html</link>
+          <pubDate>Thu, 18 Jun 2020 06:08:53 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Plugins (Interceptors)</title>
+          <description>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any *class* or *interface*. Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class. This [interception](https://glossary.magento.com/interception) approach reduces conflicts among extensions that change...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/extension-dev-guide/plugins.html</link>
+          <pubDate>Thu, 18 Jun 2020 06:08:53 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Admin Grids</title>
+          <description>&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt; &lt;p&gt;Admin grids are used to represent, filter and sort various data in the Magento backend. They are also used to perform mass actions such as updates and deletes. This tutorial will show you how to create a simple admin grid.&lt;/p&gt; &lt;h3 id=&quot;1-create-a-backbone-module&quot;&gt;1. Create a backbone module&lt;/h3&gt; &lt;p&gt;Everything starts with a module. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dev_Grid&lt;/code&gt; will be used as the namespace:&lt;/p&gt; &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlighter&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/extension-dev-guide/admin-grid.html</link>
+          <pubDate>Thu, 18 Jun 2020 12:36:42 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Admin Grids</title>
+          <description>&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt; &lt;p&gt;Admin grids are used to represent, filter and sort various data in the Magento backend. They are also used to perform mass actions such as updates and deletes. This tutorial will show you how to create a simple admin grid.&lt;/p&gt; &lt;h3 id=&quot;1-create-a-backbone-module&quot;&gt;1. Create a backbone module&lt;/h3&gt; &lt;p&gt;Everything starts with a module. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dev_Grid&lt;/code&gt; will be used as the namespace:&lt;/p&gt; &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlighter&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/extension-dev-guide/admin-grid.html</link>
+          <pubDate>Thu, 18 Jun 2020 12:36:42 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Manage user access to Cloud environments</title>
+          <description>You can manage access to {{site.data.var.ece}} projects by adding users and assigning roles. Assign project-level roles to provide access to the entire project, and environment-level roles to set permissions per available environment. You can only add users that have a [registered Magento account][]. {:.bs-callout-tip} Adding or updating a user for a {{site.data.var.ece}} environment triggers a site deployment, which takes your site offline until deployment completes. For Production environments, we recommend completing user administrative tasks during...</description>
+          <link>https://devdocs.magento.com/cloud/project/user-admin.html</link>
+          <pubDate>Wed, 17 Jun 2020 08:50:10 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Supported browsers</title>
+          <description>## Supported browsers
+
+{% include browsers/supported-browsers-24.md %}
+</description>
+          <link>https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements_browsers.html</link>
+          <pubDate>Wed, 17 Jun 2020 01:52:54 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Frontend Developer Guide</title>
+          <description>&lt;h2 id=&quot;overview-introduction&quot;&gt;Introduction&lt;/h2&gt; &lt;p&gt;This document provides instructions for creating and installing custom &lt;a href=&quot;https://glossary.magento.com/storefront&quot;&gt;storefront&lt;/a&gt; themes for a Magento application. It describes Magento’s content rendering process and explains the view layer of the system to the extent required to build a &lt;a href=&quot;https://glossary.magento.com/theme&quot;&gt;theme&lt;/a&gt; efficiently. The document also walks through everyday &lt;a href=&quot;https://glossary.magento.com/frontend&quot;&gt;frontend&lt;/a&gt; developer’s tasks.&lt;/p&gt; &lt;p&gt;Developing the view part of a custom &lt;a href=&quot;https://glossary.magento.com/module&quot;&gt;module&lt;/a&gt; and customizing the &lt;a href=&quot;https://glossary.magento.com/magento-admin&quot;&gt;Magento Admin&lt;/a&gt; panel design is out of the scope of...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html</link>
+          <pubDate>Wed, 17 Jun 2020 01:52:54 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>WYSIWYG component</title>
+          <description>The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for [TinyMCE v4](https://www.tinymce.com/){:target=&quot;_blank&quot;} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete [widget](https://glossary.magento.com/widget) declaration in the `content` option, which should contain both [markup](https://glossary.magento.com/markup) and the script responsible for creating the editor's instance. Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 `tinymce.init()` method. However, Magento doesn't validate TinyMCE configuration options or flag invalid values before adding the editor...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-wysiwyg.html</link>
+          <pubDate>Tue, 16 Jun 2020 15:43:35 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>WYSIWYG component</title>
+          <description>The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for [TinyMCE v4](https://www.tinymce.com/){:target=&quot;_blank&quot;} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete [widget](https://glossary.magento.com/widget) declaration in the `content` option, which should contain both [markup](https://glossary.magento.com/markup) and the script responsible for creating the editor's instance. Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 `tinymce.init()` method. However, Magento doesn't validate TinyMCE configuration options or flag invalid values before adding the editor...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/ui_comp_guide/components/ui-wysiwyg.html</link>
+          <pubDate>Tue, 16 Jun 2020 15:43:35 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Response Handler</title>
+          <description>Response Handler is the component of Magento payment provider gateway, that processes payment provider response. Typically, the response requires one of the following actions: - Modify the [order status](https://glossary.magento.com/order-status) - Save information that was provided in a transaction response - Send an email The response handler only modifies the order state, based on the [payment gateway](https://glossary.magento.com/payment-gateway) response. It does not perform any other required actions. ## Interface Basic interface for a response handler is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/response-handler.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Response Handler</title>
+          <description>Response Handler is the component of Magento payment provider gateway, that processes payment provider response. Typically, the response requires one of the following actions: - Modify the [order status](https://glossary.magento.com/order-status) - Save information that was provided in a transaction response - Send an email The response handler only modifies the order state, based on the [payment gateway](https://glossary.magento.com/payment-gateway) response. It does not perform any other required actions. ## Interface Basic interface for a response handler is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/payment-gateway/response-handler.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Request Builder</title>
+          <description>Request Builder is a component of the Magento [payment gateway](https://glossary.magento.com/payment-gateway) responsible for building a request from several parts. It allows implementing complex, yet atomic and testable, building strategies. Each builder can have simple logic or contain builder composites. ## Basic interface The basic interface for a request builder is [`\Magento\Payment\Gateway\Request\BuilderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Request/BuilderInterface.php). ## Builder composite `\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` implementations. It gets a list of classes, or types,...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/request-builder.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Request Builder</title>
+          <description>Request Builder is a component of the Magento [payment gateway](https://glossary.magento.com/payment-gateway) responsible for building a request from several parts. It allows implementing complex, yet atomic and testable, building strategies. Each builder can have simple logic or contain builder composites. ## Basic interface The basic interface for a request builder is [`\Magento\Payment\Gateway\Request\BuilderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/Request/BuilderInterface.php). ## Builder composite `\Magento\Payment\Gateway\Request\BuilderComposite` is a container for a list of `\Magento\Payment\Gateway\Request\BuilderInterface` implementations. It gets a list of classes, or types,...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/payment-gateway/request-builder.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Adding a new payment integration (payment method)</title>
+          <description>Out-of-the-box Magento implements integration with PayPal, Braintree, and Authorize.Net payment service providers. These integrations allow you to create and handle transactions based on order details. You can create integration with other payment providers, using [Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html). {:.bs-callout-info} The Magento payment provider gateway allows creating secure and PCI-compliant integrations with payment services. To keep PCI compliance, you must not store sensitive credit card information. The topics in this chapter explain how to...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/base-integration/integration-intro.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Adding a new payment integration (payment method)</title>
+          <description>Out-of-the-box Magento implements integration with PayPal, Braintree, and Authorize.Net payment service providers. These integrations allow you to create and handle transactions based on order details. You can create integration with other payment providers, using [Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html). {:.bs-callout-info} The Magento payment provider gateway allows creating secure and PCI-compliant integrations with payment services. To keep PCI compliance, you must not store sensitive credit card information. The topics in this chapter explain how to...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/base-integration/integration-intro.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Get payment information from frontend to backend</title>
+          <description>To implement transaction [authorization](https://glossary.magento.com/authorization) our payment should receive some payment details from payment form, like credit card details, and send received details to payment processor. Depending on your payment integration, payment details might include credit card details, tokenized cards, payment nonce, and similar information. However, in any case you should write some code to retrieve payment details from payment form. ## Example: Braintree request builder for the `payment` part of the request We have specified...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/base-integration/get-payment-info.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Get payment information from frontend to backend</title>
+          <description>To implement transaction [authorization](https://glossary.magento.com/authorization) our payment should receive some payment details from payment form, like credit card details, and send received details to payment processor. Depending on your payment integration, payment details might include credit card details, tokenized cards, payment nonce, and similar information. However, in any case you should write some code to retrieve payment details from payment form. ## Example: Braintree request builder for the `payment` part of the request We have specified...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/base-integration/get-payment-info.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Gateway Command</title>
+          <description>Gateway Command is a component of the Magento [payment gateway](https://glossary.magento.com/payment-gateway) that takes the [payload]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added. ## Interface Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html). ## Basic implementation The `\Magento\Payment\Gateway\Command\GatewayCommand`...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/gateway-command.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Gateway Command</title>
+          <description>Gateway Command is a component of the Magento [payment gateway](https://glossary.magento.com/payment-gateway) that takes the [payload]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added. ## Interface Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html). ## Basic implementation The `\Magento\Payment\Gateway\Command\GatewayCommand`...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/payment-gateway/gateway-command.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Payment info rendering in Admin checkout</title>
+          <description>The payment information form rendering in [Admin](https://glossary.magento.com/admin) order creation is defined by the block class, its template and [layout](https://glossary.magento.com/layout). `formBlockType` is one of the arguments you must [configure for the payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). This block is used to display payment form on billing form in Admin panel. In most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payments details are displayed according to specified keys in `paymentInfoKeys` option in [module](https://glossary.magento.com/module) configuration. ##...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/base-integration/formblocktype.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Payment info rendering in Admin checkout</title>
+          <description>The payment information form rendering in [Admin](https://glossary.magento.com/admin) order creation is defined by the block class, its template and [layout](https://glossary.magento.com/layout). `formBlockType` is one of the arguments you must [configure for the payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). This block is used to display payment form on billing form in Admin panel. In most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payments details are displayed according to specified keys in `paymentInfoKeys` option in [module](https://glossary.magento.com/module) configuration. ##...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/base-integration/formblocktype.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Payment method facade</title>
+          <description>&lt;p&gt;Payment facade it is an instance of &lt;a href=&quot;https://github.com/magento/magento2/blob/2.3/app/code/Magento/Payment/Model/Method/Adapter.php&quot;&gt;Payment Adapter&lt;/a&gt; configured with virtual types and allows to process payment actions between Magento Sales Management and payment processor.&lt;/p&gt; &lt;p&gt;Add the &lt;a href=&quot;/guides/v2.3/extension-dev-guide/depend-inj.html&quot;&gt;dependency injection (DI)&lt;/a&gt; configuration for &lt;a href=&quot;https://glossary.magento.com/payment-method&quot;&gt;payment method&lt;/a&gt; facade in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%Vendor_Module%/etc/di.xml&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;The following sample is an illustration of such configuration (&lt;a href=&quot;https://github.com/magento/magento2/blob/2.3/app/code/Magento/Braintree/etc/di.xml&quot;&gt;app/code/Magento/Braintree/etc/di.xml&lt;/a&gt;):&lt;/p&gt; &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlighter&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1 2 3 4 5 6 7 8 9 10 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/base-integration/facade-configuration.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Payment method facade</title>
+          <description>&lt;p&gt;Payment facade it is an instance of &lt;a href=&quot;https://github.com/magento/magento2/blob/2.4/app/code/Magento/Payment/Model/Method/Adapter.php&quot;&gt;Payment Adapter&lt;/a&gt; configured with virtual types and allows to process payment actions between Magento Sales Management and payment processor.&lt;/p&gt; &lt;p&gt;Add the &lt;a href=&quot;/guides/v2.4/extension-dev-guide/depend-inj.html&quot;&gt;dependency injection (DI)&lt;/a&gt; configuration for &lt;a href=&quot;https://glossary.magento.com/payment-method&quot;&gt;payment method&lt;/a&gt; facade in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;%Vendor_Module%/etc/di.xml&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;The following sample is an illustration of such configuration (&lt;a href=&quot;https://github.com/magento/magento2/blob/2.3/app/code/Magento/Braintree/etc/di.xml&quot;&gt;app/code/Magento/Braintree/etc/di.xml&lt;/a&gt;):&lt;/p&gt; &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlighter&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1 2 3 4 5 6 7 8 9 10 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/base-integration/facade-configuration.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Error Code Mapping</title>
+          <description>&lt;p&gt;A payment gateway has error codes or messages that need to be transformed to user-friendly messages. When an error occurs, Magento delivers the message to the appropriate audience so that the customer or merchant can resolve any problems. You can set up each payment integration to map the native error codes and messages into sets of text strings. As a result, you can ensure that only the proper audience (merchants only, customers only, or all)...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Error Code Mapping</title>
+          <description>&lt;p&gt;A payment gateway has error codes or messages that need to be transformed to user-friendly messages. When an error occurs, Magento delivers the message to the appropriate audience so that the customer or merchant can resolve any problems. You can set up each payment integration to map the native error codes and messages into sets of text strings. As a result, you can ensure that only the proper audience (merchants only, customers only, or all)...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/payment-gateway/error-code-mapper.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Enable vault</title>
+          <description>&lt;p&gt;Store customers must have the ability to enable and disable credit cards details storing. Magento out-of-the-box provides mechanisms for adding this ability, but you still need to add modifications in your &lt;a href=&quot;https://glossary.magento.com/payment-method&quot;&gt;payment method&lt;/a&gt; implementation.&lt;/p&gt; &lt;p&gt;These modifications are the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Adding vault enabling controls.&lt;/li&gt; &lt;li&gt;Modifying the payment component (updating of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;additional_data&lt;/code&gt; property must be added).&lt;/li&gt; &lt;li&gt;Creating a request data builder.&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;The following paragraphs describe these points in details.&lt;/p&gt; &lt;h2 id=&quot;add-vault-enabling-controls&quot;&gt;Add...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/vault/enabler.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Enable vault</title>
+          <description>&lt;p&gt;Store customers must have the ability to enable and disable credit cards details storing. Magento out-of-the-box provides mechanisms for adding this ability, but you still need to add modifications in your &lt;a href=&quot;https://glossary.magento.com/payment-method&quot;&gt;payment method&lt;/a&gt; implementation.&lt;/p&gt; &lt;p&gt;These modifications are the following:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Adding vault enabling controls.&lt;/li&gt; &lt;li&gt;Modifying the payment component (updating of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;additional_data&lt;/code&gt; property must be added).&lt;/li&gt; &lt;li&gt;Creating a request data builder.&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;The following paragraphs describe these points in details.&lt;/p&gt; &lt;h2 id=&quot;add-vault-enabling-controls&quot;&gt;Add...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/vault/enabler.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Display the stored information</title>
+          <description>&lt;p&gt;This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens.&lt;/p&gt; &lt;h2 id=&quot;token-renderer&quot;&gt;Token renderer&lt;/h2&gt; &lt;p&gt;To implement the displaying functionality, create a token renderer. Its implementation depends on token type (card or account). But both types of renderers implement the common &lt;a href=&quot;https://github.com/magento/magento2/blob/2.3/app/code/Magento/Vault/Block/TokenRendererInterface.php&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TokenRendererInterface&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/magento/magento2/blob/2.3/app/code/Magento/Vault/Block/Customer/IconInterface.php&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IconInterface&lt;/code&gt;&lt;/a&gt; interfaces.&lt;/p&gt; &lt;p&gt;If your vault integration uses card token type, then you need to extend &lt;a href=&quot;https://github.com/magento/magento2/blob/2.3/app/code/Magento/Vault/Block/AbstractCardRenderer.php&quot;&gt;AbstractCardRenderer&lt;/a&gt;. In...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/vault/customer-stored-payments.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Display the stored information</title>
+          <description>&lt;p&gt;This topic describes how to display stored tokens in the customer account and give customers ability to remove the tokens.&lt;/p&gt; &lt;h2 id=&quot;token-renderer&quot;&gt;Token renderer&lt;/h2&gt; &lt;p&gt;To implement the displaying functionality, create a token renderer. Its implementation depends on token type (card or account). But both types of renderers implement the common &lt;a href=&quot;https://github.com/magento/magento2/blob/2.4/app/code/Magento/Vault/Block/TokenRendererInterface.php&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TokenRendererInterface&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/magento/magento2/blob/2.4/app/code/Magento/Vault/Block/Customer/IconInterface.php&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IconInterface&lt;/code&gt;&lt;/a&gt; interfaces.&lt;/p&gt; &lt;p&gt;If your vault integration uses card token type, then you need to extend &lt;a href=&quot;https://github.com/magento/magento2/blob/2.4/app/code/Magento/Vault/Block/AbstractCardRenderer.php&quot;&gt;AbstractCardRenderer&lt;/a&gt;. In...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/vault/customer-stored-payments.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Gateway Command Pool</title>
+          <description>&lt;h2 id=&quot;gateway-command-pool&quot;&gt;Gateway command pool&lt;/h2&gt; &lt;p&gt;All &lt;a href=&quot;/guides/v2.3/payments-integrations/payment-gateway/gateway-command.html&quot;&gt;gateway commands&lt;/a&gt; implemented for a particular payment provider, should be added to a command pool for this provider. A command pool is a set of gateway commands available for integration with a particular payment provider. The pool is added to the configuration of the payment provider using &lt;a href=&quot;/guides/v2.3/extension-dev-guide/depend-inj.html&quot;&gt;dependency injection&lt;/a&gt;.&lt;/p&gt; &lt;h2 id=&quot;interface&quot;&gt;Interface&lt;/h2&gt; &lt;p&gt;The basic interface for a command pool is &lt;a href=&quot;https://github.com/magento/magento2/blob/2.3/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Magento\Payment\Gateway\Command\CommandPoolInterface&lt;/code&gt;&lt;/a&gt;. It implements the &lt;a href=&quot;http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html&quot;&gt;Pool...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/command-pool.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Gateway Command Pool</title>
+          <description>&lt;h2 id=&quot;gateway-command-pool&quot;&gt;Gateway command pool&lt;/h2&gt; &lt;p&gt;All &lt;a href=&quot;/guides/v2.4/payments-integrations/payment-gateway/gateway-command.html&quot;&gt;gateway commands&lt;/a&gt; implemented for a particular payment provider, should be added to a command pool for this provider. A command pool is a set of gateway commands available for integration with a particular payment provider. The pool is added to the configuration of the payment provider using &lt;a href=&quot;/guides/v2.4/extension-dev-guide/depend-inj.html&quot;&gt;dependency injection&lt;/a&gt;.&lt;/p&gt; &lt;h2 id=&quot;interface&quot;&gt;Interface&lt;/h2&gt; &lt;p&gt;The basic interface for a command pool is &lt;a href=&quot;https://github.com/magento/magento2/blob/2.4/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\Magento\Payment\Gateway\Command\CommandPoolInterface&lt;/code&gt;&lt;/a&gt;. It implements the &lt;a href=&quot;http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html&quot;&gt;Pool...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/payment-gateway/command-pool.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Add a custom payment method to checkout</title>
+          <description>&lt;p&gt;Out of the box, Magento &lt;a href=&quot;https://glossary.magento.com/checkout&quot;&gt;checkout&lt;/a&gt; consists of two steps:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Shipping Information&lt;/li&gt; &lt;li&gt;Review and Payment Information&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;On the Review and Payment Information step the enabled payment methods are rendered. This topic describes how to add your custom &lt;a href=&quot;https://glossary.magento.com/payment-method&quot;&gt;payment method&lt;/a&gt; to this list.&lt;/p&gt; &lt;p&gt;To implement a payment method rendering in checkout, you need to take the following steps:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;a href=&quot;#create&quot;&gt;Create the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.js&lt;/code&gt; file implementing the component (payment method renderer).&lt;/a&gt;&lt;/li&gt;...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/howdoi/checkout/checkout_payment.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>CardinalCommerce 3-D Secure</title>
+          <description>&lt;p&gt;This document provides additional technical details for integrating Magento payment modules with the &lt;a href=&quot;https://www.cardinalcommerce.com/&quot;&gt;CardinalCommerce&lt;/a&gt;. CardinalCommerce (a wholly owned subsidiary of Visa) offers a rules-based 3-D Secure (3DS) solution called &lt;a href=&quot;https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication&quot;&gt;Cardinal Consumer Authentication&lt;/a&gt;. Protect your web store from fraud, reduce false declines, reduce manual review of orders, and improve your authorizations.&lt;/p&gt; &lt;p&gt;The integration is based on the &lt;em&gt;Magento_CardinalCommerce&lt;/em&gt; module that implements the &lt;a href=&quot;https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/7929857/Cardinal+Cruise+Standard&quot;&gt;Cardinal Cruise Standard&lt;/a&gt; integration approach.&lt;/p&gt; &lt;p&gt;The Cardinal Cruise Standard integration is...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/cardinal/cardinal.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>CardinalCommerce 3-D Secure</title>
+          <description>&lt;p&gt;This document provides additional technical details for integrating Magento payment modules with the &lt;a href=&quot;https://www.cardinalcommerce.com/&quot;&gt;CardinalCommerce&lt;/a&gt;. CardinalCommerce (a wholly owned subsidiary of Visa) offers a rules-based 3-D Secure (3DS) solution called &lt;a href=&quot;https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/196642/Consumer+Authentication#ConsumerAuthentication-CardinalConsumerAuthentication&quot;&gt;Cardinal Consumer Authentication&lt;/a&gt;. Protect your web store from fraud, reduce false declines, reduce manual review of orders, and improve your authorizations.&lt;/p&gt; &lt;p&gt;The integration is based on the &lt;em&gt;Magento_CardinalCommerce&lt;/em&gt; module that implements the &lt;a href=&quot;https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/7929857/Cardinal+Cruise+Standard&quot;&gt;Cardinal Cruise Standard&lt;/a&gt; integration approach.&lt;/p&gt; &lt;p&gt;The Cardinal Cruise Standard integration is...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/cardinal/cardinal.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Configure payment method by area</title>
+          <description>&lt;p&gt;You can define whether the payment method is available for the &lt;a href=&quot;https://glossary.magento.com/storefront&quot;&gt;storefront&lt;/a&gt; and &lt;a href=&quot;https://glossary.magento.com/checkout&quot;&gt;checkout&lt;/a&gt; in the &lt;a href=&quot;/guides/v2.3/payments-integrations/base-integration/payment-option-config.html&quot;&gt;payment method configuration in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.xml&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;can_use_checkout&lt;/code&gt;: whether &lt;a href=&quot;https://glossary.magento.com/payment-method&quot;&gt;payment method&lt;/a&gt; is available in storefront checkout&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;can_use_internal&lt;/code&gt;: whether payment method is available in &lt;a href=&quot;https://glossary.magento.com/admin&quot;&gt;Admin&lt;/a&gt; order creation&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If your payment flow should be different for storefront and Admin panel, you can use a separate DI configuration for each &lt;a...</description>
+          <link>https://devdocs.magento.com/guides/v2.3/payments-integrations/base-integration/admin-integration.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Configure payment method by area</title>
+          <description>&lt;p&gt;You can define whether the payment method is available for the &lt;a href=&quot;https://glossary.magento.com/storefront&quot;&gt;storefront&lt;/a&gt; and &lt;a href=&quot;https://glossary.magento.com/checkout&quot;&gt;checkout&lt;/a&gt; in the &lt;a href=&quot;/guides/v2.4/payments-integrations/base-integration/payment-option-config.html&quot;&gt;payment method configuration in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.xml&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;can_use_checkout&lt;/code&gt;: whether &lt;a href=&quot;https://glossary.magento.com/payment-method&quot;&gt;payment method&lt;/a&gt; is available in storefront checkout&lt;/li&gt; &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;can_use_internal&lt;/code&gt;: whether payment method is available in &lt;a href=&quot;https://glossary.magento.com/admin&quot;&gt;Admin&lt;/a&gt; order creation&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If your payment flow should be different for storefront and Admin panel, you can use a separate DI configuration for each &lt;a...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/payments-integrations/base-integration/admin-integration.html</link>
+          <pubDate>Tue, 16 Jun 2020 20:15:41 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>List of service names per module</title>
+          <description>{% include webapi/services24.md%}
+</description>
+          <link>https://devdocs.magento.com/guides/v2.4/rest/rest_endpoints.html</link>
+          <pubDate>Tue, 16 Jun 2020 15:56:08 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>List of REST endpoints by module</title>
+          <description>## List of REST endpoints for {{site.data.var.ee}} {#listee} The REST endpoints for {{site.data.var.ee}} (formerly Enterprise Edition (EE)) are available on {{site.data.var.ee}} installations only. Commerce installations automatically have access to all {{site.data.var.ce}} (formerly Community Edition (CE)) REST APIs. See [Integrate with B2B using REST]({{page.baseurl}}/b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}. ### CustomerBalance ```http POST /V1/carts/mine/balance/apply ``` ### GiftCardAccount ```http GET /V1/carts/:quoteId/giftCards PUT /V1/carts/:cartId/giftCards DELETE /V1/carts/:cartId/giftCards/:giftCardCode DELETE /V1/carts/guest-carts/:cartId/giftCards/:giftCardCode DELETE /V1/carts/mine/giftCards/:giftCardCode POST /V1/carts/mine/giftCards POST /V1/carts/guest-carts/:cartId/giftCards GET...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/rest/list.html</link>
+          <pubDate>Tue, 16 Jun 2020 15:56:08 +0000</pubDate>
+        </item>
+    
+        <item>
+          <title>Sensitive and system-specific</title>
+          <description>&lt;p&gt;This topic lists configuration paths for system-specific and sensitive settings:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;The &lt;a href=&quot;/guides/v2.4/config-guide/cli/config-cli-subcommands-config-mgmt-export.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magento app:config:dump&lt;/code&gt; command&lt;/a&gt; writes system-specific settings to the system-specific configuration file, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app/etc/env.php&lt;/code&gt;, which should &lt;em&gt;not&lt;/em&gt; be in source control. It also writes shared configuration for all Magento instances to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app/etc/config.php&lt;/code&gt;, this file &lt;em&gt;should&lt;/em&gt; be in source control.&lt;/li&gt; &lt;li&gt; &lt;p&gt;The &lt;a href=&quot;/guides/v2.4/config-guide/cli/config-cli-subcommands-config-mgmt-set.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magento config:sensitive:set&lt;/code&gt; command&lt;/a&gt; writes sensitive settings to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app/etc/env.php&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;You can also set...</description>
+          <link>https://devdocs.magento.com/guides/v2.4/config-guide/prod/config-reference-sens.html</link>
+          <pubDate>Tue, 16 Jun 2020 15:56:08 +0000</pubDate>
+        </item>
+    
+  </channel>
+</rss>

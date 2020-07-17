@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>About this document | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="technical-guidelines.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../v2.3/coding-standards/technical-guidelines.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="technical-guidelines.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Coding Standards</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="bk-coding-standards.html" class="spectrum-SideNav-itemLink ">Coding Standards</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-demarcation.html" class="spectrum-SideNav-itemLink ">Code demarcation standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-php.html" class="spectrum-SideNav-itemLink ">PHP coding standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="docblock-standard-general.html" class="spectrum-SideNav-itemLink ">DocBlock standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-javascript.html" class="spectrum-SideNav-itemLink ">JavaScript coding standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="docblock-standard-javascript.html" class="spectrum-SideNav-itemLink ">JavaScript DocBlock standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-jquery-widgets.html" class="spectrum-SideNav-itemLink ">jQuery widget coding standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-less.html" class="spectrum-SideNav-itemLink ">LESS coding standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-html.html" class="spectrum-SideNav-itemLink ">HTML style guide</a></li></ul></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="technical-guidelines.html" class="spectrum-SideNav-itemLink ">Technical guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="technical-vision/index.html" class="spectrum-SideNav-itemLink ">Technical vision</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="technical-vision/webapi.html" class="spectrum-SideNav-itemLink ">Web Api</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">About this document</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/coding-standards/technical-guidelines.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/coding-standards/technical-guidelines.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<h3 id="overview">Overview</h3>
+
+<p>This document lists the fundamental coding and application design principles that guide Magento 2 developer team members.</p>
+
+<p>Magento core developers use this document as a reference during code reviews; some rules have corresponding code checks in the Magento static tests.</p>
+
+<p>These guidelines came from many years of hard work, experience, and discussions. We strongly believe that new technical initiatives should follow these recommendations, and the existing code should be improved to meet them.</p>
+
+<h3 id="text-conventions">Text conventions</h3>
+
+<p>Use <a href="https://tools.ietf.org/html/rfc2119">RFC2119</a> to interpret keywords like:</p>
+
+<ul>
+  <li>
+    <p>MUST and MUST NOT</p>
+  </li>
+  <li>
+    <p>REQUIRED</p>
+  </li>
+  <li>
+    <p>SHALL and SHALL NOT</p>
+  </li>
+  <li>
+    <p>SHOULD and SHOULD NOT</p>
+  </li>
+  <li>
+    <p>RECOMMENDED</p>
+  </li>
+  <li>
+    <p>MAY</p>
+  </li>
+  <li>
+    <p>OPTIONAL</p>
+  </li>
+</ul>
+
+<h2 id="1-basic-programming-principles">1. Basic programming principles</h2>
+
+<p>1.1. Function arguments SHOULD NOT be modified.</p>
+
+<p>1.2. Explicit return types MUST BE declared on functions.</p>
+
+<p>1.3. Type hints for scalar arguments SHOULD be used.</p>
+
+<p>1.3.1. All new PHP files MUST have strict type mode enabled by starting with <code class="language-plaintext highlighter-rouge">declare(strict_types=1);</code>. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces MAY have this declaration.</p>
+
+<h2 id="2-class-design">2. Class design</h2>
+
+<p>2.1. Object decomposition MUST follow the <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID principles</a>.</p>
+
+<p>2.2. Object instantiation</p>
+
+<p>2.2.1. An object MUST be ready for use after instantiation. No additional public initialization methods are allowed.</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">Examples: </b>
+    <div class="collapsible-content"><p><strong>Not recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Config</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">init</span><span class="p">()</span> <span class="c1">// or load()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Config</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<p>2.2.2. Factories SHOULD be used for object instantiation instead of <code class="language-plaintext highlighter-rouge">new</code> keyword. An object SHOULD be replaceable for testing or extensibility purposes.
+Exception: <a href="https://en.wikipedia.org/wiki/Data_transfer_object">DTOs</a>. There is no behavior in DTOs, so there is no reason for its replaceability.
+Tests can create real DTOs for stubs.
+Data interfaces,  Exceptions and <code class="language-plaintext highlighter-rouge">Zend_Db_Expr</code> are examples of DTOs.</p>
+
+<p>2.3. Class constructor can have only dependency assignment operations and/or argument validation operations. No other operations are allowed.</p>
+
+<p>2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">Example: </b>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Composite</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var RendererInterface[]
+     */</span>
+    <span class="k">private</span> <span class="nv">$renderers</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @param RendererInterface[] $renderers
+     * @throws InvalidArgumentException
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$renderers</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$renderers</span> <span class="k">as</span> <span class="nv">$renderer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$renderer</span> <span class="k">instanceof</span> <span class="nx">RendererInterface</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nx">InvalidArgumentException</span><span class="p">(</span>
+                    <span class="nb">sprintf</span><span class="p">(</span><span class="s1">'Instance of the phrase renderer is expected, got %s instead.'</span><span class="p">,</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$renderer</span><span class="p">))</span>
+                <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">renderers</span> <span class="o">=</span> <span class="nv">$renderers</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<p>2.3.2. Events MUST NOT be triggered in constructors.</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">Examples: </b>
+    <div class="collapsible-content"><p><strong>Not recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Config</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+        <span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">'config_read_after'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Config</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$fileReader</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="nv">$eventManager</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span> <span class="o">=</span> <span class="nv">$eventManager</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getData</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">'config_read_after'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<p>2.4. All dependencies MUST be requested by the most generic type that is required by the client object.</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">Examples: </b>
+    <div class="collapsible-content"><p><strong>Not recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">interface</span> <span class="nc">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="nx">RedisSessionAdapter</span> <span class="k">implements</span> <span class="nx">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="kd">class</span> <span class="nc">SessionManager</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">RedisSessionAdapter</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
+    <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="c1">// Breaks polymorphism principle, restricts what types can be passed at the runtime.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">interface</span> <span class="nc">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="nx">RedisSessionAdapter</span> <span class="k">implements</span> <span class="nx">SessionAdapterInterface</span>
+<span class="p">{}</span>
+
+<span class="kd">class</span> <span class="nc">SessionManager</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">SessionAdapterInterface</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
+    <span class="p">{}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<p>2.5. Proxies and interceptors MUST NEVER be explicitly requested in constructors.</p>
+
+<p>2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.</p>
+<div class="collapsible">
+    <b class="collapsible-title">Examples: </b>
+    <div class="collapsible-content"><p><strong>Not recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">AbstractController</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span>
+        <span class="nv">$request</span>
+    <span class="p">)</span> <span class="p">{}</span>
+
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">generateHash</span><span class="p">(</span>
+        <span class="nv">$request</span>
+    <span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">AbstractController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+            <span class="nv">$request</span>
+        <span class="p">);</span>
+
+        <span class="c1">// ...</span>
+
+        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateHash</span><span class="p">(</span>
+            <span class="nv">$request</span>
+        <span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Smaller classes, one responsibility, more flexible, easy to understand, more testable.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__constructor</span><span class="p">(</span>
+        <span class="nx">ValidatorInterface</span> <span class="nv">$validator</span><span class="p">,</span>
+        <span class="nx">HashGeneratorInterface</span> <span class="nv">$hashGenerator</span>
+    <span class="p">)</span> <span class="p">{}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hashGenerator</span><span class="o">-&gt;</span><span class="na">generateHash</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<p>2.7. All non-public properties and methods SHOULD be private.</p>
+
+<p>2.8. Abstract classes MUST NOT be marked as public <code class="language-plaintext highlighter-rouge">@api</code>.</p>
+
+<p>2.9. Service classes (ones that provide behavior but not data, like <code class="language-plaintext highlighter-rouge">EventManager</code>) SHOULD NOT have a mutable state.</p>
+
+<p>2.10. Only data objects or entities (Product, Category, etc.) MAY have any observable state.</p>
+
+<p>2.11. “Setters” SHOULD NOT be used. They are only allowed in Data Transfer Objects.</p>
+
+<p>2.12. “Getters” SHOULD NOT change the state of an object.</p>
+
+<p>2.13. Static methods SHOULD NOT be used.</p>
+
+<p>2.14. <a href="http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/">Temporal coupling</a> MUST be avoided</p>
+<div class="collapsible">
+    <b class="collapsible-title">Example #1: </b>
+    <div class="collapsible-content"><p><strong>Not recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
+<span class="nv">$url</span><span class="o">-&gt;</span><span class="na">setBaseUrl</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// prints full URL</span>
+
+<span class="c1">// Developer forgot or did not know that you need to call setBaseUrl</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// Throws exception, which makes issue smaller. If it does not throw an exception, it could lead to a hidden bug more likely.</span>
+
+<span class="c1">// Method with out parameters that does not return anything could be sign of temporal coupling.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span>
+
+<span class="c1">// Or</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">,</span> <span class="s1">'custom/path'</span><span class="p">);</span>
+
+<span class="c1">// Only one way to use API, no temporal coupling.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<div class="collapsible">
+    <b class="collapsible-title">Example #2: </b>
+    <div class="collapsible-content"><p><strong>Not recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productResource</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$product</span><span class="p">,</span> <span class="nv">$productSku</span><span class="p">,</span> <span class="s1">'sku'</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">registry</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="s1">'product'</span><span class="p">,</span> <span class="nv">$product</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">Template</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getProductName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">registry</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'product'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Recommended:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">Template</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getProductName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// More flexible, no dependencies between classes, no temporal coupling.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<p>2.15. Method chaining in class design MUST be avoided.</p>
+
+<p>2.16. <a href="https://en.wikipedia.org/wiki/Law_of_Demeter">Law of Demeter</a> SHOULD be obeyed.</p>
+
+<p>2.17. Patterns</p>
+
+<p>2.17.1. Proxies SHOULD be used for lazy-loading optional dependencies.</p>
+
+<p>2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">Example: </b>
+    <div class="collapsible-content"><p>You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a <code class="language-plaintext highlighter-rouge">ConfigReaderInterface</code> with a composite implementation - <code class="language-plaintext highlighter-rouge">ConfigReaderComposite</code>, and configure particular readers as children of a composite reader.</p>
+</div>
+  </div>
+
+<hr />
+<p>2.17.3. Strategy SHOULD be used when there are multiple algorithms for performing an operation.</p>
+
+<h2 id="3-dependency-injection">3. Dependency injection</h2>
+
+<p>3.1. There SHOULD be no circular dependencies between objects.</p>
+
+<p>3.2. The <code class="language-plaintext highlighter-rouge">app/etc/di.xml</code> file MUST contain only framework-level <a href="https://glossary.magento.com/dependency-injection">Dependency Injection</a> (DI) settings.</p>
+
+<p>3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in <code class="language-plaintext highlighter-rouge">&lt;module_dir&gt;/etc/di.xml</code>.</p>
+
+<p>3.4. All modular Presentation layer DI settings SHOULD be stored in <code class="language-plaintext highlighter-rouge">&lt;module_dir&gt;/etc/&lt;area_code&gt;/di.xml</code>.</p>
+
+<h2 id="4-interception">4. Interception</h2>
+
+<p>4.1. Around-plugins SHOULD only be used when behavior of an original method is supposed to be substituted in certain scenarios.</p>
+
+<p>4.2. Plugins SHOULD NOT be used within own <a href="https://glossary.magento.com/module">module</a>.</p>
+
+<p>4.3. Plugins SHOULD NOT be added to data objects.</p>
+
+<p>4.4. Plugins MUST be stateless.</p>
+
+<p>4.5. Plugins SHOULD NOT change the state of an intercepted object (Intercepted object is <code class="language-plaintext highlighter-rouge">$subject</code>).</p>
+
+<h2 id="5-exceptions">5. Exceptions</h2>
+
+<p>5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:</p>
+
+<ul>
+  <li>
+    <p>Symptom</p>
+  </li>
+  <li>
+    <p>Details</p>
+  </li>
+  <li>
+    <p>Solution or workaround</p>
+  </li>
+</ul>
+
+<p>5.2. Exceptions MUST NOT be handled in the same function where they are thrown.</p>
+
+<p>5.3. If a function A calls function B, and function B might throw an exception, this <a href="https://glossary.magento.com/exception">exception</a> MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.</p>
+
+<p>5.4. Exceptions MUST NOT handle message output. It is the processing code that decides how to process an exception.</p>
+
+<p>5.5. Business logic (both application and domain) MUST NOT be managed with exceptions. Conditional statements SHOULD be used instead.</p>
+
+<p>5.6. The short name of an exception class MUST be clear, meaningful, and state the cause of exception.</p>
+
+<p>5.7. Thrown exceptions SHOULD be as specific as possible. The top generic <code class="language-plaintext highlighter-rouge">\Exception</code> SHOULD NOT be thrown anywhere.</p>
+
+<p>5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.</p>
+
+<p>5.9. <code class="language-plaintext highlighter-rouge">\Exception</code> SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the <a href="https://glossary.magento.com/library">library</a>.</p>
+
+<p>5.10. <code class="language-plaintext highlighter-rouge">\Exception</code> SHOULD NOT be thrown in Front Controller and Action Controllers.</p>
+
+<p>5.11. A separate exceptions hierarchy SHOULD be defined on each application layer. It is allowed to throw exceptions that are only defined on the same layer.</p>
+
+<p>5.12. If an exception is caught on the application layer that differs from the one where it has been thrown, and it SHOULD be re-thrown, you SHOULD create a new exception instance that is appropriate for the current layer. In this case, the original exception must be passed to a new instance with the “previous” argument.</p>
+
+<p>5.13. It is not allowed to absorb exceptions with no logging or/and any workaround operation executed.</p>
+
+<p>5.14. Any exception SHOULD be logged only in the <code class="language-plaintext highlighter-rouge">catch</code> block where it is processed, and SHOULD NOT be re-thrown.</p>
+
+<p>5.15. Exceptions SHOULD NOT be caught in a loop. The loop SHOULD be wrapped with a <code class="language-plaintext highlighter-rouge">try/catch</code> construct instead.</p>
+
+<p>5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a <code class="language-plaintext highlighter-rouge">try</code> block and the corresponding <code class="language-plaintext highlighter-rouge">finally</code> block. In the <code class="language-plaintext highlighter-rouge">finally</code> sections, all resources SHOULD be properly released.</p>
+
+<p>5.17. Exceptions which need to be displayed to the user MUST be sub-types of <code class="language-plaintext highlighter-rouge">LocalizedException</code>. Any other types of exceptions MUST be wrapped with <code class="language-plaintext highlighter-rouge">LocalizedException</code> before being displayed to the user.</p>
+
+<p>5.18. <code class="language-plaintext highlighter-rouge">LocalizedException</code>s SHOULD be thrown in the presentation layer only.</p>
+
+<p>5.19. Each module or component MUST declare its own exceptions. Exceptions declared in other components SHOULD NOT be thrown.</p>
+
+<p>5.20. Plugin MUST only throw exceptions declared by the method to which the plugin is added or derived exceptions. Observer MUST only throw exceptions declared by the method that triggers an event or derived exceptions.</p>
+
+<h2 id="6-application-layers">6. Application layers</h2>
+
+<h3 id="61-all-layers">6.1. All layers</h3>
+
+<p>6.1.1. Application SHOULD be structured in compliance with the <a href="https://martinfowler.com/bliki/CQRS.html">CQRS principle</a>.</p>
+
+<p>6.1.2. Every application layer (Presentation, Service Contracts, Data Access)
+    MUST process (handle or re-throw) exceptions of the underlying layer.</p>
+
+<p>6.1.3. A layer MUST NOT depend on a layer that invokes (above) it. A layer MUST only depend on a layer directly below it.
+<img src="../../../common/images/archi_diagrams_layers_alt4.jpg" alt="Magento architecture layers" /></p>
+
+<h3 id="62-presentation-layer">6.2. Presentation layer</h3>
+
+<p>6.2.1. According to CQRS, the Presentation layer hosts the Command and the Query Infrastructures:</p>
+
+<ul>
+  <li>
+    <p><strong>Command</strong> for Actions</p>
+  </li>
+  <li>
+    <p><strong>Query</strong> for <a href="https://glossary.magento.com/layout">Layout</a> and its elements (Blocks and UI Components)</p>
+  </li>
+</ul>
+
+<p>6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.</p>
+
+<p>6.2.3. All actions MUST return the <code class="language-plaintext highlighter-rouge">ResultInterface</code> implementation.</p>
+
+<p>6.2.4. Actions MUST NOT reference blocks declared in layout.</p>
+
+<p>6.2.5 Blocks MUST NOT assume that a specific, or any, controller has been invoked for current request.</p>
+
+<h3 id="63-data-access-persistence-layer">6.3. Data Access (Persistence) layer</h3>
+
+<p>6.3.1. Entities MAY have fields scoped differently (in product, EAV — per store, options — per website).</p>
+
+<p>6.3.2. Every persistence operation MUST be performed with one scope set.</p>
+
+<p>6.3.3. Entities MUST NOT contain persistence-related logic.</p>
+
+<p>6.3.4. MySQL’s <code class="language-plaintext highlighter-rouge">strict_mode</code> variable SHOULD be aligned with the default <code class="language-plaintext highlighter-rouge">strict_mode</code> of the latest MySQL release.</p>
+
+<h3 id="64-service-contracts-application-layer">6.4. Service Contracts (Application) layer</h3>
+
+<p>6.4.1. Location of API interfaces</p>
+
+<p>6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules, except when an existing module already contains Service Contracts in the <code class="language-plaintext highlighter-rouge">Api</code> folder. Other modules will depend on the API module, and implementations could be easily swapped via <code class="language-plaintext highlighter-rouge">di.xml</code>. API module names must end with the <code class="language-plaintext highlighter-rouge">Api</code> suffix. For example, if a module is named <code class="language-plaintext highlighter-rouge">MyModule</code>, its APIs SHOULD be declared in a module named <code class="language-plaintext highlighter-rouge">MyModuleApi</code>.</p>
+
+<p>6.4.1.2. Service interfaces that should be exposed as web APIs MUST be placed under the <code class="language-plaintext highlighter-rouge">MyModuleApi/Api</code> directory. Service data interfaces MUST be placed under <code class="language-plaintext highlighter-rouge">MyModuleApi/Api/Data</code>. Directories under <code class="language-plaintext highlighter-rouge">MyModuleApi/Api</code> SHOULD NOT be nested.</p>
+
+<p>6.4.1.3. All other APIs, including explicit extension points such as Chain or Composite implementations, MUST be placed under <code class="language-plaintext highlighter-rouge">MyModuleApi/Model</code>.</p>
+
+<p>6.4.2. Service Interface Structure</p>
+
+<p>6.4.2.1. Methods that have similar names MUST serve similar purposes across different services, but they still MAY have different signatures.</p>
+
+<p>6.4.2.2. Service contracts SHOULD NOT be used for read scenarios on the storefront. Instead, GraphQL SHOULD be used for storefront scenarios. Check out <a href="technical-vision/webapi.html">web API technical vision</a> for more details.</p>
+
+<p>6.4.2.3. Each service interface SHOULD declare a single public method. An interface name SHOULD reflect the task or action to be performed. For example, <code class="language-plaintext highlighter-rouge">Magento\InventoryApi\Api\StockSourceLinksDeleteInterface::execute(array $links)</code>. The only exception is a Repository API, which MAY be added for convenience and MUST be limited to singular CRUD operations and <code class="language-plaintext highlighter-rouge">getList($searchCriteria)</code>.</p>
+
+<p>6.4.3. Service Method Signature</p>
+
+<p>6.4.3.1. Strict typing is enforced for Service and Data interfaces located under <code class="language-plaintext highlighter-rouge">MyCompany/MyModuleApi/Api</code>. Only the following types are allowed:</p>
+
+<ul>
+  <li>
+    <p>Scalar types: <code class="language-plaintext highlighter-rouge">string</code> (including Date and DateTime); <code class="language-plaintext highlighter-rouge">int</code>; <code class="language-plaintext highlighter-rouge">float</code>; <code class="language-plaintext highlighter-rouge">boolean</code></p>
+  </li>
+  <li>
+    <p>Data interfaces</p>
+  </li>
+  <li>
+    <p>One-dimensional indexed arrays of scalars or data interfaces: for example <code class="language-plaintext highlighter-rouge">string[]</code>, <code class="language-plaintext highlighter-rouge">\MyCompany\MyModuleApi\Api\Data\SomeInterface[]</code>. Hash maps (associative arrays) are not supported.</p>
+  </li>
+  <li>
+    <p>Nullable scalars or data interfaces: for example <code class="language-plaintext highlighter-rouge">string|null</code>. Using just <code class="language-plaintext highlighter-rouge">null</code> is prohibited.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">void</code></p>
+  </li>
+</ul>
+
+<p>6.4.3.2. Service contracts SHOULD support batch data processing. For example, an entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations implemented through plugins SHOULD be adjusted respectively.</p>
+
+<p>6.4.3.3. Batch retrieval operations MUST accept <code class="language-plaintext highlighter-rouge">SearchCriteriaInterface</code> and return <code class="language-plaintext highlighter-rouge">SearchResultInterface</code> to support pagination.</p>
+
+<p>6.4.3.4. Batch operations that modify state MUST accept an array of entities and return a response object that contains:</p>
+
+<ul>
+  <li>
+    <p>An array of successfully processed items</p>
+  </li>
+  <li>
+    <p>An array of items with retriable errors</p>
+  </li>
+  <li>
+    <p>An array of items with non-retriable errors</p>
+  </li>
+</ul>
+
+<p>6.4.3.5. Batch operations that modify state SHOULD be implemented in the most performant manner and SHOULD NOT load modified entities to generate response.</p>
+
+<p>6.4.3.6. Asynchronous invocation of the command services SHOULD be supported by the web API framework.</p>
+
+<p>6.4.3.7. Operation UUID MAY be provided by the client during service invocation. UUID MUST allow the client to get the operation status information.</p>
+
+<p>6.4.3.8. Data objects returned by service contracts SHOULD be fully loaded to ensure consistency.</p>
+
+<p>6.4.3.9. Service contracts SHOULD allow client side generated IDs. A service SHOULD accept an ID instead of generating it. See <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> as an example of client side generated ID.</p>
+
+<p>6.4.4. Service Implementation</p>
+
+<p>6.4.4.1. Service data interfaces SHOULD extend from <code class="language-plaintext highlighter-rouge">Magento\Framework\Api\ExtensibleDataInterface</code>. The only exception is when extensibility is not desired, such as in case of value-objects.</p>
+
+<p>6.4.4.2. Extensible data interfaces MUST NOT form hierarchies. If interface <code class="language-plaintext highlighter-rouge">MyInterface</code> extends <code class="language-plaintext highlighter-rouge">ExtensibleDataInterface</code>, there must be no interfaces extending <code class="language-plaintext highlighter-rouge">MyInterface</code>. Otherwise, a list of extension attributes will be shared for all extensible interfaces in the hierarchy.</p>
+
+<p>6.4.4.3. Service implementations and plugins MUST NOT rely on storage-specific integrity features, such as foreign key constraints.</p>
+
+<p>6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links.</p>
+
+<p>6.4.4.5. During update operations, web APIs using the <code class="language-plaintext highlighter-rouge">PATCH</code> HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.</p>
+
+<p>6.4.4.6. If a service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead.</p>
+
+<p>6.4.4.7. Services SHOULD NOT apply ACL rules to methods or returned data.</p>
+
+<p>6.4.4.8. If a store has multiple scopes (websites, stores), then each call MUST persist an entity in a single scope only. If an entity needs to be saved in multiple scopes, then multiple calls SHOULD be made.</p>
+
+<p>6.4.4.9. Service contracts SHOULD NOT apply presentation layer formatting to the returned data.</p>
+
+<p>6.4.4.10. Service data interfaces MUST NOT contain any business logic. They SHOULD represent a container of data that is transferable over the wire. All the business logic SHOULD be moved to services.</p>
+
+<p>6.4.4.11. Domain/business logic MUST be executed on the service contracts layer.</p>
+
+<p>6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in the <code class="language-plaintext highlighter-rouge">global</code> area of configuration.</p>
+
+<p>6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.</p>
+
+<p>6.4.4.14. A service contract SHOULD be an <a href="https://tools.ietf.org/html/rfc7231#section-4.2.2">idempotent method</a>.</p>
+
+<h2 id="7-configuration">7. Configuration</h2>
+
+<p>7.1. An Application Instance consists of:</p>
+
+<ul>
+  <li>
+    <p>Code</p>
+  </li>
+  <li>
+    <p>Environment Configuration</p>
+  </li>
+  <li>
+    <p>Data</p>
+  </li>
+</ul>
+
+<p>7.2. Code includes:</p>
+
+<ul>
+  <li>
+    <p>application codebase</p>
+  </li>
+  <li>
+    <p><a href="https://glossary.magento.com/xml">XML</a> configuration</p>
+  </li>
+  <li>
+    <p>generated code and <a href="https://glossary.magento.com/static-files">static files</a></p>
+  </li>
+  <li>
+    <p>database structure</p>
+  </li>
+  <li>
+    <p>system configuration values</p>
+  </li>
+  <li>
+    <p>configuration scopes (stores/store groups/websites)</p>
+  </li>
+  <li>
+    <p><a href="https://glossary.magento.com/cms">CMS</a> entities</p>
+  </li>
+</ul>
+
+<p>7.3. Environment Configuration includes information about application services connection.</p>
+
+<p>7.4. Data includes the business <a href="https://glossary.magento.com/entity">entity</a> data.</p>
+
+<p>7.5. Code and Environment Configuration MUST not be stored in Data Storage.</p>
+
+<p>7.6. Installation process MUST NOT modify Code.</p>
+
+<p>7.7. All XML configuration formats MUST be declarative. Imperative nodes are not allowed.</p>
+
+<p>7.8. All Configuration objects MUST use <code class="language-plaintext highlighter-rouge">Magento\Framework\Config</code>.</p>
+
+<h2 id="8-modularity">8. Modularity</h2>
+
+<p>8.1. The Application Framework (<code class="language-plaintext highlighter-rouge">Magento\Framework\*</code>) MUST NOT depend on application modules.</p>
+
+<p>8.2. All dependencies MUST be declared in the component’s <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
+
+<p>8.3. If component A uses behavior of Component B, such Component B MUST be declared in the <code class="language-plaintext highlighter-rouge">require</code> section of Component A’s <code class="language-plaintext highlighter-rouge">composer.json</code> file, except for cases where Component B is used in the code that customizes the behavior of Component B.</p>
+
+<p>8.4. If component A extends/customizes the behavior of component B through its customization points (layout handles, plugins, events, etc.), such Component B MUST be declared in the <code class="language-plaintext highlighter-rouge">suggest</code> section of Component A.</p>
+
+<p>8.5. Only the <code class="language-plaintext highlighter-rouge">@api</code> code of any module can be referenced by other modules.</p>
+
+<p>8.6. A module MUST NOT contain references to <a href="https://glossary.magento.com/theme">theme</a> resources.</p>
+
+<p>8.7. A component MUST NOT rely either on dependencies of dependencies or on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.</p>
+
+<h2 id="9-browser-server-interaction-in-web-application">9. Browser-Server interaction in web application</h2>
+
+<p>9.1. All Client-Server calls must follow the <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP Protocol</a>.</p>
+
+<p>9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public <a href="https://glossary.magento.com/cache">cache</a> server (Varnish).</p>
+
+<p>9.3. All customer-specific data MUST be rendered on the browser side using a <a href="https://glossary.magento.com/javascript">JavaScript</a> (JS) application.</p>
+
+<p>9.4. <a href="https://glossary.magento.com/html">HTML</a> <a href="https://glossary.magento.com/markup">markup</a> generated on server MUST NOT contain user-specific data.</p>
+
+<p>9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. a form element with a CSRF token).</p>
+
+<p>9.6. A JS application MAY receive customer-specific data using the CustomerData JS <a href="https://glossary.magento.com/api">API</a>.</p>
+
+<p>9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.</p>
+
+<p>9.8. If an error occurs during request handling, the server MUST return an appropriate <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP Status Code</a> and an explanation of an error in the response body.</p>
+
+<p>9.9. All headers MUST be respected.</p>
+
+<p>9.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST be passed only as method arguments.</p>
+
+<p>9.11. Operation scopes MUST always be explicitly requested by operations (<code class="language-plaintext highlighter-rouge">StoreManager</code> SHOULD NOT be used to retrieve the store ID).</p>
+
+<h2 id="10-javascript-js-application">10. JavaScript (JS) application</h2>
+
+<p>10.1. The Magento 2 <a href="https://glossary.magento.com/ui-component">UI Component</a> framework MUST be used to build frontend applications.</p>
+
+<p>10.2. Only private content SHOULD be rendered in browser.</p>
+
+<p>10.3. All module dependencies of a RequireJS module MUST be declared in the module’s definition header.</p>
+
+<p>10.3.1 No direct calls to <code class="language-plaintext highlighter-rouge">require</code> SHOULD be made unless the list of modules to be loaded is dynamic.</p>
+
+<p>10.3.2 Code MUST NOT make use of the synchronous form of <code class="language-plaintext highlighter-rouge">require</code> (<code class="language-plaintext highlighter-rouge">require('moduleIdentifier')</code>).</p>
+
+<p>10.4. The <a href="https://w3c.github.io/webappsec-csp/">W3C Content Security Policy</a> MUST be followed.</p>
+
+<p>10.5. ESLint <a href="https://github.com/magento/magento2/blob/2.4/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento">rules</a> SHOULD BE followed.</p>
+
+<p>10.5.1. ECMAScript 5.1 SHOULD be used as a JS standard.</p>
+
+<p>10.5.2. Language features (closures, WeakMaps, etc) MUST be used for private state. There SHOULD be no <code class="language-plaintext highlighter-rouge">_</code> (underscore) naming convention for private properties.</p>
+
+<p>10.5.3. All uses of XMLHttpRequest (including jQuery’s <code class="language-plaintext highlighter-rouge">$.ajax</code>) MUST be asynchronous.</p>
+
+<p>10.5.4. New global properties MUST not be added (either through explicit <code class="language-plaintext highlighter-rouge">window</code> assignment or <code class="language-plaintext highlighter-rouge">var</code> in the top scope). The RequireJS module system SHOULD be used for shared objects.</p>
+
+<p>10.5.5. Modules MUST NOT have external side effects.</p>
+
+<p>10.5.6. Code MUST NOT re-declare any identifiers already declared in a reachable scope (re-assignment is acceptable).</p>
+
+<h2 id="11-testing">11. Testing</h2>
+
+<h3 id="111-white-box-testing-unit-integration-functional">11.1. White-box testing (unit, integration, functional)</h3>
+
+<p>11.1.1. Only public methods SHOULD be tested. Private and protected behavior SHOULD be tested through public methods.</p>
+
+<h3 id="112-unit-testing">11.2. Unit testing</h3>
+
+<p>11.2.1. All objects SHOULD be tested in isolation.</p>
+
+<p>11.2.2. <code class="language-plaintext highlighter-rouge">ObjectManager</code> MUST NOT be used in unit tests.</p>
+
+<p>11.2.3. <code class="language-plaintext highlighter-rouge">ObjectManagerHelper</code> MAY BE used to automatically mock all dependencies of the object under test.</p>
+
+<h3 id="113-functional-testing">11.3. Functional Testing</h3>
+
+<h4 id="1131-pages">11.3.1. Pages</h4>
+
+<p>11.3.1.1. Page file names MUST follow this pattern:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">{Admin or Storefront}{Description}Page.xml</code>, where <code class="language-plaintext highlighter-rouge">{Description}</code> briefly describes the page under test.</li>
+  <li>Use <a href="http://wiki.c2.com/?PascalCase">PascalCase</a>.</li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">AdminProductAttributeGridPage.xml</code></li>
+</ul>
+
+<p>11.3.1.2. Page <code class="language-plaintext highlighter-rouge">name</code> attribute MUST be the same as the file name.</p>
+
+<p>11.3.1.3. Page <code class="language-plaintext highlighter-rouge">module</code> attribute MUST follow this pattern:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">{VendorName}_{ModuleName}</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">Magento_Backend</code></li>
+</ul>
+
+<p>11.3.1.4. There MUST be only one <code class="language-plaintext highlighter-rouge">&lt;page&gt;</code> entity per file.</p>
+
+<h4 id="1132-sections">11.3.2. Sections</h4>
+
+<p>11.3.2.1. Section file names MUST follow this pattern:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">{Admin or Storefront}{Description}Section.xml</code>, where <code class="language-plaintext highlighter-rouge">{Description}</code> briefly describes the section under test.</li>
+  <li>Use <a href="http://wiki.c2.com/?PascalCase">PascalCase</a>.</li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">StorefrontCheckoutCartSummarySection.xml</code></li>
+</ul>
+
+<p>11.3.2.2. Section <code class="language-plaintext highlighter-rouge">name</code> attribute MUST be the same as the file name.</p>
+
+<p>11.3.2.3. There MUST be only one <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code> entity per file.</p>
+
+<h4 id="1133-elements">11.3.3. Elements</h4>
+
+<p>11.3.3.1. All element selectors MUST follow these <a href="../../../mftf/docs/best-practices.html">best practices</a>.</p>
+
+<p>11.3.3.2. The element <code class="language-plaintext highlighter-rouge">name</code> MUST be unique within the <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>.</p>
+
+<p>11.3.3.3. The element <code class="language-plaintext highlighter-rouge">name</code> SHOULD be written in <a href="http://wiki.c2.com/?CamelCase">camelCase</a>.</p>
+
+<p>11.3.3.4. Parameterized selectors MUST use descriptive names for their parameters.</p>
+
+<p>11.3.3.5. Elements SHOULD use the <code class="language-plaintext highlighter-rouge">timeout</code> attribute to wait after interactions.</p>
+
+<h4 id="1134-data-entities">11.3.4. Data Entities</h4>
+
+<p>11.3.4.1. Data entity file names MUST follow this pattern:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">{Type}Data.xml</code>, where <code class="language-plaintext highlighter-rouge">{Type}</code> describes the type of entities.</li>
+  <li>Use <a href="http://wiki.c2.com/?PascalCase">PascalCase</a>.</li>
+  <li>Examples: <code class="language-plaintext highlighter-rouge">ProductData.xml</code> or <code class="language-plaintext highlighter-rouge">CustomerData.xml</code></li>
+</ul>
+
+<p>11.3.4.2. Data entities SHOULD make use of <code class="language-plaintext highlighter-rouge">unique="suffix"</code> or <code class="language-plaintext highlighter-rouge">unique="prefix"</code> to ensure that tests using the entity can be repeatedly ran against the same environment.</p>
+
+<p>11.3.4.3. Changes to existing data entities MUST be compatible with existing tests.</p>
+
+<h4 id="1135-action-groups">11.3.5. Action groups</h4>
+
+<p>11.3.5.1. Action group file names MUST follow this pattern:</p>
+
+<ul>
+  <li>If the action group is making an assertion, then use the following format: <code class="language-plaintext highlighter-rouge">Assert{Admin or Storefront}{Functionality}ActionGroup.xml</code> where <code class="language-plaintext highlighter-rouge">{Functionality}</code> briefly describes what the action group is doing.</li>
+  <li>Otherwise use this format: <code class="language-plaintext highlighter-rouge">{Admin or Storefront}{Functionality}ActionGroup.xml</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">AssertStorefrontMinicartContainsProductActionGroup.xml</code></li>
+</ul>
+
+<p>11.3.5.2. Action group arguments MUST specify the <code class="language-plaintext highlighter-rouge">type</code> attribute.</p>
+
+<p>11.3.5.3. Action groups MUST NOT have unused arguments.</p>
+
+<p>11.3.5.4. Action groups MUST NOT reference created data entities such as <code class="language-plaintext highlighter-rouge">$$createdOutOfScopeData.property$$</code> or <code class="language-plaintext highlighter-rouge">$createdOutOfScopeData.property$</code> that were created from outside of the action group scope. Instead, action groups MUST use arguments to access this out of scope data.</p>
+
+<p>11.3.5.5. Action group arguments SHOULD specify default values.</p>
+
+<h4 id="1136-metadata">11.3.6. Metadata</h4>
+
+<p>11.3.6.1. Metadata file names MUST follow this pattern:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">{Type}Meta.xml</code>, where <code class="language-plaintext highlighter-rouge">{Type}</code> describes the type of entity.</li>
+  <li>Use <a href="http://wiki.c2.com/?PascalCase">PascalCase</a>.</li>
+  <li>Examples: <code class="language-plaintext highlighter-rouge">CategoryMeta.xml</code> and <code class="language-plaintext highlighter-rouge">ProductAttributeMeta.xml</code></li>
+</ul>
+
+<h2 id="12-web-api">12. Web API</h2>
+
+<p>12.1. Both REST and SOAP APIs MUST be exposed.</p>
+
+<p>12.2. All <a href="https://glossary.magento.com/web-api">Web API</a> GET endpoints MUST return lists of entities.</p>
+
+<h2 id="13-command-line-interface-cli">13. Command line interface (CLI)</h2>
+
+<p>13.1. Magento 2 <a href="../extension-dev-guide/cli-cmds/cli-naming-guidelines.html">CLI Command Naming Guidelines</a> MUST be followed.</p>
+
+<p>13.2. A CLI command MUST be created for any functionality intended to be used by a system integrator/system administrator/developer (for example: change indexer mode, generate a configuration file, etc.).</p>
+
+<p>13.3. A CLI command MUST always run in a global area. If a command needs a specific area to perform its functions, such area SHOULD be set up before execution.</p>
+
+<p>13.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.</p>
+
+<h2 id="14-events">14. Events</h2>
+
+<p>14.1. All values (including objects) passed to an <a href="https://glossary.magento.com/event">event</a> MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">Example: </b>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="kn">use</span> <span class="nn">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Framework\Event\Observer</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">SampleEventObserverThatModifiesInputs</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @param Observer $observer
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="cd">/** @var \Magento\Framework\App\DataObject $transport */</span>
+        <span class="nv">$transport</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'transport'</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'some_value'</span><span class="p">)</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="cd">/**
+             * Expecting this value to go back to the original event dispatcher violates
+             * this rule. Other observers could change the data, or Magento could make
+             * architectural changes always sending immutable objects.
+             */</span>
+            <span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="s1">'output_return_value'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<hr />
+
+<p>14.2. Events used SHOULD be observed as specifically as possible. A <code class="language-plaintext highlighter-rouge">global</code> subscription to an event SHOULD NOT be used when the area impacted is just <code class="language-plaintext highlighter-rouge">frontend</code>.</p>
+
+<p>14.3. Events SHOULD NOT change a state of observable objects.</p>
+
+<h2 id="15-security">15. Security</h2>
+
+<p>15.1. Use prepared statements for SQL queries.</p>
+
+<p>15.2. Broken Authentication protection.</p>
+
+<p>15.2.1. Where possible, implement multi-factor authentication to prevent automated, credential stuffing, brute force, and stolen credential re-use attacks.</p>
+
+<p>15.2.2. Do not ship or deploy with any default credentials, particularly for admin users.</p>
+
+<p>15.2.3. Implement weak-password checks, such as testing new or changed passwords against a list of the <a href="https://github.com/danielmiessler/SecLists/tree/master/Passwords">top 10000 worst passwords</a>.</p>
+
+<p>15.2.4. Align password length, complexity, and rotation policies with <a href="https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret">NIST 800-63 B’s guidelines in section 5.1.1 for Memorized Secrets</a> or other modern, evidence-based password policies.</p>
+
+<p>15.2.5. Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes.</p>
+
+<p>15.2.6. Limit or increasingly delay failed login attempts. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.</p>
+
+<p>15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.</p>
+
+<p>15.3. Cross-Site Scripting (XSS) protection.</p>
+
+<p>15.3.1. Sanitize input; escape output.</p>
+
+<p>15.3.2. Follow <a href="../extension-dev-guide/xss-protection.html">XSS prevention strategies guidelines</a> for escaping output.</p>
+
+<p>15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.</p>
+
+<p>15.3.4. Incoming string data length should be checked.</p>
+
+<p>15.3.5. Special characters, like null byte characters, should be dropped from Incoming string data.</p>
+
+<p>15.4. A module that introduces Admin Panel functionality should have ACL.</p>
+
+<p>15.5. Misconfiguration protection.</p>
+
+<p>15.5.1. Do not include/require unused libraries/frameworks.</p>
+
+<p>15.5.2. A segmented application architecture that provides effective, secure separation between components or tenants, with segmentation, containerization, or cloud security groups (ACLs).</p>
+
+<p>15.5.3. Sending security directives to clients, e.g. <a href="https://www.owasp.org/index.php/OWASP_Secure_Headers_Project">Security Headers</a>.</p>
+
+<p>15.6. Sensitive Data Exposure protection.</p>
+
+<p>15.6.1. Exceptions/Notices/Warnings should be caught and logged.</p>
+
+<p>15.6.2. Error output should not be displayed to the user. Display standard messages to inform the user.</p>
+
+<p>15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.</p>
+
+<p>15.7. Cross-Site Request Forgery (CSRF) protection.</p>
+
+<p>15.7.1. CSRF tokens mechanism should be utilized.</p>
+
+<p>15.7.2. All data manipulation requests should be made with POST requests.</p>
+
+<p>15.8. Frequently update third-party libraries used in the project/component to eliminate known vulnerabilities.</p>
+
+<p>15.9. Local File Inclusion (LFI) protection.</p>
+
+<p>15.9.1. User-submitted requests containing path and file name SHOULD NOT be trusted.</p>
+
+<p>15.9.2. User-submitted path and file values SHOULD be sanitized to remove dot-dot-slash from the request.</p>
+
+<p>15.10. Remote Code Execution (RCE) protection.</p>
+
+<p>15.10.1. <code class="language-plaintext highlighter-rouge">eval()</code>, <code class="language-plaintext highlighter-rouge">passthru()</code>, <code class="language-plaintext highlighter-rouge">system()</code>, <code class="language-plaintext highlighter-rouge">shell_exec()</code>, <code class="language-plaintext highlighter-rouge">serialize()</code>, <code class="language-plaintext highlighter-rouge">unserialize()</code>, <code class="language-plaintext highlighter-rouge">md5()</code>, <code class="language-plaintext highlighter-rouge">srand()</code>, <code class="language-plaintext highlighter-rouge">mt_srand()</code> SHOULD NOT be used.</p>
+
+<p>15.10.2. User-submitted values SHOULD NOT be passed directly to <code class="language-plaintext highlighter-rouge">include*()</code>, <code class="language-plaintext highlighter-rouge">require*()</code>, <code class="language-plaintext highlighter-rouge">create_function()</code>, <code class="language-plaintext highlighter-rouge">fopen()</code>, <code class="language-plaintext highlighter-rouge">preg_replace()</code>.</p>
+
+<p>15.10.3. Variable functions SHOULD NOT be used if the variable values are submitted by the user.</p>
+
+<p>15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.</p>
+
+<p>15.12. Files MUST be secured by a web server configuration (e.g., <code class="language-plaintext highlighter-rouge">.htaccess</code> or <code class="language-plaintext highlighter-rouge">nginx.conf</code>), except files that are intended to be publicly accessible.</p>
+
+<p>15.13 Presentation layer classes that access user input directly MUST NOT assume it has been validated.</p>
+
+<h2 id="16-cron">16. Cron</h2>
+
+<p>16.1. Cron job SHOULD be an <a href="https://tools.ietf.org/html/rfc7231#section-4.2.2">idempotent method</a>.</p>
+
+<h2 id="17-services">17. Services</h2>
+
+<p>17.1. New features with limited customization scenarios SHOULD be implemented as a thin Magento extension that will communicate to a service that contains business logic. This allows developers to release features independently of Magento and makes feature upgrades easier.</p>
+
+<!-- LINKS: DEFINITIONS AND ADDRESSES -->
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-03-02">
+    Mar 2nd, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

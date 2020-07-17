@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Remove sample data modules or update sample data | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="install-cli-sample-data-other.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-sample-data-other.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="install-cli-sample-data-other.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Installation Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../bk-install-guide.html" class="spectrum-SideNav-itemLink ">How to get the Magento software</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../install-flow-diagram.html" class="spectrum-SideNav-itemLink ">Installation flow diagram</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Just the basics</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../basics/basics_magento-installed.html" class="spectrum-SideNav-itemLink ">Is the Magento software installed already?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../basics/basics_os-version.html" class="spectrum-SideNav-itemLink ">What operating system is my server running?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../basics/basics_login.html" class="spectrum-SideNav-itemLink ">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../basics/basics_module.html" class="spectrum-SideNav-itemLink ">What's the difference between a module and a component?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../basics/basics_software.html" class="spectrum-SideNav-itemLink ">What is the software that the Magento server needs to run?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../basics/basics_docroot.html" class="spectrum-SideNav-itemLink ">What is a docroot?</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Getting Started</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../install-resources-parent.html" class="spectrum-SideNav-itemLink ">Helpful resources</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../install-quick-ref.html" class="spectrum-SideNav-itemLink ">Installation quick reference (tutorial)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../install-resource-diagram.html" class="spectrum-SideNav-itemLink ">Installation flow diagram</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../install-roadmap_part1.html" class="spectrum-SideNav-itemLink ">Installation roadmap (reference)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../system-requirements.html" class="spectrum-SideNav-itemLink ">Magento system requirements</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../system-requirements-tech.html" class="spectrum-SideNav-itemLink ">Magento technology stack requirements</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../system-requirements_browsers.html" class="spectrum-SideNav-itemLink ">Supported browsers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Transport Layer Security (TLS) requirements</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../system-requirements_tls1-2.html" class="spectrum-SideNav-itemLink ">TLS 1.2 requirement for PayPal</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../system-requirements_repo-tls1-2.html" class="spectrum-SideNav-itemLink ">TLS requirement for repo.magento.com</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/prereq-overview.html" class="spectrum-SideNav-itemLink ">Prerequisites</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/apache.html" class="spectrum-SideNav-itemLink ">Apache</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/nginx.html" class="spectrum-SideNav-itemLink ">nginx</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/php-settings.html" class="spectrum-SideNav-itemLink ">PHP</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/mysql.html" class="spectrum-SideNav-itemLink ">MySQL</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/elasticsearch.html" class="spectrum-SideNav-itemLink ">Elasticsearch</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/es-config-nginx.html" class="spectrum-SideNav-itemLink ">Configure nginx and Elasticsearch</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/es-config-apache.html" class="spectrum-SideNav-itemLink ">Configure Apache and Elasticsearch</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/install-gde/prereq/connect-auth.html" class="spectrum-SideNav-itemLink ">Get your authentication keys</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Magento file system ownership and permissions</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/file-sys-perms-over.html" class="spectrum-SideNav-itemLink ">Overview of ownership and permissions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/file-system-perms.html" class="spectrum-SideNav-itemLink ">Set pre-installation ownership and permissions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/install-rabbitmq.html" class="spectrum-SideNav-itemLink ">RabbitMQ</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/mysql_remote.html" class="spectrum-SideNav-itemLink ">Set up a remote MySQL database connection</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/security.html" class="spectrum-SideNav-itemLink ">SELinux and iptables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/optional.html" class="spectrum-SideNav-itemLink ">Optional software</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../get-software.html" class="spectrum-SideNav-itemLink ">Get the Magento software</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../composer.html" class="spectrum-SideNav-itemLink ">Install Magento using Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/zip_install.html" class="spectrum-SideNav-itemLink ">(Easy) Install the Magento archive on your server</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../prereq/dev_install.html" class="spectrum-SideNav-itemLink ">(Contributor) Clone the Magento repository</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../prepare-install.html" class="spectrum-SideNav-itemLink ">Update installation dependencies</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../get-help.html" class="spectrum-SideNav-itemLink ">Get help with your installation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../continue-to-install.html" class="spectrum-SideNav-itemLink ">Install options</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Command Line Installation</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../install-roadmap_cli.html" class="spectrum-SideNav-itemLink ">Installation roadmap (reference)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli.html" class="spectrum-SideNav-itemLink ">Install the Magento software using the command line</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands.html" class="spectrum-SideNav-itemLink ">Get started with the command-line installation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-install.html" class="spectrum-SideNav-itemLink ">Install the Magento software</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-uninstall.html" class="spectrum-SideNav-itemLink ">Uninstall or reinstall Magento</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-adminurl.html" class="spectrum-SideNav-itemLink ">Display or change the Admin URI</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="install-cli-sample-data-other.html" class="spectrum-SideNav-itemLink ">Remove sample data modules or update sample data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-enable.html" class="spectrum-SideNav-itemLink ">Enable or disable modules</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-uninstall-mods.html" class="spectrum-SideNav-itemLink ">Uninstall modules</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-deployment.html" class="spectrum-SideNav-itemLink ">Create or update the deployment configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-maint.html" class="spectrum-SideNav-itemLink ">Enable or disable maintenance mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-consumers.html" class="spectrum-SideNav-itemLink ">Configure consumer behavior</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-db.html" class="spectrum-SideNav-itemLink ">Create the Magento database schema</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-db-upgr.html" class="spectrum-SideNav-itemLink ">Update the Magento database schema and data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-lock.html" class="spectrum-SideNav-itemLink ">Configure the lock provider</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-store.html" class="spectrum-SideNav-itemLink ">Configure the store</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-subcommands-admin.html" class="spectrum-SideNav-itemLink ">Create, edit, or unlock a Magento administrator account</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-backup.html" class="spectrum-SideNav-itemLink ">Back up and roll back the file system, media, and database</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-theme-uninstall.html" class="spectrum-SideNav-itemLink ">Uninstall themes Composer packages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-uninstall-langpk.html" class="spectrum-SideNav-itemLink ">Uninstall language packages</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-sample-data.html" class="spectrum-SideNav-itemLink ">Install optional sample data modules</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-sample-data-composer.html" class="spectrum-SideNav-itemLink ">Install using Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-cli-sample-data-clone.html" class="spectrum-SideNav-itemLink ">Install by cloning repositories</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="dev_options.html" class="spectrum-SideNav-itemLink ">Contributing developers—update, reinstall Magento</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="dev_update-magento.html" class="spectrum-SideNav-itemLink ">Update the Magento application</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="dev_add-update.html" class="spectrum-SideNav-itemLink ">Add or update components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="dev_downgrade.html" class="spectrum-SideNav-itemLink ">Change to a released version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="dev_reinstall.html" class="spectrum-SideNav-itemLink ">Reinstall the Magento software</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../continue-to-verify_cli.html" class="spectrum-SideNav-itemLink ">Post-installation</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Post Installation</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../verify.html" class="spectrum-SideNav-itemLink ">Verify the installation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../post-install-config.html" class="spectrum-SideNav-itemLink ">Configure the Magento application</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../post-install-umask.html" class="spectrum-SideNav-itemLink ">Optionally set a umask</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../legacy-file-system-perms.html" class="spectrum-SideNav-itemLink ">Appendix—Magento file system ownership and appendix (legacy)</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../sample-data-after-magento.html" class="spectrum-SideNav-itemLink ">Install sample data after Magento</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../sample-data-after-composer.html" class="spectrum-SideNav-itemLink ">Install using Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../sample-data-after-clone.html" class="spectrum-SideNav-itemLink ">Install by cloning repositories</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Troubleshooting</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Access issues</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../trouble/php/tshoot_mod_access_compat.html" class="spectrum-SideNav-itemLink ">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../trouble/tshoot_var-gen-perms.html" class="spectrum-SideNav-itemLink ">Cannot write to the var/generation directory</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">How Tos</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../tutorials/change-docroot-to-pub.html" class="spectrum-SideNav-itemLink ">Modify docroot to improve security</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+  <div class="message-banner">
+    You must install Elasticsearch before installing Magento Commerce or Magento Open Source 2.4.0. See <a href="../../prereq/elasticsearch.html">Elasticsearch</a> for details.
+  </div>
+  
+
+  
+
+  <h1 class="page-title">Remove sample data modules or update sample data</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/install-gde/install/cli/install-cli-sample-data-other.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/install-gde/install/cli/install-cli-sample-data-other.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<h2 id="instgde-prereq-sample-intro">Remove sample data modules or update sample data</h2>
+
+<p>This topic discusses how to:</p>
+
+<ul>
+  <li>
+    <p><a href="install-cli-sample-data-other.html#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code class="language-plaintext highlighter-rouge">composer.json</code>. This option does <em>not</em> remove sample data from the database.</p>
+  </li>
+  <li>
+    <p><a href="install-cli-sample-data-other.html#inst-sample-reset">Prepare to update sample data</a> (for example, before updating the Magento application).</p>
+  </li>
+</ul>
+
+<h2 id="sample-first">First steps</h2>
+
+<ol>
+  <li>
+    <p>Log in to the Magento server as, or switch to, a user with permissions to write to the Magento file system. See <a href="../../prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+
+    <p>If you use the bash shell, you can use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>su &lt;Magento file system owner&gt; <span class="nt">-s</span> /bin/bash <span class="nt">-c</span> &lt;<span class="nb">command</span><span class="o">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>If the Magento file system owner does not allow logins, you can do the following:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo</span> <span class="nt">-u</span> &lt;Magento file system owner&gt;  &lt;<span class="nb">command</span><span class="o">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To run Magento commands from any directory, add <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/bin</code> to your system <code class="language-plaintext highlighter-rouge">PATH</code>.</p>
+
+    <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables">unix.stackexchange.com</a>.</p>
+
+    <p>Sample bash shell for CentOS:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/var/www/html/magento2/bin
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>Optionally, you can run the commands in the following ways:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">cd &lt;magento_root&gt;/bin</code> and run them as <code class="language-plaintext highlighter-rouge">./magento &lt;command name&gt;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/bin/magento &lt;command name&gt;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;</code> is a subdirectory of your web server docroot. <a href="../../basics/basics_docroot.html">Need help locating the docroot?</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="inst-sample-remove">Remove sample data modules</h2>
+
+<p>Enter the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/magento sampledata:remove
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The complete list of sample data modules follows:</p>
+
+<p>Magento Open Source and Magento Commerce:</p>
+
+<ul>
+  <li>magento/module-bundle-sample-data</li>
+  <li>magento/module-catalog-rule-sample-data</li>
+  <li>magento/module-catalog-sample-data</li>
+  <li>magento/module-cms-sample-data</li>
+  <li>magento/module-configurable-sample-data</li>
+  <li>magento/module-customer-sample-data</li>
+  <li>magento/module-downloadable-sample-data</li>
+  <li>magento/module-grouped-product-sample-data</li>
+  <li>magento/module-msrp-sample-data</li>
+  <li>magento/module-offline-shipping-sample-data</li>
+  <li>magento/module-product-links-sample-data</li>
+  <li>magento/module-review-sample-data</li>
+  <li>magento/module-sales-rule-sample-data</li>
+  <li>magento/module-sales-sample-data</li>
+  <li>magento/module-sample-data</li>
+  <li>magento/module-swatches-sample-data</li>
+  <li>magento/module-tax-sample-data</li>
+  <li>magento/module-theme-sample-data</li>
+  <li>magento/module-widget-sample-data</li>
+  <li>magento/module-wishlist-sample-data</li>
+  <li>magento/sample-data</li>
+  <li>magento/sample-data-media</li>
+</ul>
+
+<p>Magento Commerce only:</p>
+
+<ul>
+  <li>magento/module-customer-balance-sample-data</li>
+  <li>magento/module-gift-card-sample-data</li>
+  <li>magento/module-gift-registry-sample-data</li>
+  <li>magento/module-multiple-wishlist-sample-data</li>
+  <li>magento/module-target-rule-sample-data
+ –&gt;</li>
+</ul>
+
+<h2 id="inst-sample-reset">Prepare to update sample data</h2>
+
+<p>This command enables you to update sample data before you update the Magento application.</p>
+
+<p>To prepare sample data for updating, enter the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>bin/magento sampledata:reset
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>After that, <a href="install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.</p>
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-12-19">
+    Dec 19th, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

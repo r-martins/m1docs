@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>DocBlock standard | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="docblock-standard-general.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../v2.3/coding-standards/docblock-standard-general.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="docblock-standard-general.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Coding Standards</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="bk-coding-standards.html" class="spectrum-SideNav-itemLink ">Coding Standards</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-demarcation.html" class="spectrum-SideNav-itemLink ">Code demarcation standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-php.html" class="spectrum-SideNav-itemLink ">PHP coding standard</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="docblock-standard-general.html" class="spectrum-SideNav-itemLink ">DocBlock standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-javascript.html" class="spectrum-SideNav-itemLink ">JavaScript coding standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="docblock-standard-javascript.html" class="spectrum-SideNav-itemLink ">JavaScript DocBlock standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-jquery-widgets.html" class="spectrum-SideNav-itemLink ">jQuery widget coding standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-less.html" class="spectrum-SideNav-itemLink ">LESS coding standard</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="code-standard-html.html" class="spectrum-SideNav-itemLink ">HTML style guide</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="technical-guidelines.html" class="spectrum-SideNav-itemLink ">Technical guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="technical-vision/index.html" class="spectrum-SideNav-itemLink ">Technical vision</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="technical-vision/webapi.html" class="spectrum-SideNav-itemLink ">Web Api</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">DocBlock standard</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/coding-standards/docblock-standard-general.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/coding-standards/docblock-standard-general.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>This standard defines Magento requirements and conventions for adding inline code documentation, known as <em>DocBlock</em>s.</p>
+
+<p>Some parts of Magento code might not comply with this standard, but we are working to improve this.</p>
+
+<p>Following these standards is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
+
+<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the “MUST,” “MUST NOT,” “REQUIRED,” “SHALL,” “SHALL NOT,” “SHOULD,” “SHOULD NOT,” “RECOMMENDED,” “MAY,” and “OPTIONAL keywords.”</p>
+
+<h2 id="scope">Scope of the standard</h2>
+
+<p>The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language.</p>
+
+<p>The following is assumed by default:</p>
+
+<ul>
+  <li>Formatting according to the <a href="https://docs.phpdoc.org/latest/references/phpdoc/basic-syntax.html#what-is-a-docblock" target="_blank">phpDocumentor</a> standard</li>
+  <li>Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.</li>
+</ul>
+
+<h2 id="general-principles">General principles</h2>
+
+<p>The documentation should follow two simple principles:</p>
+
+<ol>
+  <li>Be as short as possible.</li>
+  <li>Include all necessary information without duplication.</li>
+</ol>
+
+<h3 id="short-documentation">Short documentation</h3>
+
+<p>The documentation should be as short as possible, while including all necessary details.</p>
+
+<p>Below are ways of improving code to help simplify documentation:</p>
+
+<ul>
+  <li>Make code self-explanatory.</li>
+  <li>Put all possible information in the names of classes, methods, and variables. (e.g. use <code class="language-plaintext highlighter-rouge">$timeInSec</code> instead of <code class="language-plaintext highlighter-rouge">$time</code>)</li>
+  <li>
+    <p>Break down a method into smaller methods with descriptive names.
+For example:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre> <span class="k">public</span> <span class="k">function</span> <span class="nf">getPrice</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="nv">$price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+     <span class="nv">$price</span> <span class="o">+=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBasePrice</span><span class="p">();</span>
+     <span class="nv">$price</span> <span class="o">-=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDiscount</span><span class="p">();</span>
+     <span class="k">return</span> <span class="nv">$price</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="k">private</span> <span class="k">function</span> <span class="nf">getBasePrice</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="c1">// calculate base price</span>
+ <span class="p">}</span>
+
+ <span class="k">private</span> <span class="k">function</span> <span class="nf">getDiscount</span><span class="p">()</span>
+ <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="nx">it</span><span class="err">'</span><span class="nx">s</span> <span class="nx">discount</span> <span class="nb">time</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="include-all-necessary-details">Include all necessary details</h3>
+
+<ol>
+  <li>Identify the details a developer needs to work with your code.</li>
+  <li>
+    <p>Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
+If possible, improve the interface to provide more information.</p>
+  </li>
+  <li>Add any remaining information that a developer may need to the DocBlock.</li>
+</ol>
+
+<h2 id="files">Files</h2>
+
+<p>Each Magento source code file must have a DocBlock header with a short description of the file.
+After the short description, there can be a long description.</p>
+
+<p>Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from <code class="language-plaintext highlighter-rouge">*</code>.</p>
+
+<p>If the description or short description happens to be the first one after the DocBlock opening tag (<code class="language-plaintext highlighter-rouge">/**</code>) or last one before the closing tag (<code class="language-plaintext highlighter-rouge">*/</code>), it should not be separated with an empty line.</p>
+
+<p><strong>DocBlock Header in a PHP-file:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Short description...
+ *
+ * Long description
+ * Broken down into several lines
+ *
+ * License notice...
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>DocBlock Header in an XML-file:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!--
+/**
+ * Short description...
+ *
+ * Long description
+ * Broken down into several lines
+ *
+ * License notice...
+ */
+--&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="license-notice-and-copyright">License Notice and Copyright</h3>
+
+<p class="bs-callout-info">This section is applicable to Magento core files only. Please follow it if you are a contributing developer.</p>
+
+<p>Any file in the Magento source should have a header with license and copyright notice.
+Exceptions are files with formats that do not support commenting.</p>
+
+<p>License notice and copyright MUST be declared at the very beginning of the file.
+If the file contains a structural element (for example, a class), the description for the element should be declared as a separate DocBlock.</p>
+
+<p>Use the following templates for the license notice and copyright blocks:</p>
+
+<p><strong>Template for PHP files:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+<span class="cd">/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
+
+<span class="kn">namespace</span> <span class="nn">Magento\Framework\Api</span><span class="p">;</span>
+
+<span class="cd">/**
+ * Provides metadata about an attribute.
+ *
+ * @api
+ */</span>
+<span class="kd">interface</span> <span class="nc">MetadataObjectInterface</span>
+<span class="p">{</span>
+   <span class="o">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Template for <a href="https://glossary.magento.com/xml">XML</a> Files:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="c">&lt;!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Template for JS Files:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="code-elements">Code structural elements</h2>
+
+<p>A structural element is defined in <a href="http://phpdoc.org/">phpDocumentor</a> as part of the imperative source code, such as PHP or JavaScript, or procedural SQL.
+For example:</p>
+
+<ul>
+  <li>namespace</li>
+  <li>class</li>
+  <li>interface</li>
+  <li>function</li>
+  <li>property</li>
+  <li>method</li>
+</ul>
+
+<p>If the source code file has one and only one standalone structural element, as may be required by language-specific coding standard, the file DocBlock is to be reused for this element.</p>
+
+<p>Therefore, classes that are declared in dedicated files must have either no DocBlock or exactly one DocBlock, which refers to the class and file at the same time.</p>
+
+<p><strong>DocBlock for a Class:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Autoloader with class map capability
+ *
+ * ...
+ */</span>
+<span class="kd">class</span> <span class="nc">Autoload</span>
+<span class="p">{</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>While declaring classes or functions, if there must be another file with source code included, the inclusion construct must not be before file header and it must not separate the element DocBlock from the element.
+There are two solutions possible:</p>
+
+<ul>
+  <li>Have the file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.</li>
+  <li>Include it after declaring the element (it is possible in PHP and will not cause issues before execution).</li>
+</ul>
+
+<p><strong>DocBlock with Included Script File:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Magento integration Magento test framework (MTF) bootstrap
+ *
+ * ...
+ */</span>
+
+<span class="k">require</span> <span class="k">__DIR__</span> <span class="o">.</span> <span class="s1">'/../bootstrap.php'</span><span class="p">;</span>
+
+<span class="kn">namespace</span> <span class="nn">Magento\Test</span><span class="p">;</span>
+
+<span class="cd">/**
+ * Magento integration Magento test framework (MTF) bootstrap
+ */</span>
+<span class="kd">class</span> <span class="nc">Bootstrap</span>
+<span class="p">{</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>DocBlock with Included Class File:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="kn">namespace</span> <span class="nn">Magento\Framework\Profiler\Adapter</span><span class="p">;</span>
+
+<span class="cd">/**
+ * Profiler CSV adapter
+ *
+ * ...
+ */</span>
+<span class="kd">class</span> <span class="nc">Csv</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\Profiler\AdapterAbstract</span>
+<span class="p">{</span>
+<span class="c1">// ...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isValidFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\ArgumentException</span><span class="p">(</span><span class="s1">'A valid file name is expected.'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">require_once</span> <span class="k">__DIR__</span> <span class="o">.</span> <span class="s1">'/../../functions.php'</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="classes-interfaces">Classes and interfaces</h3>
+
+<p>Classes and interfaces should have a short description with a human-readable description of the class.
+If the short description adds no additional information beyond what the type name already supplies, the
+short description must be omitted.</p>
+
+<p><strong>Good:</strong></p>
+
+<blockquote>
+  <p>Handler for PHP errors/warnings/notices that converts them to exceptions.
+class ErrorHandler { … }</p>
+</blockquote>
+
+<p><strong>Bad:</strong></p>
+
+<blockquote>
+  <p>Error Handler
+class ErrorHandler { … }</p>
+</blockquote>
+
+<p>If possible, add use cases which suggests where developers can or cannot use the class.</p>
+
+<h3 id="short-name-form">Short name form</h3>
+
+<p>It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
+The only <a href="https://glossary.magento.com/exception">exception</a> is in the <code class="language-plaintext highlighter-rouge">Service/DTO</code> classes due to tooling requirements.</p>
+
+<p><strong>Example of a Method DocBlock:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="rouge-code"><pre><span class="kn">use</span> <span class="nn">Magento\Logger</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Math\Random</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\Stdlib\DateTime</span> <span class="k">as</span> <span class="n">StdlibDateTime</span><span class="p">;</span>
+
+<span class="cd">/**
+ * @var Logger
+ */</span>
+<span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
+
+<span class="cd">/**
+ * Description of method here.
+ *
+ * @param Random         $mathRandom
+ * @param StdlibDateTime $dateTime
+ * @param int            $number
+ */</span>
+<span class="k">private</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Random</span> <span class="nv">$mathRandom</span><span class="p">,</span> <span class="nx">StdlibDateTime</span> <span class="nv">$dateTime</span><span class="p">,</span> <span class="nv">$number</span><span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="class-attributes">Class attributes</h3>
+
+<p>Class attributes must have a type declaration using <code class="language-plaintext highlighter-rouge">@var</code> tag.</p>
+
+<p><strong>Example of Class Attribute:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c1">// ...</span>
+<span class="kn">namespace</span> <span class="nn">Magento</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Profiler</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var Profiler
+     */</span>
+    <span class="k">protected</span> <span class="k">static</span> <span class="nv">$instance</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="functions-methods">Functions and methods</h3>
+
+<p>In general, a typed method signature must be preferred over PHPDoc annotations whenever possible.</p>
+
+<p>Functions and methods should have:</p>
+
+<ul>
+  <li>A short description that adds meaningful information beyond the method name.</li>
+  <li>
+    <p>If the purpose of the method is not obvious, a long description that explains the motivation behind the implementation.
+The comment must describe why method is implemented and not how.
+For example:</p>
+
+    <ul>
+      <li>If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.</li>
+      <li>For non-obvious implementations where the implementation logic is complicated or does not correspond to the Technical Vision or other known best practices,     include an explanation in the doc block’s description.
+  An implementation is non-obvious if another developer has questions about it.</li>
+    </ul>
+  </li>
+  <li>
+    <p>The declaration of all arguments (if any) using the <code class="language-plaintext highlighter-rouge">@param</code> tag, unless the argument type is indicated in the method signature.</p>
+
+    <p>All <code class="language-plaintext highlighter-rouge">@param</code> annotations must include the appropriate argument type. If any argument requires a <code class="language-plaintext highlighter-rouge">@param</code> annotation, all arguments must be listed (all or none). <code class="language-plaintext highlighter-rouge">@param</code> annotations must be in the same order as the method arguments.</p>
+  </li>
+  <li>The declaration of the return type using the <code class="language-plaintext highlighter-rouge">@return</code> tag must only be added if the method return type signature does not supply all necessary information (see below for more information on return types).</li>
+  <li>A declaration of possible exceptions using the <code class="language-plaintext highlighter-rouge">@throws</code> tag, if the actual body of function triggers an exception.
+All occurrences of <code class="language-plaintext highlighter-rouge">@throws</code> in a DocBlock must be after <code class="language-plaintext highlighter-rouge">@param</code> and <code class="language-plaintext highlighter-rouge">@return</code> annotations.</li>
+</ul>
+
+<p><strong>Exceptions to these rules:</strong></p>
+
+<ul>
+  <li>Testing methods in Unit tests may have doc blocks to describe the purpose of the test, such as referencing Github issues.</li>
+  <li>Test method annotations may include data providers and other testing annotations.</li>
+</ul>
+
+<h4 id="things-to-include">Things to include</h4>
+
+<ul>
+  <li>
+    <p>An explanation of input arguments and return values if it is not obvious from their name and type.</p>
+
+    <p>This is applicable in the following cases:</p>
+
+    <ul>
+      <li>
+        <p>There is more than one possible input/output type.</p>
+
+        <p>For example: <code class="language-plaintext highlighter-rouge">@return Config|null</code>.
+The DocBlock should explain what situations will return <code class="language-plaintext highlighter-rouge">null</code>.</p>
+
+        <p>Another example: <code class="language-plaintext highlighter-rouge">@param FileInterface|null</code>.
+The DocBlock should explain what happens when the value of the parameter is <code class="language-plaintext highlighter-rouge">null</code>.</p>
+
+        <p>Ideally, implementations such as these should be avoided:</p>
+      </li>
+      <li>The input/output type is a simple type and the format is not clear from the name.</li>
+      <li>The input/output is an array with a specific structure.</li>
+    </ul>
+  </li>
+  <li>The intent of the method along with when or where it can be used.</li>
+  <li>If an exception is thrown by a method, explain the cause or situation.</li>
+  <li>If the input is confusing or complicated, add examples of the method’s usage in client code or examples of the argument.</li>
+</ul>
+
+<h4 id="things-to-avoid">Things to avoid</h4>
+
+<ul>
+  <li>Copying the algorithm. The algorithm must be self-explanatory and understood by reviewing the code and unit tests.</li>
+  <li>Information that is out of date or has the potential to become out of date.</li>
+</ul>
+
+<p><strong>Example of a Method DocBlock:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Merge the config XML files
+ *
+ * @param  array $configFiles
+ * @return void
+ * @throws \Magento\Exception if a non-existing or invalid XML file passed
+ */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">merge</span><span class="p">(</span><span class="nv">$configFiles</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$domConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Magento\Config\Dom</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getInitialXml</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getIdAttributes</span><span class="p">());</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$configFiles</span> <span class="k">as</span> <span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="s2">"File does not exist: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="s2">"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">merge</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$file</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSchemaFile</span><span class="p">(),</span> <span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="s2">"Invalid XML file: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+            <span class="cd">/** @var libXMLError $error */</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$message</span> <span class="o">.=</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">message</span><span class="si">}</span><span class="s2"> Line: </span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">line</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_dom</span> <span class="o">=</span> <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">getDom</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="throws">Divergence in @throws tag</h4>
+
+<p>In general, use the <code class="language-plaintext highlighter-rouge">@throws</code> tag when the code uses <em>throw</em>:</p>
+
+<p><strong>Example of Throwing Exception Explicitly:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Set an arbitrary value to specified element
+ *
+ * @param  string $elementId
+ * @param  string $attribute
+ * @param  int|string|float|bool|object|null  $value
+ * @return self
+ * @throws \InvalidArgumentException
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setAttribute</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">,</span> <span class="nv">$attribute</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_assertElementExists</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nv">$attribute</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="kt">self</span><span class="o">::</span><span class="na">PARENT</span><span class="o">:</span> <span class="c1">// break is intentionally omitted</span>
+        <span class="k">case</span> <span class="kt">self</span><span class="o">::</span><span class="na">CHILDREN</span><span class="o">:</span>
+        <span class="k">case</span> <span class="kt">self</span><span class="o">::</span><span class="na">GROUPS</span><span class="o">:</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="s2">"Attribute '</span><span class="si">{</span><span class="nv">$attribute</span><span class="si">}</span><span class="s2">' is reserved and cannot be set."</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_elements</span><span class="p">[</span><span class="nv">$elementId</span><span class="p">][</span><span class="nv">$attribute</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In this case, if an exception is thrown in a sub-routine, then <code class="language-plaintext highlighter-rouge">@throws</code> must not be used in the parent method.</p>
+
+<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code class="language-plaintext highlighter-rouge">@throws</code> must be used in the parent method.
+For example:</p>
+
+<p><strong>Throwing Exception Implicitly:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+</pre></td><td class="rouge-code"><pre>    <span class="cd">/**
+     * Perform login process
+     *
+     * @param string $username
+     * @param string $password
+     * @return void
+     * @throws \Magento\Framework\Exception\AuthenticationException
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">login</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">empty</span><span class="p">(</span><span class="nv">$username</span><span class="p">)</span> <span class="o">||</span> <span class="nb">empty</span><span class="p">(</span><span class="nv">$password</span><span class="p">))</span> <span class="p">{</span>
+            <span class="kt">self</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span>
+                <span class="nx">__</span><span class="p">(</span>
+                    <span class="s1">'The account sign-in was incorrect or your account is disabled temporarily. '</span>
+                    <span class="o">.</span> <span class="s1">'Please wait and try again later.'</span>
+                <span class="p">)</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_initCredentialStorage</span><span class="p">();</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCredentialStorage</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">login</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span> <span class="nv">$password</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCredentialStorage</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAuthStorage</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">setUser</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCredentialStorage</span><span class="p">());</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAuthStorage</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">processLogin</span><span class="p">();</span>
+
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span>
+                    <span class="s1">'backend_auth_user_login_success'</span><span class="p">,</span>
+                    <span class="p">[</span><span class="s1">'user'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCredentialStorage</span><span class="p">()]</span>
+                <span class="p">);</span>
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAuthStorage</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getUser</span><span class="p">())</span> <span class="p">{</span>
+                <span class="kt">self</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span>
+                    <span class="nx">__</span><span class="p">(</span>
+                        <span class="s1">'The account sign-in was incorrect or your account is disabled temporarily. '</span>
+                        <span class="o">.</span> <span class="s1">'Please wait and try again later.'</span>
+                    <span class="p">)</span>
+                <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">PluginAuthenticationException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span>
+                <span class="s1">'backend_auth_user_login_failed'</span><span class="p">,</span>
+                <span class="p">[</span><span class="s1">'user_name'</span> <span class="o">=&gt;</span> <span class="nv">$username</span><span class="p">,</span> <span class="s1">'exception'</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="p">]</span>
+            <span class="p">);</span>
+            <span class="k">throw</span> <span class="nv">$e</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Magento\Framework\Exception\LocalizedException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span>
+                <span class="s1">'backend_auth_user_login_failed'</span><span class="p">,</span>
+                <span class="p">[</span><span class="s1">'user_name'</span> <span class="o">=&gt;</span> <span class="nv">$username</span><span class="p">,</span> <span class="s1">'exception'</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="p">]</span>
+            <span class="p">);</span>
+            <span class="kt">self</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span>
+                <span class="nx">__</span><span class="p">(</span>
+                    <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span><span class="o">?</span> <span class="o">:</span> <span class="s1">'The account sign-in was incorrect or your account is disabled temporarily. '</span>
+                        <span class="o">.</span> <span class="s1">'Please wait and try again later.'</span>
+                <span class="p">)</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="return">@return tag</h4>
+
+<p>In general, method return type signatures should be prefered over <code class="language-plaintext highlighter-rouge">@return</code> type annotations.
+If that is not possible due to ambiguous return types or backward compatibility constraints, the <code class="language-plaintext highlighter-rouge">@return</code> type annotation must be used.
+If there is no explicit return statement in a method or function or a return statement without a value, a <code class="language-plaintext highlighter-rouge">void</code> return type must be declared in the method signature. For example:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">function</span> <span class="nf">setName</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$name</span><span class="p">)</span><span class="o">:</span> <span class="kt">void</span>
+<span class="p">{</span>
+   <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If the method returns itself, the method signature return type must be <code class="language-plaintext highlighter-rouge">self</code>. Here is an example:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">function</span> <span class="nf">withField</span><span class="p">(</span><span class="kt">string</span> <span class="nv">$fieldName</span><span class="p">)</span><span class="o">:</span> <span class="kt">self</span>
+<span class="p">{</span>
+   <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fields</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$fieldName</span><span class="p">;</span>
+   <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If for backward compatibility reasons, no return type can be added to the method signature, a <code class="language-plaintext highlighter-rouge">@return $this</code> annotation must be used.</p>
+
+<h3 id="constants">Constants</h3>
+
+<p>Constants may have a short description.
+If the short description adds no additional information beyond what the constant name already supplies, the
+short description must be omitted.</p>
+
+<p>For example, a global constant:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Directory separator shorthand, intended to make code more readable.
+ */</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DS'</span><span class="p">,</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Or constants in a class:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Profiler</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Separator literal to assemble timer identifier from timer names
+     */</span>
+    <span class="k">const</span> <span class="no">NESTING_SEPARATOR</span> <span class="o">=</span> <span class="s1">'-&gt;'</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="docblock-templates">DocBlock templates</h3>
+
+<p>A DocBlock template is a DocBlock that starts from <code class="language-plaintext highlighter-rouge">/**#@+*/</code> and ends with <code class="language-plaintext highlighter-rouge">/**#@-*/</code>.
+Templates are no longer supported by PHPDocumentor. Therefore, they MUST NOT be used.</p>
+
+<p>It is encouraged to replace existing DocBlock templates with regular DocBlock comments when the file is being modified.</p>
+
+<h2 id="documentation-space">Structure of documentation space</h2>
+
+<p><code class="language-plaintext highlighter-rouge">@author</code> ,<code class="language-plaintext highlighter-rouge">@category</code>, <code class="language-plaintext highlighter-rouge">@package</code>, and <code class="language-plaintext highlighter-rouge">@subpackage</code> MUST NOT be used.
+Documentation is organized with the use of namespaces.</p>
+
+<h2 id="other-docblock-tags">Other DocBlock tags</h2>
+
+<h3 id="inheritdoc">@inheritdoc tag</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">@inheritdoc</code> tag SHOULD NOT be used.
+If a child class method requires a long description to explain its purpose, it may use <code class="language-plaintext highlighter-rouge">@inheritdoc</code> to indicate the new description is intended as an addition to the parent method description.
+In general, such method overrides are a <a href="https://en.wikipedia.org/wiki/Code_smell">code smell</a> and should be used as an incentive to make the code more self-documenting if possible.</p>
+
+<p><strong>DocBlock for the Interface:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Interface for mutable value object for integer values
+ */</span>
+<span class="kd">interface</span> <span class="nc">MutableInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Returns 0, if no value is available
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span><span class="o">:</span> <span class="kt">int</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * Sets 0 in case a non-integer value is passed
+     *
+     * @param int|string|bool|float|null $value
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="kt">void</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>DocBlock for the implementation:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Limited mutable value object for integer values
+ */</span>
+<span class="kd">class</span> <span class="nc">LimitedMutableClass</span> <span class="k">implements</span> <span class="nx">MutableInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Returns integer value
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span><span class="o">:</span> <span class="kt">int</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Sets 0 in case a non-integer value is passed
+     *
+     * @param int|string|bool|float|null $value
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span><span class="o">:</span> <span class="kt">void</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="api">@api tag</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">@api</code> tag indicates the code is part of the public API and is subject to the <a href="../contributor-guide/backward-compatible-development/index.html">Magento Backward Compatibility Policy</a>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">@api</code> tag can be applied to a constant, a method, or to the entire class/interface.
+If the <code class="language-plaintext highlighter-rouge">@api</code> tag is applied at the file level, then all methods within the file are part of the public <a href="https://glossary.magento.com/api">API</a>.
+You do not need to annotate each method individually.</p>
+
+<p>See <a href="http://semver.org/">Semantic Versioning 2.0.0</a> for information about changing and updating code while maintaining backward compatibility.</p>
+
+<h3 id="deprecated">@deprecated tag</h3>
+
+<p>A deprecated class or method is one that has been superseded and may cease to exist in the future.
+It will be retained to provide backward compatibility until the next major component release.</p>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">@deprecated</code> tag to indicate that an element is to be deprecated.</p>
+
+<p>You must explain why you added <code class="language-plaintext highlighter-rouge">@deprecated</code> tag.
+You MUST use the <code class="language-plaintext highlighter-rouge">@see</code> tag with references to the new implementation when code is deprecated and there is a new alternative.</p>
+
+<p>For example:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Get some object
+ *
+ * @deprecated Added to not break backward compatibility of the constructor signature
+ *             by injecting the new dependency directly.
+ *             The method can be removed in a future major release, when constructor signature can be changed
+ * @return SomeObjectInterface
+ */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">getSomeObject</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="cd">/**
+ * Set price
+ *
+ * @deprecated Non-scoped price is not supported anymore
+ * @see setScopedPrice()
+ * @return void
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="cd">/**
+ * Set price for specified scope
+ *
+ * @return void
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setScopedPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">,</span> <span class="nv">$scopeType</span><span class="p">,</span> <span class="nv">$scopeId</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="var">@var inline tag</h3>
+
+<p>For the purpose of automatic type hinting in an IDE, an inline notation of <code class="language-plaintext highlighter-rouge">@var</code> tag can be used wherever the IDE is unable to resolve variable type.
+This tag declares variables that will emerge in following lines of code:</p>
+
+<p><strong>Inline Type Hinting:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="cd">/** @var libXMLError $error */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Some IDEs understand a different notation, where the type is specified after variable name.
+This notation is also valid:</p>
+
+<p><strong>Inline Type Hinting Variation:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="cd">/** @var $error libXMLError */</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="see">@see tag</h3>
+
+<p>Besides the normal way of using <code class="language-plaintext highlighter-rouge">@see</code> tags as <a href="https://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_tags.see.pkg.html">recommended by phpDocumentor</a>, it may be used as an addition to <code class="language-plaintext highlighter-rouge">@var</code>, when the <code class="language-plaintext highlighter-rouge">@var</code> is already used in this comment.</p>
+
+<p>Specifically, this is possible when a PHP file is composed from multiple file includes. As a result, variables may contain objects of different types depending on context:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * @var $this ClassOne
+ * @see ClassTwo
+ * @see FooInterface
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="method">@method tag</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">@method</code> allows a class to know which ‘magic’ methods are callable.</p>
+
+<p>Syntax:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>@method <span class="o">[[</span>static] <span class="k">return </span><span class="nb">type</span><span class="o">]</span> <span class="o">[</span>name]<span class="o">([[</span><span class="nb">type</span><span class="o">]</span> <span class="o">[</span>parameter]&lt;, ...&gt;]<span class="o">)</span> <span class="o">[</span>&lt;description&gt;]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>See <a href="https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.method.pkg.html">PHP documentation</a> for more information about the <code class="language-plaintext highlighter-rouge">@method</code> tag.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Image operations
+ *
+ * @method string getFile()
+ * @method string getLabel()
+ * @method string getPosition()
+ */</span>
+<span class="kd">class</span> <span class="nc">Image</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\Model\AbstractModel</span>
+<span class="p">{</span>
+    <span class="c1">//.....</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="link">@link tag</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">@link</code> tag indicates a custom relation between the associated Structural Elements and a website, identified by an absolute URI.</p>
+
+<p>Syntax:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>@link <span class="o">[</span>URI] <span class="o">[</span>&lt;description&gt;]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="other-tags">Other tags</h3>
+
+<p>Any other valid DocBlock tags may be specified, if the author deems it necessary, but only if they bring valuable non-obvious information.</p>
+
+<h2 id="format-conventions">Formatting conventions</h2>
+
+<h3 id="padding-tags">Padding tags</h3>
+
+<p>If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * ...
+ *
+ * @param  string $argument
+ * @return bool
+ * @link   http://example.com
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="format-consistency">Formatting consistency</h3>
+
+<p>In a given DocBlock, the formatting style must be consistent.</p>
+
+<p>For example, padding for visual alignment can be done in two ways:</p>
+
+<p><strong>Correct – align everything:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * ...
+ *
+ * @param  string   $parentId
+ * @param  string   $childId
+ * @param  int|null $position
+ * @return int
+ * @see    _insertChild() for position explanation
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Also correct – do not align anything:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * ...
+ *
+ * @param string $parentId
+ * @param string $childId
+ * @param int|null $position
+ * @return int
+ * @see _insertChild() for position explanation
+ */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">reorderChild</span><span class="p">(</span><span class="nv">$parentId</span><span class="p">,</span> <span class="nv">$childId</span><span class="p">,</span> <span class="nv">$position</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Incorrect – align only partially:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * ...
+ *
+ * @param  string   $parentId
+ * @param  string   $childId
+ * @param  int|null $position
+ * @return int
+ * @see _insertChild() for position explanation
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-04-09">
+    Apr 9th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

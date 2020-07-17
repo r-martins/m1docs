@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Using queries | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="index.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.3/graphql/queries/index.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="index.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">GraphQL Developer Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../index.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Implementation</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../send-request.html" class="spectrum-SideNav-itemLink ">GraphQL requests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../authorization-tokens.html" class="spectrum-SideNav-itemLink ">Authorization tokens</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../caching.html" class="spectrum-SideNav-itemLink ">GraphQL caching</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../custom-filters.html" class="spectrum-SideNav-itemLink ">Filtering with custom attributes</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Development</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/create-graphqls-file.html" class="spectrum-SideNav-itemLink ">Define the GraphQL schema for a module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/resolvers.html" class="spectrum-SideNav-itemLink ">Resolvers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/extend-existing-schema.html" class="spectrum-SideNav-itemLink ">Extend an existing GraphQL schema</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/identity-class.html" class="spectrum-SideNav-itemLink ">Identity class</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/create-custom-url-resolver.html" class="spectrum-SideNav-itemLink ">Create a custom urlResolver service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/debugging.html" class="spectrum-SideNav-itemLink ">Debugging GraphQL queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../develop/exceptions.html" class="spectrum-SideNav-itemLink ">Exception handling</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../functional-testing.html" class="spectrum-SideNav-itemLink ">Functional testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Queries</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="index.html" class="spectrum-SideNav-itemLink ">Using queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cart.html" class="spectrum-SideNav-itemLink ">cart query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="categories.html" class="spectrum-SideNav-itemLink ">categories query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="category.html" class="spectrum-SideNav-itemLink ">category query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="category-list.html" class="spectrum-SideNav-itemLink ">categoryList query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="checkout-agreements.html" class="spectrum-SideNav-itemLink ">checkoutAgreements query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cms-blocks.html" class="spectrum-SideNav-itemLink ">cmsBlocks query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="cms-page.html" class="spectrum-SideNav-itemLink ">cmsPage query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="directory-countries.html" class="spectrum-SideNav-itemLink ">countries query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="directory-country.html" class="spectrum-SideNav-itemLink ">country query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="directory-currency.html" class="spectrum-SideNav-itemLink ">currency query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="custom-attribute-metadata.html" class="spectrum-SideNav-itemLink ">customAttributeMetadata query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="customer.html" class="spectrum-SideNav-itemLink ">customer query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="customer-cart.html" class="spectrum-SideNav-itemLink ">customerCart query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="customer-downloadable-products.html" class="spectrum-SideNav-itemLink ">customerDownloadableProducts query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="customer-orders.html" class="spectrum-SideNav-itemLink ">customerOrders query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="customer-payment-tokens.html" class="spectrum-SideNav-itemLink ">customerPaymentTokens query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="get-hosted-pro-url.html" class="spectrum-SideNav-itemLink ">getHostedProUrl query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="get-payflow-link-token.html" class="spectrum-SideNav-itemLink ">getPayflowLinkToken query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="giftcard-account.html" class="spectrum-SideNav-itemLink ">giftCardAccount query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="is-email-available.html" class="spectrum-SideNav-itemLink ">isEmailAvailable query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="products.html" class="spectrum-SideNav-itemLink ">products query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="pickup-locations.html" class="spectrum-SideNav-itemLink ">pickupLocations query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="store-config.html" class="spectrum-SideNav-itemLink ">storeConfig query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="url-resolver.html" class="spectrum-SideNav-itemLink ">urlResolver query</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="wishlist.html" class="spectrum-SideNav-itemLink ">wishlist query</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Mutations</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/index.html" class="spectrum-SideNav-itemLink ">Using mutations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/add-bundle-products.html" class="spectrum-SideNav-itemLink ">addBundleProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/add-configurable-products.html" class="spectrum-SideNav-itemLink ">addConfigurableProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/add-downloadable-products.html" class="spectrum-SideNav-itemLink ">addDownloadableProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/add-simple-products.html" class="spectrum-SideNav-itemLink ">addSimpleProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/add-virtual-products.html" class="spectrum-SideNav-itemLink ">addVirtualProductsToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/apply-giftcard.html" class="spectrum-SideNav-itemLink ">applyGiftCardToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/apply-coupon.html" class="spectrum-SideNav-itemLink ">applyCouponToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/apply-store-credit.html" class="spectrum-SideNav-itemLink ">applyStoreCreditToCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/change-customer-password.html" class="spectrum-SideNav-itemLink ">changeCustomerPassword mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/create-braintree-client-token.html" class="spectrum-SideNav-itemLink ">createBraintreeClientToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/create-customer.html" class="spectrum-SideNav-itemLink ">createCustomer mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/create-customer-address.html" class="spectrum-SideNav-itemLink ">createCustomerAddress mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/create-empty-cart.html" class="spectrum-SideNav-itemLink ">createEmptyCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/create-payflow-pro-token.html" class="spectrum-SideNav-itemLink ">createPayflowProToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/create-paypal-express-token.html" class="spectrum-SideNav-itemLink ">createPayPalExpressToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/delete-customer-address.html" class="spectrum-SideNav-itemLink ">deleteCustomerAddress mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/delete-payment-token.html" class="spectrum-SideNav-itemLink ">deletePaymentToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/generate-customer-token.html" class="spectrum-SideNav-itemLink ">generateCustomerToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/handle-payflow-pro-response.html" class="spectrum-SideNav-itemLink ">handlePayflowProResponse mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/merge-carts.html" class="spectrum-SideNav-itemLink ">mergeCarts mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/place-order.html" class="spectrum-SideNav-itemLink ">placeOrder mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/redeem-giftcard-balance.html" class="spectrum-SideNav-itemLink ">redeemGiftCardBalanceAsStoreCredit mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/remove-coupon.html" class="spectrum-SideNav-itemLink ">removeCouponFromCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/remove-giftcard.html" class="spectrum-SideNav-itemLink ">removeGiftCardFromCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/remove-item.html" class="spectrum-SideNav-itemLink ">removeItemFromCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/remove-store-credit.html" class="spectrum-SideNav-itemLink ">removeStoreCreditFromCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/reorder-items.html" class="spectrum-SideNav-itemLink ">reorderItems mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/revoke-customer-token.html" class="spectrum-SideNav-itemLink ">revokeCustomerToken mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/send-email-to-friend.html" class="spectrum-SideNav-itemLink ">sendEmailToFriend mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/set-billing-address.html" class="spectrum-SideNav-itemLink ">setBillingAddressesOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/set-guest-email.html" class="spectrum-SideNav-itemLink ">setGuestEmailOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/set-payment-place-order.html" class="spectrum-SideNav-itemLink ">setPaymentMethodAndPlaceOrder mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/set-payment-method.html" class="spectrum-SideNav-itemLink ">setPaymentMethodOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/set-shipping-address.html" class="spectrum-SideNav-itemLink ">setShippingAddressesOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/set-shipping-method.html" class="spectrum-SideNav-itemLink ">setShippingMethodsOnCart mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/update-cart-items.html" class="spectrum-SideNav-itemLink ">updateCartItems mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/update-customer.html" class="spectrum-SideNav-itemLink ">updateCustomer mutation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../mutations/update-customer-address.html" class="spectrum-SideNav-itemLink ">updateCustomerAddress mutation</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Catalog data types and interfaces</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/product-interface-implementations.html" class="spectrum-SideNav-itemLink ">Product interface implementations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/product-interface.html" class="spectrum-SideNav-itemLink ">ProductInterface attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/category-interface.html" class="spectrum-SideNav-itemLink ">CategoryInterface attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/customizable-option-interface.html" class="spectrum-SideNav-itemLink ">CustomizableOptionInterface</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/bundle-product.html" class="spectrum-SideNav-itemLink ">Bundle product data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/configurable-product.html" class="spectrum-SideNav-itemLink ">Configurable product data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/downloadable-product.html" class="spectrum-SideNav-itemLink ">Downloadable product data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/gift-card-product.html" class="spectrum-SideNav-itemLink ">GiftCardProduct data types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../product/grouped-product.html" class="spectrum-SideNav-itemLink ">GroupedProduct data types</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Payment methods</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/braintree.html" class="spectrum-SideNav-itemLink ">Braintree</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/braintree-vault.html" class="spectrum-SideNav-itemLink ">Braintree Vault</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/paypal-express-checkout.html" class="spectrum-SideNav-itemLink ">PayPal Express Checkout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payflow-express.html" class="spectrum-SideNav-itemLink ">Express Checkout for other PayPal solutions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payflow-link.html" class="spectrum-SideNav-itemLink ">PayPal Payflow Link</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payflow-pro.html" class="spectrum-SideNav-itemLink ">PayPal Payflow Pro</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/payments-advanced.html" class="spectrum-SideNav-itemLink ">PayPal Payments Advanced</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../payment-methods/hosted-pro.html" class="spectrum-SideNav-itemLink ">PayPal Website Payments Pro Hosted Solution</a></li></ul></li><li class=" tutorial spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Tutorial</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/index.html" class="spectrum-SideNav-itemLink ">GraphQL checkout tutorial</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-customer.html" class="spectrum-SideNav-itemLink ">Step 1. Create a customer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-shopping-cart.html" class="spectrum-SideNav-itemLink ">Step 2. Create an empty cart</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-add-product-to-cart.html" class="spectrum-SideNav-itemLink ">Step 3. Add products to the cart</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-shipping-address.html" class="spectrum-SideNav-itemLink ">Step 4. Set the shipping address</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-billing-address.html" class="spectrum-SideNav-itemLink ">Step 5. Set the billing address</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-shipping-method.html" class="spectrum-SideNav-itemLink ">Step 6. Set the shipping method</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-coupon.html" class="spectrum-SideNav-itemLink ">Step 7. Apply a coupon</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-quote-email.html" class="spectrum-SideNav-itemLink ">Step 8. Set email on the cart</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-payment-method.html" class="spectrum-SideNav-itemLink ">Step 9. Set the payment method</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tutorials/checkout/checkout-place-order.html" class="spectrum-SideNav-itemLink ">Step 10. Place the order</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes.html" class="spectrum-SideNav-itemLink ">Release Notes</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Using queries</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/graphql/queries/index.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/graphql/queries/" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>A GraphQL query retrieves data from the Magento server in a similar manner as a REST GET call. The current set of Magento GraphQL queries allow a mobile app or browser to render a wide variety of information, including the following:</p>
+
+<ul>
+  <li>A set of products to be displayed. This can include the entire catalog or those that match customer-specified criteria.</li>
+  <li>Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wish lists, order history, and other sensitive data.</li>
+  <li>Shopping cart contents. GraphQL supports both guest and logged-in customer carts.</li>
+  <li>Store configuration values, including theme and CMS settings, the currency code, and supported countries.</li>
+</ul>
+
+<p>The Magento REST GET endpoints retrieve a wide variety of information on behalf of the merchant. Many of these endpoints are for retrieving backend information. For example, the <code class="language-plaintext highlighter-rouge">GET /V1/customers/search</code> endpoint can be used to find a subset of customers that meet certain criteria, such as those that live in a particular state or have a birthday this month. Likewise, the <code class="language-plaintext highlighter-rouge">GET /V1/invoices</code> endpoint can return all the recently-generated invoices. This type of functionality is not required for the frontend, so it is not available in GraphQL queries. The queries are designed to improve the customer’s user experience by quickly retrieving the data needed to render pages.</p>
+
+<p>Over time, the Magento GraphQL queries will duplicate the functionality of all storefront-facing GET calls, while making it possible to query more data in one request. The main difference will be that GraphQL will support storefront use cases, while REST will support admin use cases.</p>
+
+<h2 id="structure-of-a-query">Structure of a query</h2>
+
+<p>A query contains the following elements:</p>
+
+<ul>
+  <li>The optional keyword <code class="language-plaintext highlighter-rouge">query</code>. If no keyword is specified at the beginning of a request, the processor assumes the request is a query.</li>
+  <li>An operation name for your local implementation. This name is required if you include variables. Otherwise, it is optional.</li>
+  <li>The query name</li>
+  <li>The terms to search for. The terms can be in the form of objects, attributes, or a combination. Queries that don’t require search terms obtain their context from the customer’s authorization token or store ID, both of which are specified in the header of the call.</li>
+  <li>The output object, which specifies which data the query returns.</li>
+</ul>
+
+<p>The following example shows the structure of the <code class="language-plaintext highlighter-rouge">cart</code> query:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">query</span><span class="w"> </span><span class="n">myCartQuery</span><span class="p">{</span><span class="w">
+  </span><span class="n">cart</span><span class="p">(</span><span class="n">cart_id</span><span class="p">:</span><span class="w"> </span><span class="n">String</span><span class="p">!)</span><span class="err">:</span><span class="w"> </span><span class="n">Cart</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In the preceding example, <code class="language-plaintext highlighter-rouge">myCartQuery</code> identifies your implementation of the <code class="language-plaintext highlighter-rouge">cart</code> query. <code class="language-plaintext highlighter-rouge">cart_id</code> is a non-nullable string that defines the cart to query. (The exclamation point indicates the value is non-nullable.) The <code class="language-plaintext highlighter-rouge">Cart</code> output object defines which fields to return.</p>
+
+<p>Now let’s fully define a query:</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="k">query</span><span class="w"> </span><span class="n">myCartQuery</span><span class="p">{</span><span class="w">
+  </span><span class="n">cart</span><span class="p">(</span><span class="n">cart_id</span><span class="p">:</span><span class="w"> </span><span class="s2">"1WxKm8WUm3uFKXLlHXezew5WREfVRPAn"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">quantity</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">billing_address</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">firstname</span><span class="w">
+      </span><span class="n">lastname</span><span class="w">
+      </span><span class="n">postcode</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="n">shipping_addresses</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">firstname</span><span class="w">
+      </span><span class="n">lastname</span><span class="w">
+      </span><span class="n">postcode</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In this example, we’ve supplied a cart ID as input, (which was generated by the <code class="language-plaintext highlighter-rouge">createEmptyCart</code> mutation). The output includes the <code class="language-plaintext highlighter-rouge">cart_id</code> as well as selected information about the items in the cart and the billing and shipping addresses.</p>
+
+<p>The following example shows the query response:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49628-7978"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"shipping_addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49628-7978"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="bs-callout-tip">Magento will not run a query that is too complex. The number of fields, objects, and nodes are factors in determining the complexity of a query.</p>
+
+<h2 id="query-variables">Query variables</h2>
+
+<p>Specifying variables in a query can help increase code re-use. Consider the following requirements when generating a query that contains one or more variables:</p>
+
+<ul>
+  <li>All variables must be declared up-front, immediately after the operation name.</li>
+  <li>Variables are typed: they can be scalar or an object.</li>
+  <li>You must use all declared variables. Object variables are defined in JSON.</li>
+</ul>
+
+<p>The following example declares the <code class="language-plaintext highlighter-rouge">$cart_id</code> variable. It is referenced in the <code class="language-plaintext highlighter-rouge">input</code> statement.</p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="k">query</span><span class="w"> </span><span class="n">myCartQueryWithVariable</span><span class="p">(</span><span class="nv">$cart_id</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">!)</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">cart</span><span class="p">(</span><span class="n">cart_id</span><span class="p">:</span><span class="w"> </span><span class="nv">$cart_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">id</span><span class="w">
+      </span><span class="n">quantity</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">billing_address</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">firstname</span><span class="w">
+      </span><span class="n">lastname</span><span class="w">
+      </span><span class="n">postcode</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">shipping_addresses</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">firstname</span><span class="w">
+      </span><span class="n">lastname</span><span class="w">
+      </span><span class="n">postcode</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Variables are defined separately in JSON:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"cart_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1WxKm8WUm3uFKXLlHXezew5WREfVRPAn"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="staging">Staging queries</h2>
+
+<p>Magento GraphQL allows you to use certain queries to return preview information for staged content. Staging, a Magento Commerce feature, allows merchants to schedule a set of changes to the storefront that run for a prescribed time in the future. These changes, also known as a <em>campaign</em>, are defined within the Admin. Customers do not have access to staged content, and as a result, staging queries have requirements that do not apply to traditional queries and mutations.</p>
+
+<p><a href="https://docs.magento.com/m2/ee/user_guide/cms/content-staging.html">Content Staging</a> in the <em>Merchant User Guide</em> describes how to create a campaign.</p>
+
+<p>You can use the following queries to return staged preview information.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">categoryList</code></li>
+  <li><code class="language-plaintext highlighter-rouge">products</code></li>
+</ul>
+
+<p class="bs-callout-info">The <code class="language-plaintext highlighter-rouge">products</code> query does not support full text search in the context of staging, because staged content is not indexed. Therefore, omit the <code class="language-plaintext highlighter-rouge">search</code> input attribute in your staging <code class="language-plaintext highlighter-rouge">products</code> queries.</p>
+
+<p>A staging query requires two specialized headers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Header name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Authorization Bearer: &lt;authorization_token&gt;</code></td>
+      <td>An admin token. Use the <code class="language-plaintext highlighter-rouge">GET /V1/integration/admin/token</code> REST endpoint to generate this token.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Preview-Version</code></td>
+      <td>A timestamp (seconds since January 1, 1970) that is inside the range of dates of the campaign you are querying.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in a scheduled campaign, the query results reflect the current storefront settings.</p>
+
+<p>Magento also returns an error if you specify these headers with any other query or any mutation.</p>
+
+<h3 id="example-campaign">Example campaign</h3>
+
+<p>The example staging queries in this section are based on a simple campaign that creates a custom category and catalog sales rule using the Luma sample data. By default, the custom category and sales rule are disabled but become enabled when the campaign takes effect.</p>
+
+<p>The following steps describe how to create this example campaign.</p>
+
+<ol>
+  <li>Create a subcategory of <strong>Sale</strong> named <strong>End of Year Sale</strong>. Set the <strong>Enable Category</strong> field to <strong>No</strong>.</li>
+  <li>Add several products to the subcategory.</li>
+  <li>Schedule an update named <strong>End of Year Sale Update</strong> for the subcategory that takes effect at a later date. Configure the update so that the <strong>Enable Category</strong> field is set to <strong>Yes</strong>.</li>
+  <li>Create a catalog sales rule with the following properties:
+    <ul>
+      <li>Set the <strong>Active</strong> switch to <strong>No</strong>.</li>
+      <li>In the <strong>Conditions</strong> section, define the condition as **Category is <Subcategory_ID>**.</Subcategory_ID></li>
+      <li>In the <strong>Actions</strong> section, set the <strong>Apply</strong> field to <strong>Apply a percentage of original</strong> and the <strong>Discount Amount</strong> field to <strong>25</strong>.</li>
+    </ul>
+  </li>
+  <li>Schedule an update for the catalog sales rule and assign it to the <strong>End of Year Sale Update</strong>. In this update, set the <strong>Active</strong> switch to <strong>Yes</strong>.</li>
+</ol>
+
+<h4 id="staging-products-query">Staging <code class="language-plaintext highlighter-rouge">products</code> query</h4>
+
+<p>The following query returns information about a product (<code class="language-plaintext highlighter-rouge">24-UG05</code>) in the <strong>End of Year Sale</strong> campaign. The <code class="language-plaintext highlighter-rouge">Preview-Version</code> header contains the timestamp for a date that is within the duration of the campaign. When you include the proper headers, the query returns prices with applied discounts. Without the headers, the query returns only default prices.</p>
+
+<p><strong>Headers:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>Authorization: Bearer hoyz7k697ubv5hcpq92yrtx39i7x10um
+Preview-Version: 1576389600
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Request:</strong></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="n">products</span><span class="p">(</span><span class="n">filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="n">sku</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="n">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG05"</span><span class="p">}})</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">sku</span><span class="w">
+      </span><span class="n">price_range</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">minimum_price</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">discount</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">percent_off</span><span class="w">
+            </span><span class="n">amount_off</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+          </span><span class="n">final_price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">value</span><span class="w">
+            </span><span class="n">currency</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+          </span><span class="n">regular_price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">value</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Response with headers:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Go-Get'r Pushup Grips"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG05"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"price_range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"minimum_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"percent_off"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount_off"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.75</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"final_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.25</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Response without headers:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Go-Get'r Pushup Grips"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG05"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"price_range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"minimum_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"percent_off"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount_off"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"final_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="staging-categorylist-query">Staging <code class="language-plaintext highlighter-rouge">categoryList</code> query</h4>
+
+<p>In this example campaign, the <strong>End of Year Sale</strong> subcategory and a catalog price rule are disabled when the campaign is not in effect. When you specify valid headers, the <code class="language-plaintext highlighter-rouge">categoryList</code>query returns full details about the custom category. Otherwise, the query returns an empty array.</p>
+
+<p><strong>Headers:</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>Authorization: Bearer hoyz7k697ubv5hcpq92yrtx39i7x10um
+Preview-Version: 1576389600
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Request:</strong></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="n">categoryList</span><span class="p">(</span><span class="n">filters</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="n">ids</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="n">eq</span><span class="p">:</span><span class="w"> </span><span class="s2">"43"</span><span class="p">}})</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">level</span><span class="w">
+    </span><span class="n">products</span><span class="p">(</span><span class="w">
+      </span><span class="n">sort</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">price</span><span class="p">:</span><span class="w"> </span><span class="n">ASC</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">pageSize</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+      </span><span class="n">currentPage</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">total_count</span><span class="w">
+      </span><span class="n">items</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">sku</span><span class="w">
+        </span><span class="n">price_range</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">minimum_price</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">discount</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="n">amount_off</span><span class="w">
+              </span><span class="n">percent_off</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+            </span><span class="n">final_price</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="n">value</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+            </span><span class="n">regular_price</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="n">value</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Response with headers:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"categoryList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"End of Year Sale"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"products"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Solo Power Circuit"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV07"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"price_range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"minimum_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"amount_off"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"percent_off"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"final_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.5</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quest Lumaflex&amp;trade; Band"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG01"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"price_range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"minimum_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"amount_off"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.75</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"percent_off"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"final_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.25</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Go-Get'r Pushup Grips"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG05"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"price_range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"minimum_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"amount_off"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.75</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"percent_off"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"final_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.25</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gabrielle Micro Sleeve Top"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WS02"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"price_range"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"minimum_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"discount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"amount_off"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.00</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"percent_off"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"final_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"regular_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Response without headers:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"categoryList"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="introspection-queries">Introspection queries</h2>
+
+<p>Introspection queries allow you to return information about the schema. For example, you might want a list of Magento GraphQL queries or details about a specific data type. The GraphQL specification determines the structure of introspection queries. See <a href="https://graphql.org/learn/introspection/">Introspection</a> for more information.</p>
+
+<p>A Magento introspection query returns the same result whether or not you assign it an operation name, such as <code class="language-plaintext highlighter-rouge">IntrospectionQuery</code>.</p>
+
+<h3 id="example-introspection-queries">Example introspection queries</h3>
+
+<h4 id="return-a-list-of-magento-queries">Return a list of Magento queries</h4>
+
+<p>The following query returns a list of Magento queries.</p>
+
+<p><strong>Request:</strong></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="k">query</span><span class="w"> </span><span class="n">IntrospectionQuery</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">__schema</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">queryType</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">fields</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">description</span><span class="w">
+        </span><span class="n">type</span><span class="p">{</span><span class="w">
+         </span><span class="n">name</span><span class="w">
+         </span><span class="n">kind</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="return-a-list-of-magento-mutations">Return a list of Magento mutations</h4>
+
+<p>The following query returns a list of Magento mutations.</p>
+
+<p><strong>Request:</strong></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="k">query</span><span class="w"> </span><span class="n">IntrospectionQuery</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">__schema</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">mutationType</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">fields</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">description</span><span class="w">
+        </span><span class="n">type</span><span class="p">{</span><span class="w">
+         </span><span class="n">name</span><span class="w">
+         </span><span class="n">kind</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="get-details-about-a-data-type">Get details about a data type</h4>
+
+<p>The following introspection query returns details about the <code class="language-plaintext highlighter-rouge">ProductAttributeFilterInput</code> data type.</p>
+
+<p><strong>Request:</strong></p>
+
+<div class="language-graphql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+</pre></td><td class="rouge-code"><pre><span class="k">query</span><span class="w"> </span><span class="n">IntrospectionQuery</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="n">__type</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProductAttributeFilterInput"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">name</span><span class="w">
+    </span><span class="n">kind</span><span class="w">
+    </span><span class="n">description</span><span class="w">
+    </span><span class="n">inputFields</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">description</span><span class="w">
+      </span><span class="n">defaultValue</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="n">fields</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="n">name</span><span class="w">
+      </span><span class="n">args</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+        </span><span class="n">description</span><span class="w">
+        </span><span class="n">type</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="n">kind</span><span class="w">
+          </span><span class="n">name</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="n">type</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">kind</span><span class="w">
+        </span><span class="n">name</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><strong>Response:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"__type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProductAttributeFilterInput"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INPUT_OBJECT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProductAttributeFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"inputFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"category_id"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Filter product by category id"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Attribute label: Description"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Attribute label: Product Name"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"price"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Attribute label: Price"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"short_description"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Attribute label: Short Description"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sku"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Attribute label: SKU"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The part of the URL that identifies the product"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"defaultValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-04-06">
+    Apr 6th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

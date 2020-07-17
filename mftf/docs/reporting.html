@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Reporting | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="reporting.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Functional Testing Framework Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="getting-started.html" class="spectrum-SideNav-itemLink ">Getting started</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="configuration.html" class="spectrum-SideNav-itemLink ">Configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="credentials.html" class="spectrum-SideNav-itemLink ">Credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="data.html" class="spectrum-SideNav-itemLink ">Data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="debugging.html" class="spectrum-SideNav-itemLink ">Debugging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="extending.html" class="spectrum-SideNav-itemLink ">Extending</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="guides/git-vs-composer-install.html" class="spectrum-SideNav-itemLink ">Git vs. Composer installation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/introduction.html" class="spectrum-SideNav-itemLink ">Merge points for extensions</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/extend-action-groups.html" class="spectrum-SideNav-itemLink ">Extend action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/extend-data.html" class="spectrum-SideNav-itemLink ">Extend data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/extend-tests.html" class="spectrum-SideNav-itemLink ">Extend tests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/merge-action-groups.html" class="spectrum-SideNav-itemLink ">Merge action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/merge-data.html" class="spectrum-SideNav-itemLink ">Merge data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/merge-pages.html" class="spectrum-SideNav-itemLink ">Merge pages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/merge-sections.html" class="spectrum-SideNav-itemLink ">Merge sections</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merge_points/merge-tests.html" class="spectrum-SideNav-itemLink ">Merge tests</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="merging.html" class="spectrum-SideNav-itemLink ">Merging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="metadata.html" class="spectrum-SideNav-itemLink ">Metadata</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="page.html" class="spectrum-SideNav-itemLink ">Page</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../guides/v2.3/reference/mftf/action-groups.html" class="spectrum-SideNav-itemLink ">Action group reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="commands/codeception.html" class="spectrum-SideNav-itemLink ">Codecept</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="commands/mftf.html" class="spectrum-SideNav-itemLink ">MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../guides/v2.3/reference/mftf/functional-tests.html" class="spectrum-SideNav-itemLink ">MFTF functional test reference</a></li></ul></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="reporting.html" class="spectrum-SideNav-itemLink ">Reporting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="section.html" class="spectrum-SideNav-itemLink ">Section</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="section/parameterized-selectors.html" class="spectrum-SideNav-itemLink ">Parameterized selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="section/locator-functions.html" class="spectrum-SideNav-itemLink ">Locator functions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="suite.html" class="spectrum-SideNav-itemLink ">Suite</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="test.html" class="spectrum-SideNav-itemLink ">Test basics</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="test/annotations.html" class="spectrum-SideNav-itemLink ">Annotations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="test/actions.html" class="spectrum-SideNav-itemLink ">Actions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="test/action-groups.html" class="spectrum-SideNav-itemLink ">Action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="test/assertions.html" class="spectrum-SideNav-itemLink ">Assertions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Test writing</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="best-practices.html" class="spectrum-SideNav-itemLink ">Best practices</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="test-prep.html" class="spectrum-SideNav-itemLink ">Preparing a test for MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="guides/selectors.html" class="spectrum-SideNav-itemLink ">Selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="guides/test-isolation.html" class="spectrum-SideNav-itemLink ">Test isolation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="guides/test-modularity.html" class="spectrum-SideNav-itemLink ">Test modularity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="tips-tricks.html" class="spectrum-SideNav-itemLink ">Tips and tricks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="guides/using-suites.html" class="spectrum-SideNav-itemLink ">Using suites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="troubleshooting.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="update.html" class="spectrum-SideNav-itemLink ">Update MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="versioning.html" class="spectrum-SideNav-itemLink ">Versioning</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md" class="spectrum-SideNav-itemLink ">Contribution guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md" class="spectrum-SideNav-itemLink ">Changelog</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Reporting</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/blob/master/docs/reporting.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/issues/new?title=Feedback on page: /mftf/docs/reporting.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The Magento Functional Testing Framework provides two types of reporting:</p>
+
+<ul>
+  <li>Inline reporting that you can view in the terminal as you run <a href="commands/mftf.html"><code class="language-plaintext highlighter-rouge">mftf</code></a> or <a href="commands/codeception.html"><code class="language-plaintext highlighter-rouge">codecept</code></a> CLI commands.</li>
+  <li>HTML reports that you can view using the <a href="https://docs.qameta.io/allure/">Allure Framework</a> after a test run completes.</li>
+</ul>
+
+<p>When you run a test, MFTF copies all reporting artifacts to the <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/_output</code> subdirectory in the Magento root directory.
+The directory contains:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">allure-results/</code> that is a directory generated and served by the Allure Framework.</li>
+  <li><code class="language-plaintext highlighter-rouge">failed</code> that is a text file containing relative paths to failed tests after the last test run.
+  The paths are relative to <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">.html</code> and <code class="language-plaintext highlighter-rouge">.png</code> files that are screenshots of fails in HTML and PNG formats.
+  To cleanup the <code class="language-plaintext highlighter-rouge">_output/</code> directory, remove them manually.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">mftf</code> tool logs output continuously to the <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/mftf.log</code> file.</p>
+
+<h2 id="command-line">Command line</h2>
+
+<p>MFTF reports about its progress during test run when you run the <code class="language-plaintext highlighter-rouge">mftf</code> CLI tool with <a href="commands/mftf.html#runtest"><code class="language-plaintext highlighter-rouge">run:test</code></a> or <a href="commands/mftf.html#rungroup"><code class="language-plaintext highlighter-rouge">run:group</code></a> commands.</p>
+
+<p>The report can contain three main parts:</p>
+
+<ul>
+  <li>Pre-run checks:</li>
+  <li>Environment check, such as PHP warnings, etc.</li>
+  <li>XML test validation like deprecation warnings such as missing required components in XML tests.</li>
+  <li>Codeception report which is the progress report for each test.</li>
+  <li>Total results of the test run such as number of tests, assertions, and failures.</li>
+</ul>
+
+<p>To manage the level of verbosity, use <code class="language-plaintext highlighter-rouge">-v</code> or <code class="language-plaintext highlighter-rouge">--verbose</code> flag in the <code class="language-plaintext highlighter-rouge">mftf</code> commands.
+To enable verbosity using the <code class="language-plaintext highlighter-rouge">codecept</code> commands, refer to the Codeception <a href="https://codeception.com/docs/reference/Commands">Console Commands</a>.</p>
+
+<p>The following sections demonstrate an example interpretation of a complete log separated into chunks.</p>
+
+<h3 id="pre-run-check-report">Pre-run check report</h3>
+
+<p>First, MFTF returns <code class="language-plaintext highlighter-rouge">DEPRECATION</code> warnings alerting you that required test components are missing in XML test definitions.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="go">DEPRECATION: Test AdminFilteringCategoryProductsUsingScopeSelectorTest is missing required annotations.{"testName":"AdminFilteringCategoryProductsUsingScopeSelectorTest","missingAnnotations":"stories"}
+DEPRECATION: Test AdminAbleToShipPartiallyInvoicedItemsTest is missing required annotations.{"testName":"AdminAbleToShipPartiallyInvoicedItemsTest","missingAnnotations":"stories"}
+DEPRECATION: Test AdminRemoveProductWeeeAttributeOptionTest is missing required annotations.{"testName":"AdminRemoveProductWeeeAttributeOptionTest","missingAnnotations":"stories"}
+Generate Tests Command Run
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Generate Tests Command Run</code> indicates that test generation is finished and tests are able to be executed.</p>
+
+<h3 id="test-execution-report">Test execution report</h3>
+
+<p>A test execution report is generated by Codeception and includes configuration information, scenario execution steps, and PASSED/FAIL verdict after each test completion.</p>
+
+<h4 id="general-information">General information</h4>
+
+<p>The general information can be useful for MFTF contributors, but can be ignored by a test writer.</p>
+
+<p>Let’s consider the general part of the following test execution report:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="go">==== Redirecting to Composer-installed version in vendor/codeception ====
+Codeception PHP Testing Framework v2.3.9
+Powered by PHPUnit 6.5.13 by Sebastian Bergmann and contributors.
+
+Magento\FunctionalTestingFramework.functional Tests (2) ------------------------
+Modules: \Magento\FunctionalTestingFramework\Module\MagentoWebDriver, \Magento\FunctionalTestingFramework\Helper\Acceptance, \Magento\FunctionalTestingFramework\Helper\MagentoFakerData, \Magento\FunctionalTestingFramework\Module\MagentoRestDriver, PhpBrowser, \Magento\FunctionalTestingFramework\Module\MagentoSequence, \Magento\FunctionalTes
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>After the test generation command (mentioned in the previous section), MFTF delegates control to the <code class="language-plaintext highlighter-rouge">vendor/codeception</code> tool, which is the <code class="language-plaintext highlighter-rouge">Codeception PHP Testing Framework</code> of version <code class="language-plaintext highlighter-rouge">2.3.9</code> that uses <code class="language-plaintext highlighter-rouge">PHPUnit</code> of version <code class="language-plaintext highlighter-rouge">6.5.13</code>.</p>
+
+<p>The tool runs <code class="language-plaintext highlighter-rouge">2 Tests</code> using the configuration defined in the <code class="language-plaintext highlighter-rouge">functional</code> suite under the <code class="language-plaintext highlighter-rouge">Magento\FunctionalTestingFramework</code> namespace.
+The corresponding configuration file is <code class="language-plaintext highlighter-rouge">acceptance/tests/functional.suite.yml</code>.
+It enables <code class="language-plaintext highlighter-rouge">Modules: \Magento\FunctionalTestingFramework\Module\MagentoWebDriver, \Magento\FunctionalTestingFramework\Helper\Acceptance, \Magento\FunctionalTestingFramework\Helper\MagentoFakerData, \Magento\FunctionalTestingFramework\Module\MagentoRestDriver, PhpBrowser, \Magento\FunctionalTestingFramework\Module\MagentoSequence, ...</code></p>
+
+<h4 id="passed-tests">Passed tests</h4>
+
+<p>The next chunk of the log reports about test execution of the first test:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="go">AdminLoginTestCest: Admin login test
+Signature: Magento\AcceptanceTest\_default\Backend\AdminLoginTestCest:AdminLoginTest
+Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminLoginTestCest.php:AdminLoginTest
+Scenario --
+I am on page "/admin/admin"
+</span><span class="gp">I fill field "#</span>username<span class="s2">","</span>admin<span class="s2">"
+</span><span class="gp">I fill field "#</span><span class="s2">login"</span>,<span class="s2">"123123q"</span>
+<span class="go">I click ".actions .action-primary"
+I wait for page load 30
+I close admin notification
+I see in current url "/admin/admin"
+PASSED
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The running test is <code class="language-plaintext highlighter-rouge">AdminLoginTestCest</code>, which is <code class="language-plaintext highlighter-rouge">Admin login test</code> (this text is generated from the test name but with the <code class="language-plaintext highlighter-rouge">Cest</code> part excluded).
+Its test signature is <code class="language-plaintext highlighter-rouge">Magento\AcceptanceTest\_default\Backend\AdminLoginTestCest:AdminLoginTest</code> that matches a <code class="language-plaintext highlighter-rouge">className:methodName</code> format using namespaces.
+A path to the corresponding <code class="language-plaintext highlighter-rouge">Test</code> is <code class="language-plaintext highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/default/AdminLoginTestCest.php:AdminLoginTest</code> (relative to the <code class="language-plaintext highlighter-rouge">acceptance/</code> directory).</p>
+
+<p><code class="language-plaintext highlighter-rouge">Scenario</code> lists the tests steps as they run during test execution, ending with the successful test verdict <code class="language-plaintext highlighter-rouge">PASSED</code>.
+It means that all test steps were processed as expected.</p>
+
+<h4 id="failed-tests">Failed tests</h4>
+
+<p>The second test fails with the following report:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="rouge-code"><pre><span class="go">AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
+Signature: Magento\AcceptanceTest\_default\Backend\AdminMenuNavigationWithSecretKeysTestCest:AdminMenuNavigationWithSecretKeysTest
+Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
+Scenario --
+I magento cli "config:set admin/security/use_form_key 1"
+Value was saved.
+I magento cli "cache:clean config full_page"
+Cleaned cache types:
+config
+full_page
+I am on page "/admin/admin"
+I wait for page load
+</span><span class="gp">I fill field "#</span>username<span class="s2">","</span>admin<span class="s2">"
+</span><span class="gp">I fill field "#</span><span class="s2">login"</span>,<span class="s2">"123123q"</span>
+<span class="go">I click ".actions .action-primary"
+I wait for page load 30
+I close admin notification
+I click "//li[@id='menu-magento-backend-stores']"
+I wait for loading mask to disappear
+</span><span class="gp">I click "#</span>nav li[data-ui-id<span class="o">=</span><span class="s1">'menu-magento-config-system-config'</span><span class="o">]</span><span class="s2">"
+</span><span class="go">I wait for page load
+I see current url matches "~\/admin\/system_config\/~"
+</span><span class="gp">I see "#</span>something<span class="s2">"
+</span><span class="go">I save screenshot
+FAIL
+
+I magento cli "config:set admin/security/use_form_key 0"
+Value was saved.
+I magento cli "cache:clean config full_page"
+Cleaned cache types:
+config
+full_page
+I am on page "/admin/admin/auth/logout/"
+--------------------------------------------------------------------------------
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The general test details and scenario has the same format as in the Passed test.
+The interesting part starts near the <code class="language-plaintext highlighter-rouge">FAIL</code> line.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="gp">I see "#</span>something<span class="s2">"
+</span><span class="go">I save screenshot
+FAIL
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>When a test step fails, MFTF always saves a screenshot of the web page with the failing state immediately after the failure occurs.
+<code class="language-plaintext highlighter-rouge">I save screenshot</code> follows the failing test step <code class="language-plaintext highlighter-rouge">I see "#something"</code> in our case.</p>
+
+<p>A screenshot of the fail goes at the <code class="language-plaintext highlighter-rouge">acceptance/tests/_output</code> directory in both PNG and HTML formats:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Magento.AcceptanceTest._default.Backend.AdminMenuNavigationWithSecretKeysTestCest.AdminMenuNavigationWithSecretKeysTest.fail.html</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Magento.AcceptanceTest._default.Backend.AdminMenuNavigationWithSecretKeysTestCest.AdminMenuNavigationWithSecretKeysTest.fail.png</code></li>
+</ul>
+
+<p>The file name encodes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Magento</code> namespace</li>
+  <li>with the <code class="language-plaintext highlighter-rouge">AcceptanceTest</code> test type</li>
+  <li>generated as a part of the <code class="language-plaintext highlighter-rouge">_default</code> suite</li>
+  <li>defined at the <code class="language-plaintext highlighter-rouge">Magento_Backend</code> module</li>
+  <li>implemented in the <code class="language-plaintext highlighter-rouge">AdminMenuNavigationWithSecretKeysTestCest</code> PHP class</li>
+  <li>with the <code class="language-plaintext highlighter-rouge">AdminMenuNavigationWithSecretKeysTest</code> test name</li>
+  <li>and execution status <code class="language-plaintext highlighter-rouge">fail</code></li>
+</ul>
+
+<p>Actions after <code class="language-plaintext highlighter-rouge">FAIL</code> are run as a part of the <a href="test.html#after-tag"><code class="language-plaintext highlighter-rouge">after</code></a> hook of the test.</p>
+
+<h3 id="test-result-report">Test result report</h3>
+
+<p>After MFTF completed test execution, it generates a general report about test results along with detailed information about each fail.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="go">--------------------------------------------------------------------------------
+DEPRECATION: Calling the "Symfony\Component\BrowserKit\Client::getInternalResponse()" method before the "request()" one is deprecated since Symfony 4.1 and will throw an exception in 5.0. /Users/.../magento2ce/vendor/symfony/browser-kit/Client.php:208
+
+Time: 52.43 seconds, Memory: 16.00MB
+
+There was 1 failure:
+---------
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>First you see warnings and deprecations.
+The <code class="language-plaintext highlighter-rouge">DEPRECATION</code> here is thrown by an MFTF dependency (Symfony) that is out of the scope for test writers and should be considered by MFTF contributors.
+If you encounter this type of reporting, <a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md#report-an-issue">report an issue</a>.</p>
+
+<p>Then, MFTF reports that the test run took 52.43 seconds using 16 MB of system RAM.
+And, finally, that there was <code class="language-plaintext highlighter-rouge">1 failure</code>.</p>
+
+<p>Next, the report provides details about the test failure.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="rouge-code"><pre><span class="go">---------
+1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
+Test  tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
+</span><span class="gp">Step  See "#</span>something<span class="s2">"
+</span><span class="go">Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../
+</span><span class="gp">--&gt;</span><span class="w"> </span>DASHBOARD
+<span class="go">SALES
+CATALOG
+CUSTOMERS
+MARKETING
+CONTENT
+REPORTS
+STORES
+SYSTEM
+FIND PARTNERS &amp; EXTENSIONS
+Configuration
+admin
+1
+Store View: Default Config
+What is this?
+Save Config
+Country Options
+State Options
+Locale Options
+Store Information
+Store Name
+Store Phone Number
+Store Hours of Operation
+Countr
+[Content too long to display. See complete response in '/Users/dmytroshevtsov/Projects/vagrant/vagrant-magento/magento2ce/dev/tests/acceptance/tests/_output/' directory]
+</span><span class="gp">--&gt;</span><span class="w"> </span>contains <span class="s2">"#something"</span><span class="nb">.</span>
+<span class="go">
+Scenario Steps:
+
+</span><span class="gp">23. $</span>I-&gt;amOnPage<span class="o">(</span><span class="s2">"/admin/admin/auth/logout/"</span><span class="o">)</span> at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:54
+<span class="go">22. // Cleaned cache types:
+config
+full_page
+</span><span class="gp">21. $</span>I-&gt;magentoCLI<span class="o">(</span><span class="s2">"cache:clean config full_page"</span><span class="o">)</span> at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:52
+<span class="go">20. // Value was saved.
+</span><span class="gp">19. $</span>I-&gt;magentoCLI<span class="o">(</span><span class="s2">"config:set admin/security/use_form_key 0"</span><span class="o">)</span> at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:50
+<span class="gp">18. $</span>I-&gt;saveScreenshot<span class="o">()</span> at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:63
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test</code> - the failed Codeception test is <em>AdminMenuNavigationWithSecretKeysTestCest</em>. It references to the PHP class that implemented the failed test.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Test  tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest</code> - the test is implemented in the <em>AdminMenuNavigationWithSecretKeysTest</em> test method of the <em>tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php</em> file under <code class="language-plaintext highlighter-rouge">&lt;magento root&gt;/dev/tests/acceptance/</code>.
+  It matches the corresponding test defined in XML that is <em>AdminMenuNavigationWithSecretKeysTest</em> defined in <code class="language-plaintext highlighter-rouge">&lt;test name="AdminMenuNavigationWithSecretKeysTest"&gt;...&lt;/test&gt;</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Step  See "#something"</code> - the failing test step is the <em>see</em> action with the <em>#something</em> selector. It would correspond the <code class="language-plaintext highlighter-rouge">&lt;see selector="#something" ... /&gt;</code> test step in the XML defined tests.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../</code> - the fail occurred on the web page <code class="language-plaintext highlighter-rouge">&lt;MAGENTO_BASE_URL&gt;/admin/admin/system_config/index/key/678b7ba922c.../</code>.</p>
+  </li>
+</ul>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="gp">--&gt;</span><span class="w"> </span>...
+<span class="go">[Content too long to display. See complete response in '/../../magento2/dev/tests/acceptance/tests/_output/' directory]
+</span><span class="gp">--&gt;</span><span class="w"> </span>contains <span class="s2">"#something"</span><span class="nb">.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The web page is too long to be reported in the CLI, and it is stored at <em>‘/../../magento2/dev/tests/acceptance/tests/_output/’</em>.
+Search the web page by test name <em>AdminMenuNavigationWithSecretKeysTest</em>.
+The failing test assertion is that the web page contains <em>contains</em> a CSS locator <em>#something</em>.</p>
+
+<p>Finally, the report finishes with fairly self-descriptive lines.</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="go">FAILURES!
+Tests: 2, Assertions: 3, Failures: 1.
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>MFTF encountered failures due to the last test run, that included <em>2</em> tests with <em>3</em> assertions.
+<em>1</em> assertion fails.</p>
+
+<h2 id="allure">Allure</h2>
+
+<p>Each time you run tests, MFTF appends an XML file with results at the <code class="language-plaintext highlighter-rouge">tests/_output/allure-results/</code> directory.</p>
+
+<p>The official <a href="http://allure.qatools.ru/">Allure Test Report</a> documentation is well-covered, so we’ll list only the CLI commands that you would need for your day-to-day work.</p>
+
+<div class="bs-callout bs-callout-info">
+The following commands are relative to the Magento installation directory.
+</div>
+
+<p>To generate the HTML Allure report in a temporary folder and open the report in your default web browser:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>allure serve dev/tests/acceptance/tests/_output/allure-results/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To generate a report to the <code class="language-plaintext highlighter-rouge">allure-report/</code> at the current directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>allure generate dev/tests/acceptance/tests/_output/allure-result
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To generate a report to a particular directory, use the <code class="language-plaintext highlighter-rouge">-o</code> option:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>allure generate dev/tests/acceptance/tests/_output/allure-result <span class="nt">-o</span> dev/tests/acceptance/tests/_output/allure-report
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To launch the generated report in a web browser:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>allure open dev/tests/acceptance/tests/_output/allure-report
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+  <p>By default, Allure generates reports in the <code class="language-plaintext highlighter-rouge">allure-report/</code> at the current directory.
+For example, if you run the command without <code class="language-plaintext highlighter-rouge">-o</code> flag while you are in the <code class="language-plaintext highlighter-rouge">magento2/</code> directory, Allure will generate a report at the <code class="language-plaintext highlighter-rouge">magento2/allure-report/</code> directory.</p>
+</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>allure generate dev/tests/acceptance/tests/_output/allure-result
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Example of file structure after the command run:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="go">magento2
+├── allure-report
+├── app
+├── bin
+├── dev
+├── ...
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>And if you run the <code class="language-plaintext highlighter-rouge">open</code> command with no arguments while you are in the same directory (<code class="language-plaintext highlighter-rouge">magento2/</code>):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>allure open
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Allure would attempt to open a generated report at the <code class="language-plaintext highlighter-rouge">magento2/allure-report/</code> directory.’
+%}</p>
+
+<p>To clean up existing reports before generation (for example after getting new results), use the <code class="language-plaintext highlighter-rouge">--clean</code> flag:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>allure generate dev/tests/acceptance/tests/_output/allure-result <span class="nt">--clean</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Refer to the <a href="https://docs.qameta.io/allure/#_reporting">Reporting section</a> for more Allure CLI details.</p>
+
+<!-- Link definitions -->
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-10-01">
+    Oct 1st, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

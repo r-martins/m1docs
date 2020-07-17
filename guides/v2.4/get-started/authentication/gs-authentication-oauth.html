@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>OAuth-based authentication | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="gs-authentication-oauth.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.3/get-started/authentication/gs-authentication-oauth.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="gs-authentication-oauth.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Getting Started with Web APIs</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bk-get-started-api.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../rest_front.html" class="spectrum-SideNav-itemLink ">Use REST APIs</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../gs-web-api-request.html" class="spectrum-SideNav-itemLink ">Construct a request</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../gs-curl.html" class="spectrum-SideNav-itemLink ">Use cURL to run the request</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../gs-web-api-response.html" class="spectrum-SideNav-itemLink ">Status codes and responses</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../soap/soap-web-api-calls.html" class="spectrum-SideNav-itemLink ">Use SOAP Services</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="gs-authentication.html" class="spectrum-SideNav-itemLink ">Authentication</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="gs-authentication-token.html" class="spectrum-SideNav-itemLink ">Token-based authentication</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="gs-authentication-oauth.html" class="spectrum-SideNav-itemLink ">OAuth-based authentication</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="oauth-errors.html" class="spectrum-SideNav-itemLink ">OAuth error codes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="gs-authentication-session.html" class="spectrum-SideNav-itemLink ">Session-based authentication</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-integration.html" class="spectrum-SideNav-itemLink ">Create an integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../web-api-functional-testing.html" class="spectrum-SideNav-itemLink ">Web API functional testing</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">OAuth-based authentication</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/get-started/authentication/gs-authentication-oauth.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/get-started/authentication/gs-authentication-oauth.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Magento OAuth authentication is based on <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a>, an open standard for secure <a href="https://glossary.magento.com/api">API</a> authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.</p>
+
+<p>In Magento, a third-party <a href="https://glossary.magento.com/extension">extension</a> that uses OAuth for authentication is called an <a href="../create-integration.html"><em>integration</em></a>. An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.</p>
+
+<p>As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.</p>
+
+<h2 id="overview">OAuth overview</h2>
+
+<p>The following diagram shows the OAuth authentication process. Each step is described further.
+<img src="images/oauthflow.png" alt="OAuth flow" /></p>
+
+<ol>
+  <li>
+    <p><strong>Create an integration</strong>.  The merchant creates an integration from <a href="https://glossary.magento.com/admin">Admin</a>. Magento generates a consumer key and a consumer secret.</p>
+  </li>
+  <li>
+    <p><strong>Activate the integration</strong>. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store <a href="https://glossary.magento.com/url">URL</a> to the external application via HTTPS post to the page defined in the <strong>Callback Link</strong> field in Admin. See <a href="gs-authentication-oauth.html#activate">Activate an integration</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Process activation information</strong>. The integrator must store the activation information received in step 2. These parameters will be used to ask for  tokens.</p>
+  </li>
+  <li>
+    <p><strong>Call the application’s login page</strong>. Magento calls the page defined in the <strong>Identity Link</strong> field in Admin.</p>
+  </li>
+  <li>
+    <p><strong>Merchant logs in to the external application.</strong> If the login is successful, the application returns to the location specified in the call. The login page is dismissed.</p>
+  </li>
+  <li>
+    <p><strong>Ask for a request token</strong>. The application uses the <code class="language-plaintext highlighter-rouge">POST /oauth/token/request</code> REST API to ask for a request token. The <code class="language-plaintext highlighter-rouge">Authorization</code> header includes the consumer key and other information. See <a href="gs-authentication-oauth.html#pre-auth-token">Get a request token</a> for details about this token request.</p>
+  </li>
+  <li>
+    <p><strong>Send the request token</strong>. Magento returns a request token and request token secret.</p>
+  </li>
+  <li>
+    <p><strong>Ask for an access token</strong>. The application uses the <code class="language-plaintext highlighter-rouge">POST /oauth/token/access</code> REST API to ask for an access token. The <code class="language-plaintext highlighter-rouge">Authorization</code> header includes the request token and other information. See <a href="gs-authentication-oauth.html#get-access-token">Get an access token</a> for details about this token request.</p>
+  </li>
+  <li>
+    <p><strong>Magento sends the access token</strong>. If this request is successful, Magento returns an access token and access token secret.</p>
+  </li>
+  <li>
+    <p><strong>The application can access Magento resources.</strong> All requests sent to Magento must use the full set of request parameters in <code class="language-plaintext highlighter-rouge">Authorization</code> header. See <a href="gs-authentication-oauth.html#web-api-access">Access the web APIs</a> for more information.</p>
+  </li>
+</ol>
+
+<h2 id="activate">Activate an integration</h2>
+
+<p>The integration must be configured from the <a href="https://glossary.magento.com/magento-admin">Magento Admin</a> (<strong>System &gt; Extensions &gt; Integrations</strong>).  The configuration includes a callback URL and an identity link URL.  The callback URL specifies where OAuth credentials can be sent when using OAuth for token exchange. The identity link points to the login page of the third-party application that is integrating with Magento.</p>
+
+<p>A merchant can choose to select <strong>Save and Activate</strong> when the integration is created. Alternatively, the merchant can click on <strong>Activate</strong> against a previously saved integration from the Integration grid.</p>
+
+<p>When the integration is created, Magento generates a consumer key and a consumer secret.</p>
+
+<p>Activating the integration submits the credentials to the endpoint specified when creating the Integration. An HTTP POST from Magento to the Integration endpoint will contain these attributes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">store_base_url</code> For example, <code class="language-plaintext highlighter-rouge">http://my-magento-store.com/</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_verifier</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_consumer_key</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_consumer_secret</code></li>
+</ul>
+
+<p>Integrations use the <code class="language-plaintext highlighter-rouge">oauth_consumer_key</code> key to get a request token and the <code class="language-plaintext highlighter-rouge">oauth_verifier</code> to get an access token.</p>
+
+<h2 id="oauth-handshake">OAuth handshake details</h2>
+
+<p>The process of completing the OAuth handshake requires that you</p>
+
+<ul>
+  <li><a href="gs-authentication-oauth.html#pre-auth-token">Get a request token</a></li>
+  <li><a href="gs-authentication-oauth.html#get-access-token">Get an access token</a></li>
+</ul>
+
+<p>This process is known as a 2-legged OAuth handshake.</p>
+
+<h3 id="pre-auth-token">Get a request token</h3>
+
+<p>A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:</p>
+
+<p><code class="language-plaintext highlighter-rouge">POST /oauth/token/request</code></p>
+
+<p>You must include these request parameters in the <code class="language-plaintext highlighter-rouge">Authorization</code>  header in the call:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_consumer_key</code></td>
+      <td>The consumer key is generated when you create the integration.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_signature_method</code></td>
+      <td>The name of the signature method used to sign the request. Must be the value <code class="language-plaintext highlighter-rouge">HMAC-SHA1</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_signature</code></td>
+      <td>A generated value (signature)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_nonce</code></td>
+      <td>A random value that is uniquely generated by the application.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_timestamp</code></td>
+      <td>A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_version</code></td>
+      <td>The OAuth version.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The response contains these fields:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">oauth_token</code>. The token to be used when requesting an access token.</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_token_secret</code>.  A secret value that establishes ownership of the token.</li>
+</ul>
+
+<p>A valid response looks like this:</p>
+
+<p><code class="language-plaintext highlighter-rouge">oauth_token=4cqw0r7vo0s5goyyqnjb72sqj3vxwr0h&amp;oauth_token_secret=rig3x3j5a9z5j6d4ubjwyf9f1l21itrr</code></p>
+
+<h3 id="get-access-token">Get an access token</h3>
+
+<p>The request token must be exchanged for an access token. Use the following API to get an access token from Magento:</p>
+
+<p><code class="language-plaintext highlighter-rouge">POST /oauth/token/access</code></p>
+
+<p>You must include these request parameters in the <code class="language-plaintext highlighter-rouge">Authorization</code>  header in the call:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_consumer_key</code></td>
+      <td>The consumer key value that you retrieve after you register the integration.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_nonce</code></td>
+      <td>A random value that is uniquely generated by the application.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_signature</code></td>
+      <td>A generated value (signature)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_signature_method</code></td>
+      <td>The name of the signature method used to sign the request. Must be the value <code class="language-plaintext highlighter-rouge">HMAC-SHA1</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_timestamp</code></td>
+      <td>A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_version</code></td>
+      <td>The OAuth version.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_token</code></td>
+      <td>The <code class="language-plaintext highlighter-rouge">oauth_token</code> value, or request token, obtained in <a href="gs-authentication-oauth.html#pre-auth-token">Get a request token</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">oauth_verifier</code></td>
+      <td>The verification code that is tied to the consumer and request token. It is sent as part of the initial POST operation when the integration is activated.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A valid response looks like this:
+<code class="language-plaintext highlighter-rouge">oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&amp;oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd</code></p>
+
+<p>The response contains these fields:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">oauth_token</code>. The access token that provides access to protected resources.</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_token_secret</code>. The secret that is associated with the access token.</li>
+</ul>
+
+<h2 id="web-api-access">Access the web APIs</h2>
+
+<p>After the Integration is authorized to make API calls, 3rd party extensions (registered as Integrations in Magento) can invoke Magento web APIs by using the access token.</p>
+
+<p>To use the access token to make <a href="https://glossary.magento.com/web-api">web API</a> calls:</p>
+
+<p><code class="language-plaintext highlighter-rouge">GET /rest/V1/products/1234</code></p>
+
+<p>You must include these request parameters in the <code class="language-plaintext highlighter-rouge">Authorization</code> request header in the call:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">oauth_consumer_key</code>. The customer key value provided after the registration of the extension.</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_nonce</code>. A random value, uniquely generated by the application.</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_signature_method</code>. The name of the signature method used to sign the request. Valid values are: <code class="language-plaintext highlighter-rouge">HMAC-SHA1</code>, <code class="language-plaintext highlighter-rouge">RSA-SHA1</code>, and <code class="language-plaintext highlighter-rouge">PLAINTEXT</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_signature</code>. A generated value (signature).</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_timestamp</code>. A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_token</code>. The <code class="language-plaintext highlighter-rouge">oauth_token</code>, or access token, value obtained in <a href="gs-authentication-oauth.html#get-access-token">Get an access token</a>.</li>
+</ul>
+
+<h2 id="oauth-signature">The OAuth signature</h2>
+
+<p>All OAuth handshake requests and Web Api requests include the signature as part of <a href="https://glossary.magento.com/authorization">Authorization</a> header. Its generated as follows:</p>
+
+<p>You concatenate a set of URL-encoded attributes and parameters to construct the signature base string.</p>
+
+<p>Use the ampersand (<code class="language-plaintext highlighter-rouge">&amp;</code>) character to concatenate these attributes and parameters:</p>
+
+<ol>
+  <li>HTTP method</li>
+  <li>URL</li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_nonce</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_signature_method</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_timestamp</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_version</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_consumer_key</code></li>
+  <li><code class="language-plaintext highlighter-rouge">oauth_token</code></li>
+</ol>
+
+<p>To generate the signature, you must use the HMAC-SHA1 signature method. The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (<code class="language-plaintext highlighter-rouge">&amp;</code>) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.</p>
+
+<h2 id="oauth-example">OAuth token exchange example</h2>
+
+<p>The scripts provided in this document simulate the Magento 2 <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a> token exchange flow. You can drop these scripts under the document root directory of your Magento application so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.</p>
+
+<p>The OAuth client is extended from and attributed to <a href="https://github.com/Lusitanian/PHPoAuthLib">PHPoAuthLib</a>, which is the same lib used in the <a href="https://github.com/magento/magento2/blob/2.4/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php">Magento OAuth client</a>.</p>
+
+<p>To simulate the OAuth 1.0a token exchange flow:</p>
+
+<ol>
+  <li>Login to your Magento Admin and navigate to <strong>System &gt; Extensions &gt; Integrations</strong></li>
+  <li>Click on <strong>Add New Integration</strong>.</li>
+  <li>Complete all details in the Integration Info tab:
+    <ul>
+      <li><strong>Name</strong> : SomeUniqueIntegrationName</li>
+      <li><strong>Callback URL</strong> : http://your_app_host/endpoint.php</li>
+      <li><strong>Identity link URL</strong> : http://your_app_host/login.php</li>
+      <li>Add permissions as desired on the <strong>API</strong> tab</li>
+    </ul>
+  </li>
+  <li>Select the <strong>Save and Activate</strong> option from the drop down menu.</li>
+  <li>A pop-up window displays, confirming API permissions. Click <strong>Allow</strong>. (Make sure your browser allows pop-up windows.) The credentials are posted to <code class="language-plaintext highlighter-rouge">endpoint.php</code>. You should also see another pop-up for the identity linking step that opens the script from <code class="language-plaintext highlighter-rouge">login.php</code>.</li>
+  <li>Click <strong>Login</strong>. (There is no actual login check since this is a simulation.). The <code class="language-plaintext highlighter-rouge">checklogin.php</code> script is called. It uses the posted credentials to complete the token exchange.</li>
+  <li>When the token exchange completes successfully, the user is redirected back to the Integrations grid. The newly-created integration should be in the Active state.</li>
+  <li>Click on the edit icon of the integration and check the Integration Details on the Integration Info tab. It should show all the credentials that can be used to make an authenticated API request using OAuth 1.0.</li>
+</ol>
+
+<h3 id="checkloginphp">checklogin.php</h3>
+
+<div class="collapsible">
+    <b class="collapsible-title">Click to expand </b>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+<span class="k">require</span> <span class="s1">'./vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'oauth_consumer_key'</span><span class="p">];</span>
+<span class="nv">$callback</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'callback_url'</span><span class="p">];</span>
+
+<span class="nb">session_id</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="cd">/** Use $consumerKey to retrieve the following data in case it was stored in DB when received at "endpoint.php" */</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$consumerKey</span> <span class="o">!==</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_consumer_key'</span><span class="p">])</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">"Consumer keys received on different requests do not match."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nv">$consumerSecret</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_consumer_secret'</span><span class="p">];</span>
+<span class="nv">$magentoBaseUrl</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'store_base_url'</span><span class="p">],</span> <span class="s1">'/'</span><span class="p">);</span>
+<span class="nv">$oauthVerifier</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_verifier'</span><span class="p">];</span>
+
+<span class="nb">define</span><span class="p">(</span><span class="s1">'TESTS_BASE_URL'</span><span class="p">,</span> <span class="nv">$magentoBaseUrl</span><span class="p">);</span>
+
+<span class="nv">$credentials</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Consumer\Credentials</span><span class="p">(</span><span class="nv">$consumerKey</span><span class="p">,</span> <span class="nv">$consumerSecret</span><span class="p">,</span> <span class="nv">$magentoBaseUrl</span><span class="p">);</span>
+<span class="nv">$oAuthClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OauthClient</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">);</span>
+<span class="nv">$requestToken</span> <span class="o">=</span> <span class="nv">$oAuthClient</span><span class="o">-&gt;</span><span class="na">requestRequestToken</span><span class="p">();</span>
+<span class="nv">$accessToken</span> <span class="o">=</span> <span class="nv">$oAuthClient</span><span class="o">-&gt;</span><span class="na">requestAccessToken</span><span class="p">(</span>
+    <span class="nv">$requestToken</span><span class="o">-&gt;</span><span class="na">getRequestToken</span><span class="p">(),</span>
+    <span class="nv">$oauthVerifier</span><span class="p">,</span>
+    <span class="nv">$requestToken</span><span class="o">-&gt;</span><span class="na">getRequestTokenSecret</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nb">header</span><span class="p">(</span><span class="s2">"location: </span><span class="nv">$callback</span><span class="s2">"</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<h3 id="endpointphp">endpoint.php</h3>
+<div class="collapsible">
+    <b class="collapsible-title">Click to expand </b>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+<span class="nb">session_id</span><span class="p">(</span><span class="s1">'test'</span><span class="p">);</span>
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="c1">// If this data is stored in the DB, oauth_consumer_key can be used as ID to retrieve this data later in "checklogin.php"</span>
+<span class="c1">// For simplicity of this sample, it is stored in session</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_consumer_key'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'oauth_consumer_key'</span><span class="p">];</span>
+
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_consumer_secret'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'oauth_consumer_secret'</span><span class="p">];</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'store_base_url'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'store_base_url'</span><span class="p">];</span>
+<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_verifier'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'oauth_verifier'</span><span class="p">];</span>
+
+<span class="nb">session_write_close</span><span class="p">();</span>
+
+<span class="nb">header</span><span class="p">(</span><span class="s2">"HTTP/1.0 200 OK"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="s2">"Response"</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<h3 id="loginphp">login.php</h3>
+<div class="collapsible">
+    <b class="collapsible-title">Click to expand </b>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+<span class="nv">$consumerKey</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'oauth_consumer_key'</span><span class="p">];</span>
+<span class="nv">$callbackUrl</span> <span class="o">=</span> <span class="nb">urlencode</span><span class="p">(</span><span class="nb">urldecode</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'success_call_back'</span><span class="p">]));</span>
+
+<span class="k">echo</span> <span class="sh">&lt;&lt;&lt;HTML
+&lt;table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC"&gt;
+    &lt;tr&gt;
+        &lt;form name="form1" method="post" action="checklogin.php?oauth_consumer_key={$consumerKey}&amp;callback_url={$callbackUrl}"&gt;
+            &lt;td&gt;
+                &lt;table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF"&gt;
+                    &lt;tr&gt;
+                        &lt;td colspan="3"&gt;&lt;strong&gt;Integrations Login&lt;/strong&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td width="78"&gt;Username&lt;/td&gt;
+                        &lt;td width="6"&gt;:&lt;/td&gt;
+                        &lt;td width="294"&gt;&lt;input name="myusername" type="text" id="myusername"&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;Password&lt;/td&gt;
+                        &lt;td&gt;:&lt;/td&gt;
+                        &lt;td&gt;&lt;input name="mypassword" type="text" id="mypassword"&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+                        &lt;td&gt;&lt;input type="submit" name="Submit" value="Login"&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/form&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+HTML;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<h3 id="oauthclientphp">OauthClient.php</h3>
+
+<p>Change the instances of <code class="language-plaintext highlighter-rouge">http://magento.host</code> in this example to a valid base URL.</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">Click to expand </b>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span> <span class="nn">OAuth\Common\Consumer\Credentials</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\Common\Http\Client\ClientInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\Common\Http\Exception\TokenResponseException</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\Common\Http\Uri\Uri</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\Common\Http\Uri\UriInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\Common\Storage\TokenStorageInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\OAuth1\Service\AbstractService</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\OAuth1\Signature\SignatureInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\OAuth1\Token\StdOAuth1Token</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">OAuth\OAuth1\Token\TokenInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">OauthClient</span> <span class="k">extends</span> <span class="nx">AbstractService</span>
+<span class="p">{</span>
+    <span class="cd">/** @var string|null */</span>
+    <span class="k">protected</span> <span class="nv">$_oauthVerifier</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">Credentials</span> <span class="nv">$credentials</span><span class="p">,</span>
+        <span class="nx">ClientInterface</span> <span class="nv">$httpClient</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">TokenStorageInterface</span> <span class="nv">$storage</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">SignatureInterface</span> <span class="nv">$signature</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nx">UriInterface</span> <span class="nv">$baseApiUri</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$httpClient</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$httpClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Http\Client\StreamClient</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$storage</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$storage</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Storage\Session</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$signature</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$signature</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\OAuth\OAuth1\Signature\Signature</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$credentials</span><span class="p">,</span> <span class="nv">$httpClient</span><span class="p">,</span> <span class="nv">$storage</span><span class="p">,</span> <span class="nv">$signature</span><span class="p">,</span> <span class="nv">$baseApiUri</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * @return UriInterface
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getRequestTokenEndpoint</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Uri</span><span class="p">(</span><span class="s1">'http://magento.host/oauth/token/request'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Returns the authorization API endpoint.
+     *
+     * @throws \OAuth\Common\Exception\Exception
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAuthorizationEndpoint</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\OAuth\Common\Exception\Exception</span><span class="p">(</span>
+            <span class="s1">'Magento REST API is 2-legged. Current operation is not available.'</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Returns the access token API endpoint.
+     *
+     * @return UriInterface
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAccessTokenEndpoint</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nx">Uri</span><span class="p">(</span><span class="s1">'http://magento.host/oauth/token/access'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Parses the access token response and returns a TokenInterface.
+     *
+     * @param string $responseBody
+     * @return TokenInterface
+     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">parseAccessTokenResponse</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseToken</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Parses the request token response and returns a TokenInterface.
+     *
+     * @param string $responseBody
+     * @return TokenInterface
+     * @throws TokenResponseException
+     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">parseRequestTokenResponse</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseResponseBody</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_verifier'</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_oauthVerifier</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_verifier'</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseToken</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Parse response body and create oAuth token object based on parameters provided.
+     *
+     * @param string $responseBody
+     * @return StdOAuth1Token
+     * @throws TokenResponseException
+     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">_parseToken</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_parseResponseBody</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">);</span>
+        <span class="nv">$token</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StdOAuth1Token</span><span class="p">();</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setRequestToken</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setRequestTokenSecret</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_token_secret'</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setAccessToken</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setAccessTokenSecret</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_token_secret'</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setEndOfLife</span><span class="p">(</span><span class="nx">StdOAuth1Token</span><span class="o">::</span><span class="na">EOL_NEVER_EXPIRES</span><span class="p">);</span>
+        <span class="nb">unset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_token'</span><span class="p">],</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'oauth_token_secret'</span><span class="p">]);</span>
+        <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">setExtraParams</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$token</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Parse response body and return data in array.
+     *
+     * @param string $responseBody
+     * @return array
+     * @throws \OAuth\Common\Http\Exception\TokenResponseException
+     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">_parseResponseBody</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_string</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">TokenResponseException</span><span class="p">(</span><span class="s2">"Response body is expected to be a string."</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nb">parse_str</span><span class="p">(</span><span class="nv">$responseBody</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">===</span> <span class="nv">$data</span> <span class="o">||</span> <span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$data</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">TokenResponseException</span><span class="p">(</span><span class="s1">'Unable to parse response.'</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nx">TokenResponseException</span><span class="p">(</span><span class="s2">"Error occurred: '</span><span class="si">{</span><span class="nv">$data</span><span class="p">[</span><span class="s1">'error'</span><span class="p">]</span><span class="si">}</span><span class="s2">'"</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * @override to fix since parent implementation from lib not sending the oauth_verifier when requesting access token
+     * Builds the authorization header for an authenticated API request
+     *
+     * @param string $method
+     * @param UriInterface $uri the uri the request is headed
+     * @param \OAuth\OAuth1\Token\TokenInterface $token
+     * @param $bodyParams array
+     * @return string
+     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">buildAuthorizationHeaderForAPIRequest</span><span class="p">(</span>
+        <span class="nv">$method</span><span class="p">,</span>
+        <span class="nx">UriInterface</span> <span class="nv">$uri</span><span class="p">,</span>
+        <span class="nx">TokenInterface</span> <span class="nv">$token</span><span class="p">,</span>
+        <span class="nv">$bodyParams</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">signature</span><span class="o">-&gt;</span><span class="na">setTokenSecret</span><span class="p">(</span><span class="nv">$token</span><span class="o">-&gt;</span><span class="na">getAccessTokenSecret</span><span class="p">());</span>
+        <span class="nv">$parameters</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBasicAuthorizationHeaderInfo</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">'oauth_callback'</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="nb">unset</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">[</span><span class="s1">'oauth_callback'</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="nv">$parameters</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">,</span> <span class="p">[</span><span class="s1">'oauth_token'</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="o">-&gt;</span><span class="na">getAccessToken</span><span class="p">()]);</span>
+        <span class="nv">$parameters</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span><span class="nv">$parameters</span><span class="p">,</span> <span class="nv">$bodyParams</span><span class="p">);</span>
+        <span class="nv">$parameters</span><span class="p">[</span><span class="s1">'oauth_signature'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">signature</span><span class="o">-&gt;</span><span class="na">getSignature</span><span class="p">(</span><span class="nv">$uri</span><span class="p">,</span> <span class="nv">$parameters</span><span class="p">,</span> <span class="nv">$method</span><span class="p">);</span>
+
+        <span class="nv">$authorizationHeader</span> <span class="o">=</span> <span class="s1">'OAuth '</span><span class="p">;</span>
+        <span class="nv">$delimiter</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$parameters</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$authorizationHeader</span> <span class="o">.=</span> <span class="nv">$delimiter</span> <span class="o">.</span> <span class="nb">rawurlencode</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'="'</span> <span class="o">.</span> <span class="nb">rawurlencode</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'"'</span><span class="p">;</span>
+            <span class="nv">$delimiter</span> <span class="o">=</span> <span class="s1">', '</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$authorizationHeader</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+</div>
+  </div>
+
+<p class="ref-header">Related topics</p>
+
+<p><a href="../create-integration.html">Create an integration</a></p>
+
+<p><a href="oauth-errors.html">OAuth error codes</a></p>
+
+<p><a href="../gs-web-api-request.html">Construct a request</a></p>
+
+<p><a href="../../extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-12-19">
+    Dec 19th, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

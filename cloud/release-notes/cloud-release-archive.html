@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Release notes archive for ece-tools | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="cloud-release-archive.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Commerce Cloud</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-SideNav-itemLink ">Overview</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../onboarding/onboarding-tasks.html" class="spectrum-SideNav-itemLink ">Onboarding tasks</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/starter-architecture.html" class="spectrum-SideNav-itemLink ">Starter architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/starter-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Starter develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/pro-architecture.html" class="spectrum-SideNav-itemLink ">Pro architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/pro-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Pro develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/scaled-architecture.html" class="spectrum-SideNav-itemLink ">Scaled architecture</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../requirements/cloud-requirements.html" class="spectrum-SideNav-itemLink ">Technologies and requirements</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/cloud-composer.html" class="spectrum-SideNav-itemLink ">Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/cli-ref-topic.html" class="spectrum-SideNav-itemLink ">Magento Cloud CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/ece-tools-reference.html" class="spectrum-SideNav-itemLink ">ece-tools package</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/git-integration.html" class="spectrum-SideNav-itemLink ">Git</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environments-ssh.html" class="spectrum-SideNav-itemLink ">SSH and sFTP</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/privatelink-service.html" class="spectrum-SideNav-itemLink ">PrivateLink</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/new-relic.html" class="spectrum-SideNav-itemLink ">New Relic</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/sendgrid.html" class="spectrum-SideNav-itemLink ">SendGrid</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup.html" class="spectrum-SideNav-itemLink ">Local development setup</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace.html" class="spectrum-SideNav-itemLink ">Prepare for manual setup</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-magento-prereqs.html" class="spectrum-SideNav-itemLink ">Install Magento prerequisites</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-ssh.html" class="spectrum-SideNav-itemLink ">Enable SSH keys</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-file-sys-owner.html" class="spectrum-SideNav-itemLink ">Set up the Magento file system owner</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-setup-env-2_clone.html" class="spectrum-SideNav-itemLink ">Clone and branch the project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-setup-env-install.html" class="spectrum-SideNav-itemLink ">Install Magento</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-deploy.html" class="spectrum-SideNav-itemLink ">First time deployment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/debug.html" class="spectrum-SideNav-itemLink ">Optional - Configure Xdebug</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/sample-data.html" class="spectrum-SideNav-itemLink ">Optional - Install sample data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-SideNav-itemLink ">Docker development</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers.html" class="spectrum-SideNav-itemLink ">Docker container architecture</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers-service.html" class="spectrum-SideNav-itemLink ">Service containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers-cli.html" class="spectrum-SideNav-itemLink ">CLI containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-syncing-data.html" class="spectrum-SideNav-itemLink ">Synchronizing data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-SideNav-itemLink ">Configure Docker</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-development-debug.html" class="spectrum-SideNav-itemLink ">Xdebug for Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-manage-database.html" class="spectrum-SideNav-itemLink ">Manage the database</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-split-db.html" class="spectrum-SideNav-itemLink ">Enable split database solution</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-manage-cron-jobs.html" class="spectrum-SideNav-itemLink ">Manage cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-extend.html" class="spectrum-SideNav-itemLink ">Extend Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-config-blackfire-io.html" class="spectrum-SideNav-itemLink ">Add Blackfire.io service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Launch Docker</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-mode-developer.html" class="spectrum-SideNav-itemLink ">Developer mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-mode-production.html" class="spectrum-SideNav-itemLink ">Production mode</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Functional Testing</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-test-app-mftf.html" class="spectrum-SideNav-itemLink ">Magento application testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-SideNav-itemLink ">Magento Cloud code testing</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-SideNav-itemLink ">Docker quick reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/cloud-integrations.html" class="spectrum-SideNav-itemLink ">Integrations</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/bitbucket-integration.html" class="spectrum-SideNav-itemLink ">Bitbucket integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/github-integration.html" class="spectrum-SideNav-itemLink ">GitHub integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/gitlab-integration.html" class="spectrum-SideNav-itemLink ">GitLab integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/health-notifications.html" class="spectrum-SideNav-itemLink ">Health notifications</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-first-steps.html" class="spectrum-SideNav-itemLink ">Import existing code into a project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-prepare.html" class="spectrum-SideNav-itemLink ">Prepare your existing Magento Commerce system</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-import.html" class="spectrum-SideNav-itemLink ">Import Magento Commerce code</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/configuration-overview.html" class="spectrum-SideNav-itemLink ">Configure your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/configure-best-practices.html" class="spectrum-SideNav-itemLink ">Best practices for store configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/paypal-onboarding.html" class="spectrum-SideNav-itemLink ">Set up PayPal</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/setup-b2b.html" class="spectrum-SideNav-itemLink ">Set up Magento B2B</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/setup-cron-jobs.html" class="spectrum-SideNav-itemLink ">Set up cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-multi-sites.html" class="spectrum-SideNav-itemLink ">Set up multiple Cloud websites or stores</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/install-components.html" class="spectrum-SideNav-itemLink ">Install, manage, and upgrade modules</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/custom-theme.html" class="spectrum-SideNav-itemLink ">Install a theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/import-url-rewrites.html" class="spectrum-SideNav-itemLink ">Import URL Rewrites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/cloud-fastly.html" class="spectrum-SideNav-itemLink ">Configure Fastly services</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/configure-fastly.html" class="spectrum-SideNav-itemLink ">Set up Fastly</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/cloud-fastly-custom-response.html" class="spectrum-SideNav-itemLink ">Customize error and maintenance pages</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-waf-service.html" class="spectrum-SideNav-itemLink ">Web Application Firewall</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-image-optimization.html" class="spectrum-SideNav-itemLink ">Image Optimization</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/cloud-vcl-custom-snippets.html" class="spectrum-SideNav-itemLink ">Custom VCL snippets</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-wordpress.html" class="spectrum-SideNav-itemLink ">Reroute requests to a CMS backend</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-badreferer.html" class="spectrum-SideNav-itemLink ">Block referral spam</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-whitelist.html" class="spectrum-SideNav-itemLink ">IP allow list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-blocking.html" class="spectrum-SideNav-itemLink ">IP block list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-bypass-to-origin.html" class="spectrum-SideNav-itemLink ">Bypass Fastly</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/trouble-fastly.html" class="spectrum-SideNav-itemLink ">Fastly troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-SideNav-itemLink ">Configure environments</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-SideNav-itemLink ">Application</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/set-cache.html" class="spectrum-SideNav-itemLink ">Set cache for static files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/magento-env-yaml.html" class="spectrum-SideNav-itemLink ">Build and deploy</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/setup-notifications.html" class="spectrum-SideNav-itemLink ">Set up notifications</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/log-handlers.html" class="spectrum-SideNav-itemLink ">Logging handlers</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-intro.html" class="spectrum-SideNav-itemLink ">Environment variables</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environment-vars_magento.html" class="spectrum-SideNav-itemLink ">ADMIN variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-global.html" class="spectrum-SideNav-itemLink ">Global variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-build.html" class="spectrum-SideNav-itemLink ">Build variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-cloud.html" class="spectrum-SideNav-itemLink ">Cloud variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-deploy.html" class="spectrum-SideNav-itemLink ">Deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-post-deploy.html" class="spectrum-SideNav-itemLink ">Post-deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/working-with-variables.html" class="spectrum-SideNav-itemLink ">Working with variables</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_routes.html" class="spectrum-SideNav-itemLink ">Routes</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-routes-more-cache.html" class="spectrum-SideNav-itemLink ">Caching</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-routes-more-redir.html" class="spectrum-SideNav-itemLink ">Redirects</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-routes-more-ssi.html" class="spectrum-SideNav-itemLink ">Server side includes</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services.html" class="spectrum-SideNav-itemLink ">Services</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-mysql.html" class="spectrum-SideNav-itemLink ">Set up MySQL service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-redis.html" class="spectrum-SideNav-itemLink ">Set up Redis service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-elastic.html" class="spectrum-SideNav-itemLink ">Set up Elasticsearch service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-conf-files_services-rabbit.html" class="spectrum-SideNav-itemLink ">Set up RabbitMQ service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/restore-environment.html" class="spectrum-SideNav-itemLink ">Restore an environment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/sens-data-over.html" class="spectrum-SideNav-itemLink ">Configuration management for store settings</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/sens-data-initial.html" class="spectrum-SideNav-itemLink ">Example of managing system-specific settings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/projects.html" class="spectrum-SideNav-itemLink ">Manage your project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-webint-basic.html" class="spectrum-SideNav-itemLink ">Configure your project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-SideNav-itemLink ">Project structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/log-locations.html" class="spectrum-SideNav-itemLink ">Log locations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/user-admin.html" class="spectrum-SideNav-itemLink ">Create and manage users</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-webint-branch.html" class="spectrum-SideNav-itemLink ">Manage branches with the Interface</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environments-start.html" class="spectrum-SideNav-itemLink ">Manage branches with the CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/profile-database-queries.html" class="spectrum-SideNav-itemLink ">Profile database queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/manage-disk-space.html" class="spectrum-SideNav-itemLink ">Manage disk space</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/monitor-performance.html" class="spectrum-SideNav-itemLink ">Monitor performance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-webint-snap.html" class="spectrum-SideNav-itemLink ">Snapshots and backup management</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/optimize-cloud-deployment.html" class="spectrum-SideNav-itemLink ">Optimize deployment</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/cloud-deployment-process.html" class="spectrum-SideNav-itemLink ">Cloud deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/scenario-based-deployment.html" class="spectrum-SideNav-itemLink ">Scenario-based deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/reduce-downtime.html" class="spectrum-SideNav-itemLink ">Zero downtime deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/static-content-deployment.html" class="spectrum-SideNav-itemLink ">Static content deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/smart-wizards.html" class="spectrum-SideNav-itemLink ">Smart wizards</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-live.html" class="spectrum-SideNav-itemLink ">Deploy your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/discover-deploy.html" class="spectrum-SideNav-itemLink ">Deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/continuous-deployment.html" class="spectrum-SideNav-itemLink ">Continuous deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live-prot.html" class="spectrum-SideNav-itemLink ">Protective block</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live-sanity-check.html" class="spectrum-SideNav-itemLink ">Build and deploy on local</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-migrate-prereq.html" class="spectrum-SideNav-itemLink ">Prepare to deploy to Staging and Production</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-migrate.html" class="spectrum-SideNav-itemLink ">Deploy code and migrate static files and data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-test.html" class="spectrum-SideNav-itemLink ">Test deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/error-codes.html" class="spectrum-SideNav-itemLink ">Error log message reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live.html" class="spectrum-SideNav-itemLink ">Site launch</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/go-live-checklist.html" class="spectrum-SideNav-itemLink ">Launch checklist</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/launch-steps.html" class="spectrum-SideNav-itemLink ">Launch steps</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/troubleshoot-deployment.html" class="spectrum-SideNav-itemLink ">Troubleshoot deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_ce-creds.html" class="spectrum-SideNav-itemLink ">Incorrect credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_proj-startover.html" class="spectrum-SideNav-itemLink ">Resolve issues with a new project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_comp-deploy-fail.html" class="spectrum-SideNav-itemLink ">Component deployment failure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-crypt-key-variable.html" class="spectrum-SideNav-itemLink ">Resolve issues with encryption key</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-error-html-minification.html" class="spectrum-SideNav-itemLink ">Resolve issues with HTML minification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-google-analytics-deploy.html" class="spectrum-SideNav-itemLink ">Resolve issues with Google Analytics during deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/site-availability.html" class="spectrum-SideNav-itemLink ">Site availability</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/robots-sitemap.html" class="spectrum-SideNav-itemLink ">Add site map and search engine robots</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/theme-troubleshooting.html" class="spectrum-SideNav-itemLink ">Theme troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-SideNav-itemLink ">Upgrades and patches</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/ece-tools-update.html" class="spectrum-SideNav-itemLink ">Update ece-tools version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-patch.html" class="spectrum-SideNav-itemLink ">Apply patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/project-upgrade.html" class="spectrum-SideNav-itemLink ">Upgrade Magento version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../project/ece-tools-upgrade-project.html" class="spectrum-SideNav-itemLink ">Upgrade to use ece-tools</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-SideNav-itemLink ">Release notes</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="ece-release-notes.html" class="spectrum-SideNav-itemLink ">ece-tools</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="mcp-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="mcd-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="mcc-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="backward-incompatible-changes.html" class="spectrum-SideNav-itemLink ">Backward incompatible changes</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Release notes archive for ece-tools</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/cloud/release-notes/cloud-release-archive.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /cloud/release-notes/cloud-release-archive.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p class="bs-callout-info">These release notes provide information and updates for <code class="language-plaintext highlighter-rouge">ece-tools</code> v2002.0.22 and later. See <a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html">Release notes for Cloud Suite</a> to get the latest updates for <code class="language-plaintext highlighter-rouge">ece-tools</code> and other Magento Cloud packages.</p>
+
+<h2 id="v2002022">v2002.0.22</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">ece-tools</code> 2002.0.22 release changes the structure of the <code class="language-plaintext highlighter-rouge">ece-tools</code> package to decouple the release of <code class="language-plaintext highlighter-rouge">Magento Commerce Cloud</code> patches from the ece-tools release. Starting with this release, patches and critical fixes will be delivered using the <a href="https://github.com/magento/magento-cloud-patches"><code class="language-plaintext highlighter-rouge">magento/magento-cloud-patches</code></a> package, which is a new dependency for the <code class="language-plaintext highlighter-rouge">ece-tools</code> package. We made these changes to reduce complexity for scheduling release updates and working with community contributions.</p>
+
+<ul>
+  <li class="new">
+    <p><strong>Changes to the ece-tools package</strong></p>
+
+    <ul>
+      <li class="new">
+        <p>Moved the Magento Commerce patches from the <code class="language-plaintext highlighter-rouge">ece-tools</code> package to a new <a href="https://github.com/magento/magento-cloud-patches"><code class="language-plaintext highlighter-rouge">magento/magento-cloud-patches</code></a> composer package.</p>
+      </li>
+      <li class="new">
+        <p>Updated the <code class="language-plaintext highlighter-rouge">composer.json</code> file for the <code class="language-plaintext highlighter-rouge">ece-tools</code> package to add a dependency for the <code class="language-plaintext highlighter-rouge">magento/magento-cloud-patches</code> v1.0.0 package.</p>
+      </li>
+      <li class="fix">
+        <!--MAGECLOUD-4661-->
+        <p>Fixed an issue that caused the <code class="language-plaintext highlighter-rouge">ece-tools</code> patching process to break when applying patch sets on top of security-only releases, starting with Magento version 2.3.2-p2 and later. This issue was introduced by the new versioning scheme adopted for <a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html#security-only-patches">security-only patches</a>.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Patches and critical fixes</strong>–Update your Cloud environments with <code class="language-plaintext highlighter-rouge">ece-tools</code> version 2002.0.22 to apply the following patches and critical fixes. These patches are included in the <code class="language-plaintext highlighter-rouge">magento/magento-cloud-patches</code> v1.0.0 package.</p>
+
+    <ul>
+      <li class="fix">
+        <!--MAGECLOUD-4649-->
+        <p><strong>Page Builder security patches for 2.3.1.x and 2.3.2.x releases</strong>–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with Magento Commerce versions 2.3.1 and 2.3.2.</p>
+      </li>
+      <li class="fix">
+        <!--MAGECLOUD-4428-->
+        <p><strong>MSI patches</strong>–Fixes issues that caused indexing errors and performance issues when using default inventory settings for managing stock.</p>
+      </li>
+      <li class="fix">
+        <!--MAGECLOUD-4422-->
+        <p><strong>Backward Compatibility of new Mail Interfaces</strong>-Fixes a backward incompatibility issue caused by the <code class="language-plaintext highlighter-rouge">Magento\Framework\Mail\EmailMessageInterface</code> PHP interface introduced in Magento Commerce v2.3.3. In the scope of this patch, the new <code class="language-plaintext highlighter-rouge">EmailMessageInterface</code> inherits from the old <code class="language-plaintext highlighter-rouge">MessageInterface</code>, and Magento Commerce core modules are reverted to depend on <code class="language-plaintext highlighter-rouge">MessageInterface</code>.</p>
+      </li>
+      <li class="fix">
+        <!--MAGECLOUD-4448-->
+        <p><strong>Catalog pagination does not work on Elasticsearch 6.x</strong>–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="v2002021">v2002.0.21</h2>
+
+<ul>
+  <li class="new">
+    <p><strong>Docker updates</strong>—</p>
+
+    <ul>
+      <li class="new">
+        <!-- MAGECLOUD-3345 -->
+        <p><strong>New Docker Images</strong>—Supported by Magento versions 2.3.3 and later</p>
+
+        <ul>
+          <li>
+            <!-- MAGECLOUD-4017 -->
+            <p>PHP version 7.3.</p>
+          </li>
+          <li>
+            <!-- MAGECLOUD-4017 -->
+            <p>Varnish Cache 6.2.0</p>
+          </li>
+        </ul>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3505-->
+        <p>Added support to apply custom hook configuration specified in <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> in the Docker environment. Previously, the Docker environment supported only the default hook configuration.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3816-->
+        <p>Docker ENV files are no longer generated during the Docker build, and the <code class="language-plaintext highlighter-rouge">docker:config:convert</code> command is deprecated. The corresponding data is now stored in the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3953 -->
+        <p><strong>Updated PHP image</strong>–Added Node.js to the PHP Docker image to support node, npm, and grunt-cli capabilities.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <p><strong>Environment variable updates</strong>–</p>
+
+    <ul>
+      <li class="new">
+        <!-- MAGECLOUD-4052 -->
+        <p>Added the <strong>LOCK_PROVIDER</strong> deploy variable to configure the lock provider which prevents the launch of duplicate cron jobs and cron groups. See the variable description in the <a href="../env/variables-deploy.html#lock_provider">deploy variables</a> topic.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-4071 -->
+        <p>Added the <strong>CONSUMERS_WAIT_FOR_MAX_MESSAGES</strong> environment variable to configure how consumers process messages from the message queue when using the <code class="language-plaintext highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable to manage cron jobs. See the variable description in the <a href="../env/variables-deploy.html#consumers_wait_for_max_messages">deploy variables</a> topic.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3913 -->
+        <p>Fixed an issue that can cause database deadlock errors when the <code class="language-plaintext highlighter-rouge">consumers_runner</code> cron job starts multiple instances of the same consumer on different nodes. Now, if you have enabled the <a href="../env/variables-deploy.html#cron_consumers_runner"><strong>CRON_CONSUMERS_RUNNER</strong></a> deploy variable in your environment, the <code class="language-plaintext highlighter-rouge">consumers_runner</code> job uses the <code class="language-plaintext highlighter-rouge">single-thread</code> option to start one instance of each consumer on only one node.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3866 -->
+        <p>Fixed an issue affecting <a href="../env/variables-post-deploy.html#warm_up_pages"><strong>WARM_UP_PAGES</strong></a> functionality that uses a default store URL. Now, if the <code class="language-plaintext highlighter-rouge">config:show:default-url</code> command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-2514 -->
+    <p>Updated the logging information returned by the <code class="language-plaintext highlighter-rouge">module:refresh</code> command. Now, you can see a detailed list of enabled modules in the <code class="language-plaintext highlighter-rouge">cloud.log</code> file.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-3535 -->
+    <p>Improved version compatibility validation and warning notifications for compatibility issues between Magento version and installed services, such as Elasticsearch, RabbitMq, Redis, and DB.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-4674-->
+    <p>Added support for RabitMQ version 3.8.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-4018 -->
+    <p>Updated interactive validations for service compatibility to reflect supported versions for the new Magento Commerce 2.3.3 and 2.2.10 releases. See <a href="../project/project-conf-files_services.html#service-versions">Service versions</a>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3653-->
+    <p>Improved the log message returned when the cron job management process in the deploy phase tries to stop a cron job that has already finished to clarify that this issue is not an error.  Changed the log level from <code class="language-plaintext highlighter-rouge">INFO</code> to <code class="language-plaintext highlighter-rouge">DEBUG</code>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3806 -->
+    <p>Fixed an issue when running the <code class="language-plaintext highlighter-rouge">setup:upgrade</code> command that did not interrupt the deployment process when a failure occurred during the <code class="language-plaintext highlighter-rouge">app:config:import</code> task.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-3871 -->
+    <p>Changed the default log level for the file handler to <code class="language-plaintext highlighter-rouge">debug</code> to reduce the amount of detail in the log displayed in the Project Web Interface, while still providing detailed information for debugging.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3957 -->
+    <p>Fixed an issue that caused an error with static content deployment during build. After a Magento installation and <code class="language-plaintext highlighter-rouge">ece-tools</code> config dump, an error occurred if there was no locale specified for the admin user in the <code class="language-plaintext highlighter-rouge">config.php</code> file. Now, there is a default locale for the admin user in the <code class="language-plaintext highlighter-rouge">config.php</code> file.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-4009 -->
+    <p>Fixed an <code class="language-plaintext highlighter-rouge">Undefined index error</code> that occurs when a Magento Cloud CLI command fails in an environment that is not configured with a secure URL (https). Now, the ece-tools package uses the base URL (http) if the secure URL is not available.</p>
+  </li>
+</ul>
+
+<h2 id="v2002020">v2002.0.20</h2>
+
+<ul>
+  <li class="new">
+    <p><strong>Docker Updates</strong>—</p>
+
+    <ul>
+      <li class="new">
+        <!-- MAGECLOUD-3129/3684 -->
+        <p>You can now perform functional testing using the <code class="language-plaintext highlighter-rouge">ece-tools</code> package in the Docker environment. See <a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html">Magento application testing</a>.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3357 -->
+        <p>Added support for configuring PHP modules using the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file. Any <a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#php-extensions">PHP Extensions specified in the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file</a> become available in the Docker PHP containers.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3569 -->
+        <p>There are new commands available to improve the Docker command line experience. See the <a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli"><code class="language-plaintext highlighter-rouge">bin/magento-docker</code> section of the Docker reference</a>.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3559 -->
+        <p>Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See <a href="https://devdocs.magento.com/cloud/docker/docker-config.html#prerequisites">Docker prerequisites</a>.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3582 -->
+        <p>Corrected the default path when using the Docker environment. Now, when you use SSH to log in to the Docker container, you are at the Magento root in the <code class="language-plaintext highlighter-rouge">/app</code> directory, as expected.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3832 -->
+        <p>Updated the Sodium library from version 1.0.11 to version 1.0.18, and updated the Sodium PHP extension.</p>
+
+        <p class="bs-callout-warning">Magento Commerce Cloud customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to Magento Commerce 2.3.2. Currently, you cannot upgrade Starter environments to Magento Commerce 2.3.2.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3446 -->
+        <p>Added the <code class="language-plaintext highlighter-rouge">analysis-icu</code> and the <code class="language-plaintext highlighter-rouge">analysis-phonetic</code> Elasticsearch plugins to all Docker images.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3486 & MAGECLOUD-3678 -->
+        <p>Improved validations: When using options for the <code class="language-plaintext highlighter-rouge">docker:build</code> command, you must provide a value when using an option. Also, added validation for the Node version when using the <code class="language-plaintext highlighter-rouge">docker:build run</code> command.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <p><strong>Environment variable updates</strong>—</p>
+
+    <ul>
+      <li class="new">
+        <!-- MAGECLOUD-2901 -->
+        <p>Added support for database table prefixes using the <a href="../env/variables-deploy.html#database_configuration">DATABASE_CONFIGURATION environment variable</a>.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3602 -->
+        <p>Added the <strong>FORCE_UPDATE_URLS</strong> deploy variable to update Magento base URLs when deploying to Pro and Starter production and staging environments. See the definition in the <a href="../env/variables-deploy.html#force_update_urls">deploy variables</a> content.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3643 -->
+        <p>Added the <strong>TTFB_TESTED_PAGES</strong> post-deploy variable to configure <em>Time to First Byte</em>  page tests to check Magento Commerce application performance on sites deployed to Cloud infrastructure. See the variable description in <a href="../env/variables-post-deploy.html">post-deploy variables</a>.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3611 -->
+        <p>Fixed an issue with multi-threaded SCD, which caused random failures in static content deployment. The workaround involved setting the <strong>SCD_THREADS</strong> variable to <code class="language-plaintext highlighter-rouge">1</code>. You can now increase the count as needed. See the definitions in the <a href="../env/variables-deploy.html#scd_threads">deploy variables</a> and the <a href="../env/variables-build.html#scd_threads">build variables</a>.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3258 -->
+        <p>You can configure the <strong>WARM_UP_PAGES</strong> environment variable to cache single pages, multiple domains, and multiple pages. See the expanded definition in the <a href="../env/variables-post-deploy.html#warm_up_pages">post-deploy variables</a> content.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3545/Github#455 -->
+    <p>Added the <code class="language-plaintext highlighter-rouge">pub/static/.htaccess</code> file to the exclude list. <a href="https://github.com/magento/ece-tools/pull/455">Fix submitted by Björn Kraus of PHOENIX MEDIA GmbH</a>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3178 -->
+    <p>Fixed an error when all validation messages were showing as <code class="language-plaintext highlighter-rouge">Critical</code> if at least one critical level validator returned an error.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3075 -->
+    <p>Fixed an issue that caused a deployment failure if the Magento base URL did not exist in the database.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-3451 -->
+    <p>Added a new <strong><code class="language-plaintext highlighter-rouge">env:config:show</code> command</strong> to the <code class="language-plaintext highlighter-rouge">ece-tools</code> package that displays environment services, routes, or variables. See <a href="../reference/ece-tools-reference.html#services-routes-and-variables">Services, routes, and variables</a>. <a href="https://github.com/magento/ece-tools/pull/486">Feature submitted by Vladimir Kerkhoff</a>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3665 -->
+    <p>Fixed an issue that caused a critical error when attempting to install Magento 2.2.6 or earlier with <code class="language-plaintext highlighter-rouge">ece-tools</code> develop after shell refactoring.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3704 -->
+    <p>Fixed an issue that caused Magento 2.1.x and 2.2.x installations to fail with a warning about using a deprecated version of Carbon.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3277 -->
+    <p>Decreased the <code class="language-plaintext highlighter-rouge">cloud.log</code> log level for shell output from <code class="language-plaintext highlighter-rouge">info</code> to <code class="language-plaintext highlighter-rouge">debug</code>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3510 -->
+    <p>Added the <code class="language-plaintext highlighter-rouge">--remove-definers (-d)</code> option to the <code class="language-plaintext highlighter-rouge">ece-tools db-dump</code> command to remove definers from the dump file.</p>
+  </li>
+</ul>
+
+<h2 id="v2002019">v2002.0.19</h2>
+
+<ul>
+  <li class="fix">
+    <!-- MAGECLOUD-3668 -->
+    <p>Fixed an issue that overwrites the <code class="language-plaintext highlighter-rouge">env.php</code> file during a deploy, resulting in a loss of custom configurations.  This update ensures that Magento Commerce Cloud updates the <code class="language-plaintext highlighter-rouge">env.php</code> file with every deployment, while preserving custom configurations.</p>
+  </li>
+</ul>
+
+<h2 id="v2002018">v2002.0.18</h2>
+
+<ul>
+  <li class="new">
+    <p><strong>Docker Updates</strong>—</p>
+
+    <ul>
+      <li class="new">
+        <!-- MAGECLOUD-3150 -->
+        <p>Now, the Docker environment supports the cron configuration defined in the <a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#crons">crons property of the .magento.app.yaml file</a>.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-2890 -->
+        <p><strong>New Docker Container</strong>—Added a <a href="../docker/docker-containers-service.html#varnish-container">TLS termination proxy container</a> to facilitate the Varnish SSL termination over HTTPS.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3345 -->
+        <p><strong>New Docker Image</strong>—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3152/3511 -->
+        <p><strong>Docker build modes</strong>—Now you can choose to launch the Docker environment in <a href="https://devdocs.magento.com/cloud/docker/docker-config.html#set-the-launch-mode">Production mode or Developer mode</a>. Developer mode supports active development with full, writable filesystem permissions.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3369 -->
+        <p>Fixed an issue that caused Docker deploy to fail with a <code class="language-plaintext highlighter-rouge">Name or service not known</code> error if the cache is configured for a service that is not available. Now, you can remove a service from the <a href="../project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">.magento/services.yaml</code> file</a>. The Docker configuration generator updates the service in the <code class="language-plaintext highlighter-rouge">docker/config.php.dist</code> file automatically.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-3251 -->
+        <p>Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the <em>interactive mode</em> prompts the user with a message and a choice to continue. See the <a href="../docker/docker-containers.html#service-containers">Service versions</a> available for Docker. Use the <code class="language-plaintext highlighter-rouge">-n</code> option to skip the interactivity for CICD purposes.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3366 -->
+        <p>Fixed an issue with the Docker compose <code class="language-plaintext highlighter-rouge">db-dump</code> command that erased existing dumps.</p>
+      </li>
+      <li class="fix">
+        <!-- MAGECLOUD-3172 -->
+        <p>Fixed an issue that assigned Redis <code class="language-plaintext highlighter-rouge">session</code>, <code class="language-plaintext highlighter-rouge">default</code>, and <code class="language-plaintext highlighter-rouge">page_cache</code> cache storage to the same database ID.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <p><strong>Environment variable updates</strong>—</p>
+
+    <ul>
+      <li class="new">
+        <!-- MAGECLOUD-3205 -->
+        <p>The new <strong>ELASTICSUITE_CONFIGURATION</strong> environment variable retains your customized service settings between deployments. See the definition in the <a href="../env/variables-deploy.html#elasticsuite_configuration">deploy variables</a> content.</p>
+      </li>
+      <li class="new">
+        <!-- MAGECLOUD-2822 -->
+        <p>Added the <strong>SCD_MAX_EXECUTION_TIMEOUT</strong> environment variable so you can increase the time to complete the static content deployment from the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file. See the definition in the <a href="../env/variables-deploy.html#scd_max_execution_time">deploy variables</a>, the <a href="../env/variables-build.html#scd_max_execution_time">build variables</a>, and the <a href="../env/variables-global.html#scd_max_execution_time">global variables</a>.</p>
+
+        <ul>
+          <li class="new">
+            <!-- MAGECLOUD-3135 -->
+            <p>Added the <strong>MAGENTO_CLOUD_LOCKS_DIR</strong> environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on Magento Commerce version 2.2.5 and later and automatically configured. See the definition in <a href="../env/variables-cloud.html">Cloud variables</a>.</p>
+          </li>
+          <li class="fix">
+            <!-- MAGECLOUD-3382 -->
+            <p>Changed the <strong>SCD_THREADS</strong> environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the <a href="../env/variables-deploy.html#scd_threads">deploy variables</a> and the <a href="../env/variables-build.html#scd_threads">build variables</a>.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3383 -->
+    <p>Fixed an issue with a patch for DB Isolation Mechanism that caused an error when upgrading to Magento Commerce Cloud version 2002.0.16.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3456 -->
+    <p>Added a patch that replaces <em>Google Image Charts</em> with <em>Image-Charts</em>. See the DevBlog article <a href="https://community.magento.com/t5/Magento-DevBlog/Google-Image-Charts-deprecation-and-update-for-M1/ba-p/125006">Google Image Charts deprecation and update for M1</a>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3470 -->
+    <p>Added validation for the <a href="../env/variables-deploy.html#search_configuration">SEARCH_CONFIGURATION variable</a>. Deploy fails when the ‘engine’ option is not set and <code class="language-plaintext highlighter-rouge">_merge</code> is not required.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3525 -->
+    <p>Fixed an issue that exposed sensitive data after an exception occurs. Now the sensitive information is masked appropriately.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2899 -->
+    <p>Improved the fault-tolerant settings of the Magento Open Source package. In the case when Magento 2 cannot read data from the Redis <code class="language-plaintext highlighter-rouge">slave</code> instance, a reading is made from the Redis <code class="language-plaintext highlighter-rouge">master</code> instance. See <a href="../env/variables-deploy.html#redis_use_slave_connection">REDIS_USE_SLAVE_CONNECTION</a>.</p>
+  </li>
+</ul>
+
+<h2 id="v2002017">v2002.0.17</h2>
+
+<p class="bs-callout-info">The <code class="language-plaintext highlighter-rouge">ece-tools</code> version 2002.0.17 includes an important security patch. See <a href="https://magento.com/tech-resources/download#download2288">Tech Resources: Magento Open Source Patches</a>.</p>
+
+<ul>
+  <li class="new">
+    <p><strong>Service updates</strong>—Supported by the following Magento versions: 2.2.8 and later 2.2.x, 2.3.1 and later 2.3.x</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-3196 -->
+        <p>Added support for Elasticsearch version 6.x.</p>
+      </li>
+      <li>Added support for Redis version 5.0.</li>
+    </ul>
+  </li>
+  <li class="new">
+    <p><strong>New Docker images</strong>—Added the following services to the Docker build:</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-3196 -->
+        <p>Elasticsearch 6.5</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-3223 -->
+        <p>Redis 5.0</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-2870 -->
+    <p><strong>New environment variable</strong>—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the <strong>SCD_COMPRESSION_TIMEOUT</strong> environment variable. See the definitions in the <a href="../env/variables-build.html#scd_compression_timeout">build variables</a> and the <a href="../env/variables-deploy.html#scd_compression_timeout">deploy variables</a> content.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3246 -->
+    <p>Added the <code class="language-plaintext highlighter-rouge">--use-rewrites</code> option to the Magento install command so that it uses web server rewrites for generated links in the storefront and Admin access to improve security and customer experience.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2895 -->
+    <p>Added timestamps to the <code class="language-plaintext highlighter-rouge">var/log/install_upgrade.log</code> file so that it shows dates for the Magento installation and upgrade events.</p>
+  </li>
+</ul>
+
+<h2 id="v2002016">v2002.0.16</h2>
+
+<ul>
+  <li class="new">
+    <p><strong>Docker updates</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-3025 -->
+        <p>Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2907 -->
+        <p>You can send mail from your Docker environment using the <a href="https://devdocs.magento.com/cloud/docker/docker-config.html#set-up-email"><code class="language-plaintext highlighter-rouge">sendmail</code> service</a>.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2891 -->
+        <p>Added the ability to <a href="../docker/docker-development-debug.html">configure Xdebug</a> to debug in the Cloud Docker environment.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2883 -->
+        <p>Fixed an issue with web service permissions when generating the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-2392 -->
+    <p><strong>Upgrade improvement</strong>—Added validation to confirm that the <code class="language-plaintext highlighter-rouge">autoload</code> property in the <code class="language-plaintext highlighter-rouge">composer.json</code> file contains required configuration changes before upgrading to Magento Commerce v2.3. See <a href="../project/project-upgrade.html">Upgrade Magento version</a>.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-3104 -->
+    <p>The compression process in deploying static content now includes all assets—natively generated or customized—and occurs during the build phase at the beginning of the <a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#hooks"><code class="language-plaintext highlighter-rouge">build:transfer</code> section</a>. Previously, the compression process occurred before applying custom minification and bundling of static assets. <a href="https://github.com/magento/ece-tools/pull/413">Fix submitted by Rafael Garcia Lepper from Tryzens Limited</a>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3035 -->
+    <p>Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship. Also, this fix addresses an issue that occurred during the configuration process of MBI for Starter. For Starter, this upgrade is a “must have” for using MBI.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-3003 -->
+    <p>Fixed a validation issue with the database configuration that caused the deploy process to fail.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2956 -->
+    <p>Updated the constraint with the appropriate version of the <code class="language-plaintext highlighter-rouge">symfony/yaml</code> package to use with <a href="../project/magento-env-yaml.html#php-constants">PHP constants</a>. Constant parsing does not work when using a <code class="language-plaintext highlighter-rouge">symfony/yaml</code> package version earlier than 3.2. <a href="https://github.com/magento/ece-tools/pull/404">Fix submitted by Vladimir Kerkhoff</a>.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2903-->
+    <p><strong>Environment configuration check</strong>—Added validation to check the PHP version and warn users if they are not using the latest recommended version.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2851 -->
+    <p>Fixed an issue with processing malformed JSON variables. Now, if a JSON variable causes a syntax error, a warning appears in the <code class="language-plaintext highlighter-rouge">cloud.log</code> file and deployment continues using the default variable.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2747 -->
+    <p>Fixed a connection error that occurred during deployment immediately after disabling the Redis service.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2925-->
+    <p><strong>Logging changes</strong>—Updated the <a href="../env/log-handlers.html#log-levels">log level</a> from <code class="language-plaintext highlighter-rouge">Info</code> to <code class="language-plaintext highlighter-rouge">Notice</code> for the following build and deploy process events:</p>
+
+    <ul>
+      <li>
+        <p>Begin and end of the process for reconciling installed modules in <code class="language-plaintext highlighter-rouge">composer.json</code> with shared configuration settings in the <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> file</p>
+      </li>
+      <li>
+        <p>Begin and end of the configuration validation process</p>
+      </li>
+      <li>
+        <p>Begin and end of the <code class="language-plaintext highlighter-rouge">setup:di:compile</code> process for generating classes</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <p><strong>New environment variables</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->
+        <p><strong><a href="../env/variables-deploy.html#resource_configuration">RESOURCE_CONFIGURATION deploy variable</a></strong>—Use this variable to map a resource name to a database connection.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-3048 -->
+        <p><strong><a href="../env/variables-global.html#x_frame_configuration">X_FRAME_CONFIGURATION global variable</a></strong>—Use this variable to change the <code class="language-plaintext highlighter-rouge">X-Frame-Options</code> header configuration for rendering a Magento Commerce page in a <code class="language-plaintext highlighter-rouge">&lt;frame&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>, or <code class="language-plaintext highlighter-rouge">&lt;object&gt;</code>.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Environment variable updates</strong>—Changed the following environment variables:</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-2466 -->
+        <p><strong><a href="../env/variables-post-deploy.html">WARM_UP_PAGES</a></strong>—Added the capability to preload the cache for specified pages on all domains defined for a Magento Commerce store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: <code class="language-plaintext highlighter-rouge">ERROR: Warming up failed: &lt;uri&gt;</code></p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2823 -->
+        <p><strong>SCD_COMPRESSION_LEVEL</strong>—Updated the documentation and the sample <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file with the correct default values for SCD compression level. See the definitions in the <a href="../env/variables-build.html#scd_compression_level">build variables</a> and the <a href="../env/variables-deploy.html#scd_compression_level">deploy variables</a> content.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2882-->
+        <p><strong>SCD_EXCLUDE_THEMES</strong>——This environment variable is deprecated. Use the <a href="../env/variables-build.html#scd_matrix">SCD_MATRIX</a> to control theme configuration.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2904 -->
+        <p><strong>SCD_MATRIX</strong>—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases. See the definitions in the <a href="../env/variables-build.html#scd_matrix">build variables</a> and the <a href="../env/variables-deploy.html#scd_matrix">deploy variables</a> content.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2573/MAGECLOUD-2848 -->
+        <p><strong>ADMIN variables</strong>—</p>
+
+        <ul>
+          <li>
+            <p>Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the ADMIN_EMAIL, ADMIN_USERNAME, and ADMIN_PASSWORD environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the <em>Forgot password</em> feature or the Magento CLI <code class="language-plaintext highlighter-rouge">admin:user:create</code> command to create a new admin user. See <a href="../onboarding/onboarding-tasks.html#admin">Access your Magento Admin panel</a>.</p>
+          </li>
+          <li>
+            <p>ADMIN_EMAIL is no longer required when upgrading or applying patches.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="v2002015">v2002.0.15</h2>
+
+<ul>
+  <li class="new">
+    <p><strong>Docker updates</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-2888 -->
+        <p>Now the Docker generator uses the services specified in the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> and <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code> configuration files when <a href="https://devdocs.magento.com/cloud/docker/docker-config.html">building your Docker environment</a>. You can choose a different service version using build parameters.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2799 -->
+        <p>Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the <a href="https://devdocs.magento.com/cloud/docker/docker-config.html">Launch Docker configuration</a> to include the <code class="language-plaintext highlighter-rouge">docker:build --php</code> option to specify the version of PHP compatible with your Magento Commerce version.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2565 -->
+        <p>Added a <a href="../docker/docker-containers-cli.html#cron-container">Cron container</a> based on the PHP-CLI image.</p>
+      </li>
+      <li>
+        <p>Added the following services to the Docker build:</p>
+
+        <ul>
+          <li>
+            <!-- MAGECLOUD-2567 & 2889-->
+            <p>RabbitMQ 3.5 and 3.7</p>
+          </li>
+          <li>
+            <!-- MAGECLOUD-2569 & 2887 -->
+            <p>ElasticSearch 1.7, 2.4, and 5.2</p>
+          </li>
+          <li>
+            <!-- MAGECLOUD-2886 -->
+            <p>Redis 3.2 and 4.0</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD- 2575 -->
+    <p><strong>Configure with PHP constants</strong>—Added support for <a href="../project/magento-env-yaml.html#php-constants">PHP constants</a> in the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> configuration file.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2879-->
+    <p><strong>New environment variable</strong>—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  <a href="../env/variables-deploy.html#enable_google_analytics">ENABLE_GOOGLE_ANALYTICS environment variable</a>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2923 -->
+    <p>Fixed an issue that removed customized cron configurations from the <code class="language-plaintext highlighter-rouge">env.php</code> file after a redeployment. Now, custom cron configurations safely remain in the <code class="language-plaintext highlighter-rouge">env.php</code> file.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2919 -->
+    <p>Fixed inconsistencies in the messages and <a href="../env/log-handlers.html#log-levels">log levels</a> for build, deploy, and post-deploy phases. Increased beginning and ending log message levels from <strong>info</strong> to <strong>notice</strong> for all phases and sub-phases. Added beginning and ending log messages, where appropriate.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2862 -->
+    <p>Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when configured. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2736-->
+    <p>Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration. Previously, the installation process used the database configuration from the <a href="../env/variables-cloud.html">MAGENTO_CLOUD_RELATIONSHIP variable</a> even if you designated customized connection information in the <a href="../env/variables-deploy.html#database_configuration">DATABASE_CONFIGURATION environment variable</a>.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2740-->
+    <p>Corrected the <code class="language-plaintext highlighter-rouge">config:dump</code> command so that it includes each website locale in the <code class="language-plaintext highlighter-rouge">system</code> section of the <code class="language-plaintext highlighter-rouge">config.php</code> file.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2797-->
+    <p>Fixed an issue that resulted in <em>warm-up</em> errors during the post-deploy phase by correcting the source base URL reference.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2850-->
+    <p>Fixed an issue that generated files improperly during the <code class="language-plaintext highlighter-rouge">setup:di:compile</code> process, which affected the Amazon Pay module.</p>
+  </li>
+</ul>
+
+<h2 id="v2002014">v2002.0.14</h2>
+
+<ul>
+  <li class="new">
+    <!--MAGECLOUD-2372-->
+    <p><strong>Verify Ideal State</strong>—The <code class="language-plaintext highlighter-rouge">ideal-state</code> wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2521-->
+    <p><strong>PCI Compliance</strong>—Updated the messaging protocols for Magento Commerce Cloud to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS version 1.2, you must upgrade your service. Otherwise, the following error message displays when your Magento Commerce application tries to connect to the message server to send an email: <code class="language-plaintext highlighter-rouge">Unable to connect via TLS</code>.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2517-->
+    <p><strong>Deployment improvement</strong>—Added validation to warn customers if a Staging or Production environment has <code class="language-plaintext highlighter-rouge">dev</code>, <code class="language-plaintext highlighter-rouge">debug</code>, or <code class="language-plaintext highlighter-rouge">debug_logging</code> options enabled to prevent performance issues caused by excessive logging activity.</p>
+  </li>
+  <li class="fix">
+    <p><strong>Deployment fixes</strong>—</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2603-->
+        <p>Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.</p>
+
+        <ul>
+          <li>
+            <p>Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from <code class="language-plaintext highlighter-rouge">CRITICAL</code> to <code class="language-plaintext highlighter-rouge">WARNING</code> so that the deployment completes. Previously, these issues caused the deployment to fail.</p>
+          </li>
+          <li>
+            <p>Environment configuration contains incorrect values for deploy or cloud variables.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <!--MAGECLOUD-2600-->
+        <p>The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by Magento Commerce Cloud. See the <a href="https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento">Elasticsearch troubleshooting article</a> in the Magento Support Knowledgebase.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2173-->
+        <p>Fixed an issue with the shared configuration settings in the <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> file that caused <code class="language-plaintext highlighter-rouge">recursion detected</code> errors during deployment.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Cron-related fixes</strong>—</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2602-->
+        <p>Fixed a cron scheduling issue that prevented jobs from running if you specify a cron frequency other than the default (1 minute).</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2537-->
+        <p>Fixed an issue in the deploy phase that allowed cron jobs to continue running during deployment, which can cause database locks and other critical issues. Now, all cron jobs are stopped before the deploy phase begins and restarted after the deployment completes.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2501-->
+        <p>Fixed the cron job workflow in versions 2.2.x to unlock frozen cron jobs so that they can be stopped before beginning deployment. Previously, a frozen cron job caused the deployment to stall.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2527-->
+    <p>Changed the format of the <code class="language-plaintext highlighter-rouge">config.php</code> file generated by the <code class="language-plaintext highlighter-rouge">vendor/bin/ece-tools config:dump</code> command to use short array syntax and 4-space indentation to comply with Magento coding standards.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2607-->
+    <p>Fixed a deployment error that occurs when the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> contains <code class="language-plaintext highlighter-rouge">and</code> placeholders for web configurations instead of the default URL configuration for a Magento Commerce Cloud project./</p>
+  </li>
+</ul>
+
+<h2 id="v2002013">v2002.0.13</h2>
+
+<ul>
+  <li class="new">
+    <!--MAGECLOUD-2169-->
+    <p><strong>Enable zero-downtime deployment</strong>—Now Magento Commerce Cloud queues requests with required database changes during deployment and applies the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See <a href="https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud">Static content deployment options to reduce deployment downtime on Cloud</a>.</p>
+  </li>
+  <li class="new">
+    <p><strong>Docker Compose for Cloud</strong>—Made the following improvements to the <a href="https://devdocs.magento.com/cloud/docker/docker-config.html">Docker setup and configuration</a> process:</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2359-->
+        <p>Added a command—<code class="language-plaintext highlighter-rouge">docker:config:convert</code> to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See <a href="https://devdocs.magento.com/cloud/docker/docker-config.html">Launch Docker</a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2357-->
+        <p>The Magento Commerce Cloud installation process now supports deploying to both read-only and read-write file systems to more closely emulate the Cloud file system. See <a href="https://devdocs.magento.com/cloud/docker/docker-config.html">Configure Docker</a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2442-->
+        <p><strong>Redis service support</strong>—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2577 -->
+        <p>Now you have the DB dump capability when using the Cloud Docker <a href="../docker/docker-containers-service.html#database-container">database container</a>. Also, you can <a href="../docker/docker-containers.html#sharing-data-between-host-machine-and-container">share files</a> between a host machine and a container using the <code class="language-plaintext highlighter-rouge">docker/mnt</code> directory.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2358-->
+        <p><strong>Varnish service support</strong>— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See <a href="../../guides/v2.3/config-guide/varnish/config-varnish.html">Configure and use Varnish</a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2360-->
+        <p>Secure site access—Added SSL support to access your Magento Commerce store and Admin panel.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2205-->
+    <p><strong>Improved Magento Commerce Cloud extension support</strong>—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the Magento Commerce Cloud <a href="../reference/cloud-composer.html">composer.json file</a> to version 6.2 so that the <code class="language-plaintext highlighter-rouge">ece-tools</code> package is compatible with more extensions.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2363-->
+    <p><strong>Apply custom changes to your Magento Commerce application during the build phase</strong>—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The <em>build:generate</em> process generates code, applies patches, and generates static content. The <em>build:transfer</em> process transfers the generated code and static content to the final destination. See <a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#hooks">Application hooks</a>.</p>
+  </li>
+  <li class="fix">
+    <p><strong>Environment configuration checks</strong>—Improved validation of the environment configuration to warn customers about version incompatibilities and configuration errors before building and deploying Magento Commerce Cloud.</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2183-->
+        <p>Added version-specific validation to identify unsupported or deprecated environment variables and values.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2389-->
+        <p>Added an Elasticsearch compatibility check to warn users about Elasticsearch configuration issues. Now, the deployment fails if the version of Elasticsearch service on the server is incompatible with Magento Commerce. Previously, the deployment succeeded even if the Elasticsearch version was incompatible, which caused product catalog issues after site deployment.</p>
+
+        <p>You can resolve the incompatibility by <a href="../trouble/trouble.html">submitting a Support ticket</a> to upgrade Elasticsearch to a compatible version, or change the Magento Commerce configuration to specify a compatible version of the Elasticsearch PHP client.</p>
+
+        <ul>
+          <li>
+            <p>For Magento Commerce version 2.1.x to 2.2.2, upgrade Elasticsearch to version 2.4.</p>
+          </li>
+          <li>
+            <p>For Magento Commerce version 2.2.3 and later, upgrade Elasticsearch to version 5.2.</p>
+          </li>
+          <li>
+            <p>If you have Elasticsearch 1.x or 2.x and do not want to upgrade, update the Magento Commerce Elasticsearch PHP client version requirement in composer.json to <code class="language-plaintext highlighter-rouge">"elasticsearch/elasticsearch": "~2.0"</code>.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <!--MAGECLOUD-2156-->
+        <p>Improved validation of environment variables to identify configuration settings that can cause conflicts during the build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static content deployment conflicts with settings on the build or deploy phase.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Environment variable updates</strong>—Changed the following environment variables:</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2435-->
+        <p><strong><a href="../env/variables-global.html#skip_html_minification">SKIP_HTML_MINIFICATION global variable</a></strong>—Changed the default value to <code class="language-plaintext highlighter-rouge">true</code> to enable on-demand HTML content minification, which minimizes downtime when deploying to Staging and Production environments. This configuration is required for zero-downtime deployments.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-1506-->
+        <p><strong><a href="../env/variables-deploy.html#clean_static_files">CLEAN_STATIC_FILES deploy variable</a></strong>—Added the capability to manage the clean static files processing for static content generated during the build phase based on the CLEAN_STATIC_FILES environment variable setting. Previously, static content files generated during the build phase were always cleaned.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Logging</strong>—Made the following changes to improve log messages and reduce log size:</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2489-->
+        <p>Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See <a href="../env/variables-global.html#min_logging_level"><code class="language-plaintext highlighter-rouge">MIN_LOGGING_LEVEL</code></a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2209-->
+        <p>Added logging for deployment failures that occur when generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2402-->
+        <p>Reduced the deploy log size and fixed formatting issues caused by setup commands that use the interactive progress bar.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2227-->
+        <p>Eliminated unnecessary verbosity and updated the priority levels for some log statements.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Cron-specific fixes</strong>—</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2427-->
+        <p>Changed the default cron job configuration settings for history lifetime from 3d (4320 min) to 1h (60 min) to prevent performance issues and deployment failures that can occur when the cron queue fills too quickly.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2445-->
+        <p>Improved the cron job management process during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after deployment completes.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2464-->
+        <p>Fixed an issue with the locking mechanism for scheduling consumers launched by cron jobs in Magento Commerce versions 2.2.0 and later to prevent cron jobs from launching duplicate consumers.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2182-->
+    <p>Fixed an issue with the <a href="../env/variables-intro.html">static content compression process</a> (<code class="language-plaintext highlighter-rouge">gzip</code>) that caused <code class="language-plaintext highlighter-rouge">not overwritten</code> and <code class="language-plaintext highlighter-rouge">no such file or directory</code> errors when referencing the compressed file during the deployment process.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2444-->
+    <p>Fixed an issue that prevented the <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code> command from removing redundant sections from the <code class="language-plaintext highlighter-rouge">config.php</code> file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to <code class="language-plaintext highlighter-rouge">ece-tools</code> v2002.0.13, regenerate older <code class="language-plaintext highlighter-rouge">config.php</code> files with the improved <code class="language-plaintext highlighter-rouge">config:dump</code> command. See <a href="../live/sens-data-over.html">Configuration management for store settings</a>.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2556-->
+    <p>Fixed an issue that caused an error during the deploy phase if the route configuration in the <code class="language-plaintext highlighter-rouge">.magento/routes.yaml</code> file redirects from an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/">apex</a> domain to a <code class="language-plaintext highlighter-rouge">www</code> domain.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2520-->
+    <p>Fixed an issue with the <code class="language-plaintext highlighter-rouge">_merge</code> option for the <a href="../env/variables-deploy.html#search_configuration"><code class="language-plaintext highlighter-rouge">SEARCH_CONFIGURATION</code></a> variable that caused incorrect merge results if you do not include the <code class="language-plaintext highlighter-rouge">engine</code> parameter in the updated <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> configuration file. Now, the merge operation correctly overwrites only the values you specify in the updated <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> without requiring you to set the <code class="language-plaintext highlighter-rouge">engine</code> parameter.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2515-->
+    <p>Fixed a Redis configuration issue that incorrectly enabled session locking for Magento Commerce Cloud versions 2.2.1 and later, which can cause slow performance and timeouts. Now, session locking is disabled by default. The issue was caused by a change in the default behavior of the <code class="language-plaintext highlighter-rouge">disable_locking</code> parameter introduced in v1.3.4 of the Redis session handler package. See <a href="https://github.com/colinmollenhour/php-redis-session-abstract">colinmollenhour/php-redis-session-abstract package</a>.</p>
+  </li>
+</ul>
+
+<h2 id="v2002012">v2002.0.12</h2>
+
+<ul>
+  <li class="new">
+    <!-- MAGECLOUD-2250 -->
+    <p><strong>Docker Compose for Cloud</strong>—Added a command—<code class="language-plaintext highlighter-rouge">docker:build</code>—to generate a <a href="https://devdocs.magento.com/cloud/docker/docker-config.html">Docker Compose</a> configuration from the Cloud <code class="language-plaintext highlighter-rouge">ece-tools</code> repository.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-2019 -->
+    <p><strong>Change Locales</strong>—Now you can <a href="../live/sens-data-over.html#change-locales">change store locale</a> without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOU-1998 -->
+    <p><strong>Site map and Robots</strong>—Created a <a href="../trouble/robots-sitemap.html">workflow</a>to add a <code class="language-plaintext highlighter-rouge">robots.txt</code> file and generate a <code class="language-plaintext highlighter-rouge">sitemap.xml</code> file for a single domain configuration without requiring a change to the infrastructure.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1910 -->
+    <p><strong>Wizards</strong>—Added two <a href="../deploy/smart-wizards.html">wizards</a> to help you with Cloud configuration:</p>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">ideal-state</code>—configure the ideal state for minimal deployment downtime</li>
+      <li><code class="language-plaintext highlighter-rouge">master-slave</code>—configure load balancing for database and Redis</li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1521 -->
+    <p><strong>Module Refresh</strong>—Added a Cloud command—<code class="language-plaintext highlighter-rouge">module:refresh</code>—to enable modules that were disabled or not explicitly enabled, similar to the way that it is done automatically during a build. See <a href="../live/live-sanity-check.html#build">Build and deploy on local in Build phase</a>.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-2105 -->
+    <p>Added the ability to choose to merge or overwrite configuration for services using the <code class="language-plaintext highlighter-rouge">_merge</code> option in <a href="../env/variables-deploy.html#cache_configuration">CACHE</a>, <a href="../env/variables-deploy.html#session_configuration">SESSION</a>, <a href="../env/variables-deploy.html#queue_configuration">QUEUE</a>, and <a href="../env/variables-deploy.html#search_configuration">SEARCH</a> configurations.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1908 -->
+    <p><strong>Environment Configuration sample file</strong>—We added a <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> sample file to the ece-tools package that includes a detailed description and possible values for each environment variable.</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1907 -->
+        <p>We also added a deep validation for the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> configuration that prevents failures in the deployment process caused by unexpected values. When a failure occurs, you now receive a detailed error message that begins with: <code class="language-plaintext highlighter-rouge">Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:</code></p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <p>Added the following <a href="../env/variables-intro.html"><strong>Environment variables</strong></a>:</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1501 -->
+        <p>Now you can define multiple locales for each theme using the new <a href="../env/variables-deploy.html#scd_matrix">SCD_MATRIX</a> environment variable, which reduces the amount of theme files to deploy.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2047 -->
+        <p>Added the <a href="../env/variables-deploy.html#database_configuration">DATABASE_CONFIGURATION</a> environment variable to customize your database connections for deployment.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2129 -->
+        <p>The new <a href="../env/variables-global.html#min_logging_level">MIN_LOGGING_LEVEL</a> variable overrides the minimum logging level for all output streams without making changes to the code.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p>Fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the post_deploy phase begins <em>immediately</em> after the deploy phase ends.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2268 -->
+    <p>Fixed an issue that did not clean the successful cron jobs, those with <code class="language-plaintext highlighter-rouge">status = success</code>, from the schedule.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2113 -->
+    <p>Fixed an issue with the <code class="language-plaintext highlighter-rouge">post_deploy</code> hook that cleared the cache in the deploy phase instead of the post-deploy phase of the project.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2034 -->
+    <p>Fixed an issue when using SCD with multiple locales, which generated the same <code class="language-plaintext highlighter-rouge">js-translation.json</code> file for each locale.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2033 -->
+    <p>Optimized the <code class="language-plaintext highlighter-rouge">db:dump</code> command in the <code class="language-plaintext highlighter-rouge">ece-tools</code> package to avoid locking tables and increase speed.</p>
+  </li>
+</ul>
+
+<h2 id="v2002011">v2002.0.11</h2>
+
+<p class="bs-callout-info">The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.</p>
+
+<ul>
+  <li class="new">
+    <p><strong>Configuring read-only connections to non-master nodes</strong>—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 --><a href="../env/variables-deploy.html#redis_use_slave_connection">Redis</a> and for <!--MAGECLOUD-143 --> <a href="../env/variables-deploy.html#mysql_use_slave_connection">MariaDB</a>).</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-1910 -->
+    <p><strong>Configuration Wizard</strong>—Added a wizard to help verify your configuration for static content deployment. See <a href="../deploy/smart-wizards.html">Smart wizards</a>.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1966 -->
+    <p><strong>Symfony Console support</strong>—Added support for Symfony Console 4 with Magento 2.3.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1607 -->
+    <p><strong>Cron scheduling optimizations</strong>—Improved the queue management and enhanced logging to help with debugging cron-related issues.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1221 -->
+    <p>Deployment validation fails if an <code class="language-plaintext highlighter-rouge">ADMIN_EMAIL</code> or <code class="language-plaintext highlighter-rouge">ADMIN_USERNAME</code> value is the same as an existing Magento administrator account.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1282 -->
+    <p>Removed SOLR support for 2.2.x versions. 2.1.x versions retain the ability to enable SOLR.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1489 -->
+    <p>The first installation of the Staging &amp; Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2021 -->
+    <p>Fixed an issue that interrupted the build phase for legacy architecture during static content deployment.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1607 -->
+    <p><strong>Cron-specific Improvements</strong>—Re-worked the cron implementation:</p>
+
+    <ul>
+      <li>
+        <p>Fixed an issue that caused the cron queue to fill quickly. Now it clears the outdated cron jobs in a more reliable way.</p>
+      </li>
+      <li>
+        <p>Re-organized the sequence of cron jobs so that all jobs in separate threads launch prior to the general group.</p>
+      </li>
+      <li>
+        <p>Improved logging to better assist in debugging cron issues.</p>
+      </li>
+      <li>
+        <p><strong>NOTE</strong>—This release addresses many cron-related issues. If you currently use some cron-related patches in <em>m2-hotfixes</em>, remove them.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>SCD-specific improvements</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1819 -->
+        <p>You can use the <code class="language-plaintext highlighter-rouge">VERBOSE_COMMANDS</code> and the <code class="language-plaintext highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variables during both <em>build</em> and <em>deploy</em> phases.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2043 -->
+        <p>Fixed an issue that caused deployment to fail with a random error when encountering an unexpected value for the <code class="language-plaintext highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variable. Improved the configuration validation to provide meaningful notifications. See <a href="../env/variables-build.html#scd_compression_level"><code class="language-plaintext highlighter-rouge">SCD_COMPRESSION_LEVEL</code></a> for acceptable values.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2044 -->
+        <p>Fixed the behavior of the <code class="language-plaintext highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variable configuration flow so the overrides work as expected.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2046 -->
+        <p>Fixed an issue that prevented the configuration of the <code class="language-plaintext highlighter-rouge">SCD_THREADS</code> environment variable in the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file <em>deploy</em> stage.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="v2002010">v2002.0.10</h2>
+
+<ul>
+  <li class="new">
+    <!-- MAGECLOUD-1285 -->
+    <p><strong>Static Content Deployment (SCD)</strong>—There is a new, alternative deployment process to generate static content when requested (on-demand). This decreases downtime and improves cache handling by generating the most critical assets.</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1738 -->
+        <p><strong>New environment variable</strong>—Added the <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> global environment variable to generate static content when requested.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1788 -->
+        <p><strong>Post-deploy hook</strong>—Added a <code class="language-plaintext highlighter-rouge">post_deploy</code> hook for the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file that clears the cache and pre-loads (warms) the cache <em>after</em> the container begins accepting connections. It is available only for Pro projects that contain Staging and Production environments in the Project Web Interface and for Starter projects. Although not required, this works in tandem with the <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> environment variable.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1842 -->
+    <p><strong>Optimization</strong>—Optimized moving or copying files during deployment to improve deployment speed and decrease loads on the file system.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1751 -->
+    <p><strong>Deployment Logging</strong>—Added the ability to enable Syslog and Graylog Extended Log Format (GELF) handlers for outputting logs during the deployment process. See <a href="../env/log-handlers.html">Logging handlers</a>.</p>
+  </li>
+  <li class="new">
+    <p>Added the following <a href="../env/variables-intro.html"><strong>Environment variables</strong></a>:</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1556 -->
+        <p><code class="language-plaintext highlighter-rouge">CRYPT_KEY</code>—Provide a cryptographic key to another environment when moving a database.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1621 and MAGECLOUD-1736-->
+        <p><code class="language-plaintext highlighter-rouge">SKIP_HTML_MINIFICATION</code>—<em>Global</em> environment variable that skips copying the static view files in the <code class="language-plaintext highlighter-rouge">var/view_preprocessed</code> directory and generates minified HTML when requested.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1738 -->
+        <p><code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code>—<em>Global</em> environment variable to generate static content when requested.</p>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">WARM_UP_PAGES</code>—You can list the pages to use to pre-load the cache. Available in the new <a href="../env/variables-post-deploy.html">Post-deploy variables</a>.</li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-982 -->
+    <p>Fixed an issue that involved a locally applied patch breaking the deployment on an instance. Now, ece-tools can detect that a patch has been applied.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1735 -->
+    <p>Fixed a conflict between JavaScript bundling and GZIP functionality. Now these features work correctly together.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1744 -->
+    <p>Fixed an issue that caused ece-tools CLI commands to fail when using earlier PHP 7.0.x versions.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1822 -->
+    <p>Fixed an issue that prevented static content deployment with the compact strategy in multiple threads.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1853 -->
+    <p>Fixed a Redis session locking issue that caused an Admin login delay. Also, the fix is available for 2.1.x.</p>
+  </li>
+</ul>
+
+<h2 id="v200209">v2002.0.9</h2>
+
+<p>{.bs-callout-info}
+You must <a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html">upgrade the Magento Commerce Cloud metapackage</a> to get this and all future updates.</p>
+
+<ul>
+  <li class="new">
+    <!-- MAGECLOUD-1086 -->
+    <p><strong>ece-tools</strong>—The <code class="language-plaintext highlighter-rouge">ece-tools</code> package now supports Magento 2.1.x.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1552 -->
+    <p><strong>Redis configuration</strong>—You can now <a href="../env/variables-deploy.html#cache_configuration">configure Redis</a> page and default cache and Redis session storage using an environment variable.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1437 -->
+    <p><strong>Search, AMQP, and Redis service improvements</strong>—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the <code class="language-plaintext highlighter-rouge">env.php</code> file to configure services is no longer supported. You must use environment variables or the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file instead.</p>
+  </li>
+  <li class="fix">
+    <p><strong>Environment variables</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1507 -->
+        <p>The use of <code class="language-plaintext highlighter-rouge">env:STATIC_CONTENT_THREADS</code> was deprecated and will be removed in a future release. Use the <a href="../env/variables-deploy.html#scd_threads">SCD_THREADS</a> instead.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1640 -->
+        <p>The <code class="language-plaintext highlighter-rouge">STATIC_CONTENT_EXCLUDE_THEMES</code> environment variable was deprecated. You must use the <code class="language-plaintext highlighter-rouge">SCD_EXCLUDE_THEMES</code> environment variable instead.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1674 -->
+    <p><strong>Logging</strong>—We simplified logging around built-in patching operations.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1615 -->
+    <p>We removed <code class="language-plaintext highlighter-rouge">developer</code> mode support and the <code class="language-plaintext highlighter-rouge">APPLICATION_MODE</code> environment variable because they were causing unexpected behavior.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1630 -->
+    <p>We fixed an issue that was causing static content deployment failures related to Redis. Now, multi-threaded static content deployment runs as designed.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1175 -->
+    <p>We fixed an issue that was preventing users from saving modifications to configuration fields in the Admin, which are marked as sensitive after running the <code class="language-plaintext highlighter-rouge">app:config:dump</code> command.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1674 -->
+    <p>We added support for an earlier version of <code class="language-plaintext highlighter-rouge">symfony/yaml</code> to fix conflicts with some packages, which are not yet compatible with the latest version.</p>
+  </li>
+</ul>
+
+<h2 id="v200208">v2002.0.8</h2>
+
+<p class="bs-callout-info">We merged <a href="../composer-packages/ece-patches.html"><code class="language-plaintext highlighter-rouge">vendor/magento/ece-patches</code></a> with <code class="language-plaintext highlighter-rouge">vendor/magento/ece-tools</code> in this release. You no longer need to update the <code class="language-plaintext highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
+
+<p><strong>New features:</strong></p>
+
+<ul>
+  <li>
+    <!-- MAGECLOUD-1253 -MAGECLOUD-1495-->
+    <p><strong>Improved logging</strong></p>
+    <ul>
+      <li>We improved log messaging to provide better explanations when the build or deploy process overrides an environment variable.</li>
+      <li>
+        <p>You can now view installation and upgrade progress in real time. Tail the <code class="language-plaintext highlighter-rouge">install_update.log</code> file to view progress. For example,</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">tail</span> <span class="nt">-f</span> var/log/install_upgrade.log
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1367 -->
+    <p><strong>New cron command</strong>—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the <a href="https://support.magento.com/hc/en-us/articles/360033099451"><code class="language-plaintext highlighter-rouge">cron:unlock</code></a> command. Not available in 2.1.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1369 -->
+    <p><strong>Unified configuration file</strong>—You can now configure build and deploy stages using a <a href="../project/magento-env-yaml.html"><code class="language-plaintext highlighter-rouge">.magento.env.yaml</code></a> file.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1372 -->
+    <p><strong>Backup configuration files</strong>—The deployment process now automatically creates a backup of the <code class="language-plaintext highlighter-rouge">app/etc/env.php</code> and <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> configuration files after deployment. We also added a <a href="https://support.magento.com/hc/en-us/articles/360033182871">new CLI command</a> to restore these configuration files from a backup.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1491 -->
+    <p><strong>Troubleshooting validation errors</strong>—We changed the command you must use to resolve validation errors when <code class="language-plaintext highlighter-rouge">config.php</code> does not contain enough data for static content deployment. Previously, the error message instructed you to run <code class="language-plaintext highlighter-rouge">bin/magento app:config:dump</code>. Now, you must run <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1410 -->
+    <p><strong>New environment variables</strong>—You can now use environment variables to connect custom <a href="../env/variables-deploy.html#search_configuration">search</a> and <a href="../env/variables-deploy.html#queue_configuration">AMQP-based</a> services to your site.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-1090-->
+    <p>We implemented smart patching. Now the package applies patches based not on Magento Commerce Cloud version, but on patched package version.</p>
+  </li>
+</ul>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!-- MAGECLOUD-1162 -->
+    <p>We fixed a logging issue that was causing build errors.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1389 -->
+    <p>We fixed an issue that was causing timeout exceptions when running deployments in interactive mode.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1446 MAGECLOUD-1485-->
+    <p>We fixed an issue that was causing errors when using the compact strategy for static content generation. Not available in 2.1.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1493 -->
+    <p>We fixed an issue that was preventing the deployment script from properly identifying staging and production environments.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1520 -->
+    <p>We fixed an issue that was causing network issues to disrupt database connections and cause failures during the installation and upgrade process.</p>
+  </li>
+  <li>
+    <!--  MAGECLOUD-1567  -->
+    <p>We fixed an issue preventing you from exporting the configuration files using <code class="language-plaintext highlighter-rouge">app:config:dump</code> more than once. Not available in 2.1.</p>
+  </li>
+  <li>
+    <!--  MAGECLOUD-1582  -->
+    <p>We fixed a Redis session <em>locking</em> issue that caused an <em>Admin</em> login delay. Not available in 2.1.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-1450-->
+    <p>We fixed an implementation issue related to versioning that was causing a conflict with other Composer-based patching modules.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-1310-->
+    <p>We fixed an issue that was causing PHP memory issues during import.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-1033-->
+    <p>Removed patch; fixing bug in <code class="language-plaintext highlighter-rouge">colinmollenhour/credis</code> v1.6 to enable support for Magento Commerce Cloud 2.2.1. Not available in 2.1.</p>
+  </li>
+</ul>
+
+<h2 id="v200207">v2002.0.7</h2>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!-- MAGECLOUD-1454-->
+    <p>We removed <code class="language-plaintext highlighter-rouge">var/view_preprocessed</code> symlinking to fix an issue that was causing JavaScript minification conflicts.</p>
+  </li>
+</ul>
+
+<h2 id="v200206">v2002.0.6</h2>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!-- MAGECLOUD-1413 -->
+    <p>We fixed an issue that was causing <code class="language-plaintext highlighter-rouge">gzip</code> errors when a file or directory name contains spaces.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1424 -->
+    <p>We fixed an issue that was preventing deployment scripts from properly recognizing and enabling module dependencies.</p>
+  </li>
+</ul>
+
+<h2 id="v200205">v2002.0.5</h2>
+
+<p><strong>New features:</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Configure a cron consumer with an environment variable</strong>—You can now configure cron consumers using the new <code class="language-plaintext highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable.</p>
+  </li>
+  <li>
+    <p><strong>Configuration scanning</strong>—We now scan for critical components during the build/deploy process and halt the process if the scan fails, which prevents unnecessary downtime due to the site being in maintenance mode.</p>
+  </li>
+  <li>
+    <p><strong>Build/deploy notifications</strong>—We added a configuration file that you can use to <a href="../env/setup-notifications.html">set up Slack and/or email notifications</a> for build/deploy actions in all your environments.</p>
+  </li>
+  <li>
+    <p><strong>Static content compression</strong>—We now compress static content using <a href="https://www.gnu.org/software/gzip/">gzip</a> during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a <a href="../env/variables-build.html">build option</a> or <a href="../env/variables-deploy.html">deploy variable</a>. See the following topics for more information:</p>
+
+    <ul>
+      <li><a href="../env/environment-vars_magento.html">Magento application environment variables</a></li>
+      <li><a href="../live/sens-data-over.html#scd-performance">Static content deployment performance</a></li>
+      <li><a href="../reference/discover-deploy.html">Deployment process</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Configuration management</strong>—We now auto-generate an <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> file in your Git repository during the build phase if it does not already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow <a href="../live/sens-data-over.html">Configuration Management</a> at a later time, the commands update the file without requiring additional steps. Refer to <a href="../reference/discover-deploy.html">Deployment process</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Database dumps</strong>—We added a <code class="language-plaintext highlighter-rouge">magento/ece-tools</code> CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See <a href="../project/project-webint-snap.html#db-dump">Snapshots and backup management</a> for more information.</p>
+  </li>
+  <li>
+    <p><strong>Cron interval limitations lifted</strong>—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> or create a support ticket for Production/Staging environments. Refer to <a href="../configure/setup-cron-jobs.html">Set up cron jobs</a> for more information.</p>
+  </li>
+</ul>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!-- MAGECLOUD-1327 -->
+    <p>We fixed an issue that was causing long deploy times due to the deploy process invoking the <code class="language-plaintext highlighter-rouge">cache-clean</code> operation before static content deployment.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1322 -->
+    <p>We fixed an issue causing errors during the static content generation step of deployment on Production environments.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1264 -->
+    <p>We fixed an issue preventing some <code class="language-plaintext highlighter-rouge">magento/ece-tools</code> commands from logging output to <code class="language-plaintext highlighter-rouge">stderr</code>.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1242 -->
+    <p>We fixed an issue preventing base URL values in <code class="language-plaintext highlighter-rouge">env.php</code> from being updated in forked branches.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1171 -->
+    <p>We fixed an issue causing the <code class="language-plaintext highlighter-rouge">magento setup:install</code> command to add an unsecure prefix (<code class="language-plaintext highlighter-rouge">http://</code>) to secure base URLs.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1170 -->
+    <p>We fixed an issue preventing patch errors from causing deployment failures.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1152 -->
+    <p>We fixed an issue preventing <code class="language-plaintext highlighter-rouge">ece-tools</code> from halting execution and throwing an exception if no patches can be applied.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1138 -->
+    <p>We fixed an issue causing errors when loading the storefront after enabling HTML minification in the Magento Admin.</p>
+  </li>
+</ul>
+
+<h2 id="v200204">v2002.0.4</h2>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!-- MAGECLOUD-1355 -->
+    <p>You can now <a href="https://support.magento.com/hc/en-us/articles/360033099451">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.</p>
+  </li>
+</ul>
+
+<h2 id="v200203">v2002.0.3</h2>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!--MAGECLOUD-1311-->
+    <p>We fixed an issue that was causing pages to time out because Redis was taking too long to read/write. You can now use the <code class="language-plaintext highlighter-rouge">disable_locking</code> parameter in Redis configurations to prevent this issue.</p>
+  </li>
+</ul>
+
+<h2 id="v200202">v2002.0.2</h2>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!--MAGECLOUD-1246-->
+    <p>The RabbitMQ configuration process now obtains all required parameters automatically.</p>
+  </li>
+</ul>
+
+<h2 id="v200201">v2002.0.1</h2>
+
+<p><strong>New features:</strong></p>
+
+<ul>
+  <li>
+    <!--- MAGECLOUD-1057 -->
+    <p>Magento Commerce Cloud now supports scopes and <a href="../../guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="language-plaintext highlighter-rouge">–s</code> parameter with a default setting of <code class="language-plaintext highlighter-rouge">quick</code> for the static content deployment strategy. You can use the environment variable <a href="../env/variables-deploy.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options <code class="language-plaintext highlighter-rouge">standard</code>, <code class="language-plaintext highlighter-rouge">quick</code>, or <code class="language-plaintext highlighter-rouge">compact</code>. If you select <code class="language-plaintext highlighter-rouge">compact</code>, we override the <code class="language-plaintext highlighter-rouge">STATIC_CONTENT_THREADS</code> value with <code class="language-plaintext highlighter-rouge">1</code>, which can slow deployment, especially in production environments. Not available in 2.1.</p>
+  </li>
+  <li>
+    <!--- MAGECLOUD-1014 & MAGECLOUD-1023 -->
+    <p>We have created a log file on environments to capture and compile build and deploy actions. The file is located in the <code class="language-plaintext highlighter-rouge">var/log/cloud.log</code> file inside the Magento root application directory.</p>
+  </li>
+</ul>
+
+<p><strong>Resolved issues:</strong></p>
+
+<ul>
+  <li>
+    <!-- MAGECLOUD-919 & MAGECLOUD-1030-->
+    <p>Refactored the <code class="language-plaintext highlighter-rouge">ece-tools</code> package to make it compatible with Magento Commerce Cloud 2.2.0 and higher.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1186-->
+    <p>We fixed an issue that was preventing <code class="language-plaintext highlighter-rouge">ece-tools</code> from halting execution and throwing an exception if no patches can be applied.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1047 & MAGECLOUD-1049-->
+    <p>We fixed an issue that was causing exceptions to be thrown when  dependency injection (di) compilation is skipped during builds.</p>
+  </li>
+  <li>
+    <!-- MAGECLOUD-1019-->
+    <p>We fixed an issue that was causing the deploy process to overwrite custom Redis configurations in the <code class="language-plaintext highlighter-rouge">env.php</code> file.</p>
+  </li>
+  <li>
+    <!--MAGECLOUD-1020-->
+    <p>We fixed an issue that was causing redirect loops due to disabled by default secure admin.</p>
+  </li>
+</ul>
+
+<h2 id="v200200">v2002.0.0</h2>
+
+<p class="bs-callout-warning">This package is no longer compatible with other versions of Magento Commerce Cloud and <strong>should not</strong> be used.</p>
+
+<h3 id="initial-release">Initial release</h3>
+
+<p>Initial release of <code class="language-plaintext highlighter-rouge">ece-tools</code> for Magento Commerce Cloud 2.2.0.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-25">
+    Jun 25th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

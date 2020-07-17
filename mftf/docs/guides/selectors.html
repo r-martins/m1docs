@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>How To write good selectors | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="selectors.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Functional Testing Framework Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started.html" class="spectrum-SideNav-itemLink ">Getting started</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configuration.html" class="spectrum-SideNav-itemLink ">Configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../credentials.html" class="spectrum-SideNav-itemLink ">Credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../data.html" class="spectrum-SideNav-itemLink ">Data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../debugging.html" class="spectrum-SideNav-itemLink ">Debugging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extending.html" class="spectrum-SideNav-itemLink ">Extending</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="git-vs-composer-install.html" class="spectrum-SideNav-itemLink ">Git vs. Composer installation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/introduction.html" class="spectrum-SideNav-itemLink ">Merge points for extensions</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-action-groups.html" class="spectrum-SideNav-itemLink ">Extend action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-data.html" class="spectrum-SideNav-itemLink ">Extend data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-tests.html" class="spectrum-SideNav-itemLink ">Extend tests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-action-groups.html" class="spectrum-SideNav-itemLink ">Merge action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-data.html" class="spectrum-SideNav-itemLink ">Merge data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-pages.html" class="spectrum-SideNav-itemLink ">Merge pages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-sections.html" class="spectrum-SideNav-itemLink ">Merge sections</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-tests.html" class="spectrum-SideNav-itemLink ">Merge tests</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merging.html" class="spectrum-SideNav-itemLink ">Merging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../metadata.html" class="spectrum-SideNav-itemLink ">Metadata</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../page.html" class="spectrum-SideNav-itemLink ">Page</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../guides/v2.3/reference/mftf/action-groups.html" class="spectrum-SideNav-itemLink ">Action group reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../commands/codeception.html" class="spectrum-SideNav-itemLink ">Codecept</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../commands/mftf.html" class="spectrum-SideNav-itemLink ">MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../guides/v2.3/reference/mftf/functional-tests.html" class="spectrum-SideNav-itemLink ">MFTF functional test reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reporting.html" class="spectrum-SideNav-itemLink ">Reporting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section.html" class="spectrum-SideNav-itemLink ">Section</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section/parameterized-selectors.html" class="spectrum-SideNav-itemLink ">Parameterized selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section/locator-functions.html" class="spectrum-SideNav-itemLink ">Locator functions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../suite.html" class="spectrum-SideNav-itemLink ">Suite</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test.html" class="spectrum-SideNav-itemLink ">Test basics</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/annotations.html" class="spectrum-SideNav-itemLink ">Annotations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/actions.html" class="spectrum-SideNav-itemLink ">Actions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/action-groups.html" class="spectrum-SideNav-itemLink ">Action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/assertions.html" class="spectrum-SideNav-itemLink ">Assertions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Test writing</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../best-practices.html" class="spectrum-SideNav-itemLink ">Best practices</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test-prep.html" class="spectrum-SideNav-itemLink ">Preparing a test for MFTF</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="selectors.html" class="spectrum-SideNav-itemLink ">Selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="test-isolation.html" class="spectrum-SideNav-itemLink ">Test isolation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="test-modularity.html" class="spectrum-SideNav-itemLink ">Test modularity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tips-tricks.html" class="spectrum-SideNav-itemLink ">Tips and tricks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="using-suites.html" class="spectrum-SideNav-itemLink ">Using suites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../troubleshooting.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../update.html" class="spectrum-SideNav-itemLink ">Update MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../versioning.html" class="spectrum-SideNav-itemLink ">Versioning</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md" class="spectrum-SideNav-itemLink ">Contribution guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md" class="spectrum-SideNav-itemLink ">Changelog</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">How To write good selectors</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/blob/master/docs/guides/selectors.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/issues/new?title=Feedback on page: /mftf/docs/guides/selectors.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Selectors are the atomic unit of test writing. They fit into the hierarchy like this: MFTF tests make use of action groups &gt; which are made up of actions &gt; which interact with page objects &gt; which contain elements &gt; which are specified by selectors. Because they are fundamental building blocks, we must take care when writing them.</p>
+
+<h2 id="what-is-a-selector">What is a selector?</h2>
+
+<p>A “selector” works like an address to an element in the Document Object Model (DOM). It specifies page elements and allows MFTF to interact with them.
+By ‘element’ we mean things such as input fields, buttons, tables, divs, etc.
+By ‘interact’ we mean actions such as click, fill field, etc.</p>
+
+<p>Selectors live inside of MFTF page objects and are meant to be highly re-usable amongst all tests. They can be written in either CSS or XPath.</p>
+
+<h2 id="why-are-good-selectors-important">Why are good selectors important?</h2>
+
+<p>Good selectors are important because they are the most re-used component of functional testing. They are the lowest building blocks of tests; the foundation. If they are unstable then everything else built on top of them will inherit that instability.</p>
+
+<h2 id="how-do-i-write-good-selectors">How do I write good selectors?</h2>
+
+<p>We could cover this subject with an infinite amount of documentation and some lessons only come from experience. This guide explains some DOs and DONTs to help you along the way towards selector mastery.</p>
+
+<h3 id="inspecting-the-dom">Inspecting the DOM</h3>
+
+<p>To write a selector you need to be able to see the DOM and find the element within it. Fortunately you do not have to look at the entire DOM every time. Nor do you have to read it from top to bottom. Instead you can make use of your browsers built-in developer tools or go a step further and try out some popular browser extensions.</p>
+
+<p>See these links for more information about built-in browser developer tools:</p>
+
+<ul>
+  <li><a href="https://developers.google.com/web/tools/chrome-devtools/">Chrome Developer Tools</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Tools">Firefox Developer Tools</a></li>
+</ul>
+
+<p>See these links for common browser addons that may offer advantages over browser developer tools:</p>
+
+<ul>
+  <li><a href="https://chrome.google.com/webstore/detail/live-editor-for-css-less/ifhikkcafabcgolfjegfcgloomalapol?hl=en">Live editor for CSS, Less &amp; Sass - Magic CSS</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/xpath-helper/hgimnogjllphhhkhlmebbmlgjoejdpjl?hl=en">XPath Helper</a></li>
+</ul>
+
+<h3 id="css-vs-xpath">CSS vs XPath</h3>
+
+<p>There are similarities and differences between CSS and XPath. Both are powerful and complex in ways that are outside of the scope of this document.
+In general:</p>
+
+<ul>
+  <li>CSS is more stable, easier to read, and easier to maintain (typically).</li>
+  <li>XPath provides several powerful tools and it has been around the longest so it is well documented.</li>
+  <li>XPath can be less stable and potentially unsupported by certain actions in Selenium.</li>
+</ul>
+
+<h3 id="priority">Priority</h3>
+
+<p>The best and most simple selector will always be to use an element ID: <code class="language-plaintext highlighter-rouge">#some-id-here</code>. If only we were so lucky to have this every time.</p>
+
+<p>When writing selectors, you should prioritize finding in this order:</p>
+
+<ol>
+  <li>ID, name, class, or anything else that is unique to the element</li>
+  <li>Complex CSS selectors</li>
+  <li>XPath selectors</li>
+  <li>If none of the above work for you, then the last resort is to ask a developer to add a unique ID or class to the element you are trying to select.</li>
+</ol>
+
+<p>We suggest the use of CSS selectors above XPath selectors when possible.</p>
+
+<h3 id="writing-proper-selectors">Writing proper selectors</h3>
+
+<p>There are correct ways of writing selectors and incorrect ways. These suggestions will help you write better selectors.</p>
+
+<h4 id="incorrect---copy-selectorxpath">Incorrect - copy selector/xpath</h4>
+
+<p>DO NOT right click on an element in your browser developer tools and select “Copy selector” or “Copy XPath” and simply use that as your selector. These auto-generated selectors are prime examples of what not to do.</p>
+
+<p>These are bad:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nf">#html-body</span> <span class="o">&gt;</span> <span class="nt">section</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="o">&gt;</span> <span class="nt">div</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-xpath highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">//*</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s">'html-body'</span><span class="p">]</span><span class="o">/</span><span class="nt">section</span><span class="o">/</span><span class="ow">div</span><span class="o">/</span><span class="ow">div</span><span class="o">/</span><span class="ow">div</span><span class="o">/</span><span class="ow">div</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Both include unnecessary hierarchical details. As written, we are looking for a <code class="language-plaintext highlighter-rouge">div</code> inside of a <code class="language-plaintext highlighter-rouge">div</code> inside of a <code class="language-plaintext highlighter-rouge">div</code> inside of… you get the picture. If an application developer adds another <code class="language-plaintext highlighter-rouge">div</code> parent tomorrow, for whatever reason, this selector will break. Furthermore, when reading it, it is not clear what the intended target is. It may also grab other elements that were not intended.</p>
+
+<h4 id="do-not-be-too-general">Do not be too general</h4>
+
+<p>DO NOT make your selectors too generic. If a selector is too generic, there is a high probability that it will match multiple elements on the page. Maybe not today, but perhaps tomorrow when the application being tested changes.</p>
+
+<p>These are bad:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>input[name*='firstname']
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">*=</code> means <code class="language-plaintext highlighter-rouge">contains</code>. The selector is saying ‘find an input whose name contains the string “firstname”’. But if a future change adds a new element to the page whose name also contains “firstname”, then this selector will match two elements and that is bad.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nc">.add</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Similarly here, this will match all elements which contains the class <code class="language-plaintext highlighter-rouge">.add</code>. This is brittle and susceptible to breaking when new elements/styles are added to the page.</p>
+
+<h4 id="avoid-being-too-specific">Avoid being too specific</h4>
+
+<p>DO NOT make your selectors too specific either. If a selector is too specific, there is a high probability that it will break due to even minor changes to the application being tested.</p>
+
+<p>These are bad:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nf">#container</span> <span class="nc">.dashboard-advanced-reports</span> <span class="nc">.dashboard-advanced-reports-description</span> <span class="nc">.dashboard-advanced-reports-title</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This selector is too brittle. It would break very easily if an application developer does something as simple as adding a parent container for style reasons.</p>
+
+<div class="language-xpath highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">//*</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s">'container'</span><span class="p">]</span><span class="o">/*</span><span class="p">[</span><span class="na">@class</span><span class="o">=</span><span class="s">'dashboard-advanced-reports'</span><span class="p">]</span><span class="o">/*</span><span class="p">[</span><span class="na">@class</span><span class="o">=</span><span class="s">'dashboard-advanced-reports-description'</span><span class="p">]</span><span class="o">/*</span><span class="p">[</span><span class="na">@class</span><span class="o">=</span><span class="s">'dashboard-advanced-reports-title'</span><span class="p">]</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This is the same selector as above, but represented in XPath instead of CSS. It is brittle for the same reasons.</p>
+
+<h4 id="xpath-selectors-should-not-use-attributefoo">XPath selectors should not use @attribute=”foo”</h4>
+
+<p>This XPath is fragile. It would fail if the attribute was <code class="language-plaintext highlighter-rouge">attribute="foo bar"</code>. Instead you should use <code class="language-plaintext highlighter-rouge">contains(@attribute, "foo")</code> where @attribute is any valid attribute such as @text or @class.</p>
+
+<h4 id="css-and-xpath-selectors-should-avoid-making-use-of-hardcoded-indices">CSS and XPath selectors should avoid making use of hardcoded indices</h4>
+
+<p>Hardcoded values are by definition not flexible. A hardcoded index may change if new code is introduced. Instead, parameterize the selector.</p>
+
+<p>GOOD: .foo:nth-of-type()</p>
+
+<p>BAD: .foo:nth-of-type(1)</p>
+
+<p>GOOD: button[contains(@id, “foo”)][]</p>
+
+<p>BAD: button[contains(@id, “foo”)][1]</p>
+
+<p>GOOD: #actions____aggregator</p>
+
+<p>BAD: #actions__1__aggregator</p>
+
+<h4 id="css-and-xpath-selectors-must-not-reference-the-data-bind-attribute">CSS and XPath selectors MUST NOT reference the @data-bind attribute</h4>
+
+<p>The @data-bind attribute is used by KnockoutJS, a framework Magento uses to create dynamic Javascript pages. Since this @data-bind attribute is tied to a specific framework, it should not be used for selectors. If Magento decides to use a different framework then these @data-bind selectors would break.</p>
+
+<h4 id="use-isolation">Use isolation</h4>
+
+<p>You should think in terms of “isolation” when writing new selectors.</p>
+
+<p>For example, say you have a login form that contains a username field, a password field, and a ‘Sign In’ button. First isolate the parent element. Perhaps it’s <code class="language-plaintext highlighter-rouge">#login-form</code>. Then target the child element under that parent element: <code class="language-plaintext highlighter-rouge">.sign-in-button</code> The result is <code class="language-plaintext highlighter-rouge">#login-form .sign-in-button</code>.</p>
+
+<p>Using isolation techniques reduces the amount of DOM that needs to be processed. This makes the selector both accurate and efficient.</p>
+
+<h4 id="use-advanced-notation">Use advanced notation</h4>
+
+<p>If you need to interact with the parent element but it is too generic, and the internal contents are unique then you need to:</p>
+
+<ol>
+  <li>Target the unique internal contents first.</li>
+  <li>Then jump to the parent element using <code class="language-plaintext highlighter-rouge">::parent</code>.</li>
+</ol>
+
+<p>Imagine you want to find a table row that contains the string “Jerry Seinfeld”. You can use the following XPath selector:</p>
+
+<div class="language-xpath highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">//</span><span class="ow">div</span><span class="p">[</span><span class="nf">contains</span><span class="p">(</span><span class="k">text</span><span class="p">()</span><span class="o">,</span><span class="w"> </span><span class="s">'Jerry Seinfeld'</span><span class="p">)]</span><span class="o">/</span><span class="k">parent</span><span class="o">::</span><span class="nt">td</span><span class="o">/</span><span class="k">parent</span><span class="o">::</span><span class="nt">tr</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Note in this instance that CSS does not have an equivalent to <code class="language-plaintext highlighter-rouge">::parent</code>, so XPath is a better choice.</p>
+
+<h3 id="css-examples">CSS Examples</h3>
+
+<p>Examples of common HTML elements and the corresponding selector to find that element in the DOM:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>HTML</th>
+      <th>Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IDs</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id="idname"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#idname</code></td>
+    </tr>
+    <tr>
+      <td>Classes</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="classname"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.classname</code></td>
+    </tr>
+    <tr>
+      <td>HTML Tags</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">div</code></td>
+    </tr>
+    <tr>
+      <td>HTML Tag &amp; ID</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id="idname"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">div#idname</code></td>
+    </tr>
+    <tr>
+      <td>HTML Tag &amp; Class</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="classname"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">div.classname</code></td>
+    </tr>
+    <tr>
+      <td>ID &amp; Class</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id="idname" class="classname"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#idname.classname</code></td>
+    </tr>
+    <tr>
+      <td>HTML Tag &amp; ID &amp; Class</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id="idname" class="classname"/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">div#idname.classname</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Examples of common CSS selector operators and their purpose:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Name</th>
+      <th>Purpose</th>
+      <th>Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+      <td>Universal Selector</td>
+      <td>Allows you to select ALL ELEMENTS on the Page. Wild Card.</td>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+    </tr>
+    <tr>
+      <td>Whitespace</td>
+      <td>Descendant Combinator</td>
+      <td>Allows you to combine 2 or more selectors.</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname .classname</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;</code></td>
+      <td>Child Combinator</td>
+      <td>Allows you to select the top-level elements THAT FOLLOWS another specified element.</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname &gt; .classname</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">+</code></td>
+      <td>Adjacent Sibling Combinator</td>
+      <td>Allows you to select an element THAT FOLLOWS DIRECTLY AFTER another specified element.</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname + .classname</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">~</code></td>
+      <td>General Sibling Combinator</td>
+      <td>Allows you to select an element THAT FOLLOWS (directly or indirectly) another specified element.</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname ~ .classname</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Examples of CSS attribute operators and their purpose:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">=</code></td>
+      <td>Returns all elements that CONTAIN the EXACT string in the value.</td>
+      <td><code class="language-plaintext highlighter-rouge">[attribute='value']</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">*=</code></td>
+      <td>Returns all elements that CONTAINS the substring in the value.</td>
+      <td><code class="language-plaintext highlighter-rouge">[attribute*='value']</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">~=</code></td>
+      <td>Returns all elements that CONTAINS the given words delimited by spaces in the value.</td>
+      <td><code class="language-plaintext highlighter-rouge">[attribute~='value']</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$=</code></td>
+      <td>Returns all elements that ENDS WITH the substring in the value.</td>
+      <td><code class="language-plaintext highlighter-rouge">[attribute$='value']</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">^=</code></td>
+      <td>Returns all elements that BEGIN EXACTLY WITH the substring in the value.</td>
+      <td><code class="language-plaintext highlighter-rouge">[attribute^='value']</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">!=</code></td>
+      <td>Returns all elements that either DOES NOT HAVE the given attribute or the value of the attribute is NOT EQUAL to the value.</td>
+      <td><code class="language-plaintext highlighter-rouge">[attribute!='value']</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="xpath-examples">XPath Examples</h3>
+
+<h4 id="-vs-"><code class="language-plaintext highlighter-rouge">/</code> vs <code class="language-plaintext highlighter-rouge">//</code></h4>
+
+<p>The absolute XPath selector is a single forward slash <code class="language-plaintext highlighter-rouge">/</code>. It is used to provide a direct path to the element from the root element.</p>
+
+<p>WARNING: The <code class="language-plaintext highlighter-rouge">/</code> selector is brittle and should be used sparingly.</p>
+
+<p>Here is an example of what NOT to do, but this demonstrates how the selector works:</p>
+
+<div class="language-xpath highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">/</span><span class="nt">html</span><span class="o">/</span><span class="nt">body</span><span class="o">/</span><span class="ow">div</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">/</span><span class="ow">div</span><span class="o">/</span><span class="ow">div</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">/</span><span class="ow">div</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="o">/</span><span class="ow">div</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="o">/</span><span class="nt">form</span><span class="o">/</span><span class="ow">div</span><span class="o">/</span><span class="nt">input</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In the BAD example above, we are specifying a very precise path to an input element in the DOM, starting from the very top of the document.</p>
+
+<p>Similarly, the relative XPath selector is a double forward slash <code class="language-plaintext highlighter-rouge">//</code>. It is used to start searching for an element anywhere in the DOM starting from the specified element. If no element is defined, the entire DOM is searched.</p>
+
+<p>Example:</p>
+
+<div class="language-xpath highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">//</span><span class="ow">div</span><span class="p">[</span><span class="na">@class</span><span class="o">=</span><span class="err">’</span><span class="nt">form-group</span><span class="err">’</span><span class="p">]</span><span class="o">//</span><span class="nt">input</span><span class="p">[</span><span class="na">@id</span><span class="o">=</span><span class="s">'user-message'</span><span class="p">]</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In the <code class="language-plaintext highlighter-rouge">GOOD</code> example above, all <code class="language-plaintext highlighter-rouge">&lt;div class='form-group'/&gt;</code> elements in the DOM are matched first. Then all <code class="language-plaintext highlighter-rouge">&lt;input id='user-message'/&gt;</code> with <code class="language-plaintext highlighter-rouge">&lt;div class='form-group'/&gt;</code> as one of its parents are matched. The parent does not have to immediately precede it since it uses another double forward slash <code class="language-plaintext highlighter-rouge">//</code>.</p>
+
+<h4 id="parent-selectors">Parent Selectors</h4>
+
+<p>The parent selector (<code class="language-plaintext highlighter-rouge">..</code>) allows you to jump to the parent element.</p>
+
+<p>Example #1:</p>
+
+<p>Given this HTML:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+        <span class="nt">&lt;div&gt;</span>Unique Value<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>We can locate the <code class="language-plaintext highlighter-rouge">&lt;tr&gt;</code> element with this selector:</p>
+
+<div class="language-xpath highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">//*</span><span class="p">[</span><span class="k">text</span><span class="p">()</span><span class="o">=</span><span class="s">'Unique Value'</span><span class="p">]</span><span class="o">/../..</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Example #2:</p>
+
+<p>Given this HTML:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">“#”</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+        <span class="nt">&lt;div&gt;</span>Unique Value<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>We can locate the <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> element with this selector:</p>
+
+<div class="language-xpath highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">//</span><span class="ow">div</span><span class="p">[</span><span class="k">text</span><span class="p">()</span><span class="o">=</span><span class="s">'Unique Value'</span><span class="p">]</span><span class="o">/../..//</span><span class="nt">a</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="attribute-selectors">Attribute Selectors</h4>
+
+<p>Attribute selectors allow you to select elements that match a specific attribute value.</p>
+
+<p>Examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>HTML</th>
+      <th>Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id='idname'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@id='idname']</code></td>
+    </tr>
+    <tr>
+      <td>class</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class='classname'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@class='classname']</code></td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;button type='submit'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@type='submit']</code></td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;input value='value'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@value='value']</code></td>
+    </tr>
+    <tr>
+      <td>href</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;a href='https://google.com'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@href='https://google.com']</code></td>
+    </tr>
+    <tr>
+      <td>src</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;img src='/img.png'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@src='/img.png']</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="contains-selector"><code class="language-plaintext highlighter-rouge">contains()</code> Selector</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">contains()</code> selector allows you to select an element that contains an attribute value string.</p>
+
+<p>Examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>HTML</th>
+      <th>Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">text()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;Hello World!&lt;/p&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[contains(text(), 'Hello')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id='idname1234abcd'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[contains(@id, 'idname')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@class</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class='classname1 classname2'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[contains(@class, 'classname1')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;input name='inputname'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[contains(@name, 'name')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;input value='value'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[contains(@value, 'value')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@href</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;a href='https://google.com'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[contains(@href, 'google.com')]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="text-selector"><code class="language-plaintext highlighter-rouge">text()</code> Selector</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">text()</code> selector allows you to select an element that contains a specific string.</p>
+
+<p>Examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>HTML</th>
+      <th>Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Exact Match</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;Hello World!!&lt;/p&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//p[text()='Hello World!!']</code></td>
+    </tr>
+    <tr>
+      <td>Substring Match</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;Hello World!!&lt;/p&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//p[contains(text(), 'Hello')]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="starts-with-selector"><code class="language-plaintext highlighter-rouge">starts-with()</code> Selector</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">starts-with()</code> selector allows you to select an element whose attribute or text starts with a search string.</p>
+
+<p>Examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>HTML</th>
+      <th>Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id='unique_id_abcd1234'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[starts-with(@id, 'unique_id')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@class</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class='unique_class_abcd1234'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[starts-with(@class, 'unique_class')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@href</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;a href='https://www.google.com/'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//a[starts-with(@href, 'https://')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">text()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;Hello World!&lt;/p&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//p[starts-with(text(), 'Hello ')]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ends-with-selector"><code class="language-plaintext highlighter-rouge">ends-with()</code> Selector</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">ends-with()</code> selector allows you to select an element whose attribute or text ends with a search string.</p>
+
+<p>Examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>HTML</th>
+      <th>Selector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id='abcd1234_unique_id'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[ends-with(@id, 'unique_id')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@class</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class='abcd1234_unique_class'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[ends-with(@class, 'unique_class')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">@href</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;a href='https://www.google.com'/&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//a[ends-with(@href, 'google.com')]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">text()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;Hello World!&lt;/p&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//p[ends-with(text(), 'World!')]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="translating-between-css-and-xpath">Translating Between CSS and XPath</h3>
+
+<p>Most of the time it is possible to translate from CSS to XPath and vice versa. Here are some examples:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>CSS</th>
+      <th>XPath</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IDs</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@id='idname']</code></td>
+    </tr>
+    <tr>
+      <td>Classes</td>
+      <td><code class="language-plaintext highlighter-rouge">.classname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@class='classname']</code></td>
+    </tr>
+    <tr>
+      <td>HTML Tags</td>
+      <td><code class="language-plaintext highlighter-rouge">div</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//div</code></td>
+    </tr>
+    <tr>
+      <td>HTML Tag &amp; ID</td>
+      <td><code class="language-plaintext highlighter-rouge">div#idname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//div[@id='idname']</code></td>
+    </tr>
+    <tr>
+      <td>HTML Tag &amp; Class</td>
+      <td><code class="language-plaintext highlighter-rouge">div.classname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//div[@class='classname']</code></td>
+    </tr>
+    <tr>
+      <td>Universal</td>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*</code></td>
+    </tr>
+    <tr>
+      <td>Descendant</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname .classname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@id='idname']//*[@class='classname']</code></td>
+    </tr>
+    <tr>
+      <td>Child</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname &gt; .classname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@id='idname']/*[@class='classname']</code></td>
+    </tr>
+    <tr>
+      <td>Adjacent Sibling</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname + .classname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@id='idname']/following-sibling::*[@class='classname'][1]</code></td>
+    </tr>
+    <tr>
+      <td>General Sibling</td>
+      <td><code class="language-plaintext highlighter-rouge">#idname ~ .classname</code></td>
+      <td><code class="language-plaintext highlighter-rouge">//*[@id='idname']/following-sibling::*[@class='classname']</code></td>
+    </tr>
+  </tbody>
+</table>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-01-02">
+    Jan 2nd, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

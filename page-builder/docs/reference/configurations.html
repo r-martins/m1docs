@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Page Builder configurations | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="configurations.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Page Builder</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/" class="spectrum-SideNav-itemLink ">What is Page Builder?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Getting started</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/install-pagebuilder.html" class="spectrum-SideNav-itemLink ">Install Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/view-pagebuilder.html" class="spectrum-SideNav-itemLink ">View Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started/install-pagebuilder-examples.html" class="spectrum-SideNav-itemLink ">Install Page Builder Examples</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Extend a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-1-create-extension-module.html" class="spectrum-SideNav-itemLink ">Step 1. Create extension module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-2-extend-appearances.html" class="spectrum-SideNav-itemLink ">Step 2. Extend appearances</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extend-existing-content-type/step-3-extend-forms.html" class="spectrum-SideNav-itemLink ">Step 3. Extend forms</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Create a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-1-add-configuration.html" class="spectrum-SideNav-itemLink ">Step 1. Add configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-2-add-templates.html" class="spectrum-SideNav-itemLink ">Step 2. Add templates</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-3-add-components.html" class="spectrum-SideNav-itemLink ">Step 3. Add components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-4-add-form.html" class="spectrum-SideNav-itemLink ">Step 4. Add form</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-5-add-styles.html" class="spectrum-SideNav-itemLink ">Step 5. Add styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/step-6-add-icon.html" class="spectrum-SideNav-itemLink ">Step 6. Add an icon</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../create-custom-content-type/summary.html" class="spectrum-SideNav-itemLink ">Summary</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">How-Tos</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-configure-styling-options.html" class="spectrum-SideNav-itemLink ">Configure styling options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-appearance.html" class="spectrum-SideNav-itemLink ">Add an appearance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-upgrade-library.html" class="spectrum-SideNav-itemLink ">Upgrade content types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-customize-panel.html" class="spectrum-SideNav-itemLink ">Customize the panel</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-image-uploader.html" class="spectrum-SideNav-itemLink ">Add an image uploader</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-storefront-widget.html" class="spectrum-SideNav-itemLink ">Add a storefront widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-text-editor.html" class="spectrum-SideNav-itemLink ">Add a text editor</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-custom-toolbar.html" class="spectrum-SideNav-itemLink ">Add a custom toolbar</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-icons-images.html" class="spectrum-SideNav-itemLink ">Add icons and images</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-change-breakpoints.html" class="spectrum-SideNav-itemLink ">Change breakpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-additional-configurations.html" class="spectrum-SideNav-itemLink ">Add additional configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-add-block-chooser.html" class="spectrum-SideNav-itemLink ">Add a block chooser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-full-width-layouts.html" class="spectrum-SideNav-itemLink ">Use full-width layouts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-customize-selectors.html" class="spectrum-SideNav-itemLink ">Customize selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-apply-product-conditions.html" class="spectrum-SideNav-itemLink ">Apply product conditions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-server-side-previews.html" class="spectrum-SideNav-itemLink ">Use server-side previews</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-use-pagebuilder-for-product-attributes.html" class="spectrum-SideNav-itemLink ">Use Page Builder for product attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../how-to/how-to-deactivate-pagebuilder.html" class="spectrum-SideNav-itemLink ">Deactivate Page Builder</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">BlueFoot content migration</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/index.html" class="spectrum-SideNav-itemLink ">Overview of content migration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/install-migration-module.html" class="spectrum-SideNav-itemLink ">Install the migration module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/run-migration-module.html" class="spectrum-SideNav-itemLink ">Run the migration module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/how-content-migration-works.html" class="spectrum-SideNav-itemLink ">How content migration works</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/migrate-content-custom-blocks.html" class="spectrum-SideNav-itemLink ">Migrate content from custom blocks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../page-builder-migration/docs/migrate-other-bluefoot-content.html" class="spectrum-SideNav-itemLink ">Migrate other BlueFoot content</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="configurations.html" class="spectrum-SideNav-itemLink ">Configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="data-store.html" class="spectrum-SideNav-itemLink ">Datastore</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="events.html" class="spectrum-SideNav-itemLink ">Events</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="knockout-bindings.html" class="spectrum-SideNav-itemLink ">Knockout bindings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes.html" class="spectrum-SideNav-itemLink ">Release notes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../comp-status2.html" class="spectrum-SideNav-itemLink ">Component status</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Page Builder configurations</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"></div>
+
+
+  
+<div class="bs-callout spectrum-Alert edition-callout ee-only">
+  <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
+  <h4 class="spectrum-Alert-header">Magento Commerce only</h4>
+  <div class="spectrum-Alert-content">
+    The content on this page is for Magento Commerce only. 
+    <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
+  </div>
+</div>
+
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<!--  -->
+
+<p>You can use the content type and menu section configuration to add new content types, extend existing content types, add and modify menu sections present in the left menu and rearrange content types.</p>
+
+<h2 id="content-type-configuration">Content Type Configuration</h2>
+<p>When creating a new content type you will need to create a corresponding XML file outlining the configuration required for your content type.</p>
+
+<p>Your configuration should conform to our XSD: <code class="language-plaintext highlighter-rouge">urn:magento:module:Magento_PageBuilder:etc/content_type.xsd</code>. This article will go into more details regarding the configuration you can include within a content type.</p>
+
+<h3 id="type-element"><code class="language-plaintext highlighter-rouge">type</code> element</h3>
+<p>There are a number of simple attributes that can be configured within the <code class="language-plaintext highlighter-rouge">&lt;type /&gt;</code> node of your content type.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Name of the content type that Magento uses for XML merging. The convention for using multi-word names is to separate the words with hyphens.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td>Label displayed in the Page Builder panel, option menu, and on the Admin stage.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">menu_section</code></td>
+      <td>Menu section or category in the panel menu where your content type is displayed. The default menu sections are Layout, Elements, Media, and Add Content. See <a href="../how-to/how-to-customize-panel.html">Panel configurations</a> for more details.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">icon</code></td>
+      <td>CSS class for icon to be displayed within the menu alongside the content types name. See <a href="../how-to/how-to-add-icons-images.html">How to add icons and images</a> for more guidance.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">component</code></td>
+      <td>View model responsible for rendering the preview and master format. The component does not need to specify the <code class="language-plaintext highlighter-rouge">.js</code> extension. There are two component types to choose from: <code class="language-plaintext highlighter-rouge">content-type</code> and <code class="language-plaintext highlighter-rouge">content-type-collection</code>. Use <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/content-type</code> for static content types that do not have children. Use <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/content-type-collection</code> for content types that can contain children, otherwise known as container content types.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preview_component</code></td>
+      <td>JavaScript file (<code class="language-plaintext highlighter-rouge">preview.js</code> or <code class="language-plaintext highlighter-rouge">preview-collection.js</code>) that provides rendering logic within the Admin UI. The preview component does not need to specify the <code class="language-plaintext highlighter-rouge">.js</code> extension. <br /><br />For <em>collection</em> content types, you need to either reference your own <code class="language-plaintext highlighter-rouge">preview-collection</code> component or reference Page Builder’s <code class="language-plaintext highlighter-rouge">preview-collection</code> (<code class="language-plaintext highlighter-rouge">preview_component="Magento_PageBuilder/js/content-type/preview-collection"</code>). If you don’t specify the <code class="language-plaintext highlighter-rouge">preview_component</code>, Page Builder uses the base <code class="language-plaintext highlighter-rouge">Preview</code> component shown in the code: <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/content-type/preview</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">master_component</code></td>
+      <td>JavaScript file (<code class="language-plaintext highlighter-rouge">master.js</code> or <code class="language-plaintext highlighter-rouge">master-collection.js</code>) that provides rendering logic generic for all appearances of your content type when rendered on the storefront. The master component does not need to specify the <code class="language-plaintext highlighter-rouge">.js</code> extension. <br /><br />For <em>collection</em> content types, you need to either reference your own <code class="language-plaintext highlighter-rouge">master-collection</code> component or reference Page Builder’s <code class="language-plaintext highlighter-rouge">master-collection</code> (<code class="language-plaintext highlighter-rouge">master_component="Magento_PageBuilder/js/content-type/master-collection"</code>). If you don’t specify the <code class="language-plaintext highlighter-rouge">master_component</code>, Page Builder uses the base <code class="language-plaintext highlighter-rouge">Master</code> component shown in the code: <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/content-type/master</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">form</code></td>
+      <td>UI component form that provides the form controls for editing your content type.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">icon</code></td>
+      <td>Optional. Class name for your PNG or SVG image (or font icon) displayed in the Page Builder panel alongside the label. If you don’t provide an icon value, the Page Builder panel displays the content type name without an icon.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td>Optional. The listed order within the menu section. For example, <code class="language-plaintext highlighter-rouge">sortOrder=21</code> puts the content type third in the <code class="language-plaintext highlighter-rouge">Elements</code> menu section, after the content types with <code class="language-plaintext highlighter-rouge">sortOrder</code> values of 10 and 20.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">translate</code></td>
+      <td>Identifies the attribute you want Magento to translate.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="basic-configuration-example">Basic Configuration Example</h4>
+<p>As an example of the configurable attributes we can look into the Text content types basic configuration.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"text"</span>
+      <span class="na">label=</span><span class="s">"Text"</span>
+      <span class="na">component=</span><span class="s">"Magento_PageBuilder/js/content-type"</span>
+      <span class="na">preview_component=</span><span class="s">"Magento_PageBuilder/js/content-type/text/preview"</span>
+      <span class="na">form=</span><span class="s">"pagebuilder_text_form"</span>
+      <span class="na">menu_section=</span><span class="s">"elements"</span>
+      <span class="na">icon=</span><span class="s">"icon-pagebuilder-text"</span>
+      <span class="na">sortOrder=</span><span class="s">"1"</span>
+      <span class="na">translate=</span><span class="s">"label"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>There are a number of child elements which can be configured, these are typically for more advanced options of the content type. All of these options are described in further detail below.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">parents</code></td>
+      <td>Defines the default policy and matrix of which content types this content type can have as a parent. For instance the Slide content type defines a default policy of <code class="language-plaintext highlighter-rouge">deny</code> with an exception allowing this content type to only be housed within the Slider content type.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">children</code></td>
+      <td>Similar to the <code class="language-plaintext highlighter-rouge">parents</code> option, however this defines the allowed <code class="language-plaintext highlighter-rouge">children</code> of the current content type. As with the Slide example this time the Slider defines the Slide as it’s only allowed child.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">appearances</code></td>
+      <td>Configures various appearances along with associated data mapping elements. This is a crucial part of all content types and defines how the master and preview systems should retrieve and display their data.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">is_system</code></td>
+      <td>Determines menu visibility for the content type. System content types are visible in the menu. The default value for this is true. By setting this to false, you can hide child or “special” content types that are added by other content types. For example, you cannot directly drag a Slide content type onto the stage, which means it is not a system content type.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">additional_data</code></td>
+      <td>Allows you to specify additional data for the component. See <a href="../how-to/how-to-add-additional-configurations.html">additional configurations</a> for more information.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following is an example of a content type configuration taken from <code class="language-plaintext highlighter-rouge">view/adminhtml/pagebuilder/content_type/text.xml</code> for our Text content type. This displays some of the different available configuration options for configuring content types.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_PageBuilder:etc/content_type.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"text"</span>
+          <span class="na">label=</span><span class="s">"Text"</span>
+          <span class="na">component=</span><span class="s">"Magento_PageBuilder/js/content-type"</span>
+          <span class="na">preview_component=</span><span class="s">"Magento_PageBuilder/js/content-type/text/preview"</span>
+          <span class="na">form=</span><span class="s">"pagebuilder_text_form"</span>
+          <span class="na">menu_section=</span><span class="s">"elements"</span>
+          <span class="na">icon=</span><span class="s">"icon-pagebuilder-text"</span>
+          <span class="na">sortOrder=</span><span class="s">"1"</span>
+          <span class="na">translate=</span><span class="s">"label"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;children</span> <span class="na">default_policy=</span><span class="s">"deny"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;appearances&gt;</span>
+            <span class="nt">&lt;appearance</span> <span class="na">default=</span><span class="s">"true"</span>
+                        <span class="na">name=</span><span class="s">"default"</span>
+                        <span class="na">preview_template=</span><span class="s">"Magento_PageBuilder/content-type/text/default/preview"</span>
+                        <span class="na">master_template=</span><span class="s">"Magento_PageBuilder/content-type/text/default/master"</span>
+                        <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/master-format/read/configurable"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;elements&gt;</span>
+                    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"text_align"</span> <span class="na">source=</span><span class="s">"text_align"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border"</span> <span class="na">source=</span><span class="s">"border_style"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-style"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_color"</span> <span class="na">source=</span><span class="s">"border_color"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_width"</span> <span class="na">source=</span><span class="s">"border_width"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-width"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_radius"</span> <span class="na">source=</span><span class="s">"border_radius"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/remove-px"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"display"</span> <span class="na">source=</span><span class="s">"display"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/display"</span> <span class="na">preview_converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/preview/display"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"margins"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/margins"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/margins"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"padding"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/paddings"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/paddings"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">source=</span><span class="s">"data-content-type"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"appearance"</span> <span class="na">source=</span><span class="s">"data-appearance"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;html</span> <span class="na">name=</span><span class="s">"content"</span> <span class="na">preview_converter=</span><span class="s">"Magento_PageBuilder/js/converter/html/directive"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"css_classes"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/element&gt;</span>
+                <span class="nt">&lt;/elements&gt;</span>
+            <span class="nt">&lt;/appearance&gt;</span>
+        <span class="nt">&lt;/appearances&gt;</span>
+        <span class="nt">&lt;additional_data&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"wysiwygConfig"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"wysiwygConfigData"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\PageBuilder\Model\Config\ContentType\AdditionalData\Provider\Wysiwyg\Config<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/additional_data&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="form-attribute"><code class="language-plaintext highlighter-rouge">form</code> attribute</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">form</code> attribute specifies the name of the UiComponent form used to configure content types. All forms can extend the <code class="language-plaintext highlighter-rouge">pagebuilder_base_form</code>, which contains boilerplate form configuration and the global Advanced Configuration section. If you decide to omit extending the base form you’ll need to ensure you manually declare the various requirements from the base form.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"..."</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"..."</span> <span class="na">extends=</span><span class="s">"pagebuilder_base_form"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Any modifications you might want to make to content type configuration forms use standard UiComponent functionality. Please see <a href="../../../guides/v2.3/ui_comp_guide/bk-ui_comps.html">UiComponent Documentation</a> for additional information.</p>
+
+<h4 id="parents-element"><code class="language-plaintext highlighter-rouge">parents</code> element</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">parents</code> element specifies which content types can accept this type as a child.
+Parent policies will override any child policies that are set.</p>
+
+<p>You can configure the default policy to easily <code class="language-plaintext highlighter-rouge">allow</code> or <code class="language-plaintext highlighter-rouge">deny</code> all parents.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">default_policy</code></td>
+      <td>Values: <code class="language-plaintext highlighter-rouge">allow</code> <code class="language-plaintext highlighter-rouge">deny</code>. Allows or denies all content types to be parents unless specified as a parent element.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">parents</code> node accepts a list of content types for the policy via child <code class="language-plaintext highlighter-rouge">parent</code> elements.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name of the content type that this parents policy is assigned to. Such as <code class="language-plaintext highlighter-rouge">slider</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">policy</code></td>
+      <td>Values: <code class="language-plaintext highlighter-rouge">allow</code> <code class="language-plaintext highlighter-rouge">deny</code>. Determine whether the current content type is allowed or denied to be a child of the specified content type.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;parents</span> <span class="na">default_policy=</span><span class="s">"deny"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;parent</span> <span class="na">name=</span><span class="s">"row"</span> <span class="na">policy=</span><span class="s">"allow"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;parent</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">policy=</span><span class="s">"allow"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/parents&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="children-element"><code class="language-plaintext highlighter-rouge">children</code> element</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">children</code> element specifies which content types can accept this type as a parent, this configuration is formed the same as the above <code class="language-plaintext highlighter-rouge">parents</code> configuration, the difference being this controls which content types can be a child of the current content type.
+Parent policies will override any child policies that are set.</p>
+
+<p>You can configure the default policy to easily <code class="language-plaintext highlighter-rouge">allow</code> or <code class="language-plaintext highlighter-rouge">deny</code> all children.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">default_policy</code></td>
+      <td>Values: <code class="language-plaintext highlighter-rouge">allow</code> <code class="language-plaintext highlighter-rouge">deny</code>. Allows or denies all content types to be children unless specified as a child element.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">children</code> node accepts a list of content types for the policy via child <code class="language-plaintext highlighter-rouge">child</code> elements.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name of the content type that this parents policy is assigned to. Such as <code class="language-plaintext highlighter-rouge">slider</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">policy</code></td>
+      <td>Values: <code class="language-plaintext highlighter-rouge">allow</code> <code class="language-plaintext highlighter-rouge">deny</code>. Determine whether the current content type is allowed or denied to be a child of the specified content type.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;children</span> <span class="na">default_policy=</span><span class="s">"allow"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;child</span> <span class="na">name=</span><span class="s">"row"</span> <span class="na">policy=</span><span class="s">"deny"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;child</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">policy=</span><span class="s">"deny"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/children&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="appearances-element"><code class="language-plaintext highlighter-rouge">appearances</code> element</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">appearances</code> element can contain multiple appearances which control how the content type renders in the admin preview and master format. The appearance configuration specifies how the master and preview functionality interacts with data from the master format. It also defines where and how data should be placed on the elements declared in your <code class="language-plaintext highlighter-rouge">master.html</code> and <code class="language-plaintext highlighter-rouge">preview.html</code> templates.</p>
+
+<p>Each content type can have a number of different appearances, these appearances can alter where data is placed on the element, the data that is applied along with the templates that are used for each appearance. This enables you to create different views of the same content type without adding additional bloat to the UI.</p>
+
+<p>For instance a great use of this functionality within Banner is to display the content is different positions within the banner. We strongly recommend when customising any content types you utilise the appearance framework and look to add a new appearance.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name for this appearance.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">default</code></td>
+      <td>Determines whether this is the default appearance for the content type. The default will be auto selected when adding a new instance of the content type.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preview_template</code></td>
+      <td>Template used to display the content type within the admin preview.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">master_template</code></td>
+      <td>Template which is hydrated with data and rendered to be stored as the master format.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reader</code></td>
+      <td>Reads data for the content type from the master format. Unless you need to conduct complex retrieval of data from the master format we recommend you use the default <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/master-format/read/configurable</code> reader as this contains the necessary logic for the child <code class="language-plaintext highlighter-rouge">element</code> nodes to work.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;appearance</span> <span class="na">default=</span><span class="s">"true"</span>
+            <span class="na">name=</span><span class="s">"default"</span>
+            <span class="na">preview_template=</span><span class="s">"Magento_PageBuilder/content-type/text/default/preview"</span>
+            <span class="na">master_template=</span><span class="s">"Magento_PageBuilder/content-type/text/default/master"</span>
+            <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/master-format/read/configurable"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Every content type must declare a default appearance to allow other modules to easily extend the content type with additional appearances.</p>
+
+<h5 id="appearance-elements-configuration">Appearance Elements Configuration</h5>
+<p>To enable your appearance to effectively read and write data from the master format into your preview and master templates you’ll need to declare the various attributes to be applied to your elements.</p>
+
+<p>These are declared under the <code class="language-plaintext highlighter-rouge">&lt;elements /&gt;</code> node within the appearance.</p>
+
+<h6 id="element"><code class="language-plaintext highlighter-rouge">element</code></h6>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name for the element that will be used to reference the data mapping configuration from your templates. This must be unique within the current appearance.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The name specified here is used within your templates bindings to retrieve the data from your configuration.</p>
+
+<p>For instance if you specified the element name to be <code class="language-plaintext highlighter-rouge">main</code> by <code class="language-plaintext highlighter-rouge">&lt;element name="main" /&gt;</code> you’d then be able to reference all styles and attributes via the following format within your master and preview templates:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">html=</span><span class="s">"data.main.html"</span> <span class="na">attr=</span><span class="s">"data.main.attributes"</span> <span class="na">ko-style=</span><span class="s">"data.main.style"</span> <span class="na">css=</span><span class="s">"data.main.css"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Within an element you’re able to specify different standard HTML attributes to customise the output displayed.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">attribute</code></td>
+      <td>Assign a HTML attribute to the current element.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">css</code></td>
+      <td>Assign field name for CSS classes to be included on the element, also allows to specifically ignore system classes so they’re not displayed within the content types edit form.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">html</code></td>
+      <td>Allows for a fields value to be output as HTML within the current element. This is used within the Text content type to ensure all content is rendered as expected. <strong>Warning:</strong> If you’re using this attribute you should ensure you’re safely escaping any harmful values to avoid adding potential XSS vulnerabilities within the admin.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tag</code></td>
+      <td>Allows you to read the tag name of the element and map it back to the master format. This is used in instances where the content type is modifying the type of element output, such as in Heading.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+
+<p>Here we have an example from our Button Item content type, which shows multiple elements with various attributes.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;elements&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"display"</span> <span class="na">source=</span><span class="s">"display"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/content-type/button-item/converter/style/display"</span> <span class="na">preview_converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/preview/display"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">source=</span><span class="s">"data-content-type"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"appearance"</span> <span class="na">source=</span><span class="s">"data-appearance"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"css_classes"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"link"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"text_align"</span> <span class="na">source=</span><span class="s">"text_align"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border"</span> <span class="na">source=</span><span class="s">"border_style"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-style"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_color"</span> <span class="na">source=</span><span class="s">"border_color"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_width"</span> <span class="na">source=</span><span class="s">"border_width"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-width"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_radius"</span> <span class="na">source=</span><span class="s">"border_radius"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/remove-px"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"margins"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/margins"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/margins"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"padding"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/paddings"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/paddings"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"button_link"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/link"</span> <span class="na">persistence_mode=</span><span class="s">"read"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"virtual_link_href"</span> <span class="na">storage_key=</span><span class="s">"button_link"</span> <span class="na">source=</span><span class="s">"href"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/attribute/link-href"</span> <span class="na">persistence_mode=</span><span class="s">"write"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"virtual_link_target"</span> <span class="na">storage_key=</span><span class="s">"button_link"</span> <span class="na">source=</span><span class="s">"target"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/attribute/link-target"</span> <span class="na">persistence_mode=</span><span class="s">"write"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"virtual_link_type"</span> <span class="na">storage_key=</span><span class="s">"button_link"</span> <span class="na">source=</span><span class="s">"data-link-type"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/attribute/link-type"</span> <span class="na">persistence_mode=</span><span class="s">"write"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"button_type"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"empty_link"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"text_align"</span> <span class="na">source=</span><span class="s">"text_align"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border"</span> <span class="na">source=</span><span class="s">"border_style"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-style"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_color"</span> <span class="na">source=</span><span class="s">"border_color"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_width"</span> <span class="na">source=</span><span class="s">"border_width"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/border-width"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"border_radius"</span> <span class="na">source=</span><span class="s">"border_radius"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/remove-px"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"margins"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/margins"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/margins"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"padding"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/paddings"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/paddings"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"button_type"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"link_text"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;html</span> <span class="na">name=</span><span class="s">"button_text"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/html/tag-escaper"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/element&gt;</span>
+<span class="nt">&lt;/elements&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>We automatically apply a <code class="language-plaintext highlighter-rouge">data-element</code> attribute upon any element which has a linked <code class="language-plaintext highlighter-rouge">&lt;element /&gt;</code> based on it’s name. This enables us to easily read the data for a specific element. To ensure this functionality works you’re required to include the appropriate Knockout attribute binding on all elements, otherwise you may see data not being read correctly from the DOM.</p>
+
+<h6 id="style-property-and-attribute-elements"><code class="language-plaintext highlighter-rouge">style</code>, <code class="language-plaintext highlighter-rouge">property</code> and <code class="language-plaintext highlighter-rouge">attribute</code> elements</h6>
+
+<p>All these elements share a common near identical interface and can be configured using the following attributes.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Unique name used for configuration merging, and the default value for storage_key if none is provided.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">storage_key</code></td>
+      <td>Optional variable name for value in the data storage. If no value is provided, name will be used. This is the form fields data scope which is typically the name unless a <code class="language-plaintext highlighter-rouge">dataScope</code> is provided on the field. Supports the dot notation for <code class="language-plaintext highlighter-rouge">dataScope</code> (such as <code class="language-plaintext highlighter-rouge">layout.min_height</code>).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">source</code></td>
+      <td>The name of the property or attribute in the DOM. Must be in snake case. For instance <code class="language-plaintext highlighter-rouge">text_align</code> aligns to <code class="language-plaintext highlighter-rouge">text-align</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">converter</code></td>
+      <td>Converts the value after reading or before saving to the DOM.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preview_converter</code></td>
+      <td>Converts the value for the preview. Used for cases where the conversion logic is different between the two views.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">persistence_mode</code></td>
+      <td>Used for read/write properties.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">reader</code></td>
+      <td>Reader used for parsing attributes and properties out of the DOM. Should not be used with read-only persistence_mode.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You may optionally set a <code class="language-plaintext highlighter-rouge">reader</code> value in configuration, otherwise <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/property/style-property-reader</code> will be used for properties, and <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/property/attribute-reader</code> will be used for attributes. Both default readers accept <code class="language-plaintext highlighter-rouge">source</code> as a parameter, and will return that value.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"margins"</span> <span class="na">storage_key=</span><span class="s">"margins_and_padding"</span> <span class="na">reader=</span><span class="s">"Magento_PageBuilder/js/property/margins"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/style/margins"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="converter"><code class="language-plaintext highlighter-rouge">converter</code></h5>
+
+<p>The converter enable you to convert data between different formats or make mutations on the data as it’s read or written for your specific element. For instance removing or adding <code class="language-plaintext highlighter-rouge">px</code> to styles which require it, or converting color formats to and from a desired format.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">fromDom</code> method is called after data is read from the master format.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">toDom</code> method is called before observables are updated in the cycle rendering preview or master format.</p>
+
+<p>When accessing data provided into the above functions <strong>you should</strong> utilise the <code class="language-plaintext highlighter-rouge">get</code> and <code class="language-plaintext highlighter-rouge">set</code> utility functions from <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/utils/object</code> to ensure any data mapping entries which traverse deeper into the data set with the dot notation can correctly retrieve and set their data.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>The following is a converter that determines the output for an overlay background color:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+</pre></td><td class="rouge-code"><pre><span class="nx">define</span><span class="p">([</span><span class="dl">"</span><span class="s2">Magento_PageBuilder/js/utils/color-converter</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Magento_PageBuilder/js/utils/number-converter</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Magento_PageBuilder/js/utils/object</span><span class="dl">"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">colorConverter</span><span class="p">,</span> <span class="nx">numberConverter</span><span class="p">,</span> <span class="nx">objectUtil</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">OverlayBackgroundColor</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+    
+    <span class="cm">/**
+     * Convert value to internal format
+     *
+     * @param {string} value
+     * @returns {string | object}
+     */</span>
+    <span class="nx">OverlayBackgroundColor</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">fromDom</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">fromDom</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="p">};</span>
+    
+    <span class="cm">/**
+     * Convert value to knockout format
+     *
+     * @param {string} name
+     * @param {object} data
+     * @returns {string | object}
+     */</span>
+    <span class="nx">OverlayBackgroundColor</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toDom</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">toDom</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">overlayColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">transparent</span><span class="dl">"</span><span class="p">;</span>
+        
+          <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">show_overlay</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">always</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">overlay_color</span> <span class="o">!==</span> <span class="dl">""</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">overlay_color</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">overlayColor</span> <span class="o">=</span> <span class="nx">colorConverter</span><span class="p">.</span><span class="nx">fromHex</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">overlay_color</span><span class="p">,</span> <span class="nx">numberConverter</span><span class="p">.</span><span class="nx">percentToDecimal</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">overlay_transparency</span><span class="p">));</span>
+          <span class="p">}</span>
+        
+          <span class="k">return</span> <span class="nx">overlayColor</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">OverlayBackgroundColor</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h6 id="static_style-and-static_attribute-elements"><code class="language-plaintext highlighter-rouge">static_style</code> and <code class="language-plaintext highlighter-rouge">static_attribute</code> elements</h6>
+
+<p>These elements allow you to add specific static style properties or attributes to an element, this can be used to include styles which don’t require any logic or input by the end user. These do not contain the <code class="language-plaintext highlighter-rouge">converter</code> and <code class="language-plaintext highlighter-rouge">preview_converter</code> functionality.</p>
+
+<p>For instance we commonly use these to include height, width or alignment styles to elements to ensure they render correctly on the store front. The idea behind the master format is to contain all the required data to effectively render the content without prior understanding of the Page Builder format, thus if a style is integral for the rendering of the content it should be included within the DOM rather than in a loaded style sheet.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"desktop_image"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;static_style</span> <span class="na">source=</span><span class="s">"max-width"</span> <span class="na">value=</span><span class="s">"100%"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;static_style</span> <span class="na">source=</span><span class="s">"height"</span> <span class="na">value=</span><span class="s">"auto"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/element&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>These style properties and attributes are applied in the preview and persisted in the master format.</p>
+
+<p>The above will produce the following output if <code class="language-plaintext highlighter-rouge">desktop_image</code> is attached to a <code class="language-plaintext highlighter-rouge">&lt;img /&gt;</code> element.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"my-image.png"</span> <span class="na">style=</span><span class="s">"max-width: 100%; height: auto;"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h6 id="html"><code class="language-plaintext highlighter-rouge">html</code></h6>
+
+<p>The <code class="language-plaintext highlighter-rouge">html</code> element allows you to read the innerHTML of the element in a property and map it back to the master format. This enables you to add rich text editing to a content type and have the HTML written and read from the master format.</p>
+
+<p><strong>Warning:</strong> The HTML you’re including should be properly escaped and verified to ensure you’re not introducing an XSS vulnerability within your content type. We provide <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/converter/html/tag-escaper</code> to help with this functionality.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;html</span> <span class="na">name=</span><span class="s">"message"</span> <span class="na">converter=</span><span class="s">"Magento_PageBuilder/js/converter/html/tag-escaper"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h6 id="css"><code class="language-plaintext highlighter-rouge">css</code></h6>
+
+<p>The <code class="language-plaintext highlighter-rouge">css</code> element allows you to read the class value of the element in the property and map back to the master format.</p>
+
+<p><code class="language-plaintext highlighter-rouge">filter</code> allows you to specify which static CSS classes to ignore.
+These classes are not read and do not appear on the form.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;css</span> <span class="na">name=</span><span class="s">"button_type"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;filter&gt;</span>
+        <span class="nt">&lt;class</span> <span class="na">source=</span><span class="s">"pagebuilder-banner-button"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/filter&gt;</span>
+<span class="nt">&lt;/css&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h6 id="tag"><code class="language-plaintext highlighter-rouge">tag</code></h6>
+
+<p>The <code class="language-plaintext highlighter-rouge">tag</code> element allows you to read the tag name of the element and map back to the master format.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;tag</span> <span class="na">name=</span><span class="s">"heading_type"</span><span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="mass-converter">Mass converter</h4>
+
+<p>The mass converter provides a similar function to the element converters, however they’re able to access and modify all data. For instance we use these to convert the background desktop and mobile images into a JSON format which is read and rendered into CSS on the storefront. These sit within your specific appearance.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">fromDom</code> method is called after data is read for all elements and converted by element converters.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">toDom</code> method is called before data is converted by element converters to update observables.</p>
+
+<p>When accessing data provided into the above functions <strong>you should</strong> utilise the <code class="language-plaintext highlighter-rouge">get</code> and <code class="language-plaintext highlighter-rouge">set</code> utility functions from <code class="language-plaintext highlighter-rouge">Magento_PageBuilder/js/utils/object</code> to ensure any data mapping entries which traverse deeper into the data set with the dot notation can correctly retrieve and set their data.</p>
+
+<p><strong>Example:</strong> Mass converter that defaults mobile image value to desktop image value if not configured</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;converters&gt;</span>
+    <span class="nt">&lt;converter</span> <span class="na">name=</span><span class="s">"empty_mobile_image"</span> <span class="na">component=</span><span class="s">"Magento_PageBuilder/js/mass-converter/empty-mobile-image"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;config&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"desktop_image_variable"</span> <span class="na">value=</span><span class="s">"background_image"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"mobile_image_variable"</span> <span class="na">value=</span><span class="s">"mobile_image"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/config&gt;</span>
+    <span class="nt">&lt;/converter&gt;</span>
+<span class="nt">&lt;/converters&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+</pre></td><td class="rouge-code"><pre><span class="nx">define</span><span class="p">([</span><span class="dl">"</span><span class="s2">Magento_PageBuilder/js/utils/object</span><span class="dl">"</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">objectUtil</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">EmptyMobileImage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{};</span>
+    
+    <span class="cm">/**
+     * Process data after it's read and converted by element converters
+     *
+     * @param {object} data
+     * @param {object} config
+     * @returns {object}
+     */</span>
+    <span class="nx">EmptyMobileImage</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">fromDom</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">fromDom</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">desktopImage</span> <span class="o">=</span> <span class="nx">objectUtil</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">desktop_image_variable</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">mobileImage</span> <span class="o">=</span> <span class="nx">objectUtil</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">mobile_image_variable</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="nx">mobileImage</span> <span class="o">&amp;&amp;</span> <span class="nx">desktopImage</span> <span class="o">&amp;&amp;</span> <span class="nx">mobileImage</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="nx">desktopImage</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="nx">mobileImage</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">url</span> <span class="o">===</span> <span class="nx">desktopImage</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">delete</span> <span class="nx">data</span><span class="p">[</span><span class="nx">config</span><span class="p">.</span><span class="nx">mobile_image_variable</span><span class="p">];</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="p">};</span>
+    
+    <span class="cm">/**
+     * Process data before it's converted by element converters
+     *
+     * @param {object} data
+     * @param {object} config
+     * @returns {object}
+     */</span>
+    <span class="nx">EmptyMobileImage</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toDom</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">toDom</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">mobileImage</span> <span class="o">=</span> <span class="nx">objectUtil</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">mobile_image_variable</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="nx">mobileImage</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="o">||</span> <span class="nx">mobileImage</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">objectUtil</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">mobile_image_variable</span><span class="p">,</span> <span class="nx">objectUtil</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">desktop_image_variable</span><span class="p">));</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="p">};</span>
+    
+    <span class="k">return</span> <span class="nx">EmptyMobileImage</span><span class="p">;</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="preview-component-settings">Preview component settings</h3>
+
+<p>When creating your preview component there are some additional settings you can configure to inform the internal framework how to handle aspects of your data.</p>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fieldsToIgnoreOnRemove</code></td>
+      <td>An array containing field names to ignore when evaluating whether an element has been configured. This is utilised when deciding whether to display the confirmation on removal of a content type. The default value is an empty array.</td>
+      <td><code class="language-plaintext highlighter-rouge">["tab_name"]</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<!--  -->
+
+<h3 id="menu-sections">Menu Sections</h3>
+
+<p>The different sections displayed in the left menu are configured with the <code class="language-plaintext highlighter-rouge">menu_section.xml</code> configuration. This configuration allows you to configure new menu sections along with modifying existing ones.</p>
+
+<p>Your configuration should conform to our XSD: <code class="language-plaintext highlighter-rouge">urn:magento:module:Magento_PageBuilder:etc/menu_section.xsd</code>. This article will go into more details regarding the configuration you can include within a content type.</p>
+
+<p>We discourage modifying existing menu sections if they do not belong to your module.</p>
+
+<h4 id="menu_section-element"><code class="language-plaintext highlighter-rouge">menu_section</code> element</h4>
+
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The internal name for this menu section, will be used by content types to reference your section.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">translate</code></td>
+      <td>Determine which aspects of the menu section should be translated.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td>The sort order in relation to other menu sections, within our configuration we step these 10 integers apart to allow for new sections to be added in between.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td>The label to be displayed within the left menu</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following is an example of a menu section configuration in <code class="language-plaintext highlighter-rouge">view/adminhtml/pagebuilder/menu_section.xml</code>:</p>
+
+<p>Here we have an example of our layout menu section configuration.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_PageBuilder:etc/menu_section.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;menu_section</span> <span class="na">name=</span><span class="s">"layout"</span> <span class="na">translate=</span><span class="s">"label"</span> <span class="na">sortOrder=</span><span class="s">"1"</span> <span class="na">label=</span><span class="s">"Layout"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For more information on how to customise the menu sections and the left panel please see: <a href="../how-to/how-to-customize-panel.html">How to customize the panel</a>.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-02">
+    Jun 3rd, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

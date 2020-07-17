@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    
+        
+    <title>Whats New on Devdocs</title>
+    <description>This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.</description>
+    <link href="https://devdocs.magento.com/whats-new.html"/>
+    <updated>Thu, 25 Jun 2020 15:26:35 +0000</updated>
+    <lastBuildDate>Thu, 25 Jun 2020 20:02:39 +0000</lastBuildDate>
+    <generator>Jekyll v4.1.0</generator>
+        
+        
+                
+        <entry>
+                <title>Major Update</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7411"/>
+                <summary>&lt;p&gt;Added &lt;a href=&quot;https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html&quot;&gt;Magento Cloud Patches v 1.0.5 Release Notes&lt;/a&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Major Update</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7412"/>
+                <summary>&lt;p&gt;Added &lt;a href=&quot;https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html&quot;&gt;Magento Cloud Components v 1.0.4 Release Notes&lt;/a&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Major update</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7327"/>
+                <summary>&lt;p&gt;Added an &lt;a href=&quot;https://devdocs.magento.com/cloud/reference/error-codes.html&quot;&gt;Error message reference for ece-tools&lt;/a&gt; with error listing and suggested actions to resolve build and deploy issues.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7322"/>
+                <summary>&lt;p&gt;Added the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;wizard:split-db-state&lt;/code&gt; command to the &lt;a href=&quot;https://devdocs.magento.com/cloud/deploy/smart-wizards.html&quot;&gt;Smart wizards&lt;/a&gt; topic in the &lt;em&gt;Cloud Guide&lt;/em&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7194"/>
+                <summary>&lt;p&gt;Updated the &lt;a href=&quot;https://devdocs.magento.com/cloud/env/variables-deploy.html&quot;&gt;Deploy variables&lt;/a&gt; topic in the &lt;em&gt;Cloud Guide&lt;/em&gt; to add the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REDIS_BACKEND&lt;/code&gt; environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 and later.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7196"/>
+                <summary>&lt;p&gt;Updated the &lt;a href=&quot;https://devdocs.magento.com/cloud/configure/import-url-rewrites.html&quot;&gt;Import URL Rewrites&lt;/a&gt; topic with guidance about checking the PHP  file upload limit to prevent errors when uploading a large file for importing URL rewrites.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7019"/>
+                <summary>&lt;p&gt;Added instructions to complete functional testing for Magento Cloud packages in the Docker environment. See &lt;a href=&quot;https://cloud/docker/docker-test-magecloud-pkg-code.html&quot;&gt;Magento Cloud code testing&lt;/a&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/6944"/>
+                <summary>&lt;p&gt;Added instructions for using the Magento Baler extension to bundle javascript content during the Magento Cloud build process. See &lt;a href=&quot;https://devdocs.magento.com/cloud/deploy/static-content-deployment.html&quot;&gt;Static content deployment&lt;/a&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7372"/>
+                <summary>&lt;p&gt;Added information about the &lt;a href=&quot;https://devdocs.magento.com/cloud/project/log-locations.html&quot;&gt;Cloud error log&lt;/a&gt; (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;var/log/Cloud.error.log&lt;/code&gt;) which contains all error and warning messages from the latest deployment of the Cloud environment.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>New topic</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7321"/>
+                <summary>&lt;p&gt;Updated the &lt;a href=&quot;https://devdocs.magento.com/cloud/docker/docker-development-debug.html&quot;&gt;Xdebug configuration instructions&lt;/a&gt; for Magento Cloud Docker, which now requires using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--with-xdedug&lt;/code&gt; option to build a container to handle Xdebug requests instead of adding the Xdebug configuration to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.magento.app.yaml&lt;/code&gt; file.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>New Topic</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7335"/>
+                <summary>&lt;p&gt;Added basic instructions for configuring and using Blackfire.io for performance testing in a Magento Cloud Docker environment. See &lt;a href=&quot;https://devdocs.magento.com/cloud/docker/docker-config-blackfire-io.html&quot;&gt;Add Blackfire.io to Magento Cloud Docker&lt;/a&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7294"/>
+                <summary>&lt;p&gt;Added an example using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--no-varnish&lt;/code&gt; option to skip Varnish container installation when building a Magento Cloud Docker environment. See the &lt;a href=&quot;https://devdocs.magento.com/cloud/docker/docker-containers-service.html#varnish-container&quot;&gt;Varnish container&lt;/a&gt; topic in the &lt;em&gt;Cloud Guide&lt;/em&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7282"/>
+                <summary>&lt;p&gt;Documented the new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;es-en-var&lt;/code&gt; option to customize the Elasticsearch container configuration when building the Docker Compose file for a Magento Cloud Docker environment. See &lt;a href=&quot;https://devdocs.magento.com/cloud/docker/docker-containers-service.html#elasticsearch-container&quot;&gt;Elasticsearch container&lt;/a&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/6977"/>
+                <summary>&lt;p&gt;Added instructions for running Docker on a custom host and port. See &lt;a href=&quot;https://devdocs.magento.com/cloud/docker/docker-config.html&quot;&gt;Docker configuration&lt;/a&gt; topic in the &lt;em&gt;Cloud Guide&lt;/em&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Technical</title>
+                <updated>Thu, 25 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/6618"/>
+                <summary>&lt;p&gt;Added information about the default Varnish container configuration to the &lt;a href=&quot;https://devdocs.magento.com/cloud/docker/docker-containers-service.html&quot;&gt;Docker services containers&lt;/a&gt; topic in the &lt;em&gt;Cloud Guide&lt;/em&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>New Topic</title>
+                <updated>Fri, 12 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7383"/>
+                <summary>&lt;p&gt;Added two new REST endpoints that add support for the Inventory Management &lt;a href=&quot;https://devdocs.magento.com/guides/v2.4/rest/modules/inventory/in-store-pickup.html&quot;&gt;In-store Pickup&lt;/a&gt; feature.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Major Update</title>
+                <updated>Fri, 12 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7394"/>
+                <summary>&lt;p&gt;Clarified that you must install and configure &lt;a href=&quot;https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html&quot;&gt;Elasticsearch 7.6.x&lt;/a&gt; before upgrading to Magento 2.4.0.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>New Topic</title>
+                <updated>Thu, 11 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7378"/>
+                <summary>&lt;p&gt;Added the &lt;a href=&quot;https://devdocs.magento.com/guides/v2.4/graphql/queries/pickup-locations.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pickupLocations&lt;/code&gt; query&lt;/a&gt;, which returns a list of locations that customers can use to pick up their orders.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Major Update</title>
+                <updated>Wed, 10 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7369"/>
+                <summary>&lt;p&gt;Updated &lt;a href=&quot;https://devdocs.magento.com/cloud/architecture/pro-architecture.html&quot;&gt;Pro architecture&lt;/a&gt; topics to reflect new enhanced Integration environment provisioning and added recommendations for using Pro Staging and Integration environments.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+        
+                
+        <entry>
+                <title>Major Update</title>
+                <updated>Tue, 09 Jun 2020 00:00:00 +0000</updated>
+                <link href="https://github.com/magento/devdocs/pull/7330"/>
+                <summary>&lt;p&gt;Added the Stale cache options section to &lt;a href=&quot;https://devdocs.magento.com/guides/v2.4/config-guide/cache/two-level-cache.html&quot;&gt;L2 caching in the Magento application&lt;/a&gt;.&lt;/p&gt;
+ </summary>
+        </entry>
+        
+</feed>

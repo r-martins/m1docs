@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>How content migration works | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="how-content-migration-works.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Page Builder</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/" class="spectrum-SideNav-itemLink ">What is Page Builder?</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Getting started</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/getting-started/install-pagebuilder.html" class="spectrum-SideNav-itemLink ">Install Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/getting-started/view-pagebuilder.html" class="spectrum-SideNav-itemLink ">View Page Builder</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/getting-started/install-pagebuilder-examples.html" class="spectrum-SideNav-itemLink ">Install Page Builder Examples</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Extend a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/extend-existing-content-type/overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/extend-existing-content-type/step-1-create-extension-module.html" class="spectrum-SideNav-itemLink ">Step 1. Create extension module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/extend-existing-content-type/step-2-extend-appearances.html" class="spectrum-SideNav-itemLink ">Step 2. Extend appearances</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/extend-existing-content-type/step-3-extend-forms.html" class="spectrum-SideNav-itemLink ">Step 3. Extend forms</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Create a content type</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/overview.html" class="spectrum-SideNav-itemLink ">Overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/step-1-add-configuration.html" class="spectrum-SideNav-itemLink ">Step 1. Add configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/step-2-add-templates.html" class="spectrum-SideNav-itemLink ">Step 2. Add templates</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/step-3-add-components.html" class="spectrum-SideNav-itemLink ">Step 3. Add components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/step-4-add-form.html" class="spectrum-SideNav-itemLink ">Step 4. Add form</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/step-5-add-styles.html" class="spectrum-SideNav-itemLink ">Step 5. Add styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/step-6-add-icon.html" class="spectrum-SideNav-itemLink ">Step 6. Add an icon</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/create-custom-content-type/summary.html" class="spectrum-SideNav-itemLink ">Summary</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">How-Tos</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-configure-styling-options.html" class="spectrum-SideNav-itemLink ">Configure styling options</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-appearance.html" class="spectrum-SideNav-itemLink ">Add an appearance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-use-upgrade-library.html" class="spectrum-SideNav-itemLink ">Upgrade content types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-customize-panel.html" class="spectrum-SideNav-itemLink ">Customize the panel</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-image-uploader.html" class="spectrum-SideNav-itemLink ">Add an image uploader</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-storefront-widget.html" class="spectrum-SideNav-itemLink ">Add a storefront widget</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-text-editor.html" class="spectrum-SideNav-itemLink ">Add a text editor</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-custom-toolbar.html" class="spectrum-SideNav-itemLink ">Add a custom toolbar</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-icons-images.html" class="spectrum-SideNav-itemLink ">Add icons and images</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-change-breakpoints.html" class="spectrum-SideNav-itemLink ">Change breakpoints</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-additional-configurations.html" class="spectrum-SideNav-itemLink ">Add additional configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-add-block-chooser.html" class="spectrum-SideNav-itemLink ">Add a block chooser</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-use-full-width-layouts.html" class="spectrum-SideNav-itemLink ">Use full-width layouts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-customize-selectors.html" class="spectrum-SideNav-itemLink ">Customize selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-apply-product-conditions.html" class="spectrum-SideNav-itemLink ">Apply product conditions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-use-server-side-previews.html" class="spectrum-SideNav-itemLink ">Use server-side previews</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-use-pagebuilder-for-product-attributes.html" class="spectrum-SideNav-itemLink ">Use Page Builder for product attributes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/how-to/how-to-deactivate-pagebuilder.html" class="spectrum-SideNav-itemLink ">Deactivate Page Builder</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">BlueFoot content migration</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="index.html" class="spectrum-SideNav-itemLink ">Overview of content migration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="install-migration-module.html" class="spectrum-SideNav-itemLink ">Install the migration module</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="run-migration-module.html" class="spectrum-SideNav-itemLink ">Run the migration module</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="how-content-migration-works.html" class="spectrum-SideNav-itemLink ">How content migration works</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migrate-content-custom-blocks.html" class="spectrum-SideNav-itemLink ">Migrate content from custom blocks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migrate-other-bluefoot-content.html" class="spectrum-SideNav-itemLink ">Migrate other BlueFoot content</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/reference/architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/reference/configurations.html" class="spectrum-SideNav-itemLink ">Configurations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/reference/data-store.html" class="spectrum-SideNav-itemLink ">Datastore</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/reference/events.html" class="spectrum-SideNav-itemLink ">Events</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/reference/knockout-bindings.html" class="spectrum-SideNav-itemLink ">Knockout bindings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/release-notes.html" class="spectrum-SideNav-itemLink ">Release notes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../page-builder/docs/comp-status2.html" class="spectrum-SideNav-itemLink ">Component status</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">How content migration works</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"></div>
+
+
+  
+<div class="bs-callout spectrum-Alert edition-callout ee-only">
+  <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
+  <h4 class="spectrum-Alert-header">Magento Commerce only</h4>
+  <div class="spectrum-Alert-content">
+    The content on this page is for Magento Commerce only. 
+    <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
+  </div>
+</div>
+
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>Each content type has a corresponding renderer to convert the old BlueFoot JSON structure into the new PageBuilder format. The Page Builder format uses HTML to store all data associated with the content type within the DOM tree through attributes, styles, and child nodes. You can find out more information in our <a href="../../page-builder/docs/reference/architecture.html">Page Builder Architecture</a> article.</p>
+
+<p>In contrast to BlueFoot, the HTML structure we generate contains all the information needed to render the content type, this HTML string is committed directly into the database in place of the BlueFoot string.</p>
+
+<p>Migrating will result in any field containing <code class="language-plaintext highlighter-rouge">&lt;!--GENE_BLUEFOOT="…"--&gt;</code> to now containing valid HTML with embedded metadata storing the configuration of the content type.</p>
+
+<h2 id="data-converters">Data Converters</h2>
+
+<p>We have two data converters provided out of the box which enable migration of data from different sources.</p>
+
+<p>These data converters are located within <code class="language-plaintext highlighter-rouge">app/code/Magento/PageBuilderDataMigration/Setup/DataConverter</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">BlueFootToPageBuilder</code></td>
+      <td>Consumes BlueFoot generated content structures formed of JSON and uses renderer’s to convert every content type to Page Builder HTML. In the instance the data converter encounters an error it will store the original JSON as un-migrated content.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MixedToPageBuilder</code></td>
+      <td>If the above data converter fails on a particular piece of content due to an error or missing renderer for the content type it will have it’s data preserved as un-migrated content. In this instance you can use the mixed data converter to run the un-migrated content blocks through the renderer’s again.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can find more information on how to use the <code class="language-plaintext highlighter-rouge">MixedToPageBuilder</code> converter within our <a href="migrate-content-custom-blocks.html">Migrate content from custom blocks</a> guide. We do not use this data converter out of the box so it will not be ran unless the steps in the attached guide are followed.</p>
+
+<h3 id="un-migrated-content">Un-migrated content</h3>
+
+<p>We have a custom error handler along with logic to ensure that any issue content which fails during migration is preserved. If this logic of error handler are triggered you can expect to see errors within <code class="language-plaintext highlighter-rouge">var/log/system.log</code> along with the content being stored like the following in your migrated output:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">data-element=</span><span class="s">"main"</span> <span class="na">data-content-type=</span><span class="s">"row"</span> <span class="na">data-appearance=</span><span class="s">"contained"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-element=</span><span class="s">"main"</span> <span class="na">data-content-type=</span><span class="s">"html"</span> <span class="na">data-appearance=</span><span class="s">"default"</span><span class="nt">&gt;</span>
+        <span class="ni">&amp;lt;</span>!--UNMIGRATED_CONTENT="{"type":"custom","children":[]}"--<span class="ni">&amp;gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The content is placed within a HTML content type and the original JSON is stored within a similar HTML comment as the BlueFoot data. This ensures preservation of the content to be migrated at a later point. HTML code has it’s contents encoded, those the greater than and less than symbols being encoded.</p>
+
+<p>The usage of the HTML code content type allows for other aspects of the page to be edited within Page Builder whilst allowing this special content to be stored until the migration tools are available.</p>
+
+<h2 id="renderer">Renderer</h2>
+
+<p>Every content type which is supported by the migration suite will have a renderer defined to translate the BlueFoot JSON data into valid Page Builder HTML. These renderers do not share the code used by the Page Builder tool itself due to our master format rendering being implemented in JavaScript.</p>
+
+<p>Each renderer implements a straightforward interface (<code class="language-plaintext highlighter-rouge">Magento\PageBuilder\Setup\DataConverter\RendererInterface</code>) which defines a single <code class="language-plaintext highlighter-rouge">render</code> method which is responsible for consuming the form &amp; EAV data and returning the valid Page Builder HTML.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">interface</span> <span class="nc">RendererInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * Render HTML for content type
+     *
+     * @param array $itemData
+     * @param array $additionalData
+     * @return string
+     * @throws \InvalidArgumentException
+     * @throws NoSuchEntityException
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">render</span><span class="p">(</span><span class="k">array</span> <span class="nv">$itemData</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$additionalData</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">:</span> <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="parameters">Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$itemData</code></td>
+      <td>All associated item data for the content type, this will contain the form data along with the associated BlueFoot entity ID.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$additionalData</code></td>
+      <td>In some instances, there will be additional information associated with the content type. Most commonly used when a content type has children.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 style="table-layout:auto" id="location">Location</h3>
+<p>All the core content type renders are located in <code class="language-plaintext highlighter-rouge">Setup/DataConverter/Renderer</code>:</p>
+
+<p><img src="images/migration-core-renderers.png" alt="Core renderer location" width="411px" height="auto" /></p>
+
+<h3 id="example-renderer">Example Renderer</h3>
+<p>To learn more about renderers, let’s look at the Heading renderer code, then discuss the key parts.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+</pre></td><td class="rouge-code"><pre><span class="cd">/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
+<span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kn">namespace</span> <span class="nn">Magento\PageBuilderDataMigration\Setup\DataConverter\Renderer</span><span class="p">;</span>
+
+<span class="kn">use</span> <span class="nn">Magento\PageBuilderDataMigration\Setup\DataConverter\RendererInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\PageBuilderDataMigration\Setup\DataConverter\EavAttributeLoaderInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\PageBuilderDataMigration\Setup\DataConverter\StyleExtractorInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">Magento\PageBuilderDataMigration\Setup\DataConverter\ElementRendererInterface</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nc">Heading</span> <span class="k">implements</span> <span class="nx">RendererInterface</span>
+<span class="p">{</span>
+    <span class="cd">/**
+     * @var StyleExtractorInterface
+     */</span>
+    <span class="k">private</span> <span class="nv">$styleExtractor</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var EavAttributeLoaderInterface
+     */</span>
+    <span class="k">private</span> <span class="nv">$eavAttributeLoader</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @var ElementRendererInterface
+     */</span>
+    <span class="k">private</span> <span class="nv">$elementRenderer</span><span class="p">;</span>
+
+    <span class="cd">/**
+     * @param StyleExtractorInterface $styleExtractor
+     * @param EavAttributeLoaderInterface $eavAttributeLoader
+     * @param ElementRendererInterface $elementRenderer
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">StyleExtractorInterface</span> <span class="nv">$styleExtractor</span><span class="p">,</span>
+        <span class="nx">EavAttributeLoaderInterface</span> <span class="nv">$eavAttributeLoader</span><span class="p">,</span>
+        <span class="nx">ElementRendererInterface</span> <span class="nv">$elementRenderer</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">styleExtractor</span> <span class="o">=</span> <span class="nv">$styleExtractor</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavAttributeLoader</span> <span class="o">=</span> <span class="nv">$eavAttributeLoader</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">elementRenderer</span> <span class="o">=</span> <span class="nv">$elementRenderer</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * @inheritdoc
+     *
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">render</span><span class="p">(</span><span class="k">array</span> <span class="nv">$itemData</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$additionalData</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">:</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="nv">$eavData</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$itemData</span><span class="p">[</span><span class="s1">'entityId'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavAttributeLoader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$itemData</span><span class="p">[</span><span class="s1">'entityId'</span><span class="p">])</span> <span class="o">:</span> <span class="p">[];</span>
+
+        <span class="nv">$rootElementAttributes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'data-element'</span> <span class="o">=&gt;</span> <span class="s1">'main'</span><span class="p">,</span>
+            <span class="s1">'data-content-type'</span> <span class="o">=&gt;</span> <span class="s1">'heading'</span><span class="p">,</span>
+            <span class="s1">'data-appearance'</span> <span class="o">=&gt;</span> <span class="s1">'default'</span><span class="p">,</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="nv">$eavData</span><span class="p">[</span><span class="s1">'css_classes'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span>
+        <span class="p">];</span>
+
+        <span class="nv">$formData</span> <span class="o">=</span> <span class="nv">$itemData</span><span class="p">[</span><span class="s1">'formData'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
+        <span class="nv">$rootElementAttributes</span><span class="p">[</span><span class="s1">'style'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">styleExtractor</span><span class="o">-&gt;</span><span class="na">extractStyle</span><span class="p">(</span>
+            <span class="nv">$formData</span><span class="p">,</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAdvancedDefaults</span><span class="p">()</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">elementRenderer</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
+            <span class="nv">$eavData</span><span class="p">[</span><span class="s1">'heading_type'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'h2'</span><span class="p">,</span>
+            <span class="nv">$rootElementAttributes</span><span class="p">,</span>
+            <span class="nv">$eavData</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cd">/**
+     * Define the defaults for the advanced section
+     *
+     * @return array
+     */</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">getAdvancedDefaults</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">'border-style'</span> <span class="o">=&gt;</span> <span class="s1">'none'</span><span class="p">,</span>
+            <span class="s1">'border-width'</span> <span class="o">=&gt;</span> <span class="s1">'1px'</span><span class="p">,</span>
+            <span class="s1">'border-radius'</span> <span class="o">=&gt;</span> <span class="s1">'0px'</span><span class="p">,</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="parts-of-a-renderer">Parts of a renderer</h3>
+
+<p>The significant parts of a content type renderer are as follows:</p>
+
+<h4 id="constructor-dependency-injection">Constructor dependency injection</h4>
+
+<p>First, we use <a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection</a> to include our dependencies. These are all aspects of Data Migration that aid in retrieving and formatting data along with rendering DOM elements. We go into these in more detail below.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">StyleExtractorInterface</span> <span class="nv">$styleExtractor</span><span class="p">,</span>
+        <span class="nx">EavAttributeLoaderInterface</span> <span class="nv">$eavAttributeLoader</span><span class="p">,</span>
+        <span class="nx">ElementRendererInterface</span> <span class="nv">$elementRenderer</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">styleExtractor</span> <span class="o">=</span> <span class="nv">$styleExtractor</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavAttributeLoader</span> <span class="o">=</span> <span class="nv">$eavAttributeLoader</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">elementRenderer</span> <span class="o">=</span> <span class="nv">$elementRenderer</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="render-function">Render function</h4>
+
+<p>We then have the initial part of our render function, as the Heading content type in BlueFoot stored some data in its EAV tables we need to retrieve that data using the <code class="language-plaintext highlighter-rouge">EavAttributeLoaderInterface</code>. A renderer has to support rendering an empty content type as supported by BlueFoot, due to this reason we set the <code class="language-plaintext highlighter-rouge">$eavData</code> to an empty array if the content type is lacking an entity ID.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>    <span class="k">public</span> <span class="k">function</span> <span class="nf">render</span><span class="p">(</span><span class="k">array</span> <span class="nv">$itemData</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$additionalData</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">:</span> <span class="kt">string</span>
+    <span class="p">{</span>
+        <span class="nv">$eavData</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$itemData</span><span class="p">[</span><span class="s1">'entityId'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavAttributeLoader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$itemData</span><span class="p">[</span><span class="s1">'entityId'</span><span class="p">])</span> <span class="o">:</span> <span class="p">[];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="root-element-attributes">Root element attributes</h4>
+
+<p>Next, we declare the root element attributes which should be rendered on our root element; this allows us to make modifications based on conditions further down if required. Note how we’re ensuring if there is no value set for things like <code class="language-plaintext highlighter-rouge">css_classes</code> and <code class="language-plaintext highlighter-rouge">formData</code> we default these to empty arrays to allow the renderer to produce an output regardless.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>        <span class="nv">$rootElementAttributes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">'data-element'</span> <span class="o">=&gt;</span> <span class="s1">'main'</span><span class="p">,</span>
+            <span class="s1">'data-content-type'</span> <span class="o">=&gt;</span> <span class="s1">'heading'</span><span class="p">,</span>
+            <span class="s1">'data-appearance'</span> <span class="o">=&gt;</span> <span class="s1">'default'</span><span class="p">,</span>
+            <span class="s1">'class'</span> <span class="o">=&gt;</span> <span class="nv">$eavData</span><span class="p">[</span><span class="s1">'css_classes'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span>
+        <span class="p">];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="form-data">Form data</h4>
+
+<p>Within BlueFoot, block data is stored in two different places: database EAV tables and JSON. Most of the data is stored in the EAV tables. However, the “advanced” section within BlueFoot is not persisted to the database. It is held in the JSON format. We refer to this as <code class="language-plaintext highlighter-rouge">formData</code> and ensure this value is present as an empty array if no data is provided as part of the <code class="language-plaintext highlighter-rouge">$itemdata</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>        <span class="nv">$formData</span> <span class="o">=</span> <span class="nv">$itemData</span><span class="p">[</span><span class="s1">'formData'</span><span class="p">]</span> <span class="o">??</span> <span class="p">[];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="style-extractor">Style extractor</h4>
+
+<p>We retrieved the form data above for usage in the style extractor (<code class="language-plaintext highlighter-rouge">StyleExtractorInterface</code>), this serves as a helper class to retrieve and build the style declaration for the current content type based on the form data and any defaults, notably throughout the default renderers we use the function name <code class="language-plaintext highlighter-rouge">getAdvancedDefaults</code>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>        <span class="nv">$rootElementAttributes</span><span class="p">[</span><span class="s1">'style'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">styleExtractor</span><span class="o">-&gt;</span><span class="na">extractStyle</span><span class="p">(</span>
+            <span class="nv">$formData</span><span class="p">,</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAdvancedDefaults</span><span class="p">()</span>
+        <span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="element-renderer">Element renderer</h4>
+
+<p>Along with the EAV &amp; style classes we provide an element renderer class (<code class="language-plaintext highlighter-rouge">ElementRendererInterface</code>) to help when generating DOM elements from the BlueFoot JSON. In our instance, our element should have the tag name associated with the heading type, or by default h2, along with our previously defined root element attributes. Finally, we use the <code class="language-plaintext highlighter-rouge">title</code> from the EAV data as the contents of the element.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">elementRenderer</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
+            <span class="nv">$eavData</span><span class="p">[</span><span class="s1">'heading_type'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'h2'</span><span class="p">,</span>
+            <span class="nv">$rootElementAttributes</span><span class="p">,</span>
+            <span class="nv">$eavData</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">''</span>
+        <span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="default-form-values">Default form values</h4>
+
+<p>We declare the advanced defaults for this content type. Each Page Builder content type can define default values within its form declaration. These values are automatically applied to the content types master format on creation. BlueFoot did not implement the same system, which means you must declare the defaults for inclusion here manually.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>    <span class="k">private</span> <span class="k">function</span> <span class="nf">getAdvancedDefaults</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">'border-style'</span> <span class="o">=&gt;</span> <span class="s1">'none'</span><span class="p">,</span>
+            <span class="s1">'border-width'</span> <span class="o">=&gt;</span> <span class="s1">'1px'</span><span class="p">,</span>
+            <span class="s1">'border-radius'</span> <span class="o">=&gt;</span> <span class="s1">'0px'</span><span class="p">,</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In this instance, the defaults are very simple because there’s only a single DOM element for the entire content type. However, in more complex content types, we break out the default values into separate functions within the <code class="language-plaintext highlighter-rouge">getAdvancedDefaults()</code> function.</p>
+
+<h3 id="eavattributeloaderinterface"><code class="language-plaintext highlighter-rouge">EavAttributeLoaderInterface</code></h3>
+
+<p>In BlueFoot, the majority of the content is persisted into the database using the entity-attribute-value (EAV) format, which means the content is not available in the JSON from <code class="language-plaintext highlighter-rouge">$itemData</code>.</p>
+
+<p>Some content types do not persist content to the database, such as the row and column. However for all content types that require it, you must define a virtual type declaring which EAV attributes should be loaded for the content type:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Magento\PageBuilder\Setup\DataConverter\ConfigurableEavAttributeLoader</code> which in turn implements our <code class="language-plaintext highlighter-rouge">EavAttributeLoaderInterface</code>.</p>
+
+<p><strong>Example <code class="language-plaintext highlighter-rouge">di.xml</code> entry for EAV hydrator for Heading:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"HeadingEavAttributeLoader"</span> <span class="na">type=</span><span class="s">"Magento\PageBuilder\Setup\DataConverter\ConfigurableEavAttributeLoader"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"additionalEavAttributes"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>title<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"heading_type"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>heading_type<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In this example, the EAV loader for Heading is assigned the <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">heading_type</code> attributes, this ensures the EAV attribute loader will retrieve these values within your renderer. Failing to include an attribute here will result in that attribute not being loaded.</p>
+
+<p>We then use <a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection</a> to inject our virtual configurable EAV loader into the Heading renderer.</p>
+
+<p><strong>Example <code class="language-plaintext highlighter-rouge">di.xml</code> entry for Heading renderer:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\PageBuilder\Setup\DataConverter\Renderer\Heading"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"eavAttributeLoader"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>HeadingEavAttributeLoader<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">EavAttributeLoaderInterface</code> includes a single method (<code class="language-plaintext highlighter-rouge">load</code>) to load the EAV data:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">load</span><span class="p">(</span><span class="nv">$entityId</span><span class="p">)</span> <span class="o">:</span> <span class="k">array</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$entityId</code></td>
+      <td>String  | Number</td>
+      <td>BlueFoot entity ID associated with the current content type.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="table-layout:auto" class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$eavData</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$itemData</span><span class="p">[</span><span class="s1">'entityId'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavAttributeLoader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$itemData</span><span class="p">[</span><span class="s1">'entityId'</span><span class="p">])</span> <span class="o">:</span> <span class="p">[];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="attributes-with-sources">Attributes with sources</h4>
+
+<p>Some BlueFoot attributes have sources for their data providing their actual values based on an ID. For instance, this is commonly used with boolean (Yes / No) values.</p>
+
+<p>We automatically follow these references and update the values with their associated labels, meaning a boolean will return the value “Yes” or “No”.</p>
+
+<h3 id="styleextractorinterface"><code class="language-plaintext highlighter-rouge">StyleExtractorInterface</code></h3>
+
+<p>We utilise the style extractor to help with translating the simple EAV stored values of BlueFoot into our new actual inline CSS expressions. This extractor exists as aspects of this operation can be tedious and result in lots of duplicated code between content types.</p>
+
+<p>The migration tool has a preference within it’s <code class="language-plaintext highlighter-rouge">di.xml</code> file that aligns our interface with the concrete implementation. We import this dependency through our constructor using <code class="language-plaintext highlighter-rouge">Magento\PageBuilder\Setup\DataConverter\StyleExtractorInterface</code>.</p>
+
+<h4 id="extracting-styles">Extracting Styles</h4>
+
+<p>The first method we provide is to help to extract styles and generate the associated CSS string from BlueFoot EAV or form data.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">extractStyle</span><span class="p">(</span><span class="k">array</span> <span class="nv">$formData</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$defaults</span> <span class="o">=</span> <span class="p">[],</span> <span class="k">array</span> <span class="nv">$pluck</span> <span class="o">=</span> <span class="p">[])</span> <span class="o">:</span> <span class="kt">string</span><span class="p">;</span> 
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$formData</code></td>
+      <td>Array</td>
+      <td>Associative array of data from a BlueFoot block. This could be either the EAV data, the form data, or a combination of both.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$defaults</code></td>
+      <td>Array</td>
+      <td>Associative array of default values which should be generated alongside the <code class="language-plaintext highlighter-rouge">$formData</code>. Existing values in the form data override any default values provided in this argument.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$pluck</code></td>
+      <td>Array</td>
+      <td>Array of style keys to pluck from the generated styles. For example, <code class="language-plaintext highlighter-rouge">['text-align', 'border-color']</code> would provide just those two styles even if other styles were generated.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="table-layout:auto">Even if you do not have any <code class="language-plaintext highlighter-rouge">$formData</code>, you must still run the <code class="language-plaintext highlighter-rouge">extractStyle</code> method on an empty array to ensure we apply the correct default styles to the content type. Default styles are important because they can drastically change the final appearance of the content type on the storefront and result in missing data in the admin.</p>
+
+<p><strong>Usage:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">styleExtractor</span><span class="o">-&gt;</span><span class="na">extractStyle</span><span class="p">(</span><span class="nv">$formData</span><span class="p">,</span> <span class="p">[</span><span class="s1">'margin'</span> <span class="o">=&gt;</span> <span class="s1">'10px'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'margin'</span><span class="p">]);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="creating-a-style-string-from-an-array">Creating a style string from an array</h4>
+
+<p>There may be cases where you need to apply new styles to an element manually, without first extracting styles that don’t exist using the <code class="language-plaintext highlighter-rouge">extractStyle</code>. In these cases, use the <code class="language-plaintext highlighter-rouge">createStyleFromArray</code> function:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">createStyleFromArray</span><span class="p">(</span><span class="k">array</span> <span class="nv">$styles</span><span class="p">)</span> <span class="o">:</span> <span class="kt">string</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$styles</code></td>
+      <td>Array</td>
+      <td>Associative array of styles to be converted into a string. For example, <code class="language-plaintext highlighter-rouge">['border-style': 'none']</code> results in <code class="language-plaintext highlighter-rouge">border-style: none;</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="table-layout:auto">This method helps ensure continuity between content types and their styles.</p>
+
+<h3 id="children-content-blocks">Children content blocks</h3>
+
+<p>Some BlueFoot content types, such as the slider, can contain special child content types. Page Builder handles this differently. In Page Builder, all children are dealt with the same. In BlueFoot, these special children are stored in specific parts of the JSON data. For these particular instances, you will need to define a custom extractor for children to ensure that the migration module traverses the tree as expected.</p>
+
+<p>For structural content types such as rows and columns a custom children extractor is not required as they will use the default.</p>
+
+<p>During rendering, content types are processed from the bottom of the tree to the top. In other words, the system renders all child blocks first and makes the results available to the immediate parent for placement.</p>
+
+<p>Using a virtual type of <code class="language-plaintext highlighter-rouge">Magento\PageBuilder\Setup\DataConverter\ChildrenExtractor\Configurable</code> we can define the path to which the child items are located within the BlueFoot data.</p>
+
+<p><strong>Example <code class="language-plaintext highlighter-rouge">di.xml</code> entry:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"ButtonsChildrenExtractor"</span> <span class="na">type=</span><span class="s">"Magento\PageBuilder\Setup\DataConverter\ChildrenExtractor\Configurable"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"path"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>children/button_items<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>After the system renders the child blocks, the content is available to the parent renderer through <code class="language-plaintext highlighter-rouge">$additionalData['children']</code> as a string. If the content type has no children this array item will not be set, so you should validate first before attempting to use it.</p>
+
+<p>All children extractors must implement <code class="language-plaintext highlighter-rouge">Magento\PageBuilder\Setup\DataConverter\ChildrenExtractorInterface</code>; the path should be provided using <code class="language-plaintext highlighter-rouge">di.xml</code> into the constructor, the extractor for children provides a single method (<code class="language-plaintext highlighter-rouge">extract</code>) for retrieving the defined children:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">extract</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span> <span class="o">:</span> <span class="k">array</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$data</code></td>
+      <td>Array</td>
+      <td>The BlueFoot content types structured data.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="table-layout:auto">This function is called internally when traversing the BlueFoot structure and should not be called within individual renderers.</p>
+
+<h3 id="renderer-pool">Renderer Pool</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">di.xml</code> file declares which content type renderers are available in the renderer pool. The core PageBuilder module implements content type renderers for all its core content types.</p>
+
+<p><strong>Example di.xml file:</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\PageBuilder\Setup\DataConverter\RendererPool"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"renderers"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"row"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\PageBuilder\Setup\DataConverter\Renderer\Row<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"column"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\PageBuilder\Setup\DataConverter\Renderer\Column<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"heading"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Magento\PageBuilder\Setup\DataConverter\Renderer\Heading<span class="nt">&lt;/item&gt;</span>
+            ....
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If you are creating a new renderer for migration outside the PageBuilder module, you only need to list your custom renderer in the <code class="language-plaintext highlighter-rouge">renderers</code> array in your <code class="language-plaintext highlighter-rouge">di.xml</code> file.</p>
+
+<h2 id="custom-content-types">Custom Content Types</h2>
+
+<p>You can create a custom content type renderer as we’ve displayed here by following our article : <a href="migrate-content-custom-blocks.html">Migrate custom content types</a>.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-09-10">
+    Sep 10th, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

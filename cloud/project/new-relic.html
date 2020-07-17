@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>New Relic services | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="new-relic.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Commerce Cloud</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-SideNav-itemLink ">Overview</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../onboarding/onboarding-tasks.html" class="spectrum-SideNav-itemLink ">Onboarding tasks</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/starter-architecture.html" class="spectrum-SideNav-itemLink ">Starter architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/starter-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Starter develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/pro-architecture.html" class="spectrum-SideNav-itemLink ">Pro architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/pro-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Pro develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/scaled-architecture.html" class="spectrum-SideNav-itemLink ">Scaled architecture</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../requirements/cloud-requirements.html" class="spectrum-SideNav-itemLink ">Technologies and requirements</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/cloud-composer.html" class="spectrum-SideNav-itemLink ">Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/cli-ref-topic.html" class="spectrum-SideNav-itemLink ">Magento Cloud CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/ece-tools-reference.html" class="spectrum-SideNav-itemLink ">ece-tools package</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/git-integration.html" class="spectrum-SideNav-itemLink ">Git</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environments-ssh.html" class="spectrum-SideNav-itemLink ">SSH and sFTP</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="privatelink-service.html" class="spectrum-SideNav-itemLink ">PrivateLink</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="new-relic.html" class="spectrum-SideNav-itemLink ">New Relic</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="sendgrid.html" class="spectrum-SideNav-itemLink ">SendGrid</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup.html" class="spectrum-SideNav-itemLink ">Local development setup</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace.html" class="spectrum-SideNav-itemLink ">Prepare for manual setup</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-magento-prereqs.html" class="spectrum-SideNav-itemLink ">Install Magento prerequisites</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-ssh.html" class="spectrum-SideNav-itemLink ">Enable SSH keys</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-workspace-file-sys-owner.html" class="spectrum-SideNav-itemLink ">Set up the Magento file system owner</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-setup-env-2_clone.html" class="spectrum-SideNav-itemLink ">Clone and branch the project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../before/before-setup-env-install.html" class="spectrum-SideNav-itemLink ">Install Magento</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-deploy.html" class="spectrum-SideNav-itemLink ">First time deployment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/debug.html" class="spectrum-SideNav-itemLink ">Optional - Configure Xdebug</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/sample-data.html" class="spectrum-SideNav-itemLink ">Optional - Install sample data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-SideNav-itemLink ">Docker development</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers.html" class="spectrum-SideNav-itemLink ">Docker container architecture</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers-service.html" class="spectrum-SideNav-itemLink ">Service containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-containers-cli.html" class="spectrum-SideNav-itemLink ">CLI containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-syncing-data.html" class="spectrum-SideNav-itemLink ">Synchronizing data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-SideNav-itemLink ">Configure Docker</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-development-debug.html" class="spectrum-SideNav-itemLink ">Xdebug for Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-manage-database.html" class="spectrum-SideNav-itemLink ">Manage the database</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-split-db.html" class="spectrum-SideNav-itemLink ">Enable split database solution</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-manage-cron-jobs.html" class="spectrum-SideNav-itemLink ">Manage cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-extend.html" class="spectrum-SideNav-itemLink ">Extend Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-config-blackfire-io.html" class="spectrum-SideNav-itemLink ">Add Blackfire.io service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Launch Docker</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-mode-developer.html" class="spectrum-SideNav-itemLink ">Developer mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-mode-production.html" class="spectrum-SideNav-itemLink ">Production mode</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Functional Testing</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-test-app-mftf.html" class="spectrum-SideNav-itemLink ">Magento application testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-SideNav-itemLink ">Magento Cloud code testing</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-SideNav-itemLink ">Docker quick reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/cloud-integrations.html" class="spectrum-SideNav-itemLink ">Integrations</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/bitbucket-integration.html" class="spectrum-SideNav-itemLink ">Bitbucket integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/github-integration.html" class="spectrum-SideNav-itemLink ">GitHub integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/gitlab-integration.html" class="spectrum-SideNav-itemLink ">GitLab integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../integrations/health-notifications.html" class="spectrum-SideNav-itemLink ">Health notifications</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-first-steps.html" class="spectrum-SideNav-itemLink ">Import existing code into a project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-prepare.html" class="spectrum-SideNav-itemLink ">Prepare your existing Magento Commerce system</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../setup/first-time-setup-import-import.html" class="spectrum-SideNav-itemLink ">Import Magento Commerce code</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/configuration-overview.html" class="spectrum-SideNav-itemLink ">Configure your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/configure-best-practices.html" class="spectrum-SideNav-itemLink ">Best practices for store configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/paypal-onboarding.html" class="spectrum-SideNav-itemLink ">Set up PayPal</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/setup-b2b.html" class="spectrum-SideNav-itemLink ">Set up Magento B2B</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/setup-cron-jobs.html" class="spectrum-SideNav-itemLink ">Set up cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-multi-sites.html" class="spectrum-SideNav-itemLink ">Set up multiple Cloud websites or stores</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/install-components.html" class="spectrum-SideNav-itemLink ">Install, manage, and upgrade modules</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../howtos/custom-theme.html" class="spectrum-SideNav-itemLink ">Install a theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configure/import-url-rewrites.html" class="spectrum-SideNav-itemLink ">Import URL Rewrites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/cloud-fastly.html" class="spectrum-SideNav-itemLink ">Configure Fastly services</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/configure-fastly.html" class="spectrum-SideNav-itemLink ">Set up Fastly</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/cloud-fastly-custom-response.html" class="spectrum-SideNav-itemLink ">Customize error and maintenance pages</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-waf-service.html" class="spectrum-SideNav-itemLink ">Web Application Firewall</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-image-optimization.html" class="spectrum-SideNav-itemLink ">Image Optimization</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/cloud-vcl-custom-snippets.html" class="spectrum-SideNav-itemLink ">Custom VCL snippets</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-wordpress.html" class="spectrum-SideNav-itemLink ">Reroute requests to a CMS backend</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-badreferer.html" class="spectrum-SideNav-itemLink ">Block referral spam</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-whitelist.html" class="spectrum-SideNav-itemLink ">IP allow list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-blocking.html" class="spectrum-SideNav-itemLink ">IP block list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/fastly-vcl-bypass-to-origin.html" class="spectrum-SideNav-itemLink ">Bypass Fastly</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cdn/trouble-fastly.html" class="spectrum-SideNav-itemLink ">Fastly troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-SideNav-itemLink ">Configure environments</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-SideNav-itemLink ">Application</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="set-cache.html" class="spectrum-SideNav-itemLink ">Set cache for static files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="magento-env-yaml.html" class="spectrum-SideNav-itemLink ">Build and deploy</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/setup-notifications.html" class="spectrum-SideNav-itemLink ">Set up notifications</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/log-handlers.html" class="spectrum-SideNav-itemLink ">Logging handlers</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-intro.html" class="spectrum-SideNav-itemLink ">Environment variables</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environment-vars_magento.html" class="spectrum-SideNav-itemLink ">ADMIN variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-global.html" class="spectrum-SideNav-itemLink ">Global variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-build.html" class="spectrum-SideNav-itemLink ">Build variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-cloud.html" class="spectrum-SideNav-itemLink ">Cloud variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-deploy.html" class="spectrum-SideNav-itemLink ">Deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/variables-post-deploy.html" class="spectrum-SideNav-itemLink ">Post-deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/working-with-variables.html" class="spectrum-SideNav-itemLink ">Working with variables</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-conf-files_routes.html" class="spectrum-SideNav-itemLink ">Routes</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-routes-more-cache.html" class="spectrum-SideNav-itemLink ">Caching</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-routes-more-redir.html" class="spectrum-SideNav-itemLink ">Redirects</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-routes-more-ssi.html" class="spectrum-SideNav-itemLink ">Server side includes</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-conf-files_services.html" class="spectrum-SideNav-itemLink ">Services</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-conf-files_services-mysql.html" class="spectrum-SideNav-itemLink ">Set up MySQL service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-conf-files_services-redis.html" class="spectrum-SideNav-itemLink ">Set up Redis service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-conf-files_services-elastic.html" class="spectrum-SideNav-itemLink ">Set up Elasticsearch service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-conf-files_services-rabbit.html" class="spectrum-SideNav-itemLink ">Set up RabbitMQ service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/restore-environment.html" class="spectrum-SideNav-itemLink ">Restore an environment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/sens-data-over.html" class="spectrum-SideNav-itemLink ">Configuration management for store settings</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/sens-data-initial.html" class="spectrum-SideNav-itemLink ">Example of managing system-specific settings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="projects.html" class="spectrum-SideNav-itemLink ">Manage your project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-webint-basic.html" class="spectrum-SideNav-itemLink ">Configure your project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-SideNav-itemLink ">Project structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="log-locations.html" class="spectrum-SideNav-itemLink ">Log locations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="user-admin.html" class="spectrum-SideNav-itemLink ">Create and manage users</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-webint-branch.html" class="spectrum-SideNav-itemLink ">Manage branches with the Interface</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environments-start.html" class="spectrum-SideNav-itemLink ">Manage branches with the CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="profile-database-queries.html" class="spectrum-SideNav-itemLink ">Profile database queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="manage-disk-space.html" class="spectrum-SideNav-itemLink ">Manage disk space</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="monitor-performance.html" class="spectrum-SideNav-itemLink ">Monitor performance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-webint-snap.html" class="spectrum-SideNav-itemLink ">Snapshots and backup management</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/optimize-cloud-deployment.html" class="spectrum-SideNav-itemLink ">Optimize deployment</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/cloud-deployment-process.html" class="spectrum-SideNav-itemLink ">Cloud deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/scenario-based-deployment.html" class="spectrum-SideNav-itemLink ">Scenario-based deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/reduce-downtime.html" class="spectrum-SideNav-itemLink ">Zero downtime deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/static-content-deployment.html" class="spectrum-SideNav-itemLink ">Static content deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/smart-wizards.html" class="spectrum-SideNav-itemLink ">Smart wizards</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-live.html" class="spectrum-SideNav-itemLink ">Deploy your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/discover-deploy.html" class="spectrum-SideNav-itemLink ">Deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../deploy/continuous-deployment.html" class="spectrum-SideNav-itemLink ">Continuous deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live-prot.html" class="spectrum-SideNav-itemLink ">Protective block</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live-sanity-check.html" class="spectrum-SideNav-itemLink ">Build and deploy on local</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-migrate-prereq.html" class="spectrum-SideNav-itemLink ">Prepare to deploy to Staging and Production</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-migrate.html" class="spectrum-SideNav-itemLink ">Deploy code and migrate static files and data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/stage-prod-test.html" class="spectrum-SideNav-itemLink ">Test deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reference/error-codes.html" class="spectrum-SideNav-itemLink ">Error log message reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/live.html" class="spectrum-SideNav-itemLink ">Site launch</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/go-live-checklist.html" class="spectrum-SideNav-itemLink ">Launch checklist</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../live/launch-steps.html" class="spectrum-SideNav-itemLink ">Launch steps</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/troubleshoot-deployment.html" class="spectrum-SideNav-itemLink ">Troubleshoot deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_ce-creds.html" class="spectrum-SideNav-itemLink ">Incorrect credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_proj-startover.html" class="spectrum-SideNav-itemLink ">Resolve issues with a new project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble_comp-deploy-fail.html" class="spectrum-SideNav-itemLink ">Component deployment failure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-crypt-key-variable.html" class="spectrum-SideNav-itemLink ">Resolve issues with encryption key</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-error-html-minification.html" class="spectrum-SideNav-itemLink ">Resolve issues with HTML minification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/trouble-google-analytics-deploy.html" class="spectrum-SideNav-itemLink ">Resolve issues with Google Analytics during deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/site-availability.html" class="spectrum-SideNav-itemLink ">Site availability</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/robots-sitemap.html" class="spectrum-SideNav-itemLink ">Add site map and search engine robots</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../trouble/theme-troubleshooting.html" class="spectrum-SideNav-itemLink ">Theme troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-SideNav-itemLink ">Upgrades and patches</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="ece-tools-update.html" class="spectrum-SideNav-itemLink ">Update ece-tools version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-patch.html" class="spectrum-SideNav-itemLink ">Apply patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-upgrade.html" class="spectrum-SideNav-itemLink ">Upgrade Magento version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="ece-tools-upgrade-project.html" class="spectrum-SideNav-itemLink ">Upgrade to use ece-tools</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-SideNav-itemLink ">Release notes</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/ece-release-notes.html" class="spectrum-SideNav-itemLink ">ece-tools</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/mcp-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/mcd-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/mcc-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/backward-incompatible-changes.html" class="spectrum-SideNav-itemLink ">Backward incompatible changes</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">New Relic services</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/cloud/project/new-relic.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /cloud/project/new-relic.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p><a href="https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm">New Relic for application performance management (APM)</a> is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all Magento Commerce Cloud accounts and provides the following features:</p>
+
+<ul>
+  <li><strong>Focus on specific transactions</strong>—Actively mark and monitor key customer actions in your site, such as adding to the cart, checking out, or processing a payment.</li>
+  <li><strong>Database query monitoring</strong>—Locate and monitor database queries affecting performance.</li>
+  <li><strong>App Map</strong>—View all application dependencies within your Magento site, extensions, and external services.</li>
+  <li><strong>Apdex scores</strong>—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See <a href="https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction">Apdex score</a>.</li>
+  <li><strong>Adobe-generated alert policies</strong>–Monitor application and infrastructure performance using alert policies that monitor key performance indicators like apdex score, disk space, and error rate based on industry best practices. See <a href="new-relic.html#monitor-performance-with-alert-policies">Monitor performance using alerts</a>.</li>
+</ul>
+
+<p>Your Magento Commerce Cloud account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.</p>
+
+<p>On Magento Commerce Cloud Pro accounts, the Production environment also includes the <a href="https://newrelic.com/products/infrastructure">New Relic Infrastructure (NRI)</a> service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.</p>
+
+<p class="bs-callout-info">For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a <a href="../trouble/trouble.html">support ticket</a> to request installation.</p>
+
+<h2 id="manage-your-new-relic-account">Manage your New Relic account</h2>
+
+<p>When Magento provisions your Magento Commerce Cloud project, the License Owner receives an email from New Relic with credentials and instructions for accessing the account. If you did not receive the email, use the License Owner email address to <a href="https://rpm.newrelic.com/forgot_password">reset the New Relic password</a>.</p>
+
+<p>An account can have only one person assigned to the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See <a href="https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner">Update the account owner</a> in the New Relic documentation for instructions.</p>
+
+<p class="bs-callout-tip">Before assigning the Owner role to a user, verify that the user exists on the New Relic account for Magento Commerce Cloud. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the <a href="https://account.newrelic.com/accounts/1311131/users">Magento Partnership Owner Account</a> for New Relic can add users on behalf of the customer.</p>
+
+<p>We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and tool usage. Magento Commerce Cloud Project Owners and Admin users can add and remove users from the New Relic account.</p>
+
+<p class="procedure">To add a user:</p>
+
+<ol>
+  <li>
+    <p>Using your License Owner New Relic credentials, <a href="https://login.newrelic.com/login">log in to New Relic</a>.</p>
+  </li>
+  <li>
+    <p>From the <a href="https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown">account dropdown</a> menu, select <strong>Account settings</strong> &gt; <strong>Account</strong> &gt; <strong>Users and roles</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>New user</strong>.</p>
+  </li>
+  <li>
+    <p>Add the name and email address for the account.</p>
+  </li>
+  <li>
+    <p>Assign the user role: <em>Admin</em>, <em>User</em>, or <em>Restricted</em>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Add user</strong>.</p>
+  </li>
+  <li>
+    <p>Ask the new user to check their email for a New Relic notification with account information.</p>
+  </li>
+</ol>
+
+<h2 id="set-up-the-new-relic-service">Set up the New Relic service</h2>
+
+<p>Pro environments are preconfigured to use New Relic services.</p>
+
+<p>For Starter environments, you must check the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file to verify that the <code class="language-plaintext highlighter-rouge">runtime</code> section includes the New Relic extension. If the extension has not been configured, add the following:</p>
+
+<blockquote>
+  <p>.magento.app.yaml</p>
+</blockquote>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="na">runtime</span><span class="pi">:</span>
+    <span class="na">extensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">newrelic</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="bs-callout-warning">If you upgrade the PHP version on your Magento Commerce Cloud project, you must submit a Magento Support ticket to update the New Relic service.</p>
+
+<h2 id="connect-to-new-relic">Connect to New Relic</h2>
+
+<p>To connect a Cloud environment to New Relic, you must add the New Relic license key to the environment.</p>
+
+<ul>
+  <li>
+    <p>For Pro accounts, Magento adds the license key to your Cloud environments during the provisioning process. You can log in to your New Relic account to verify connectivity between your Magento Commerce site and New Relic.</p>
+  </li>
+  <li>
+    <p>For Starter accounts, you have a New Relic license key that supports up to three environments. You must add the key to your environment configurations manually. The license key is not pre-provisioned on Starter environments.</p>
+  </li>
+</ul>
+
+<h3 id="configure-new-relic-for-starter-environments">Configure New Relic for Starter environments</h3>
+
+<p>For Starter environments, you must add the New Relic license key to the environment configuration to enable the New Relic integration. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the <a href="https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html">New Relic reporting</a> topic in the <em>Magento User Guide</em>.</p>
+
+<p class="bs-callout-warning">Updating the environment configuration triggers a redeployment, which takes your site offline until deployment completes. For Production environments, we recommend completing this work during off-peak hours to avoid service disruptions. See <a href="../env/working-with-variables.html">Working with variables</a>.</p>
+
+<p class="procedure">Prerequisites</p>
+
+<ul>
+  <li>Log in credentials for the Magento account page, or for the New Relic account associated with your project</li>
+  <li><a href="user-admin.html">Admin level access</a> to the Starter environments to configure, or credentials to access the <a href="https://docs.magento.com/m2/ce/user_guide/system/permissions.html">Magento Admin</a> for the environment.</li>
+</ul>
+
+<p class="procedure">To configure New Relic on a Starter environment:</p>
+
+<ol>
+  <li>
+    <p>Find your New Relic license key from your Magento Cloud account page, or <a href="https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding">from your New Relic account page</a>:</p>
+
+    <ul>
+      <li>
+        <p>Open your <a href="https://accounts.magento.cloud/user">account page</a>.</p>
+      </li>
+      <li>
+        <p>On the <em>Projects</em> tab, find your project.</p>
+      </li>
+      <li>
+        <p>Click <strong>View Details</strong> to see the project infrastructure information.</p>
+      </li>
+      <li>
+        <p>Expand the <strong>New Relic Service</strong> section to view the license key.</p>
+      </li>
+      <li>
+        <p>Copy the license key.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Add the New Relic license key to an environment using the Magento Cloud CLI, or <a href="https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html#step-3-configure-your-store">add it from the Magento Admin</a>:</p>
+
+    <ul>
+      <li>
+        <p>Change to the environment that needs the license key.</p>
+      </li>
+      <li>
+        <p>Set the variable using the following Magento Cloud CLI command:</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>magento-cloud variable:set php:newrelic.license &lt;newrelic-license-key&gt;
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="https://login.newrelic.com/login">Log in to New Relic</a> to verify that you can view data from the Magento Cloud environment. (See <a href="new-relic.html#investigate-performance">Investigate performance</a>.)</p>
+  </li>
+</ol>
+
+<h3 id="remove-new-relic-license-key-from-a-starter-environment">Remove New Relic license key from a Starter environment</h3>
+
+<p>If three active Starter environments already use the same New Relic license key, and you want to configure New Relic reporting on a different environment, you must remove the key from one of the configured environments before you can reuse it.</p>
+
+<p class="procedure">To remove a license key from an environment:</p>
+
+<ol>
+  <li>
+    <p>List environment variables.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>magento-cloud vget
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p>Response:</p>
+
+    <div class="language-terminal no-copy highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="go">+----------------------+------------+------------------------+
+| Name                 | Level      | Value                  |
++----------------------+------------+------------------------+
+</span><span class="gp">| php:newrelic.license | environment| &lt;newrelic-license-key&gt;</span><span class="w"> </span>|
+<span class="go">+----------------------+------------+------------------------+
+</span></pre></td></tr></tbody></table></code></pre></div>    </div>
+
+    <p class="bs-callout-warning">If you added the license key as a <em>project</em> variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit. To list project variables: <code class="language-plaintext highlighter-rouge">magento-cloud pvget</code></p>
+  </li>
+  <li>
+    <p>Delete the license variable.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>magento-cloud variable:delete php:newrelic.license
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="investigate-performance">Investigate performance</h2>
+
+<p>New Relic connects and monitors your infrastructure and application using PHP agents. After a Cloud environment <a href="new-relic.html#connect-to-new-relic">connects to New Relic</a>, you can log in to your New Relic account to review the data collected by the agent.</p>
+
+<p>On the APM Applications page, use the <a href="https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data">New Relic APM Overview</a> to view information about your application.</p>
+
+<p><img src="../../common/images/cloud/cloud-newrelic-dashboard-basic.png" alt="Cloud project New Relic overview page" width="650px" /></p>
+
+<p>From this view, you can track and find the following types of information:</p>
+
+<ul>
+  <li>Applications and transactions encountering slow responses or bottlenecks</li>
+  <li>Customer comments about issues with your site</li>
+  <li>Applications with high transaction time</li>
+  <li>Traffic to transaction time</li>
+</ul>
+
+<p>We recommend reviewing tracked data:</p>
+
+<ul>
+  <li>
+    <p><strong>Most time consuming</strong>—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks very high in time consumption, your application might be affected by a call or query dragging performance.</p>
+  </li>
+  <li>
+    <p><strong>Highest throughput</strong>—Identify pages hit the most based on the size and frequency of bytes transmitted.</p>
+  </li>
+</ul>
+
+<p>All collected data details the time spent on an action transmitting data, queries, or <em>Redis</em> data. If queries cause issues, New Relic provides information to track and respond to those issues.</p>
+
+<p class="bs-callout-info">You can learn more about using the New Relic APM and Infrastructure agents to collect and analyze application data from the <a href="https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm">New Relic APM</a> and <a href="https://newrelic.com/products/infrastructure">New Relic Infrastructure</a> documentation.</p>
+
+<h2 id="monitor-performance-with-alert-policies">Monitor performance with alert policies</h2>
+
+<p>Adobe provides a set of New Relic alert policies for Magento Commerce Cloud Pro and Starter Production environments to track the following key performance metrics:</p>
+
+<ul>
+  <li><a href="https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction">Apdex score</a></li>
+  <li>error rate</li>
+  <li>disk space (available on Pro Production environments only)</li>
+</ul>
+
+<p>Based on industry best practices, these policies set thresholds for warning and critical conditions that affect performance. When your site experiences an infrastructure or application issue that triggers an alert threshold, New Relic sends alert notifications so that you can proactively address the issue. To use these policies, you must configure notification channels to receive the alert messages.</p>
+
+<p class="bs-callout-info">For Pro Staging and Integration environments and Starter environments, use <a href="../integrations/health-notifications.html">Health notifications</a> to monitor disk space.</p>
+
+<p class="procedure">Prerequisites</p>
+
+<ul>
+  <li>Credentials to log in to the <a href="new-relic.html#manage-your-new-relic-account">New Relic account</a> for your Cloud project</li>
+  <li>Verify that your Cloud environment is <a href="new-relic.html#connect-to-new-relic">connected to New Relic</a></li>
+</ul>
+
+<p class="procedure">To review Adobe-generated alert policies:</p>
+
+<ol>
+  <li>
+    <p>Use your Project Owner New Relic credentials to <a href="https://login.newrelic.com/login">log in to your New Relic account</a>.</p>
+  </li>
+  <li>
+    <p>From the navigation menu, select  <strong>Alerts</strong>  &gt; <strong>Alert Policies</strong>.</p>
+  </li>
+  <li>
+    <p>In the Search Policies field, search for <em>Adobe Generated Policy</em>.</p>
+  </li>
+  <li>
+    <p>You should see a set of policies like the ones below:</p>
+
+    <p><img src="../../common/images/cloud/cloud-newrelic-alert-policies.png" alt="Generated alert policies" width="650px" /></p>
+
+    <p class="bs-callout-info">If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available on Pro and Starter Production environments only.</p>
+  </li>
+  <li>
+    <p>Click an alert policy name to review the threshold conditions that trigger alerts.</p>
+  </li>
+</ol>
+
+<h3 id="configure-notification-channels">Configure notification channels</h3>
+
+<p>To use the Adobe-generated alert policies to monitor your Production sites, you must configure notification channels and map them to alert policies. Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.</p>
+
+<p>New Relic provides templates for configuring different types of notification channels including email, Slack, PagerDuty, webhooks, and more. See the <a href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types">Instructions for specific notification channels</a> in the New Relic documentation to review the prerequisites for using each type.</p>
+
+<p>The following instructions describe the high level steps to configure a notification channel to receive alert messages triggered by an alert policy.</p>
+
+<p class="procedure">To configure a notification channel:</p>
+
+<ol>
+  <li>
+    <p>Choose a notification channel type, and complete any <a href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types">prerequisite steps</a> required to connect the channel with the New Relic service.</p>
+  </li>
+  <li>
+    <p><a href="https://login.newrelic.com/login">Log in to your New Relic account</a>.</p>
+  </li>
+  <li>
+    <p>Navigate to the <em>New Relic APM</em> page.</p>
+  </li>
+  <li>
+    <p>On the <em>New Relic APM Applications</em> page, open the application for your Cloud environment.</p>
+  </li>
+  <li>
+    <p>On the <em>Alerts</em> page, click <strong>New notification channel</strong>.</p>
+
+    <p><img src="../../common/images/cloud/cloud-new-relic-notification-channels.png" alt="New Relic notification channel" width="650px" /></p>
+  </li>
+  <li>
+    <p>On the <em>Create a new notification channel</em> page, choose the channel type from the <strong>Select a channel type</strong> dropdown menu.</p>
+  </li>
+  <li>
+    <p>Configure the settings for the channel, and then click <strong>Create channel</strong>.</p>
+  </li>
+  <li>
+    <p>On the <em>Channel details</em> page, click <strong>Send a test notification</strong> to verify that the channel works.</p>
+  </li>
+  <li>
+    <p>To specify the alerts to send to the channel, click the <strong>Alert policies</strong> tab.</p>
+  </li>
+  <li>
+    <p>On the <em>Alert policies</em> page, click <strong>Add alert</strong> to select and add an alert policy.</p>
+  </li>
+</ol>
+
+<p>See the following New Relic documentation topics for additional information:</p>
+
+<ul>
+  <li>
+    <p><a href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts">Configure notification channels using the New Relic Alerts user interface</a></p>
+  </li>
+  <li>
+    <p><a href="https://docs.newrelic.com/docs/alerts/rest-api-alerts/new-relic-alerts-rest-api/rest-api-calls-new-relic-alerts#channels">Configure notification channels using the New Relic API</a></p>
+  </li>
+</ul>
+
+<p class="bs-callout-warning">The Adobe-generated policies have default notification channels configured to notify Magento teams that support Magento Commerce Cloud customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.</p>
+
+<h3 id="create-alert-policies">Create Alert Policies</h3>
+
+<p>Do not modify the Adobe-generated alert policies. We will automatically regenerate and improve them over time, which will overwrite any customizations you make.</p>
+
+<p>If you want to modify the thresholds of an alert condition, create a new alert policy. Then, copy the alert condition to the new policy. See <a href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions">Update policies or conditions</a> in the New Relic documentation.</p>
+
+<p class="bs-callout-tip">See <a href="https://docs.newrelic.com/docs/alerts/new-relic-alerts/getting-started/new-relic-alerts-concepts-workflow">Alerts concepts and workflow</a> in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.</p>
+
+<!-- link definitions -->
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-04-30">
+    Apr 30th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Data Migration Tool Technical Specification | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="../../v2.4/migration/migration-tool-internal-spec.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../index.html">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.3</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="migration-tool-internal-spec.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../v2.4/migration/migration-tool-internal-spec.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Migration Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/migration/bk-migration-guide.html" class="spectrum-SideNav-itemLink ">Overview</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-overview-how.html" class="spectrum-SideNav-itemLink ">How migration works</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-overview-practices.html" class="spectrum-SideNav-itemLink ">Best practices and benchmarking</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-overview-supported.html" class="spectrum-SideNav-itemLink ">Versions supported</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-plan.html" class="spectrum-SideNav-itemLink ">Creating a migration plan</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-tool.html" class="spectrum-SideNav-itemLink ">Data Migration Tool</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-tool-preconditions.html" class="spectrum-SideNav-itemLink ">Preconditions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-tool-install.html" class="spectrum-SideNav-itemLink ">Install Data Migration Tool</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-tool-upgrade.html" class="spectrum-SideNav-itemLink ">Upgrade Data Migration Tool</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-tool-configure.html" class="spectrum-SideNav-itemLink ">Configure migration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="extend-the-tool.html" class="spectrum-SideNav-itemLink ">Extend the tool</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-migrate.html" class="spectrum-SideNav-itemLink ">Migrate using Data Migration Tool</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-migrate-settings.html" class="spectrum-SideNav-itemLink ">Migrate settings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-migrate-data.html" class="spectrum-SideNav-itemLink ">Migrate data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-migrate-delta.html" class="spectrum-SideNav-itemLink ">Migrate changes</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-migrate-follow-up.html" class="spectrum-SideNav-itemLink ">Follow-up (info and steps)</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-manually.html" class="spectrum-SideNav-itemLink ">Data that needs to be migrated manually</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="migration-migrate-after.html" class="spectrum-SideNav-itemLink ">After Migration</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="migration-tool-internal-spec.html" class="spectrum-SideNav-itemLink ">Data Migration Tool Technical Specification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://support.magento.com/hc/en-us/articles/360033020451" class="spectrum-SideNav-itemLink ">Troubleshooting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/data-migration-tool/blob/2.3/CHANGELOG.md" class="spectrum-SideNav-itemLink ">Changelog</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Data Migration Tool Technical Specification</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.3/migration/migration-tool-internal-spec.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/migration/migration-tool-internal-spec.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<h2 id="migrate-overview">Overview</h2>
+
+<p>This section describes an implementation details of Data Migration Tool and how to extend its functionality.</p>
+
+<h3 id="repositories">Repositories</h3>
+
+<p>Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool">migration-tool</a></p>
+
+<h3 id="system-requirements">System requirements</h3>
+
+<p>Same as for <a href="https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements.html">Magento2</a>.</p>
+
+<h2 id="migrate-is">Internal structure</h2>
+
+<h3 id="directory-structure">Directory structure</h3>
+
+<p>The following diagram represents directory structure of Data Migration Tool:</p>
+
+<pre>
+
+├── etc                                    --- all configuration files
+│   ├── opensource-to-opensource            --- configuration files for migration from Magento Open Source 1 to Magento Open Source 2
+│   │   ├── 1.9.1.1
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── 1.9.2.0
+│   │   │   ├── config.xml.dist
+│   │   │   └── map.xml.dist
+│   │   ├── ........
+│   │   ├── class-map.xml.dist
+│   │   ├── deltalog.xml.dist
+│   │   └── settings.xml.dist
+│   │   ├── ........
+│   ├── opensource-to-commerce              --- configuration files for migration from Magento Open Source 1 to Magento Commerce 2
+│   ├── commerce-to-commerce                --- configuration files for migration from Magento Commerce 1 to Magento Commerce 2
+│   ├── class-map.xsd
+│   ├── config.xsd
+│   ├── map.xsd
+│   └── settings.xsd
+├── src
+│   └── Migration
+│       ├── App                             --- application framework
+│       ├── Console
+│       ├── Handler                         --- handlers are used by map files
+│       │   ├── AbstractHandler.php
+│       │   ├── AddPrefix.php
+│       │   ├── ConvertIp.php
+│       │   ├── ........
+│       ├── Logger
+│       ├── Reader
+│       ├── Mode
+│       │   ├── AbstractMode.php
+│       │   ├── Data.php
+│       │   ├── Delta.php
+│       │   └── Settings.php
+│       ├── ResourceModel                   --- contains [adapter](https://glossary.magento.com/adapter) for connection to data storage and classes to work with structured data
+│       │   ├── Adapter
+│       │   │   └── Mysql.php
+│       │   ├── AbstractCollection.php
+│       │   ├── AbstractResource.php
+│       │   ├── AdapterInterface.php
+│       │   ├── Destination.php
+│       │   ├── Document.php
+│       │   ├── Record.php
+│       │   ├── Source.php
+│       │   └── Structure.php
+│       ├── Config.php
+│       ├── [Exception](https://glossary.magento.com/exception).php
+│       └── Step                            --- functionality for migrating specific data
+│           ├── Eav
+│           │   ├── Data.php
+│           │   ├── Helper.php
+│           │   ├── InitialData.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── Map
+│           │   ├── Data.php
+│           │   ├── Delta.php
+│           │   ├── Helper.php
+│           │   ├── Integrity.php
+│           │   └── Volume.php
+│           ├── UrlRewrite
+│           │   ├── Version11300to2000.php
+│           │   ├── Version11410to2000.php
+│           │   └── Version191to2000.php
+│           ├── ..........
+└── tests
+    ├── integration
+    ├── static
+    └── unit
+
+</pre>
+
+<h3 id="entry-point">Entry Point</h3>
+
+<p>Script that runs migration process is located at magento-root/bin/magento</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>The Schema for configuration file <code class="language-plaintext highlighter-rouge">config.xsd</code> is placed under <code class="language-plaintext highlighter-rouge">etc/directory</code>. Default configuration file <code class="language-plaintext highlighter-rouge">config.xml.dist</code> is created for each version of Magento 1.x. It is placed in separate directories under <code class="language-plaintext highlighter-rouge">etc/</code>.</p>
+
+<p>Default configuration file can be replaced by custom one (see <a href="migration-migrate.html#migration-command-run-syntax">command syntax</a>).</p>
+
+<p>Configuration file has the following structure:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">"config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">"settings"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">"Settings step"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;integrity&gt;</span>Migration\Step\Settings<span class="nt">&lt;/integrity&gt;</span>
+            <span class="nt">&lt;data&gt;</span>Migration\Step\Settings<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+    <span class="nt">&lt;/steps&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">"data"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">"Map step"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;integrity&gt;</span>Migration\Step\Map\Integrity<span class="nt">&lt;/integrity&gt;</span>
+            <span class="nt">&lt;data&gt;</span>Migration\Step\Map\Data<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;volume&gt;</span>Migration\Step\Map\Volume<span class="nt">&lt;/volume&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+        ...
+    <span class="nt">&lt;/steps&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">"delta"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">"Map step"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;delta&gt;</span>Migration\Step\Map\Delta<span class="nt">&lt;/delta&gt;</span>
+            <span class="nt">&lt;volume&gt;</span>Migration\Step\Map\Volume<span class="nt">&lt;/volume&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+        ...
+    <span class="nt">&lt;/steps&gt;</span>
+    <span class="nt">&lt;source&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento1"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">password=</span><span class="s">""</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;destination&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento2"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">password=</span><span class="s">""</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/destination&gt;</span>
+    <span class="nt">&lt;options&gt;</span>
+        <span class="nt">&lt;map_file&gt;</span>map-file.xml<span class="nt">&lt;/map_file&gt;</span>
+        <span class="nt">&lt;settings_map_file&gt;</span>settings-map-file.xml<span class="nt">&lt;/settings_map_file&gt;</span>
+        <span class="nt">&lt;bulk_size&gt;</span>100<span class="nt">&lt;/bulk_size&gt;</span>
+        <span class="nt">&lt;custom_option&gt;</span>custom_option_value<span class="nt">&lt;/custom_option&gt;</span>
+        <span class="nt">&lt;source_prefix</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;dest_prefix</span> <span class="nt">/&gt;</span>
+        ...
+    <span class="nt">&lt;/options&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>steps - describes all steps that are processed during migration</p>
+  </li>
+  <li>
+    <p>source - configuration for data source. Available source types: database</p>
+  </li>
+  <li>
+    <p>destination - configuration for data destination. Available destination types: database</p>
+  </li>
+  <li>
+    <p>options - list of parameters. Contains both mandatory (map_file, settings_map_file, bulk_size) and optional (custom_option, resource_adapter_class_name, prefix_source, prefix_dest, log_file) parameters</p>
+  </li>
+</ul>
+
+<p>Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the “source_prefix” and “dest_prefix” configuration options accordingly.</p>
+
+<p>Configuration data is accessible via \Migration\Config class.</p>
+
+<h3 id="connect-using-the-tls-protocol">Connect using the TLS protocol</h3>
+
+<p>You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the <code class="language-plaintext highlighter-rouge">database</code> element:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ssl_ca</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ssl_cert</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ssl_key</code></li>
+</ul>
+
+<p>For example:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;source&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento1"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">ssl_ca=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_cert=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_key=</span><span class="s">"/path/to/file"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">"localhost"</span> <span class="na">name=</span><span class="s">"magento2"</span> <span class="na">user=</span><span class="s">"root"</span> <span class="na">ssl_ca=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_cert=</span><span class="s">"/path/to/file"</span> <span class="na">ssl_key=</span><span class="s">"/path/to/file"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="step-internals">Step internals</h2>
+
+<p>The migration process consists of steps.</p>
+
+<p>Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.</p>
+
+<p>By default, there are several steps (<a href="migration-tool-internal-spec.html#map-step">Map</a>, <a href="migration-tool-internal-spec.html#eav">EAV</a>, <a href="migration-tool-internal-spec.html#url-rewrite-step">URL Rewrites</a>, and so on). You can optionally add your own steps as well.</p>
+
+<p>Steps related classes are located in the src/Migration/Step directory.</p>
+
+<p>To execute a Step class, the class must be defined in config.xml file.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;config</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">"config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">"mode_name"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">title=</span><span class="s">"Step Name"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;integrity&gt;</span>Migration\Step\StepName\Integrity<span class="nt">&lt;/integrity&gt;</span>  <span class="c">&lt;!-- integrity check stage of the step --&gt;</span>
+            <span class="nt">&lt;data&gt;</span>Migration\Step\StepName\Data<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;volume&gt;</span>Migration\Step\StepName\Volume<span class="nt">&lt;/volume&gt;</span>
+        <span class="nt">&lt;/step&gt;</span>
+        ...
+    <span class="nt">&lt;/steps&gt;</span>
+    ...
+<span class="nt">&lt;/config&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Every stage class must implement StageInterface.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">StageClass</span> <span class="k">implements</span> <span class="nx">StageInterface</span>
+<span class="p">{</span>
+  <span class="cd">/**
+   * Perform the stage
+   *
+   * @return bool
+   */</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">perform</span><span class="p">()</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>If the data stage supports rollback, it should implement the RollbackInterface interface.</p>
+
+<p>Visualization of the running step is provided by Symfony’s ProgressBar component (see http://symfony.com/doc/current/components/console/helpers/progressbar.html). Access this component in a step as LogLevelProcessor.</p>
+
+<p>Main methods for use are:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>$this-&gt;progress-&gt;start();
+$this-&gt;progress-&gt;advance();
+$this-&gt;progress-&gt;finish();
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="step-stages">Step stages</h2>
+
+<h3 id="integrity-check">Integrity check</h3>
+
+<p>Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible. In case when fields have different datatypes (e.g. the same field has decimal datatype in Magento 1 and integer in Magento 2), a warning message will be shown (except when it was covered in Map file).</p>
+
+<h3 id="data-transfer">Data Transfer</h3>
+
+<p>In case integrity check passed, transferring data is running. If some error appears then rollback will run to revert to previous state of Magento 2. If a step class implements RollbackInterface then “rollback” method will be executed in case of error.</p>
+
+<h3 id="volume-check">Volume check</h3>
+
+<p>After data has been migrated Volume Check provides additional check that all data was transferred correctly.</p>
+
+<h3 id="delta-delivery">Delta delivery</h3>
+
+<p>Delta functionality is responsible for delivering the rest of data that was added after main migration.</p>
+
+<h2 id="running-modes">Running modes</h2>
+
+<p>The tool should be run in three different modes in particular order:</p>
+
+<ol>
+  <li>settings - migration of system settings</li>
+  <li>data - main migration of data</li>
+  <li>delta - migration of the rest of data that was added after main migration</li>
+</ol>
+
+<p>Each mode has its own list of steps to be executed. See config.xml</p>
+
+<h3 id="settings-migration-mode">Settings migration mode</h3>
+
+<p>Settings migration mode of this tool is used to transfer following entities:</p>
+
+<ol>
+  <li>Websites, stores, store views.</li>
+  <li>Store configuration (mainly Stores-&gt;Configuration in M2 or System-&gt;Configuration in M1)</li>
+</ol>
+
+<p>All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;settings</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">"settings.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;key&gt;</span>
+        <span class="nt">&lt;ignore&gt;</span>
+            <span class="nt">&lt;path&gt;</span>path/to/ignore*<span class="nt">&lt;/path&gt;</span>
+        <span class="nt">&lt;/ignore&gt;</span>
+        <span class="nt">&lt;rename&gt;</span>
+            <span class="nt">&lt;path&gt;</span>path/to/rename<span class="nt">&lt;/path&gt;</span>
+            <span class="nt">&lt;to&gt;</span>new/path/renamed<span class="nt">&lt;/to&gt;</span>
+        <span class="nt">&lt;/rename&gt;</span>
+    <span class="nt">&lt;key&gt;</span>
+    <span class="nt">&lt;value&gt;</span>
+        <span class="nt">&lt;transform&gt;</span>
+            <span class="nt">&lt;path&gt;</span>some/key/to/change<span class="nt">&lt;/path&gt;</span>
+            <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">"Some\Handler\Class"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/transform&gt;</span>
+    <span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Under node <code>&lt;key&gt;</code> there are rules that work with ‘path’ column of core_config_data table. <code>&lt;ignore&gt;</code> rules make the tool not to transfer some setting. Wildcards can be used in this node. All other settings not listed in <code>&lt;ignore&gt;</code> node, will be migrated. If path of some setting is changed in Magento 2, it should be added to //key/rename node, where old path indicates in //key/rename/path node and new path indicates in //key/rename/to node.</p>
+
+<p>Under node <code>&lt;value&gt;</code> there are rules that work with ‘value’ column of core_config_data table. These rules aim to transform value of settings by handlers (classes that implement Migration\Handler\HandlerInterface) and adapt it for Magento 2.</p>
+
+<h3 id="data-migration-mode">Data migration mode</h3>
+
+<p>In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If the integrity check passes, the Data Migration Tool installs deltalog tables (with prefix <code class="language-plaintext highlighter-rouge">m2_cl_*</code>) and corresponding triggers to the Magento 1 database and runs data migration stage of steps. When migration is completed without errors, the volume check checks data consistency. It can show a warning message if you migrate the live store. Do not worry, delta migration will take care of this incremental data. The most valuable migration steps are Map, URL Rewrite, and EAV.</p>
+
+<h4 id="map-step">Map Step</h4>
+
+<p>Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some <a href="https://glossary.magento.com/extension">extension</a> that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message.</p>
+
+<p>Map file has the next format:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;map</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">"map.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source&gt;</span>
+        <span class="nt">&lt;document_rules&gt;</span>
+            <span class="nt">&lt;ignore&gt;</span>
+                <span class="nt">&lt;document&gt;</span>some_document2<span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;/ignore&gt;</span>
+            <span class="nt">&lt;rename&gt;</span>
+                <span class="nt">&lt;document&gt;</span>some_document<span class="nt">&lt;/document&gt;</span>
+                <span class="nt">&lt;to&gt;</span>some_dest_document<span class="nt">&lt;/to&gt;</span>
+            <span class="nt">&lt;/rename&gt;</span>
+            <span class="nt">&lt;log_changes&gt;</span>
+                <span class="nt">&lt;document</span> <span class="na">key=</span><span class="s">"primary_key"</span><span class="nt">&gt;</span>some_dest_document<span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;/log_changes&gt;</span>
+        <span class="nt">&lt;/document_rules&gt;</span>
+
+        <span class="nt">&lt;field_rules&gt;</span>
+            <span class="nt">&lt;move&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document1.field1<span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;to&gt;</span>some_document1.field2<span class="nt">&lt;/to&gt;</span>
+            <span class="nt">&lt;/move&gt;</span>
+            <span class="nt">&lt;ignore&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document3.field8<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;/ignore&gt;</span>
+            <span class="nt">&lt;transform&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document1.field1<span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">"\Migration\Handler\Convert"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"map"</span> <span class="na">value=</span><span class="s">"[value1:value2;value3:value4;value5:value6;]"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/handler&gt;</span>
+            <span class="nt">&lt;/transform&gt;</span>
+        <span class="nt">&lt;/field_rules&gt;</span>
+    <span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;destination&gt;</span>
+        <span class="nt">&lt;document_rules&gt;</span>
+            <span class="nt">&lt;ignore&gt;</span>
+                <span class="nt">&lt;document&gt;</span>some_document8<span class="nt">&lt;/document&gt;</span>
+            <span class="nt">&lt;/ignore&gt;</span>
+        <span class="nt">&lt;/document_rules&gt;</span>
+
+        <span class="nt">&lt;field_rules&gt;</span>
+            <span class="nt">&lt;transform&gt;</span>
+                <span class="nt">&lt;field&gt;</span>some_document5.field3<span class="nt">&lt;/field&gt;</span>
+                <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">"\Migration\Handler\SetValue"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">value=</span><span class="s">"10"</span> <span class="nt">/&gt;</span>
+                <span class="nt">&lt;/handler&gt;</span>
+            <span class="nt">&lt;/transform&gt;</span>
+        <span class="nt">&lt;/field_rules&gt;</span>
+    <span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;/map&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Areas:</p>
+
+<ul>
+  <li>
+    <p><em>source</em> - contains rules of source database</p>
+  </li>
+  <li>
+    <p><em>destination</em> - contains rules of destination database</p>
+  </li>
+</ul>
+
+<p>Options:</p>
+
+<ul>
+  <li>
+    <p><em>ignore</em> - document, field or datatype marked with this option will be ignored</p>
+  </li>
+  <li>
+    <p><em>rename</em> - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name</p>
+  </li>
+  <li>
+    <p><em>move</em> - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field</p>
+  </li>
+  <li>
+    <p><em>transform</em> - is an option that allows user to migrate fields according to behavior described in handlers</p>
+  </li>
+  <li>
+    <p><em>handler</em> - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param /> tag with the parameter name and value data to pass it to handler</handler></p>
+  </li>
+</ul>
+
+<p><strong>Source</strong> available operations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ignore rename</td>
+      <td>ignore move transform</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Destination</strong> available operations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Document</th>
+      <th>Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ignore</td>
+      <td>ignore transform</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="wildcards">Wildcards</h4>
+
+<p>To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put <code class="language-plaintext highlighter-rouge">*</code> symbol instead of repeating part (e.g. <code class="language-plaintext highlighter-rouge">document_name_*</code>) and this mask will cover all source or destination documents that meet this mask.</p>
+
+<h4 id="url-rewrite-step">URL Rewrite Step</h4>
+
+<p>This step is quite complex because there are many different algorithms developed in Magento 1 which are not compatible with Magento 2. For different versions of Magento 1 there can be different algorithms. Thus under Step/UrlRewrite folder there are classes that were developed for some of particular versions of Magento and Migration\Step\UrlRewrite\Version191to2000 is one of them. It can transfer URL Rewrites data from Magento 1.9.1 to Magento 2.</p>
+
+<h4 id="eav">EAV Step</h4>
+
+<p>This step transfers all attributes (e.g. product, customer, RMA) from Magento 1 to Magento 2. It uses map-eav.xml file that contains rules similar to the ones in map.xml file for specific cases of processing data.</p>
+
+<p>Some of the tables that are processed in the step:</p>
+
+<ul>
+  <li>eav_attribute</li>
+  <li>eav_attribute_group</li>
+  <li>eav_attribute_set</li>
+  <li>eav_entity_attribute</li>
+  <li>catalog_eav_attribute</li>
+  <li>customer_eav_attribute</li>
+  <li>eav_entity_type</li>
+  <li>…</li>
+</ul>
+
+<h3 id="delta-migration-mode">Delta migration mode</h3>
+
+<p>After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, the Tool sets up the database triggers for tables in the beginning of migration process. For more information, see <a href="migration-migrate-delta.html#migrate-delta-external-extensions">Migrate data created by 3rd party extensions</a>.</p>
+
+<h2 id="data-sources">Data Sources</h2>
+
+<p>To reach to the data sources of Magento 1 and Magento 2 and operate with its data (select, update, insert, delete) there are many classes in Resource folder. Migration\ResourceModel\Source and Migration\ResourceModel\Destination are main classes. All migration steps use it to operate with data. This data is contained in classes like Migration\ResourceModel\Document, Migration\ResourceModel\Record, Migration\ResourceModel\Structure etc.</p>
+
+<p>Here is a class diagram of these classes:</p>
+
+<p><img src="../../../common/images/Migration&#32;Tool&#32;Data&#32;Structure.png" alt="Migration Tool Data Structure" /></p>
+
+<h2 id="logging">Logging</h2>
+
+<p>In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor <a href="https://glossary.magento.com/dependency-injection">dependency injection</a>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">SomeClass</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+    <span class="k">protected</span> <span class="nv">$logger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Migration\Logger\Logger</span> <span class="nv">$logger</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>After that you can use this class for logging of some events:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="s2">"Some information message"</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">debug</span><span class="p">(</span><span class="s2">"Some debug message"</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span><span class="s2">"Message about error operation"</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">warning</span><span class="p">(</span><span class="s2">"Some warning message"</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>There is a possibility to customize where log information should be written. You can do that by adding handler to logger using pushHandler() method of the logger. Each handler should implement \Monolog\Handler\HandlerInterface interface. As for now there are two handlers:</p>
+
+<ul>
+  <li>
+    <p>ConsoleHandler: writes messages to console</p>
+  </li>
+  <li>
+    <p>FileHandler: writes messages to log file that has been set in “log_file” config option</p>
+  </li>
+</ul>
+
+<p>Also it is possible to implement any additional handler. There is a set of handlers in Magento framework. Example of adding handlers to logger:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c1">// $this-&gt;consoleHandler is the object of Migration\Logger\ConsoleHandler class</span>
+<span class="c1">// $this-&gt;logger is the object of Migration\Logger\Logger class</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">pushHandler</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">consoleHandler</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To set additional data for logger (e.g. current mode, table name e.t.c) you can use logger processors. There is one existing processor (MessageProcessor). It’s created to add “extra” data for logging messages and will be called each time when log method is executed. MessageProcessor has protected $extra var, which contain empty values for ‘mode’, ‘stage’, ‘step’ and ‘table’. Extra data can be passed to processor as a second parameter (context) for log method. Currently additional data sets to processor in AbstractStep-&gt;runStage (pass current mode, stage and step to processor) method and data classes where used logger-&gt;debug method (pass migrating table name). Example of adding processors to logger:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c1">// $this-&gt;processoris the object of Migration\Logger\messageProcessor class</span>
+<span class="c1">// $this-&gt;logger is the object of Migration\Logger\Logger class</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">pushProcessor</span><span class="p">([</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processor</span><span class="p">,</span> <span class="s1">'setExtra'</span><span class="p">]);</span>
+<span class="c1">// As a second array value you need to pass method that should be executed when processor called</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>There is a possibility to set the level of verbosity. As for now there are 3 levels: ERROR(writes only errors to the log), INFO(only important information is written to the log, default value), DEBUG(everything is written). Verbosity log level can be set for each handler separately by calling setLevel() method. If you want to set verbosity level via command line parameter, you should change ‘verbose’ option at application launch.</p>
+
+<p>There is a possibility to format log messages via monolog formatter. To make formatter functionality work it needs to be set to specified log handler using setFormatter() method. Currently we have one formatter class (MessageFormatter) that sets certain format (depends on verbosity level) during message handling (via format() method executed from handler).</p>
+
+<p>As for now manipulation with logger, adding handler(s), processor(s) to it and processing verbose mode is performed in process() method of Migration\Logger\Manager class. Mentioned method is called during application start.</p>
+
+<h2 id="automatic-tests">Automatic Tests</h2>
+
+<p>There are 3 types of tests in Data Migration Tool: static, unit and integration tests. They all are located in tests/ directory of the tool and they are located in folders, which are the same as the type of the test (e.g. unit tests are located in tests/unit folder). To launch the test you should have phpunit installed. In such case you should change current folder to the folder of test and launch phpunit. See the example below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="o">[</span>10:32 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/data-migration-tool]-[git master]
+<span class="nv">$ </span><span class="nb">cd </span>tests/unit
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="o">[</span>10:33 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/data-migration-tool/tests/unit]-[git master]
+<span class="nv">$ </span>phpunit
+PHPUnit 4.1.0 by Sebastian Bergmann.
+....
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2019-12-19">
+    Dec 19th, 2019
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

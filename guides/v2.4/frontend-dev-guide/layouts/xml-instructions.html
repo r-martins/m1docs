@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Layout instructions | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="xml-instructions.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      <div class="version-switcher spectrum-Dropdown">
+
+	<button id="version-switcher-button" class="spectrum-FieldButton spectrum-Dropdown-trigger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<span class="spectrum-Dropdown-label">Magento 2.4</span>
+    <i class="spectrum-Icon spectrum-UIIcon-ChevronDownMedium spectrum-Dropdown-icon" focusable="false" aria-hidden="true"></i>
+  </button>
+
+	<div class="dropdown-menu spectrum-Popover spectrum-Popover--bottom spectrum-Dropdown-popover">
+		<ul class="dropdown-menu-left spectrum-Menu" aria-labelledby="version-switcher-button">
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="../../../v2.3/frontend-dev-guide/layouts/xml-instructions.html">Magento 2.3</a></li>
+			
+			<li class="spectrum-Menu-item"><a class="dropdown-item spectrum-Menu-itemLabel" href="xml-instructions.html">Magento 2.4</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Frontend Developer Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bk-frontend-dev-guide.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../conventions.html" class="spectrum-SideNav-itemLink ">Conventional notations used in this Guide</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../cache_for_frontdevs.html" class="spectrum-SideNav-itemLink ">Magento cache overview</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../theme-best-practice.html" class="spectrum-SideNav-itemLink ">Theme development best practices</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-overview.html" class="spectrum-SideNav-itemLink ">Themes</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-install.html" class="spectrum-SideNav-itemLink ">Install a third-party storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-uninstall.html" class="spectrum-SideNav-itemLink ">Uninstall a storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/admin_theme_create.html" class="spectrum-SideNav-itemLink ">Create an Admin theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/admin_theme_apply.html" class="spectrum-SideNav-itemLink ">Apply an Admin theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-create.html" class="spectrum-SideNav-itemLink ">Create a new storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-apply.html" class="spectrum-SideNav-itemLink ">Apply and configure a storefront theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/debug-theme.html" class="spectrum-SideNav-itemLink ">Locate templates, layouts, and styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-structure.html" class="spectrum-SideNav-itemLink ">Magento theme structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-inherit.html" class="spectrum-SideNav-itemLink ">Theme inheritance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/favicon.html" class="spectrum-SideNav-itemLink ">Adding custom favicons</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/theme-images.html" class="spectrum-SideNav-itemLink ">Configure theme properties</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/product-video.html" class="spectrum-SideNav-itemLink ">Configure product video</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../themes/js-bundling.html" class="spectrum-SideNav-itemLink ">JavaScript Bundling</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="layout-overview.html" class="spectrum-SideNav-itemLink ">Layout</a><ul class="spectrum-SideNav"><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="xml-instructions.html" class="spectrum-SideNav-itemLink ">Layout instructions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="layout-types.html" class="spectrum-SideNav-itemLink ">Layout file types</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="product-layouts.html" class="spectrum-SideNav-itemLink ">Product layouts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="layout-create.html" class="spectrum-SideNav-itemLink ">Create a new layout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="layout-extend.html" class="spectrum-SideNav-itemLink ">Extend a layout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="layout-override.html" class="spectrum-SideNav-itemLink ">Override a layout</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="xml-manage.html" class="spectrum-SideNav-itemLink ">Common layout customization tasks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="layout-practice.html" class="spectrum-SideNav-itemLink ">Customizing layout illustration</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../templates/template-overview.html" class="spectrum-SideNav-itemLink ">Templates</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../templates/template-override.html" class="spectrum-SideNav-itemLink ">Templates basic concepts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../templates/template-walkthrough.html" class="spectrum-SideNav-itemLink ">Templates customization walkthrough</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../templates/template-sample.html" class="spectrum-SideNav-itemLink ">Templates customization sample</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../templates/template-email.html" class="spectrum-SideNav-itemLink ">Email templates</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-overview.html" class="spectrum-SideNav-itemLink ">Cascading style sheets (CSS)</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-themes.html" class="spectrum-SideNav-itemLink ">Include CSS</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-preprocess.html" class="spectrum-SideNav-itemLink ">CSS and LESS preprocessing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css_debug.html" class="spectrum-SideNav-itemLink ">Compile LESS using Grunt</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/theme-ui-lib.html" class="spectrum-SideNav-itemLink ">Magento UI library</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-jquery.html" class="spectrum-SideNav-itemLink ">Using jQuery UI styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-practice.html" class="spectrum-SideNav-itemLink ">Customizing styles illustration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/using-fonts.html" class="spectrum-SideNav-itemLink ">Using custom fonts</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/css-critical-path.html" class="spectrum-SideNav-itemLink ">CSS critical path</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Using custom CSS preprocessor</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/custom_preprocess.html" class="spectrum-SideNav-itemLink ">Add custom CSS preprocessor</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-topics/gulp-sass.html" class="spectrum-SideNav-itemLink ">Use Sass preprocessor and Gulp task runner</a></li></ul></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-guide/css_quick_guide_overview.html" class="spectrum-SideNav-itemLink ">Quick start guide to styles</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-guide/css_quick_guide_approach.html" class="spectrum-SideNav-itemLink ">Simple ways to customize a theme's styles</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../css-guide/css_quick_guide_mode.html" class="spectrum-SideNav-itemLink ">Simple style changes with client-side LESS compilation vs. server-side</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_overview.html" class="spectrum-SideNav-itemLink ">How to Make Your Theme Responsive and Mobile</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_css.html" class="spectrum-SideNav-itemLink ">CSS in responsive design</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_js.html" class="spectrum-SideNav-itemLink ">JavaScript in Magento responsive design</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_mobile.html" class="spectrum-SideNav-itemLink ">Create a responsive mobile theme based on a default theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd_practice.html" class="spectrum-SideNav-itemLink ">Customizing RWD illustration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../responsive-web-design/rwd-breakpoints.html" class="spectrum-SideNav-itemLink ">Add a custom breakpoint</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/xlate.html" class="spectrum-SideNav-itemLink ">Translations</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/theme_dictionary.html" class="spectrum-SideNav-itemLink ">Use translation dictionary to customize strings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/translate_theory.html" class="spectrum-SideNav-itemLink ">Translate theme strings</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../translations/translate_practice.html" class="spectrum-SideNav-itemLink ">Example theme translation dictionary</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../validations/form-validation.html" class="spectrum-SideNav-itemLink ">Form validation</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../validations/custom-validation.html" class="spectrum-SideNav-itemLink ">Custom validation rule</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../validations/custom-form-validation.html" class="spectrum-SideNav-itemLink ">Custom Form validation</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tools/tools_overview.html" class="spectrum-SideNav-itemLink ">Tools</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tools/using_grunt.html" class="spectrum-SideNav-itemLink ">Using Grunt for Magento tasks</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+  <div class="message-banner">
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
+  </div>
+  
+
+  
+
+  
+
+  <h1 class="page-title">Layout instructions</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/guides/v2.4/frontend-dev-guide/layouts/xml-instructions.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.4/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<h2 id="fedg_layout_xml-instruc_overview">What’s in this topic</h2>
+
+<p>There are two possible ways to customize page layout in Magento:</p>
+
+<ul>
+  <li>Changing <a href="https://glossary.magento.com/layout">layout</a> files.</li>
+  <li>Altering templates.</li>
+</ul>
+
+<p>To change the page wireframe, modify the <a href="layout-types.html#layout-types-page">page layout</a> files; all other customizations are performed in the <a href="layout-types.html#layout-types-conf">page configuration</a> or <a href="layout-types.html#layout-types-gen">generic layout</a> files.</p>
+
+<h2 id="manage-layouts">Manage layouts</h2>
+
+<p>To make layout changes available on every page, modify the <code class="language-plaintext highlighter-rouge">default.xml</code> file.
+For example, layout changes added to <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/view/frontend/layout/default.xml</code> are loaded on all pages.
+To add layout changes to a specific page, use a layout file that corresponds to the page’s path.
+For example, changes to the <code class="language-plaintext highlighter-rouge">app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml</code> page are loaded on the product details page.</p>
+
+<p>Use these <a href="https://glossary.magento.com/layout-instructions">layout instructions</a> to:</p>
+
+<ul>
+  <li>Move a page element to another parent element.</li>
+  <li>Add content.</li>
+  <li>Remove a page element.</li>
+  <li>Arrange the element position.</li>
+</ul>
+
+<p>The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="layout-types.html">Layout file types</a> topic.</p>
+
+<h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
+
+<p>Use the following layout instructions to customize your layout:</p>
+
+<ul>
+  <li><a href="xml-instructions.html#fedg_layout_xml-instruc_ex_block"><code class="language-plaintext highlighter-rouge">&lt;block&gt;</code></a></li>
+  <li><a href="xml-instructions.html#fedg_layout_xml-instruc_ex_cont"><code class="language-plaintext highlighter-rouge">&lt;container&gt;</code></a></li>
+  <li><a href="xml-instructions.html#fedg_xml-instrux_before-after"><code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes</a></li>
+  <li><a href="xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code class="language-plaintext highlighter-rouge">&lt;action&gt;</code></a></li>
+  <li><a href="xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;referenceContainer&gt;</code></a></li>
+  <li><a href="xml-instructions.html#fedg_layout_xml-instruc_ex_mv"><code class="language-plaintext highlighter-rouge">&lt;move&gt;</code></a></li>
+  <li><a href="xml-instructions.html#fedg_layout_xml-instruc_ex_rmv"><code class="language-plaintext highlighter-rouge">&lt;remove&gt;</code></a></li>
+  <li><a href="xml-instructions.html#fedg_layout_xml-instruc_ex_upd"><code class="language-plaintext highlighter-rouge">&lt;update&gt;</code></a></li>
+  <li><a href="xml-instructions.html#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code></a></li>
+  <li><a href="xml-instructions.html#block_vs_container"><code class="language-plaintext highlighter-rouge">&lt;block&gt; vs &lt;container&gt;</code></a></li>
+</ul>
+
+<h3 id="fedg_layout_xml-instruc_ex_block">block</h3>
+
+<p>Defines a block.</p>
+
+<p><strong>Details:</strong> A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.</p>
+
+<p>Blocks are a foundational building unit for layouts in Magento. They are the link between a PHP block class (which contains logic) and a template (which renders content). Blocks can have children and grandchildren (and so on). Information can be passed from layout XML files to blocks using the <code class="language-plaintext highlighter-rouge">&lt;arguments/&gt;</code> child node.</p>
+
+<p>Blocks employ templates to generate HTML. Examples of blocks include a <a href="https://glossary.magento.com/category">category</a> list, a mini cart, product tags, and product listing.</p>
+
+<p class="bs-callout-info">We recommend always adding a <code class="language-plaintext highlighter-rouge">name</code> to blocks. Otherwise, it is given a random name.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Values</th>
+      <th style="text-align: left">Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">class</code></td>
+      <td style="text-align: left">Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output.</td>
+      <td style="text-align: left">A fully-qualified class name, such as <code class="language-plaintext highlighter-rouge">Vendor\Module\Block\Class</code>. Defaults to <code class="language-plaintext highlighter-rouge">Magento\Framework\View\Element\Template</code>.</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">display</code></td>
+      <td style="text-align: left">Prevents a block from displaying (the associated PHP classes are still loaded).</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code></td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td style="text-align: left">Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code></td>
+      <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
+      <td style="text-align: left">Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="xml-instructions.html#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+      <td style="text-align: left">Element name or dash (-)</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
+      <td style="text-align: left">Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="xml-instructions.html#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+      <td style="text-align: left">Element name or dash (-)</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">template</code></td>
+      <td style="text-align: left">A template that represents the functionality of the block to which this attribute is assigned.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">Vendor_Module::path/to/template.phtml</code> (Scope is already in the <code class="language-plaintext highlighter-rouge">templates</code> directory of the module)</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">as</code></td>
+      <td style="text-align: left">An alias name that serves as identifier in the scope of the parent element.</td>
+      <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cacheable</code></td>
+      <td style="text-align: left">Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>. Defaults to <code class="language-plaintext highlighter-rouge">true</code>.</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">ifconfig</code></td>
+      <td style="text-align: left">Makes the block’s visibility dependent on a system configuration field.</td>
+      <td style="text-align: left">XPath to the system configuration field. E.g. <code class="language-plaintext highlighter-rouge">contact/contact/enabled</code></td>
+      <td style="text-align: left">no</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To pass parameters use the <a href="xml-instructions.html#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
+
+<p>Sample of usage in the product listing page layout:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Block\Product\ListProduct"</span> <span class="na">name=</span><span class="s">"category.products.list"</span> <span class="na">as=</span><span class="s">"product_list"</span> <span class="na">template=</span><span class="s">"Magento_Catalog::product/list.phtml"</span><span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="fedg_layout_xml-instruc_ex_cont">container</h3>
+
+<p>A structure without content that holds other layout elements such as blocks and containers.</p>
+
+<p><strong>Details:</strong>
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> elements. If the <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> is empty, and there is no child <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> available, it will not be displayed in the frontend source code.</p>
+
+<p class="bs-callout-info">We recommend always adding a <code class="language-plaintext highlighter-rouge">name</code> to containers. Otherwise, it is given a random name.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Values</th>
+      <th style="text-align: left">Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td style="text-align: left">A name that can be used to address the container in which this attribute is assigned. The name must be unique per generated page. If not specified, it will be autogenerated.</td>
+      <td style="text-align: left">A-Z, a-z, 0-9, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">label</code></td>
+      <td style="text-align: left">Describes the purpose of the container.</td>
+      <td style="text-align: left">Any</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
+      <td style="text-align: left">Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="xml-instructions.html#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+      <td style="text-align: left">Element name or dash (<code class="language-plaintext highlighter-rouge">-</code>)</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
+      <td style="text-align: left">Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="xml-instructions.html#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+      <td style="text-align: left">Element name or dash (-).</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">as</code></td>
+      <td style="text-align: left">An alias name that serves as identifier in the scope of the parent element.</td>
+      <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">output</code></td>
+      <td style="text-align: left">Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
+      <td style="text-align: left">Any value except the obsolete <code class="language-plaintext highlighter-rouge">toHtml</code>. Recommended value is <code class="language-plaintext highlighter-rouge">1</code>.</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">htmlTag</code></td>
+      <td style="text-align: left">Output parameter. If specified, the output is wrapped into specified HTML tag.</td>
+      <td style="text-align: left">Any of the following: <code class="language-plaintext highlighter-rouge">aside</code>, <code class="language-plaintext highlighter-rouge">dd</code>, <code class="language-plaintext highlighter-rouge">div</code>, <code class="language-plaintext highlighter-rouge">dl</code>, <code class="language-plaintext highlighter-rouge">fieldset</code>, <code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">nav</code>, <code class="language-plaintext highlighter-rouge">header</code>, <code class="language-plaintext highlighter-rouge">footer</code>, <code class="language-plaintext highlighter-rouge">ol</code>, <code class="language-plaintext highlighter-rouge">p</code>, <code class="language-plaintext highlighter-rouge">section</code>, <code class="language-plaintext highlighter-rouge">table</code>, <code class="language-plaintext highlighter-rouge">tfoot</code>, <code class="language-plaintext highlighter-rouge">ul</code></td>
+      <td style="text-align: left">No, Yes - if <code class="language-plaintext highlighter-rouge">htmlClass</code> or <code class="language-plaintext highlighter-rouge">htmlId</code> is specified</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">htmlId</code></td>
+      <td style="text-align: left">Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
+      <td style="text-align: left">Any valid HTML 5 <code class="language-plaintext highlighter-rouge">id</code> value.</td>
+      <td style="text-align: left">No</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">htmlClass</code></td>
+      <td style="text-align: left">Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
+      <td style="text-align: left">Any valid HTML 5 <code class="language-plaintext highlighter-rouge">class</code> value.</td>
+      <td style="text-align: left">No</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Sample of usage in layout:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"div.sidebar.additional"</span> <span class="na">htmlTag=</span><span class="s">"div"</span> <span class="na">htmlClass=</span><span class="s">"sidebar sidebar-additional"</span> <span class="na">after=</span><span class="s">"div.sidebar.main"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"sidebar.additional"</span> <span class="na">as=</span><span class="s">"sidebar_additional"</span> <span class="na">label=</span><span class="s">"Sidebar Additional"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/container&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This would add a new column to the page layout.</p>
+
+<h4 id="controlling-children-visibility">Controlling children visibility</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">output</code> attribute controls the visibility of the container’s children elements.
+Set this value to <code class="language-plaintext highlighter-rouge">1</code> to render children content or <code class="language-plaintext highlighter-rouge">0</code> to disable the output of the entire container.</p>
+
+<p>Use this feature to make temporary changes to a store, such as disabling a section of the page for a sales event and re-enabling it after the event ends.</p>
+
+<h3 id="block_vs_container">block vs. container</h3>
+
+<ul>
+  <li>Blocks represents the end of the chain in rendering HTML for Magento.</li>
+  <li>Containers contain blocks and can wrap them in an HTML tag.</li>
+  <li>Containers do not render any output if there are no children assigned to them.</li>
+</ul>
+
+<h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
+
+<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> layout attributes.
+These optional attributes can be used in layout XML files to control the order of elements in their common parent.</p>
+
+<p>The following tables give a detailed description of the results you can get using the <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes. The first table uses a block a as positioned element.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Value</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
+      <td style="text-align: left">Dash (-)</td>
+      <td style="text-align: left">The block displays before all other elements in its parent node.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
+      <td style="text-align: left">[element name]</td>
+      <td style="text-align: left">The block displays before the named element.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
+      <td style="text-align: left">Empty value or [element name] is absent</td>
+      <td style="text-align: left">Use the value of <code class="language-plaintext highlighter-rouge">after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
+      <td style="text-align: left">Dash (-)</td>
+      <td style="text-align: left">The block displays after all other elements in its parent node.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
+      <td style="text-align: left">[element name]</td>
+      <td style="text-align: left">The block displays after the named element.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
+      <td style="text-align: left">Empty value or [element name] is absent</td>
+      <td style="text-align: left">Use the value of <code class="language-plaintext highlighter-rouge">before</code>. If that value is empty or absent as well, the block is considered as non-positioned.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples">Examples</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Situation</th>
+      <th style="text-align: left">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Both <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes are present</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code> takes precedence.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Both <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes are absent or empty</td>
+      <td style="text-align: left">The element is considered as non-positioned. All other elements are positioned at their specified locations. The non-positioned element displays at a random position that doesn’t violate requirements for the positioned elements.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Several elements have <code class="language-plaintext highlighter-rouge">before</code> or <code class="language-plaintext highlighter-rouge">after</code> set to dash (-)</td>
+      <td style="text-align: left">All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The <code class="language-plaintext highlighter-rouge">before</code> or <code class="language-plaintext highlighter-rouge">after</code> attribute’s value refers to an element that is not located in the parent node of the element being defined.</td>
+      <td style="text-align: left">The element displays at a random location that doesn’t violate requirements for the correctly positioned elements.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fedg_layout_xml-instruc_ex_act">action</h3>
+
+<p class="bs-callout-warning">The <code class="language-plaintext highlighter-rouge">&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="xml-instructions.html#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code></a> for <a href="xml-instructions.html#fedg_layout_xml-instruc_ex_block"><code class="language-plaintext highlighter-rouge">&lt;block&gt;</code></a> or <a href="xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code></a> to access the block public API.</p>
+
+<p>Calls public methods on the block API.</p>
+
+<p><strong>Details:</strong> Used to set up the execution of a certain method of the block during block generation; the <code class="language-plaintext highlighter-rouge">&lt;action&gt;</code> node must be located in the scope of the <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> node.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Module\Block\Class"</span> <span class="na">name=</span><span class="s">"block"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">"setText"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"text"</span> <span class="na">translate=</span><span class="s">"true"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/action&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">method=</span><span class="s">"setEnabled"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"enabled"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/block&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code class="language-plaintext highlighter-rouge">&lt;action&gt;</code>, they are passed as one array.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Values</th>
+      <th style="text-align: left">Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">method</code></td>
+      <td style="text-align: left">The public method that is called during block generation.</td>
+      <td style="text-align: left">The method name in the block</td>
+      <td style="text-align: left">yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To pass parameters, use the <a href="xml-instructions.html#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
+
+<h3 id="fedg_layout_xml-instruc_ex_ref">referenceBlock and referenceContainer</h3>
+
+<p>Updates in <code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;referenceContainer&gt;</code> are applied to the corresponding <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code>.</p>
+
+<p>For example, if you make a reference by <code class="language-plaintext highlighter-rouge">&lt;referenceBlock name="right"&gt;</code>, you are targeting the block <code class="language-plaintext highlighter-rouge">&lt;block name="right"&gt;</code>.</p>
+
+<p>To pass parameters to a block use the <a href="xml-instructions.html#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Values</th>
+      <th style="text-align: left">Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">remove</code></td>
+      <td style="text-align: left">Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code></td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">display</code></td>
+      <td style="text-align: left">Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The PHP objects of the block or container and its children are still generated and available for manipulation.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code></td>
+      <td style="text-align: left">no</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">remove</code> attribute is optional and its default value is <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+    <p>This implementation allows you to remove a block or container in your layout by setting the remove attribute value to <code class="language-plaintext highlighter-rouge">true</code>, or to cancel the removal of a block or container by setting the value to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"block.name"</span> <span class="na">remove=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">display</code> attribute is optional and its default value is true.</p>
+
+    <p>You are always able to overwrite this value in your layout.
+ In situation when remove value is true, the display attribute is ignored.</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre> <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"container.name"</span> <span class="na">display=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="fedg_layout_xml-instruc_ex_mv">move</h3>
+
+<p>Sets the declared block or container element as a child of another element in the specified order.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">"name.of.an.element"</span> <span class="na">destination=</span><span class="s">"name.of.destination.element"</span> <span class="na">as=</span><span class="s">"new_alias"</span> <span class="na">after=</span><span class="s">"name.of.element.after"</span> <span class="na">before=</span><span class="s">"name.of.element.before"</span><span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;move&gt;</code> is skipped if the element to be moved is not defined.</li>
+  <li>If the <code class="language-plaintext highlighter-rouge">as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code class="language-plaintext highlighter-rouge">name</code> attribute is used instead.</li>
+  <li>During layout generation, the <code class="language-plaintext highlighter-rouge">&lt;move&gt;</code> instruction is processed before the removal (set using the <code class="language-plaintext highlighter-rouge">remove</code> attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Values</th>
+      <th style="text-align: left">Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">element</code></td>
+      <td style="text-align: left">Name of the element to move.</td>
+      <td style="text-align: left">Element name</td>
+      <td style="text-align: left">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">destination</code></td>
+      <td style="text-align: left">Name of the target parent element.</td>
+      <td style="text-align: left">Element name</td>
+      <td style="text-align: left">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">as</code></td>
+      <td style="text-align: left">Alias name for the element in the new location.</td>
+      <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code> or <code class="language-plaintext highlighter-rouge">before</code></td>
+      <td style="text-align: left">Specifies the element’s position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings.</td>
+      <td style="text-align: left">Element name</td>
+      <td style="text-align: left">no</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="fedg_layout_xml-instruc_ex_rmv">remove</h3>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> section.
+For removing blocks or containers, use the <code class="language-plaintext highlighter-rouge">remove</code> attribute for <a href="xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;referenceContainer&gt;</code></a>.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+      <span class="c">&lt;!-- Remove local resources --&gt;</span>
+      <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"css/styles-m.css"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"my-js.js"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"Magento_Catalog::js/compare.js"</span> <span class="nt">/&gt;</span>
+
+      <span class="c">&lt;!-- Remove external resources --&gt;</span>
+      <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"http://fonts.googleapis.com/css?family=Montserrat"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="fedg_layout_xml-instruc_ex_upd">update</h3>
+
+<p>Includes a certain layout file.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">"{name_of_handle_to_include}"</span><span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The specified <a href="layout-overview.html#layout-over-terms">handle</a> is “included” and executed recursively.</p>
+
+<h3 id="argument">argument</h3>
+
+<p class="bs-callout-info">Magento 2.3.2 added the <code class="language-plaintext highlighter-rouge">shared</code> attribute. Now, instances of the view models are shared by default. If a view model is required to be a new instance each time, you must add the attribute <code class="language-plaintext highlighter-rouge">shared="false"</code> on the argument node in the layout xml file.</p>
+
+<p>Used to pass an argument. Must be always enclosed in <a href="xml-instructions.html#arguments"><code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code></a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Attribute</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Values</th>
+      <th style="text-align: left">Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td style="text-align: left">Argument name.</td>
+      <td style="text-align: left">unique</td>
+      <td style="text-align: left">yes</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">shared</code></td>
+      <td style="text-align: left">If false, creates a new instance of the block.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">translate</code></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code></td>
+      <td style="text-align: left">no</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">xsi:type</code></td>
+      <td style="text-align: left">Argument type.</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">boolean</code>, <code class="language-plaintext highlighter-rouge">object</code>, <code class="language-plaintext highlighter-rouge">number</code>, <code class="language-plaintext highlighter-rouge">null</code>, <code class="language-plaintext highlighter-rouge">array</code>, <code class="language-plaintext highlighter-rouge">options</code>, <code class="language-plaintext highlighter-rouge">url</code>, <code class="language-plaintext highlighter-rouge">helper</code></td>
+      <td style="text-align: left">yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To pass multiple arguments use the following construction:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;arguments&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"item1"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Custom string<span class="nt">&lt;/argument&gt;</span>
+   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"item2"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
+   ...
+<span class="nt">&lt;/arguments&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Arguments values set in a layout file can be accessed in <a href="../templates/template-overview.html">templates</a> using the <code class="language-plaintext highlighter-rouge">getData('{ArgumentName}')</code> and <code class="language-plaintext highlighter-rouge">hasData('{ArgumentName}')</code> methods. The latter returns a boolean defining whether there’s any value set.
+<code class="language-plaintext highlighter-rouge">{ArgumentName}</code> is obtained from the <code class="language-plaintext highlighter-rouge">name</code> attribute the following way: for getting the value of <code class="language-plaintext highlighter-rouge">&lt;argument name="some_string"&gt;</code> the method name is <code class="language-plaintext highlighter-rouge">getData('some_string')</code>.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>Setting a value of <code class="language-plaintext highlighter-rouge">css_class</code> in the <code class="language-plaintext highlighter-rouge">[app/code/Magento/Theme/view/frontend/layout/default.xml]</code> layout file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;arguments&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/arguments&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Using the value of <code class="language-plaintext highlighter-rouge">css_class</code> in <code class="language-plaintext highlighter-rouge">[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$cssClass</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasCssClass</span><span class="p">()</span> <span class="o">?</span> <span class="s1">' '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCssClass</span><span class="p">()</span> <span class="o">:</span> <span class="s1">''</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="argument-types-examples">Argument types examples</h4>
+
+<p>As was described above the argument attribute can be added with different types.
+There are examples of all argument types.</p>
+
+<ul>
+  <li>The <em>string</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"some_string"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Some String<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>The <em>boolean</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"is_active"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>The <em>object</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"viewModel"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>Vendor\CustomModule\ViewModel\Class<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Vendor\CustomModule\ViewModel\Class</code> class should implement the <code class="language-plaintext highlighter-rouge">\Magento\Framework\View\Element\Block\ArgumentInterface</code> interface.</p>
+
+<ul>
+  <li>The <em>number</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"some_number"</span> <span class="na">xsi:type=</span><span class="s">"number"</span><span class="nt">&gt;</span>100<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>The <em>null</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"null_value"</span> <span class="na">xsi:type=</span><span class="s">"null"</span> <span class="nt">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>The <em>array</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"custom_array"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"array_key_one"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>First Item<span class="nt">&lt;/item&gt;</span>
+   <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"array_key_two"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Second Item<span class="nt">&lt;/item&gt;</span>
+   ...
+<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>The <em>options</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"options"</span> <span class="na">xsi:type=</span><span class="s">"options"</span><span class="nt">&gt;</span>Vendor\CustomModule\Source\Options\Class<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Vendor\CustomModule\Source\Options\Class</code> class should implement the <code class="language-plaintext highlighter-rouge">\Magento\Framework\Data\OptionSourceInterface</code> interface.</p>
+
+<ul>
+  <li>The <em>url</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"shopping_cart_url"</span> <span class="na">xsi:type=</span><span class="s">"url"</span> <span class="na">path=</span><span class="s">"checkout/cart/index"</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"param1"</span><span class="nt">&gt;</span>param1value<span class="nt">&lt;/param&gt;</span>
+    <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"param2"</span><span class="nt">&gt;</span>param2value<span class="nt">&lt;/param&gt;</span>
+    ...
+<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <em>url</em> may have parameters, but they are optional.</p>
+
+<ul>
+  <li>The <em>helper</em> type:</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"helper_method_result"</span> <span class="na">xsi:type=</span><span class="s">"helper"</span> <span class="na">helper=</span><span class="s">"Vendor\CustomModule\Helper\Class::someMethod"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"firstParam"</span><span class="nt">&gt;</span>firstValue<span class="nt">&lt;/param&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"secondParam"</span><span class="nt">&gt;</span>secondValue<span class="nt">&lt;/param&gt;</span>
+    ...
+<span class="nt">&lt;/argument&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <em>helper</em> can use only public methods. In this example the <code class="language-plaintext highlighter-rouge">someMethod()</code> method should be public.
+The argument with <em>helper</em> type can contain <code class="language-plaintext highlighter-rouge">param</code> items which can be passed as a helper method parameters.</p>
+
+<h4 id="obtain-arguments-examples-in-template">Obtain arguments examples in template</h4>
+
+<p>These argument examples can be taken in the template by <em>getData</em> method. Another way to take these arguments is using the magic method <em>get</em> followed by the name of argument in CamelCase format. Here is an example to retrieve the arguments from above example:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span>
+<span class="cd">/** @var \Magento\Framework\View\Element\Template $block */</span>
+
+<span class="cd">/** @var string $someString */</span>
+<span class="nv">$someString</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'some_string'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getSomeString()</span>
+
+<span class="cd">/** @var bool $isActive */</span>
+<span class="nv">$isActive</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'is_active'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getIsActive()</span>
+
+<span class="cd">/** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */</span>
+<span class="nv">$viewModel</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'viewModel'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getViewModel()</span>
+
+<span class="cd">/** @var string|int|float $someNumber */</span>
+<span class="nv">$someNumber</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'some_number'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getSomeNumber()</span>
+
+<span class="cd">/** @var null $nullValue */</span>
+<span class="nv">$nullValue</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'null_value'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getNullValue()</span>
+
+<span class="cd">/** @var array $customArray */</span>
+<span class="nv">$customArray</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'custom_array'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getCustomArray()</span>
+
+<span class="cd">/** @var array $options */</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'options'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getoptions()</span>
+
+<span class="cd">/** @var string $shoppingCartUrl */</span>
+<span class="nv">$shoppingCartUrl</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'shopping_cart_url'</span><span class="p">);</span> <span class="c1">//or $block-&gt;getShoppingCartUrl()</span>
+
+<span class="cd">/** @var mixed $helperMethodResult */</span>
+<span class="nv">$helperMethodResult</span> <span class="o">=</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'helper_method_result'</span><span class="p">);</span> <span class="c1">// or $block-&gt;getHelperMethodResult()</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="arguments">arguments</h3>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code> is a required container for <code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code>. It does not have its own attributes.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;arguments&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/arguments&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-04-07">
+    Apr 7th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

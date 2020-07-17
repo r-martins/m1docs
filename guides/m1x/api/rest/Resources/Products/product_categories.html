@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="../../../../../../common/css/stylesheet.css">
+	<link rel="stylesheet" href="../../../../../../common/css/stylesheet-fonts.css" type="text/css">
+	<link rel="icon" href="../../../../../../common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../../../../../../common/css/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var currentUrl = window.location.href;
+			$.each($('.soap-api-menu a'), function(index, element) {
+				if (currentUrl.indexOf($(element).attr('href')) > -1) {
+					$(element).addClass('active');
+					$(element).parents('ul').show();
+					$(element).parents('li.parent').addClass('open');
+					$(element).nextAll('ul').show();
+				}
+			});
+			$.each($('.soap-api-menu li.parent .arr'), function(index, element) {
+				$(element).on('click', function(e){
+					$(this).parent('li.parent').toggleClass('open');
+					$(this).next('ul').slideToggle();
+				})
+			});
+		});
+	</script>
+	<title>Product Categories</title>
+</head>
+<body>
+	<a name="top"></a>
+	<img src="../../../../images/m1xheader.png" width="1024" alt="header" />
+	<div class="message-banner">
+  <h4>Magento 1.x Software Support Notice</h4>
+  <p>
+    For Magento Commerce 1, Magento is providing software support through June 2020. Depending on your Magento Commerce 1 version, software support may include both quality fixes and security patches. Please review our <a href="https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf">Magento Software Lifecycle Policy</a> to see how your version of Magento Commerce 1 is supported.
+  </p>
+  <p>
+  	For Magento Open Source 1.5 to 1.9, Magento is providing software security patches through June 2020 to ensure those sites remain secure and compliant. Visit our <a href="https://info2.magento.com/M1OpenSource.html">information page</a> for more details about our software maintenance policy and other considerations for your business.
+  </p>
+</div>
+
+	<h1>Product Categories</h1>
+	<div id="content">
+		<p><a href="https://github.com/magento/devdocs-m1/tree/master/api/rest/Resources/Products/product_categories.html" target="_blank">Edit this page on GitHub <img src="../../../../../../common/images/github_icon.png" height="15px"></a></p>
+		<div class="soap-api-menu">
+			<ul>
+				<li>
+					<a href="../../introduction.html">Introduction</a>
+				</li>
+				<li class="parent">
+					<a href="../../authentication/oauth_authentication.html">Authentication</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="../../authentication/oauth_configuration.html">OAuth Configuration</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="../../common_http_status_codes.html">Common HTTP Status Codes</a>
+				</li>
+				<li>
+					<a href="../../http_methods.html">HTTP Methods</a>
+				</li>
+				<li>
+					<a href="../../get_filters.html">GET Filters</a>
+				</li>
+				<li class="parent">
+					<a href="../../permission_settings/permission_settings.html">Permission Settings</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="../../permission_settings/roles_configuration.html">Roles Configuration</a>
+						</li>
+						<li>
+							<a href="../../permission_settings/attributes_configuration.html">Attributes Configuration</a>
+						</li>
+						<li>
+							<a href="../../permission_settings/attributes_description.html">Attributes Description</a>
+						</li>
+					</ul>
+				</li>
+				<li class="parent">
+					<a href="../resources.html">Resources</a>
+					<span class="arr"></span>
+					<ul>
+						<li>
+							<a href="../inventory.html">Inventory</a>
+						</li>
+						<li class="parent"><a href="../Orders/sales_orders.html">Orders</a>
+							<span class="arr"></span>
+							<ul>
+								<li>
+									<a href="../Orders/order_addresses.html">Order Addresses</a></li>
+								<li>
+									<a href="../Orders/order_comments.html">Order Comments</a>
+								</li>
+								<li>
+									<a href="../Orders/order_items.html">Order Items</a>
+								</li>
+							</ul>
+						</li>
+						<li class="parent">
+							<a href="products.html">Products</a>
+							<span class="arr"></span>
+							<ul>
+								<li>
+									<a href="product_categories.html">Product Categories</a></li>
+								<li>
+									<a href="product_images.html">Product Images</a>
+								</li>
+								<li>
+									<a href="product_websites.html">Product Websites</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="../resource_customer_addresses.html">Customer Addresses</a>
+						</li>
+						<li>
+							<a href="../resource_customers.html">Customers</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="../../response_formats.html">Response Formats</a>
+				</li>
+				<li>
+					<a href="../../testing_rest_resources.html">Testing REST Resources</a>
+				</li>
+			</ul>
+		</div>
+		<div class="soap-api-content">
+		<ul class="introduction-menu">
+    <li><a href='product_categories.html#RESTAPI-Resource-ProductCategories-RESTAPI-ProductCategories'>REST API: Product Categories</a>
+    <ul>
+        <li><a href='product_categories.html#RESTAPI-Resource-ProductCategories-URI--products-productid-categories'>URI: /products/productid/categories</a>
+        <ul>
+            <li><a href='product_categories.html#RESTAPI-Resource-ProductCategories-HTTPMethod-GET'>HTTP Method: GET</a></li>
+            <li><a href='product_categories.html#RESTAPI-Resource-ProductCategories-HTTPMethod-POST'>HTTP Method: POST</a></li>
+        </ul>
+        </li>
+        <li><a href='product_categories.html#RESTAPI-Resource-ProductCategories-URI--products-productid-categories-categoryid'>URI: /products/productid/categories/categoryid</a>
+        <ul>
+            <li><a href='product_categories.html#RESTAPI-Resource-ProductCategories-HTTPMethod-DELETE'>HTTP Method: DELETE</a></li>
+        </ul>
+        </li>
+        <li><a href='product_categories.html#RESTAPI-Resource-ProductCategories-PossibleHTTPStatusCodes'>Possible HTTP Status Codes</a></li>
+    </ul>
+    </li>
+</ul>
+
+
+<h3><a name="RESTAPI-Resource-ProductCategories-RESTAPI-ProductCategories"></a>REST API: Product Categories</h3>
+
+<h4><a name="RESTAPI-Resource-ProductCategories-URI--products-productid-categories"></a>URI: /products/productid/categories</h4>
+
+<p>Allows you to retrieve information about assigned categories, assign, and unassign a category from/to a product.</p>
+
+<p><b>URL Structure</b>: http://magentohost/api/rest/products/productid/categories<br/>
+<b>Version</b>: 1</p>
+
+<h5><a name="RESTAPI-Resource-ProductCategories-HTTPMethod-GET"></a>HTTP Method: GET</h5>
+
+<p><b>Description</b>: Allows you to retrieve information about categories assigned to the specified product.</p>
+
+
+<p><b>Authentication</b>: Admin, Customer<br/>
+<b>Default Format</b>: JSON<br/>
+<b>Parameters</b>:<br/>
+<em>No Parameters</em></p>
+
+<p><b>Example:</b></p>
+
+<div class='panelMacro'><table class='infoMacro'><tr><td>GET http://magentohost/api/rest/products/8/categories</td></tr></table></div>
+
+<p><b>Response Body:</b></p>
+<div class="panel" style="border-width: 1px;"><div class="panelContent">
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div>
+		<pre class="theme: Default; brush: java; gutter: false">{
+     category_id: 8
+}</pre>
+		</div>
+</div></div>
+</div></div>
+
+
+
+<h5><a name="RESTAPI-Resource-ProductCategories-HTTPMethod-POST"></a>HTTP Method: POST</h5>
+
+<p><b>Description</b>: Allows you to assign a category to a specified product.</p>
+
+
+<p><b>Authentication</b>: Admin<br/>
+<b>Default Format</b>: JSON<br/>
+<b>Parameters</b>:</p>
+
+
+<table><tbody>
+<tr>
+<th> Name </th>
+<th> Description </th>
+<th> Required </th>
+<th> Type </th>
+<th> Example Value </th>
+</tr>
+<tr>
+<td> category_id </td>
+<td> The category ID </td>
+<td> required </td>
+<td> int </td>
+<td> 2 </td>
+</tr>
+</tbody></table>
+
+
+
+
+<p><b>Example:</b></p>
+
+<div class='panelMacro'><table class='infoMacro'><tr><td>POST http://magentohost/api/rest/products/8/categories</td></tr></table></div>
+
+<p><b>Request Body:</b></p>
+<div class="panel" style="border-width: 1px;"><div class="panelContent">
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div>
+		<pre class="theme: Default; brush: java; gutter: false">{
+"category_id":"2"
+}</pre>
+		</div>
+</div></div>
+</div></div>
+
+<p>As a result, the category with ID equal to 2 will be assigned to the specified product.</p>
+
+
+<h4><a name="RESTAPI-Resource-ProductCategories-URI--products-productid-categories-categoryid"></a>URI: /products/productid/categories/categoryid</h4>
+
+<h5><a name="RESTAPI-Resource-ProductCategories-HTTPMethod-DELETE"></a>HTTP Method: DELETE</h5>
+
+<p><b>Description</b>: Allows you to unassign a category from a specified product.</p>
+
+
+<p><b>Authentication</b>: Admin<br/>
+<b>Default Format</b>: JSON<br/>
+<b>Parameters</b>:<br/>
+<em>No Parameters</em></p>
+
+<p><b>Example:</b></p>
+
+<div class='panelMacro'><table class='infoMacro'><tr><td>DELETE http://magentohost/api/rest/products/8/categories/2</td></tr></table></div>
+
+
+<h4><a name="RESTAPI-Resource-ProductCategories-PossibleHTTPStatusCodes"></a>Possible HTTP Status Codes</h4>
+
+
+<table><tbody>
+<tr>
+<th> Status Code </th>
+<th> Message </th>
+<th> Description </th>
+</tr>
+<tr>
+<td> 400 </td>
+<td> Product &lt;product ID&gt; is already assigned to category &lt;category ID&gt; </td>
+<td> The message is returned when the required category is already assigned to the product </td>
+</tr>
+<tr>
+<td> 400 </td>
+<td> Category not found </td>
+<td> The specified category is not found </td>
+</tr>
+<tr>
+<td> 405 </td>
+<td> Resource method not implemented yet </td>
+<td> The specified method is not implemented yet </td>
+</tr>
+</tbody></table>
+
+
+		    
+
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Application | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="../../assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="../../assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="../../common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="../../feed.xml" />
+
+
+<link rel="canonical" href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="http://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="../../index.html">
+      <img class="logo-image" src="../../assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="is-selected  spectrum-Menu-item" role="menuitem"><a href="project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../extensions/index.html" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/graphql/" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../videos/index.html" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="http://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Commerce Cloud</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../bk-cloud.html" class="spectrum-SideNav-itemLink ">Overview</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/onboarding/onboarding-tasks.html" class="spectrum-SideNav-itemLink ">Onboarding tasks</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../architecture/cloud-architecture.html" class="spectrum-SideNav-itemLink ">Architecture</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/architecture/starter-architecture.html" class="spectrum-SideNav-itemLink ">Starter architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/architecture/starter-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Starter develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/architecture/pro-architecture.html" class="spectrum-SideNav-itemLink ">Pro architecture</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/architecture/pro-develop-deploy-workflow.html" class="spectrum-SideNav-itemLink ">Pro develop and deploy workflow</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/architecture/scaled-architecture.html" class="spectrum-SideNav-itemLink ">Scaled architecture</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/requirements/cloud-requirements.html" class="spectrum-SideNav-itemLink ">Technologies and requirements</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/reference/cloud-composer.html" class="spectrum-SideNav-itemLink ">Composer</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/reference/cli-ref-topic.html" class="spectrum-SideNav-itemLink ">Magento Cloud CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/reference/ece-tools-reference.html" class="spectrum-SideNav-itemLink ">ece-tools package</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/reference/git-integration.html" class="spectrum-SideNav-itemLink ">Git</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/environments-ssh.html" class="spectrum-SideNav-itemLink ">SSH and sFTP</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/privatelink-service.html" class="spectrum-SideNav-itemLink ">PrivateLink</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/new-relic.html" class="spectrum-SideNav-itemLink ">New Relic</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/sendgrid.html" class="spectrum-SideNav-itemLink ">SendGrid</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/setup/first-time-setup.html" class="spectrum-SideNav-itemLink ">Local development setup</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/before/before-workspace.html" class="spectrum-SideNav-itemLink ">Prepare for manual setup</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/before/before-workspace-magento-prereqs.html" class="spectrum-SideNav-itemLink ">Install Magento prerequisites</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/before/before-workspace-ssh.html" class="spectrum-SideNav-itemLink ">Enable SSH keys</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/before/before-workspace-file-sys-owner.html" class="spectrum-SideNav-itemLink ">Set up the Magento file system owner</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/before/before-setup-env-2_clone.html" class="spectrum-SideNav-itemLink ">Clone and branch the project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/before/before-setup-env-install.html" class="spectrum-SideNav-itemLink ">Install Magento</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/setup/first-time-deploy.html" class="spectrum-SideNav-itemLink ">First time deployment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/howtos/debug.html" class="spectrum-SideNav-itemLink ">Optional - Configure Xdebug</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/howtos/sample-data.html" class="spectrum-SideNav-itemLink ">Optional - Install sample data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-development.html" class="spectrum-SideNav-itemLink ">Docker development</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-containers.html" class="spectrum-SideNav-itemLink ">Docker container architecture</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-containers-service.html" class="spectrum-SideNav-itemLink ">Service containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-containers-cli.html" class="spectrum-SideNav-itemLink ">CLI containers</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-syncing-data.html" class="spectrum-SideNav-itemLink ">Synchronizing data</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-config.html" class="spectrum-SideNav-itemLink ">Configure Docker</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-development-debug.html" class="spectrum-SideNav-itemLink ">Xdebug for Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-manage-database.html" class="spectrum-SideNav-itemLink ">Manage the database</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-split-db.html" class="spectrum-SideNav-itemLink ">Enable split database solution</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-manage-cron-jobs.html" class="spectrum-SideNav-itemLink ">Manage cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-extend.html" class="spectrum-SideNav-itemLink ">Extend Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-config-blackfire-io.html" class="spectrum-SideNav-itemLink ">Add Blackfire.io service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Launch Docker</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-mode-developer.html" class="spectrum-SideNav-itemLink ">Developer mode</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-mode-production.html" class="spectrum-SideNav-itemLink ">Production mode</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Functional Testing</span><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/docker/docker-test-app-mftf.html" class="spectrum-SideNav-itemLink ">Magento application testing</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-test-magecloud-pkg-code.html" class="spectrum-SideNav-itemLink ">Magento Cloud code testing</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../docker/docker-quick-reference.html" class="spectrum-SideNav-itemLink ">Docker quick reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/integrations/cloud-integrations.html" class="spectrum-SideNav-itemLink ">Integrations</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/integrations/bitbucket-integration.html" class="spectrum-SideNav-itemLink ">Bitbucket integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/integrations/github-integration.html" class="spectrum-SideNav-itemLink ">GitHub integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/integrations/gitlab-integration.html" class="spectrum-SideNav-itemLink ">GitLab integration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/integrations/health-notifications.html" class="spectrum-SideNav-itemLink ">Health notifications</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/setup/first-time-setup-import-first-steps.html" class="spectrum-SideNav-itemLink ">Import existing code into a project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/setup/first-time-setup-import-prepare.html" class="spectrum-SideNav-itemLink ">Prepare your existing Magento Commerce system</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/setup/first-time-setup-import-import.html" class="spectrum-SideNav-itemLink ">Import Magento Commerce code</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/configure/configuration-overview.html" class="spectrum-SideNav-itemLink ">Configure your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/configure/configure-best-practices.html" class="spectrum-SideNav-itemLink ">Best practices for store configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/paypal-onboarding.html" class="spectrum-SideNav-itemLink ">Set up PayPal</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/configure/setup-b2b.html" class="spectrum-SideNav-itemLink ">Set up Magento B2B</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/configure/setup-cron-jobs.html" class="spectrum-SideNav-itemLink ">Set up cron jobs</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-multi-sites.html" class="spectrum-SideNav-itemLink ">Set up multiple Cloud websites or stores</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/howtos/install-components.html" class="spectrum-SideNav-itemLink ">Install, manage, and upgrade modules</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/howtos/custom-theme.html" class="spectrum-SideNav-itemLink ">Install a theme</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/configure/import-url-rewrites.html" class="spectrum-SideNav-itemLink ">Import URL Rewrites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/cloud-fastly.html" class="spectrum-SideNav-itemLink ">Configure Fastly services</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/configure-fastly.html" class="spectrum-SideNav-itemLink ">Set up Fastly</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/cloud-fastly-custom-response.html" class="spectrum-SideNav-itemLink ">Customize error and maintenance pages</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/fastly-waf-service.html" class="spectrum-SideNav-itemLink ">Web Application Firewall</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/fastly-image-optimization.html" class="spectrum-SideNav-itemLink ">Image Optimization</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/cloud-vcl-custom-snippets.html" class="spectrum-SideNav-itemLink ">Custom VCL snippets</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/fastly-vcl-wordpress.html" class="spectrum-SideNav-itemLink ">Reroute requests to a CMS backend</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/fastly-vcl-badreferer.html" class="spectrum-SideNav-itemLink ">Block referral spam</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/fastly-vcl-whitelist.html" class="spectrum-SideNav-itemLink ">IP allow list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/fastly-vcl-blocking.html" class="spectrum-SideNav-itemLink ">IP block list</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html" class="spectrum-SideNav-itemLink ">Bypass Fastly</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/cdn/trouble-fastly.html" class="spectrum-SideNav-itemLink ">Fastly troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../env/environments.html" class="spectrum-SideNav-itemLink ">Configure environments</a><ul class="spectrum-SideNav"><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="project-conf-files_magento-app.html" class="spectrum-SideNav-itemLink ">Application</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/set-cache.html" class="spectrum-SideNav-itemLink ">Set cache for static files</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/magento-env-yaml.html" class="spectrum-SideNav-itemLink ">Build and deploy</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/setup-notifications.html" class="spectrum-SideNav-itemLink ">Set up notifications</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/log-handlers.html" class="spectrum-SideNav-itemLink ">Logging handlers</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/variables-intro.html" class="spectrum-SideNav-itemLink ">Environment variables</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/environment-vars_magento.html" class="spectrum-SideNav-itemLink ">ADMIN variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/variables-global.html" class="spectrum-SideNav-itemLink ">Global variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/variables-build.html" class="spectrum-SideNav-itemLink ">Build variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/variables-cloud.html" class="spectrum-SideNav-itemLink ">Cloud variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/variables-deploy.html" class="spectrum-SideNav-itemLink ">Deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/variables-post-deploy.html" class="spectrum-SideNav-itemLink ">Post-deploy variables</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/working-with-variables.html" class="spectrum-SideNav-itemLink ">Working with variables</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-conf-files_routes.html" class="spectrum-SideNav-itemLink ">Routes</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-routes-more-cache.html" class="spectrum-SideNav-itemLink ">Caching</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-routes-more-redir.html" class="spectrum-SideNav-itemLink ">Redirects</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-routes-more-ssi.html" class="spectrum-SideNav-itemLink ">Server side includes</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-conf-files_services.html" class="spectrum-SideNav-itemLink ">Services</a><ul class=""><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-conf-files_services-mysql.html" class="spectrum-SideNav-itemLink ">Set up MySQL service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-conf-files_services-redis.html" class="spectrum-SideNav-itemLink ">Set up Redis service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-conf-files_services-elastic.html" class="spectrum-SideNav-itemLink ">Set up Elasticsearch service</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-conf-files_services-rabbit.html" class="spectrum-SideNav-itemLink ">Set up RabbitMQ service</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/restore-environment.html" class="spectrum-SideNav-itemLink ">Restore an environment</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/sens-data-over.html" class="spectrum-SideNav-itemLink ">Configuration management for store settings</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/sens-data-initial.html" class="spectrum-SideNav-itemLink ">Example of managing system-specific settings</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/projects.html" class="spectrum-SideNav-itemLink ">Manage your project</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-webint-basic.html" class="spectrum-SideNav-itemLink ">Configure your project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-start.html" class="spectrum-SideNav-itemLink ">Project structure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/log-locations.html" class="spectrum-SideNav-itemLink ">Log locations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/user-admin.html" class="spectrum-SideNav-itemLink ">Create and manage users</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-webint-branch.html" class="spectrum-SideNav-itemLink ">Manage branches with the Interface</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/env/environments-start.html" class="spectrum-SideNav-itemLink ">Manage branches with the CLI</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/profile-database-queries.html" class="spectrum-SideNav-itemLink ">Profile database queries</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/manage-disk-space.html" class="spectrum-SideNav-itemLink ">Manage disk space</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/monitor-performance.html" class="spectrum-SideNav-itemLink ">Monitor performance</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-webint-snap.html" class="spectrum-SideNav-itemLink ">Snapshots and backup management</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/deploy/optimize-cloud-deployment.html" class="spectrum-SideNav-itemLink ">Optimize deployment</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/deploy/cloud-deployment-process.html" class="spectrum-SideNav-itemLink ">Cloud deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/deploy/scenario-based-deployment.html" class="spectrum-SideNav-itemLink ">Scenario-based deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/deploy/reduce-downtime.html" class="spectrum-SideNav-itemLink ">Zero downtime deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/deploy/static-content-deployment.html" class="spectrum-SideNav-itemLink ">Static content deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/deploy/smart-wizards.html" class="spectrum-SideNav-itemLink ">Smart wizards</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/stage-prod-live.html" class="spectrum-SideNav-itemLink ">Deploy your store</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/reference/discover-deploy.html" class="spectrum-SideNav-itemLink ">Deployment process</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/deploy/continuous-deployment.html" class="spectrum-SideNav-itemLink ">Continuous deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/live-prot.html" class="spectrum-SideNav-itemLink ">Protective block</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/live-sanity-check.html" class="spectrum-SideNav-itemLink ">Build and deploy on local</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/stage-prod-migrate-prereq.html" class="spectrum-SideNav-itemLink ">Prepare to deploy to Staging and Production</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/stage-prod-migrate.html" class="spectrum-SideNav-itemLink ">Deploy code and migrate static files and data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/stage-prod-test.html" class="spectrum-SideNav-itemLink ">Test deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/reference/error-codes.html" class="spectrum-SideNav-itemLink ">Error log message reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/live.html" class="spectrum-SideNav-itemLink ">Site launch</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/go-live-checklist.html" class="spectrum-SideNav-itemLink ">Launch checklist</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/live/launch-steps.html" class="spectrum-SideNav-itemLink ">Launch steps</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/trouble.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/troubleshoot-deployment.html" class="spectrum-SideNav-itemLink ">Troubleshoot deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/trouble_ce-creds.html" class="spectrum-SideNav-itemLink ">Incorrect credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/trouble_proj-startover.html" class="spectrum-SideNav-itemLink ">Resolve issues with a new project</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/trouble_comp-deploy-fail.html" class="spectrum-SideNav-itemLink ">Component deployment failure</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/trouble-crypt-key-variable.html" class="spectrum-SideNav-itemLink ">Resolve issues with encryption key</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/trouble-error-html-minification.html" class="spectrum-SideNav-itemLink ">Resolve issues with HTML minification</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/trouble-google-analytics-deploy.html" class="spectrum-SideNav-itemLink ">Resolve issues with Google Analytics during deployment</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/site-availability.html" class="spectrum-SideNav-itemLink ">Site availability</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/robots-sitemap.html" class="spectrum-SideNav-itemLink ">Add site map and search engine robots</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/trouble/theme-troubleshooting.html" class="spectrum-SideNav-itemLink ">Theme troubleshooting</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="project-upgrade-parent.html" class="spectrum-SideNav-itemLink ">Upgrades and patches</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/ece-tools-update.html" class="spectrum-SideNav-itemLink ">Update ece-tools version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-patch.html" class="spectrum-SideNav-itemLink ">Apply patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/project-upgrade.html" class="spectrum-SideNav-itemLink ">Upgrade Magento version</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/project/ece-tools-upgrade-project.html" class="spectrum-SideNav-itemLink ">Upgrade to use ece-tools</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../release-notes/cloud-tools.html" class="spectrum-SideNav-itemLink ">Release notes</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/release-notes/ece-release-notes.html" class="spectrum-SideNav-itemLink ">ece-tools</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Patches</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Docker</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html" class="spectrum-SideNav-itemLink ">Magento Cloud Components</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="http://devdocs.magento.com/cloud/release-notes/backward-incompatible-changes.html" class="spectrum-SideNav-itemLink ">Backward incompatible changes</a></li></ul></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">Application</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/blob/master/src/cloud/project/project-conf-files_magento-app.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="../../assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /cloud/project/project-conf-files_magento-app.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="../../assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file controls the way your application builds and deploys. Although Magento Commerce Cloud supports multiple applications per project, typically, a project has a single application with the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file at the root of the repository.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> has many default values, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml">a sample <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file</a>. Always review the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce Cloud versions.</p>
+
+<h2 id="properties">Properties</h2>
+
+<p>Use the following properties to build your application configuration file. The <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">disk</code>, and one <code class="language-plaintext highlighter-rouge">web</code> or <code class="language-plaintext highlighter-rouge">worker</code> block is required.</p>
+
+<p class="bs-callout-info">For Pro Staging and Production environments, you must submit a <a href="http://support.magento.com">Support ticket</a> to update the <code class="language-plaintext highlighter-rouge">mounts</code> and <code class="language-plaintext highlighter-rouge">disk</code> configuration for your application. When you submit the ticket, indicate the required configuration changes and include an updated version of your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file.</p>
+
+<h3 id="name"><code class="language-plaintext highlighter-rouge">name</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">name</code> property provides the application name used in the <a href="http://devdocs.magento.com/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">routes.yaml</code></a> file to define the HTTP upstream (by default, <code class="language-plaintext highlighter-rouge">mymagento:http</code>). For example, if the value of <code class="language-plaintext highlighter-rouge">name</code> is <code class="language-plaintext highlighter-rouge">app</code>, you must use <code class="language-plaintext highlighter-rouge">app:http</code> in the upstream field.</p>
+
+<p class="bs-callout-warning">Do not change the name of the application after it has been deployed. Doing so will result in data loss.</p>
+
+<h3 id="type-and-build"><code class="language-plaintext highlighter-rouge">type</code> and <code class="language-plaintext highlighter-rouge">build</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">type</code>  and <code class="language-plaintext highlighter-rouge">build</code> properties provide information about the base container image to build and run the project.</p>
+
+<p>The supported <code class="language-plaintext highlighter-rouge">type</code> language is <a href="https://glossary.magento.com/php">PHP</a>. Specify the PHP version as follows:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="na">type</span><span class="pi">:</span> <span class="s">php:&lt;version&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">build</code> property determines what happens by default when building the project. The <code class="language-plaintext highlighter-rouge">flavor</code> specifies a default set of build tasks to run. The supported flavor is <code class="language-plaintext highlighter-rouge">composer</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="na">build</span><span class="pi">:</span>
+    <span class="na">flavor</span><span class="pi">:</span> <span class="s">composer</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="access"><code class="language-plaintext highlighter-rouge">access</code></h3>
+
+<p>The <em>access</em> property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">admin</code>—Can change settings and execute actions in the environment. Also has <em>contributor</em> and <em>viewer</em> rights.</li>
+  <li><code class="language-plaintext highlighter-rouge">contributor</code>—Can push code to this environment and branch from the environment. Also has <em>viewer</em> rights.</li>
+  <li><code class="language-plaintext highlighter-rouge">viewer</code>—Can view the environment only.</li>
+</ul>
+
+<p>The default user role is <code class="language-plaintext highlighter-rouge">contributor</code>, which restricts the SSH access from users with only <em>viewer</em> rights. You can change the user role to <code class="language-plaintext highlighter-rouge">viewer</code> to allow SSH access for users with only <em>viewer</em> rights:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="na">access</span><span class="pi">:</span>
+    <span class="na">ssh</span><span class="pi">:</span> <span class="s">viewer</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="relationships"><code class="language-plaintext highlighter-rouge">relationships</code></h3>
+
+<p>Defines the service mapping in the application.</p>
+
+<p>The relationship <code class="language-plaintext highlighter-rouge">name</code> is available to the application in the <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable. The <code class="language-plaintext highlighter-rouge">&lt;service-name&gt;:&lt;endpoint-name&gt;</code> relationship maps to the name and type values defined in the <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code> file.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="na">relationships</span><span class="pi">:</span>
+    <span class="s">&lt;name&gt;</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;service-name&gt;:&lt;endpoint-name&gt;"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The following is an example of the default relationships:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="na">relationships</span><span class="pi">:</span>
+    <span class="na">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mysql:mysql"</span>
+    <span class="na">redis</span><span class="pi">:</span> <span class="s2">"</span><span class="s">redis:redis"</span>
+    <span class="na">elasticsearch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">elasticsearch:elasticsearch"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>See <a href="http://devdocs.magento.com/cloud/project/project-conf-files_services.html">Services</a> for a full list of currently supported service types and endpoints.</p>
+
+<h3 id="web"><code class="language-plaintext highlighter-rouge">web</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">web</code> property defines how your application is exposed to the web (in HTTP). It determines how the web application serves content— from the front-controller script to a non-static request to an <code class="language-plaintext highlighter-rouge">index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code class="language-plaintext highlighter-rouge">index.php</code> file can be further down.</p>
+
+<p>You can specify the following attributes for the <code class="language-plaintext highlighter-rouge">web</code> property:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">root</code></td>
+      <td>The path relative to the root of the application that is exposed on the web. Typical values include <code class="language-plaintext highlighter-rouge">/public</code> and <code class="language-plaintext highlighter-rouge">/web</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">passthru</code></td>
+      <td>The URL used in the event that a static file or PHP file cannot be found. This URL is typically the front controller for your applications, often <code class="language-plaintext highlighter-rouge">/index.php</code> or <code class="language-plaintext highlighter-rouge">/app.php</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">index</code></td>
+      <td>Static files, such as <code class="language-plaintext highlighter-rouge">index.html</code>, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like <code class="language-plaintext highlighter-rouge">- \.html$</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">blacklist</code></td>
+      <td>A list of files that should never be executed. Has no effect on static files.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">whitelist</code></td>
+      <td>A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">expires</code></td>
+      <td>The number of seconds to cache whitelisted content in the browser. This attribute enables the cache-control and expires headers for static content. If this value is not set, the <code class="language-plaintext highlighter-rouge">expires</code> directive and resulting headers are not included when serving static content files.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Contrary to standard <code class="language-plaintext highlighter-rouge">.htaccess</code> approaches that accept a <em>blacklist</em> and allow access to everything not on a specific list, we accept a <em>whitelist</em>, which means that any request that does not match triggers a 404 error and passes through to the  URL specified by the <code class="language-plaintext highlighter-rouge">passthru</code> attribute.</p>
+
+<p>Our default configuration allows the following:</p>
+
+<ul>
+  <li>From the root (<code class="language-plaintext highlighter-rouge">/</code>) path, only web and media can be accessed</li>
+  <li>From the <code class="language-plaintext highlighter-rouge">~/pub/static</code> and <code class="language-plaintext highlighter-rouge">~/pub/media</code> paths, any file can be accessed</li>
+</ul>
+
+<p>The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  <a href="project-conf-files_magento-app.html#mounts"><code class="language-plaintext highlighter-rouge">mounts</code> property</a>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+</pre></td><td class="rouge-code"><pre> <span class="c1"># The configuration of app when it is exposed to the web.</span>
+<span class="na">web</span><span class="pi">:</span>
+    <span class="na">locations</span><span class="pi">:</span>
+        <span class="s2">"</span><span class="s">/"</span><span class="pi">:</span>
+            <span class="c1"># The public directory of the app, relative to its root.</span>
+            <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub"</span>
+            <span class="c1"># The front-controller script to send non-static requests to.</span>
+            <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/index.php"</span>
+            <span class="na">index</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="s">index.php</span>
+            <span class="na">expires</span><span class="pi">:</span> <span class="s">-1</span>
+            <span class="na">scripts</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="na">rules</span><span class="pi">:</span>
+                <span class="s">\.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$</span><span class="pi">:</span>
+                    <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+                <span class="s">^/sitemap(.*)\.xml$</span><span class="pi">:</span>
+                    <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/media/sitemap$1.xml"</span>
+        <span class="s2">"</span><span class="s">/media"</span><span class="pi">:</span>
+            <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/media"</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="na">expires</span><span class="pi">:</span> <span class="s">1y</span>
+            <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/get.php"</span>
+        <span class="s2">"</span><span class="s">/static"</span><span class="pi">:</span>
+            <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/static"</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="na">expires</span><span class="pi">:</span> <span class="s">1y</span>
+            <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/front-static.php"</span>
+            <span class="na">rules</span><span class="pi">:</span>
+                <span class="s">^/static/version\d+/(?&lt;resource&gt;.*)$</span><span class="pi">:</span>
+                    <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/static/$resource"</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="bs-callout-info">This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the <code class="language-plaintext highlighter-rouge">web</code> configuration must be set up to support shared domains. See <a href="http://devdocs.magento.com/cloud/project/project-multi-sites.html#locations">Configure locations for shared domains</a>.</p>
+
+<h3 id="disk"><code class="language-plaintext highlighter-rouge">disk</code></h3>
+
+<p>Defines the persistent disk size of the application in MB.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="na">disk</span><span class="pi">:</span> <span class="m">2048</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The minimal recommended disk size is 256MB. If you see the error <code class="language-plaintext highlighter-rouge">UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
+
+<h3 id="mounts"><code class="language-plaintext highlighter-rouge">mounts</code></h3>
+
+<p>An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the <code class="language-plaintext highlighter-rouge">magento.app.yaml</code> file using the <code class="language-plaintext highlighter-rouge">volume_id[/subpath]</code> syntax:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre> <span class="c1"># The mounts that will be performed when the package is deployed.</span>
+<span class="na">mounts</span><span class="pi">:</span>
+    <span class="s2">"</span><span class="s">var"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/var"</span>
+    <span class="s2">"</span><span class="s">app/etc"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/etc"</span>
+    <span class="s2">"</span><span class="s">pub/media"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/media"</span>
+    <span class="s2">"</span><span class="s">pub/static"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/static"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The format for adding your mount to this list is as follows:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="s2">"/public/sites/default/files"</span>: <span class="s2">"shared:files/files"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">shared</code>—Shares a volume between your applications inside an environment.</li>
+  <li><code class="language-plaintext highlighter-rouge">disk</code>—Defines the size available for the shared volume.</li>
+</ul>
+
+<p>You can make the mount web accessible by adding it to the <a href="project-conf-files_magento-app.html#web"><code class="language-plaintext highlighter-rouge">web</code></a> block of locations.</p>
+
+<p class="bs-callout-warning">Once your Magento site has data, do not change the <code class="language-plaintext highlighter-rouge">subpath</code> portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.</p>
+
+<h3 id="dependencies"><code class="language-plaintext highlighter-rouge">dependencies</code></h3>
+
+<p>Enables you to specify dependencies that your application might need during the build process.</p>
+
+<p>Magento Commerce supports dependencies on the following
+languages:</p>
+
+<ul>
+  <li>PHP</li>
+  <li>Ruby</li>
+  <li>NodeJS</li>
+</ul>
+
+<p>Those dependencies are independent of the eventual dependencies of your application, and are available in the <code class="language-plaintext highlighter-rouge">PATH</code>, during the build process and in the runtime environment of your application.</p>
+
+<p>You can specify those dependencies as follows:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="na">ruby</span><span class="pi">:</span>
+   <span class="na">sass</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~3.4"</span>
+<span class="na">nodejs</span><span class="pi">:</span>
+   <span class="na">grunt-cli</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~0.3"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="hooks"><code class="language-plaintext highlighter-rouge">hooks</code></h3>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">hooks</code> section to run shell commands during the build, deploy, and post-deploy phases:</p>
+
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">build</code></strong>—Execute commands <em>before</em> packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands <em>before</em> the default <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools</code> command so that custom-generated content continues to the deployment phase.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">deploy</code></strong>—Execute commands <em>after</em> packaging and deploying your application. You can access other services at this point. Since the default <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools</code> command copies the <code class="language-plaintext highlighter-rouge">app/etc</code> directory to the correct location, you must add custom commands <em>after</em> the deploy command to prevent custom commands from failing.</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">post_deploy</code></strong>—Execute commands <em>after</em> deploying your application and <em>after</em> the container begins accepting connections. The <code class="language-plaintext highlighter-rouge">post_deploy</code> hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the <code class="language-plaintext highlighter-rouge">WARM_UP_PAGES</code> variable in the <a href="http://devdocs.magento.com/cloud/env/variables-post-deploy.html">Post-deploy stage</a>. Although not required, this works in tandem with the <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> environment variable.</p>
+  </li>
+</ul>
+
+<p>Add CLI commands under the <code class="language-plaintext highlighter-rouge">build</code>, <code class="language-plaintext highlighter-rouge">deploy</code>, or <code class="language-plaintext highlighter-rouge">post_deploy</code> sections <em>before</em> the <code class="language-plaintext highlighter-rouge">ece-tools</code> command:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="na">hooks</span><span class="pi">:</span>
+    <span class="c1"># We run build hooks before your application has been packaged.</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">set -e</span>
+        <span class="s">php ./vendor/bin/ece-tools build:generate</span>
+        <span class="s">php ./vendor/bin/ece-tools build:transfer</span>
+    <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
+    <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">php ./vendor/bin/ece-tools deploy</span>
+    <span class="c1"># We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.</span>
+    <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">php ./vendor/bin/ece-tools post-deploy</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Also, you can customize the build phase further by using the <code class="language-plaintext highlighter-rouge">generate</code> and <code class="language-plaintext highlighter-rouge">transfer</code> commands to perform additional actions when specifically building code or moving files.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="na">hooks</span><span class="pi">:</span>
+    <span class="c1"># We run build hooks before your application has been packaged.</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">set -e</span>
+        <span class="s">php ./vendor/bin/ece-tools build:generate</span>
+        <span class="s"># php /path/to/your/script</span>
+        <span class="s">php ./vendor/bin/ece-tools build:transfer</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">set -e</code>—causes hooks to fail on the first failed command, instead of the final failed command.</li>
+  <li><code class="language-plaintext highlighter-rouge">build:generate</code>—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.</li>
+  <li><code class="language-plaintext highlighter-rouge">build:transfer</code>—transfers generated code and static content to the final destination.</li>
+</ul>
+
+<p>The commands run from the application (<code class="language-plaintext highlighter-rouge">/app</code>) directory. You can use the <code class="language-plaintext highlighter-rouge">cd</code> command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="language-plaintext highlighter-rouge">set -e</code> to the beginning of the hook.</p>
+
+<p class="procedure">To compile Sass files using grunt:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="na">dependencies</span><span class="pi">:</span>
+    <span class="na">ruby</span><span class="pi">:</span>
+        <span class="na">sass</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4.7"</span>
+    <span class="na">nodejs</span><span class="pi">:</span>
+        <span class="na">grunt-cli</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~0.1.13"</span>
+
+<span class="na">hooks</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">cd public/profiles/project_name/themes/custom/theme_name</span>
+        <span class="s">npm install</span>
+        <span class="s">grunt</span>
+        <span class="s">cd</span>
+        <span class="s">php ./vendor/bin/ece-tools build</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>You must compile Sass files using <code class="language-plaintext highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="language-plaintext highlighter-rouge">grunt</code> command before the <code class="language-plaintext highlighter-rouge">build</code> command.</p>
+
+<p class="bs-callout-info">With ece-tools 2002.1.0 and later, you can use the scenario-based deployment feature to customize the build, deploy, and post-deploy processes for your Magento Commerce Cloud project. See <a href="http://devdocs.magento.com/cloud/deploy/scenario-based-deployment.html">Scenario-based deployment</a>.</p>
+
+<h3 id="crons"><code class="language-plaintext highlighter-rouge">crons</code></h3>
+
+<p>Describes processes that are triggered on a schedule. We recommend you run <code class="language-plaintext highlighter-rouge">cron</code> as the <a href="http://devdocs.magento.com/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do <em>not</em> run cron as <code class="language-plaintext highlighter-rouge">root</code> or as the web server user.</p>
+
+<p><code class="language-plaintext highlighter-rouge">crons</code> support the following:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">spec</code>—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete <a href="http://devdocs.magento.com/cloud/configure/setup-cron-jobs.html#add-cron">additional configurations</a> for crons in those environments.</li>
+  <li><code class="language-plaintext highlighter-rouge">cmd</code>—The command to execute.</li>
+</ul>
+
+<p>A cron job is well suited for the following tasks:</p>
+
+<ul>
+  <li>They need to happen on a fixed schedule, not continually.</li>
+  <li>The task itself is not especially long, as a running cron job will block a new deployment.</li>
+  <li>Or it is long, but can be easily divided into many small queued tasks.</li>
+  <li>A delay between when a task is registered and when it actually happens is acceptable.</li>
+</ul>
+
+<p>By default, every Cloud project has the following default crons configuration to run the default Magento cron jobs:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="na">crons</span><span class="pi">:</span>
+    <span class="na">cronrun</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For Magento Commerce Cloud 2.1.x, you can use only <a href="project-conf-files_magento-app.html#workers">workers</a> and <a href="project-conf-files_magento-app.html#crons">cron jobs</a>. For Magento Commerce Cloud 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.</p>
+
+<p>If your project requires custom cron jobs, you can add them to the default cron configuration. See <a href="http://devdocs.magento.com/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>The following environment variables are included in <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce Cloud 2.2.x.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="na">variables</span><span class="pi">:</span>
+    <span class="na">env</span><span class="pi">:</span>
+        <span class="na">CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN</span><span class="pi">:</span> <span class="s1">'</span><span class="s">payment-broker.magento.com'</span>
+        <span class="na">CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud_BT'</span>
+        <span class="na">CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="configure-php-options">Configure PHP options</h2>
+
+<p>You can choose which version of PHP to run in your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="na">name</span><span class="pi">:</span> <span class="s">mymagento</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">php:&lt;version&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="php-extensions">PHP extensions</h3>
+
+<p>You can enable additional PHP extensions in the <code class="language-plaintext highlighter-rouge">runtime:extension</code> section. Also, the extensions specified become available in the Docker PHP containers.</p>
+
+<blockquote>
+  <p>.magento.app.yaml</p>
+</blockquote>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="na">runtime</span><span class="pi">:</span>
+    <span class="na">extensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">sockets</span>
+        <span class="pi">-</span> <span class="s">sodium</span>
+        <span class="pi">-</span> <span class="s">ssh2</span>
+    <span class="na">disabled_extensions</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">bcmath</span>
+        <span class="pi">-</span> <span class="s">bz2</span>
+        <span class="pi">-</span> <span class="s">calendar</span>
+        <span class="pi">-</span> <span class="s">exif</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Use SSH to log in to an environment and list the PHP extensions.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>php <span class="nt">-m</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For details about a specific PHP extension, see the <a href="https://www.php.net/manual/en/extensions.alphabetical.php">PHP Extension List</a>.</p>
+
+<p>Magento Commerce Cloud supports the following extensions:</p>
+
+<ul>
+  <li>Default extensions:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">bcmath</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bz2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">calendar</code></li>
+      <li><code class="language-plaintext highlighter-rouge">exif</code></li>
+      <li><code class="language-plaintext highlighter-rouge">gd</code></li>
+      <li><code class="language-plaintext highlighter-rouge">gettext</code></li>
+      <li><code class="language-plaintext highlighter-rouge">intl</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mysqli</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pcntl</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pdo_mysql</code></li>
+      <li><code class="language-plaintext highlighter-rouge">soap</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sockets</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sysvmsg</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sysvsem</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sysvshm</code></li>
+      <li><code class="language-plaintext highlighter-rouge">opcache</code></li>
+      <li><code class="language-plaintext highlighter-rouge">zip</code></li>
+    </ul>
+  </li>
+  <li>Extensions that are installed and cannot be uninstalled:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">ctype</code></li>
+      <li><code class="language-plaintext highlighter-rouge">curl</code></li>
+      <li><code class="language-plaintext highlighter-rouge">date</code></li>
+      <li><code class="language-plaintext highlighter-rouge">dom</code></li>
+      <li><code class="language-plaintext highlighter-rouge">fileinfo</code></li>
+      <li><code class="language-plaintext highlighter-rouge">filter</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ftp</code></li>
+      <li><code class="language-plaintext highlighter-rouge">hash</code></li>
+      <li><code class="language-plaintext highlighter-rouge">iconv</code></li>
+      <li><code class="language-plaintext highlighter-rouge">json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mbstring</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mysqlnd</code></li>
+      <li><code class="language-plaintext highlighter-rouge">openssl</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pcre</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pdo</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pdo_sqlite</code></li>
+      <li><code class="language-plaintext highlighter-rouge">phar</code></li>
+      <li><code class="language-plaintext highlighter-rouge">posix</code></li>
+      <li><code class="language-plaintext highlighter-rouge">readline</code></li>
+      <li><code class="language-plaintext highlighter-rouge">session</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sqlite3</code></li>
+      <li><code class="language-plaintext highlighter-rouge">tokenizer</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xml</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xmlreader</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xmlwriter</code></li>
+    </ul>
+  </li>
+  <li>Extensions that can be installed and uninstalled as needed:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">bcmath</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bz2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">calendar</code></li>
+      <li><code class="language-plaintext highlighter-rouge">exif</code></li>
+      <li><code class="language-plaintext highlighter-rouge">gd</code></li>
+      <li><code class="language-plaintext highlighter-rouge">geoip</code></li>
+      <li><code class="language-plaintext highlighter-rouge">gettext</code></li>
+      <li><code class="language-plaintext highlighter-rouge">gmp</code></li>
+      <li><code class="language-plaintext highlighter-rouge">igbinary</code></li>
+      <li><code class="language-plaintext highlighter-rouge">imagick</code></li>
+      <li><code class="language-plaintext highlighter-rouge">imap</code></li>
+      <li><code class="language-plaintext highlighter-rouge">intl</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ioncube</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ldap</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mailparse</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mcrypt</code></li>
+      <li><code class="language-plaintext highlighter-rouge">msgpack</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mysqli</code></li>
+      <li><code class="language-plaintext highlighter-rouge">oauth</code></li>
+      <li><code class="language-plaintext highlighter-rouge">opcache</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pdo_mysql</code></li>
+      <li><code class="language-plaintext highlighter-rouge">propro</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pspell</code></li>
+      <li><code class="language-plaintext highlighter-rouge">raphf</code></li>
+      <li><code class="language-plaintext highlighter-rouge">recode</code></li>
+      <li><code class="language-plaintext highlighter-rouge">redis</code></li>
+      <li><code class="language-plaintext highlighter-rouge">shmop</code></li>
+      <li><code class="language-plaintext highlighter-rouge">soap</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sockets</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sodium</code></li>
+      <li><code class="language-plaintext highlighter-rouge">ssh2</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sysvmsg</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sysvsem</code></li>
+      <li><code class="language-plaintext highlighter-rouge">sysvshm</code></li>
+      <li><code class="language-plaintext highlighter-rouge">tidy</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xdebug</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xmlrpc</code></li>
+      <li><code class="language-plaintext highlighter-rouge">xsl</code></li>
+      <li><code class="language-plaintext highlighter-rouge">yaml</code></li>
+      <li><code class="language-plaintext highlighter-rouge">zip</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pcntl</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p class="bs-callout-warning">PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
+
+<h3 id="customize-phpini-settings">Customize <code class="language-plaintext highlighter-rouge">php.ini</code> settings</h3>
+
+<p>You can also create and push a <code class="language-plaintext highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
+
+<p>In your repository, the <code class="language-plaintext highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>
+
+<p class="bs-callout-info">Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
+
+<p>For example, if you need to increase the PHP memory limit:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>memory_limit <span class="o">=</span> 756M
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>For a list of recommended PHP configuration settings, see <a href="../../guides/v2.3/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
+
+<p>After pushing your file, you can check that the custom PHP configuration has been added to your environment by <a href="http://devdocs.magento.com/cloud/env/environments-start.html#env-start-tunn">creating an SSH tunnel</a> to your environment and entering:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">cat</span> /etc/php5/fpm/php.ini
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="bs-callout-info">If you use Magento Cloud Docker for local development, see [Docker service containers]//cloud/docker/docker-containers-service.html#fpm-container) for information about using a custom <code class="language-plaintext highlighter-rouge">php.ini</code> file in a Docker environment.</p>
+
+<h2 id="workers">Workers</h2>
+
+<p>You can define zero or multiple work instances for each application. A worker
+instance runs as a container, independent from the web instance and without
+a running Nginx instance. Additionally, you do not need to set up a web server on
+the worker instance (using Node.js or Go) because the router cannot direct public
+requests to the worker.</p>
+
+<p>A worker instance has the exact same code and compilation output as a web instance.
+The container image is built once and deployed multiple times if needed using the
+same <code class="language-plaintext highlighter-rouge">build</code> hook and <code class="language-plaintext highlighter-rouge">dependencies</code>. You can customize the container and
+allocated resources.</p>
+
+<p>Use worker instances for background tasks including:</p>
+
+<ul>
+  <li>Tasks like queue workers or updating indexes.</li>
+  <li>Tasks to run periodic reporting that are too long for a cron job.</li>
+  <li>Tasks should happen “now”, but not block a web request.</li>
+  <li>Tasks are large enough that they risk blocking a deploy, even if they are subdivided.</li>
+  <li>The task in question is a continually running process rather than a stream of discrete units of work.</li>
+</ul>
+
+<p>A basic, common worker configuration could look like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="na">workers</span><span class="pi">:</span>
+    <span class="na">queue</span><span class="pi">:</span>
+        <span class="na">size</span><span class="pi">:</span> <span class="s">S</span>
+        <span class="na">commands</span><span class="pi">:</span>
+            <span class="na">start</span><span class="pi">:</span> <span class="pi">|</span>
+                <span class="s">php worker.php</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This example defines a single worker named queue, with a “small” container, and runs the command <code class="language-plaintext highlighter-rouge">php worker.php</code> on startup. If <code class="language-plaintext highlighter-rouge">worker.php</code> exits, it is automatically restarted.</p>
+
+<p>For Magento Commerce Cloud 2.1.x, you can use only <a href="project-conf-files_magento-app.html#workers">workers</a> and <a href="project-conf-files_magento-app.html#crons">cron jobs</a>. For Magento Commerce Cloud 2.2.x, cron jobs launch consumers to process batches of messages, and does not require additional configuration.</p>
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="../../assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-06-25">
+    Jun 25th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="http://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="../../assets/js/app.min.js?ver=10"></script>
+<script src="../../assets/js/editions.min.js?ver=10"></script>
+<script src="../../assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="../../common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>CLI commands: vendor/bin/mftf | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.">
+
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/app.css?ver=10" />
+	<link rel="stylesheet" href="https://devdocs.magento.com/assets/css/print.css?ver=10" media="print"/>
+
+	<link rel="stylesheet" href="https://devdocs.magento.com/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="https://devdocs.magento.com/feed.xml" />
+
+
+<link rel="canonical" href="mftf.html" data-proofer-ignore />
+
+
+<meta name="google-site-verification" content="3WFsoYwBe6UuxDwgs7bmd7t0YFQVzDpLpWLjNh0CUp8" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c",
+  };
+
+  var indices = [
+    {
+      label: "DevDocs",
+      name: "devdocs",
+      facetFilters: [["guide_version: 2.4", "versionless: true"]],
+      refinements: [
+        {
+          label: "Functional areas",
+          attribute: "functional_areas"
+        }
+      ],
+      baseUrl: "https://devdocs.magento.com"
+    },
+    {
+      label: "User Guide",
+      name: "merchdocs",
+      baseUrl: "https://docs.magento.com/user-guide"
+    },
+    {
+      label: "MBI User Guide",
+      name: "merchdocs-mbi",
+      baseUrl: "https://docs.magento.com/mbi"
+    },
+    {
+      label: "PWA",
+      name: "pwa-devdocs",
+      baseUrl: "https://magento.github.io/pwa-studio"
+    },
+    {
+      label: "Order Management",
+      name: "oms-en",
+      baseUrl: "https://omsdocs.magento.com"
+    }
+  ];
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KRCLXBB');</script>
+<!-- End Google Tag Manager -->
+
+<script src="https://assets.adobedtm.com/98fab992275ef6366cc65f57f86b1e895a66c912/satelliteLib-f90f1129109ea4b2101512675a2769865aa7ea5b.js"></script>
+
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCLXBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class="site-nav">
+
+  <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
+
+    <a class="logo" href="https://devdocs.magento.com/">
+      <img class="logo-image" src="https://devdocs.magento.com/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      <!-- Main Navigation --><ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar"><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Cloud</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud basics</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/bk-cloud.html" class="spectrum-Menu-itemLabel ">Cloud Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/architecture/cloud-architecture.html" class="spectrum-Menu-itemLabel ">Cloud Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-start.html" class="spectrum-Menu-itemLabel ">Project Structure</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-upgrade-parent.html" class="spectrum-Menu-itemLabel ">Upgrades and Patches</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/release-notes/cloud-tools.html" class="spectrum-Menu-itemLabel ">Release Notes</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Cloud development</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-development.html" class="spectrum-Menu-itemLabel ">Local development</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-config.html" class="spectrum-Menu-itemLabel ">Configure and launch Docker</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-quick-reference.html" class="spectrum-Menu-itemLabel ">Docker quick reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html" class="spectrum-Menu-itemLabel ">Configure Application</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/env/environments.html" class="spectrum-Menu-itemLabel ">Configure Environments</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Functional Testing</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-mftf.html" class="spectrum-Menu-itemLabel ">Magento application testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html" class="spectrum-Menu-itemLabel ">Magento Cloud code testing</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Setup</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/install-gde/bk-install-guide.html" class="spectrum-Menu-itemLabel ">Installation Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/extensions/" class="spectrum-Menu-itemLabel ">Magento Extensions Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html" class="spectrum-Menu-itemLabel ">Software Update Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/config-guide/bk-config-guide.html" class="spectrum-Menu-itemLabel ">Configuration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/performance-best-practices/introduction.html" class="spectrum-Menu-itemLabel ">Performance Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/migration/bk-migration-guide.html" class="spectrum-Menu-itemLabel ">Migration Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class="spectrum-Menu-itemLabel ">Release Information</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/reference/cli/magento.html" class="spectrum-Menu-itemLabel ">Command-line Tools Reference</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Development</span><div class="nav-popup spectrum-Popover"><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Backend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/architecture/bk-architecture.html" class="spectrum-Menu-itemLabel ">Architecture</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/bk-extension-dev-guide.html" class="spectrum-Menu-itemLabel ">PHP Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/ext-best-practices/bk-ext-best-practices.html" class="spectrum-Menu-itemLabel ">Extension Developer Best Practices</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/mrg/intro.html" class="spectrum-Menu-itemLabel ">Module Reference Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/coding-standards/bk-coding-standards.html" class="spectrum-Menu-itemLabel ">Coding Standards</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/contributor-guide/contributing.html" class="spectrum-Menu-itemLabel ">Contributor Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">Frontend</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/frontend-dev-guide/bk-frontend-dev-guide.html" class="spectrum-Menu-itemLabel ">Frontend Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/guides/v2.4/ui_comp_guide/bk-ui_comps.html" class="spectrum-Menu-itemLabel ">UI Components Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/javascript-dev-guide/bk-javascript-dev-guide.html" class="spectrum-Menu-itemLabel ">JavaScript Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/pattern-library/bk-pattern.html" class="spectrum-Menu-itemLabel ">Admin Design Pattern Library</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/design-styleguide/bk-styleguide.html" class="spectrum-Menu-itemLabel ">Admin Style Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://magento.github.io/pwa-studio/" class="spectrum-Menu-itemLabel ">PWA Documentation Site</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder Developer Guide</a></li></ul>
+            </div><div class="nav-section">
+              <div class="spectrum-Menu-sectionHeading">API</div>
+              <ul class="spectrum-Menu"><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/bk-get-started-api.html" class="spectrum-Menu-itemLabel ">Get Started with Magento Web APIs</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/bk-rest.html" class="spectrum-Menu-itemLabel ">REST API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/soap/bk-soap.html" class="spectrum-Menu-itemLabel ">SOAP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/graphql/index.html" class="spectrum-Menu-itemLabel ">GraphQL Developer Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/eqp/v1/api.html" class="spectrum-Menu-itemLabel ">Marketplace EQP API Reference</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mbi/docs/getting-started.html" class="spectrum-Menu-itemLabel ">Business Intelligence API</a></li></ul>
+            </div></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Testing</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/testing.html" class="spectrum-Menu-itemLabel ">Magento Testing Guide</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-Menu-itemLabel ">Functional Acceptance Testing (MFTF)</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/integration/integration_test_execution.html" class="spectrum-Menu-itemLabel ">Integration Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/js/jasmine.html" class="spectrum-Menu-itemLabel ">JavaScript Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/test/unit/unit_test_execution.html" class="spectrum-Menu-itemLabel ">PHP Unit Testing</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/get-started/web-api-functional-testing.html" class="spectrum-Menu-itemLabel ">Web API Functional Testing</a></li></ul></div></li><li class="nav-main-separator"></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Functional Areas</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/advanced-reporting/overview.html" class="spectrum-Menu-itemLabel ">Advanced Reporting</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/b2b/bk-b2b.html" class="spectrum-Menu-itemLabel ">B2B</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/marketplace/sellers/getting-started.html" class="spectrum-Menu-itemLabel ">Extensions Marketplace</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/inventory/index.html" class="spectrum-Menu-itemLabel ">Inventory Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="http://omsdocs.magento.com/en/" class="spectrum-Menu-itemLabel ">Order Management</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/page-builder/docs/index.html" class="spectrum-Menu-itemLabel ">Page Builder</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/payments-integrations/bk-payments-integrations.html" class="spectrum-Menu-itemLabel ">Payment Integrations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/recommendations/product-recs.html" class="spectrum-Menu-itemLabel ">Product Recommendations</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/security/security-and-compliance.html" class="spectrum-Menu-itemLabel ">Security and Compliance</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/extension-dev-guide/staging.html" class="spectrum-Menu-itemLabel ">Staging</a></li></ul></div></li><li class="nav-main-item spectrum-Tabs-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" tabindex="-1">Tutorials</span><div class="nav-popup spectrum-Popover"><ul><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/rest/tutorials/index.html" class="spectrum-Menu-itemLabel ">Rest Tutorials</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/customize_product.html" class="spectrum-Menu-itemLabel ">Customize Product Creation Form</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="../../../guides/v2.4/howdoi/checkout/checkout_overview.html" class="spectrum-Menu-itemLabel ">Customize Checkout</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/community/resources/support.html" class="spectrum-Menu-itemLabel ">Magento Support</a></li><li class="  spectrum-Menu-item" role="menuitem"><a href="https://devdocs.magento.com/videos/" class="spectrum-Menu-itemLabel ">Video Tutorials</a></li></ul></div></li></ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="nav-actions">
+      
+
+      
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <div class="dropdown-menu spectrum-Popover spectrum-Dropdown-popover spectrum-Popover--bottom dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-1">Developer</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-1">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="../../../index.html?itm_source=devdocs&amp;itm_medium=top_nav&amp;itm_campaign=app_switcher&amp;itm_term=Commerce&#32;Developer&#32;Documentation">Commerce Developer Documentation</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="http://pwastudio.io/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA Studio">PWA Studio</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        </ul>
+      </div>
+      
+      <div class="app-switcher-group">
+        <span class="spectrum-Menu-sectionHeading" id="app-switcher-category-2">Merchant</span>
+        <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-2">
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/user-guide/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce User Guide">Commerce User Guide</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://omsdocs.magento.com/en/userguides/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order Management">Order Management</a></li>
+        
+        <li class="spectrum-Menu-item" role="menuitem"><a class="spectrum-Menu-itemLabel" href="https://docs.magento.com/mbi/?itm_source=devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business Intelligence">Business Intelligence</a></li>
+        
+        </ul>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="search-btn">
+  <button class="search-trigger" aria-label="Search">
+    <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Search">
+      <rect opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+    </svg>
+  </button>
+</div>
+
+<div class="quick-search">
+  <form
+  class="spectrum-Search search-form"
+  action="https://devdocs.magento.com/search.html"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M16.5865,15.107,12.7,11.2215A6.413,6.413,0,1,0,11.2215,12.7l3.886,3.886a1.05,1.05,0,0,0,1.479-1.479ZM3,7.5A4.5,4.5,0,1,1,7.5,12,4.5,4.5,0,0,1,3,7.5Z" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <rect fill="#ff13dc" opacity="0" width="18" height="18" /><path class="a" d="M13.2425,3.343,9,7.586,4.7575,3.343a.5.5,0,0,0-.707,0L3.343,4.05a.5.5,0,0,0,0,.707L7.586,9,3.343,13.2425a.5.5,0,0,0,0,.707l.707.7075a.5.5,0,0,0,.707,0L9,10.414l4.2425,4.243a.5.5,0,0,0,.707,0l.7075-.707a.5.5,0,0,0,0-.707L10.414,9l4.243-4.2425a.5.5,0,0,0,0-.707L13.95,3.343a.5.5,0,0,0-.70711-.00039Z" />
+    </svg>
+  </button>
+</form>
+
+</div>
+
+    </div>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<button class="toc-toggler">Table of Contents</button>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Magento Functional Testing Framework Guide</h4>
+		
+		<div class="collapsible-navigation">
+		  <ul class="spectrum-SideNav spectrum-SideNav--multiLevel"><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://devdocs.magento.com/mftf/docs/introduction.html" class="spectrum-SideNav-itemLink ">Introduction</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../getting-started.html" class="spectrum-SideNav-itemLink ">Getting started</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../configuration.html" class="spectrum-SideNav-itemLink ">Configuration</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../credentials.html" class="spectrum-SideNav-itemLink ">Credentials</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../data.html" class="spectrum-SideNav-itemLink ">Data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../debugging.html" class="spectrum-SideNav-itemLink ">Debugging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../extending.html" class="spectrum-SideNav-itemLink ">Extending</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/git-vs-composer-install.html" class="spectrum-SideNav-itemLink ">Git vs. Composer installation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/introduction.html" class="spectrum-SideNav-itemLink ">Merge points for extensions</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-action-groups.html" class="spectrum-SideNav-itemLink ">Extend action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-data.html" class="spectrum-SideNav-itemLink ">Extend data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/extend-tests.html" class="spectrum-SideNav-itemLink ">Extend tests</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-action-groups.html" class="spectrum-SideNav-itemLink ">Merge action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-data.html" class="spectrum-SideNav-itemLink ">Merge data</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-pages.html" class="spectrum-SideNav-itemLink ">Merge pages</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-sections.html" class="spectrum-SideNav-itemLink ">Merge sections</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merge_points/merge-tests.html" class="spectrum-SideNav-itemLink ">Merge tests</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../merging.html" class="spectrum-SideNav-itemLink ">Merging</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../metadata.html" class="spectrum-SideNav-itemLink ">Metadata</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../page.html" class="spectrum-SideNav-itemLink ">Page</a></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Reference</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../guides/v2.3/reference/mftf/action-groups.html" class="spectrum-SideNav-itemLink ">Action group reference</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="codeception.html" class="spectrum-SideNav-itemLink ">Codecept</a></li><li class="is-selected  spectrum-SideNav-item" role="menuitem"><a href="mftf.html" class="spectrum-SideNav-itemLink ">MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../../../guides/v2.3/reference/mftf/functional-tests.html" class="spectrum-SideNav-itemLink ">MFTF functional test reference</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../reporting.html" class="spectrum-SideNav-itemLink ">Reporting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section.html" class="spectrum-SideNav-itemLink ">Section</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section/parameterized-selectors.html" class="spectrum-SideNav-itemLink ">Parameterized selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../section/locator-functions.html" class="spectrum-SideNav-itemLink ">Locator functions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../suite.html" class="spectrum-SideNav-itemLink ">Suite</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test.html" class="spectrum-SideNav-itemLink ">Test basics</a><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/annotations.html" class="spectrum-SideNav-itemLink ">Annotations</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/actions.html" class="spectrum-SideNav-itemLink ">Actions</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/action-groups.html" class="spectrum-SideNav-itemLink ">Action groups</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test/assertions.html" class="spectrum-SideNav-itemLink ">Assertions</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><span class="spectrum-SideNav-itemLink ">Test writing</span><ul class="spectrum-SideNav"><li class="  spectrum-SideNav-item" role="menuitem"><a href="../best-practices.html" class="spectrum-SideNav-itemLink ">Best practices</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../test-prep.html" class="spectrum-SideNav-itemLink ">Preparing a test for MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/selectors.html" class="spectrum-SideNav-itemLink ">Selectors</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/test-isolation.html" class="spectrum-SideNav-itemLink ">Test isolation</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/test-modularity.html" class="spectrum-SideNav-itemLink ">Test modularity</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../tips-tricks.html" class="spectrum-SideNav-itemLink ">Tips and tricks</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../guides/using-suites.html" class="spectrum-SideNav-itemLink ">Using suites</a></li></ul></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../troubleshooting.html" class="spectrum-SideNav-itemLink ">Troubleshooting</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../update.html" class="spectrum-SideNav-itemLink ">Update MFTF</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="../versioning.html" class="spectrum-SideNav-itemLink ">Versioning</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md" class="spectrum-SideNav-itemLink ">Contribution guidelines</a></li><li class="  spectrum-SideNav-item" role="menuitem"><a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md" class="spectrum-SideNav-itemLink ">Changelog</a></li></ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<header class="content-header">
+				<!-- page-header -->
+<section class="page-intro">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <h1 class="page-title">CLI commands: vendor/bin/mftf</h1>
+
+  
+
+  <div class="github-links spectrum-ButtonGroup"><div class="github-link">
+    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/blob/master/docs/commands/mftf.md" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/edit.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
+    </a>
+  </div><div class="new-issue">
+    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="https://github.com/magento/magento2-functional-testing-framework/issues/new?title=Feedback on page: /mftf/docs/commands/mftf.html" target="_blank">
+      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="https://devdocs.magento.com/assets/i/icons/bug.svg" alt="" />
+      <span class="spectrum-ActionButton-label">Log an Issue</span>
+    </a>
+  </div></div>
+
+
+  
+
+
+
+ 
+
+  
+
+</section>
+
+			</header>
+			<main>
+				<p>The Magento Functional Testing Framework (<abbr title="Magento Functional Testing Framework">MFTF</abbr>) introduces the command line interface (CLI) tool <code class="language-plaintext highlighter-rouge">vendor/bin/mftf</code> to facilitate your interaction with the framework.</p>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">mftf</code> commands replace the <code class="language-plaintext highlighter-rouge">robo</code> commands that were used in previous releases.</p>
+
+<h2 id="command-format">Command format</h2>
+
+<p>In the project root directory (where you have installed the framework as a composer dependency), run commands using the following format:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>&lt;arguments&gt;] <span class="o">[</span><span class="nt">--remove</span>|-r]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="useful-commands">Useful commands</h2>
+
+<p>Use the following commands to run commonly performed tasks.</p>
+
+<h3 id="apply-the-configuration-parameters">Apply the configuration parameters</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf build:project
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="upgrade-the-project">Upgrade the project</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf build:project <span class="nt">--upgrade</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Upgrades the existing <abbr title="Magento Functional Testing Framework">MFTF</abbr> tests after the <abbr title="Magento Functional Testing Framework">MFTF</abbr> major upgrade.</p>
+
+<h3 id="generate-all-tests">Generate all tests</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:tests
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="generate-tests-by-test-name">Generate tests by test name</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:tests AdminLoginTest StorefrontPersistedCustomerLoginTest
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="generate-test-by-test-and-suite-name">Generate test by test and suite name</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:tests LoginSuite:AdminLoginTest
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="generate-and-run-the-tests-for-a-specified-group">Generate and run the tests for a specified group</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:group product <span class="nt">-r</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This command cleans up the previously generated tests; generates and runs tests for the product group (where <code class="language-plaintext highlighter-rouge">group="product"</code>).</p>
+
+<h3 id="generate-and-run-particular-tests">Generate and run particular tests</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:test AdminLoginTest StorefrontPersistedCustomerLoginTest <span class="nt">-r</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This command cleans up the previously generated tests; generates and runs the <code class="language-plaintext highlighter-rouge">LoginAsAdminTest</code> and <code class="language-plaintext highlighter-rouge">LoginAsCustomerTest</code> tests.</p>
+
+<h3 id="generate-and-run-particular-test-in-a-specific-suites-context">Generate and run particular test in a specific suite’s context</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:test LoginSuite:AdminLoginTest <span class="nt">-r</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This command cleans up previously generated tests; generates and run <code class="language-plaintext highlighter-rouge">AdminLoginTest</code> within the context of the <code class="language-plaintext highlighter-rouge">LoginSuite</code>.</p>
+
+<h3 id="generate-and-run-a-testmanifesttxt-file">Generate and run a testManifest.txt file</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:manifest path/to/your/testManifest.txt
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This command runs all tests specified in a <code class="language-plaintext highlighter-rouge">testManifest.txt</code> file. When you generate tests, a <code class="language-plaintext highlighter-rouge">testManifest.txt</code> file is also generated for you. You can pass this file directly to the <code class="language-plaintext highlighter-rouge">run:manifest</code> command and it will execute all listed tests. You can also create your own file in the same format to execute a subset of tests. Note: This command does not generate tests.</p>
+
+<h3 id="generate-and-run-previously-failed-tests">Generate and run previously failed tests</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:failed
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This command cleans up the previously generated tests; generates and runs the tests listed in <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/_output/failed</code>.
+For more details about <code class="language-plaintext highlighter-rouge">failed</code>, refer to <a href="../reporting.html">Reporting</a>.</p>
+
+<h3 id="generate-documentation-for-action-groups">Generate documentation for action groups</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:docs
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This command generates documentation for action groups.</p>
+
+<h2 id="reference">Reference</h2>
+
+<h3 id="buildproject"><code class="language-plaintext highlighter-rouge">build:project</code></h3>
+
+<h4 id="description">Description</h4>
+
+<p>Clone the example configuration files and build the Codeception project.</p>
+
+<h4 id="usage">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf build:project <span class="o">[</span><span class="nt">--upgrade</span><span class="o">]</span> <span class="o">[</span>config_param_options]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-u</code>, <code class="language-plaintext highlighter-rouge">--upgrade</code></td>
+      <td>Upgrades existing <abbr title="Magento Functional Testing Framework">MFTF</abbr> tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: <code class="language-plaintext highlighter-rouge">build:project --upgrade</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can include options to set configuration parameter values for your environment since the project build process also <a href="mftf.html#setupenv">sets up the environment</a>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf build:project <span class="nt">--MAGENTO_BASE_URL</span><span class="o">=</span>http://magento.local/ <span class="nt">--MAGENTO_BACKEND_NAME</span><span class="o">=</span>admin214365
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="doctor"><code class="language-plaintext highlighter-rouge">doctor</code></h3>
+
+<h4 id="description-1">Description</h4>
+
+<p>Diagnose <abbr title="Magento Functional Testing Framework">MFTF</abbr> configuration and setup. Currently this command will check the following:</p>
+<ul>
+  <li>Verify admin credentials are valid. Allowing <abbr title="Magento Functional Testing Framework">MFTF</abbr> authenticates and runs API requests to Magento through cURL</li>
+  <li>Verify that Selenium is up and running and available for <abbr title="Magento Functional Testing Framework">MFTF</abbr></li>
+  <li>Verify that new session of browser can open Magento admin and store front urls</li>
+  <li>Verify that <abbr title="Magento Functional Testing Framework">MFTF</abbr> can run MagentoCLI commands</li>
+</ul>
+
+<h4 id="usage-1">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf doctor
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options-1">Options</h4>
+
+<h3 id="generatetests"><code class="language-plaintext highlighter-rouge">generate:tests</code></h3>
+
+<h4 id="description-2">Description</h4>
+
+<p>Perform XML schema validation and generate PHP code from the tests defined in XML files.
+The path is set in the <code class="language-plaintext highlighter-rouge">TESTS_MODULE_PATH</code> <a href="../configuration.html">configuration</a> parameter.</p>
+
+<h4 id="usage-2">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:tests <span class="o">[</span>option] <span class="o">[</span>&lt;<span class="nb">test </span>name&gt;] <span class="o">[</span>&lt;<span class="nb">test </span>name&gt;] <span class="o">[</span><span class="nt">--remove</span><span class="o">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options-2">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--config=[&lt;default&gt; or &lt;singleRun&gt; or &lt;parallel&gt;]</code></td>
+      <td>Creates a single manifest file with a list of all tests. The default location is <code class="language-plaintext highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/testManifest.txt</code>.<br /> You can split the list into multiple groups using <code class="language-plaintext highlighter-rouge">--config=parallel</code>; the groups will be generated in <code class="language-plaintext highlighter-rouge">_generated/groups/</code> like <code class="language-plaintext highlighter-rouge">_generated/groups/group1.txt, group2.txt, ...</code>.<br /> Available values: <code class="language-plaintext highlighter-rouge">default</code> (default), <code class="language-plaintext highlighter-rouge">singleRun</code>(same as <code class="language-plaintext highlighter-rouge">default</code>), and <code class="language-plaintext highlighter-rouge">parallel</code>.<br /> Example: <code class="language-plaintext highlighter-rouge">generate:tests --config=parallel</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--filter</code></td>
+      <td>Option to filter tests to be generated.<br />Template: ‘&lt;filterName&gt;:&lt;filterValue&gt;’.<br />Existing filter types: severity.<br />Existing severity values: BLOCKER, CRITICAL, MAJOR, AVERAGE, MINOR.<br />Example: –filter=severity:CRITICAL</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--force</code></td>
+      <td>Forces test generation, regardless of the module merge order defined in the Magento instance. Example: <code class="language-plaintext highlighter-rouge">generate:tests --force</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-i,--time</code></td>
+      <td>Set time in minutes to determine the group size when <code class="language-plaintext highlighter-rouge">--config=parallel</code> is used. The <strong>default value</strong> is <code class="language-plaintext highlighter-rouge">10</code>. Example: <code class="language-plaintext highlighter-rouge">generate:tests --config=parallel --time=15</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--tests</code></td>
+      <td>Defines the test configuration as a JSON string.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--allow-skipped</code></td>
+      <td>Allows <abbr title="Magento Functional Testing Framework">MFTF</abbr> to generate and run tests marked with <code class="language-plaintext highlighter-rouge">&lt;skip&gt;.</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--debug or --debug=[&lt;none&gt;]</code></td>
+      <td>Performs schema validations on XML files. <br /> DEFAULT: <code class="language-plaintext highlighter-rouge">generate:tests</code> implicitly performs schema validation on merged files. It does not indicate the file name where the error is encountered. <br /> DEVELOPER: <code class="language-plaintext highlighter-rouge">--debug</code> performs per-file validation and returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This option takes extra processing time. Use it after test generation has failed once.<br />NONE: <code class="language-plaintext highlighter-rouge">--debug=none</code> skips debugging during test generation. Added for backward compatibility, it will be removed in the next MAJOR release.<br /></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-r,--remove</code></td>
+      <td>Removes the existing generated suites and tests cleaning up the <code class="language-plaintext highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="language-plaintext highlighter-rouge">generate:tests SampleTest --remove</code> cleans up the entire <code class="language-plaintext highlighter-rouge">_generated</code> directory and generates <code class="language-plaintext highlighter-rouge">SampleTest</code> only.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples-of-the-json-configuration">Examples of the JSON configuration</h4>
+
+<p>The configuration to generate a single test with no suites:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">  
+   </span><span class="nl">"tests"</span><span class="p">:[</span><span class="w">
+      </span><span class="s2">"general_test1"</span><span class="w">  </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"general_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The configuration to generate a single test in the suite:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">  
+   </span><span class="nl">"tests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">No</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">outside</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:{</span><span class="w">  
+      </span><span class="nl">"sample"</span><span class="p">:[</span><span class="w">        </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">test.</span><span class="w">
+         </span><span class="s2">"suite_test1"</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">test</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Complex configuration to generate a few non-suite tests, a single test in a suite, and an entire suite:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">  
+   </span><span class="nl">"tests"</span><span class="p">:[</span><span class="w">  
+      </span><span class="s2">"general_test1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"general_test2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"general_test3"</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:{</span><span class="w">           </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">suites.</span><span class="w">
+      </span><span class="nl">"sample"</span><span class="p">:[</span><span class="w">        </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+         </span><span class="s2">"suite_test1"</span><span class="w">  </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"suite_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"sample2"</span><span class="p">:[]</span><span class="w">      </span><span class="err">//Generate</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample2"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The command that encodes this complex configuration:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:tests <span class="nt">--tests</span> <span class="s1">'{"tests":["general_test1","general_test2","general_test3"],"suites":{"sample":["suite_test1"],"sample2":null}}'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Note that the strings must be escaped and surrounded in quotes.</p>
+
+<h3 id="generatesuite"><code class="language-plaintext highlighter-rouge">generate:suite</code></h3>
+
+<h4 id="description-3">Description</h4>
+
+<p>Generates one or more suites based on XML declarations.</p>
+
+<h4 id="usage-3">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:suite &lt;suite name&gt; <span class="o">[</span>&lt;suite name&gt;] <span class="o">[</span><span class="nt">--remove</span><span class="o">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options-3">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-r,--remove</code></td>
+      <td>Removes the existing generated suites and tests cleaning up the <code class="language-plaintext highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="language-plaintext highlighter-rouge">vendor/bin/mftf generate:suite WYSIWYG --remove</code> cleans up the entire <code class="language-plaintext highlighter-rouge">_generated</code> directory and generates <code class="language-plaintext highlighter-rouge">WYSIWYG</code> only.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example">Example</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:suite suite1 suite2
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="generateurn-catalog"><code class="language-plaintext highlighter-rouge">generate:urn-catalog</code></h3>
+
+<h4 id="description-4">Description</h4>
+
+<p>Generates a URN catalog, enabling PhpStorm to recognize and highlight URNs.
+It also enables auto-completion in PhpStorm.</p>
+
+<h4 id="usage-4">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:urn-catalog <span class="o">[</span><span class="nt">--force</span><span class="o">]</span> <span class="o">[</span>&lt;path to the directory with misc.xml&gt;]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">misc.xml</code> is typically located in <code class="language-plaintext highlighter-rouge">&lt;project root&gt;/.idea/</code>.</p>
+
+<h4 id="options-4">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-f, --force</code></td>
+      <td>Creates the <code class="language-plaintext highlighter-rouge">misc.xml</code> file if it does not exist in the given <code class="language-plaintext highlighter-rouge">path</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-1">Example</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:urn-catalog .idea/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="generatedocs"><code class="language-plaintext highlighter-rouge">generate:docs</code></h3>
+
+<h4 id="description-5">Description</h4>
+
+<p>Generates documentation that lists all action groups available in the codebase.
+The default path is <code class="language-plaintext highlighter-rouge">&lt;projectRoot&gt;/dev/tests/docs/documentation.md</code>.</p>
+
+<h4 id="usage-5">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:docs <span class="o">[</span><span class="nt">--clean</span><span class="o">]</span> <span class="o">[</span><span class="nt">--output</span><span class="o">=</span>/path/to/alternate/dir]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options-5">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-c, --clean</code></td>
+      <td>Overwrites previously existing documentation</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-o, --output</code></td>
+      <td>Changes the default output directory to a user specified directory</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-2">Example</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf generate:docs <span class="nt">--clean</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="reset"><code class="language-plaintext highlighter-rouge">reset</code></h3>
+
+<h4 id="description-6">Description</h4>
+
+<p>Cleans any configuration files and generated artifacts from the environment.
+The <code class="language-plaintext highlighter-rouge">.env</code> file is not affected.</p>
+
+<h4 id="usage-6">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf reset <span class="o">[</span><span class="nt">--hard</span><span class="o">]</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options-6">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--hard</code></td>
+      <td>Forces a reset of the configuration files.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-3">Example</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf reset <span class="nt">--hard</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="rungroup"><code class="language-plaintext highlighter-rouge">run:group</code></h3>
+
+<p>Generates and executes the listed groups of tests using Codeception.</p>
+
+<h4 id="usage-7">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:group <span class="o">[</span><span class="nt">--skip-generate</span>|--remove] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;group1&gt; <span class="o">[</span>&lt;group2&gt;]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options-7">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-k, --skip-generate</code></td>
+      <td>Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-r, --remove</code></td>
+      <td>Removes previously generated suites and tests before the actual generation and run.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--debug or --debug=[&lt;none&gt;]</code></td>
+      <td>Performs schema validations on XML files. <code class="language-plaintext highlighter-rouge">run:group</code> implicitly performs schema validation on merged files. It does not indicate the file name where the error is encountered. <code class="language-plaintext highlighter-rouge">--debug</code> performs per-file validation and returns additional debug information (such as the filename where an error occurred). <code class="language-plaintext highlighter-rouge">--debug=none</code> skips debugging during test run. Added for backward compatibility, it will be removed in the next MAJOR release.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples">Examples</h4>
+
+<p>Clean up after the last test run; generate from XML and execute the tests with the annotations <code class="language-plaintext highlighter-rouge">group="group1"</code> and <code class="language-plaintext highlighter-rouge">group="group2"</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf <span class="nt">-r</span> <span class="nt">--</span> run:group group1 group2
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Execute previously generated tests with the annotations <code class="language-plaintext highlighter-rouge">group="group1"</code> and <code class="language-plaintext highlighter-rouge">group="group2"</code>, skipping the regeneration of the test:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:group <span class="nt">-k</span> <span class="nt">--</span> group1 group2
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="runtest"><code class="language-plaintext highlighter-rouge">run:test</code></h3>
+
+<p>Generates and executes tests by name using Codeception.</p>
+
+<h4 id="usage-8">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:test <span class="o">[</span><span class="nt">--skip-generate</span>|--remove] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> &lt;name1&gt; <span class="o">[</span>&lt;name2&gt;]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="options-8">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-k, --skip-generate</code></td>
+      <td>Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-r, --remove</code></td>
+      <td>Remove previously generated suites and tests.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--debug or --debug=[&lt;none&gt;]</code></td>
+      <td>Performs schema validations on XML files. <code class="language-plaintext highlighter-rouge">run:test</code> implicitly performs schema validation on merged files. It does not indicate the file name where the error is encountered. <code class="language-plaintext highlighter-rouge">--debug</code> performs per-file validation and returns additional debug information (such as the filename where an error occurred). <code class="language-plaintext highlighter-rouge">--debug=none</code> skips debugging during test run. Added for backward compatibility, it will be removed in the next MAJOR release.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples-1">Examples</h4>
+
+<p>Generate the <code class="language-plaintext highlighter-rouge">LoginCustomerTest</code> and <code class="language-plaintext highlighter-rouge">StorefrontCreateCustomerTest</code> tests from XML and execute all the generated tests:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="runmanifest"><code class="language-plaintext highlighter-rouge">run:manifest</code></h3>
+
+<p>Runs a testManifest.txt file.</p>
+
+<p>This command runs all tests specified in a testManifest.xml file. It does not generate tests for you. You must do that as first.</p>
+
+<h4 id="usage-9">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:manifest path/to/your/testManifest.txt
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="example-testmanifestxml-file">Example testManifest.xml file</h4>
+
+<p>Each line should contain either: one test path or one group (-g) reference.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>tests/functional/tests/MFTF/_generated/default/AdminLoginTestCest.php
+-g PaypalTestSuite
+tests/functional/tests/MFTF/_generated/default/SomeOtherTestCest.php
+tests/functional/tests/MFTF/_generated/default/ThirdTestCest.php
+-g SomeOtherSuite
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="runfailed"><code class="language-plaintext highlighter-rouge">run:failed</code></h3>
+
+<p>Regenerates and reruns tests that previously failed.</p>
+
+<p>This command cleans up previously generated tests. It generates and runs the tests listed in <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/_output/failed</code>.
+For more details about <code class="language-plaintext highlighter-rouge">failed</code>, refer to <a href="../reporting.html">Reporting</a>.</p>
+
+<h4 id="usage-10">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:failed
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="options-9">Options</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">--debug or --debug=[&lt;none&gt;]</code></td>
+      <td>Performs schema validations on XML files. <code class="language-plaintext highlighter-rouge">run:failed</code> implicitly performs schema validation on merged files. It does not indicate the file name where the error is encountered. <code class="language-plaintext highlighter-rouge">--debug</code> performs per-file validation and returns additional debug information (such as the filename where an error occurred). Use it after test run has failed once. <code class="language-plaintext highlighter-rouge">--debug=none</code> skips debugging during test run. Added for backward compatibility, it will be removed in the next MAJOR release.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="examples-2">Examples</h4>
+
+<p>Run the tests that failed in the previous run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf run:failed
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="setupenv"><code class="language-plaintext highlighter-rouge">setup:env</code></h3>
+
+<p>Updates the <a href="../configuration.html">configuration</a> parameter values in the [<code class="language-plaintext highlighter-rouge">.env</code>] file.
+Creates the <code class="language-plaintext highlighter-rouge">.env</code> file if it does not exist.</p>
+
+<h4 id="usage-11">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf setup:env <span class="o">[</span><span class="nv">config_param_option1</span><span class="o">=</span>&lt;value&gt;] <span class="o">[</span><span class="nv">config_param_option2</span><span class="o">=</span>&lt;value&gt;]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">config_param</code> is a configuration parameter from the <code class="language-plaintext highlighter-rouge">.env</code> file.
+The command consumes the parameters in a format of options assigned with values, for example <code class="language-plaintext highlighter-rouge">--MAGENTO_BASE_URL=http://magento.local/</code>.
+If you specify a parameter that the <code class="language-plaintext highlighter-rouge">.env</code> file does not contain, the command returns an error.</p>
+
+<p>You can also update configuration parameter values when you use the <a href="mftf.html#buildproject"><code class="language-plaintext highlighter-rouge">build:project</code></a> command.</p>
+
+<h4 id="examples-3">Examples</h4>
+
+<p>To change values for the <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code> and <code class="language-plaintext highlighter-rouge">BROWSER</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf setup:env <span class="nt">--MAGENTO_BASE_URL</span><span class="o">=</span>http://magento.local/ <span class="nt">--BROWSER</span><span class="o">=</span>firefox
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To create a <code class="language-plaintext highlighter-rouge">.env</code> file with example parameters:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf setup:env
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>The example parameters are taken from the <code class="language-plaintext highlighter-rouge">etc/config/.env.example</code> file.</p>
+
+<h3 id="static-checks"><code class="language-plaintext highlighter-rouge">static-checks</code></h3>
+
+<p>Runs all or specific <abbr title="Magento Functional Testing Framework">MFTF</abbr> static-checks on the test codebase that <abbr title="Magento Functional Testing Framework">MFTF</abbr> is currently attached to. 
+If no script name argument is specified, all existing static check scripts will run.</p>
+
+<h4 id="usage-12">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf static-checks <span class="o">[</span>&lt;names&gt;]...
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="examples-4">Examples</h4>
+
+<p>To check what existing static check scripts are available</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf static-checks <span class="nt">--help</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To run all existing static check scripts</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf static-checks
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To run specific static check scripts</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf static-checks testDependencies
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf static-checks actionGroupArguments
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf static-checks testDependencies actionGroupArguments
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="existing-static-checks">Existing static checks</h4>
+
+<ul>
+  <li>Test Dependency: Checks that test dependencies do not violate Magento module’s composer dependencies.</li>
+  <li>Action Group Unused Arguments: Checks that action groups do not have unused arguments.</li>
+</ul>
+
+<h3 id="upgradetests"><code class="language-plaintext highlighter-rouge">upgrade:tests</code></h3>
+
+<p>Applies all the <abbr title="Magento Functional Testing Framework">MFTF</abbr> major version upgrade scripts to test components in the given path (<code class="language-plaintext highlighter-rouge">test.xml</code>, <code class="language-plaintext highlighter-rouge">data.xml</code>, etc).</p>
+
+<h4 id="usage-13">Usage</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf upgrade:tests &lt;path&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;path&gt;</code> is the path that contains <abbr title="Magento Functional Testing Framework">MFTF</abbr> test components that need to be upgraded.
+The command searches recursively for any <code class="language-plaintext highlighter-rouge">*.xml</code> files to upgrade.</p>
+
+<h4 id="examples-5">Examples</h4>
+
+<p>To upgrade all test components inside modules in the <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/</code> directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf upgrade:tests /Users/user/magento2/dev/tests/acceptance/tests/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>To upgrade all test components inside the <code class="language-plaintext highlighter-rouge">Catalog</code> module:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test/Mftf/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- Abbreviations -->
+
+
+			</main>
+			<footer class="content-footer">
+				<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="https://devdocs.magento.com/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="2020-03-04">
+    Mar 4th, 2020
+  </time>
+</button>
+
+			</footer>
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      
+
+<ul class="nav footer-links" role="menu">
+
+  <li class="  " role="menuitem"><a href="https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md" class=" ">Become a Contributor</a></li>
+
+  <li class="  " role="menuitem"><a href="https://glossary.magento.com/" class=" ">Glossary</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/privacy/" class=" ">Privacy Policy</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/terms/" class=" ">Terms of Service</a></li>
+
+  <li class="  " role="menuitem"><a href="https://magento.com/legal/licensing/" class=" ">License/Trademark FAQ</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/bk-release-notes.html" class=" ">Release Notes</a></li>
+
+  <li class="  " role="menuitem"><a href="../../../guides/v2.4/release-notes/packages-open-source.html" class=" ">Third-Party Licenses</a></li>
+
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2020 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://devdocs.magento.com/assets/js/app.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/editions.min.js?ver=10"></script>
+<script src="https://devdocs.magento.com/assets/js/page-updated.min.js?ver=10"></script>
+
+
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">_satellite.pageBottom();</script>
+
+
+
+<script type="text/javascript" src="https://devdocs.magento.com/common/js/glossary-link-enhancer.js"></script>
+
+
+</body>
+</html>
+
